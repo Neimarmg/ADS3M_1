@@ -1,7 +1,7 @@
 
 public class Saudacao {
 	String sauda;
-	int responde;
+	int responde, hora;
 	
 	
 	public void setSauda(String sauda) {
@@ -15,26 +15,67 @@ public class Saudacao {
 		System.out.print(desc +"\n");
 	}
 	
-	public void bomDia(){
+	public void setHora(int hora) {
+		this.hora = hora;
+	}
+	
+
+	public void horario(){
+		
+		if (hora >= 1 && hora<=12)  {
+			bomDia();
+		}		
+		
+		if (hora >= 12 && hora<=18)  {
+			//boaTarde();
+		}	
+		
+		if (hora >= 18 && hora<=24)  {
+			//boaNoite();
+		}	
+	}
+	
+	
+	public void comprimenta(){
 		switch (responde) {
 			
-		case 2:
+		case 1:
 			mesageSaudacao("Bom dia!");
 			break;
 			
-		case 3:
+		case 2:
 			mesageSaudacao("Tudo bem com você?");
 			
 			break;
 
-		case 4:
+		case 3:
 			mesageSaudacao("Tudo?");
 			mesageSaudacao("E com você?");
 			break;			
 		
 		}		
 	}
+	
 
+	public void complementa(){
+		switch (responde) {
+			
+		case 1:
+			mesageSaudacao("Bom dia!");
+			break;
+			
+		case 2:
+			mesageSaudacao("Tudo bem com você?");
+			
+			break;
+
+		case 3:
+			mesageSaudacao("Tudo?");
+			mesageSaudacao("E com você?");
+			break;			
+		
+		}		
+	}
 	
 	
 

@@ -1,0 +1,35 @@
+package com.senac.estruturas;
+
+import java.awt.print.Printable;
+
+import javax.swing.text.DefaultEditorKit.InsertBreakAction;
+
+import org.omg.CORBA.PUBLIC_MEMBER;
+
+public class Nodo {
+	public static void main(String[] args){
+		Nodo head = new Nodo();
+		
+		head.setData(2);
+		
+		insert(head,new Nodo(3));
+		insert(newNodo(2));
+		print(head);
+		
+		
+		
+		/* Metodos de para se utilizr uma listas
+		 * 
+		 * insert()
+		 * remove()
+		 * search()
+		 * print()
+		 * -----------------------
+		 * tipo dado
+		 * nodo next
+		 * 
+		 * 
+		 *
+		 */		
+	}	
+}

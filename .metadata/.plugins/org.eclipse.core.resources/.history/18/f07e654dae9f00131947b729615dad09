@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class ExecutaSaudacao extends Saudacao {
+
+	public static void main(String[] args) {
+		Saudacao s= new Saudacao();
+		
+		
+		
+		Scanner var =new Scanner(System.in);
+		
+		System.out.print("Que horas são: ");
+		s.setHora(var.next());
+		
+		for (int i = 0; i <= 5; i++) {
+			s.setResponde(i);
+			s.bomDia();
+
+		}		
+
+
+	}
+}
+
