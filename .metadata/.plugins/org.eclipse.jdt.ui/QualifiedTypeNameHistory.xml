@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.omg.CORBA.PUBLIC_MEMBER"/>
+<fullyQualifiedTypeName name="javax.swing.text.DefaultEditorKit.InsertBreakAction"/>
+<fullyQualifiedTypeName name="java.awt.print.Printable"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.PRIVATE_MEMBER"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.senac.estruturas.Nodo"/>
+</qualifiedTypeNameHistroy>
