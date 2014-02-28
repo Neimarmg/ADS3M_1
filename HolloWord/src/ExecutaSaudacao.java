@@ -1,27 +1,24 @@
 import java.util.Scanner;
 
-public class ExecutaSaudacao extends Saudacao {
+public class ExecutaSaudacao extends DefineSaudacao {
 
 	public static void main(String[] args) {
-		Saudacao s= new Saudacao();
 		
-		
-		
+		ImprimeMensage m = new ImprimeMensage(); 
+		DefineSaudacao s= new DefineSaudacao();
+			
 		Scanner var =new Scanner(System.in);
 		
-		System.out.print("Que horas são: ");
+		m.msg("Que horas são: ");
 		s.setHora(var.nextInt());
-		
-		for (int i = 0; i <= 4; i++) {
-			s.setResponde(i);
-			s.horario();
-			//System.out.print("?: ");
-			var.next();
+		s.horario();
+		m.msg("?: ");
+		var.next();
 
 
 		}		
 
 
-	}
+	
 }
 
