@@ -1,2 +1,0 @@
-INDEX VERSION 1.126+C:\Users\181100053\Documents\GitHub\ADS3M_1\.metadata\.plugins\org.eclipse.jdt.core
-3152239456.index
