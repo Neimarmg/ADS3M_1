@@ -1,7 +1,10 @@
+import javax.swing.JOptionPane;
+
 
 public class Mensagem {
 	
-	public void msg(String desc){
+	public void msg(Object desc){	
 		System.out.print(desc);
-	}
+		//String printImput = JOptionPane.showInputDialog(desc);
+	}		
 }
