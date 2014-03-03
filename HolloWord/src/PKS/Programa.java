@@ -1,6 +1,6 @@
+package PKS;
 import java.util.Scanner;
-
-import javax.lang.model.element.NestingKind;
+import PKS.DailyRoutines.Dia;
 
 public class Programa{
 	
@@ -10,14 +10,10 @@ public class Programa{
 	Dia s = new Dia();
 	Complementos c = new Complementos();
 	
-	private void execuataCabecalho(){
-		m.msg("\nEi!!!" +"\n\n" +"São:"  );
-		s.ImprimeHora();
-		s.horario();
-	}
+
 	
 	public void executaPrograma(){
-		execuataCabecalho();
+		s.horario();
 	}
 
 	
