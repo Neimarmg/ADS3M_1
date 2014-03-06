@@ -1,8 +1,12 @@
 package Fremes;
 
+import PKS.DailyRoutines.Dia;
+
 public class maimPK {
 
 	public static void main(String[] args) {
-		new FremePricipal();		
+		Dia d = new Dia();
+		d.horario();
+		//new FremePricipal();		
 	}
 }
