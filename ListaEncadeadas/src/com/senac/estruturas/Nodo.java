@@ -1,70 +1,76 @@
 package com.senac.estruturas;
 
-import java.awt.print.Printable;
 import static java.lang.System.out;
 
 public class Nodo {
-	int dado;
-	Nodo next;
+
+	private Object dado;
+	private Nodo next;
 	
-	private Nodo() {
-		this.next = null;
+	private Nodo()
+	{
 		this.dado = 0;
+		this.next = null;
 	}
 	
-	private Nodo(int i){
-		this.dado = i;		
+	private Nodo(int valor)
+	{
+		this.dado = valor;
+		this.next = null;
 	}
 	
-	public void setNext(Nodo novo) {
-		this.next = novo;
+	private Object getData()
+	{
+		return dado;
 	}
 	
-	public Nodo getNext() {
+	private void setData(int i)
+	{
+		this.dado = i;
+	}
+	
+	private Nodo getNext()
+	{
 		return next;
 	}
-	
-	
-	private static void insetBefore(Nodo novo , Nodo next){//Metodo que insere no inicio da lista
-		
-	
+	private void setNext(Nodo next)
+	{
+		this.next = next;
 	}
 	
+	private static void insertBefore(Nodo novo, Nodo next)
+	{
+		novo.setNext(next);
+	}
 	
-	private static void inset(Nodo anterior,Nodo novo){//Metodo que insere no meio e no fim da lista
-		
+	private static void insertAfter(Nodo anterior, Nodo novo)
+	{
 		novo.setNext(anterior.getNext());
 		anterior.setNext(novo);
-		
 	}
 	
-	
-	
-	public static void main(String[] args){
-		Nodo head = new Nodo();
-		
+	private static void print(Nodo head)
+	{
+		Nodo nodo = head;
+		do {
+			out.println(nodo.getData());
+			nodo = nodo.getNext();
+		} while (nodo != null); 
+	}
 
+	public static void main(String[] args)
+	{
+		Nodo head = new Nodo();
 		head.setData(2);
 		
-		insert(head,new Nodo(3));
-		insert(newNodo(2));
+		Nodo novo = new Nodo(2);
+		insertAfter(head, novo);
+		
+		novo = new Nodo(55);
+		insertBefore(novo, head);
+		head = novo;
+		
 		print(head);
-		
-		
-	
-	}	
-}
+	}
 
-/* Metodos de para se utilizr uma listas
- * 
- * insert()
- * remove()
- * search()
- * print()
- * -----------------------
- * tipo dado
- * nodo next
- * 
- * 
- *
- */		
+}
