@@ -1,4 +1,52 @@
-Planejamento inicial
+Planejamento inicial	
 
+//----------------<< Pacote armazenamento de dodos >>-------------------------			
+	Package Dados
+		
+			Arquivo de armazenamento "ListaTelefonica.txt"
+				Colunas
+					idLista
+					descNome
+					fone
+					email
+		
+//----------------<< Pacote de execução do programa >>-------------------------		
+	Package Aplicacao
+		
+			class programa{
+				motodos
+					main()
+							
+			}
 
-
+//----------------<< Pacote gerenciamento de inclusão e esclusão >>-------------		
+	Package gerenciador
+		
+			class gerenciador{
+				Metodos
+					inserir()
+					remover()
+			
+			}
+			
+//----------------<< Pacote de consultas ao dados  >>----------------------------				
+	Package navegacao
+		
+			class pequisas{
+				motodos
+					mover()
+						obs classe referecia para movimentação					
+				
+			}	
+			
+//----------------<< Pacote de estruturas do sitema >>-------------------------	
+	Package Extruturas
+		
+			class Nodo{}
+			class LitaEncadeada{}
+			class ListaOrdenada{}
+			
+			class impressao{
+				motodos
+					printMsg()
+			}
