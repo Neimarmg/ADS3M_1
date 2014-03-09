@@ -1,4 +1,4 @@
-package com.senac.estruturas;
+package Estruturas;
 
 public class Nodo<T extends Comparable<T>> implements Comparable<Nodo<T>> {
 

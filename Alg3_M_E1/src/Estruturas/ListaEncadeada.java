@@ -1,4 +1,4 @@
-package com.senac.estruturas;
+package Estruturas;
 
 import static java.lang.System.out;
 

@@ -1,4 +1,4 @@
-package com.senac.estruturas;
+package Estruturas;
 
 public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 
