@@ -1,0 +1,181 @@
+Planejamento inicial    
+/**
+Estrutura de pasta
+    src
+        "Dados" onde será armazenado arquivo da lista
+        "Aplicao" Onde o programa principal será executado
+        "Arquivo" Onde será feito os controles de registros registro da lista
+        "Navegacao"  Onde serão executadas as pesquisas a lista
+        "Estruturas" Onde serão armazenadas as classes de estrutura do programa
+*/  
+
+//----------------<< Pacote armazenamento de dados >>-------------------------    		
+	Package Dados
+		
+			Arquivo de armazenamento "ListaTelefonica.txt"
+
+			
+//----------------<< Pacote de execução do programa >>-------------------------		
+	Package Aplicacao
+		    
+		//*Importa 
+		* Class formatos
+		*
+		*/
+		class programa {
+				   
+			//Métodos
+										 
+
+				private main(){
+					/*
+					* Inicia Execução do programa
+					*/
+				}
+						
+		}         
+
+		
+//----------------<< Pacote gerenciamento de inclusão e exclusão >>-------------		
+	
+    Package Arquivo
+		/**Importa 
+		* class impressao
+		*
+		*/		
+		class executaArquivo {
+			//Métodos		
+]			try {
+                private leArquivoExitente() { 
+                    /**Localiza e Le arquivo existente 
+                    * http://www.youtube.com/watch?v=C1sx-FEsgOk ler aquivo linha a linha
+                    */
+                }
+
+                private criaNovoArquivo() { 
+                    /**Localiza e Le arquivo existente 
+                    *  Método opcional
+                    */
+                }
+
+				public executaComando() { 
+					/** Comando inicializar so programa e de um arquivo 
+                    *
+                    */
+					se  comando =="le" então
+						leArquivoExitente()
+					senão //comando =="Novo"
+						criaNovoArquivo
+					fim se   
+                }
+                        
+                public imprimeArquivo(){
+					printMsg(?)
+                }
+			
+            } Catch(){
+				printMsg(?)
+			}
+			
+		}
+		
+		/** importa
+		* class executaArquivo
+		* class impressao
+		*/
+		class Registro {
+			//Métodos
+				
+			try{	
+				public insereLinha(){
+					/** Insere registro na lista
+					 * http://www.youtube.com/watch?v=2zHG7vhkYjI
+					 */
+				}
+				
+				public removeLinha(){
+					/** Realiza a remoção lógica do registro
+					 * 
+					 */
+				}  
+				
+				
+				
+			} Catch(){
+				printMsg(?)
+			}
+		}
+		
+		
+		/** importa
+		* class executaArquivo
+		* class impressao
+		*/
+		class Memoria {
+			//Métodos
+			try{
+		
+				
+				private int calculaMenoria(){
+					/** Verifica memória disponível para inserir novo					 * 
+					 */
+				}
+				
+				
+				public executaVerificao(){
+					/** Inicia a verificação da memória 
+					 * 
+					 */
+					 calculaMenoria()
+				}
+				
+				
+				public imprimeStatusMomoria() {
+					/** imprime na tale memória disponível no disco
+					 * 
+					 */				
+					.printMsg(?)
+				}
+				
+			} Catch(){}
+		}
+//----------------<< Pacote de consultas ao dados  >>----------------------------				
+	Package navegacao
+		
+		class consultas {
+			//métodos
+				
+				mover(){
+					/** obs. classe referência para movimentação
+					 *  
+					 */ 
+				}			
+			}
+            
+            
+            class Direcao {
+                //motodos    
+                
+                
+            }
+			
+//----------------<< Pacote de estruturas do sistema >>-------------------------	
+	Package Estruturas
+		
+		class Nodo{
+		
+		}
+		class LitaEncadeada{
+		
+		}
+		class ListaOrdenada{
+		
+		}
+		
+		class impressao{
+			//métodos
+			public printMsg(object desc){
+				print(desc)
+				// imprime na tale memória dispPlanejamento inicial    
+			}
+		}
