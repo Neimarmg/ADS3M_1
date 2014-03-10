@@ -2,8 +2,8 @@
  * 
  */
 /**
- * @author moises
+ * @author Neimar
  *
  */
 package Documantacao;
-// Pacote de dumantação e planejamnto do programa
+// Pacote de documentação e planejamento do programa
