@@ -4,7 +4,7 @@ Estrutura de pasta
     src
         "Dados" onde será armazenado arquivo da lista
         "Aplicao" Onde o programa principal será executado
-        "Arquivo" Onde será feito os controles de registros registro da lista
+        "Arquivos" Onde será feito os controles de registros registro da lista
         "Navegacao"  Onde serão executadas as pesquisas a lista
         "Estruturas" Onde serão armazenadas as classes de estrutura do programa
 */  
@@ -12,7 +12,7 @@ Estrutura de pasta
 //----------------<< Pacote armazenamento de dados >>-------------------------    		
 	Package Dados
 		
-			Arquivo de armazenamento "ListaTelefonica.txt"
+			Arquivos de armazenamento "ListaTelefonica.txt"
 
 			
 //----------------<< Pacote de execução do programa >>-------------------------		
@@ -38,7 +38,7 @@ Estrutura de pasta
 		
 //----------------<< Pacote gerenciamento de inclusão e exclusão >>-------------		
 	
-    Package Arquivo
+    Package Arquivos
 		/**Importa 
 		* class impressao
 		*

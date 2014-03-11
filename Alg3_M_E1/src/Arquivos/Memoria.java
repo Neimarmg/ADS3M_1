@@ -1,4 +1,4 @@
-package Arquivo;
+package Arquivos;
 
 public class Memoria {
 	

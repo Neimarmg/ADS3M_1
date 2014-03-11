@@ -1,6 +1,6 @@
-package Arquivo;
+package Arquivos;
 
-public class ExecutaArquivo {
+public class Ficheiro {
 	
 	//try {
         private void leArquivoExitente() { 
@@ -10,14 +10,7 @@ public class ExecutaArquivo {
             */
         }
 
-        private void criaNovoArquivo() { 
-            /**Localiza e Le arquivo existente 
-            *  Método opcional
-             * @return 
-            */
-        }
-
-		public void executaComando() { 
+        public void executaComando() { 
 			/** Comando inicializar so programa e de um arquivo 
             * se  comando =="le" então
 			*	leArquivoExitente()
