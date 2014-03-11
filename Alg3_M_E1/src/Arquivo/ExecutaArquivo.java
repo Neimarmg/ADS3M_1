@@ -1,6 +1,7 @@
 package Arquivo;
 
 public class ExecutaArquivo {
+	
 	//try {
         private void leArquivoExitente() { 
             /**Localiza e Le arquivo existente 
