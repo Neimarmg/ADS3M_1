@@ -1,13 +1,10 @@
-package PKS.DailyRoutines;
+package Utilitarios;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import PKS.Mensagem;
-import PKS.Pressagios;
-
 public class Dia {
 	Pressagios s = new Pressagios(); 	
-	Mensagem m = new Mensagem();
+	Formatos m = new Formatos();
 	
 	Calendar dh = Calendar.getInstance();
 	SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
@@ -20,8 +17,8 @@ public class Dia {
 	
 	
 	public void execuataCabecalho(Object hora){		
-		m.msg("\nEi !!!" +
-				"\n\nSão: " +hora +"\n");
+		m.msg("OLA!!!" +
+				"\nSão: " +hora +"\n");
 	}
 	
 	
@@ -31,17 +28,17 @@ public class Dia {
 		int hora =  dh.get(Calendar.HOUR_OF_DAY);
 		
 		if (hora >= 0 && hora <= 12)  {
-			execuataCabecalho(sdf.format(dh.getTime()) +"hs" +" da manhã!" +"\n");
+			execuataCabecalho(sdf.format(dh.getTime()) +"hs" +" da manhã!" +"");
 			s.bomDia();
 		}		
 
 		if (hora >= 12  && hora <= 18)  {
-			execuataCabecalho(sdf.format(dh.getTime()) +"hs" +" da tarde!" +"\n");
+			execuataCabecalho(sdf.format(dh.getTime()) +"hs" +" da tarde!" +"");
 			s.boaTarde();
 		}	
 		
 		if (hora > 18  && hora <= 24)  {
-			execuataCabecalho(sdf.format(dh.getTime()) +"hs" +" da noite!" +"\n");
+			execuataCabecalho(sdf.format(dh.getTime()) +"hs" +" da noite!" +"");
 			s.boaNoite();
 		}	
 	}

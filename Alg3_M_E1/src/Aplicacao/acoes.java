@@ -1,68 +1,84 @@
 package Aplicacao;
+import java.io.IOException;
 import java.util.Scanner;
+
+import javax.print.DocFlavor.STRING;
+
+import Utilitarios.Formatos;
+import Arquivos.Ficheiro;
 import Estruturas.ListaOrdenada;
 
 public class acoes {
 	Scanner var = new Scanner(System.in);
 	Formatos i = new Formatos();
 	ListaOrdenada r = new ListaOrdenada<>();
-	
+	Ficheiro f = new Ficheiro();
 	
 	private void InsereDado() {
 		r.insereRegistro(var.next());
 	}
 	
 	
-	private void cadastra() {
-		i.msg("Nome Contato: ");
+	private void cadastra()throws Exception {
+		i.msgl();
+		i.msg("\nNome Contato: ");
 		InsereDado();
 		i.msg("Telefone: ");
 		InsereDado();
-		i.msg("celeular: ");
-		InsereDado();
+		i.msgl();
 	}	
+	
+	
+	private void salvaDados() throws IOException {
+		String comando,arquivo;
+		i.msgb("OPÇÕES DE COMANDO: \n"	
+			+"\t= NOVO\n"
+			+"\t= EXISTENTE\n");
+		
+		comando = var.next();
+		i.msg("\nNome do aquvixo: ");
+		arquivo = var.next();
+		f.executaComando(comando,arquivo);
+	}
 	
 	/**
 	 * Metodo de seleção de comandos do programa.	
 	 * @param comando
+	 * @throws Exception 
 	 */
-	private void SelecionaComandos(String comando) {
+	private void SelecionaComandos(String comando) throws Exception {
+		
 		String c = comando.toLowerCase();
 	
 		switch (c) {
 		
-		case "consultar":
+		case "consulta":
 			
 			break;
 			
-		case "cadastrar":
+		case "cadastra":
 			cadastra();
 			break;
 			
-		case "imprimir":
+		case "imprimi":
 			
 			break;
+		case "arquivo":
+			salvaDados();
+			
+			break;
+			
 		default: 
-			i.msg("Comando inválido \nTente novamente?:");
+			i.msgOpcaoInvalida();
 			ExecutaComandos();
 			break;
 		}
 	}
 	
-		
-	/**--------------------------------------------------------- 
-	 * Metodo inicia a execução de todos os comandos da aplicação	
-	*/
-	public void ExecutaMenu() {
-		i.msgb("Ola!!! \n\nO que voce deseja fazer?:\n\n"
-		+"=> Cadastrar\n"
-		+"=> Consultar\n"
-		+"=> Imprimir");
-	}
 	
 	
-	public void ExecutaComandos() {		
-		i.msg("\nComando: ");
+	public void ExecutaComandos() throws Exception  {	
+		i.msg("\nComando: ");		
 		SelecionaComandos(var.next());
 	}
 }

@@ -1,4 +1,7 @@
-package Aplicacao;
+package Utilitarios;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class Formatos {
 	
@@ -16,6 +19,10 @@ public class Formatos {
 	
 	
 	public void msgl(){
-		System .out.print("====================================================\n");
+		System .out.print("\n====================================================\n");
+	}
+	
+	public void msgOpcaoInvalida(){
+		System .out.print("\nOpção de comando inválida tente novamente!\n");
 	}
 }
