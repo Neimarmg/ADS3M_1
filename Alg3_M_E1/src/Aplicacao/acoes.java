@@ -29,16 +29,14 @@ public class acoes {
 	}	
 	
 	
-	private void informaArquivo() throws IOException {
+	private void informaArquivo() throws Exception {
 		String comando,arquivo;
 		i.msgb("OPÇÕES DE COMANDO: \n"	
 			+"\t= NOVO\n"
 			+"\t= EXISTENTE\n");
 		i.msg("\nComando: ");
 		comando = var.next();
-		i.msg("\nNome do aquvixo: ");
-		arquivo = var.next();
-		f.executaComando(comando,arquivo);
+		f.executaComando(comando);
 	}
 	
 	/**
