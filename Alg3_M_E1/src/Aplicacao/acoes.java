@@ -1,7 +1,5 @@
 package Aplicacao;
-
 import java.util.Scanner;
-
 import Estruturas.ListaOrdenada;
 
 public class acoes {
@@ -9,19 +7,29 @@ public class acoes {
 	Formatos i = new Formatos();
 	ListaOrdenada r = new ListaOrdenada<>();
 	
-	public void cadastra() {
-		i.msg("nome: ");
-		r.insereRegistro(var.next());;
+	
+	private void InsereDado() {
+		r.insereRegistro(var.next());
+	}
+	
+	
+	private void cadastra() {
+		i.msg("Nome Contato: ");
+		InsereDado();
+		i.msg("Telefone: ");
+		InsereDado();
+		i.msg("celeular: ");
+		InsereDado();
 	}	
 	
+	/**
+	 * Metodo de seleção de comandos do programa.	
+	 * @param comando
+	 */
+	private void SelecionaComandos(String comando) {
+		String c = comando.toLowerCase();
 	
-	
-	
-	
-	
-	public void SelecionaComandos(String comando) {
-
-		switch (comando) {
+		switch (c) {
 		
 		case "consultar":
 			
@@ -41,13 +49,7 @@ public class acoes {
 		}
 	}
 	
-	
-	
-	
-	
-	
-	
-	
+		
 	/**--------------------------------------------------------- 
 	 * Metodo inicia a execução de todos os comandos da aplicação	
 	*/
