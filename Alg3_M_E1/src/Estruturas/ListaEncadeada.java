@@ -1,3 +1,4 @@
+
 package Estruturas;
 
 import static java.lang.System.out;
@@ -47,16 +48,15 @@ public class ListaEncadeada<T extends Comparable<T>> {
 		tail = novo;
 	}
 	
-	public static void main(String[] args)
-	{
+	
+	public  void insereRegistro(String campo){
 		ListaEncadeada<String> lista = new ListaEncadeada<String>();
 		
-		lista.insert(new Nodo<String>("Rafael"));
-		lista.insert(new Nodo<String>("Tiago"), lista.getHead());
-		lista.append(new Nodo<String>("Mauro"));
-		lista.insert(new Nodo<String>("Carlos"));
+		lista.insert(new Nodo<String>(campo));
+		//lista.insert(new Nodo<String>(campo), lista.getHead());
 		
-		lista.print();
+		//lista.print();
+		
 	}
 
 }

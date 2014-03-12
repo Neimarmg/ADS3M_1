@@ -1,12 +1,12 @@
 package Aplicacao;
 
 public class mainE1 {
-	Impressao i = new Impressao();
-	Recursos f = new Recursos();
+	Formatos i = new Formatos();
+	acoes f = new acoes();
 	
 	
 	private void Cabecalho() {
-		i.printMsg("====================================================\n"
+		i.msg("====================================================\n"
 		+"       EXERCÍCIO DE ESTRUTURAS LINEARES E1!!! "
 		+"\n====================================================\n\n\n");
 	}
@@ -14,6 +14,7 @@ public class mainE1 {
 	
 	private void run() {
 		Cabecalho();
+		f.ExecutaMenu();
 		f.ExecutaComandos();
 	}
 	

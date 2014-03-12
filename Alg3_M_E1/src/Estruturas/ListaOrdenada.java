@@ -2,6 +2,7 @@ package Estruturas;
 
 public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 
+	
 	private Nodo<T> findBefore(Nodo<T> novo) {
 		Nodo<T> atual = getHead();
 		Nodo<T> anterior = null;
@@ -21,6 +22,7 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		return anterior;
 	}
 	
+	
 	@Override
 	public void insert(Nodo<T> novo)
 	{
@@ -39,6 +41,7 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		insert(novo);
 	}
 	
+	
 	@Override
 	public void append(Nodo<T> novo)
 	{
@@ -46,7 +49,7 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 	}
 	
 	
-	public static void main(String[] args) {
+	private void InsereLista() {
 		ListaOrdenada<String> lista = new ListaOrdenada<String>();
 		
 		lista.insert(new Nodo<String>("Rafael"));
