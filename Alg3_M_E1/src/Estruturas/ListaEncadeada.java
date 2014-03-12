@@ -52,11 +52,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	public  void insereRegistro(String campo){
 		ListaEncadeada<String> lista = new ListaEncadeada<String>();
 		
-		lista.insert(new Nodo<String>(campo));
-		//lista.insert(new Nodo<String>(campo), lista.getHead());
-		
-		//lista.print();
+		lista.insert(new Nodo<String>(campo.toUpperCase()));
 		
 	}
-
 }

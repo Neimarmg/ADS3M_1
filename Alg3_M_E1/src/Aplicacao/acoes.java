@@ -28,22 +28,19 @@ public class acoes {
 		i.msgl();
 	}	
 	
-	
-	private void informaArquivo() throws Exception {
+		
+	public void informaArquivo() throws Exception {
 		String comando,arquivo;
 		i.msgb("OPÇÕES DE COMANDO: \n"	
 			+"\t= NOVO\n"
-			+"\t= EXISTENTE\n");
+			+"\t= EXISTENTE\n"
+			+"\t= IMPRIME\n");
 		i.msg("\nComando: ");
 		comando = var.next();
 		f.executaComando(comando);
 	}
 	
-	/**
-	 * Metodo de seleção de comandos do programa.	
-	 * @param comando
-	 * @throws Exception 
-	 */
+	
 	private void SelecionaComandos(String comando) throws Exception {
 		
 		String c = comando.toLowerCase();
@@ -74,9 +71,8 @@ public class acoes {
 	}
 	
 	
-	
 	public void ExecutaComandos() throws Exception  {	
-		i.msg("Comando: ");		
+		i.msg("COMANDO: ");		
 		SelecionaComandos(var.next());
 	}
 }

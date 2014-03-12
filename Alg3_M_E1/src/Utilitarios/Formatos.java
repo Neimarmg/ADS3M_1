@@ -14,7 +14,7 @@ public class Formatos {
 	public void msgb(Object desc){
 		System .out.print("====================================================\n"
 			+desc
-			+"\n====================================================\n\n");
+			+"\n====================================================\n");
 	}
 	
 	
@@ -23,6 +23,6 @@ public class Formatos {
 	}
 	
 	public void msgOpcaoInvalida(){
-		System .out.print("\nOpção de comando inválida tente novamente!\n");
+		System .out.print("\nOpção de comando inválido. Tente novamente!\n");
 	}
 }
