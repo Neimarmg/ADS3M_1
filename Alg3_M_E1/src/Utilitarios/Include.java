@@ -8,7 +8,7 @@ public class Include {
 			 */
 		}
 		
-		public void InsereArquivo(String nomeArquivo){
+		public void criaArquivo(String nomeArquivo){
 			/** Realiza a remoção lógica do registro
 			 * 
 			 */

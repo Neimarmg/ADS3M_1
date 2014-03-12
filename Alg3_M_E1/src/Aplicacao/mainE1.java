@@ -11,7 +11,7 @@ public class mainE1 {
 	private void Cabecalho() {
 		i.msg("====================================================\n"
 		+"       EXERCÍCIO DE ESTRUTURAS LINEARES E1!!! "
-		+"\n====================================================\n\n\n");
+		+"\n====================================================\n\n");
 	}
 	
 	public void sauda() {
@@ -24,10 +24,10 @@ public class mainE1 {
 	*/
 	public void ExecutaMenu() {		
 		i.msgb("OQUE VOCÊ DESEJA FAZER?:\n\n"
-		+"=> CADASTRA\n"
-		+"=> CONSULTA\n"
-		+"=> IMPRIME\n"
-		+"=> SALVA\n"
+		+"=> CADASTRAR\n"
+		+"=> CONSULTAR\n"
+		+"=> IMPRIMIR\n"
+		+"=> ARQUIVO\n"
 		+"\t= NOVO\n"
 		+"\t= EXISTENTE\n");
 	}

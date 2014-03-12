@@ -7,14 +7,14 @@ public class Pressagios {
 	Formatos m = new Formatos(); 
 	
 	public void bomDia() {
-		m.msg("Bom dia!\n");
+		m.msg("Bom dia!\n\n");
 	}
 	
 	public void boaTarde() {
-		m.msg("Boa tarde!\n");
+		m.msg("Boa tarde!\n\n");
 	}
 	
 	public void boaNoite() {
-		m.msg("Boa noite!\n");	
+		m.msg("Boa noite!\n\n");	
 	}
 }

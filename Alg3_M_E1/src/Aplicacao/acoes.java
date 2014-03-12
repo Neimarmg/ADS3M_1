@@ -29,12 +29,12 @@ public class acoes {
 	}	
 	
 	
-	private void salvaDados() throws IOException {
+	private void informaArquivo() throws IOException {
 		String comando,arquivo;
 		i.msgb("OPÇÕES DE COMANDO: \n"	
 			+"\t= NOVO\n"
 			+"\t= EXISTENTE\n");
-		
+		i.msg("\nComando: ");
 		comando = var.next();
 		i.msg("\nNome do aquvixo: ");
 		arquivo = var.next();
@@ -64,7 +64,7 @@ public class acoes {
 			
 			break;
 		case "arquivo":
-			salvaDados();
+			informaArquivo();
 			
 			break;
 			
@@ -78,7 +78,7 @@ public class acoes {
 	
 	
 	public void ExecutaComandos() throws Exception  {	
-		i.msg("\nComando: ");		
+		i.msg("Comando: ");		
 		SelecionaComandos(var.next());
 	}
 }

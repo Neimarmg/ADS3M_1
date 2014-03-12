@@ -11,7 +11,7 @@ import java.util.Scanner;
 import Utilitarios.Formatos;
 
 public class Ficheiro {
-	Formatos f = new Formatos();
+	Formatos i = new Formatos();
 	//try {
 	
 		/**Localiza e Le arquivo existente 
@@ -20,7 +20,8 @@ public class Ficheiro {
 		 * @throws FileNotFoundException 
 		 */		
         private void leArquivoExitente(String nemeAquivo) throws IOException  { 
-        	//Scanner sc = new Scanner(new FileReader(nemeAquivo));    	
+        	Scanner sc = new Scanner(new FileReader(nemeAquivo)); 
+        	/*
         	FileInputStream n = new FileInputStream(nemeAquivo);
         	InputStreamReader arquivo = new InputStreamReader(n);
         	BufferedReader ln = new BufferedReader(arquivo);
@@ -33,19 +34,19 @@ public class Ficheiro {
         		   System.out.println(cidade);
         		   System.out.println(compras);
         		   linha = ln.readLine();
-        	}        	
+        	}       */
         }
             
         
 		/** Comando inicializar so programa e de um arquivo 
 		* @throws IOException 
-		*/        
+		*/      
         public void executaComando(String comando, String nemeAquivo) throws IOException { 
         	String c = comando.toLowerCase();
         	
         	switch (c) {
 			case "novo":
-				f.msg("\nComando opçional não implementado!\n");
+				i.msg("\nComando opçional não implementado!\n");
 				break;
 			
 			case "existente":
@@ -53,7 +54,7 @@ public class Ficheiro {
 				break;
 				
 			default:
-				f.msgOpcaoInvalida();
+				i.msg("jjjjj");// msgOpcaoInvalida();
 				break;
 			}       	
         }
