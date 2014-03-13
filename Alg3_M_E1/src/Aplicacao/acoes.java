@@ -1,11 +1,6 @@
 package Aplicacao;
 import java.io.IOException;
 import java.util.Scanner;
-
-import javax.print.DocFlavor.STRING;
-
-import org.omg.CORBA.StructMemberHelper;
-
 import Utilitarios.Formatos;
 import Arquivos.Ficheiro;
 import Estruturas.ListaOrdenada;
@@ -28,7 +23,7 @@ public class acoes {
 			
 			switch (comando) {
 				case "novo":
-						String nomeAquivo = "C:/Users/Guilherme/Documents/GitHub/ADS3M_1/Alg3_M_E1/lt.txt";
+						String nomeAquivo = "lt.txt"; //"C:/Users/Guilherme/Documents/GitHub/ADS3M_1/Alg3_M_E1/
 						r.insereRegistro(nomeAquivo);
 					break;
 
@@ -43,7 +38,6 @@ public class acoes {
 	}	
 	
 	
-		
 	public void informaArquivo() throws Exception {
 		String comando,arquivo;
 		i.msgb("OPÇÕES DE COMANDO: \n"	

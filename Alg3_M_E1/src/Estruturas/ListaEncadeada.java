@@ -58,20 +58,20 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	
 	
 	public  void insereRegistro(String arquivo) throws Exception{
-		String nomec, fone;
+		String desc, fone , nome;
 		Formatos f = new Formatos();
 		Include i = new Include();		
 		ListaEncadeada<String> lista = new ListaEncadeada<String>();
 		
 		f.msg("\nNome Contato: ");
-		nomec =  var.next();
-		lista.insert(new Nodo<String>(nomec.toUpperCase()));		
-		i.insereLinha(nomec);
-		
+		nome =  var.next();
+		lista.insert(new Nodo<String>(nome.toUpperCase()));			
 		f.msg("Telefone: ");
-		fone = var.next();
+		fone = var.next();		
 		lista.insert(new Nodo<String>(fone.toUpperCase()));		
-		i.insereLinha(fone);
+		
+		desc = nome +" " +fone +"\n";
+		i.insereLinha(arquivo,desc);
 		
 		f.msgl();		
 		

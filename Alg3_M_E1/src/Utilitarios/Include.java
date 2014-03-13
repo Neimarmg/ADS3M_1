@@ -3,7 +3,6 @@ package Utilitarios;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 
 public class Include {
 	
@@ -11,11 +10,12 @@ public class Include {
 	BufferedWriter buff;
 	
 	//try{	
-		public void insereLinha(String desc) throws IOException{
-			fileR = new FileWriter("lt.txt");
-			buff = new BufferedWriter(fileR);
-			buff.newLine();
-			buff.write(desc);
+		public void insereLinha(String arquivo, String  desc) throws IOException{
+			fileR = new FileWriter(arquivo);
+			buff = new BufferedWriter(fileR);	
+			buff.flush();
+			buff.newLine();	
+			buff.write(desc);					
 			buff.close();		 
 		}
 		
