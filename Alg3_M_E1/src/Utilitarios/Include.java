@@ -1,25 +1,27 @@
 package Utilitarios;
 
-import java.io.File;
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 
 public class Include {
+	
+	FileWriter fileR;
+	BufferedWriter buff;
+	
 	//try{	
-		public void insereLinha(String nomeArquivo){
-			/** Insere registro na lista
-			 * http://www.youtube.com/watch?v=2zHG7vhkYjI
-			 */
-			File arquivo = new File(nomeArquivo);
-			 try( FileWriter fw = new FileWriter(arquivo) ){
-			     fw.write("Nnnnnn\n");
-			     fw.flush();
-			 }catch(IOException ex){
-			   ex.printStackTrace();
-			 }
-			 
+		public void insereLinha(String nomeArquivo, String desc, String fone) throws IOException{
+			fileR = new FileWriter(nomeArquivo);
+			buff = new BufferedWriter(fileR);
+			buff.write(desc);
+			buff.write(fone);
+			//buff.close();		 
 		}
 		
+
+	
+
 		public void criaArquivo(String nomeArquivo){
 			/** Realiza a remoção lógica do registro
 			 * 

@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import javax.print.DocFlavor.STRING;
 
+import org.omg.CORBA.StructMemberHelper;
+
 import Utilitarios.Formatos;
 import Arquivos.Ficheiro;
 import Estruturas.ListaOrdenada;
@@ -14,19 +16,32 @@ public class acoes {
 	ListaOrdenada r = new ListaOrdenada<>();
 	Ficheiro f = new Ficheiro();
 	
-	private void InsereDado() {
-		r.insereRegistro(var.next());
-	}
-	
-	
-	private void cadastra()throws Exception {
-		i.msgl();
-		i.msg("\nNome Contato: ");
-		InsereDado();
-		i.msg("Telefone: ");
-		InsereDado();
-		i.msgl();
+
+	public void cadastraInten()throws Exception {	
+		String comando = null;
+		i.msgb("OPÇÕES DE COMANDO: \n"	
+				+"\t= NOVO\n"
+				+"\t= SAIR");
+			i.msg("\nComando: ");		
+			comando = var.next();
+			String c = comando.toLowerCase();
+			
+			switch (comando) {
+				case "novo":
+						String nomeAquivo = "C:/Users/Guilherme/Documents/GitHub/ADS3M_1/Alg3_M_E1/lt.txt";
+						r.insereRegistro(nomeAquivo);
+					break;
+
+				case "sair":
+					i.msg("Você saiu do cadastro.");
+					break;
+			default:
+				i.msgOpcaoInvalida();
+				break;
+			}
+			
 	}	
+	
 	
 		
 	public void informaArquivo() throws Exception {
@@ -47,15 +62,15 @@ public class acoes {
 	
 		switch (c) {
 		
-		case "consulta":
+		case "consultar":
 			
 			break;
 			
-		case "cadastra":
-			cadastra();
+		case "cadastrar":
+			cadastraInten();
 			break;
 			
-		case "imprimi":
+		case "imprimir":
 			
 			break;
 		case "arquivo":
