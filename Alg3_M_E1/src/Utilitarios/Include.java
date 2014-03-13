@@ -11,12 +11,12 @@ public class Include {
 	BufferedWriter buff;
 	
 	//try{	
-		public void insereLinha(String nomeArquivo, String desc, String fone) throws IOException{
-			fileR = new FileWriter(nomeArquivo);
+		public void insereLinha(String desc) throws IOException{
+			fileR = new FileWriter("lt.txt");
 			buff = new BufferedWriter(fileR);
+			buff.newLine();
 			buff.write(desc);
-			buff.write(fone);
-			//buff.close();		 
+			buff.close();		 
 		}
 		
 

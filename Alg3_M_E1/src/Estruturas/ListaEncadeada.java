@@ -66,11 +66,12 @@ public class ListaEncadeada<T extends Comparable<T>> {
 		f.msg("\nNome Contato: ");
 		nomec =  var.next();
 		lista.insert(new Nodo<String>(nomec.toUpperCase()));		
+		i.insereLinha(nomec);
 		
 		f.msg("Telefone: ");
 		fone = var.next();
 		lista.insert(new Nodo<String>(fone.toUpperCase()));		
-		i.insereLinha(arquivo,nomec,fone);
+		i.insereLinha(fone);
 		
 		f.msgl();		
 		
