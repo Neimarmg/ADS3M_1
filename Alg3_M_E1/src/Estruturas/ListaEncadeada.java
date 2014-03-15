@@ -11,6 +11,8 @@ import Aplicacao.acoes;
 import Arquivos.Ficheiro;
 
 public class ListaEncadeada<T extends Comparable<T>> {
+	Formatos i = new Formatos();
+	
 	Scanner var = new Scanner(System.in);
 	
 	private Nodo<T> head; // will be a Nodo
@@ -25,7 +27,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	{
 		Nodo<?> nodo = head;
 		do {
-			out.println(nodo.getData());
+			i.msgb(nodo.getData());
 			nodo = nodo.getNext();
 		} while (nodo != null);
 	}

@@ -3,6 +3,7 @@ package Arquivos;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.Reader;
 import java.util.Scanner;
 import java.nio.file.Paths;
 import java.nio.file.Path;
@@ -29,16 +30,18 @@ public class Ficheiro {
         	 
         	 FileInputStream in = new FileInputStream(file);
 			 Scanner scanner = new Scanner(in);  
-			 
+			 i.msgl();
 			 while (scanner.hasNext()) {
-				 String readLine = scanner.next();
+				 String readLine = scanner.next();				 
+				 readLine.toString();
 				 i.msg(readLine +"\n");
 			 }
+			 i.msgl();
         }
         
 
  		public void executaComando(String comando) throws Exception { 
- 			String nomeAquivo = "C:/Users/Guilherme/Documents/GitHub/ADS3M_1/Alg3_M_E1/lt.txt";
+ 			String nomeAquivo = "lt.txt";
 			String c = comando.toLowerCase();
         	
         	switch (c) {
@@ -52,10 +55,6 @@ public class Ficheiro {
 				leArquivoExitente(nomeAquivo);
 				break;
 			
-			case "imprime":
-				imprimeArquivo(nomeAquivo);
-				break;
-				
 			default:
 				i.msgl();
 				i.msgOpcaoInvalida();
