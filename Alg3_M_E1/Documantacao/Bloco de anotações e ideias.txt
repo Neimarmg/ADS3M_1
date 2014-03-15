@@ -1,1 +1,24 @@
-Planejamento inicial	
+Planejamento
+
+Extrutura do menu
+
+OQUE VOCÊ DESEJA FAZER?:
+
+=> INSERIR EM?
+	- Arquivo
+	- Lista
+	- Ambos
+
+=> CONSULTAR EM?
+	- Lista
+	- Arquivo
+
+=> IMPRIMIR
+	- Aquivo 
+	- Lista
+		Ornadenada
+			Sim nao
+=> ARQUIVO
+	- Novo
+	- Existente
+

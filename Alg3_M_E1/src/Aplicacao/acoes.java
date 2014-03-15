@@ -22,15 +22,15 @@ public class acoes {
 			
 			switch (comando) {
 			
-			case "novo":
-					
-				String nomeAquivo = "lt.txt"; //"C:/Users/Guilherme/Documents/GitHub/ADS3M_1/Alg3_M_E1/
+			case "novo":					
+				String nomeAquivo = "lt.txt"; 
 				r.insereRegistro(nomeAquivo);
-			break;
+				break;
 
 			case "sair":
 				i.msg("Você saiu do cadastro.");
 				break;
+			
 			default:
 				i.msgOpcaoInvalida();
 				break;
@@ -42,37 +42,12 @@ public class acoes {
 	public void informaArquivo() throws Exception {
 		i.msgb("OPÇÕES DE COMANDO: \n"	
 			+"\t= NOVO\n"
-			+"\t= EXISTENTE\n"
-			+"\t= IMPRIME\n");
+			+"\t= EXISTENTE\n");
 		i.msg("\nComando: ");
 		comando = var.next();
 		f.executaComando(comando);
 	}
 	
-	public void comandaImpressao() throws Exception {
-		i.msgb("COMANDOS DE IMPRISSÃO: \n"	
-			+"\t= ARQUIVO\n"
-			+"\t= LISTA\n"
-			+"\t= SAIR\n");
-		i.msg("\nComando: ");
-		comando = var.next();
-		f.executaComando(comando);
-		comando = var.next().toLowerCase();
-		
-		switch (comando){		
-		case "arquivo":			
-			f.imprimeArquivo("lt.txt");
-			break;
-
-		case "lista":
-			r.print();
-			
-			break;
-		default:
-			i.msgOpcaoInvalida();
-			break;
-		}		
-	}
 	
 	private void SelecionaComandos(String comando) throws Exception {
 		
@@ -89,7 +64,7 @@ public class acoes {
 			break;
 			
 		case "imprimir":
-			comandaImpressao();
+
 			break;
 			
 		case "arquivo":
