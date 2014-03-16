@@ -15,24 +15,26 @@ public class mainE1 {
 	}
 	
 	
-	public void sauda() {
+	public void saudacao() {
 		d.horario();
 	}
 	
 
 	public void ExecutaMenu() {		
-		i.msgb("OQUE VOCÊ DESEJA FAZER?:\n\n"
+		i.msgb("	OQUE VOCÊ DESEJA FAZER?:\n\n"
 		+"=> CADASTRAR\n"
 		+"=> CONSULTAR\n"
 		+"=> IMPRIMIR\n"
-		+"=> ARQUIVO\n");
+		+"=> ARQUIVO\n"
+		+"=> SAIR\n");
 	}
+	
 	
 	private void run() throws Exception {
 		Cabecalho();
-		sauda();
+		saudacao();
 		ExecutaMenu();
-		f.ExecutaComandos();
+		f.menuPricipal();
 	}
 	
 

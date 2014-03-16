@@ -1,9 +1,6 @@
 package Utilitarios;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
-public class Formatos {
+public class Formatos {	
 	
 	public void msg(Object desc){
 		// imprime na tale memória dispPlanejamento inicial    
@@ -12,17 +9,69 @@ public class Formatos {
 	
 	
 	public void msgb(Object desc){
-		System .out.print("====================================================\n"
+		System .out.print(
+			"\n====================================================\n"
 			+desc
 			+"\n====================================================\n");
 	}
 	
 	
 	public void msgl(){
-		System .out.print("\n====================================================\n");
+		System .out.print(
+			"\n====================================================\n");
 	}
 	
+	
 	public void msgOpcaoInvalida(){
-		System .out.print("\nOpção de comando inválido. Tente novamente!\n");
+		System .err.print("\nOpção de comando inválido. Tente novamente!\n");
 	}
+	
+	
+	public void msgNaoImplementado(){
+		System .err.print("\nNão implementado!\n");
+	}
+	
+	public void msgDigitaComando(){
+		System .out.print("\nCOMANDO: ");;
+	}
+	
+	
+	public void msgSair(){
+		
+		System.err.print("\nVocê optou por sair desta seção\n"
+				+ "Obrigado!!!");;
+	}
+	
+	
+	public void menuInsert() throws Exception {
+		msgb(
+			"	GRAVAR DADOS EM: \n\n"	
+			+"=> ARQUIVO\n"
+			+"=> LISTA\n"
+			+"=> AMBAS\n"
+			+"=> SAIR\n"
+		);			
+	}
+	
+	
+	public void menuConsultas()throws Exception {	
+		System .out.print(
+			"	CONSULTAS EM: \n\n"	
+			+"=> ARQUIVO\n"
+			+"=> nLISTA\n"
+			+"=> nSAIR\n"
+		);		
+	}
+	
+	
+	public void menuImprimir()throws Exception {	
+		System .out.print(
+			"	MENU OPÇÕES DE IMPRESSÃO:\n\n"	
+			+"=> ARQUIVO\n"
+			+"=> nLISTA\n"
+			+"=> AMBOS\n"
+			+"=> SAIR\n"
+		);		
+	}
+	
 }

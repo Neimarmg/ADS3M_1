@@ -1,6 +1,7 @@
 package Aplicacao;
-import java.io.IOException;
+
 import java.util.Scanner;
+
 import Utilitarios.Formatos;
 import Arquivos.Ficheiro;
 import Estruturas.ListaOrdenada;
@@ -12,75 +13,133 @@ public class acoes {
 	ListaOrdenada r = new ListaOrdenada<>();
 	Ficheiro f = new Ficheiro();
 	
+	
+	public void executaComandos(){	
+		i.msgDigitaComando();
+		comando = var.next().toLowerCase();
+	}
+	
+	
+	public void consulta() throws Exception{	
+		i.menuConsultas();
+		executaComandos();
+		
+		switch (comando) {
+		
+		case "lista":
+			i.msgNaoImplementado();
+			break;
+			
+		case "arquivo":
+			i.msgNaoImplementado();
+			break;
 
-	public void cadastraInten()throws Exception {	
-		i.msgb("OPÇÕES DE COMANDO: \n"	
-				+"\t= NOVO\n"
-				+"\t= SAIR");
-			i.msg("\nComando: ");		
-			comando = var.next().toLowerCase();
-			
-			switch (comando) {
-			
-			case "novo":					
-				String nomeAquivo = "lt.txt"; 
-				r.insereRegistro(nomeAquivo);
-				break;
+		default:
+			i.msgOpcaoInvalida();
+			consulta();
+			break;
+		}
+		
+	}
 
-			case "sair":
-				i.msg("Você saiu do cadastro.");
-				break;
+	
+	public void salvaDado() throws Exception{	
+		i.menuInsert();		
+		executaComandos();
+		
+		switch (comando) {
 			
-			default:
-				i.msgOpcaoInvalida();
-				break;
-			}
+		case "arquivo":		
+			String nomeAquivo = "lt.txt"; 
+			r.insereRegistro(nomeAquivo);
+			break;
+			
+		case "lista":		
+			i.msgNaoImplementado();
+			break;
+
+		case "ambos":		
+			i.msgNaoImplementado();
+			break;
+			
+		case "sair":
+			i.msgSair();
+			break;
+			
+		default:
+			i.msgOpcaoInvalida();
+			salvaDado();
+			break;
+		}
 			
 	}	
 	
 	
-	public void informaArquivo() throws Exception {
-		i.msgb("OPÇÕES DE COMANDO: \n"	
-			+"\t= NOVO\n"
-			+"\t= EXISTENTE\n");
-		i.msg("\nComando: ");
-		comando = var.next();
-		f.executaComando(comando);
+	public void imprime() throws Exception {	
+		i.menuImprimir();
+		executaComandos();
+		
+		switch (comando) {
+		
+		case "":
+			
+			break;
+
+		default:
+			i.msgOpcaoInvalida();
+			imprime();
+			break;
+		}		
 	}
 	
 	
-	private void SelecionaComandos(String comando) throws Exception {
+	public void ExecutaAquivo() throws Exception {	
+		i.menuImprimir();
+		executaComandos();
 		
-		String c = comando.toLowerCase();
-	
-		switch (c) {
+		switch (comando) {
 		
-		case "consultar":
+		case "":
 			
 			break;
+
+		default:
+			i.msgOpcaoInvalida();
+			ExecutaAquivo();
+			break;
+		}		
+	}
+	
+	
+	public void menuPricipal() throws Exception{
+		executaComandos();
 			
-		case "cadastrar":
-			cadastraInten();
+		switch (comando) {
+		
+		case "consultar":
+			i.msgNaoImplementado();
+			break;
+			
+		case "inserir":
+			salvaDado();
 			break;
 			
 		case "imprimir":
-
+			i.msgNaoImplementado();
 			break;
 			
 		case "arquivo":
-			informaArquivo();			
+			i.msgNaoImplementado();
+			break;
+		
+		case "sair":
+			i.msgSair();
 			break;
 			
 		default: 
 			i.msgOpcaoInvalida();
-			ExecutaComandos();
+			menuPricipal();
 			break;
 		}
-	}
-	
-	
-	public void ExecutaComandos() throws Exception  {	
-		i.msg("COMANDO: ");		
-		SelecionaComandos(var.next());
 	}
 }
