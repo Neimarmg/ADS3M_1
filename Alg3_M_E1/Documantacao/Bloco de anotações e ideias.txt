@@ -1,5 +1,43 @@
 Planejamento
 
+
+Extrutura class arquivo
+
+	BuscaArquivoExistente()
+	
+	ImprimeAquivo()
+	
+	criaNovoAquivo()
+
+	excutaComando()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=============================
+
 Extrutura do menu
 
 OQUE VOCÊ DESEJA FAZER?:

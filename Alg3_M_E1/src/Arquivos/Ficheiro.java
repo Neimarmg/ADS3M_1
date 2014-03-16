@@ -18,7 +18,8 @@ public class Ficheiro {
 	Formatos i = new Formatos();
 	Include n =  new Include();
 
-		private void leArquivoExitente(String nomeAquivo) throws Exception {
+		
+		private void buscaArquivoExistente(String nomeAquivo) throws Exception {
 			Path p = Paths.get(nomeAquivo);
 			i.msg("Arquivo existente: "+p);
 	    }
@@ -37,7 +38,6 @@ public class Ficheiro {
 				 i.msg(readLine +"\n");
 			 }
 			 i.msgl();
-			 i.msg("?????????????????????????????");
         }
         
 
@@ -60,7 +60,6 @@ public class Ficheiro {
 				i.msgl();
 				i.msgOpcaoInvalida();
 				acoes a  = new acoes();
-				a.informaArquivo();
 				break;
 				
 			}       	
