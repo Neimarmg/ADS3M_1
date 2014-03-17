@@ -38,7 +38,7 @@ public class Formatos {
 	
 	public void msgSair(){
 		
-		System.err.print("\nVocê optou por sair desta seção\n"
+		System.err.print("\nVocê optou por sair do programa\n"
 				+ "Obrigado!!!");;
 	}
 	

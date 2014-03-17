@@ -33,7 +33,11 @@ public class acoes {
 		case "arquivo":
 			i.msgNaoImplementado();
 			break;
-
+			
+		case "sair":
+			i.msgSair();
+			break;
+			
 		default:
 			i.msgOpcaoInvalida();
 			consulta();
@@ -91,6 +95,10 @@ public class acoes {
 			
 			break;
 
+		case "sair":
+			i.msgSair();
+			break;
+			
 		default:
 			i.msgOpcaoInvalida();
 			imprime();
@@ -123,6 +131,10 @@ public class acoes {
 			f.removeArquivo(comando);
 			break;
 		
+		case "sair":
+			i.msgSair();
+			break;
+			
 		default:
 			i.msgOpcaoInvalida();
 			ExecutaAquivo();

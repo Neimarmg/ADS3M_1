@@ -9,9 +9,7 @@ public class mainE1 {
 	Dia d = new Dia();
 	
 	private void Cabecalho() {
-		i.msg("====================================================\n"
-		+"       EXERCÍCIO DE ESTRUTURAS LINEARES E1!!! "
-		+"\n====================================================\n\n");
+	    i.msgb("	EXERCÍCIO DE ESTRUTURAS LINEARES E1!!! ");
 	}
 	
 	

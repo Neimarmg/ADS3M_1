@@ -17,25 +17,6 @@ Extrutura class arquivo
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 =============================
 
 Extrutura do menu
