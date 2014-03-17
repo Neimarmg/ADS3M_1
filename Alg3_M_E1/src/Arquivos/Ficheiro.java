@@ -39,7 +39,7 @@ public class Ficheiro {
 	}
 	          
 	      
-    public void imprimeArquivo(String nomeAquivo){
+    public void imprimeArquivo(String nomeAquivo) throws Exception{
     	try {
 	        File file = new File(nomeAquivo);        	 
 	        FileInputStream in = new FileInputStream(file);
@@ -54,6 +54,8 @@ public class Ficheiro {
 			
 		} catch (FileNotFoundException e) {
 			i.msgb("O nome do arquivo esta incorreto ou não existe!");
+			acoes a = new acoes();
+			a.imprime();
 		}
     }	
 
