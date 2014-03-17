@@ -118,4 +118,12 @@ public class Formatos {
 		);		
 	}
 	
+	
+	public void  menuInserirNovo()throws Exception {	
+		msgb(
+			"	OPÇÕES PARA INSERÇÃO DE DADOS:\n\n"	
+			+"=> NOVO\n"
+			+"=> SAIR\n"
+		);		
+	}
 }

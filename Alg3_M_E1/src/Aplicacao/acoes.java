@@ -4,25 +4,29 @@ import java.util.Scanner;
 
 import Utilitarios.Formatos;
 import Arquivos.Ficheiro;
+import Estruturas.ListaEncadeada;
 import Estruturas.ListaOrdenada;
+import Estruturas.Registrador;
 
-public class acoes {
+public class acoes<T> {
 	String comando;
 	Scanner var = new Scanner(System.in);
 	Formatos i = new Formatos();
-	ListaOrdenada r = new ListaOrdenada<>();
 	Ficheiro f = new Ficheiro();
+	ListaEncadeada<String> lista = new ListaEncadeada<String>();
+	Registrador registra = new Registrador();
+	
 	
 	/**
 	 * Metodo global de capatação de comandos do programa
+	 * @throws Exception 
 	 */
-	public void executaComandos(){	
+	public void executaComandos() throws Exception{
 		i.msgDigitaComando();
 		comando = var.next().toLowerCase();
 	}
 	
-	/**
-	 * 
+	/** 
 	 * @throws Exception
 	 */
 	public void consulta() throws Exception{	
@@ -51,8 +55,7 @@ public class acoes {
 		
 	}
 
-	/**
-	 * 
+	/**	 * 
 	 * @throws Exception
 	 */
 	public void salvaDado() throws Exception{	
@@ -61,17 +64,20 @@ public class acoes {
 		
 		switch (comando) {
 			
-		case "arquivo":		
-			String nomeAquivo = "lt.txt"; 
-			r.insereRegistro(nomeAquivo);
+		case "arquivo":	
+			i.msg("Nome arquivo: ");
+			comando = var.next();
+			registra.insereArquivo(comando);
 			break;
 			
 		case "lista":		
-			i.msgNaoImplementado();
+			registra.insereLista();
 			break;
 
 		case "ambos":		
-			i.msgNaoImplementado();
+			i.msg("Nome arquivo: ");
+			comando = var.next();
+			registra.insereAmbas(comando);			
 			break;
 			
 		case "sair":
@@ -86,8 +92,7 @@ public class acoes {
 			
 	}	
 
-	/**
-	 * 
+	/** 
 	 * @throws Exception
 	 */
 	public void imprime() throws Exception {	
@@ -102,8 +107,8 @@ public class acoes {
 			f.imprimeArquivo(comando);
 			break;
 		
-		case "":
-			
+		case "lista":
+			lista.print();	
 			break;
 
 		case "sair":
@@ -117,8 +122,7 @@ public class acoes {
 		}		
 	}
 	
-	/**
-	 * 
+	/** 
 	 * @throws Exception
 	 */
 	public void ExecutaAquivo() throws Exception {	

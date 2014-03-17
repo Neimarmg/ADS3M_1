@@ -15,6 +15,7 @@ public class Include {
 			BufferedWriter buff;
 			fileR = new FileWriter(new File(arquivo),true);
 			buff = new BufferedWriter(fileR);	
+			buff.newLine();
 			buff.write(desc);					
 			buff.close();
 		} catch (IOException e) {
