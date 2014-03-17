@@ -73,13 +73,19 @@ public class acoes {
 		}
 			
 	}	
-	
+
 	
 	public void imprime() throws Exception {	
 		i.menuImprimir();
 		executaComandos();
 		
-		switch (comando) {
+		switch (comando) {		
+		
+		case "arquivo":
+			i.nomeArquivo();
+			executaComandos();
+			f.imprimeArquivo(comando);
+			break;
 		
 		case "":
 			
@@ -94,15 +100,23 @@ public class acoes {
 	
 	
 	public void ExecutaAquivo() throws Exception {	
-		i.menuImprimir();
+		i.menuArquivo();
 		executaComandos();
 		
 		switch (comando) {
-		
-		case "":
 			
+		case "buscar":
+			i.nomeArquivo();			
+			executaComandos();
+			f.buscaArquivoExistente(comando);
 			break;
-
+		
+		case "novo":
+			i.nomeArquivo();
+			executaComandos();
+			f.criaNovoArquivo(comando);
+			break;
+		
 		default:
 			i.msgOpcaoInvalida();
 			ExecutaAquivo();
@@ -125,11 +139,11 @@ public class acoes {
 			break;
 			
 		case "imprimir":
-			i.msgNaoImplementado();
+			imprime();
 			break;
 			
 		case "arquivo":
-			i.msgNaoImplementado();
+			ExecutaAquivo();
 			break;
 		
 		case "sair":

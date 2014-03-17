@@ -68,8 +68,27 @@ public class Formatos {
 		System .out.print(
 			"	MENU OPÇÕES DE IMPRESSÃO:\n\n"	
 			+"=> ARQUIVO\n"
-			+"=> nLISTA\n"
+			+"=> LISTA\n"
 			+"=> AMBOS\n"
+			+"=> SAIR\n"
+		);		
+	}
+	
+	
+	public void  nomeArquivo()throws Exception {	
+		msgb(
+			"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
+			+"=> Nome.txt\n"
+			+"=> SAIR\n"
+		);		
+	}
+	
+	
+	public void menuArquivo()throws Exception {	
+		msgb(
+			"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
+			+"=> NOVO\n"
+			+"=> BUSCAR\n"
 			+"=> SAIR\n"
 		);		
 	}

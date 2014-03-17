@@ -1,9 +1,11 @@
 package Arquivos;
 
+import java.awt.FileDialog;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.Reader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.nio.file.Paths;
 import java.nio.file.Path;
@@ -17,52 +19,44 @@ public class Ficheiro {
 	Scanner var = new Scanner(System.in);
 	Formatos i = new Formatos();
 	Include n =  new Include();
+	acoes a = new acoes();
+	private Scanner sc;
 
+	
+	public void criaNovoArquivo(final String nomeAquivo){
+		try {
+			FileWriter p = new FileWriter(new File(nomeAquivo),true);
+			i.msg("Novo arquivo criado: "+p);
+		} catch (Exception e) {
+			e.getMessage();
+		}
 		
-		private void buscaArquivoExistente(String nomeAquivo) throws Exception {
-			Path p = Paths.get(nomeAquivo);
-			i.msg("Arquivo existente: "+p);
-	    }
+		
+	}
+	
+	public void buscaArquivoExistente(final String nomeAquivo){
+		Path p = Paths.get(nomeAquivo);
+		i.msg("Arquivo encontrado: "+p);
+	}
 	          
 	      
-        public void imprimeArquivo(String nomeAquivo) throws FileNotFoundException{
-        	
-        	File file = new File(nomeAquivo);
-        	 
-        	 FileInputStream in = new FileInputStream(file);
-			 Scanner scanner = new Scanner(in);  
-			 i.msgl();
-			 while (scanner.hasNext()) {
-				 String readLine = scanner.next();				 
-				 readLine.toString();
-				 i.msg(readLine +"\n");
-			 }
-			 i.msgl();
-        }
-        
-
- 		public void executaComando(String comando) throws Exception { 
- 			String nomeAquivo = "lt.txt";
-			String c = comando.toLowerCase();
-        	
-        	switch (c) {
-			case "novo":
-				i.msg("\nNome do aquvixo: ");
-				String arquivo = var.next();
-				i.msg("\nComando opçional não implementado!\n");
-				break;
+    public void imprimeArquivo(String nomeAquivo){
+    	try {
+	        File file = new File(nomeAquivo);        	 
+	        FileInputStream in = new FileInputStream(file);
+	        
+			sc = new Scanner(in);  
+			i.msgl();
+			while (sc.hasNext()) {
+				String readLine = sc.next();				 
+				i.msg("\n" +readLine.toString());
+			}
+			i.msgl();
 			
-			case "existente":
-				leArquivoExitente(nomeAquivo);
-				break;
-			
-			default:
-				i.msgl();
-				i.msgOpcaoInvalida();
-				acoes a  = new acoes();
-				break;
-				
-			}       	
-        } 
+		} catch (FileNotFoundException e) {
+			i.msg("O nome do arquivo esta incorreto ou não existe!");
+			i.msgOpcaoInvalida();
+		}
+    }	
 
 }

@@ -22,7 +22,7 @@ public class mainE1 {
 
 	public void ExecutaMenu() {		
 		i.msgb("	OQUE VOCÊ DESEJA FAZER?:\n\n"
-		+"=> CADASTRAR\n"
+		+"=> INSERIR\n"
 		+"=> CONSULTAR\n"
 		+"=> IMPRIMIR\n"
 		+"=> ARQUIVO\n"

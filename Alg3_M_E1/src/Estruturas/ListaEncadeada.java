@@ -78,7 +78,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 		f.msgl();		
 		
 		acoes a = new acoes();
-		a.cadastraInten();	
+		a.salvaDado();	
 
 		
 	}
