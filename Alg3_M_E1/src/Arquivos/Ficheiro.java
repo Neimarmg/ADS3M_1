@@ -1,11 +1,9 @@
 package Arquivos;
 
-import java.awt.FileDialog;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.util.Scanner;
 import java.nio.file.Paths;
 import java.nio.file.Path;
@@ -24,22 +22,29 @@ public class Ficheiro {
 	
 	public void criaNovoArquivo(final String nomeAquivo){
 		try {
-			FileWriter p = new FileWriter(new File(nomeAquivo),true);
-			i.msg("Novo arquivo criado: "+p);
+			FileWriter c = new FileWriter(new File(nomeAquivo),true);
+			i.msg("Novo arquivo criado: "+c);
+			c.close();
 		} catch (Exception e) {
-			e.getMessage();
-		}
-		
-		
+			i.msg("Não foi possivél criar um novo arquivo!");
+		}		
 	}
+	
+	  
+	public void removeArquivo(String nomeArquivo){
+		/** Realiza a remoção lógica do registro
+		* 
+		*/
+	} 
+	
 	
 	public void buscaArquivoExistente(final String nomeAquivo){
 		Path p = Paths.get(nomeAquivo);
 		i.msg("Arquivo encontrado: "+p);
 	}
-	          
-	      
-    public void imprimeArquivo(String nomeAquivo) throws Exception{
+
+	
+	public void imprimeArquivo(String nomeAquivo) throws Exception{
     	try {
 	        File file = new File(nomeAquivo);        	 
 	        FileInputStream in = new FileInputStream(file);
@@ -51,12 +56,12 @@ public class Ficheiro {
 				i.msg("\n" +readLine.toString());
 			}
 			i.msgl();
+			sc.close();
 			
 		} catch (FileNotFoundException e) {
 			i.msgb("O nome do arquivo esta incorreto ou não existe!");
 			acoes a = new acoes();
 			a.imprime();
 		}
-    }	
-
+    }
 }

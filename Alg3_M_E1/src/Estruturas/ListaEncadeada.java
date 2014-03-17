@@ -73,7 +73,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 		lista.insert(new Nodo<String>(fone.toUpperCase()));		
 		
 		desc = nome +" " +fone +"\n";
-		i.insereLinha(arquivo,desc);
+		i.novoRegistro(arquivo,desc);
 		
 		f.msgl();		
 		

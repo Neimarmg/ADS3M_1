@@ -7,52 +7,42 @@ import java.io.IOException;
 
 public class Include {
 	
-	FileWriter fileR;
-	BufferedWriter buff;
-	
-	//try{	
-		public void insereLinha(String arquivo, String  desc) throws IOException{
+	Formatos i = new Formatos();
+
+	public void novoRegistro(String arquivo, String  desc){
+		try {
+			FileWriter fileR;
+			BufferedWriter buff;
 			fileR = new FileWriter(new File(arquivo),true);
 			buff = new BufferedWriter(fileR);	
 			buff.write(desc);					
-			buff.close();	
-		}
+			buff.close();
+		} catch (IOException e) {
+			i.msg("Não foi possivél inserir registro!");
+		}	
+	}
+		
+		
+	public void removeRegistro(){
+		/** Realiza a remoção lógica do registro
+		* 
+		*/
+	}  
+		
 		
 
-		public void criaArquivo(String nomeArquivo){
-			/** Realiza a remoção lógica do registro
-			 * 
-			 */
-		} 
-
-		
-		public void removeLinha(){
-			/** Realiza a remoção lógica do registro
-			 * 
-			 */
-		}  
 		
 		
-		public void removeArquivo(String nomeArquivo){
-			/** Realiza a remoção lógica do registro
-			 * 
-			 */
-		} 
+	public void salva(){
+		/** Realiza a remoção lógica do registro
+		* 
+		*/
+	} 
 		
-		
-		public void salva(){
-			/** Realiza a remoção lógica do registro
-			 * 
-			 */
-		} 
-		
-		public void altera(){
-			/** Realiza a remoção lógica do registro
-			 * 
-			 */
-		} 
-
-	//} Catch(){
-		//printMsg(?)
-	//}
+	
+	public void altera(){
+		/** Realiza a remoção lógica do registro
+		* 
+		*/
+	} 
 }
