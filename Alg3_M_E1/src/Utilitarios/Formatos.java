@@ -89,6 +89,7 @@ public class Formatos {
 			"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
 			+"=> NOVO\n"
 			+"=> BUSCAR\n"
+			+"=> REMOVER\n"
 			+"=> SAIR\n"
 		);		
 	}

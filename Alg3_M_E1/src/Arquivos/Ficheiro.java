@@ -32,9 +32,10 @@ public class Ficheiro {
 	
 	  
 	public void removeArquivo(String nomeArquivo){
-		/** Realiza a remoção lógica do registro
-		* 
-		*/
+		String nome = nomeArquivo; 
+		File f = new File(nome); 
+		f.delete();
+		i.msg("O aquivo " +nome +" foi removido!");
 	} 
 	
 	

@@ -117,6 +117,12 @@ public class acoes {
 			f.criaNovoArquivo(comando);
 			break;
 		
+		case "remover":
+			i.nomeArquivo();
+			executaComandos();
+			f.removeArquivo(comando);
+			break;
+		
 		default:
 			i.msgOpcaoInvalida();
 			ExecutaAquivo();
