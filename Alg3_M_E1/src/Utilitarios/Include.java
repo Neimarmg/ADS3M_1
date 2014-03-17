@@ -1,6 +1,7 @@
 package Utilitarios;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -11,16 +12,12 @@ public class Include {
 	
 	//try{	
 		public void insereLinha(String arquivo, String  desc) throws IOException{
-			fileR = new FileWriter(arquivo);
+			fileR = new FileWriter(new File(arquivo),true);
 			buff = new BufferedWriter(fileR);	
-			buff.flush();
-			buff.newLine();	
 			buff.write(desc);					
-			buff.close();		 
+			buff.close();	
 		}
 		
-
-	
 
 		public void criaArquivo(String nomeArquivo){
 			/** Realiza a remoção lógica do registro
@@ -28,11 +25,13 @@ public class Include {
 			 */
 		} 
 
+		
 		public void removeLinha(){
 			/** Realiza a remoção lógica do registro
 			 * 
 			 */
 		}  
+		
 		
 		public void removeArquivo(String nomeArquivo){
 			/** Realiza a remoção lógica do registro
@@ -40,11 +39,13 @@ public class Include {
 			 */
 		} 
 		
+		
 		public void salva(){
 			/** Realiza a remoção lógica do registro
 			 * 
 			 */
 		} 
+		
 		public void altera(){
 			/** Realiza a remoção lógica do registro
 			 * 

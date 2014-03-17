@@ -65,7 +65,7 @@ public class Formatos {
 	
 	
 	public void menuImprimir()throws Exception {	
-		System .out.print(
+		msgb(
 			"	MENU OPÇÕES DE IMPRESSÃO:\n\n"	
 			+"=> ARQUIVO\n"
 			+"=> LISTA\n"

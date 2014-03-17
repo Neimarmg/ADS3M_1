@@ -19,7 +19,6 @@ public class Ficheiro {
 	Scanner var = new Scanner(System.in);
 	Formatos i = new Formatos();
 	Include n =  new Include();
-	acoes a = new acoes();
 	private Scanner sc;
 
 	
@@ -54,8 +53,7 @@ public class Ficheiro {
 			i.msgl();
 			
 		} catch (FileNotFoundException e) {
-			i.msg("O nome do arquivo esta incorreto ou não existe!");
-			i.msgOpcaoInvalida();
+			i.msgb("O nome do arquivo esta incorreto ou não existe!");
 		}
     }	
 
