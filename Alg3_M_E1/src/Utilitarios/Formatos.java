@@ -8,6 +8,10 @@ public class Formatos {
 	}
 	
 	
+	/**
+	 * 
+	 * @param desc
+	 */
 	public void msgb(Object desc){
 		System .out.print(
 			"\n====================================================\n"
@@ -43,6 +47,10 @@ public class Formatos {
 	}
 	
 	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	public void menuInsert() throws Exception {
 		msgb(
 			"	GRAVAR DADOS EM: \n\n"	
@@ -54,6 +62,10 @@ public class Formatos {
 	}
 	
 	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	public void menuConsultas()throws Exception {	
 		System .out.print(
 			"	CONSULTAS EM: \n\n"	
@@ -64,6 +76,10 @@ public class Formatos {
 	}
 	
 	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	public void menuImprimir()throws Exception {	
 		msgb(
 			"	MENU OPÇÕES DE IMPRESSÃO:\n\n"	
@@ -75,6 +91,10 @@ public class Formatos {
 	}
 	
 	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	public void  nomeArquivo()throws Exception {	
 		msgb(
 			"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
@@ -84,6 +104,10 @@ public class Formatos {
 	}
 	
 	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	public void menuArquivo()throws Exception {	
 		msgb(
 			"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	

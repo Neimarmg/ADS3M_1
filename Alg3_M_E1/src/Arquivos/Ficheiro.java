@@ -19,7 +19,10 @@ public class Ficheiro {
 	Include n =  new Include();
 	private Scanner sc;
 
-	
+	/**
+	 * 
+	 * @param nomeAquivo
+	 */
 	public void criaNovoArquivo(final String nomeAquivo){
 		try {
 			FileWriter c = new FileWriter(new File(nomeAquivo),true);
@@ -30,7 +33,10 @@ public class Ficheiro {
 		}		
 	}
 	
-	  
+	/**
+	 *   
+	 * @param nomeArquivo
+	 */
 	public void removeArquivo(String nomeArquivo){
 		String nome = nomeArquivo; 
 		File f = new File(nome); 
@@ -44,7 +50,11 @@ public class Ficheiro {
 		i.msg("Arquivo encontrado: "+p);
 	}
 
-	
+	/**
+	 * 
+	 * @param nomeAquivo
+	 * @throws Exception
+	 */
 	public void imprimeArquivo(String nomeAquivo) throws Exception{
     	try {
 	        File file = new File(nomeAquivo);        	 

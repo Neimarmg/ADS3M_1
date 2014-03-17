@@ -13,13 +13,18 @@ public class acoes {
 	ListaOrdenada r = new ListaOrdenada<>();
 	Ficheiro f = new Ficheiro();
 	
-	
+	/**
+	 * Metodo global de capatação de comandos do programa
+	 */
 	public void executaComandos(){	
 		i.msgDigitaComando();
 		comando = var.next().toLowerCase();
 	}
 	
-	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	public void consulta() throws Exception{	
 		i.menuConsultas();
 		executaComandos();
@@ -46,7 +51,10 @@ public class acoes {
 		
 	}
 
-	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	public void salvaDado() throws Exception{	
 		i.menuInsert();		
 		executaComandos();
@@ -78,7 +86,10 @@ public class acoes {
 			
 	}	
 
-	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	public void imprime() throws Exception {	
 		i.menuImprimir();
 		executaComandos();
@@ -106,7 +117,10 @@ public class acoes {
 		}		
 	}
 	
-	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	public void ExecutaAquivo() throws Exception {	
 		i.menuArquivo();
 		executaComandos();
@@ -142,7 +156,10 @@ public class acoes {
 		}		
 	}
 	
-	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	public void menuPricipal() throws Exception{
 		executaComandos();
 			

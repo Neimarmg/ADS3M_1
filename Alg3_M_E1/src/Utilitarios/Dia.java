@@ -9,13 +9,15 @@ public class Dia {
 	Calendar dh = Calendar.getInstance();
 	SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 	
-	
 	public void ImprimeHora() {		
 		dh.set(Calendar.DST_OFFSET,0);		
 		m.msg("São:" +sdf.format(dh.getTime()) +"hs");
 	}
 	
-	
+	/**
+	 * 
+	 * @param hora
+	 */
 	public void execuataCabecalho(Object hora){		
 		m.msg("OLA!!!" +
 				"\nSão: " +hora +"\n");
