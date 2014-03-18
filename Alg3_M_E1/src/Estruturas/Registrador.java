@@ -72,11 +72,15 @@ public class Registrador {
 			
 		case "imprimir":
 			f.msgl();
-			f.msg("Dados em aquivo: ");
+			f.msg("Dados em aquivo: \n");
 			a.imprimeArquivo(arquivo);
 			insereArquivo(arquivo);
 			break;
 			
+		case "excluir":
+			f.msg("\nNome Contato a excluir: ");
+			desc =  var.next().toUpperCase();
+			i.removeRegistro(arquivo, desc);
 		case "sair":
 			f.msgSair();
 			break;

@@ -27,7 +27,7 @@ public class Formatos {
 	
 	
 	public void msgOpcaoInvalida(){
-		System .err.print("\nOpção de comando inválido. Tente novamente!\n");
+		System .err.println("\nOpção de comando inválido. Tente novamente!");
 	}
 	
 	
@@ -36,7 +36,8 @@ public class Formatos {
 	}
 	
 	public void msgDigitaComando(){
-		System .out.print("\nCOMANDO: ");;
+		System .out.println();
+		System .out.print("COMANDO: ");
 	}
 	
 	
@@ -47,8 +48,7 @@ public class Formatos {
 	}
 	
 	
-	/**
-	 * 
+	/** 
 	 * @throws Exception
 	 */
 	public void menuInsert() throws Exception {
@@ -62,8 +62,7 @@ public class Formatos {
 	}
 	
 	
-	/**
-	 * 
+	/** 
 	 * @throws Exception
 	 */
 	public void menuConsultas()throws Exception {	
@@ -76,8 +75,7 @@ public class Formatos {
 	}
 	
 	
-	/**
-	 * 
+	/** 
 	 * @throws Exception
 	 */
 	public void menuImprimir()throws Exception {	
@@ -89,8 +87,7 @@ public class Formatos {
 	}
 	
 	
-	/**
-	 * 
+	/**	
 	 * @throws Exception
 	 */
 	public void  nomeArquivo()throws Exception {	
@@ -102,8 +99,7 @@ public class Formatos {
 	}
 	
 	
-	/**
-	 * 
+	/** 
 	 * @throws Exception
 	 */
 	public void menuArquivo()throws Exception {	
@@ -117,11 +113,15 @@ public class Formatos {
 	}
 	
 	
+	/** 
+	 * @throws Exception
+	 */
 	public void  menuInserirNovo()throws Exception {	
 		msgb(
 			"	OPÇÕES PARA INSERÇÃO DE DADOS:\n\n"	
 			+"=> NOVO\n"
 			+"=> IMPRIMIR\n"
+			+"=> EXCLUIR\n"
 			+"=> SAIR\n"
 		);		
 	}

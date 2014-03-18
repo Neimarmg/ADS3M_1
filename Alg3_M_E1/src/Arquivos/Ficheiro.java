@@ -1,8 +1,10 @@
 package Arquivos;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Scanner;
 import java.nio.file.Paths;
@@ -57,18 +59,14 @@ public class Ficheiro {
 	 */
 	public void imprimeArquivo(String nomeAquivo) throws Exception{
     	try {
-	        File file = new File(nomeAquivo);        	 
-	        FileInputStream in = new FileInputStream(file);
-	        
-			sc = new Scanner(in);  
-			i.msgl();
-			while (sc.hasNext()) {
-				String readLine = sc.next();				 
-				i.msg(readLine.toString() +"\n");
+			FileReader f = new FileReader(nomeAquivo);
+			BufferedReader br = new BufferedReader(f);
+			String linha = br.readLine();
+			while(linha !=null ){
+				System.out.println(linha);
+				linha = br.readLine();
 			}
-			i.msgl();
-			sc.close();
-			
+			br.close();			
 		} catch (FileNotFoundException e) {
 			i.msgb("O nome do arquivo esta incorreto ou não existe!");
 			acoes a = new acoes();

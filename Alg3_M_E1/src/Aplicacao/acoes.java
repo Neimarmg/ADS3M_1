@@ -104,6 +104,7 @@ public class acoes<T> {
 			i.nomeArquivo();
 			executaComandos();
 			f.imprimeArquivo(comando);
+			imprime();
 			break;
 
 		case "sair":
