@@ -84,8 +84,6 @@ public class Formatos {
 		msgb(
 			"	MENU OPÇÕES DE IMPRESSÃO:\n\n"	
 			+"=> ARQUIVO\n"
-			+"=> LISTA\n"
-			+"=> AMBOS\n"
 			+"=> SAIR\n"
 		);		
 	}
@@ -123,6 +121,7 @@ public class Formatos {
 		msgb(
 			"	OPÇÕES PARA INSERÇÃO DE DADOS:\n\n"	
 			+"=> NOVO\n"
+			+"=> IMPRIMIR\n"
 			+"=> SAIR\n"
 		);		
 	}

@@ -62,8 +62,7 @@ public class acoes<T> {
 		i.menuInsert();		
 		executaComandos();
 		
-		switch (comando) {
-			
+		switch (comando) {			
 		case "arquivo":	
 			i.msg("Nome arquivo: ");
 			comando = var.next();
@@ -74,7 +73,7 @@ public class acoes<T> {
 			registra.insereLista();
 			break;
 
-		case "ambos":		
+		case "ambas":		
 			i.msg("Nome arquivo: ");
 			comando = var.next();
 			registra.insereAmbas(comando);			
@@ -88,9 +87,9 @@ public class acoes<T> {
 			i.msgOpcaoInvalida();
 			salvaDado();
 			break;
-		}
-			
+		}			
 	}	
+	
 
 	/** 
 	 * @throws Exception
@@ -105,10 +104,6 @@ public class acoes<T> {
 			i.nomeArquivo();
 			executaComandos();
 			f.imprimeArquivo(comando);
-			break;
-		
-		case "lista":
-			lista.print();	
 			break;
 
 		case "sair":

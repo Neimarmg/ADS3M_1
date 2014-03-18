@@ -17,7 +17,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	public void print(){
 		Nodo<?> nodo = head;
 		do {
-			i.msgb(nodo.getData());
+			i.msg("\n" +nodo.getData());
 			nodo = nodo.getNext();
 		} while (nodo != null);
 	}

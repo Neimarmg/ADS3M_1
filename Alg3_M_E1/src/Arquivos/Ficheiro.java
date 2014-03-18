@@ -64,7 +64,7 @@ public class Ficheiro {
 			i.msgl();
 			while (sc.hasNext()) {
 				String readLine = sc.next();				 
-				i.msg("\n" +readLine.toString());
+				i.msg(readLine.toString() +"\n");
 			}
 			i.msgl();
 			sc.close();
@@ -76,3 +76,4 @@ public class Ficheiro {
 		}
     }
 }
+
