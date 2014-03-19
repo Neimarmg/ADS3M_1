@@ -8,7 +8,7 @@ import Estruturas.ListaEncadeada;
 import Estruturas.ListaOrdenada;
 import Estruturas.Registrador;
 
-public class acoes<T> {
+public class Interface<T> {
 	String comando;
 	Scanner var = new Scanner(System.in);
 	Formatos i = new Formatos();
@@ -22,7 +22,7 @@ public class acoes<T> {
 	 * @throws Exception 
 	 */
 	public void leComandos() throws Exception{
-		i.msgDigitaComando();
+		i.digitaComando();
 		comando = var.next().toLowerCase();
 	}
 	
@@ -36,12 +36,12 @@ public class acoes<T> {
 		switch (comando) {
 		
 		case "lista":
-			i.msgNaoImplementado();
+			i.naoImplementado();
 			consulta();
 			break;
 			
 		case "arquivo":
-			i.msgNaoImplementado();
+			i.naoImplementado();
 			consulta();
 			break;
 			
@@ -50,7 +50,7 @@ public class acoes<T> {
 			break;
 			
 		default:
-			i.msgOpcaoInvalida();
+			i.opcaoInvalida();
 			consulta();
 			break;
 		}
@@ -86,7 +86,7 @@ public class acoes<T> {
 			break;
 			
 		default:
-			i.msgOpcaoInvalida();
+			i.opcaoInvalida();
 			salva();
 			break;
 		}			
@@ -105,7 +105,7 @@ public class acoes<T> {
 		case "arquivo":
 			i.nomeArquivo();
 			leComandos();
-			f.imprimeDados(comando);
+			f.imprime(comando);
 			imprime();
 			break;
 
@@ -114,7 +114,7 @@ public class acoes<T> {
 			break;
 			
 		default:
-			i.msgOpcaoInvalida();
+			i.opcaoInvalida();
 			imprime();
 			break;
 		}		
@@ -146,7 +146,7 @@ public class acoes<T> {
 		case "remover":
 			i.nomeArquivo();
 			leComandos();
-			f.removeArquivo(comando);
+			f.remove(comando);
 			manipulaAquivo();
 			break;
 		
@@ -155,7 +155,7 @@ public class acoes<T> {
 			break;
 			
 		default:
-			i.msgOpcaoInvalida();
+			i.opcaoInvalida();
 			manipulaAquivo();
 			break;
 		}		
@@ -171,7 +171,7 @@ public class acoes<T> {
 		switch (comando) {
 		
 		case "consultar":
-			i.msgNaoImplementado();
+			i.naoImplementado();
 			break;
 			
 		case "inserir":
@@ -191,7 +191,7 @@ public class acoes<T> {
 			break;
 			
 		default: 
-			i.msgOpcaoInvalida();
+			i.opcaoInvalida();
 			iniciaTarefas();
 			break;
 		}

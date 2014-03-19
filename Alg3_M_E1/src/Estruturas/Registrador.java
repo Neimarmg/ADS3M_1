@@ -18,7 +18,7 @@ public class Registrador {
 	
 	public void executaComando() throws Exception{
 		f.menuInserirNovo();
-		f.msgDigitaComando();
+		f.digitaComando();
 		desc = var.next().toLowerCase();	
 	}
 	
@@ -53,7 +53,7 @@ public class Registrador {
 			break;
 		
 		default:
-			f.msgOpcaoInvalida();
+			f.opcaoInvalida();
 			insereLista();
 			break;
 		}	
@@ -73,7 +73,7 @@ public class Registrador {
 		case "imprimir":
 			f.msgl();
 			f.msg("Dados em aquivo: \n");
-			a.imprimeDados(arquivo);
+			a.imprime(arquivo);
 			insereArquivo(arquivo);
 			break;
 			
@@ -86,7 +86,7 @@ public class Registrador {
 			break;
 		
 		default:
-			f.msgOpcaoInvalida();
+			f.opcaoInvalida();
 			insereArquivo(arquivo);
 			break;
 		}
@@ -111,7 +111,7 @@ public class Registrador {
 			lista.print();
 			f.msgl();
 			f.msg("Dados em aquivo: ");
-			a.imprimeDados(arquivo);
+			a.imprime(arquivo);
 			insereAmbas(arquivo);
 			break;
 			
@@ -120,7 +120,7 @@ public class Registrador {
 			break;
 		
 		default:
-			f.msgOpcaoInvalida();
+			f.opcaoInvalida();
 			insereAmbas(arquivo);
 			break;
 		}

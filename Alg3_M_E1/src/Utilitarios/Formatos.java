@@ -26,16 +26,16 @@ public class Formatos {
 	}
 	
 	
-	public void msgOpcaoInvalida(){
+	public void opcaoInvalida(){
 		System .err.println("\nOpção de comando inválido. Tente novamente!");
 	}
 	
 	
-	public void msgNaoImplementado(){
+	public void naoImplementado(){
 		System .err.print("\nNão implementado!\n");
 	}
 	
-	public void msgDigitaComando(){
+	public void digitaComando(){
 		System .out.println();
 		System .out.print("COMANDO: ");
 	}
@@ -93,7 +93,7 @@ public class Formatos {
 	public void  nomeArquivo()throws Exception {	
 		msgb(
 			"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
-			+"=> Nome.txt\n"
+			+"=> Nome.Extenção\n"
 			+"=> SAIR\n"
 		);		
 	}

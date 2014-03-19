@@ -11,7 +11,7 @@ import java.util.Scanner;
 import java.nio.file.Paths;
 import java.nio.file.Path;
 
-import Aplicacao.acoes;
+import Aplicacao.Interface;
 import Utilitarios.Formatos;
 import Utilitarios.Include;
 
@@ -23,7 +23,6 @@ public class Ficheiro {
 	private Scanner sc;
 
 	/**
-	 * 
 	 * @param nomeAquivo
 	 */
 	public void criaNovo(final String nomeAquivo){
@@ -39,7 +38,7 @@ public class Ficheiro {
 	/** Metodo de remoção de arquivo com verificação de exintencia do arquivo.
 	 * @param nomeArquivo
 	 */
-	public void removeArquivo(String nomeArquivo){
+	public void remove(String nomeArquivo){
 		String nome = nomeArquivo; 
 		File f = new File(nome); 
 		if (f.exists()){ 
@@ -52,6 +51,10 @@ public class Ficheiro {
 	} 
 	
 	
+	/**
+	 * 
+	 * @param nomeAquivo
+	 */
 	public void buscaExistente(final String nomeAquivo){
 		Path p = Paths.get(nomeAquivo);
 		i.msg("Arquivo encontrado: "+p);
@@ -61,7 +64,7 @@ public class Ficheiro {
 	 * @param nomeAquivo
 	 * @throws Exception
 	 */
-	public void imprimeDados(String nomeAquivo) throws Exception{
+	public void imprime(String nomeAquivo) throws Exception{
     	try {
 			FileReader f = new FileReader(nomeAquivo);
 			BufferedReader br = new BufferedReader(f);
@@ -73,7 +76,7 @@ public class Ficheiro {
 			br.close();			
 		} catch (FileNotFoundException e) {
 			i.msgb("O nome do arquivo esta incorreto ou não existe!");
-			acoes a = new acoes();
+			Interface a = new Interface();
 			a.imprime();
 		}
     }

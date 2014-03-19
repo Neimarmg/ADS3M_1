@@ -5,7 +5,7 @@ import Utilitarios.Formatos;
 
 public class mainE1 {
 	Formatos i = new Formatos();
-	acoes f = new acoes();
+	Interface f = new Interface();
 	Dia d = new Dia();
 	
 	private void escreveCabecalho() {

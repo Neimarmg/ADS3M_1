@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
 
-import Aplicacao.acoes;
+import Aplicacao.Interface;
 
 public class Include {
 	
