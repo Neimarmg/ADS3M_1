@@ -37,10 +37,12 @@ public class acoes<T> {
 		
 		case "lista":
 			i.msgNaoImplementado();
+			consulta();
 			break;
 			
 		case "arquivo":
 			i.msgNaoImplementado();
+			consulta();
 			break;
 			
 		case "sair":
