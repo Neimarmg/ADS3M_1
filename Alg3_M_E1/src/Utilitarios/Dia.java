@@ -31,17 +31,17 @@ public class Dia {
 		
 		if (hora >= 0 && hora <= 12)  {
 			execuataCabecalho(sdf.format(dh.getTime()) +"hs" +" da manhã!" +"");
-			s.bomDia();
+			s.desejaBomDia();
 		}		
 
 		if (hora >= 12  && hora <= 18)  {
 			execuataCabecalho(sdf.format(dh.getTime()) +"hs" +" da tarde!" +"");
-			s.boaTarde();
+			s.desejaBoaTarde();
 		}	
 		
 		if (hora > 18  && hora <= 24)  {
 			execuataCabecalho(sdf.format(dh.getTime()) +"hs" +" da noite!" +"");
-			s.boaNoite();
+			s.desejaBoaNoite();
 		}	
 	}
 }

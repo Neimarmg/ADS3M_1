@@ -4,10 +4,11 @@ public class Memoria {
 	
 	//try{		
 		
-		private int calculaMenoria() {
+		private void calculaMenoria() {
 			/** Verifica memória disponível para inserir novo					 * 
 			 */
-			return 0; //"?"
+			
+			
 		}
 		
 		

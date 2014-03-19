@@ -8,17 +8,17 @@ public class mainE1 {
 	acoes f = new acoes();
 	Dia d = new Dia();
 	
-	private void Cabecalho() {
+	private void escreveCabecalho() {
 	    i.msgb("	EXERCÍCIO DE ESTRUTURAS LINEARES E1!!! ");
 	}
 	
 	
-	public void saudacao() {
+	public void saudaUsuario() {
 		d.horario();
 	}
 	
 
-	public void ExecutaMenu() {		
+	public void mostarMenu() {		
 		i.msgb("	OQUE VOCÊ DESEJA FAZER?:\n\n"
 		+"=> INSERIR\n"
 		+"=> CONSULTAR\n"
@@ -29,14 +29,14 @@ public class mainE1 {
 	
 	
 	private void run() throws Exception {
-		Cabecalho();
-		saudacao();
-		ExecutaMenu();
-		f.menuPricipal();
+		escreveCabecalho();
+		saudaUsuario();
+		mostarMenu();
+		f.iniciaTarefas();
 	}
 	
 
 	public static void main(String[] args)throws Exception {
-		new mainE1().run();
+		new mainE1().run();    
 	}
 }

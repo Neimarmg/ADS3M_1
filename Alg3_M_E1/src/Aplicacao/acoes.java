@@ -21,7 +21,7 @@ public class acoes<T> {
 	 * Metodo global de capatação de comandos do programa
 	 * @throws Exception 
 	 */
-	public void executaComandos() throws Exception{
+	public void leComandos() throws Exception{
 		i.msgDigitaComando();
 		comando = var.next().toLowerCase();
 	}
@@ -31,7 +31,7 @@ public class acoes<T> {
 	 */
 	public void consulta() throws Exception{	
 		i.menuConsultas();
-		executaComandos();
+		leComandos();
 		
 		switch (comando) {
 		
@@ -58,9 +58,9 @@ public class acoes<T> {
 	/**	 * 
 	 * @throws Exception
 	 */
-	public void salvaDado() throws Exception{	
+	public void salva() throws Exception{	
 		i.menuInsert();		
-		executaComandos();
+		leComandos();
 		
 		switch (comando) {			
 		case "arquivo":	
@@ -85,7 +85,7 @@ public class acoes<T> {
 			
 		default:
 			i.msgOpcaoInvalida();
-			salvaDado();
+			salva();
 			break;
 		}			
 	}	
@@ -96,14 +96,14 @@ public class acoes<T> {
 	 */
 	public void imprime() throws Exception {	
 		i.menuImprimir();
-		executaComandos();
+		leComandos();
 		
 		switch (comando) {		
 		
 		case "arquivo":
 			i.nomeArquivo();
-			executaComandos();
-			f.imprimeArquivo(comando);
+			leComandos();
+			f.imprimeDados(comando);
 			imprime();
 			break;
 
@@ -121,28 +121,31 @@ public class acoes<T> {
 	/** 
 	 * @throws Exception
 	 */
-	public void ExecutaAquivo() throws Exception {	
+	public void manipulaAquivo() throws Exception {	
 		i.menuArquivo();
-		executaComandos();
+		leComandos();
 		
 		switch (comando) {
 			
 		case "buscar":
 			i.nomeArquivo();			
-			executaComandos();
-			f.buscaArquivoExistente(comando);
+			leComandos();
+			f.buscaExistente(comando);
+			manipulaAquivo();
 			break;
 		
 		case "novo":
 			i.nomeArquivo();
-			executaComandos();
-			f.criaNovoArquivo(comando);
+			leComandos();
+			f.criaNovo(comando);
+			manipulaAquivo();
 			break;
 		
 		case "remover":
 			i.nomeArquivo();
-			executaComandos();
+			leComandos();
 			f.removeArquivo(comando);
+			manipulaAquivo();
 			break;
 		
 		case "sair":
@@ -151,7 +154,7 @@ public class acoes<T> {
 			
 		default:
 			i.msgOpcaoInvalida();
-			ExecutaAquivo();
+			manipulaAquivo();
 			break;
 		}		
 	}
@@ -160,8 +163,8 @@ public class acoes<T> {
 	 * 
 	 * @throws Exception
 	 */
-	public void menuPricipal() throws Exception{
-		executaComandos();
+	public void iniciaTarefas() throws Exception{
+		leComandos();
 			
 		switch (comando) {
 		
@@ -170,7 +173,7 @@ public class acoes<T> {
 			break;
 			
 		case "inserir":
-			salvaDado();
+			salva();
 			break;
 			
 		case "imprimir":
@@ -178,7 +181,7 @@ public class acoes<T> {
 			break;
 			
 		case "arquivo":
-			ExecutaAquivo();
+			manipulaAquivo();
 			break;
 		
 		case "sair":
@@ -187,7 +190,7 @@ public class acoes<T> {
 			
 		default: 
 			i.msgOpcaoInvalida();
-			menuPricipal();
+			iniciaTarefas();
 			break;
 		}
 	}

@@ -73,7 +73,7 @@ public class Registrador {
 		case "imprimir":
 			f.msgl();
 			f.msg("Dados em aquivo: \n");
-			a.imprimeArquivo(arquivo);
+			a.imprimeDados(arquivo);
 			insereArquivo(arquivo);
 			break;
 			
@@ -111,7 +111,7 @@ public class Registrador {
 			lista.print();
 			f.msgl();
 			f.msg("Dados em aquivo: ");
-			a.imprimeArquivo(arquivo);
+			a.imprimeDados(arquivo);
 			insereAmbas(arquivo);
 			break;
 			

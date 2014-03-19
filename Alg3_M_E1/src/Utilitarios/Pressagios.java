@@ -6,15 +6,15 @@ public class Pressagios {
 	
 	Formatos m = new Formatos(); 
 	
-	public void bomDia() {
+	public void desejaBomDia() {
 		m.msg("Bom dia!\n\n");
 	}
 	
-	public void boaTarde() {
+	public void desejaBoaTarde() {
 		m.msg("Boa tarde!\n\n");
 	}
 	
-	public void boaNoite() {
+	public void desejaBoaNoite() {
 		m.msg("Boa noite!\n\n");	
 	}
 }
