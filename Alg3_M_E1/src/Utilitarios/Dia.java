@@ -19,12 +19,12 @@ public class Dia {
 	 * 
 	 * @param hora
 	 */
-	public void execuataCabecalho(Object hora) {		
+	public void defineCabecalho(Object hora) {		
 		m.msg("\nOlá!" +
-			  "\n" +testaHora() +hora +"\n");
+			  "\n" +defineNomenclatura() +hora +"\n");
 	}
 	
-	public String testaHora() {
+	public String defineNomenclatura() {
 		dh.set(Calendar.DST_OFFSET,0);
 		
 		int hora =  dh.get(Calendar.HOUR_OF_DAY);
@@ -36,23 +36,23 @@ public class Dia {
 	
 	}
 		
-	public void horario() {
+	public void defineSaudacao() {
 		dh.set(Calendar.DST_OFFSET,0);
 		
 		int hora =  dh.get(Calendar.HOUR_OF_DAY);
 		
 		if (hora >= 0 && hora <= 12) {
-			execuataCabecalho(sdf.format(dh.getTime()) +" da manhã." +"");
+			defineCabecalho(sdf.format(dh.getTime()) +" da manhã." +"");
 			s.desejaBomDia();
 		}
 
 		if (hora >= 12  && hora <= 18) {
-			execuataCabecalho(sdf.format(dh.getTime()) +" da tarde." +"");
+			defineCabecalho(sdf.format(dh.getTime()) +" da tarde." +"");
 			s.desejaBoaTarde();
 		}	
 		
 		if (hora > 18  && hora <= 24) {
-			execuataCabecalho(sdf.format(dh.getTime()) +" da noite." +"");
+			defineCabecalho(sdf.format(dh.getTime()) +" da noite." +"");
 			s.desejaBoaNoite();
 		}	
 	}

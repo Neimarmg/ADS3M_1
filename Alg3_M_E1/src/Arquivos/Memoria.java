@@ -4,17 +4,17 @@ public class Memoria {
 	
 	//try{		
 		
-		private void calculaMenoria() {
+		private void calcula() {
 			/** Verifica memória disponível para inserir novo					 * 
 			 */
 		}
 		
 		
-		public void executaVerificao()throws Exception{
+		public void verifica()throws Exception{
 			/** Inicia a verificação da memória 
 			 * 
 			 */
-			 calculaMenoria();
+			 calcula();
 		}
 		
 		

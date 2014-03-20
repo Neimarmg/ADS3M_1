@@ -14,7 +14,7 @@ public class mainE1 {
 	
 	
 	public void saudaUsuario() {
-		d.horario();
+		d.defineSaudacao();
 	}
 	
 

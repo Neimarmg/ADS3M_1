@@ -22,7 +22,7 @@ public class Include {
 	 * @param arquivo
 	 * @param desc
 	 */
-	public void novoRegistro(String arquivo, String  desc) {
+	public void addNovo(String arquivo, String  desc) {
 		try {
 			FileWriter f;
 			BufferedWriter buff;
@@ -42,7 +42,7 @@ public class Include {
 	 * @param desc
 	 * @throws IOException 
 	 */
-	public void removeRegistro(String arquivo, String  desc) throws IOException {
+	public void exclui(String arquivo, String  desc) throws IOException {
 		String s = "";  
 
 		try {                      

@@ -59,8 +59,8 @@ public class Registrador {
 		
 		case "novo":
 			insereDados();
-			i.novoRegistro(arquivo,nome);
-			i.novoRegistro(arquivo,fone);
+			i.addNovo(arquivo,nome);
+			i.addNovo(arquivo,fone);
 			insereArquivo(arquivo);
 			break;
 			
@@ -73,7 +73,7 @@ public class Registrador {
 			
 		case "excluir":
 			desc =  f.comando("\nNome Contato a excluir");
-			i.removeRegistro(arquivo, desc);
+			i.exclui(arquivo, desc);
 		case "sair":
 			f.sair();
 			break;
@@ -95,7 +95,7 @@ public class Registrador {
 			insereDados();
 			lista.insert(new Nodo<String>(nome));
 			lista.insert(new Nodo<String>(fone), lista.getHead());
-			i.novoRegistro(arquivo,desc);
+			i.addNovo(arquivo,desc);
 			insereAmbas(arquivo);
 			break;
 		
