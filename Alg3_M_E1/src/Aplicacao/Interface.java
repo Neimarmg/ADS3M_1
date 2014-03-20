@@ -1,7 +1,9 @@
 package Aplicacao;
 
+import java.io.Console;
 import java.util.Scanner;
 
+import Navegacao.Consultas;
 import Utilitarios.Formatos;
 import Arquivos.Ficheiro;
 import Estruturas.ListaEncadeada;
@@ -15,7 +17,7 @@ public class Interface<T> {
 	Ficheiro f = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
 	Registrador registra = new Registrador();
-	
+	Consultas c = new Consultas();
 	
 	/**
 	 * Metodo global de capatação de comandos do programa
@@ -41,8 +43,7 @@ public class Interface<T> {
 			break;
 			
 		case "arquivo":
-			i.naoImplementado();
-			consulta();
+			c.carrega();
 			break;
 			
 		case "sair":

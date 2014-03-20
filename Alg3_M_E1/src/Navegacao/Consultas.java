@@ -1,29 +1,30 @@
 package Navegacao;
 
+import Utilitarios.Formatos;
+
 public class Consultas {
+	Formatos f =  new Formatos();
 	
 	/**
-	 * 
 	 * @param nomeArquivo
 	 * @param navega
 	 * @param especifica
 	 */
-	public void	defineBusca(String nomeArquivo,Boolean navega, Boolean especifica){
+	public void	define(String nomeArquivo,Boolean navega, Boolean especifica){
 		if (navega == true){
 				
 		}else{
-			especificaConsulta(nomeArquivo,especifica);
+			especifica(nomeArquivo,especifica);
 		}
 
 	}	
 
 	
 	/**
-	 * 
 	 * @param nomeArquivo
 	 * @param especifica
 	 */
-	public void especificaConsulta(String nomeArquivo,Boolean especifica){
+	public void especifica(String nomeArquivo,Boolean especifica){
 		if (especifica == true){ //Percorre toda a lista navegando um a um conforme o comando
 		
 			
@@ -31,5 +32,10 @@ public class Consultas {
 		
 		
 		}
-	}		
+	}
+	
+	
+	public void carrega(){
+		
+	}
 }

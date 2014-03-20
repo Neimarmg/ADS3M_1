@@ -125,4 +125,17 @@ public class Formatos {
 			+"=> SAIR\n"
 		);		
 	}
+	
+	/**
+	 * @throws Exception
+	 */
+	public void  menuConsultaArquivo()throws Exception {	
+		msgb(
+			"	OPÇÕES PARA CONSULTAR ARQUIVO:\n\n"	
+			+"=> NAVEGAR\n"
+			+"=> ESPECIFICAR\n"
+			+"=> SAIR\n"
+			+"=> SAIR\n"
+		);		
+	}
 }
