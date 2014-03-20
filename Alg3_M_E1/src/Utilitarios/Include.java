@@ -22,7 +22,7 @@ public class Include {
 	 * @param arquivo
 	 * @param desc
 	 */
-	public void novoRegistro(String arquivo, String  desc){
+	public void novoRegistro(String arquivo, String  desc) {
 		try {
 			FileWriter f;
 			BufferedWriter buff;
@@ -42,7 +42,7 @@ public class Include {
 	 * @param desc
 	 * @throws IOException 
 	 */
-	public void removeRegistro(String arquivo, String  desc) throws IOException{
+	public void removeRegistro(String arquivo, String  desc) throws IOException {
 		String s = "";  
 
 		try {                      
@@ -54,28 +54,28 @@ public class Include {
 				if(linha.equals(desc)){
 					i.msg("\nRegistro encotrado:" +linha);
 					br.reset();
-					if(linha.equals("")){
-						i.msg("\nRegistro excluído com sucesso:" +desc);
+					if(linha.equals("")) {
+						i.msg("\nRegistro excluído com sucesso." +desc);
 					}				
 				}
 			}
 			br.close();			
 		}catch(IOException e){
-			i.msg("\nNão foi possivél remover o registro!");
+			i.msg("\nNão foi possivél remover o registro.");
 		}catch(NullPointerException e){
-			i.msg("\nNão foi possivél remover o registro!");
+			i.msg("\nNão foi possivél remover o registro.");
 		}
 	}  
 		
 				
-	public void salva(){
+	public void salva() {
 		/** Realiza a remoção lógica do registro
 		* 
 		*/
 	} 
 		
 	
-	public void altera(){
+	public void altera() {
 		/** Realiza a remoção lógica do registro
 		* 
 		*/

@@ -6,8 +6,7 @@ public class Formatos {
 	Scanner var = new Scanner(System.in);
 	
 	
-	public void msg(Object desc){
-		// imprime na tale memória dispPlanejamento inicial    
+	public void msg(Object desc) {   
 		System .out.print(desc);
 	}
 	
@@ -15,7 +14,7 @@ public class Formatos {
 	/**
 	 * @param desc
 	 */
-	public void msgb(Object desc){
+	public void msgb(Object desc) {
 		System .out.print(
 			"\n====================================================\n"
 			+desc
@@ -23,26 +22,26 @@ public class Formatos {
 	}
 	
 	
-	public void msgl(){
+	public void msgl() {
 		System .out.print(
 			"\n====================================================\n");
 	}
 	
 	
-	public void opcaoInvalida(){
-		System .err.println("\nOpção de comando inválido. Tente novamente!");
+	public void opcaoInvalida() {
+		System .err.println("\nOpção de comando inválido. Tente novamente.");
 	}
 	
 	
-	public void naoImplementado(){
-		System .err.print("\nNão implementado!\n");
+	public void naoImplementado() {
+		System .err.print("\nNão implementado.\n");
 	}
 	
 	
-	/**Metodo de label dos comando do sistema
+	/**Metodo de label dos comandos do sistema
 	 * @param label
 	 */
-	public void paleta(String label){
+	public void paleta(String label) {
 		System .out.println();
 		if (label.equals("")){
 			System .out.print("COMANDO: ");
@@ -52,20 +51,29 @@ public class Formatos {
 	}
 	
 	
-	/**Medotodo de retorno que recebe a lobel com paramento e retorna
+	/**Método de retorno que recebe a label com parâmento e retorna
 	 * uma string para filtros
 	 * @param label
 	 * @return
 	 */
-	public String comando(String label){
+	public String comando(String label) {
 		paleta(label);
 		return var.next().toLowerCase();
 	}	
 	
 	
 	public void sair(){
-		System.err.print("\nVocê optou por sair do programa\n"
-			+ "Obrigado!!!");;
+		System.err.print("\nVocê optou por sair do programa. Obrigado.");
+	}
+	
+	
+	public void mostarMenuMaim() {		
+		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
+		+"=> INSERIR\n"
+		+"=> CONSULTAR\n"
+		+"=> IMPRIMIR\n"
+		+"=> ARQUIVO\n"
+		+"=> SAIR\n");
 	}
 	
 	
@@ -77,7 +85,7 @@ public class Formatos {
 			"	GRAVAR DADOS EM: \n\n"	
 			+"=> ARQUIVO\n"
 			+"=> LISTA\n"
-			+"=> AMBAS\n"
+			+"=> AMBOS\n"
 			+"=> SAIR\n"
 		);			
 	}

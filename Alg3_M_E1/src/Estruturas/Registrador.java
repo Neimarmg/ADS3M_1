@@ -15,14 +15,14 @@ public class Registrador {
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
 	
 	
-	public void insereDados() throws Exception{
-		nome =  f.comando("Nome Contato: ");
-		fone = 	f.comando("Nome Contato: ");
+	public void insereDados() throws Exception {
+		nome =  f.comando("Contato");
+		fone = 	f.comando("Telefone");
 		desc = nome +" " + fone;
 	}
 	
 	
-	public  void insereLista() throws Exception{
+	public  void insereLista() throws Exception {
 		f.menuInserirNovo();
 		
 		switch (f.comando("")) {
@@ -51,7 +51,7 @@ public class Registrador {
 	}
 	
 	
-	public  void insereArquivo(String arquivo) throws Exception{
+	public  void insereArquivo(String arquivo) throws Exception {
 
 		f.menuInserirNovo();
 		
@@ -86,7 +86,7 @@ public class Registrador {
 	}
 	
 	
-	public  void insereAmbas(String arquivo) throws Exception{
+	public  void insereAmbas(String arquivo) throws Exception {
 		//executaComando();
 		f.menuInserirNovo();
 		

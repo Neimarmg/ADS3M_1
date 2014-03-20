@@ -1,4 +1,3 @@
-
 package Estruturas;
 
 import Utilitarios.Formatos;
@@ -9,12 +8,12 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	private Nodo<T> head; // will be a Nodo
 	private Nodo<T> tail; // will be a Nodo
 	
-	public Nodo<T> getHead(){
+	public Nodo<T> getHead() {
 		return head;
 	}
 
 	
-	public void print(){
+	public void print() {
 		Nodo<?> nodo = head;
 		do {
 			i.msg("\n" +nodo.getData());
@@ -23,7 +22,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	}
 	
 	
-	public void insert(Nodo<T> novo){
+	public void insert(Nodo<T> novo) {
 		novo.setNext(head);
 		head = novo;
 		
@@ -32,7 +31,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	}
 
 	
-	public void insert(Nodo<T> novo, Nodo<T> anterior){
+	public void insert(Nodo<T> novo, Nodo<T> anterior) {
 		if (anterior == tail) {
 			tail.setNext((Nodo<T>)novo);
 			tail = novo;
@@ -43,7 +42,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	}
 
 	
-	public void append(Nodo<T> novo){
+	public void append(Nodo<T> novo) {
 		tail.setNext(novo);
 		tail = novo;
 	}

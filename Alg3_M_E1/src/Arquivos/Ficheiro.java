@@ -21,7 +21,7 @@ public class Ficheiro {
 	/**
 	 * @param nomeAquivo
 	 */
-	public void criaNovo(final String nomeAquivo){
+	public void criaNovo(final String nomeAquivo) {
 		try {
 			FileWriter c = new FileWriter(new File(nomeAquivo),true);
 			i.msgb("Novo arquivo criado: "+c);
@@ -31,18 +31,18 @@ public class Ficheiro {
 		}		
 	}
 	
-	/** Metodo de remoção de arquivo com verificação de exintencia do arquivo.
+	/** Método de remoção de arquivo com verificação de existência do arquivo
 	 * @param nomeArquivo
 	 */
-	public void remove(String nomeArquivo){
+	public void remove(String nomeArquivo) {
 		String nome = nomeArquivo; 
 		File f = new File(nome); 
 		if (f.exists()){ 
 			i.msgb("???" +f.getFreeSpace());
 			f.delete();	
-			i.msgb("O aquivo " +nome +" foi removido com sucesso!");			
+			i.msgb("O aquivo " +nome +" foi removido com sucesso.");			
 		}else{			
-			i.msgb("Arquivo mão encontrado!\nNão é possivél remover.");
+			i.msgb("Arquivo não encontrado!\nNão é possível remover.");
 		}
 	} 
 	
@@ -51,7 +51,7 @@ public class Ficheiro {
 	 * 
 	 * @param nomeAquivo
 	 */
-	public void buscaExistente(final String nomeAquivo){
+	public void buscaExistente(final String nomeAquivo) {
 		Path p = Paths.get(nomeAquivo);
 		i.msg("Arquivo encontrado: "+p);
 	}
@@ -60,21 +60,20 @@ public class Ficheiro {
 	 * @param nomeAquivo
 	 * @throws Exception
 	 */
-	public void imprime(String nomeAquivo) throws Exception{
+	public void imprime(String nomeAquivo) throws Exception {
     	try {
 			FileReader f = new FileReader(nomeAquivo);
 			BufferedReader br = new BufferedReader(f);
 			String linha = br.readLine();
-			while(linha != null ){
+			while(linha != null ) {
 				linha = br.readLine();
 				System.out.println(linha);
 			}
 			br.close();			
 		} catch (FileNotFoundException e) {
-			i.msgb("O nome do arquivo esta incorreto ou não existe!");
+			i.msgb("O nome do arquivo está incorreto ou não existe!");
 			Interface a = new Interface();
 			a.imprime();
 		}
     }
 }
-

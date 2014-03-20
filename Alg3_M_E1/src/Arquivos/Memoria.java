@@ -7,8 +7,6 @@ public class Memoria {
 		private void calculaMenoria() {
 			/** Verifica memória disponível para inserir novo					 * 
 			 */
-			
-			
 		}
 		
 		
@@ -21,7 +19,7 @@ public class Memoria {
 		
 		
 		public void imprimeStatusMomoria(Object desc)throws Exception {
-			/** imprime na tale memória disponível no disco
+			/** Imprime na tale memória disponível no disco
 			 * 
 			 */				
 			//.printMsg(?)

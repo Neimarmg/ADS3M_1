@@ -9,7 +9,7 @@ public class mainE1 {
 	Dia d = new Dia();
 	
 	private void escreveCabecalho() {
-	    i.msgb("	EXERCÍCIO DE ESTRUTURAS LINEARES E1!!! ");
+	    i.msgb("	EXERCÍCIO DE ESTRUTURAS LINEARES E1");
 	}
 	
 	
@@ -18,20 +18,10 @@ public class mainE1 {
 	}
 	
 
-	public void mostarMenu() {		
-		i.msgb("	OQUE VOCÊ DESEJA FAZER?:\n\n"
-		+"=> INSERIR\n"
-		+"=> CONSULTAR\n"
-		+"=> IMPRIMIR\n"
-		+"=> ARQUIVO\n"
-		+"=> SAIR\n");
-	}
-	
-	
 	private void run() throws Exception {
 		escreveCabecalho();
 		saudaUsuario();
-		mostarMenu();
+		i.mostarMenuMaim();
 		in.iniciaTarefas();
 	}
 	

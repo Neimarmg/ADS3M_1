@@ -6,7 +6,7 @@ import Arquivos.Ficheiro;
 import Estruturas.ListaEncadeada;
 import Estruturas.Registrador;
 
-public class Interface<T> extends Formatos{
+public class Interface<T> extends Formatos {
 	
 	String comando;
 	Formatos i = new Formatos();
@@ -19,7 +19,7 @@ public class Interface<T> extends Formatos{
 	/** 
 	 * @throws Exception
 	 */
-	public void consulta() throws Exception{	
+	public void consulta() throws Exception {	
 		menuConsultas();
 		
 		switch (comando("")) {
@@ -48,20 +48,20 @@ public class Interface<T> extends Formatos{
 	/**	 * 
 	 * @throws Exception
 	 */
-	public void salva() throws Exception{	
+	public void salva() throws Exception {	
 		menuInsert();		
 		
 		switch (comando("")) {			
 		case "arquivo":	
-			registra.insereArquivo(comando("Nome arquivo"));
+			registra.insereArquivo(comando("Nome do arquivo"));
 			break;
 			
 		case "lista":		
 			registra.insereLista();
 			break;
 
-		case "ambas":		
-			registra.insereAmbas(comando("Nome arquivo"));			
+		case "ambos":		
+			registra.insereAmbas(comando("Nome do arquivo"));			
 			break;
 			
 		case "sair":
@@ -85,7 +85,7 @@ public class Interface<T> extends Formatos{
 		switch (comando("")) {		
 		
 		case "arquivo":
-			f.imprime(comando("Nome arquivo"));
+			f.imprime(comando("Nome do arquivo"));
 			imprime();
 			break;
 
@@ -109,17 +109,17 @@ public class Interface<T> extends Formatos{
 		switch (comando("")) {
 			
 		case "buscar":
-			f.buscaExistente(comando("Nome arquivo"));
+			f.buscaExistente(comando("Nome do arquivo"));
 			manipulaAquivo();
 			break;
 		
 		case "novo":
-			f.criaNovo(comando("Nome arquivo"));
+			f.criaNovo(comando("Nome do arquivo"));
 			manipulaAquivo();
 			break;
 		
 		case "remover":
-			f.remove(comando("Nome arquivo"));
+			f.remove(comando("Nome do arquivo"));
 			manipulaAquivo();
 			break;
 		
@@ -138,7 +138,7 @@ public class Interface<T> extends Formatos{
 	 * 
 	 * @throws Exception
 	 */
-	public void iniciaTarefas() throws Exception{
+	public void iniciaTarefas() throws Exception {
 			
 		switch (comando("")) {
 		

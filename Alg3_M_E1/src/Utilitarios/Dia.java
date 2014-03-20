@@ -1,4 +1,5 @@
 package Utilitarios;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -11,36 +12,47 @@ public class Dia {
 	
 	public void ImprimeHora() {		
 		dh.set(Calendar.DST_OFFSET,0);		
-		m.msg("São:" +sdf.format(dh.getTime()) +"hs");
+		m.msg("São " +sdf.format(dh.getTime()) +"hs");
 	}
 	
 	/**
 	 * 
 	 * @param hora
 	 */
-	public void execuataCabecalho(Object hora){		
-		m.msg("OLA!!!" +
-				"\nSão: " +hora +"\n");
+	public void execuataCabecalho(Object hora) {		
+		m.msg("\nOlá!" +
+			  "\n" +testaHora() +hora +"\n");
 	}
 	
-	
-	public void horario(){
+	public String testaHora() {
 		dh.set(Calendar.DST_OFFSET,0);
 		
 		int hora =  dh.get(Calendar.HOUR_OF_DAY);
 		
-		if (hora >= 0 && hora <= 12)  {
-			execuataCabecalho(sdf.format(dh.getTime()) +"hs" +" da manhã!" +"");
+		if (hora <= 0) {
+			return "É ";
+		} return "São ";
+		
+	
+	}
+		
+	public void horario() {
+		dh.set(Calendar.DST_OFFSET,0);
+		
+		int hora =  dh.get(Calendar.HOUR_OF_DAY);
+		
+		if (hora >= 0 && hora <= 12) {
+			execuataCabecalho(sdf.format(dh.getTime()) +" da manhã." +"");
 			s.desejaBomDia();
-		}		
+		}
 
-		if (hora >= 12  && hora <= 18)  {
-			execuataCabecalho(sdf.format(dh.getTime()) +"hs" +" da tarde!" +"");
+		if (hora >= 12  && hora <= 18) {
+			execuataCabecalho(sdf.format(dh.getTime()) +" da tarde." +"");
 			s.desejaBoaTarde();
 		}	
 		
-		if (hora > 18  && hora <= 24)  {
-			execuataCabecalho(sdf.format(dh.getTime()) +"hs" +" da noite!" +"");
+		if (hora > 18  && hora <= 24) {
+			execuataCabecalho(sdf.format(dh.getTime()) +" da noite." +"");
 			s.desejaBoaNoite();
 		}	
 	}

@@ -9,13 +9,13 @@ import Arquivos.Ficheiro;
 import Utilitarios.Formatos;
 
 public class Consultas {
-	Formatos i =  new Formatos();
+	Formatos i = new Formatos();
 	Ficheiro f = new Ficheiro();
 	
-	/**Metodo de realiza a navegação entre os registros 
+	/**Método que realiza a navegação entre os registros 
 	 * @param nomeArquivo
 	 */
-	public void	navega(String nomeArquivo){
+	public void	navega(String nomeArquivo) {
 		i.naoImplementado();
 	}	
 
@@ -25,7 +25,7 @@ public class Consultas {
 	 * @param especifica
 	 * @throws IOException 
 	 */
-	public void especifica(String nomeArquivo,String campo) throws IOException{
+	public void especifica(String nomeArquivo,String campo) throws IOException {
 		try {
 			FileReader r = new FileReader(nomeArquivo);
 			BufferedReader br = new BufferedReader(r);
@@ -38,29 +38,30 @@ public class Consultas {
 			}
 		} catch (NullPointerException e) {
 			e.getMessage();
-		}		
-	
+		} catch (FileNotFoundException e1) {
+			i.msg("Arquivo inexistente.");
+		}
 	}
 	
 	
-	public void carrega(){
+	public void carrega() {
 		try {
 			i.menuConsultaArquivo();
 					
 			switch (i.comando("")) {
 			
 			case "navegar":
-				navega(i.comando("Nome aquivo"));
+				navega(i.comando("Nome do arquivo"));
 				carrega();
 				break;
 
 			case "filtrar":				
-				especifica(i.comando("Nome aquivo"),i.comando("Nome contato"));
+				especifica(i.comando("Nome do arquivo"),i.comando("Nome do contato"));
 				carrega();
 				break;
 				
 			case "todos":
-				f.imprime(i.comando("Nome aquivo"));
+				f.imprime(i.comando("Nome do arquivo"));
 				carrega();
 				break;
 				
