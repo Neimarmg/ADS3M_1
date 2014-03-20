@@ -36,6 +36,37 @@ public class Consultas {
 	
 	
 	public void carrega(){
-		
+		try {
+			f.menuConsultaArquivo();
+					
+			switch (f.comando("COMANDO CONSULTA: ")) {
+			
+			case "navegar":
+				f.naoImplementado();
+				carrega();
+				break;
+
+			case "filtrar":
+				f.naoImplementado();
+				carrega();
+				break;
+				
+			case "imprimir":
+				f.naoImplementado();
+				carrega();
+				break;
+				
+			case "sair":
+				f.sair();
+				break;
+			default:
+				f.opcaoInvalida();
+				carrega();
+				break;
+			}			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

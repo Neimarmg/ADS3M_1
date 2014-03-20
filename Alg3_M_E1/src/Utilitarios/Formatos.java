@@ -1,6 +1,10 @@
 package Utilitarios;
 
+import java.util.Scanner;
+
 public class Formatos {	
+	Scanner var = new Scanner(System.in);
+	
 	
 	public void msg(Object desc){
 		// imprime na tale memória dispPlanejamento inicial    
@@ -9,7 +13,6 @@ public class Formatos {
 	
 	
 	/**
-	 * 
 	 * @param desc
 	 */
 	public void msgb(Object desc){
@@ -35,16 +38,34 @@ public class Formatos {
 		System .err.print("\nNão implementado!\n");
 	}
 	
-	public void digitaComando(){
+	
+	/**Metodo de label dos comando do sistema
+	 * @param label
+	 */
+	public void paleta(String label){
 		System .out.println();
-		System .out.print("COMANDO: ");
+		if (label.equals("")){
+			System .out.print("COMANDO: ");
+		}else{
+			System .out.print(label +": ");
+		}
 	}
 	
 	
-	public void msgSair(){
-		
+	/**Medotodo de retorno que recebe a lobel com paramento e retorna
+	 * uma string para filtros
+	 * @param label
+	 * @return
+	 */
+	public String comando(String label){
+		paleta(label);
+		return var.next().toLowerCase();
+	}	
+	
+	
+	public void sair(){
 		System.err.print("\nVocê optou por sair do programa\n"
-				+ "Obrigado!!!");;
+			+ "Obrigado!!!");;
 	}
 	
 	
@@ -66,11 +87,11 @@ public class Formatos {
 	 * @throws Exception
 	 */
 	public void menuConsultas()throws Exception {	
-		System .out.print(
+		msgb(
 			"	CONSULTAS EM: \n\n"	
 			+"=> ARQUIVO\n"
-			+"=> nLISTA\n"
-			+"=> nSAIR\n"
+			+"=> LISTA\n"
+			+"=> SAIR\n"
 		);		
 	}
 	
@@ -133,8 +154,8 @@ public class Formatos {
 		msgb(
 			"	OPÇÕES PARA CONSULTAR ARQUIVO:\n\n"	
 			+"=> NAVEGAR\n"
-			+"=> ESPECIFICAR\n"
-			+"=> SAIR\n"
+			+"=> FILTRAR\n"
+			+"=> IMPRIMIR\n"
 			+"=> SAIR\n"
 		);		
 	}

@@ -5,7 +5,7 @@ import Utilitarios.Formatos;
 
 public class mainE1 {
 	Formatos i = new Formatos();
-	Interface f = new Interface();
+	Interface<Object> in = new Interface<Object>();
 	Dia d = new Dia();
 	
 	private void escreveCabecalho() {
@@ -32,7 +32,7 @@ public class mainE1 {
 		escreveCabecalho();
 		saudaUsuario();
 		mostarMenu();
-		f.iniciaTarefas();
+		in.iniciaTarefas();
 	}
 	
 

@@ -1,13 +1,10 @@
 package Aplicacao;
 
-import java.io.Console;
 import java.util.Scanner;
-
 import Navegacao.Consultas;
 import Utilitarios.Formatos;
 import Arquivos.Ficheiro;
 import Estruturas.ListaEncadeada;
-import Estruturas.ListaOrdenada;
 import Estruturas.Registrador;
 
 public class Interface<T> {
@@ -19,23 +16,14 @@ public class Interface<T> {
 	Registrador registra = new Registrador();
 	Consultas c = new Consultas();
 	
-	/**
-	 * Metodo global de capatação de comandos do programa
-	 * @throws Exception 
-	 */
-	public void leComandos() throws Exception{
-		i.digitaComando();
-		comando = var.next().toLowerCase();
-	}
-	
+
 	/** 
 	 * @throws Exception
 	 */
 	public void consulta() throws Exception{	
 		i.menuConsultas();
-		leComandos();
 		
-		switch (comando) {
+		switch (i.comando("")) {
 		
 		case "lista":
 			i.naoImplementado();
@@ -47,7 +35,7 @@ public class Interface<T> {
 			break;
 			
 		case "sair":
-			i.msgSair();
+			i.sair();
 			break;
 			
 		default:
@@ -63,13 +51,10 @@ public class Interface<T> {
 	 */
 	public void salva() throws Exception{	
 		i.menuInsert();		
-		leComandos();
 		
-		switch (comando) {			
+		switch (i.comando("")) {			
 		case "arquivo":	
-			i.msg("Nome arquivo: ");
-			comando = var.next();
-			registra.insereArquivo(comando);
+			registra.insereArquivo(i.comando("Nome arquivo"));
 			break;
 			
 		case "lista":		
@@ -77,13 +62,11 @@ public class Interface<T> {
 			break;
 
 		case "ambas":		
-			i.msg("Nome arquivo: ");
-			comando = var.next();
-			registra.insereAmbas(comando);			
+			registra.insereAmbas(i.comando("Nome arquivo"));			
 			break;
 			
 		case "sair":
-			i.msgSair();
+			i.sair();
 			break;
 			
 		default:
@@ -99,19 +82,16 @@ public class Interface<T> {
 	 */
 	public void imprime() throws Exception {	
 		i.menuImprimir();
-		leComandos();
 		
-		switch (comando) {		
+		switch (i.comando("")) {		
 		
 		case "arquivo":
-			i.nomeArquivo();
-			leComandos();
-			f.imprime(comando);
+			f.imprime(i.comando("Nome arquivo"));
 			imprime();
 			break;
 
 		case "sair":
-			i.msgSair();
+			i.sair();
 			break;
 			
 		default:
@@ -126,33 +106,26 @@ public class Interface<T> {
 	 */
 	public void manipulaAquivo() throws Exception {	
 		i.menuArquivo();
-		leComandos();
 		
-		switch (comando) {
+		switch (i.comando("")) {
 			
 		case "buscar":
-			i.nomeArquivo();			
-			leComandos();
-			f.buscaExistente(comando);
+			f.buscaExistente(i.comando("Nome arquivo"));
 			manipulaAquivo();
 			break;
 		
 		case "novo":
-			i.nomeArquivo();
-			leComandos();
-			f.criaNovo(comando);
+			f.criaNovo(i.comando("Nome arquivo"));
 			manipulaAquivo();
 			break;
 		
 		case "remover":
-			i.nomeArquivo();
-			leComandos();
-			f.remove(comando);
+			f.remove(i.comando("Nome arquivo"));
 			manipulaAquivo();
 			break;
 		
 		case "sair":
-			i.msgSair();
+			i.sair();
 			break;
 			
 		default:
@@ -167,12 +140,11 @@ public class Interface<T> {
 	 * @throws Exception
 	 */
 	public void iniciaTarefas() throws Exception{
-		leComandos();
 			
-		switch (comando) {
+		switch (i.comando("")) {
 		
 		case "consultar":
-			i.naoImplementado();
+			consulta();
 			break;
 			
 		case "inserir":
@@ -188,7 +160,7 @@ public class Interface<T> {
 			break;
 		
 		case "sair":
-			i.msgSair();
+			i.sair();
 			break;
 			
 		default: 

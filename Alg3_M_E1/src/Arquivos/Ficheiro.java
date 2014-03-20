@@ -1,16 +1,13 @@
 package Arquivos;
 
-import java.awt.PageAttributes;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Scanner;
 import java.nio.file.Paths;
 import java.nio.file.Path;
-
 import Aplicacao.Interface;
 import Utilitarios.Formatos;
 import Utilitarios.Include;
@@ -20,7 +17,6 @@ public class Ficheiro {
 	Scanner var = new Scanner(System.in);
 	Formatos i = new Formatos();
 	Include n =  new Include();
-	private Scanner sc;
 
 	/**
 	 * @param nomeAquivo
