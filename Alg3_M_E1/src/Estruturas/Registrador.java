@@ -59,7 +59,8 @@ public class Registrador {
 		
 		case "novo":
 			insereDados();
-			i.novoRegistro(arquivo,desc);
+			i.novoRegistro(arquivo,nome);
+			i.novoRegistro(arquivo,fone);
 			insereArquivo(arquivo);
 			break;
 			

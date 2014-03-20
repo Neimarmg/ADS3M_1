@@ -1,66 +1,74 @@
 package Navegacao;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import Arquivos.Ficheiro;
 import Utilitarios.Formatos;
 
 public class Consultas {
-	Formatos f =  new Formatos();
+	Formatos i =  new Formatos();
+	Ficheiro f = new Ficheiro();
 	
-	/**
+	/**Metodo de realiza a navegação entre os registros 
 	 * @param nomeArquivo
-	 * @param navega
-	 * @param especifica
 	 */
-	public void	define(String nomeArquivo,Boolean navega, Boolean especifica){
-		if (navega == true){
-				
-		}else{
-			especifica(nomeArquivo,especifica);
-		}
-
+	public void	navega(String nomeArquivo){
+		i.naoImplementado();
 	}	
 
 	
 	/**
 	 * @param nomeArquivo
 	 * @param especifica
+	 * @throws IOException 
 	 */
-	public void especifica(String nomeArquivo,Boolean especifica){
-		if (especifica == true){ //Percorre toda a lista navegando um a um conforme o comando
-		
-			
-		}else{ //Imprime todos os registros
-		
-		
-		}
+	public void especifica(String nomeArquivo,String campo) throws IOException{
+		try {
+			FileReader r = new FileReader(nomeArquivo);
+			BufferedReader br = new BufferedReader(r);
+			String linha = br.readLine();
+			while(linha != null ){
+				linha = br.readLine();
+				if (linha.equals(campo)){					
+					i.msgb("Registro encontrado: " +linha);
+				}
+			}
+		} catch (NullPointerException e) {
+			e.getMessage();
+		}		
+	
 	}
 	
 	
 	public void carrega(){
 		try {
-			f.menuConsultaArquivo();
+			i.menuConsultaArquivo();
 					
-			switch (f.comando("COMANDO CONSULTA: ")) {
+			switch (i.comando("")) {
 			
 			case "navegar":
-				f.naoImplementado();
+				navega(i.comando("Nome aquivo"));
 				carrega();
 				break;
 
-			case "filtrar":
-				f.naoImplementado();
+			case "filtrar":				
+				especifica(i.comando("Nome aquivo"),i.comando("Nome contato"));
 				carrega();
 				break;
 				
-			case "imprimir":
-				f.naoImplementado();
+			case "todos":
+				f.imprime(i.comando("Nome aquivo"));
 				carrega();
 				break;
 				
 			case "sair":
-				f.sair();
+				i.sair();
 				break;
 			default:
-				f.opcaoInvalida();
+				i.opcaoInvalida();
 				carrega();
 				break;
 			}			

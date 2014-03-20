@@ -1,15 +1,14 @@
 package Aplicacao;
 
-import java.util.Scanner;
 import Navegacao.Consultas;
 import Utilitarios.Formatos;
 import Arquivos.Ficheiro;
 import Estruturas.ListaEncadeada;
 import Estruturas.Registrador;
 
-public class Interface<T> {
+public class Interface<T> extends Formatos{
+	
 	String comando;
-	Scanner var = new Scanner(System.in);
 	Formatos i = new Formatos();
 	Ficheiro f = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
@@ -21,12 +20,12 @@ public class Interface<T> {
 	 * @throws Exception
 	 */
 	public void consulta() throws Exception{	
-		i.menuConsultas();
+		menuConsultas();
 		
-		switch (i.comando("")) {
+		switch (comando("")) {
 		
 		case "lista":
-			i.naoImplementado();
+			naoImplementado();
 			consulta();
 			break;
 			
@@ -35,11 +34,11 @@ public class Interface<T> {
 			break;
 			
 		case "sair":
-			i.sair();
+			sair();
 			break;
 			
 		default:
-			i.opcaoInvalida();
+			opcaoInvalida();
 			consulta();
 			break;
 		}
@@ -50,11 +49,11 @@ public class Interface<T> {
 	 * @throws Exception
 	 */
 	public void salva() throws Exception{	
-		i.menuInsert();		
+		menuInsert();		
 		
-		switch (i.comando("")) {			
+		switch (comando("")) {			
 		case "arquivo":	
-			registra.insereArquivo(i.comando("Nome arquivo"));
+			registra.insereArquivo(comando("Nome arquivo"));
 			break;
 			
 		case "lista":		
@@ -62,15 +61,15 @@ public class Interface<T> {
 			break;
 
 		case "ambas":		
-			registra.insereAmbas(i.comando("Nome arquivo"));			
+			registra.insereAmbas(comando("Nome arquivo"));			
 			break;
 			
 		case "sair":
-			i.sair();
+			sair();
 			break;
 			
 		default:
-			i.opcaoInvalida();
+			opcaoInvalida();
 			salva();
 			break;
 		}			
@@ -81,17 +80,17 @@ public class Interface<T> {
 	 * @throws Exception
 	 */
 	public void imprime() throws Exception {	
-		i.menuImprimir();
+		menuImprimir();
 		
-		switch (i.comando("")) {		
+		switch (comando("")) {		
 		
 		case "arquivo":
-			f.imprime(i.comando("Nome arquivo"));
+			f.imprime(comando("Nome arquivo"));
 			imprime();
 			break;
 
 		case "sair":
-			i.sair();
+			sair();
 			break;
 			
 		default:
@@ -105,31 +104,31 @@ public class Interface<T> {
 	 * @throws Exception
 	 */
 	public void manipulaAquivo() throws Exception {	
-		i.menuArquivo();
+		menuArquivo();
 		
-		switch (i.comando("")) {
+		switch (comando("")) {
 			
 		case "buscar":
-			f.buscaExistente(i.comando("Nome arquivo"));
+			f.buscaExistente(comando("Nome arquivo"));
 			manipulaAquivo();
 			break;
 		
 		case "novo":
-			f.criaNovo(i.comando("Nome arquivo"));
+			f.criaNovo(comando("Nome arquivo"));
 			manipulaAquivo();
 			break;
 		
 		case "remover":
-			f.remove(i.comando("Nome arquivo"));
+			f.remove(comando("Nome arquivo"));
 			manipulaAquivo();
 			break;
 		
 		case "sair":
-			i.sair();
+			sair();
 			break;
 			
 		default:
-			i.opcaoInvalida();
+			opcaoInvalida();
 			manipulaAquivo();
 			break;
 		}		
@@ -141,7 +140,7 @@ public class Interface<T> {
 	 */
 	public void iniciaTarefas() throws Exception{
 			
-		switch (i.comando("")) {
+		switch (comando("")) {
 		
 		case "consultar":
 			consulta();
@@ -160,11 +159,11 @@ public class Interface<T> {
 			break;
 		
 		case "sair":
-			i.sair();
+			sair();
 			break;
 			
 		default: 
-			i.opcaoInvalida();
+			opcaoInvalida();
 			iniciaTarefas();
 			break;
 		}

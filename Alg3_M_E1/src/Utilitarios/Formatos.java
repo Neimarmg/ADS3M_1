@@ -155,7 +155,7 @@ public class Formatos {
 			"	OPÇÕES PARA CONSULTAR ARQUIVO:\n\n"	
 			+"=> NAVEGAR\n"
 			+"=> FILTRAR\n"
-			+"=> IMPRIMIR\n"
+			+"=> TODOS\n"
 			+"=> SAIR\n"
 		);		
 	}
