@@ -26,20 +26,24 @@ public class Consultas {
 	 * @throws IOException 
 	 */
 	public void especifica(String nomeArquivo,String campo) throws IOException {
+		String lista = " ";
 		try {
 			FileReader r = new FileReader(nomeArquivo);
 			BufferedReader br = new BufferedReader(r);
 			String linha = br.readLine();
+			i.msgb("Registro(s) encontrado(s):");
 			while(linha != null ){
 				linha = br.readLine();
-				if (linha.equals(campo)){					
-					i.msgb("Registro encontrado: " +linha);
+				if (linha.equals(campo)){	
+					i.msg("> " +linha +"\n");
 				}
 			}
+			
+			
 		} catch (NullPointerException e) {
 			e.getMessage();
 		} catch (FileNotFoundException e1) {
-			i.msg("Arquivo inexistente.");
+			i.msgb("Arquivo inexistente.");
 		}
 	}
 	
