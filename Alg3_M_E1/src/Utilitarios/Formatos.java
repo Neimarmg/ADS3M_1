@@ -37,7 +37,7 @@ public class Formatos {
 	}
 	
 	
-	public void naoImplementado() {
+	public void objetoNaoImplementado() {
 		System .err.print("\nNão implementado.\n");
 	}
 	

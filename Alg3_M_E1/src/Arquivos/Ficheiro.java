@@ -8,28 +8,40 @@ import java.io.FileWriter;
 import java.util.Scanner;
 import java.nio.file.Paths;
 import java.nio.file.Path;
+
 import Aplicacao.Interface;
 import Utilitarios.Formatos;
-import Utilitarios.Include;
+import Utilitarios.crud;
 
 public class Ficheiro {
 	
 	Scanner var = new Scanner(System.in);
 	Formatos i = new Formatos();
-	Include n =  new Include();
-
+	crud n =  new crud();
+	Memoria m =  new Memoria();
+	
 	/**
 	 * @param nomeAquivo
 	 */
 	public void criaNovo(final String nomeAquivo) {
 		try {
-			FileWriter c = new FileWriter(new File(nomeAquivo),true);
-			i.msgb("Novo arquivo criado: "+c);
-			c.close();
+			i.msg("\nAguarde verificando disco...\n");
+			if (m.calculaDisponivel() > 60000){ // Verifica memoria ao inserir dodos.
+				m.pritnGrafico();
+				FileWriter c = new FileWriter(new File(nomeAquivo),true);
+				i.msgb("Novo arquivo criado: "+c);
+				c.close();
+			}else{
+				i.espacoInsuficiente();
+				m.imprime();
+			}
 		} catch (Exception e) {
 			i.msgb("Não foi possivél criar um novo arquivo!");
 		}		
 	}
+	
+
+
 	
 	/** Método de remoção de arquivo com verificação de existência do arquivo
 	 * @param nomeArquivo
@@ -48,7 +60,6 @@ public class Ficheiro {
 	
 	
 	/**
-	 * 
 	 * @param nomeAquivo
 	 */
 	public void buscaExistente(final String nomeAquivo) {

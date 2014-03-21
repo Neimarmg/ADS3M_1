@@ -4,17 +4,19 @@ import java.util.Scanner;
 
 import Arquivos.Ficheiro;
 import Utilitarios.Formatos;
-import Utilitarios.Include;
+import Utilitarios.crud;
 
 public class Registrador {
 
 	String desc, fone , nome;
 	Formatos f = new Formatos();
 	Ficheiro a =  new Ficheiro();
-	Include i = new Include();
+	crud i = new crud();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
 	
-	
+	/**
+	 * @throws Exception
+	 */
 	public void insereDados() throws Exception {
 		nome =  f.comando("Contato");
 		fone = 	f.comando("Telefone");
@@ -22,6 +24,9 @@ public class Registrador {
 	}
 	
 	
+	/**
+	 * @throws Exception
+	 */
 	public  void insereLista() throws Exception {
 		f.menuInserirNovo();
 		
@@ -51,6 +56,10 @@ public class Registrador {
 	}
 	
 	
+	/**
+	 * @param arquivo
+	 * @throws Exception
+	 */
 	public  void insereArquivo(String arquivo) throws Exception {
 
 		f.menuInserirNovo();
@@ -86,6 +95,10 @@ public class Registrador {
 	}
 	
 	
+	/**
+	 * @param arquivo
+	 * @throws Exception
+	 */
 	public  void insereAmbas(String arquivo) throws Exception {
 		//executaComando();
 		f.menuInserirNovo();

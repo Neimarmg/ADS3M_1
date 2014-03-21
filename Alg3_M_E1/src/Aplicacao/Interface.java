@@ -26,7 +26,7 @@ public class Interface<T> extends Formatos {
 			switch (comando("")) {
 			
 			case "lista":
-				naoImplementado();
+				objetoNaoImplementado();
 				consulta();
 				break;
 				
@@ -151,7 +151,8 @@ public class Interface<T> extends Formatos {
 			
 		case "inserir":
 			msg("\nAguarde verificando disco...\n");
-			if (m.calculaDisponivel() > 6000){ // Verifica memoria ao inserir dodos.
+			if (m.calculaDisponivel() > 60000){ // Verifica memoria ao inserir dodos.
+				m.pritnGrafico();
 				salva();
 			}else{
 				espacoInsuficiente();

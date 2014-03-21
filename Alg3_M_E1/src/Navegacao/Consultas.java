@@ -16,7 +16,7 @@ public class Consultas {
 	 * @param nomeArquivo
 	 */
 	public void	navega(String nomeArquivo) {
-		i.naoImplementado();
+		i.objetoNaoImplementado();
 	}	
 
 	

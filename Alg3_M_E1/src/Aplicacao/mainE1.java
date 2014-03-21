@@ -1,6 +1,5 @@
 package Aplicacao;
 
-import Arquivos.Memoria;
 import Utilitarios.Dia;
 import Utilitarios.Formatos;
 
@@ -18,7 +17,9 @@ public class mainE1 {
 		d.defineSaudacao();
 	}
 	
-
+	/**
+	 * @throws Exception
+	 */
 	private void run() throws Exception {
 		escreveCabecalho();
 		saudaUsuario();

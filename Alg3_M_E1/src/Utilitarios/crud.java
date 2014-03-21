@@ -15,18 +15,19 @@ import java.io.Writer;
 import Aplicacao.Interface;
 import Arquivos.Memoria;
 
-public class Include {
+public class crud {
 	
 	Formatos i = new Formatos();	
 	
 	/**Insere novo registro em arquivo .txt!
 	 * @param arquivo
 	 * @param desc
+	 * @throws IOException 
 	 */
-	public void addNovo(String arquivo, String  desc) {
+	public void addNovo(String arquivo, String  desc) throws IOException {
+		FileWriter f;
+		BufferedWriter buff = null;
 		try {
-			FileWriter f;
-			BufferedWriter buff;
 			f = new FileWriter(new File(arquivo),true);
 			buff = new BufferedWriter(f);			
 			buff.newLine();
@@ -34,7 +35,9 @@ public class Include {
 			buff.close();	
 		} catch (IOException e) {
 			i.msg("Não foi possivél inserir registro!");
-		}	
+		}finally{
+			buff.close();
+		}
 	}
 		
 	
@@ -68,17 +71,19 @@ public class Include {
 		}
 	}  
 		
-				
+	
+	/** Realiza a salva edição do registro
+	* 
+	*/			
 	public void salva() {
-		/** Realiza a remoção lógica do registro
-		* 
-		*/
+		i.objetoNaoImplementado();
 	} 
 		
 	
+	/** Realiza alteração do registro
+	* 
+	*/
 	public void altera() {
-		/** Realiza a remoção lógica do registro
-		* 
-		*/
+		i.objetoNaoImplementado();
 	} 
 }
