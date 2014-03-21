@@ -130,6 +130,6 @@ public class Registrador {
 			f.opcaoInvalida();
 			insereAmbas(arquivo);
 			break;
-		}//
+		}
 	}
 }

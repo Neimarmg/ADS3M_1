@@ -46,7 +46,7 @@ public class Interface<T> extends Formatos {
 		
 	}
 
-	/**	 * 
+	/**
 	 * @throws Exception
 	 */
 	public void salva() throws Exception {	
@@ -138,7 +138,6 @@ public class Interface<T> extends Formatos {
 	}
 	
 	/**
-	 * 
 	 * @throws Exception
 	 */
 	public void iniciaTarefas() throws Exception {
@@ -150,9 +149,9 @@ public class Interface<T> extends Formatos {
 			break;
 			
 		case "inserir":
-			msg("\nAguarde verificando disco...\n");
-			if (m.calculaDisponivel() > 60000){ // Verifica memoria ao inserir dodos.
-				m.pritnGrafico();
+			msg("\nVerificando disco...\n");
+			if (m.calculaDisponivel() > 60000){ // Verifica memória ao inserir dados.
+				consultaMemoria();
 				salva();
 			}else{
 				espacoInsuficiente();

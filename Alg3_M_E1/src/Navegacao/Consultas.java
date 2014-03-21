@@ -12,7 +12,8 @@ public class Consultas {
 	Formatos i = new Formatos();
 	Ficheiro f = new Ficheiro();
 	
-	/**Método que realiza a navegação entre os registros 
+	/**
+	 * Método que realiza a navegação entre os registros 
 	 * @param nomeArquivo
 	 */
 	public void	navega(String nomeArquivo) {

@@ -25,25 +25,25 @@ public class Ficheiro {
 	 */
 	public void criaNovo(final String nomeAquivo) {
 		try {
-			i.msg("\nAguarde verificando disco...\n");
-			if (m.calculaDisponivel() > 60000){ // Verifica memoria ao inserir dodos.
-				m.pritnGrafico();
+			i.msg("\nVerificando disco...\n");
+			if (m.calculaDisponivel() > 60000) { // Verifica memória ao inserir dados
+				i.consultaMemoria();
 				FileWriter c = new FileWriter(new File(nomeAquivo),true);
 				i.msgb("Novo arquivo criado: "+c);
 				c.close();
-			}else{
+			} else {
 				i.espacoInsuficiente();
 				m.imprime();
 			}
 		} catch (Exception e) {
-			i.msgb("Não foi possivél criar um novo arquivo!");
+			i.msgb("Não foi possivél criar um novo arquivo.");
 		}		
 	}
 	
 
 
-	
-	/** Método de remoção de arquivo com verificação de existência do arquivo
+	/** 
+	 * Método de remoção de arquivo com verificação de existência do arquivo
 	 * @param nomeArquivo
 	 */
 	public void remove(String nomeArquivo) {
@@ -82,7 +82,7 @@ public class Ficheiro {
 			}
 			br.close();			
 		} catch (FileNotFoundException e) {
-			i.msgb("O nome do arquivo está incorreto ou não existe!");
+			i.msgb("Nome do arquivo incorreto ou inexistente.");
 			Interface a = new Interface();
 			a.imprime();
 		}

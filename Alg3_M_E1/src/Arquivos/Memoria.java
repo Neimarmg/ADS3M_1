@@ -12,7 +12,8 @@ public class Memoria {
 	FileSystem fSistem  = FileSystems.getDefault();
 	String grafico = "|||";
 	
-	/**Método lista unidade de disco.
+	/**
+	 * Método que lista unidade de disco
 	 * @return
 	 */
 	private String listaInidades() {
@@ -22,7 +23,8 @@ public class Memoria {
 	}
 	
 	
-	/**Método que totaliza a memória total unidade de disco.
+	/**
+	 * Método que totaliza a memória total da unidade de disco
 	 * @return
 	 * @throws Exception
 	 */
@@ -34,7 +36,8 @@ public class Memoria {
 	}
 	
 	
-	/**Método que calcula a memória disponível na unidade de disco.
+	/**
+	 * Método que calcula a memória disponível na unidade de disco
 	 * @return
 	 * @throws Exception
 	 */
@@ -46,7 +49,7 @@ public class Memoria {
 	}
 	
 	
-	/**Impressão dos dados de memória.
+	/**Impressão dos dados de memória
 	 * @throws Exception
 	 */
 	public void pritnGrafico()throws Exception {

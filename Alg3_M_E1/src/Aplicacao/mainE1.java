@@ -13,16 +13,13 @@ public class mainE1 {
 	}
 	
 	
-	public void saudaUsuario() {
-		d.defineSaudacao();
-	}
 	
 	/**
 	 * @throws Exception
 	 */
 	private void run() throws Exception {
 		escreveCabecalho();
-		saudaUsuario();
+		d.defineSaudacao();
 		i.mostarMenuMaim();
 		in.iniciaTarefas();
 	}

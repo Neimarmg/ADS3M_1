@@ -19,7 +19,8 @@ public class crud {
 	
 	Formatos i = new Formatos();	
 	
-	/**Insere novo registro em arquivo .txt!
+	/**
+	 * Insere novo registro em arquivo .txt!
 	 * @param arquivo
 	 * @param desc
 	 * @throws IOException 
@@ -34,14 +35,15 @@ public class crud {
 			buff.write(desc);			
 			buff.close();	
 		} catch (IOException e) {
-			i.msg("Não foi possivél inserir registro!");
+			i.msg("Não foi possivél inserir registro.");
 		}finally{
 			buff.close();
 		}
 	}
 		
 	
-	/**Realiza a remoção lógica do registro 
+	/**
+	 * Realiza a remoção lógica do registro 
 	 * @param arquivo
 	 * @param desc
 	 * @throws IOException 
@@ -72,7 +74,8 @@ public class crud {
 	}  
 		
 	
-	/** Realiza a salva edição do registro
+	/** 
+	 * Realiza a salva edição do registro
 	* 
 	*/			
 	public void salva() {
@@ -80,7 +83,8 @@ public class crud {
 	} 
 		
 	
-	/** Realiza alteração do registro
+	/** 
+	 * Realiza alteração do registro
 	* 
 	*/
 	public void altera() {

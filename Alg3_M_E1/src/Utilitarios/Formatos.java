@@ -2,9 +2,11 @@ package Utilitarios;
 
 import java.util.Scanner;
 
+import Arquivos.Memoria;
+
 public class Formatos {	
 	Scanner var = new Scanner(System.in);
-	
+	Memoria m =  new Memoria();
 	
 	public void msg(Object desc) {   
 		System .out.print(desc);
@@ -32,6 +34,16 @@ public class Formatos {
 		System .err.print("\nEspaço insuficiente em disco para inserir dados.\n");
 	}
 	
+	
+	/**
+	 * Método de consulta a memória antes de inserir dados
+	 * @throws Exception
+	 */
+	public void consultaMemoria() throws Exception {
+		msg("Memória disponível: " +m.calculaDisponivel() +"\n");
+	}
+	
+	
 	public void opcaoInvalida() {
 		System .err.println("\nOpção de comando inválido. Tente novamente.");
 	}
@@ -42,7 +54,8 @@ public class Formatos {
 	}
 	
 
-	/**Metodo de label dos comandos do sistema
+	/**
+	 * Método de label dos comandos do sistema
 	 * @param label
 	 */
 	public void paleta(String label) {
@@ -55,7 +68,8 @@ public class Formatos {
 	}
 	
 	
-	/**Método de retorno que recebe a label com parâmento e retorna
+	/**
+	 * Método de retorno que recebe a label com parâmento e retorna
 	 * uma string para filtros
 	 * @param label
 	 * @return

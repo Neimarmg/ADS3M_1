@@ -10,6 +10,7 @@ public class Dia {
 	Calendar dh = Calendar.getInstance();
 	SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 	
+	
 	public void ImprimeHora() {		
 		dh.set(Calendar.DST_OFFSET,0);		
 		m.msg("São " +sdf.format(dh.getTime()) +"hs");
@@ -24,6 +25,7 @@ public class Dia {
 			  "\n" +defineNomenclatura() +hora +"\n");
 	}
 	
+	
 	public String defineNomenclatura() {
 		dh.set(Calendar.DST_OFFSET,0);
 		
@@ -36,6 +38,7 @@ public class Dia {
 	
 	}
 		
+	
 	public void defineSaudacao() {
 		dh.set(Calendar.DST_OFFSET,0);
 		
