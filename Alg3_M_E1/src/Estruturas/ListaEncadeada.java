@@ -14,11 +14,16 @@ public class ListaEncadeada<T extends Comparable<T>> {
 
 	
 	public void print() {
-		Nodo<?> nodo = head;
-		do {
-			i.msg("\n" +nodo.getData());
-			nodo = nodo.getNext();
-		} while (nodo != null);
+		try {
+			Nodo<?> nodo = head;
+			do {
+				i.msg("\n" +nodo.getData());
+				nodo = nodo.getNext();
+			} while (nodo != null);
+			
+		} catch (NullPointerException e) {
+			i.msg("\nNão existem elementos na lista a serem impressos.\n");
+		}
 	}
 	
 	

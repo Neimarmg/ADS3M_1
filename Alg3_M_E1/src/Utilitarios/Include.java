@@ -13,12 +13,13 @@ import java.io.PrintWriter;
 import java.io.Writer;
 
 import Aplicacao.Interface;
+import Arquivos.Memoria;
 
 public class Include {
 	
-	Formatos i = new Formatos();
+	Formatos i = new Formatos();	
 	
-	/**Insere novo regitro em aquivo .txt
+	/**Insere novo registro em arquivo .txt!
 	 * @param arquivo
 	 * @param desc
 	 */

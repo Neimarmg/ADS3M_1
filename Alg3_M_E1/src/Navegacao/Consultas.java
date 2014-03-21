@@ -60,7 +60,7 @@ public class Consultas {
 				break;
 
 			case "filtrar":				
-				especifica(i.comando("Nome do arquivo"),i.comando("Nome do contato"));
+				especifica(i.comando("Nome do arquivo"),i.comando("Contato"));
 				carrega();
 				break;
 				

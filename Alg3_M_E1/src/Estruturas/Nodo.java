@@ -5,37 +5,30 @@ public class Nodo<T extends Comparable<T>> implements Comparable<Nodo<T>> {
 	private T chave;
 	private Nodo<T> next;
 	
-	public Nodo()
-	{
+	public Nodo(){
 		this.chave = null;
 		this.next = null;
 	}
 	
-	public Nodo(T valor)
-	{
+	public Nodo(T valor){
 		this.chave = valor;
 		this.next = null;
 	}
 	
-	public T getData()
-	{
+	public T getData(){
 		return chave;
 	}
 	
- 	private void setData(T chave)
- 
-	{
+ 	private void setData(T chave){
 		this.chave = chave;
 	}
 
 	
-	public Nodo<T> getNext()
-	{
+	public Nodo<T> getNext(){
 		return next;
 	}
 	
-	public void setNext(Nodo<T> next)
-	{
+	public void setNext(Nodo<T> next){
 		this.next = next;
 	}
 

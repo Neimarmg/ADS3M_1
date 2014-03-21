@@ -28,6 +28,10 @@ public class Formatos {
 	}
 	
 	
+	public void espacoInsuficiente() {
+		System .err.print("\nEspaço insuficiente em disco para inserir dados.\n");
+	}
+	
 	public void opcaoInvalida() {
 		System .err.println("\nOpção de comando inválido. Tente novamente.");
 	}
@@ -37,7 +41,7 @@ public class Formatos {
 		System .err.print("\nNão implementado.\n");
 	}
 	
-	
+
 	/**Metodo de label dos comandos do sistema
 	 * @param label
 	 */

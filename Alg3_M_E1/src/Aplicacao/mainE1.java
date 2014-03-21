@@ -1,5 +1,6 @@
 package Aplicacao;
 
+import Arquivos.Memoria;
 import Utilitarios.Dia;
 import Utilitarios.Formatos;
 

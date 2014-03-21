@@ -3,6 +3,7 @@ package Aplicacao;
 import Navegacao.Consultas;
 import Utilitarios.Formatos;
 import Arquivos.Ficheiro;
+import Arquivos.Memoria;
 import Estruturas.ListaEncadeada;
 import Estruturas.Registrador;
 
@@ -14,7 +15,7 @@ public class Interface<T> extends Formatos {
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
 	Registrador registra = new Registrador();
 	Consultas c = new Consultas();
-	
+	Memoria m =  new Memoria();
 
 	/** 
 	 * @throws Exception
@@ -22,26 +23,26 @@ public class Interface<T> extends Formatos {
 	public void consulta() throws Exception {	
 		menuConsultas();
 		
-		switch (comando("")) {
-		
-		case "lista":
-			naoImplementado();
-			consulta();
-			break;
+			switch (comando("")) {
 			
-		case "arquivo":
-			c.carrega();
-			break;
-			
-		case "sair":
-			sair();
-			break;
-			
-		default:
-			opcaoInvalida();
-			consulta();
-			break;
-		}
+			case "lista":
+				naoImplementado();
+				consulta();
+				break;
+				
+			case "arquivo":
+				c.carrega();
+				break;
+				
+			case "sair":
+				sair();
+				break;
+				
+			default:
+				opcaoInvalida();
+				consulta();
+				break;
+			}
 		
 	}
 
@@ -51,28 +52,30 @@ public class Interface<T> extends Formatos {
 	public void salva() throws Exception {	
 		menuInsert();		
 		
-		switch (comando("")) {			
-		case "arquivo":	
-			registra.insereArquivo(comando("Nome do arquivo"));
-			break;
 			
-		case "lista":		
-			registra.insereLista();
-			break;
-
-		case "ambos":		
-			registra.insereAmbas(comando("Nome do arquivo"));			
-			break;
-			
-		case "sair":
-			sair();
-			break;
-			
-		default:
-			opcaoInvalida();
-			salva();
-			break;
-		}			
+			switch (comando("")) {			
+			case "arquivo":	
+				registra.insereArquivo(comando("Nome do arquivo"));
+				break;
+				
+			case "lista":		
+				registra.insereLista();
+				break;
+	
+			case "ambos":		
+				registra.insereAmbas(comando("Nome do arquivo"));			
+				break;
+				
+			case "sair":
+				sair();
+				break;
+				
+			default:
+				opcaoInvalida();
+				salva();
+				break;
+			}		
+	
 	}	
 	
 
@@ -142,12 +145,18 @@ public class Interface<T> extends Formatos {
 			
 		switch (comando("")) {
 		
-		case "consultar":
-			consulta();
+		case "consultar":	
+			consulta();				
 			break;
 			
 		case "inserir":
-			salva();
+			msg("\nAguarde verificando disco...\n");
+			if (m.calculaDisponivel() > 6000){ // Verifica memoria ao inserir dodos.
+				salva();
+			}else{
+				espacoInsuficiente();
+				m.imprime();
+			}
 			break;
 			
 		case "imprimir":

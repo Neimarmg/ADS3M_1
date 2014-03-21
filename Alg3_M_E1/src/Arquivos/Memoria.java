@@ -1,31 +1,59 @@
 package Arquivos;
 
+import java.nio.file.FileStore;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
+
+import Utilitarios.Formatos;
+
 public class Memoria {
 	
-	//try{		
-		
-		private void calcula() {
-			/** Verifica memória disponível para inserir novo					 * 
-			 */
+	Formatos i = new Formatos();
+	FileSystem fSistem  = FileSystems.getDefault();
+	
+	
+	/**Método lista unidade de disco.
+	 * @return
+	 */
+	private String listaInidades() {
+		for (FileStore store : fSistem.getFileStores()) {
+			return store.toString();
 		}
-		
-		
-		public void verifica()throws Exception{
-			/** Inicia a verificação da memória 
-			 * 
-			 */
-			 calcula();
+		return "?";
+	}
+	
+	
+	/**Método que totaliza a memória total unidade de disco.
+	 * @return
+	 * @throws Exception
+	 */
+	public int totalizaMenoria()throws Exception{			
+		for (FileStore store : fSistem.getFileStores()) {
+			return (int) store.getTotalSpace();
 		}
-		
-		
-		public void imprimeStatusMomoria(Object desc)throws Exception {
-			/** Imprime na tale memória disponível no disco
-			 * 
-			 */				
-			//.printMsg(?)
+		return 0;
+	}
+	
+	
+	/**Método que calcula a memória disponível na unidade de disco.
+	 * @return
+	 * @throws Exception
+	 */
+	public int calculaDisponivel()throws Exception {
+		for (FileStore store : fSistem.getFileStores()) {
+			return (int) store.getUsableSpace();
 		}
+		return 0;
+	}
+	
+	
+	/**Impressão dos dados de memória.
+	 * @throws Exception
+	 */
+	public void imprime()throws Exception {
+		i.msg("Lista Unidades: " +listaInidades() +"\n");
+		i.msg("Espaço total: " +totalizaMenoria() +"\n");
+		i.msg("Total disponivel: " +calculaDisponivel() +"\n");
+	}
 		
-	//}Catch(){
-		
-	//}
 }
