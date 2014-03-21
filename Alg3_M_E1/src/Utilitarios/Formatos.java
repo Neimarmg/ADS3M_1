@@ -40,7 +40,7 @@ public class Formatos {
 	 * @throws Exception
 	 */
 	public void consultaMemoria() throws Exception {
-		msg("Memória disponível: " +m.calculaDisponivel() +"\n");
+		System .err.println("Memória disponível: " +m.calculaDisponivel() +"\n");
 	}
 	
 	
