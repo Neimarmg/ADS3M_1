@@ -10,7 +10,6 @@ public class Memoria {
 	
 	Formatos i = new Formatos();
 	FileSystem fSistem  = FileSystems.getDefault();
-	String grafico = "|||";
 	
 	/**
 	 * Método que lista unidade de disco
@@ -30,7 +29,6 @@ public class Memoria {
 	 */
 	public int totalizaMenoria()throws Exception{			
 		for (FileStore store : fSistem.getFileStores()) {
-			grafico = grafico +"|||||";      
 			return (int) store.getTotalSpace();
 		}return 0;
 	}
@@ -43,18 +41,11 @@ public class Memoria {
 	 */
 	public int calculaDisponivel()throws Exception {
 		for (FileStore store : fSistem.getFileStores()) {
-			grafico = grafico +"|||||";    
 			return (int) store.getUsableSpace();		
 		}return 0; 
 	}
 	
 	
-	/**Impressão dos dados de memória
-	 * @throws Exception
-	 */
-	public void pritnGrafico()throws Exception {
-		i.msg(grafico); 
-	}
 	public void imprime()throws Exception {
 		i.msg("\nLista Unidades: " +listaInidades() +"\n");
 		i.msg("Espaço total: " +totalizaMenoria() +"\n");

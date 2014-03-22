@@ -2,11 +2,9 @@ package Utilitarios;
 
 import java.util.Scanner;
 
-import Arquivos.Memoria;
 
 public class Formatos {	
 	Scanner var = new Scanner(System.in);
-	Memoria m =  new Memoria();
 	
 	public void msg(Object desc) {   
 		System .out.print(desc);
@@ -32,15 +30,6 @@ public class Formatos {
 	
 	public void espacoInsuficiente() {
 		System .err.print("\nEspaço insuficiente em disco para inserir dados.\n");
-	}
-	
-	
-	/**
-	 * Método de consulta a memória antes de inserir dados
-	 * @throws Exception
-	 */
-	public void consultaMemoria() throws Exception {
-		System .err.println("Memória disponível: " +m.calculaDisponivel() +"\n");
 	}
 	
 	

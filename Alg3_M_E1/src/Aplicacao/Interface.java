@@ -151,7 +151,7 @@ public class Interface<T> extends Formatos {
 		case "inserir":
 			msg("\nVerificando disco...\n");
 			if (m.calculaDisponivel() > 60000){ // Verifica memória ao inserir dados.
-				consultaMemoria();
+				i.msg("Memória disponível: " +m.calculaDisponivel() +"\n");
 				salva();
 			}else{
 				espacoInsuficiente();
