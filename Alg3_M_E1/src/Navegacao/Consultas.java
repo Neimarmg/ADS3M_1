@@ -9,6 +9,7 @@ import Arquivos.Ficheiro;
 import Utilitarios.Formatos;
 
 public class Consultas {
+	public int contador = 0;
 	Formatos i = new Formatos();
 	Ficheiro f = new Ficheiro();
 	
@@ -27,7 +28,6 @@ public class Consultas {
 	 * @throws IOException 
 	 */
 	public void especifica(String nomeArquivo,String campo) throws IOException {
-		String lista = " ";
 		try {
 			FileReader r = new FileReader(nomeArquivo);
 			BufferedReader br = new BufferedReader(r);
@@ -37,6 +37,7 @@ public class Consultas {
 				linha = br.readLine();
 				if (linha.equals(campo)){	
 					i.msg("> " +linha +"\n");
+					contador++;
 				}
 			}
 			
