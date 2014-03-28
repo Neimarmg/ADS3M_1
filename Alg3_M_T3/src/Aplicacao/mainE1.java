@@ -5,11 +5,12 @@ import Controller.Utilitarios.Formatos;
 
 public class mainE1 {
 	Formatos i = new Formatos();
-	Interface<Object> in = new Interface<Object>();
+
 	Dia d = new Dia();
 	
 	private void escreveCabecalho() {
-	    i.msgb("	EXERCÍCIO DE ESTRUTURAS LINEARES T3");
+		i.msg("Execicío de matrizes T3\n");
+	    i.msgb("		JOGO BATALHA NAVAL \n\n		     BEM VINDO");
 	}
 	
 	
