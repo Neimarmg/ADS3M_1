@@ -9,7 +9,7 @@ public class mainE1 {
 	Dia d = new Dia();
 	
 	private void escreveCabecalho() {
-		i.msg("Execicío de matrizes T3\n");
+		i.msg("Exercicío de matrizes T3\n");
 	    i.msgb("		JOGO BATALHA NAVAL \n\n		     BEM VINDO");
 	}
 	
