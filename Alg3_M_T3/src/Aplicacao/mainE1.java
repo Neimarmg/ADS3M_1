@@ -1,16 +1,16 @@
 package Aplicacao;
 
 import Controller.Utilitarios.*;
-import Model.mapa;
-import View.mapaView;
+import Model.MapaModel;
+import View.MapaView;
 
 public class mainE1 {
-	prints i = new prints();
+	Prints i = new Prints();
 	Interface in = new Interface();
-	mapa m = new mapa();
+	MapaModel m = new MapaModel();
 
-	dia d = new dia();
-	mapaView mv = new mapaView();
+	Dia d = new Dia();
+	MapaView mv = new MapaView();
 	
 	private void escreveCabecalho() {
 		i.msg("Exercicío de matrizes T3\n");

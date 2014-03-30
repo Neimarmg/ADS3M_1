@@ -3,7 +3,7 @@ package Aplicacao;
 import Controller.Utilitarios.*;
 
 
-public class Interface extends prints {
+public class Interface extends Prints {
 	
 	String comando;
 

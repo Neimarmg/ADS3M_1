@@ -3,9 +3,9 @@ package Controller.Utilitarios;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class dia {
-	pressagios s = new pressagios(); 	
-	prints m = new prints();
+public class Dia {
+	Pressagios s = new Pressagios(); 	
+	Prints m = new Prints();
 	
 	Calendar dh = Calendar.getInstance();
 	SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");

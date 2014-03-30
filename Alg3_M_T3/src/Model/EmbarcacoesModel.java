@@ -1,7 +1,7 @@
 
 package Model;
 
-public class embarcacoes {
+public class EmbarcacoesModel {
 	String tamanho;
 	
 	/**

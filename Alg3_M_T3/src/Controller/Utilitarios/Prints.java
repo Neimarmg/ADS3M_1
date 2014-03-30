@@ -3,7 +3,7 @@ package Controller.Utilitarios;
 import java.util.Scanner;
 
 
-public class prints {	
+public class Prints {	
 	Scanner var = new Scanner(System.in);
 	
 	public void msg(Object desc) {   
