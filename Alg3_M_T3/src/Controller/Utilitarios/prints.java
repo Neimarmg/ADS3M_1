@@ -3,7 +3,7 @@ package Controller.Utilitarios;
 import java.util.Scanner;
 
 
-public class Formatos {	
+public class prints {	
 	Scanner var = new Scanner(System.in);
 	
 	public void msg(Object desc) {   
@@ -70,7 +70,7 @@ public class Formatos {
 	
 	
 	public void sair(){
-		System.err.print("\nVocê optou por sair do programa. Obrigado.");
+		System.err.print("\nVocê optou por sair do jogo. Obrigado.");
 	}
 	
 	
@@ -81,97 +81,5 @@ public class Formatos {
 		+"=> IMPRIMIR\n"
 		+"=> ARQUIVO\n"
 		+"=> SAIR\n");
-	}
-	
-	
-	/** 
-	 * @throws Exception
-	 */
-	public void menuInsert() throws Exception {
-		msgb(
-			"	GRAVAR DADOS EM: \n\n"	
-			+"=> ARQUIVO\n"
-			+"=> LISTA\n"
-			+"=> AMBOS\n"
-			+"=> SAIR\n"
-		);			
-	}
-	
-	
-	/** 
-	 * @throws Exception
-	 */
-	public void menuConsultas()throws Exception {	
-		msgb(
-			"	CONSULTAS EM: \n\n"	
-			+"=> ARQUIVO\n"
-			+"=> LISTA\n"
-			+"=> SAIR\n"
-		);		
-	}
-	
-	
-	/** 
-	 * @throws Exception
-	 */
-	public void menuImprimir()throws Exception {	
-		msgb(
-			"	MENU OPÇÕES DE IMPRESSÃO:\n\n"	
-			+"=> ARQUIVO\n"
-			+"=> SAIR\n"
-		);		
-	}
-	
-	
-	/**	
-	 * @throws Exception
-	 */
-	public void  nomeArquivo()throws Exception {	
-		msgb(
-			"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
-			+"=> Nome.Extenção\n"
-			+"=> SAIR\n"
-		);		
-	}
-	
-	
-	/** 
-	 * @throws Exception
-	 */
-	public void menuArquivo()throws Exception {	
-		msgb(
-			"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
-			+"=> NOVO\n"
-			+"=> BUSCAR\n"
-			+"=> REMOVER\n"
-			+"=> SAIR\n"
-		);		
-	}
-	
-	
-	/** 
-	 * @throws Exception
-	 */
-	public void  menuInserirNovo()throws Exception {	
-		msgb(
-			"	OPÇÕES PARA INSERÇÃO DE DADOS:\n\n"	
-			+"=> NOVO\n"
-			+"=> IMPRIMIR\n"
-			+"=> EXCLUIR\n"
-			+"=> SAIR\n"
-		);		
-	}
-	
-	/**
-	 * @throws Exception
-	 */
-	public void  menuConsultaArquivo()throws Exception {	
-		msgb(
-			"	OPÇÕES PARA CONSULTAR ARQUIVO:\n\n"	
-			+"=> NAVEGAR\n"
-			+"=> FILTRAR\n"
-			+"=> TODOS\n"
-			+"=> SAIR\n"
-		);		
 	}
 }

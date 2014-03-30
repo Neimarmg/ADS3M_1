@@ -1,9 +1,9 @@
 package Controller.Utilitarios;
 
-public class Pressagios {
+public class pressagios {
 	String sauda;	
 	
-	Formatos m = new Formatos(); 
+	prints m = new prints(); 
 	
 	public void desejaBomDia() {
 		m.msg("Bom dia.\n");

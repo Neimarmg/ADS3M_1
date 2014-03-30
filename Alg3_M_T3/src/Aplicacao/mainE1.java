@@ -1,18 +1,21 @@
 package Aplicacao;
 
-import Controller.Utilitarios.Dia;
-import Controller.Utilitarios.Formatos;
+import Controller.Utilitarios.*;
+import Model.mapa;
+import View.mapaView;
 
 public class mainE1 {
-	Formatos i = new Formatos();
+	prints i = new prints();
+	Interface in = new Interface();
+	mapa m = new mapa();
 
-	Dia d = new Dia();
+	dia d = new dia();
+	mapaView mv = new mapaView();
 	
 	private void escreveCabecalho() {
 		i.msg("Exercicío de matrizes T3\n");
 	    i.msgb("		JOGO BATALHA NAVAL \n\n		     BEM VINDO");
 	}
-	
 	
 	
 	/**
@@ -23,6 +26,10 @@ public class mainE1 {
 		d.defineSaudacao();
 		i.mostarMenuMaim();
 		//in.iniciaTarefas();
+		m.criaCampo();
+		mv.Campo();
+		
+	
 	}
 	
 
