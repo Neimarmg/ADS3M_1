@@ -84,4 +84,19 @@ public class Consultas {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	/**
+	 * Realiza busaca bunária dentro do arquivo
+	 * @param nomeArquivo
+	 * @param campo
+	 * @throws IOException
+	 */
+	public void buscaBinaria(String nomeArquivo,String campo) throws IOException {
+		
+		
+		
+		
+		
+	}
 }

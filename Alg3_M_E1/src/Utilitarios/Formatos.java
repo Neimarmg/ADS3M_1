@@ -105,6 +105,7 @@ public class Formatos {
 		msgb(
 			"	CONSULTAS EM: \n\n"	
 			+"=> ARQUIVO\n"
+			+"=> BINARIA\n"
 			+"=> LISTA\n"
 			+"=> SAIR\n"
 		);		

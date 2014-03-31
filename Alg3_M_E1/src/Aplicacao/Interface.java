@@ -34,6 +34,10 @@ public class Interface<T> extends Formatos {
 				c.carrega();
 				break;
 				
+			case "binaria":
+				c.buscaBinaria(comando("Nome do arquivo"), comando("Parâmetro "));
+				break;
+				
 			case "sair":
 				sair();
 				break;

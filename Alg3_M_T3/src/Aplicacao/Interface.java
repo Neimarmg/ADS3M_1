@@ -22,7 +22,7 @@ public class Interface extends Prints {
 		
 		mc.iniciaTabuleiro(false);
 		mc.imprimeView(true,"\n"+"TABULEIRO DO JOGO!"+"\n\n");
-	
+		p.msgb("Cmi " +" " +m.getColuna() +" Lm " +m.getLinha());
 		
 		
 		

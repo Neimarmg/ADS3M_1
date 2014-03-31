@@ -5,11 +5,11 @@ import Controller.Utilitarios.Prints;
 public class MapaModel {
 
 	int i,j;
-	private int linha = 10; 
-	private int coluna = 10;
+	private int linha; 
+	private int coluna;
 	
 	Prints p = new Prints();
-	public String [][]mapa = new String[getLinha()][getColuna()];	
+		
 
 	public void setColuna(int coluna) {
 		this.coluna = coluna;
@@ -26,7 +26,8 @@ public class MapaModel {
 	public int getLinha() {
 		return linha;
 	}
-	
+	String [][]mapa = new String[getLinha()][getColuna()];
+
 	public String[][] getMapa() {
 		return mapa;
 	}
@@ -37,14 +38,16 @@ public class MapaModel {
 	 * @throws Exception
 	 */
 	public void criaTabuleiro() throws Exception{
+		
 		p.msgb("Cm "+ " " +getColuna()+" Lm " +getLinha());
 		try {
-			for (i = 0; i < 9; i++) {			
-				for (j = 0; j < getLinha(); j++) {
-					mapa[i][j] = "0";
+			for (i = 0; i < getLinha(); i++) {	
+				for (j = 0; j < getColuna(); j++) {
+					mapa[i][j] = ".";
 				}				
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
+			p.msgb("Cm4 "+ " " +getColuna()+" Lm " +getLinha());
 			p.msgb("Não foi possível criar o mapa!");
 		}
 	}
