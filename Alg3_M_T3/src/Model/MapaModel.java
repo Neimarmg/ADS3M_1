@@ -5,8 +5,8 @@ import Controller.Utilitarios.Prints;
 public class MapaModel {
 
 	int i,j;
-	private int linha; 
-	private int coluna;
+	private int linha = 10; 
+	private int coluna = 10;
 	
 	Prints p = new Prints();
 	public String [][]mapa = new String[getLinha()][getColuna()];	
@@ -40,13 +40,12 @@ public class MapaModel {
 		p.msgb("Cm "+ " " +getColuna()+" Lm " +getLinha());
 		try {
 			for (i = 0; i < 9; i++) {			
-				for (j = 0; j < 9; j++) {
+				for (j = 0; j < getLinha(); j++) {
 					mapa[i][j] = "0";
 				}				
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
 			p.msgb("Não foi possível criar o mapa!");
 		}
-	
 	}
 }

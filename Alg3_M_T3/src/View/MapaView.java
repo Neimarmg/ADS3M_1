@@ -51,4 +51,6 @@ public class MapaView {
 			p.msgb("Não foi possível imprimir o mapa!");
 		}
 	}
+	
+	
 }

@@ -21,7 +21,7 @@ public class Interface extends Prints {
 	public void iniciaTarefas() throws Exception {
 		
 		mc.iniciaTabuleiro(false);
-		//mv.imprimeTabuleiro(true,"\n"+"TABULEIRO DO JOGO!"+"\n\n");
+		mc.imprimeView(true,"\n"+"TABULEIRO DO JOGO!"+"\n\n");
 	
 		
 		

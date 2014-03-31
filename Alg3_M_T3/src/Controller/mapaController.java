@@ -2,11 +2,13 @@ package Controller;
 
 import Controller.Utilitarios.Prints;
 import Model.MapaModel;
+import View.MapaView;
 
 public class mapaController{
 	
 	Prints p =  new Prints();
 	MapaModel m = new MapaModel();
+	MapaView mv = new MapaView();
 	
 	public void defineColuna(boolean defineConlunas) {
 		if (defineConlunas == true){
@@ -30,6 +32,12 @@ public class mapaController{
 		defineColuna(defineTabuleiro);
 		defineLinha(defineTabuleiro);
 		m.criaTabuleiro();
+
 		
+	}	
+	
+	
+	public void imprimeView(Boolean mostraMsgCabelho,String texto) throws Exception {
+		mv.imprimeTabuleiro(mostraMsgCabelho, texto);		
 	}	
 }
