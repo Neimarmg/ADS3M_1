@@ -1,0 +1,37 @@
+Planejamento do sistema
+==================================================================
+
+Menu Inicial
+	Oque vc dezeja fazer
+	JOGAR
+		CORDENADA (Digita linha e coluna)		
+			ATIRAR
+		
+		SAIR
+	DEFINIR (Obs. Implementação opcional)
+		MAPA(Digita tamanho do mapa)
+		NAVIOS (Define tamanho)
+		
+		SAIR	
+
+	IMPRIMIR
+		MAPA
+		INIMIGOS
+		SOLDADO
+		PONTOS
+
+	SAIR
+	
+	
+
+=========================================================
+
+
+Class NaviosModel
+	portaAvioes final 5
+	destroyers  final 4
+	fragatas final 3
+	torpedeiros final 2
+	submarinos final 1
+
+	

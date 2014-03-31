@@ -84,10 +84,19 @@ public class Prints {
 	
 	public void mostarMenuMaim() {		
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
-		+"=> INSERIR\n"
-		+"=> CONSULTAR\n"
+		+"=> JOGAR\n"
+		+"=> DEFINIR\n"
 		+"=> IMPRIMIR\n"
-		+"=> ARQUIVO\n"
 		+"=> SAIR\n");
 	}
+
+	public void menuJogar() {		
+		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
+		+"=> JOGAR\n"
+		+"=> DEFINIR\n"
+		+"=> IMPRIMIR\n"
+		+"=> SAIR\n");
+	}
+
+
 }
