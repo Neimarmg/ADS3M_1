@@ -56,6 +56,15 @@ public class Prints {
 		}
 	}
 	
+	/**
+	 * Valores boleanos
+	 * @param label
+	 * @return
+	 */
+	public int digitaNumero(String label) {
+		paleta(label);
+		return var.nextInt();
+	}
 	
 	/**
 	 * Método de retorno que recebe a label com parâmento e retorna
@@ -66,8 +75,7 @@ public class Prints {
 	public String comando(String label) {
 		paleta(label);
 		return var.next().toLowerCase();
-	}	
-	
+	}
 	
 	public void sair(){
 		System.err.print("\nVocê optou por sair do jogo. Obrigado.");

@@ -1,4 +1,5 @@
-package Controller.Utilitarios;
+
+package Controller;
 import Model.SoldadoModel;
 
 public class SoldadoController {

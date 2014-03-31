@@ -5,34 +5,50 @@ import Model.MapaModel;
 
 public class MapaView {
 	int j,i;
-	MapaModel m = new MapaModel();
-	Prints p = new Prints();
 	char letra = 'A';
+	MapaModel m = new MapaModel();
+	Prints p =  new Prints();
 	
 	
+	/**
+	 * Mètodo definidor do cabeçalho das colunas
+	 */
 	public void letraConluna(){
 		p.msg("+ ");
-		for (j = 0; j <  MapaModel.getColuna(); j++) {
+		for (j = 0; j <  m.getColuna(); j++) {
 			p.msg(" " + letra++ );
 		}
 	}
 	
 	
-	private void imprimeCampo(){
-		letraConluna();		
-		for (i = 0; i <  MapaModel.getLinha(); i++) {
-			p.msg("\n" +i +" ");
-			for (j = 0; j <  MapaModel.getColuna(); j++) {				
-				p.msg(" " + m.getCampo()[i][j]);				
-			}
-			
+	/**
+	 * Mostra mensagem cabelho quando necessário 
+	 * @param mostraMsgCabelho
+	 */
+	public void exibeMensagem(boolean mostraMsgCabelho,Object texto){
+		if (mostraMsgCabelho == true){
+			p.msg(texto);
 		}
-		
 	}
-
 	
-	public void Campo(){
-		m.criaCampo();
-		imprimeCampo();
+	
+	/**
+	 * Métode que desenha mapa de batalha
+	 * @param mostraMsgCabelho
+	 * @throws Exception
+	 */
+	public void imprimeTabuleiro(boolean mostraMsgCabelho,Object texto)throws Exception{
+		try {
+			exibeMensagem(mostraMsgCabelho,texto);
+			letraConluna();
+			for (i = 0; i <  m.getLinha(); i++) {
+				p.msg("\n" +i +" ");
+				for (j = 0; j <  m.getColuna(); j++) {				
+					p.msg(" " + m.getMapa()[i][j]);				
+				}			
+			}		
+		} catch (ArrayIndexOutOfBoundsException e) {
+			p.msgb("Não foi possível imprimir o mapa!");
+		}
 	}
 }
