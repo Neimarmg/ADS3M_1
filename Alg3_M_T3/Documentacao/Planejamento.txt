@@ -51,7 +51,11 @@ Class NaviosModel
 		
 		avalia() // Avalia se ha espaço no mapa para inserir o navio
 		
-			consultaMapa() 
-		seleciona()
+			consultaMapa() // Consulta e calcula espaços para   
+			
+		serteiaLinha() // Fazu sorteio da linha que o navio será posiscionado
+		
+		
+		selecinaNavios() // Seleciono todos os navios um por um atrazer de seu id
 		
 		
