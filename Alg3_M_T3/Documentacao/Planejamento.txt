@@ -8,7 +8,7 @@ Menu Inicial
 			ATIRAR
 		
 		SAIR
-	DEFINIR (Obs. Implementação opcional)
+	DEFINIR (Obs. Implementaï¿½ï¿½o opcional)
 		MAPA(Digita tamanho do mapa)
 		NAVIOS (Define tamanho)
 		
@@ -44,7 +44,14 @@ Class NaviosModel
 			
 	
 	Class TaticaInimiga
-		posicina()
-		avalia()
-			consultaMapa()
+		//MÃ©todos
+		
+		posiciona() //Posisiona navio mapa
+		
+		
+		avalia() // Avalia se ha espaÃ§o no mapa para inserir o navio
+		
+			consultaMapa() 
 		seleciona()
+		
+		
