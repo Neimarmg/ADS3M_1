@@ -2,17 +2,45 @@
 package Model;
 
 public class NaviosModel {
-	String tamanho;
+	
+	private static final int portaAvioes = 5;
+	private static final int destroyers = 4;
+	private static final int fragatas  = 3;
+	private static final int torpedeiros = 2;
+	private static final int submarinos = 1;
 	
 	/**
-	 * @param tamanho
+	 * @return
 	 */
-	public void setTamanho(String tamanho) {
-		this.tamanho = tamanho;
+	public static int getPortaavioes() {
+		return portaAvioes;
 	}
 	
-	public String getTamanho() {
-		return tamanho;
+	/**
+	 * @return
+	 */
+	public static int getDestroyers() {
+		return destroyers;
 	}
 	
+	/**
+	 * @return
+	 */
+	public static int getFragatas() {
+		return fragatas;
+	}
+	
+	/**
+	 * @return
+	 */
+	public static int getTorpedeiros() {
+		return torpedeiros;
+	}
+	
+	/**
+	 * @return
+	 */
+	public static int getSubmarinos() {
+		return submarinos;
+	}
 }
