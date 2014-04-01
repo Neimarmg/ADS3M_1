@@ -10,23 +10,23 @@ public class mapaController {
 	MapaModel m = new MapaModel();
 	MapaView mv = new MapaView();
 	
-	public void defineExtencao() {
+	public void setaExtencao() {
 		MapaModel.setExtancaoY(p.digitaNumero("Digita exteção máxima Y "));
 	}
 	
-	public void defineColuna() {
+	public void setaColuna() {
 		MapaModel.setColuna(p.digitaNumero("Digita nro de colunas "));
 	}
 	
 	
-	public void defineLinha() {
+	public void setaLinha() {
 		MapaModel.setLinha(p.digitaNumero("Digita nro de linha "));	
 	}
 		
 	public void iniciaTabuleiro() throws Exception {
-		defineExtencao();
-		defineColuna();
-		defineLinha();
+		setaExtencao();
+		setaColuna();
+		setaLinha();
 		m.criaTabuleiro();
 	}	
 	

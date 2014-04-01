@@ -22,6 +22,20 @@ public class Prints {
 	}
 	
 	
+	public void msgc(Object desc) {
+		System .out.print(
+			"\n====================================================\n"
+			+desc);
+	}
+
+
+	public void msgr(Object desc) {
+		System .out.print(
+			desc
+			+"\n====================================================\n");
+	}	
+	
+
 	public void msgl() {
 		System .out.print(
 			"\n====================================================\n");

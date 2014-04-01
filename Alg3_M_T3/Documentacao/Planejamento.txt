@@ -35,3 +35,16 @@ Class NaviosModel
 	submarinos final 1
 
 	
+	
+	Class jogoController
+		JOGAR
+			Digita coordenadas
+			Diminui pontos iniciais -1
+			
+			
+	
+	Class TaticaInimiga
+		posicina()
+		avalia()
+			consultaMapa()
+		seleciona()
