@@ -15,7 +15,7 @@ public class MapaView {
 	 */
 	public void letraConluna(){
 		p.msg("+ ");
-		for (j = 0; j <  m.getColuna(); j++) {
+		for (j = 0; j <  MapaModel.getColuna(); j++) {
 			p.msg(" " + letra++ );
 		}
 	}
@@ -27,7 +27,9 @@ public class MapaView {
 	 */
 	public void exibeMensagem(boolean mostraMsgCabelho,Object texto){
 		if (mostraMsgCabelho == true){
-			p.msg(texto);
+			//p.msgl();
+			p.msg(texto +"Área de: " 
+				+MapaModel.getLinha()+"x" +MapaModel.getColuna() +"\n\n");		
 		}
 	}
 	
@@ -41,16 +43,20 @@ public class MapaView {
 		try {
 			exibeMensagem(mostraMsgCabelho,texto);
 			letraConluna();
-			for (i = 0; i <  m.getLinha(); i++) {
+			for (i = 0; i <  MapaModel.getLinha(); i++) {
 				p.msg("\n" +i +" ");
-				for (j = 0; j <  m.getColuna(); j++) {				
-					p.msg(" " + m.getMapa()[i][j]);				
+				for (j = 0; j <  MapaModel.getColuna(); j++) {				
+					p.msg(" " + MapaModel.getMapa()[i][j]);				
 				}			
-			}		
+			}
+			p.msg("\n");
+			p.msgl();
 		} catch (ArrayIndexOutOfBoundsException e) {
 			p.msgb("Não foi possível imprimir o mapa!");
+			p.msg(MapaModel.getExtancaoY());
 		}
 	}
+	
 	
 	
 }

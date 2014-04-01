@@ -3,51 +3,54 @@ package Model;
 import Controller.Utilitarios.Prints;
 
 public class MapaModel {
-
-	int i,j;
-	private int linha; 
-	private int coluna;
-	
 	Prints p = new Prints();
-		
-
-	public void setColuna(int coluna) {
-		this.coluna = coluna;
-	}
 	
-	public int getColuna() {
-		return coluna;
-	}
-
-	public void setLinha(int linha) {
-		this.linha = linha;
-	}
+	private int i = 0 ,j = 0 ;
+	private static int extancaoY = 10;
+	private static int linha = extancaoY; 
+	private static int coluna = extancaoY;
 	
-	public int getLinha() {
-		return linha;
-	}
-	String [][]mapa = new String[getLinha()][getColuna()];
-
-	public String[][] getMapa() {
+	public static String[][] getMapa() {
 		return mapa;
 	}
-		
 	
+	public static void setExtancaoY(int extancaoY) {
+		MapaModel.extancaoY = extancaoY;
+	}
+	
+	public static int getExtancaoY() {
+		return extancaoY;
+	}
+	
+	public static void setColuna(int coluna) {
+		MapaModel.coluna = coluna;
+	}
+	
+	public static int getColuna() {
+		return coluna;
+	}
+	
+	public static void setLinha(int linha) {
+		MapaModel.linha = linha;
+	}
+	
+	public static int getLinha() {
+		return linha;
+	}
+	
+	static String [][]mapa = new String[getLinha()][getColuna()];
 	/**
 	 * Cria tabluleiro do jogo
 	 * @throws Exception
 	 */
 	public void criaTabuleiro() throws Exception{
-		
-		p.msgb("Cm "+ " " +getColuna()+" Lm " +getLinha());
 		try {
-			for (i = 0; i < getLinha(); i++) {	
-				for (j = 0; j < getColuna(); j++) {
+			for (i = 0; i < linha; i++) {	
+				for (j = 0; j < coluna; j++) {
 					mapa[i][j] = ".";
 				}				
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
-			p.msgb("Cm4 "+ " " +getColuna()+" Lm " +getLinha());
 			p.msgb("Não foi possível criar o mapa!");
 		}
 	}
