@@ -1,28 +1,26 @@
 package Model;
 
 public class SoldadoModel {
-	private int pontuacaoInicial = 15;
-	private String nomeSoldado;
+	private static int pontuacaoInicial = 15;
+	private static String nomeSoldado = "Jose";
 	
 	
-	public void setPontuacaoInicial(boolean maisPontos, int pontos) {
-		if (maisPontos == false && pontos == 0){
-			this.pontuacaoInicial = 15;
-		}	this.pontuacaoInicial = pontos;
+	public static void setPontuacaoInicial(int pontuacaoInicial) {
+		SoldadoModel.pontuacaoInicial = pontuacaoInicial;
 	}
-		
-	public int getPontuacaoInicial() {
+	
+	
+	public static int getPontuacaoInicial() {
 		return pontuacaoInicial;
 	}
 	
 	
-	public void setNomeSoldado(String nomeSoldado) {
-		this.nomeSoldado = nomeSoldado;
+	public static void setNomeSoldado(String nomeSoldado) {
+		SoldadoModel.nomeSoldado = nomeSoldado;
 	}
 	
 	
-	public String getNomeSoldado() {
+	public static String getNomeSoldado() {
 		return nomeSoldado;
-	}
-	
+	}	
 }

@@ -7,7 +7,7 @@ public class SoldadoController {
 	private int somaPontos = 0;
 	
 	public void atira(){
-		s.setPontuacaoInicial(false, 0);
+	
 	}
 	
 
