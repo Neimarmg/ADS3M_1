@@ -31,7 +31,7 @@ public class Dia {
 		
 		int hora =  dh.get(Calendar.HOUR_OF_DAY);
 		
-		if (hora <= 0) {
+		if (hora == 1) {
 			return "É ";
 		} return "São ";
 		

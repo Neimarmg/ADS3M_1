@@ -1,15 +1,11 @@
 package Aplicacao;
 
-import Controller.mapaController;
 import Controller.Utilitarios.*;
-import Model.MapaModel;
 
 public class mainT3 {
 	Prints p = new Prints();
-	Interface in = new Interface();	
+	Comandos in = new Comandos();	
 	Dia d = new Dia();
-	MapaModel m = new MapaModel();
-	mapaController mc = new mapaController();
 
 	
 	private void escreveCabecalho() {
@@ -18,22 +14,12 @@ public class mainT3 {
 	}
 	
 	/**
-	 * Imprime mapa inicial do jogo!
-	 * @throws Exception
-	 */
-	public void mapa() throws Exception {
-		m.criaMapa();
-		mc.imprimeView(true,"\n"+"TABULEIRO DO JOGO! ");	
-	}
-	
-	/**
 	 * @throws Exception
 	 */
 	private void run() throws Exception {
 		escreveCabecalho();
 		d.defineSaudacao();
-		p.mostarMenuMaim();
-		mapa();
+		p.menuMain();
 		in.iniciaTarefas();
 	}
 	

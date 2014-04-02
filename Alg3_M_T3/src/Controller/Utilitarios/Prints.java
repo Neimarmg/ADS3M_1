@@ -96,21 +96,21 @@ public class Prints {
 	}
 	
 	
-	public void mostarMenuMaim() {		
-		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
+	public void menuJogar() {		
+		msgb("	COMANDOS DE JOGO?\n\n"
 		+"=> JOGAR\n"
 		+"=> DEFINIR\n"
 		+"=> IMPRIMIR\n"
 		+"=> SAIR\n");
 	}
 
-	public void menuJogar() {		
+	
+	public void menuMain() {		
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
-		+"=> JOGAR\n"
-		+"=> DEFINIR\n"
-		+"=> IMPRIMIR\n"
+		+"=> INICIAR\n"
 		+"=> SAIR\n");
 	}
+
 
 
 }
