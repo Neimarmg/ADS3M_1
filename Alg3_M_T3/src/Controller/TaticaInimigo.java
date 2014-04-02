@@ -19,7 +19,7 @@ public class TaticaInimigo {
 	}
 
 	
-	private void consultaLinha() {
+	private void verficaUnidades() {
 		
 	}
 
@@ -29,7 +29,7 @@ public class TaticaInimigo {
 	}
 
 	
-	public void processaInvel() {
+	public void processaNinvel() {
 		try {
 			m.criaMapa();
 			mv.imprime(true, "Matriz processeda");

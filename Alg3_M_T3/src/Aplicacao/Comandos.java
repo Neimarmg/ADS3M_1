@@ -22,7 +22,7 @@ public class Comandos extends Prints {
 		switch (comando("")) {
 		
 		case "jogar":	
-			ti.processaInvel();
+			ti.processaNinvel();
 			break;
 			
 		case "definir":	
