@@ -3,20 +3,20 @@ package Model;
 
 public class NaviosModel {
 	
-	private static int portaAvioes = 5;
-	private static int QtPortaAvioes = 1;
+	private static int portaAvioes = 1;
+	private static int UnidPortaAvioes = 5;
 
-	private static int destroyers = 4;
-	private static int QtDestroyers = 1 ;
+	private static int destroyers = 2;
+	private static int UnidDestroyers = 4 ;
 	
 	private static int fragatas  = 3;
-	private static int QtFragatas  = 1 ;
+	private static int UnidFragatas  = 3 ;
 	
-	private static int torpedeiros = 2;
-	private static int QtTorpedeiros = 1 ;
+	private static int torpedeiros = 5;
+	private static int UnidTorpedeiros = 2 ;
 	
-	private static int submarinos = 1;
-	private static int QtSubmarinos  = 1 ;
+	private static int submarinos = 5;
+	private static int UnidSubmarinos  = 1 ;
 	
 	//=================<<portaAvioes>>=================
 
@@ -29,13 +29,14 @@ public class NaviosModel {
 		return portaAvioes;
 	}
 	
-	public static void setQtPortaAvioes(int qtPortaAvioes) {
-		QtPortaAvioes = qtPortaAvioes;
+	public static void setUnidPortaAvioes(int unidPortaAvioes) {
+		UnidPortaAvioes = unidPortaAvioes;
 	}
 	
-	public static int getQtPortaAvioes() {
-		return QtPortaAvioes;
+	public static int getUnidPortaAvioes() {
+		return UnidPortaAvioes;
 	}
+	
 
 		
 	//=================<< destroyers >>==================
@@ -48,12 +49,12 @@ public class NaviosModel {
 		return destroyers;
 	}
 	
-	public static void setQtDestroyers(int qtDestroyers) {
-		QtDestroyers = qtDestroyers;
+	public static void setUnidDestroyers(int unidDestroyers) {
+		UnidDestroyers = unidDestroyers;
 	}
 	
-	public static int getQtDestroyers() {
-		return QtDestroyers;
+	public static int getUnidDestroyers() {
+		return UnidDestroyers;
 	}
 		
 	//=================<< fragatas >>====================
@@ -67,32 +68,33 @@ public class NaviosModel {
 		return fragatas;
 	}
 		
-	public static void setQtFragatas(int qtFragatas) {
-		QtFragatas = qtFragatas;
+	public static void setUnidFragatas(int unidFragatas) {
+		UnidFragatas = unidFragatas;
 	}
 	
-	public static int getQtFragatas() {
-		return QtFragatas;
+	public static int getUnidFragatas() {
+		return UnidFragatas;
 	}
 	
 	
 	//=================<< torpedeiros >>==================
 	
-	public static void setQtTorpedeiros(int qtTorpedeiros) {
-		QtTorpedeiros = qtTorpedeiros;
+	public static void setTorpedeiros(int torpedeiros) {
+		NaviosModel.torpedeiros = torpedeiros;
 	}
 	
 	public static int getTorpedeiros() {
 		return torpedeiros;
 	}
 	
-	public static void setTorpedeiros(int torpedeiros) {
-		NaviosModel.torpedeiros = torpedeiros;
+	public static void setUnidTorpedeiros(int unidTorpedeiros) {
+		UnidTorpedeiros = unidTorpedeiros;
 	}
 	
-	public static int getQtTorpedeiros() {
-		return QtTorpedeiros;
+	public static int getUnidTorpedeiros() {
+		return UnidTorpedeiros;
 	}
+	
 	//=================<< submarinos >>==================
 	
 	public static void setSubmarinos(int submarinos) {
@@ -103,11 +105,11 @@ public class NaviosModel {
 		return submarinos;
 	}
 	
-	public static void setQtSubmarinos(int qtSubmarinos) {
-		QtSubmarinos = qtSubmarinos;
+	public static void setUnidSubmarinos(int unidSubmarinos) {
+		UnidSubmarinos = unidSubmarinos;
 	}
 	
-	public static int getQtSubmarinos() {
-		return QtSubmarinos;
+	public static int getUnidSubmarinos() {
+		return UnidSubmarinos;
 	}
 }

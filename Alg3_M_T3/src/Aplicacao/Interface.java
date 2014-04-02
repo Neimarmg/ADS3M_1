@@ -4,6 +4,7 @@ import Controller.mapaController;
 import Controller.Utilitarios.*;
 import Model.MapaModel;
 import View.MapaView;
+import View.NaviosView;
 
 public class Interface extends Prints {
 	
@@ -12,7 +13,7 @@ public class Interface extends Prints {
 	MapaModel m = new MapaModel();
 	mapaController mc = new mapaController();
 	MapaView mv = new MapaView();
-
+	NaviosView c = new NaviosView();
 	
 	/**
 	 * @throws Exception
@@ -21,7 +22,7 @@ public class Interface extends Prints {
 		
 		m.criaTabuleiro();
 		mc.imprimeView(true,"\n"+"TABULEIRO DO JOGO! ");
-		
+		c.imprime(false);
 		
 		
 		

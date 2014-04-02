@@ -13,7 +13,7 @@ public class MapaView {
 	/**
 	 * Mètodo definidor do cabeçalho das colunas
 	 */
-	public void letraConluna(){
+	public void nomeiaConluna(){
 		p.msg("+ ");
 		for (j = 0; j <  MapaModel.getColuna(); j++) {
 			p.msg(" " + letra++ );
@@ -25,7 +25,7 @@ public class MapaView {
 	 * Mostra mensagem cabelho quando necessário 
 	 * @param mostraMsgCabelho
 	 */
-	public void exibeMensagem(boolean mostraMsgCabelho,Object texto){
+	public void abilitaMensagem(boolean mostraMsgCabelho,Object texto){
 		if (mostraMsgCabelho == true){
 			//p.msgl();
 			p.msg(texto +"Área de: " 
@@ -39,10 +39,10 @@ public class MapaView {
 	 * @param mostraMsgCabelho
 	 * @throws Exception
 	 */
-	public void imprimeTabuleiro(boolean mostraMsgCabelho,Object texto)throws Exception{
+	public void imprime(boolean mostraMsgCabelho,Object texto)throws Exception{
 		try {
-			exibeMensagem(mostraMsgCabelho,texto);
-			letraConluna();
+			abilitaMensagem(mostraMsgCabelho,texto);
+			nomeiaConluna();
 			for (i = 0; i <  MapaModel.getLinha(); i++) {
 				p.msg("\n" +i +" ");
 				for (j = 0; j <  MapaModel.getColuna(); j++) {				

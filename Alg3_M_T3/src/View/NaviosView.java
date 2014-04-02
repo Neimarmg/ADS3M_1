@@ -12,35 +12,35 @@ public class NaviosView {
 	 * @param filtrar
 	 * @param parametro
 	 */
-	private void encontraNavio(boolean filtrar, String parametro){
+	private void pesquisa(boolean filtrar, String parametro){
 		if (parametro.equals("portaAvioes") && filtrar == true || filtrar == false) {
-			nome = nome +"\nPortaAvioes tamanho " 
-				+NaviosModel.getPortaAvioes() +"m "
-				+"Qt: " +NaviosModel.getQtPortaAvioes()+"\n";
+			nome += "\nPortaAvioes " 
+				+NaviosModel.getPortaAvioes()
+				+" de " +NaviosModel.getUnidPortaAvioes() +" unidades\n";
 		} 
 			
 		if (parametro.equals("destroyers")&& filtrar == true || filtrar == false) {
-			nome = nome +"\nDestroyers tamanho " 
-				+NaviosModel.getDestroyers() +"m "
-				+"Qt: " +NaviosModel.getQtDestroyers()+"\n";
+			nome += "\nDestroyers " 
+				+NaviosModel.getDestroyers()
+				+" de " +NaviosModel.getUnidTorpedeiros() +" unidades\n";
 		}
 			
 		if (parametro.equals("fragatas")&& filtrar == true || filtrar == false) {
-			nome = nome +"\nFragatas tamanho " 
-				+NaviosModel.getFragatas() +"m "
-				+"Qt: " +NaviosModel.getQtFragatas() +"\n";
+			nome += "\nFragatas " 
+				+NaviosModel.getFragatas()
+				+" de " +NaviosModel.getUnidFragatas() +" unidades\n";
 		}
 				
 		if (parametro.equals("torpedeiros")&& filtrar == true || filtrar == false) {
-			nome = nome +"\nTorpedeiros Tamanho " 
-				+NaviosModel.getTorpedeiros()  +"m "
-				+"Qt: " +NaviosModel.getQtTorpedeiros()+"\n";;
+			nome += "\nTorpedeiros " 
+				+NaviosModel.getTorpedeiros()
+				+" de " +NaviosModel.getUnidTorpedeiros() +" unidades\n";;
 		} 
 		
 		if (parametro.equals("submarinos")&& filtrar == true || filtrar == false) {
-			nome = nome +"\nSubmarinos tamanho " 
-				+NaviosModel.getSubmarinos() +"m "
-				+"Qt: " +NaviosModel.getQtSubmarinos()+"\n";;
+			nome += "\nSubmarinos " 
+				+NaviosModel.getSubmarinos()
+				+" de " +NaviosModel.getUnidSubmarinos() +" unidades\n";
 		}	
 	}
 	
@@ -50,14 +50,14 @@ public class NaviosView {
 	 * @param filtrar
 	 * @param parametro
 	 */
-	private void avaliaNavios(boolean filtrar, String parametro){
-		encontraNavio(filtrar, parametro);
+	private void executa(boolean filtrar, String parametro){
+		pesquisa(filtrar, parametro);
 		p.msg(nome);
 		
 		if (filtrar == true && nome.equals(" ")) {
 			p.msgb("Não foi encontrado nenhum navio com nome de " +parametro);
 		}else{
-			encontraNavio(filtrar, parametro);			
+			pesquisa(filtrar, parametro);			
 		}
 	}
 	
@@ -66,11 +66,11 @@ public class NaviosView {
 	 * Método de impressão de navios inimigo
 	 * @param filtrar
 	 */
-	public void imprimeNavios(boolean filtrar){
+	public void imprime(boolean filtrar){
 		if (filtrar == true) {
-			avaliaNavios(filtrar,p.comando("Nome do navio "));
+			executa(filtrar,p.comando("Nome do navio "));
 		}else{
-			avaliaNavios(filtrar, " ");
+			executa(filtrar, " ");
 		}
 	}
 }

@@ -31,6 +31,6 @@ public class mapaController {
 	}	
 	
 	public void imprimeView(Boolean mostraMsgCabelho,String texto) throws Exception {
-		mv.imprimeTabuleiro(mostraMsgCabelho, texto);		
+		mv.imprime(mostraMsgCabelho, texto);		
 	}	
 }

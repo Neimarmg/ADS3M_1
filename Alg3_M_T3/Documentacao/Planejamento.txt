@@ -1,4 +1,4 @@
-Planejamento do sistema
+﻿Planejamento do sistema
 ==================================================================
 
 Menu Inicial
@@ -56,6 +56,15 @@ Class NaviosModel
 		serteiaLinha() // Fazu sorteio da linha que o navio será posiscionado
 		
 		
-		selecinaNavios() // Seleciono todos os navios um por um atrazer de seu id
+		selecionaNavios() // Seleciono todos os navios um por um atrazer de seu id
 		
+=========================================================
+
+Class Crude
+	// Metodos
+		//O parametro "casa" deve soma unm valor a linha quando tiver que ser
+		// alterar um valor em várias colunas na mesma linha. Ambos os metodos Add ou remove.
+	Add(linha, coluna, casa,)
 		
+
+	remove(linha, coluna, casa,)	
