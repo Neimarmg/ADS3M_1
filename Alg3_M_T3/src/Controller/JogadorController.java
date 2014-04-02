@@ -9,8 +9,8 @@ public class JogadorController {
 	public void atira(){
 	
 	}
-	
 
+	
 	public int consome(int perde ){
 		
 		return perde;

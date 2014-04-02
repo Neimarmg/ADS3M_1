@@ -44,19 +44,25 @@ Class NaviosModel
 			
 	
 	Class TaticaInimiga
+		
+		
 		//Métodos
 		
 		posiciona() //Posisiona navio mapa
 		
 		
-		avalia() // Avalia se ha espaço no mapa para inserir o navio
+		processaNivel() // Avalia se ha espaço no mapa para inserir o navio
 		
-			consultaMapa() // Consulta e calcula espaços para   
+			consultaLinha() // Consulta e calcula espaços para que caiba o um navio
 			
+		
 		serteiaLinha() // Fazu sorteio da linha que o navio será posiscionado
 		
 		
 		selecionaNavios() // Seleciono todos os navios um por um atrazer de seu id
+	
+	
+	
 		
 =========================================================
 
@@ -68,3 +74,12 @@ Class Crude
 		
 
 	remove(linha, coluna, casa,)	
+
+=========================================================
+Class Niveis
+	nivel = ref
+	mapaNivel = 1
+	
+	gets() 
+	
+	

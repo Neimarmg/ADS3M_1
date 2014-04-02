@@ -2,6 +2,7 @@ package Aplicacao;
 
 import Controller.SoldadoController;
 import Controller.ComandosController;
+import Controller.TaticaInimigo;
 import Controller.mapaController;
 import Controller.Utilitarios.*;
 
@@ -11,16 +12,17 @@ public class Comandos extends Prints {
 	ComandosController ic =  new ComandosController();
 	SoldadoController sc =  new SoldadoController();
 	mapaController m = new mapaController();
+	TaticaInimigo ti = new TaticaInimigo();
 	
 	/**
 	 * @throws Exception
 	 */
 	public void iniciaJogo() throws Exception {
-		
+		menuJogar();
 		switch (comando("")) {
 		
 		case "jogar":	
-			
+			ti.processaInvel();
 			break;
 			
 		case "definir":	
@@ -39,7 +41,6 @@ public class Comandos extends Prints {
 	}
 		
 	public void iniciaTarefas() throws Exception {
-		
 		switch (comando("")) {
 		
 		case "iniciar":	

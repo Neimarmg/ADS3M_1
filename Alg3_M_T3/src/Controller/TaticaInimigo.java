@@ -1,24 +1,40 @@
 package Controller;
 
+import Model.MapaModel;
+import View.MapaView;
+/**
+ * Classe resposavel pelas distribuição das embarcaçãoe no mapa
+ * @author moises
+ */
 public class TaticaInimigo {
+	MapaModel m = new MapaModel();
+	MapaView mv = new MapaView();
 	
-	public void selecionaNavios() {
+	private void selecionaNavios() {
 		
 	}
 
-	public void serteiaLinha() {
+	private void serteiaLinha() {
 		
 	}
 
-	public void consultaMapa() {
+	
+	private void consultaLinha() {
 		
 	}
 
-	public void avalia() {
+
+	private void posiciona() {
 		
 	}
 
-	public void posiciona() {
-		
+	
+	public void processaInvel() {
+		try {
+			m.criaMapa();
+			mv.imprime(true, "Matriz processeda");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

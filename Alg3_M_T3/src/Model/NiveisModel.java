@@ -1,0 +1,65 @@
+package Model;
+
+/**
+ * Classe que define os niveis de jogo todo são estatico e finais 
+ * @author moises
+ *
+ */
+public class NiveisModel {
+	private static final int NIVEL1 = 1;
+	private static final int MAPANIVEL1 = 10; //Tamanho do mapa 10x10
+	
+	private static final int NIVEL2 = 2;
+	private static final int MapaNivel2 = 15; //Tamanho do mapa 15x15
+	
+	private static final int NIVEL3 = 3;
+	private static final int MAPANIVEL3 = 20; //Tamanho do mapa 20x20
+	
+	private static final int NIVEL4 = 4;
+	private static final int MAPANIVEL4 = 25; //Tamanho do mapa 25x25
+	
+	private static final int NIVEL5 = 5;
+	private static final int MAPANIVEL5 = 30; //Tamanho do mapa 30x30
+	
+	
+	public static int getNivel1() {
+		return NIVEL1;
+	}
+	
+	public static int getMapanivel1() {
+		return MAPANIVEL1;
+	}
+	
+	public static int getNivel2() {
+		return NIVEL2;
+	}
+	
+	public static int getMapanivel2() {
+		return MapaNivel2;
+	}
+	
+	public static int getNivel3() {
+		return NIVEL3;
+	}
+	
+	public static int getMapanivel3() {
+		return MAPANIVEL3;
+	}
+	
+	public static int getNivel4() {
+		return NIVEL4;
+	}
+	
+	public static int getMapanivel4() {
+		return MAPANIVEL4;
+	}
+	
+	public static int getNivel5() {
+		return NIVEL5;
+	}
+	
+	public static int getMapanivel5() {
+		return MAPANIVEL5;
+	}
+
+}

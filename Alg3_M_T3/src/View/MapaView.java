@@ -28,7 +28,7 @@ public class MapaView {
 	public void abilitaMensagem(boolean mostraMsgCabelho,Object texto){
 		if (mostraMsgCabelho == true){
 			//p.msgl();
-			p.msg(texto +"Área de: " 
+			p.msg(texto +" " 
 				+MapaModel.getLinha()+"x" +MapaModel.getColuna() +"\n\n");		
 		}
 	}

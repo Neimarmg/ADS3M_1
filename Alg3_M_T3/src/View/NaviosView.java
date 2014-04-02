@@ -50,7 +50,7 @@ public class NaviosView {
 	 * @param filtrar
 	 * @param parametro
 	 */
-	private void executa(boolean filtrar, String parametro){
+	public void executa(boolean filtrar, String parametro){
 		pesquisa(filtrar, parametro);
 		p.msg(nome);
 		
