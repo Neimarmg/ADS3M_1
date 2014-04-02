@@ -27,7 +27,7 @@ public class mapaController {
 		setaExtencao();
 		setaColuna();
 		setaLinha();
-		m.criaTabuleiro();
+		m.criaMapa();
 	}	
 	
 	public void imprimeView(Boolean mostraMsgCabelho,String texto) throws Exception {

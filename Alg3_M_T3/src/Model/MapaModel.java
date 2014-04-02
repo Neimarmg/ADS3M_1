@@ -9,6 +9,7 @@ public class MapaModel {
 	private static int extancaoY = 10;
 	private static int linha = extancaoY; 
 	private static int coluna = extancaoY;
+	static String [][]mapa = new String[getLinha()][getColuna()];
 	
 	public static String[][] getMapa() {
 		return mapa;
@@ -38,12 +39,11 @@ public class MapaModel {
 		return linha;
 	}
 	
-	static String [][]mapa = new String[getLinha()][getColuna()];
 	/**
 	 * Cria tabluleiro do jogo
 	 * @throws Exception
 	 */
-	public void criaTabuleiro() throws Exception{
+	public void criaMapa() throws Exception{
 		try {
 			for (i = 0; i < linha; i++) {	
 				for (j = 0; j < coluna; j++) {

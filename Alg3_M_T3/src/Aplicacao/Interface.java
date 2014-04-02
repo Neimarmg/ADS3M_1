@@ -1,35 +1,35 @@
 package Aplicacao;
 
+import Controller.SoldadoController;
 import Controller.mapaController;
 import Controller.Utilitarios.*;
 import Model.MapaModel;
 import View.MapaView;
-import View.NaviosView;
 
 public class Interface extends Prints {
 	
 	String comando;
-	Prints p =  new Prints();		
 	MapaModel m = new MapaModel();
 	mapaController mc = new mapaController();
 	MapaView mv = new MapaView();
-	NaviosView c = new NaviosView();
+	SoldadoController sc = new SoldadoController();
+
+
+	
+		
 	
 	/**
 	 * @throws Exception
 	 */
 	public void iniciaTarefas() throws Exception {
 		
-		m.criaTabuleiro();
-		mc.imprimeView(true,"\n"+"TABULEIRO DO JOGO! ");
-		c.imprime(false);
-		
-		
-		
-		/*
 		switch (comando("")) {
 		
-		case "?":	
+		case "jogar":	
+			sc.dados(false);
+			break;
+			
+		case "dedinir":	
 			
 			break;
 				
@@ -38,8 +38,9 @@ public class Interface extends Prints {
 			break;
 			
 		default: 
-			iniciaTarefas();
+			opcaoInvalida();
+			iniciaTarefas();			
 			break;
-		}*/
+		}
 	}
 }

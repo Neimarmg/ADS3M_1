@@ -1,39 +1,28 @@
-
 package Controller;
+
+import Controller.Utilitarios.Prints;
 import Model.SoldadoModel;
+import View.SoldadosView;
 
-public class SoldadoController {
-	SoldadoModel s = new SoldadoModel();
-	private int somaPontos = 0;
+public class SoldadoController extends SoldadoModel {
+	Prints p = new Prints();
+	SoldadosView sv = new SoldadosView();
 	
-	public void atira(){
 	
+	public void insertDados(){
+		setNomeSoldado(p.comando("Nome soldado "));
+		setPontuacaoInicial(p.digitaNumero("Pontuação inicial "));
 	}
 	
-
-	public int consome(int perde ){
-		
-		return perde;
+	/**
+	 * @param imprimir
+	 */
+	public void dados(boolean imprimir){
+		if (imprimir == true){
+			insertDados();
+			sv.imprime();
+		}else{
+			insertDados();
+		}	
 	}
-	
-	
-	public int pontua(int somaAcertos){
-		return somaAcertos;
-
-	}
-	
-	
-	public void recua(){
-		
-	}
-	
-	
-	public void setSomaPontos(int somaPontos) {
-		this.somaPontos = somaPontos;
-	}
-
-	
-	public int getSomaPontos() {
-		return somaPontos;
-	}	
 }
