@@ -41,6 +41,9 @@ public class Comandos extends Prints {
 	}
 		
 	public void iniciaTarefas() throws Exception {
+		ti.processaNinvel();
+		
+		
 		switch (comando("")) {
 		
 		case "iniciar":	

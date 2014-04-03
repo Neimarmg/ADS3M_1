@@ -53,7 +53,7 @@ public class MapaView {
 		
 		} catch (ArrayIndexOutOfBoundsException e) {
 			p.msgb("Não foi possível imprimir o mapa!");
-			p.msg(MapaModel.getExtancaoY());
+			p.msg("" +MapaModel.getExtancaoY());
 		}
 	}
 	

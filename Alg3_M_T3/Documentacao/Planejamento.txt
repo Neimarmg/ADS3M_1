@@ -45,6 +45,17 @@ Class NaviosModel
 	
 	Class TaticaInimiga
 		
+		Caminho feliz
+		
+		1) Executa()
+		2) SorteiaLinha()
+		3) SelecioanaNavio()
+		4) SelcionaTamanhoNavio()
+			Pode ser por sorteio ou por laço
+		5) VerificaUnidadeContinua()
+			São maior igual do nro de unidades de mapa
+		6) InsereUnidades()
+		
 		
 		//Métodos
 		

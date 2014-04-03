@@ -10,7 +10,7 @@ public class MapaModel {
 	private static int extancaoY = 10;
 	private static int linha = extancaoY; 
 	private static int coluna = extancaoY;
-	static String [][]mapa = new String[getLinha()][getColuna()];
+	public static String [][]mapa = new String[getLinha()][getColuna()];
 	
 	public static String[][] getMapa() {
 		return mapa;
