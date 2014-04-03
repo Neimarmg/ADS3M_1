@@ -4,7 +4,7 @@ import Controller.Utilitarios.Prints;
 import Model.MapaModel;
 import View.MapaView;
 
-public class mapaController {
+public class MapaController {
 	
 	MapaModel m = new MapaModel();
 	MapaView mv = new MapaView();

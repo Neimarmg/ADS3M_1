@@ -6,7 +6,7 @@ import View.NiveisView;
 public class ComandosController {
 	
 	MapaModel m = new MapaModel();
-	mapaController mc = new mapaController();
+	MapaController mc = new MapaController();
 	NiveisView nv  = new NiveisView();
 	
 	/**

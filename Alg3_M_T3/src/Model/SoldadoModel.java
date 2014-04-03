@@ -2,7 +2,7 @@ package Model;
 
 public class SoldadoModel {
 	private static int pontuacaoInicial = 15;
-	private static String nomeSoldado = "Jose";
+	private static String nomeSoldado = "Jose calos";
 	
 	
 	public static void setPontuacaoInicial(int pontuacaoInicial) {

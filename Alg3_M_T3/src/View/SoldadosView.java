@@ -11,9 +11,9 @@ public class SoldadosView extends SoldadoModel {
 	 */
 	public void avaliaNome(){
 		if (SoldadoModel.getNomeSoldado().equals(" ")) {
-			Prints.msgc("O soldado ainda não possiu nome!\n");
+			Prints.msg("\nO soldado ainda não possiu nome!\n");
 		}else{
-			Prints.msgc("Nome do jogador " 
+			Prints.msg("\nNome do jogador: " 
 				+SoldadoModel.getNomeSoldado() +"\n");
 		}
 	}
@@ -23,7 +23,7 @@ public class SoldadosView extends SoldadoModel {
 	 */
 	public void avaliaPontos(){
 		if (SoldadoModel.getPontuacaoInicial() > 0 ) {
-			Prints.msgr("Pontuação inicial " 
+			Prints.msg("Pontuação inicial: " 
 				+SoldadoModel.getPontuacaoInicial() );
 		}else{
 			Prints.msgr("O soldado " +SoldadoModel.getNomeSoldado()

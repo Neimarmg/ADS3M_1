@@ -4,6 +4,7 @@ import Controller.Utilitarios.Prints;
 import Model.MapaModel;
 import Model.NaviosModel;
 import View.MapaView;
+import View.SoldadosView;
 
 /**
  * Classe resposavel pelas distribuição das embarcaçãoe no mapa
@@ -13,7 +14,8 @@ public class TaticaInimiga {
 	
 	MapaModel m = new MapaModel();
 	MapaView mv = new MapaView();
-	controles c = new controles();
+	Controlador c = new Controlador(); 
+	SoldadosView sv = new SoldadosView();
 
 	private int contNivel = 1;
 	private int contUnidades;
@@ -112,6 +114,7 @@ public class TaticaInimiga {
 		
 		if(MapaModel.getColuna()*MapaModel.getLinha() == contUnidades){
 			posiscionaNavio();
+			sv.imprime();
 		}else{
 			Prints.msgb("Mapa inesistente!");
 			executaTatica();

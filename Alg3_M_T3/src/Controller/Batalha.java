@@ -7,7 +7,7 @@ import Model.SoldadoModel;
 
 
 public class Batalha extends SoldadoModel {
-	controles c = new controles();	
+	Controlador c = new Controlador();	
 	
 	public void atira() throws Exception{
 		try {

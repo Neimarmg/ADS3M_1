@@ -1,10 +1,11 @@
 package Aplicacao;
 
 import Controller.Batalha;
+import Controller.Controlador;
 import Controller.SoldadoController;
 import Controller.ComandosController;
 import Controller.TaticaInimiga;
-import Controller.mapaController;
+import Controller.MapaController;
 import Controller.Utilitarios.*;
 
 public class Comandos extends Prints {
@@ -12,7 +13,7 @@ public class Comandos extends Prints {
 	//String comando;
 	ComandosController ic =  new ComandosController();
 	SoldadoController sc =  new SoldadoController();
-	mapaController m = new mapaController();
+	MapaController m = new MapaController();
 	TaticaInimiga ti = new TaticaInimiga();
 	Batalha j = new Batalha();
 	
@@ -23,9 +24,11 @@ public class Comandos extends Prints {
 		
 		switch (comando("")) {
 		
-		case "atirar":	
+		case "atirar":
 			j.atira();
-			batalha();
+			Prints.msg("Chances: " +Controlador.getChances() 
+				+"\n Pontuação: " +Controlador.getAcertos());
+			batalha();			
 			break;
 						
 		case "sair":
