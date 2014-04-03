@@ -7,7 +7,7 @@ public class MapaModel {
 	Prints p = new Prints();
 	
 	private int i = 0 ,j = 0 ;
-	private static int extancaoY = 10;
+	private static int extancaoY = 15;
 	private static int linha = extancaoY; 
 	private static int coluna = extancaoY;
 	public static String [][]mapa = new String[getLinha()][getColuna()];

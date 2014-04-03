@@ -16,7 +16,7 @@ public class TaticaInimigo {
 	MapaView mv = new MapaView();
 	Crude c = new Crude();
 
-	private int contNivel =3;
+	private int contNivel = 5;
 	private int contUnidades;
 		
 		
@@ -27,11 +27,11 @@ public class TaticaInimigo {
 	
 	private void posiscionaNavio() {
 		
-		//for (int i = 0; i <  MapaModel.getLinha(); i++) {
-			//for (int j = 0; j <  MapaModel.getColuna(); j++) {				
-				c.adiciona(NaviosModel.getUnidDestroyers(),NaviosModel.getUnidDestroyers(), 4);
-				c.adiciona(NaviosModel.getUnidDestroyers(),NaviosModel.getUnidDestroyers(), 4);
-			/*
+		for (int i = 0; i <  MapaModel.getLinha(); i++) {
+			for (int j = 0; j <  MapaModel.getColuna(); j++) {				
+				//c.adiciona(NaviosModel.getUnidDestroyers(),NaviosModel.getUnidDestroyers(), 4);
+				//c.adiciona(NaviosModel.getUnidDestroyers(),NaviosModel.getUnidDestroyers(), 4);
+			
 				if (i == 0 && j >= contNivel && j < (NaviosModel.getUnidPortaAvioes()+contNivel)){
 					MapaModel.mapa[i][j] = "-";					
 				}
@@ -87,9 +87,9 @@ public class TaticaInimigo {
 				
 				if (i == 9 && j >= (contNivel+1) && j < (NaviosModel.getUnidTorpedeiros()+contNivel+1)){
 					MapaModel.mapa[i][j] = "-";					
-				}*/				
-			//}			
-		//}
+				}			
+			}			
+		}
 	}
 
 	/**
