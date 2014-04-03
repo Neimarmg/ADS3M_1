@@ -19,10 +19,11 @@ public class Comandos extends Prints {
 	 */
 	public void iniciaJogo() throws Exception {
 		menuJogar();
+		
 		switch (comando("")) {
 		
 		case "jogar":	
-			ti.processaNinvel();
+			ti.executaTatica();
 			break;
 			
 		case "definir":	
@@ -40,9 +41,11 @@ public class Comandos extends Prints {
 		}
 	}
 		
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	public void iniciaTarefas() throws Exception {
-		ti.processaNinvel();
-		
 		
 		switch (comando("")) {
 		

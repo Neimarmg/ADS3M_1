@@ -18,6 +18,7 @@ public class NaviosModel {
 	private static int submarinos = 5;
 	private static int UnidSubmarinos  = 1 ;
 	
+	
 	//=================<<portaAvioes>>=================
 
 
