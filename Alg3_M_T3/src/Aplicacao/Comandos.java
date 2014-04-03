@@ -1,6 +1,6 @@
 package Aplicacao;
 
-import Controller.JogadorController;
+import Controller.Batalha;
 import Controller.SoldadoController;
 import Controller.ComandosController;
 import Controller.TaticaInimigo;
@@ -14,7 +14,7 @@ public class Comandos extends Prints {
 	SoldadoController sc =  new SoldadoController();
 	mapaController m = new mapaController();
 	TaticaInimigo ti = new TaticaInimigo();
-	JogadorController j = new JogadorController();
+	Batalha j = new Batalha();
 	
 	
 	

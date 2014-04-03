@@ -20,8 +20,9 @@ public class Crude {
 
 	public void validaParemetros(int linha, int coluna,String dado) throws Exception {
 		
-		if ((linha >= MapaModel.getLinha() || coluna >= MapaModel.getColuna())){
-			Prints.msgb("As cordenadas não sao válidas!");
+		if ((linha >= MapaModel.getLinha() || coluna >= MapaModel.getColuna())||
+			(linha < MapaModel.getLinha() || coluna < MapaModel.getColuna())){
+				Prints.msgb("As cordenadas não sao válidas!");
 		}else{
 			executaJogada(linha, coluna, dado);	
 			mv.imprime(false," ");
