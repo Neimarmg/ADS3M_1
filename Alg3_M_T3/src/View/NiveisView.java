@@ -5,7 +5,6 @@ import Model.NiveisModel;
 
 public class NiveisView {
 	String nome =" ";
-	Prints p = new Prints();
 	
 	/**
 	 * Método que encontra um nivel espeífico ou lista todos 
@@ -48,10 +47,10 @@ public class NiveisView {
 	
 	public void executa(boolean filtrar, int parametro){
 		pesquisa(filtrar, parametro);
-		p.msgc(nome);
+		Prints.msgc(nome);
 		
 		if (filtrar == true && nome.equals(" ")) {
-			p.msgb("Nivel inesistente!");
+			Prints.msgb("Nivel inesistente!");
 		}else{
 			pesquisa(filtrar, parametro);			
 		}
@@ -65,9 +64,9 @@ public class NiveisView {
 	private void abilitaCabecalho(boolean filtrar,Boolean mostraCabecalho){
 		if (mostraCabecalho == true) {
 			if (filtrar == true) {
-				p.msg("	CONSULTA DE NIVEL\n");
+				Prints.msg("	CONSULTA DE NIVEL\n");
 			}else{
-				p.msg("	LISTA DE NIVEIS DO JOGO\n");
+				Prints.msg("	LISTA DE NIVEIS DO JOGO\n");
 			}
 		}
 	}
@@ -79,7 +78,7 @@ public class NiveisView {
 	public void imprime(boolean filtrar,Boolean mostraCabecalho){
 		abilitaCabecalho(filtrar, mostraCabecalho);
 		if (filtrar == true) {
-			executa(filtrar,p.digitaNumero("Nro do nivel "));
+			executa(filtrar,Prints.digitaNumero("Nro do nivel "));
 		}else{
 			executa(filtrar,0);
 		}

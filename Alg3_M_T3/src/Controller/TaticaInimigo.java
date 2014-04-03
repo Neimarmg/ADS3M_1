@@ -11,7 +11,6 @@ import View.MapaView;
  */
 public class TaticaInimigo {
 	
-	Prints p = new Prints();
 	MapaModel m = new MapaModel();
 	MapaView mv = new MapaView();
 	Crude c = new Crude();
@@ -117,7 +116,7 @@ public class TaticaInimigo {
 			posiscionaNavio();
 			mv.imprime(false,null);
 		}else{
-			p.msgb("Mapa inesistente!");
+			Prints.msgb("Mapa inesistente!");
 			executaTatica();
 		}
 	}

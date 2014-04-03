@@ -3,14 +3,14 @@ package Aplicacao;
 import Controller.Utilitarios.*;
 
 public class mainT3 {
-	Prints p = new Prints();
+
 	Comandos in = new Comandos();	
 	Dia d = new Dia();
 
 	
 	private void escreveCabecalho() {
-		p.msg("Exercicío de matrizes T3\n");
-	    p.msgb("		JOGO BATALHA NAVAL \n\n		     BEM VINDO");
+		Prints.msg("Exercicío de matrizes T3\n");
+	    Prints.msgb("		JOGO BATALHA NAVAL \n\n		     BEM VINDO");
 	}
 	
 	/**
@@ -19,7 +19,7 @@ public class mainT3 {
 	private void run() throws Exception {
 		escreveCabecalho();
 		d.defineSaudacao();
-		p.menuMain();
+		Prints.menuMain();
 		in.iniciaTarefas();
 	}
 	

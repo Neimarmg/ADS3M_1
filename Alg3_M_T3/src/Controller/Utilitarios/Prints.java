@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 
 public class Prints {	
-	Scanner var = new Scanner(System.in);
+	static Scanner var = new Scanner(System.in);
 	
-	public void msg(Object desc) {   
+	public static void msg(Object desc) {   
 		System .out.print(desc);
 	}
 	
@@ -14,7 +14,7 @@ public class Prints {
 	/**
 	 * @param desc
 	 */
-	public void msgb(Object desc) {
+	public static void msgb(Object desc) {
 		System .out.print(
 			"\n====================================================\n"
 			+desc
@@ -22,37 +22,37 @@ public class Prints {
 	}
 	
 	
-	public void msgc(Object desc) {
+	public static void msgc(Object desc) {
 		System .out.print(
 			"\n====================================================\n"
 			+desc);
 	}
 
 
-	public void msgr(Object desc) {
+	public static void msgr(Object desc) {
 		System .out.print(
 			desc
 			+"\n====================================================\n");
 	}	
 	
 
-	public void msgl() {
+	public static void msgl() {
 		System .out.print(
 			"\n====================================================\n");
 	}
 	
 	
-	public void espacoInsuficiente() {
+	public static void espacoInsuficiente() {
 		System .err.print("\nEspaço insuficiente em disco para inserir dados.\n");
 	}
 	
 	
-	public void opcaoInvalida() {
+	public static void opcaoInvalida() {
 		System .err.println("\nOpção de comando inválido. Tente novamente.");
 	}
 	
 	
-	public void objetoNaoImplementado() {
+	public static void objetoNaoImplementado() {
 		System .err.print("\nNão implementado.\n");
 	}
 	
@@ -61,7 +61,7 @@ public class Prints {
 	 * Método de label dos comandos do sistema
 	 * @param label
 	 */
-	public void paleta(String label) {
+	public static void paleta(String label) {
 		System .out.println();
 		if (label.equals("")){
 			System .out.print("COMANDO: ");
@@ -75,7 +75,7 @@ public class Prints {
 	 * @param label
 	 * @return
 	 */
-	public int digitaNumero(String label) {
+	public static int digitaNumero(String label) {
 		paleta(label);
 		return var.nextInt();
 	}
@@ -86,17 +86,17 @@ public class Prints {
 	 * @param label
 	 * @return
 	 */
-	public String comando(String label) {
+	public static String comando(String label) {
 		paleta(label);
 		return var.next().toLowerCase();
 	}
 	
-	public void sair(){
+	public static void sair(){
 		System.err.print("\nVocê optou por sair do jogo. Obrigado.");
 	}
 	
 	
-	public void menuJogar() {		
+	public static void menuJogar() {		
 		msgb("	COMANDOS DE JOGO?\n\n"
 		+"=> JOGAR\n"
 		+"=> DEFINIR\n"
@@ -105,7 +105,7 @@ public class Prints {
 	}
 
 	
-	public void menuMain() {		
+	public static void menuMain() {		
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
 		+"=> INICIAR\n"
 		+"=> SAIR\n");

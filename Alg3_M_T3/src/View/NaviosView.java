@@ -4,7 +4,6 @@ import Model.NaviosModel;
 
 public class NaviosView {
 	String nome =" ";
-	Prints p = new Prints();
 	
 	/**
 	 * Método que encontra um navio espeífico ou lista todos 
@@ -52,10 +51,10 @@ public class NaviosView {
 	 */
 	public void executa(boolean filtrar, String parametro){
 		pesquisa(filtrar, parametro);
-		p.msg(nome);
+		Prints.msg(nome);
 		
 		if (filtrar == true && nome.equals(" ")) {
-			p.msgb("Não foi encontrado nenhum navio com nome de " +parametro);
+			Prints.msgb("Não foi encontrado nenhum navio com nome de " +parametro);
 		}else{
 			pesquisa(filtrar, parametro);			
 		}
@@ -68,7 +67,7 @@ public class NaviosView {
 	 */
 	public void imprime(boolean filtrar){
 		if (filtrar == true) {
-			executa(filtrar,p.comando("Nome do navio "));
+			executa(filtrar,Prints.comando("Nome do navio "));
 		}else{
 			executa(filtrar, " ");
 		}

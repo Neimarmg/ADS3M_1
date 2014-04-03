@@ -5,7 +5,6 @@ import java.util.Calendar;
 
 public class Dia {
 	Pressagios s = new Pressagios(); 	
-	Prints m = new Prints();
 	
 	Calendar dh = Calendar.getInstance();
 	SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
@@ -13,7 +12,7 @@ public class Dia {
 	
 	public void ImprimeHora() {		
 		dh.set(Calendar.DST_OFFSET,0);		
-		m.msg("São " +sdf.format(dh.getTime()) +"hs");
+		Prints.msg("São " +sdf.format(dh.getTime()) +"hs");
 	}
 	
 	/**
@@ -21,7 +20,7 @@ public class Dia {
 	 * @param hora
 	 */
 	public void defineCabecalho(Object hora) {		
-		m.msg("\nOlá!" +
+		Prints.msg("\nOlá!" +
 			  "\n" +defineNomenclatura() +hora +"\n");
 	}
 	

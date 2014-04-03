@@ -7,16 +7,15 @@ public class MapaView {
 	int j,i;
 	char letra = 'A';
 	MapaModel m = new MapaModel();
-	Prints p =  new Prints();
-	
+
 	
 	/**
 	 * Mètodo definidor do cabeçalho das colunas
 	 */
 	public void nomeiaConluna(){
-		p.msg("+ ");
+		Prints.msg("+ ");
 		for (j = 0; j <  MapaModel.getColuna(); j++) {
-			p.msg(" " + letra++ );
+			Prints.msg(" " + letra++ );
 		}
 	}
 	
@@ -28,7 +27,7 @@ public class MapaView {
 	public void abilitaMensagem(boolean mostraMsgCabelho,Object texto){
 		if (mostraMsgCabelho == true){
 			//p.msgl();
-			p.msg(texto +" " 
+			Prints.msg(texto +" " 
 				+MapaModel.getLinha()+"x" +MapaModel.getColuna() +"\n\n");		
 		}
 	}
@@ -44,16 +43,16 @@ public class MapaView {
 			abilitaMensagem(mostraMsgCabelho,texto);
 			nomeiaConluna();
 			for (i = 0; i <  MapaModel.getLinha(); i++) {
-				p.msg("\n" +i +" ");
+				Prints.msg("\n" +i +" ");
 				for (j = 0; j <  MapaModel.getColuna(); j++) {				
-					p.msg(" " + MapaModel.getMapa()[i][j]);				
+					Prints.msg(" " + MapaModel.getMapa()[i][j]);				
 				}			
 			}
-			p.msgr("\n");
+			Prints.msgr("\n");
 		
 		} catch (ArrayIndexOutOfBoundsException e) {
-			p.msgb("Não foi possível imprimir o mapa!");
-			p.msg("" +MapaModel.getExtancaoY());
+			Prints.msgb("Não foi possível imprimir o mapa!");
+			Prints.msg("" +MapaModel.getExtancaoY());
 		}
 	}
 	

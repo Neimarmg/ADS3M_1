@@ -7,7 +7,6 @@ import Model.SoldadoModel;
 import View.SoldadosView;
 
 public class SoldadoController extends SoldadoModel {
-	Prints p = new Prints();
 	SoldadosView sv = new SoldadosView();
 	
 	/**
@@ -15,10 +14,10 @@ public class SoldadoController extends SoldadoModel {
 	 */
 	public void insertDados(){
 		try {
-			setNomeSoldado(p.comando("Nome soldado "));
-			setPontuacaoInicial(p.digitaNumero("Pontuação inicial "));
+			setNomeSoldado(Prints.comando("Nome soldado "));
+			setPontuacaoInicial(Prints.digitaNumero("Pontuação inicial "));
 		} catch (InputMismatchException e) {
-			p.msgb("O campo esperava um valor numério!\n digite nevamente?");
+			Prints.msgb("O campo esperava um valor numério!\n digite nevamente?");
 			insertDados();
 		}
 	

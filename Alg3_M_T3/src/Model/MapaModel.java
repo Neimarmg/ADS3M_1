@@ -4,7 +4,6 @@ import Controller.Utilitarios.Prints;
 
 
 public class MapaModel {
-	Prints p = new Prints();
 	
 	private int i = 0 ,j = 0 ;
 	private static int extancaoY = 15;
@@ -52,7 +51,7 @@ public class MapaModel {
 				}				
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
-			p.msgb("Não foi possível criar o mapa!");
+			Prints.msgb("Não foi possível criar o mapa!");
 		}
 	}
 }
