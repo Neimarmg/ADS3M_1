@@ -1,6 +1,5 @@
 package Controller;
 
-import Controller.Utilitarios.Crude;
 import Controller.Utilitarios.Prints;
 import Model.MapaModel;
 import Model.NaviosModel;
@@ -10,11 +9,11 @@ import View.MapaView;
  * Classe resposavel pelas distribuição das embarcaçãoe no mapa
  * @author moises
  */
-public class TaticaInimigo {
+public class TaticaInimiga {
 	
 	MapaModel m = new MapaModel();
 	MapaView mv = new MapaView();
-	Crude c = new Crude();
+	controles c = new controles();
 
 	private int contNivel = 1;
 	private int contUnidades;

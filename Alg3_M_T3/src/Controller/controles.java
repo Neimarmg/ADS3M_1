@@ -1,9 +1,10 @@
-package Controller.Utilitarios;
+package Controller;
 
+import Controller.Utilitarios.Prints;
 import Model.MapaModel;
 import View.MapaView;
 
-public class Crude {
+public class controles {
 	MapaView mv = new MapaView();
 		
 	public void executaJogada(int linha, int coluna,String dado) {
@@ -27,14 +28,5 @@ public class Crude {
 			executaJogada(linha, coluna, dado);	
 			mv.imprime(false," ");
 		}	
-	}
-
-	
-	
-	
-	
-
-	public void remove(int linha, int coluna, int casa) {
-		
 	}
 }

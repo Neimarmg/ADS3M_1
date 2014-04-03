@@ -3,7 +3,7 @@ package Aplicacao;
 import Controller.Batalha;
 import Controller.SoldadoController;
 import Controller.ComandosController;
-import Controller.TaticaInimigo;
+import Controller.TaticaInimiga;
 import Controller.mapaController;
 import Controller.Utilitarios.*;
 
@@ -13,7 +13,7 @@ public class Comandos extends Prints {
 	ComandosController ic =  new ComandosController();
 	SoldadoController sc =  new SoldadoController();
 	mapaController m = new mapaController();
-	TaticaInimigo ti = new TaticaInimigo();
+	TaticaInimiga ti = new TaticaInimiga();
 	Batalha j = new Batalha();
 	
 	

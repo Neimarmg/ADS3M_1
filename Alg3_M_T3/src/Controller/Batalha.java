@@ -2,13 +2,12 @@
 package Controller;
 
 import java.util.InputMismatchException;
-import Controller.Utilitarios.Crude;
 import Controller.Utilitarios.Prints;
 import Model.SoldadoModel;
 
 
 public class Batalha extends SoldadoModel {
-	Crude c = new Crude();	
+	controles c = new controles();	
 	
 	public void atira() throws Exception{
 		try {
