@@ -1,5 +1,6 @@
 package Aplicacao;
 
+import Controller.JogadorController;
 import Controller.SoldadoController;
 import Controller.ComandosController;
 import Controller.TaticaInimigo;
@@ -13,6 +14,31 @@ public class Comandos extends Prints {
 	SoldadoController sc =  new SoldadoController();
 	mapaController m = new mapaController();
 	TaticaInimigo ti = new TaticaInimigo();
+	JogadorController j = new JogadorController();
+	
+	
+	
+	public void batalha() throws Exception {
+		menuBatalha();
+		
+		switch (comando("")) {
+		
+		case "atirar":	
+			j.atira();
+			batalha();
+			break;
+						
+		case "sair":
+			sair();
+			break;
+			
+		default: 
+			opcaoInvalida();
+			batalha();			
+			break;
+		}
+	}
+	
 	
 	/**
 	 * @throws Exception
@@ -24,8 +50,9 @@ public class Comandos extends Prints {
 		
 		case "jogar":	
 			ti.executaTatica();
+			batalha();
 			break;
-			
+		
 		case "definir":	
 			objetoNaoImplementado();
 			break;
@@ -36,7 +63,7 @@ public class Comandos extends Prints {
 			
 		default: 
 			opcaoInvalida();
-			iniciaTarefas();			
+			iniciaJogo();			
 			break;
 		}
 	}

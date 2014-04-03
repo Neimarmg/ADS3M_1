@@ -111,6 +111,13 @@ public class Prints {
 		+"=> SAIR\n");
 	}
 
+	
+	public static void menuBatalha() {		
+		msgb("	COMANDOS DE JOGO?\n\n"
+		+"=> ATIRAR\n"
+		+"=> IMPRIMIR\n"
+		+"=> SAIR\n");
+	}
 
 
 }

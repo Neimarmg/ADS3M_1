@@ -1,39 +1,25 @@
 
 package Controller;
+
+import java.util.InputMismatchException;
+import Controller.Utilitarios.Crude;
+import Controller.Utilitarios.Prints;
 import Model.SoldadoModel;
 
-public class JogadorController {
-	SoldadoModel s = new SoldadoModel();
-	private int somaPontos = 0;
-	
-	public void atira(){
-	
-	}
 
+public class JogadorController extends SoldadoModel {
+	Crude c = new Crude();	
 	
-	public int consome(int perde ){
-		
-		return perde;
+	public void atira() throws Exception{
+		try {
+			Prints.msgl();
+			c.validaParemetros(
+				Prints.digitaNumero("Nro linha"),
+				Prints.digitaNumero("Nro coluna" ),"O");
+			
+		} catch (InputMismatchException e) {
+			Prints.msgb("Era esperado um dígito como cordenáda!");
+		}	
 	}
 	
-	
-	public int pontua(int somaAcertos){
-		return somaAcertos;
-
-	}
-	
-	
-	public void recua(){
-		
-	}
-	
-	
-	public void setSomaPontos(int somaPontos) {
-		this.somaPontos = somaPontos;
-	}
-
-	
-	public int getSomaPontos() {
-		return somaPontos;
-	}	
 }

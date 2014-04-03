@@ -5,6 +5,7 @@ import Controller.Utilitarios.Prints;
 import Model.MapaModel;
 import Model.NaviosModel;
 import View.MapaView;
+
 /**
  * Classe resposavel pelas distribuição das embarcaçãoe no mapa
  * @author moises
@@ -15,7 +16,7 @@ public class TaticaInimigo {
 	MapaView mv = new MapaView();
 	Crude c = new Crude();
 
-	private int contNivel = 5;
+	private int contNivel = 1;
 	private int contUnidades;
 		
 		
@@ -28,8 +29,6 @@ public class TaticaInimigo {
 		
 		for (int i = 0; i <  MapaModel.getLinha(); i++) {
 			for (int j = 0; j <  MapaModel.getColuna(); j++) {				
-				//c.adiciona(NaviosModel.getUnidDestroyers(),NaviosModel.getUnidDestroyers(), 4);
-				//c.adiciona(NaviosModel.getUnidDestroyers(),NaviosModel.getUnidDestroyers(), 4);
 			
 				if (i == 0 && j >= contNivel && j < (NaviosModel.getUnidPortaAvioes()+contNivel)){
 					MapaModel.mapa[i][j] = "-";					
@@ -114,7 +113,6 @@ public class TaticaInimigo {
 		
 		if(MapaModel.getColuna()*MapaModel.getLinha() == contUnidades){
 			posiscionaNavio();
-			mv.imprime(false,null);
 		}else{
 			Prints.msgb("Mapa inesistente!");
 			executaTatica();

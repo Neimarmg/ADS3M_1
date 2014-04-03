@@ -6,7 +6,7 @@ import Controller.Utilitarios.Prints;
 public class MapaModel {
 	
 	private int i = 0 ,j = 0 ;
-	private static int extancaoY = 15;
+	private static int extancaoY = 10;
 	private static int linha = extancaoY; 
 	private static int coluna = extancaoY;
 	public static String [][]mapa = new String[getLinha()][getColuna()];
@@ -19,17 +19,21 @@ public class MapaModel {
 		MapaModel.extancaoY = extancaoY;
 	}
 	
+	
 	public static int getExtancaoY() {
 		return extancaoY;
 	}
+	
 	
 	public static void setColuna(int coluna) {
 		MapaModel.coluna = coluna;
 	}
 	
+	
 	public static int getColuna() {
 		return coluna;
 	}
+	
 	
 	public static void setLinha(int linha) {
 		MapaModel.linha = linha;
@@ -38,6 +42,7 @@ public class MapaModel {
 	public static int getLinha() {
 		return linha;
 	}
+	
 	
 	/**
 	 * Cria tabluleiro do jogo
