@@ -21,11 +21,6 @@ public class TaticaInimiga {
 	private int contUnidades;
 		
 		
-	private void mudaNivel() {
-		
-		
-	}
-	
 	private void posiscionaNavio() {
 		
 		for (int i = 0; i <  MapaModel.getLinha(); i++) {

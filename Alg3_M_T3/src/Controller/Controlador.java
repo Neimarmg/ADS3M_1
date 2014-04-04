@@ -11,7 +11,13 @@ public class Controlador {
 	private static int acertos = 0;
 	MapaView mv = new MapaView();
 	
-	public void executaJogada(int linha, int coluna,String dado) {
+	/**
+	 * Método de processamento da jogada
+	 * @param linha
+	 * @param coluna
+	 * @param dado
+	 */
+	private void encontraAlvo(int linha, int coluna,String dado) {
 		for (int i = 0; i <  MapaModel.getLinha(); i++) {
 			for (int j = 0; j < MapaModel.getLinha(); j++) {				
 				
@@ -28,14 +34,14 @@ public class Controlador {
 	}
 
 	
-	public void validaParemetros(int linha, int coluna,String dado) throws Exception {
+	public void ValidaAlvo(int linha, int coluna,String dado) throws Exception {
 		
 		if ((linha >= MapaModel.getLinha() || coluna >= MapaModel.getColuna())&&
 			(linha < MapaModel.getLinha() || coluna < MapaModel.getColuna())){
 				Prints.msgb("As cordenadas não sao válidas!");
 		}else{
 			chances--;	
-			executaJogada(linha, coluna, dado);	
+			encontraAlvo(linha, coluna, dado);	
 			//mv.imprime(false," ");
 		}	
 	}

@@ -12,13 +12,19 @@ public class Batalha extends SoldadoModel {
 	public void atira() throws Exception{
 		try {
 			Prints.msgl();
-			c.validaParemetros(
+			c.ValidaAlvo(
 				Prints.digitaNumero("Nro linha"),
 				Prints.digitaNumero("Nro coluna" ),"O");
 			
 		} catch (InputMismatchException e) {
 			Prints.msgb("Era esperado um dígito como cordenáda!");
 		}	
+	}
+	
+	
+	
+	public void addNivel(){
+		
 	}
 	
 }

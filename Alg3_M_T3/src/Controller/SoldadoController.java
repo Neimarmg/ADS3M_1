@@ -12,13 +12,13 @@ public class SoldadoController extends SoldadoModel {
 	/**
 	 * Método insert para editar dados do pessoais do soldado
 	 */
-	public void insertDados(){
+	public void AddNovo(){
 		try {
 			setNomeSoldado(Prints.comando("Nome soldado "));
 			setPontuacaoInicial(Prints.digitaNumero("Pontuação inicial "));
 		} catch (InputMismatchException e) {
 			Prints.msgb("O campo esperava um valor numério!\n digite nevamente?");
-			insertDados();
+			AddNovo();
 		}
 	
 	}
@@ -27,12 +27,12 @@ public class SoldadoController extends SoldadoModel {
 	 * @param imprimir
 	 * @throws Exception 
 	 */
-	public void dados(boolean imprimir) throws Exception{
+	public void executa(boolean imprimir) throws Exception{
 		if (imprimir == true){
-			insertDados();
+			AddNovo();
 			sv.imprime();
 		}else{
-			insertDados();
+			AddNovo();
 		}	
 	}
 }
