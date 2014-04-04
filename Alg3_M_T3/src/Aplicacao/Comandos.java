@@ -27,7 +27,7 @@ public class Comandos extends Prints {
 		case "atirar":
 			j.atira();
 			Prints.msg("Chances: " +Controlador.getChances() 
-				+"\n Pontuação: " +Controlador.getAcertos());
+				+"\nPontuação: " +Controlador.getAcertos());
 			batalha();			
 			break;
 						
