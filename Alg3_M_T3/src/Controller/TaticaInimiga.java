@@ -3,6 +3,7 @@ package Controller;
 import Controller.Utilitarios.Prints;
 import Model.MapaModel;
 import Model.NaviosModel;
+import Model.NiveisModel;
 import View.MapaView;
 import View.SoldadosView;
 
@@ -17,69 +18,74 @@ public class TaticaInimiga {
 	Controlador c = new Controlador(); 
 	SoldadosView sv = new SoldadosView();
 
-	private int contNivel = 1;
+	private int nivel = NiveisModel.getMapanivel1();
 	private int contUnidades;
-		
-		
+	
+	
+	public void setNivel(int nivel) {
+		this.nivel = nivel;
+	}
+	
+
 	private void posiscionaNavio() {
 		
 		for (int i = 0; i <  MapaModel.getLinha(); i++) {
 			for (int j = 0; j <  MapaModel.getColuna(); j++) {				
 			
-				if (i == 0 && j >= contNivel && j < (NaviosModel.getUnidPortaAvioes()+contNivel)){
+				if (i == 0 && j >= nivel && j < (NaviosModel.getUnidPortaAvioes()+nivel)){
 					MapaModel.mapa[i][j] = "-";					
 				}
 					
-				if (i == 5 && j >= contNivel-1 && j < (NaviosModel.getUnidDestroyers()+contNivel -1)){
+				if (i == 5 && j >= nivel-1 && j < (NaviosModel.getUnidDestroyers()+nivel -1)){
 					MapaModel.mapa[i][j] = "-";					
 				}
 				
-				if (i == 2 && j >= contNivel && j < (NaviosModel.getUnidDestroyers()+contNivel)){
+				if (i == 2 && j >= nivel && j < (NaviosModel.getUnidDestroyers()+nivel)){
 					MapaModel.mapa[i][j] = "-";					
 				}
 				
-				if (i == 3 && j >= (contNivel+2) && j < (NaviosModel.getUnidFragatas()+contNivel+2)){
+				if (i == 3 && j >= (nivel+2) && j < (NaviosModel.getUnidFragatas()+nivel+2)){
 					MapaModel.mapa[i][j] = "-";					
 				}
 				
-				if (i == 4 && j >= (contNivel+1) && j < (NaviosModel.getUnidFragatas()+contNivel+1)){
-					MapaModel.mapa[i][j] = "-";					
-				}
-		
-				
-				if (i == 1 && j >= contNivel && j < (NaviosModel.getUnidTorpedeiros()+contNivel)){
-					MapaModel.mapa[i][j] = "-";					
-				}
-				
-				if (i == 6 && j >= (contNivel+2) && j < (NaviosModel.getUnidTorpedeiros()+contNivel+2)){
-					MapaModel.mapa[i][j] = "-";					
-				}
-				
-				if (i == 7 && j >= (contNivel+1) && j < (NaviosModel.getUnidTorpedeiros()+contNivel+1)){
+				if (i == 4 && j >= (nivel+1) && j < (NaviosModel.getUnidFragatas()+nivel+1)){
 					MapaModel.mapa[i][j] = "-";					
 				}
 		
 				
-				if (i == 8 && j >= contNivel && j > (NaviosModel.getUnidTorpedeiros()+contNivel)){
+				if (i == 1 && j >= nivel && j < (NaviosModel.getUnidTorpedeiros()+nivel)){
 					MapaModel.mapa[i][j] = "-";					
 				}
 				
-				if (i == 8 && j >= ((contNivel-6)*-1) && j < ((NaviosModel.getUnidTorpedeiros()+contNivel-6)*-1)){
+				if (i == 6 && j >= (nivel+2) && j < (NaviosModel.getUnidTorpedeiros()+nivel+2)){
+					MapaModel.mapa[i][j] = "-";					
+				}
+				
+				if (i == 7 && j >= (nivel+1) && j < (NaviosModel.getUnidTorpedeiros()+nivel+1)){
+					MapaModel.mapa[i][j] = "-";					
+				}
+		
+				
+				if (i == 8 && j >= nivel && j > (NaviosModel.getUnidTorpedeiros()+nivel)){
+					MapaModel.mapa[i][j] = "-";					
+				}
+				
+				if (i == 8 && j >= ((nivel-6)*-1) && j < ((NaviosModel.getUnidTorpedeiros()+nivel-6)*-1)){
 					MapaModel.mapa[i][j] = "-";					
 				}
 				
 				
-				if (i == 9 && j >= (contNivel+3) && j < (NaviosModel.getUnidTorpedeiros()+contNivel)){
+				if (i == 9 && j >= (nivel+3) && j < (NaviosModel.getUnidTorpedeiros()+nivel)){
 					MapaModel.mapa[i][j] = "-";					
 				}
 				
 				
-				if (i == 9 && j >= (contNivel+2) && j < (NaviosModel.getUnidTorpedeiros()+contNivel+2)){
+				if (i == 9 && j >= (nivel+2) && j < (NaviosModel.getUnidTorpedeiros()+nivel+2)){
 					MapaModel.mapa[i][j] = "-";					
 				}
 				
 				
-				if (i == 9 && j >= (contNivel+1) && j < (NaviosModel.getUnidTorpedeiros()+contNivel+1)){
+				if (i == 9 && j >= (nivel+1) && j < (NaviosModel.getUnidTorpedeiros()+nivel+1)){
 					MapaModel.mapa[i][j] = "-";					
 				}			
 			}			

@@ -3,11 +3,13 @@ package Controller;
 
 import java.util.InputMismatchException;
 import Controller.Utilitarios.Prints;
+import Model.NiveisModel;
 import Model.SoldadoModel;
 
 
 public class Batalha extends SoldadoModel {
 	Controlador c = new Controlador();	
+	
 	
 	public void atira() throws Exception{
 		try {
@@ -19,12 +21,34 @@ public class Batalha extends SoldadoModel {
 		} catch (InputMismatchException e) {
 			Prints.msgb("Era esperado um dígito como cordenáda!");
 		}	
+	
 	}
 	
 	
-	
-	public void addNivel(){
+	/**
+	 * Define Passagem de nivel no jogo
+	 * @param nivel
+	 */
+	public static void addNivel(int nivel){
 		
-	}
-	
+		if (nivel == NiveisModel.getMapanivel1()){
+			
+		}
+		
+		if (nivel == NiveisModel.getMapanivel2()){
+			
+		}
+		
+		if (nivel == NiveisModel.getMapanivel3()){
+			
+		}
+		
+		if (nivel == NiveisModel.getMapanivel4()){
+			
+		}
+		
+		if (nivel == NiveisModel.getMapanivel5()){
+			
+		}		
+	}	
 }
