@@ -22,10 +22,10 @@ public class MapaView {
 	
 	/**
 	 * Mostra mensagem cabelho quando necessário 
-	 * @param mostraMsgCabelho
+	 * @param mostraMsgCabecalho
 	 */
-	public void abilitaMensagem(boolean mostraMsgCabelho,Object texto){
-		if (mostraMsgCabelho == true){
+	public void abilitaMensagem(boolean mostraMsgCabecalho,Object texto){
+		if (mostraMsgCabecalho == true){
 			//p.msgl();
 			Prints.msg(texto +" " 
 				+MapaModel.getLinha()+"x" +MapaModel.getColuna() +"\n\n");		
@@ -38,9 +38,9 @@ public class MapaView {
 	 * @param mostraMsgCabelho
 	 * @throws Exception
 	 */
-	public void imprime(boolean mostraMsgCabelho,Object texto)throws Exception{
+	public void imprime(boolean mostraMsgCabecalho,Object texto)throws Exception{
 		try {
-			abilitaMensagem(mostraMsgCabelho,texto);
+			abilitaMensagem(mostraMsgCabecalho,texto);
 			nomeiaConluna();
 			for (i = 0; i <  MapaModel.getLinha(); i++) {
 				Prints.msg("\n" +i +" ");

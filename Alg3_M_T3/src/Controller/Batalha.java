@@ -4,10 +4,9 @@ package Controller;
 import java.util.InputMismatchException;
 import Controller.Utilitarios.Prints;
 import Model.NiveisModel;
-import Model.SoldadoModel;
 
 
-public class Batalha extends SoldadoModel {
+public class Batalha {
 	Controlador c = new Controlador();	
 	
 	
@@ -32,7 +31,7 @@ public class Batalha extends SoldadoModel {
 	public static void addNivel(int nivel){
 		
 		if (nivel == NiveisModel.getMapanivel1()){
-			
+
 		}
 		
 		if (nivel == NiveisModel.getMapanivel2()){

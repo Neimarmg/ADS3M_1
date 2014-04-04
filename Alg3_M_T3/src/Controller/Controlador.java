@@ -36,7 +36,7 @@ public class Controlador {
 	
 	public void ValidaAlvo(int linha, int coluna,String dado) throws Exception {
 		
-		if ((linha >= MapaModel.getLinha() || coluna >= MapaModel.getColuna())&&
+		if ((linha >= MapaModel.getLinha() || coluna >= MapaModel.getColuna()) &&
 			(linha < MapaModel.getLinha() || coluna < MapaModel.getColuna())){
 				Prints.msgb("As cordenadas não sao válidas!");
 		}else{

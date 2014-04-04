@@ -18,7 +18,7 @@ public class TaticaInimiga {
 	Controlador c = new Controlador(); 
 	SoldadosView sv = new SoldadosView();
 
-	private int nivel = NiveisModel.getMapanivel1();
+	private int nivel = 1; // NiveisModel.getMapanivel1();
 	private int contUnidades;
 	
 	
@@ -27,7 +27,7 @@ public class TaticaInimiga {
 	}
 	
 
-	private void posiscionaNavio() {
+	private void posisciona() {
 		
 		for (int i = 0; i <  MapaModel.getLinha(); i++) {
 			for (int j = 0; j <  MapaModel.getColuna(); j++) {				
@@ -114,7 +114,7 @@ public class TaticaInimiga {
 	private void carrega() throws Exception {
 		
 		if(MapaModel.getColuna()*MapaModel.getLinha() == contUnidades){
-			posiscionaNavio();
+			posisciona();
 			sv.imprime();
 		}else{
 			Prints.msgb("Mapa inesistente!");

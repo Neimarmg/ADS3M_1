@@ -25,7 +25,7 @@ public class MapaController {
 	}
 		
 	
-	public void iniciaTabuleiro() throws Exception {
+	public void iniciaMapa() throws Exception {
 		setaExtencao();
 		setaColuna();
 		setaLinha();
