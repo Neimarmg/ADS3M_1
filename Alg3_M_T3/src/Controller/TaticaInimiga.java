@@ -18,15 +18,15 @@ public class TaticaInimiga {
 	Controlador c = new Controlador(); 
 	SoldadosView sv = new SoldadosView();
 
-	private int nivel = 1; // NiveisModel.getMapanivel1();
+	private static int nivel = NiveisModel.getNivel1();
 	private int contUnidades;
 	
 	
-	public void setNivel(int nivel) {
-		this.nivel = nivel;
+	public static void setNivel(int nivel) {
+		TaticaInimiga.nivel = nivel;
 	}
-	
 
+	
 	private void posisciona() {
 		
 		for (int i = 0; i <  MapaModel.getLinha(); i++) {

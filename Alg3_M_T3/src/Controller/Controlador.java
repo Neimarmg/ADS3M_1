@@ -11,6 +11,17 @@ public class Controlador {
 	private static int acertos = 0;
 	MapaView mv = new MapaView();
 	
+	
+	public static int getAcertos() {		
+		return acertos;
+	}
+	
+	
+	public static int getChances() {
+		return chances + SoldadoModel.getPontuacaoInicial();
+	}
+	
+	
 	/**
 	 * Método de processamento da jogada
 	 * @param linha
@@ -47,12 +58,5 @@ public class Controlador {
 	}
 	
 	
-	public static int getAcertos() {		
-		return acertos;
-	}
-	
-	
-	public static int getChances() {
-		return chances + SoldadoModel.getPontuacaoInicial();
-	}
+
 }

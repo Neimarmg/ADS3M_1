@@ -108,6 +108,7 @@ public class Prints {
 	public static void menuMain() {		
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
 		+"=> INICIAR\n"
+		+"=> IMPRIMIR\n"
 		+"=> SAIR\n");
 	}
 
