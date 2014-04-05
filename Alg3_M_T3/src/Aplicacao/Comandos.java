@@ -7,6 +7,10 @@ import Controller.ComandosController;
 import Controller.TaticaInimiga;
 import Controller.MapaController;
 import Controller.Utilitarios.*;
+import Model.MapaModel;
+import View.MapaView;
+import View.NaviosView;
+import View.NiveisView;
 
 public class Comandos extends Prints {
 	
@@ -16,7 +20,50 @@ public class Comandos extends Prints {
 	MapaController m = new MapaController();
 	TaticaInimiga ti = new TaticaInimiga();
 	Batalha j = new Batalha();
+	MapaModel mapa = new MapaModel();
+	MapaView mv = new MapaView();
 	
+	
+	public void impressao() throws Exception {
+		Prints.menuImprimir();
+		
+		switch (comando("")) {
+		
+		case "mapa":
+			mapa.criaMapa();
+			mv.imprime(true, "	Mapa do jogo\n");
+			impressao();
+			break;
+
+		case "navios":
+			NaviosView navio = new NaviosView();
+			navio.imprime(false);
+			impressao();
+			break;
+			
+		case "niveis":
+			NiveisView nivel = new NiveisView();
+			nivel.imprime(false, true);
+			impressao();
+			break;
+			
+		case "filtrar":
+			Prints.objetoNaoImplementado();
+			break;
+			
+		case "todos":
+			ic.imprimirInfocoes();
+			break;
+		case "sair":
+			sair();
+			break;
+			
+		default: 
+			opcaoInvalida();
+			impressao();			
+			break;
+		}
+	}
 	
 	
 	public void batalha() throws Exception {
@@ -82,6 +129,10 @@ public class Comandos extends Prints {
 		case "iniciar":	
 			ic.executaMapaInicial();
 			iniciaJogo();
+			break;
+		
+		case "imprimir":
+			impressao();
 			break;
 			
 		case "sair":

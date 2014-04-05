@@ -53,7 +53,7 @@ public class Controlador {
 		}else{
 			chances--;	
 			encontraAlvo(linha, coluna, dado);	
-			//mv.imprime(false," ");
+			mv.imprime(false," ");
 		}	
 	}
 	

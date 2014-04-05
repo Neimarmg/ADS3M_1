@@ -120,5 +120,14 @@ public class Prints {
 		+"=> SAIR\n");
 	}
 
-
+	
+	public static void menuImprimir() {		
+		msgb("	COMANDOS DE IMPRESSÃO?\n\n"
+		+"=> MAPA\n"
+		+"=> NAVIOS\n"		
+		+"=> NIVEIS\n"
+		+"=> FILTRAR\n"
+		+"=> TODOS\n"
+		+"=> SAIR\n");
+	}
 }
