@@ -2,28 +2,59 @@ package Aplicacao;
 
 import Controller.Batalha;
 import Controller.Controlador;
-import Controller.SoldadoController;
 import Controller.ComandosController;
 import Controller.TaticaInimiga;
-import Controller.MapaController;
 import Controller.Utilitarios.*;
 import Model.MapaModel;
 import View.MapaView;
-import View.NaviosView;
-import View.NiveisView;
 
 public class Comandos extends Prints {
 	
 	//String comando;
 	ComandosController ic =  new ComandosController();
-	SoldadoController sc =  new SoldadoController();
-	MapaController m = new MapaController();
 	TaticaInimiga ti = new TaticaInimiga();
 	Batalha j = new Batalha();
 	MapaModel mapa = new MapaModel();
 	MapaView mv = new MapaView();
 	
+	/**
+	 * Método de filtragem de dados
+	 * @throws Exception
+	 */
+	public void filtra() throws Exception {
+		menuFiltrar();;
+		
+		switch (comando("")) {
+		
+		case "navios":
+			ic.consultaNavios(true,false);
+			filtra();
+			break;
+		
+		case "niveis":
+			ic.consultaNiveis(true);
+			filtra();
+			break;
+		
+		case "retornar":
+			impressao();
+			break;
+		case "sair":
+			
+			sair();
+			break;
+			
+		default: 
+			opcaoInvalida();
+			filtra();			
+			break;
+		}
+	}
 	
+	/**
+	 * Método de geral de impressão
+	 * @throws Exception
+	 */
 	public void impressao() throws Exception {
 		Prints.menuImprimir();
 		
@@ -31,29 +62,34 @@ public class Comandos extends Prints {
 		
 		case "mapa":
 			mapa.criaMapa();
-			mv.imprime(true, "	Mapa do jogo\n");
+			mv.imprime(true, "\nMAPA DO JOGO ");
 			impressao();
 			break;
 
 		case "navios":
-			NaviosView navio = new NaviosView();
-			navio.imprime(false);
+			ic.consultaNavios(false,true);
 			impressao();
 			break;
 			
 		case "niveis":
-			NiveisView nivel = new NiveisView();
-			nivel.imprime(false, true);
+			ic.consultaNiveis(false);
 			impressao();
 			break;
 			
+		case "soldado":
+			ic.consultaSoldado();
+			filtra();
+			break;		
+			
 		case "filtrar":
-			Prints.objetoNaoImplementado();
+			filtra();
 			break;
 			
 		case "todos":
-			ic.imprimirInfocoes();
+			ic.abreInfocoes();
+			impressao();
 			break;
+			
 		case "sair":
 			sair();
 			break;
@@ -65,7 +101,10 @@ public class Comandos extends Prints {
 		}
 	}
 	
-	
+	/**
+	 * Método de batalha 
+	 * @throws Exception
+	 */
 	public void batalha() throws Exception {
 		menuBatalha();
 		
@@ -91,6 +130,7 @@ public class Comandos extends Prints {
 	
 	
 	/**
+	 * Método de inicia e executa jogo
 	 * @throws Exception
 	 */
 	public void iniciaJogo() throws Exception {

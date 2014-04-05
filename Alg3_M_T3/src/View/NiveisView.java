@@ -47,7 +47,7 @@ public class NiveisView {
 	
 	public void executa(boolean filtrar, int parametro){
 		pesquisa(filtrar, parametro);
-		Prints.msgc(nome);
+		Prints.msg(nome);
 		
 		if (filtrar == true && nome.equals(" ")) {
 			Prints.msgb("Nivel inesistente!");
@@ -64,9 +64,9 @@ public class NiveisView {
 	private void abilitaCabecalho(boolean filtrar,Boolean mostraCabecalho){
 		if (mostraCabecalho == true) {
 			if (filtrar == true) {
-				Prints.msg("	CONSULTA DE NIVEL\n");
+				Prints.msgc("	CONSULTA DE NIVEL\n");
 			}else{
-				Prints.msg("	LISTA DE NIVEIS DO JOGO\n");
+				Prints.msgc("	LISTA DE NIVEIS DO JOGO\n");
 			}
 		}
 	}

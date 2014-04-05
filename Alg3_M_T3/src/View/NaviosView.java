@@ -61,14 +61,25 @@ public class NaviosView {
 	}
 	
 	
+	private void abilitaCabecalho(boolean filtrar,Boolean mostraCabecalho){
+		if (mostraCabecalho == true) {
+			if (filtrar == true) {
+				Prints.msgc("	CONSULTA DE NAVIOS\n");
+			}else{
+				Prints.msgc("	LISTA DE NAVIOS DO JOGO\n");
+			}
+		}
+	}
+	
 	/**
 	 * Método de impressão de navios inimigo
 	 * @param filtrar
 	 */
-	public void imprime(boolean filtrar){
+	public void imprime(boolean filtrar,Boolean mostraCabecalho){
 		if (filtrar == true) {
 			executa(filtrar,Prints.comando("Nome do navio "));
 		}else{
+			abilitaCabecalho(filtrar, mostraCabecalho);
 			executa(filtrar, " ");
 		}
 	}

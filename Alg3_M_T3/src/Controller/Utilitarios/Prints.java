@@ -126,8 +126,18 @@ public class Prints {
 		+"=> MAPA\n"
 		+"=> NAVIOS\n"		
 		+"=> NIVEIS\n"
+		+"=> SOLDADO\n"
 		+"=> FILTRAR\n"
 		+"=> TODOS\n"
+		+"=> SAIR\n");
+	}
+	
+	
+	public static void menuFiltrar() {		
+		msgb("	COMANDOS DE IMPRESSÃO?\n\n"
+		+"=> NAVIOS\n"		
+		+"=> NIVEIS\n"
+		+"=> RETORNAR\n"
 		+"=> SAIR\n");
 	}
 }

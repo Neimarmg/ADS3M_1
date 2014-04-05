@@ -24,7 +24,7 @@ public class SoldadosView extends SoldadoModel {
 	public void avaliaPontos(){
 		if (SoldadoModel.getPontuacaoInicial() > 0 ) {
 			Prints.msg("Pontuação inicial: " 
-				+SoldadoModel.getPontuacaoInicial() );
+				+SoldadoModel.getPontuacaoInicial() +"\n");
 		}else{
 			Prints.msgr("O soldado " +SoldadoModel.getNomeSoldado()
 				+" não possui pontos para inicar o jogo!\n");
