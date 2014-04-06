@@ -3,10 +3,10 @@ package Controller;
 import java.util.InputMismatchException;
 
 import Controller.Utilitarios.Prints;
-import Model.SoldadoModel;
+import Model.SoldadoMod;
 import View.SoldadosView;
 
-public class SoldadoController extends SoldadoModel {
+public class SoldadoCont extends SoldadoMod {
 	SoldadosView sv = new SoldadosView();
 	
 	/**

@@ -1,20 +1,20 @@
 package Aplicacao;
 
 import Controller.Batalha;
-import Controller.Controlador;
-import Controller.ComandosController;
-import Controller.TaticaInimiga;
+import Controller.Inimigo;
+import Controller.InterfaceCont;
+import Controller.Estrategia;
 import Controller.Utilitarios.*;
-import Model.MapaModel;
+import Model.MapaMod;
 import View.MapaView;
 
-public class Comandos extends Prints {
+public class Interface extends Prints {
 	
 	//String comando;
-	ComandosController ic =  new ComandosController();
-	TaticaInimiga ti = new TaticaInimiga();
+	InterfaceCont ic =  new InterfaceCont();
+	Estrategia ti = new Estrategia();
 	Batalha j = new Batalha();
-	MapaModel mapa = new MapaModel();
+	MapaMod mapa = new MapaMod();
 	MapaView mv = new MapaView();
 	
 	/**
@@ -78,7 +78,7 @@ public class Comandos extends Prints {
 			
 		case "soldado":
 			ic.consultaSoldado();
-			filtra();
+			impressao();
 			break;		
 			
 		case "filtrar":
@@ -112,8 +112,8 @@ public class Comandos extends Prints {
 		
 		case "atirar":
 			j.atira();
-			Prints.msg("Chances: " +Controlador.getChances() 
-				+"\nPontuação: " +Controlador.getAcertos());
+			Prints.msg("Chances: " +Inimigo.getChances() 
+				+"\nPontuação: " +Inimigo.getAcertos());
 			batalha();			
 			break;
 						
@@ -139,7 +139,7 @@ public class Comandos extends Prints {
 		switch (comando("")) {
 		
 		case "jogar":	
-			ti.executaTatica();
+			ti.tatica();
 			batalha();
 			break;
 		
@@ -167,7 +167,7 @@ public class Comandos extends Prints {
 		switch (comando("")) {
 		
 		case "iniciar":	
-			ic.executaMapaInicial();
+			j.executaMapaInicial();
 			iniciaJogo();
 			break;
 		

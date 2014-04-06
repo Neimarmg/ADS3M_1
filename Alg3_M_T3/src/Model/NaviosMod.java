@@ -1,7 +1,7 @@
 
 package Model;
 
-public class NaviosModel {
+public class NaviosMod {
 	
 	private static int portaAvioes = 1;
 	private static int UnidPortaAvioes = 5;
@@ -23,7 +23,7 @@ public class NaviosModel {
 
 
 	public static void setPortaAvioes(int portaAvioes) {
-		NaviosModel.portaAvioes = portaAvioes;
+		NaviosMod.portaAvioes = portaAvioes;
 	}
 	
 	public static int getPortaAvioes() {
@@ -43,7 +43,7 @@ public class NaviosModel {
 	//=================<< destroyers >>==================
 	
 	public static void setDestroyers(int destroyers) {
-		NaviosModel.destroyers = destroyers;
+		NaviosMod.destroyers = destroyers;
 	}
 	
 	public static int getDestroyers() {
@@ -61,7 +61,7 @@ public class NaviosModel {
 	//=================<< fragatas >>====================
 	
 	public static void setFragatas(int fragatas) {
-		NaviosModel.fragatas = fragatas;
+		NaviosMod.fragatas = fragatas;
 	}
 	
 	
@@ -81,7 +81,7 @@ public class NaviosModel {
 	//=================<< torpedeiros >>==================
 	
 	public static void setTorpedeiros(int torpedeiros) {
-		NaviosModel.torpedeiros = torpedeiros;
+		NaviosMod.torpedeiros = torpedeiros;
 	}
 	
 	public static int getTorpedeiros() {
@@ -99,7 +99,7 @@ public class NaviosModel {
 	//=================<< submarinos >>==================
 	
 	public static void setSubmarinos(int submarinos) {
-		NaviosModel.submarinos = submarinos;
+		NaviosMod.submarinos = submarinos;
 	}
 	
 	public static int getSubmarinos() {

@@ -1,31 +1,22 @@
 package Controller;
 
 import Controller.Utilitarios.Prints;
-import Model.MapaModel;
+import Model.MapaMod;
 import View.MapaView;
 import View.NaviosView;
 import View.NiveisView;
 import View.SoldadosView;
 
-public class ComandosController {
+public class InterfaceCont {
 	
-	MapaModel m = new MapaModel();
+	MapaMod m = new MapaMod();
 	MapaView mv = new MapaView();
-	MapaController mc = new MapaController();
+	MapaCont mc = new MapaCont();
 	NiveisView niveis  = new NiveisView();
 	NaviosView navios = new NaviosView();
 	SoldadosView soldado = new SoldadosView();
+
 	
-	/**
-	 * Imprime mapa inicial do jogo!
-	 * @throws Exception
-	 */
-	public void executaMapaInicial() throws Exception {
-		m.criaMapa();
-		niveis.executa(true, 1);
-		mc.imprimeView(true,"\n"+"MAPA DO JOGO! ");
-		
-	}
 	
 	/**
 	 * Método de imprissao de todos os dados do jogo

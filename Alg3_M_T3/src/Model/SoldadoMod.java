@@ -1,12 +1,12 @@
 package Model;
 
-public class SoldadoModel {
+public class SoldadoMod {
 	private static int pontuacaoInicial = 15;
 	private static String nomeSoldado = "Jose calos";
 	
 	
 	public static void setPontuacaoInicial(int pontuacaoInicial) {
-		SoldadoModel.pontuacaoInicial = pontuacaoInicial;
+		SoldadoMod.pontuacaoInicial = pontuacaoInicial;
 	}
 	
 	
@@ -16,7 +16,7 @@ public class SoldadoModel {
 	
 	
 	public static void setNomeSoldado(String nomeSoldado) {
-		SoldadoModel.nomeSoldado = nomeSoldado;
+		SoldadoMod.nomeSoldado = nomeSoldado;
 	}
 	
 	

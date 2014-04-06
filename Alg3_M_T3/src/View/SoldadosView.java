@@ -1,20 +1,20 @@
 package View;
 
 import Controller.Utilitarios.Prints;
-import Model.SoldadoModel;
+import Model.SoldadoMod;
 
-public class SoldadosView extends SoldadoModel {
+public class SoldadosView extends SoldadoMod {
 	
 	
 	/**
 	 * Método de avalição de nome 
 	 */
 	public void avaliaNome(){
-		if (SoldadoModel.getNomeSoldado().equals(" ")) {
+		if (SoldadoMod.getNomeSoldado().equals(" ")) {
 			Prints.msg("\nO soldado ainda não possiu nome!\n");
 		}else{
 			Prints.msg("\nNome do jogador: " 
-				+SoldadoModel.getNomeSoldado() +"\n");
+				+SoldadoMod.getNomeSoldado() +"\n");
 		}
 	}
 	
@@ -22,11 +22,11 @@ public class SoldadosView extends SoldadoModel {
 	 * Método de avalição da pontuação do soldado 
 	 */
 	public void avaliaPontos(){
-		if (SoldadoModel.getPontuacaoInicial() > 0 ) {
+		if (SoldadoMod.getPontuacaoInicial() > 0 ) {
 			Prints.msg("Pontuação inicial: " 
-				+SoldadoModel.getPontuacaoInicial() +"\n");
+				+SoldadoMod.getPontuacaoInicial() +"\n");
 		}else{
-			Prints.msgr("O soldado " +SoldadoModel.getNomeSoldado()
+			Prints.msgr("O soldado " +SoldadoMod.getNomeSoldado()
 				+" não possui pontos para inicar o jogo!\n");
 		}
 	}

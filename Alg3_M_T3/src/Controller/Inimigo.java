@@ -1,15 +1,25 @@
 package Controller;
 
 import Controller.Utilitarios.Prints;
-import Model.MapaModel;
-import Model.SoldadoModel;
+import Model.MapaMod;
+import Model.SoldadoMod;
 import View.MapaView;
 
-public class Controlador {
+public class Inimigo {
 	
 	private static int chances = 0;
 	private static int acertos = 0;
 	MapaView mv = new MapaView();
+	
+	
+	public static void setAcertos(int acertos) {
+		Inimigo.acertos = acertos;
+	}
+	
+	
+	public static void setChances(int chances) {
+		Inimigo.chances = chances;
+	}
 	
 	
 	public static int getAcertos() {		
@@ -18,7 +28,7 @@ public class Controlador {
 	
 	
 	public static int getChances() {
-		return chances + SoldadoModel.getPontuacaoInicial();
+		return chances + SoldadoMod.getPontuacaoInicial();
 	}
 	
 	
@@ -29,15 +39,15 @@ public class Controlador {
 	 * @param dado
 	 */
 	private void encontraAlvo(int linha, int coluna,String dado) {
-		for (int i = 0; i <  MapaModel.getLinha(); i++) {
-			for (int j = 0; j < MapaModel.getLinha(); j++) {				
+		for (int i = 0; i <  MapaMod.getLinha(); i++) {
+			for (int j = 0; j < MapaMod.getLinha(); j++) {				
 				
-				if (i == linha && j == coluna && MapaModel.mapa[i][j].equals("-") ){
+				if (i == linha && j == coluna && MapaMod.mapa[i][j].equals("-") ){
 					acertos += 3;
 				}	
 				
 				if (i == linha && j == coluna ){
-					MapaModel.mapa[i][j] = dado;
+					MapaMod.mapa[i][j] = dado;
 					Prints.msgl();					
 				}				
 			}
@@ -47,13 +57,13 @@ public class Controlador {
 	
 	public void ValidaAlvo(int linha, int coluna,String dado) throws Exception {
 		
-		if ((linha >= MapaModel.getLinha() || coluna >= MapaModel.getColuna()) &&
-			(linha < MapaModel.getLinha() || coluna < MapaModel.getColuna())){
+		if ((linha >= MapaMod.getLinha() || coluna >= MapaMod.getColuna()) &&
+			(linha < MapaMod.getLinha() || coluna < MapaMod.getColuna())){
 				Prints.msgb("As cordenadas não sao válidas!");
 		}else{
 			chances--;	
 			encontraAlvo(linha, coluna, dado);	
-			mv.imprime(false," ");
+			//mv.imprime(false," ");
 		}	
 	}
 	

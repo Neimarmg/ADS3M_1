@@ -1,6 +1,6 @@
 package View;
 import Controller.Utilitarios.Prints;
-import Model.NaviosModel;
+import Model.NaviosMod;
 
 public class NaviosView {
 	String nome =" ";
@@ -14,32 +14,32 @@ public class NaviosView {
 	private void pesquisa(boolean filtrar, String parametro){
 		if (parametro.equals("portaAvioes") && filtrar == true || filtrar == false) {
 			nome += "\nPortaAvioes " 
-				+NaviosModel.getPortaAvioes()
-				+" de " +NaviosModel.getUnidPortaAvioes() +" unidades\n";
+				+NaviosMod.getPortaAvioes()
+				+" de " +NaviosMod.getUnidPortaAvioes() +" unidades\n";
 		} 
 			
 		if (parametro.equals("destroyers")&& filtrar == true || filtrar == false) {
 			nome += "\nDestroyers " 
-				+NaviosModel.getDestroyers()
-				+" de " +NaviosModel.getUnidTorpedeiros() +" unidades\n";
+				+NaviosMod.getDestroyers()
+				+" de " +NaviosMod.getUnidTorpedeiros() +" unidades\n";
 		}
 			
 		if (parametro.equals("fragatas")&& filtrar == true || filtrar == false) {
 			nome += "\nFragatas " 
-				+NaviosModel.getFragatas()
-				+" de " +NaviosModel.getUnidFragatas() +" unidades\n";
+				+NaviosMod.getFragatas()
+				+" de " +NaviosMod.getUnidFragatas() +" unidades\n";
 		}
 				
 		if (parametro.equals("torpedeiros")&& filtrar == true || filtrar == false) {
 			nome += "\nTorpedeiros " 
-				+NaviosModel.getTorpedeiros()
-				+" de " +NaviosModel.getUnidTorpedeiros() +" unidades\n";;
+				+NaviosMod.getTorpedeiros()
+				+" de " +NaviosMod.getUnidTorpedeiros() +" unidades\n";;
 		} 
 		
 		if (parametro.equals("submarinos")&& filtrar == true || filtrar == false) {
 			nome += "\nSubmarinos " 
-				+NaviosModel.getSubmarinos()
-				+" de " +NaviosModel.getUnidSubmarinos() +" unidades\n";
+				+NaviosMod.getSubmarinos()
+				+" de " +NaviosMod.getUnidSubmarinos() +" unidades\n";
 		}	
 	}
 	

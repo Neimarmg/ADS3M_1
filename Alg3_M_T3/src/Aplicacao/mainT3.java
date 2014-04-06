@@ -4,7 +4,7 @@ import Controller.Utilitarios.*;
 
 public class mainT3 {
 
-	Comandos in = new Comandos();	
+	Interface in = new Interface();	
 	Dia d = new Dia();
 
 	

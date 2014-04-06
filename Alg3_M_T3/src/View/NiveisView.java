@@ -1,7 +1,7 @@
 package View;
 
 import Controller.Utilitarios.Prints;
-import Model.NiveisModel;
+import Model.NiveisMod;
 
 public class NiveisView {
 	String nome =" ";
@@ -14,34 +14,34 @@ public class NiveisView {
 	 */
 	private void pesquisa(boolean filtrar, int parametro){
 			
-		if (parametro == NiveisModel.getNivel1()  && filtrar == true || filtrar == false) {
+		if (parametro == NiveisMod.getNivel1()  && filtrar == true || filtrar == false) {
 			nome += "\nNIVEL " 
-				+NiveisModel.getNivel1()
-				+" MAPA DE " +NiveisModel.getMapanivel1() +"x"+NiveisModel.getMapanivel1() +"\n";
+				+NiveisMod.getNivel1()
+				+" MAPA DE " +NiveisMod.getMapanivel1() +"x"+NiveisMod.getMapanivel1() +"\n";
 		} 
 			
-		if (parametro == NiveisModel.getNivel2() && filtrar == true || filtrar == false) {
+		if (parametro == NiveisMod.getNivel2() && filtrar == true || filtrar == false) {
 			nome += "\nNIVEL " 
-				+NiveisModel.getNivel2()
-				+" MAPA DE " +NiveisModel.getMapanivel2() +"x"+NiveisModel.getMapanivel2() +"\n";
+				+NiveisMod.getNivel2()
+				+" MAPA DE " +NiveisMod.getMapanivel2() +"x"+NiveisMod.getMapanivel2() +"\n";
 		}
 			
-		if (parametro == NiveisModel.getNivel3() && filtrar == true || filtrar == false) {
+		if (parametro == NiveisMod.getNivel3() && filtrar == true || filtrar == false) {
 			nome += "\nNIVEL " 
-				+NiveisModel.getNivel3()
-				+" MAPA DE " +NiveisModel.getMapanivel3() +"x"+NiveisModel.getMapanivel3() +"\n";
+				+NiveisMod.getNivel3()
+				+" MAPA DE " +NiveisMod.getMapanivel3() +"x"+NiveisMod.getMapanivel3() +"\n";
 		}
 				
-		if (parametro == NiveisModel.getNivel4() && filtrar == true || filtrar == false) {
+		if (parametro == NiveisMod.getNivel4() && filtrar == true || filtrar == false) {
 			nome += "\nNIVEL " 
-				+NiveisModel.getNivel4()
-				+" MAPA DE " +NiveisModel.getMapanivel4() +"x"+NiveisModel.getMapanivel4() +"\n";
+				+NiveisMod.getNivel4()
+				+" MAPA DE " +NiveisMod.getMapanivel4() +"x"+NiveisMod.getMapanivel4() +"\n";
 		} 
 		
-		if (parametro == NiveisModel.getNivel5() && filtrar == true || filtrar == false) {
+		if (parametro == NiveisMod.getNivel5() && filtrar == true || filtrar == false) {
 			nome += "\nNIVEL " 
-				+NiveisModel.getNivel5()
-				+" MAPA DE " +NiveisModel.getMapanivel5() +"x"+NiveisModel.getMapanivel5() +"\n";
+				+NiveisMod.getNivel5()
+				+" MAPA DE " +NiveisMod.getMapanivel5() +"x"+NiveisMod.getMapanivel5() +"\n";
 		}		
 	}
 	

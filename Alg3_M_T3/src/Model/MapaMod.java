@@ -3,30 +3,17 @@ package Model;
 import Controller.Utilitarios.Prints;
 
 
-public class MapaModel {
+public class MapaMod {
 	
 	private int i = 0 ,j = 0 ;
-	private static int extancaoY = NiveisModel.getMapanivel1();
-	private static int linha = extancaoY; 
-	private static int coluna = extancaoY;
-	public static String [][]mapa = new String[getLinha()][getColuna()];
+	//private static int extancaoY;	
+
+	private static int linha = getLinha(); 
+	private static int coluna = getLinha();
+	public static String [][]mapa = new String[100][100];
 	
 	public static String[][] getMapa() {
 		return mapa;
-	}
-	
-	public static void setExtancaoY(int extancaoY) {
-		MapaModel.extancaoY = extancaoY;
-	}
-	
-	
-	public static int getExtancaoY() {
-		return extancaoY;
-	}
-	
-	
-	public static void setColuna(int coluna) {
-		MapaModel.coluna = coluna;
 	}
 	
 	
@@ -35,9 +22,15 @@ public class MapaModel {
 	}
 	
 	
-	public static void setLinha(int linha) {
-		MapaModel.linha = linha;
+	public static void setColuna(int coluna) {
+		MapaMod.coluna = coluna;
 	}
+	
+	
+	public static void setLinha(int linha) {
+		MapaMod.linha = linha;
+	}
+	
 	
 	public static int getLinha() {
 		return linha;

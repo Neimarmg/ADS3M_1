@@ -5,13 +5,13 @@ package Model;
  * @author moises
  *
  */
-public class NiveisModel {
+public class NiveisMod {
 	private static final int NIVEL1 = 1;
 	private static final int MAPANIVEL1 = 10; //Tamanho do mapa 10x10
 	private static final int PONTON1 = 9; //Pontos para cada nivel no mapa
 	
 	private static final int NIVEL2 = 2;
-	private static final int MapaNivel2 = 15; //Tamanho do mapa 15x15
+	private static final int MAPANIVEL2 = 15; //Tamanho do mapa 15x15
 	private static final int PONTON2 = 12; //Pontos para cada nivel no mapa
 	
 	private static final int NIVEL3 = 3;
@@ -39,7 +39,7 @@ public class NiveisModel {
 	}
 	
 	public static int getMapanivel2() {
-		return MapaNivel2;
+		return MAPANIVEL2;
 	}
 	
 	public static int getNivel3() {
