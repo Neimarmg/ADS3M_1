@@ -4,6 +4,10 @@ import Controller.Utilitarios.Prints;
 import Model.MapaMod;
 import View.MapaView;
 
+/**
+ * Classe de para edição personalisão do nivel persolnalisado mapa "NÃO IMPLEMENTADA"
+ * @author moises
+ */
 public class MapaCont {
 	
 	MapaMod m = new MapaMod();

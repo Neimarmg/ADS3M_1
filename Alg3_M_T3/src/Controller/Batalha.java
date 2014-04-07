@@ -13,6 +13,7 @@ import View.NiveisView;
 
 public class Batalha {
 	private static int addn = 0;
+	int n1=0, n2=0, n3=0,n4=0;
 	
 	Inimigo c = new Inimigo();
 	MapaMod m = new MapaMod();
@@ -41,7 +42,7 @@ public class Batalha {
 	 */
 	protected void pulaFase() throws Exception{			
 		
-		if (addn == NiveisMod.getNivel2() && Inimigo.getAcertos() == NiveisMod.getPonton3()) {			
+		if (addn == NiveisMod.getNivel2()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel2());
 			MapaMod.setColuna(NiveisMod.getMapanivel2());
 			m.criaMapa();
@@ -50,7 +51,7 @@ public class Batalha {
 		}
 		
 		
-		if (addn == NiveisMod.getNivel3() && Inimigo.getAcertos() == NiveisMod.getPonton3()) {			
+		if (addn == NiveisMod.getNivel3()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel3());
 			MapaMod.setColuna(NiveisMod.getMapanivel3());
 			m.criaMapa();
@@ -59,7 +60,7 @@ public class Batalha {
 		}
 		
 		
-		if (addn == NiveisMod.getNivel4() && Inimigo.getAcertos() == NiveisMod.getPonton3()) {			
+		if (addn == NiveisMod.getNivel4()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel4());
 			MapaMod.setColuna(NiveisMod.getMapanivel4());
 			m.criaMapa();
@@ -68,7 +69,7 @@ public class Batalha {
 		}
 		
 		
-		if (addn == NiveisMod.getNivel5() && Inimigo.getAcertos() == NiveisMod.getPonton3()) {			
+		if (addn == NiveisMod.getNivel5()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel5());
 			MapaMod.setColuna(NiveisMod.getMapanivel5());
 			m.criaMapa();
@@ -96,44 +97,61 @@ public class Batalha {
 	
 	
 	/**
-	 * 
+	 * Avaliação para passagem do proximo nivel.
 	 * @throws Exception
 	 */
 	protected void avaliaFase() throws Exception{		
 		
+		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton1()) {			
-			addn++;	
-			Prints.msgb("PARABENS VOCÊ VENCEU A FASE 1 ");
-			executaFase();
+			Prints.msg("\n n1 " +n1);
+			if (n1 == 0){
+				n1++;
+				addn++;	
+				Prints.msgb("PARABENS VOCÊ VENCEU A FASE 1 ");
+				executaFase();
+			}
 		}
 		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton2()) {			
-			addn++;	
-			Prints.msgb("PARABENS VOCÊ VENCEU A FASE 2 ");
-			executaFase();
+			Prints.msg("n\n1 " +n2);
+			if (n2 == 0){
+				n2++;
+				addn++;	
+				Prints.msgb("PARABENS VOCÊ VENCEU A FASE 2 ");
+				executaFase();
+			}
 		}		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton3()) {
-			addn++;	
-			Prints.msgb("PARABENS VOCÊ VENCEU A FASE 3");
-			executaFase();
+			Prints.msg("n\n1 " +n3);
+			if (n3 == 0){	
+				n3++;
+				addn++;	
+				Prints.msgb("PARABENS VOCÊ VENCEU A FASE 3");
+				executaFase();
+			}
 		}
 		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton4()) {
-			addn++;	
-			Prints.msgb("PARABENS VOCÊ VENCEU A FASE 4");
-			executaFase();
+			Prints.msg("n\n1 " +n4);
+			if (n4 == 0){	
+				n4++;
+				addn++;	
+				Prints.msgb("PARABENS VOCÊ VENCEU A FASE 4");
+				executaFase();
+			}
 		}
 		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton5()) {
 			Prints.msge(
-				"\nPARABENS VOCÊ VENCEU A FASE 5\n"
+				"\n\nPARABENS VOCÊ VENCEU A FASE 5\n"
 				+"SUPEROU TODOS OS DESAFIOS PROPOSTOS NO JOGO.\n");
 		}	
 	}
 	
 	
 	/**
-	 * 
+	 * Contado da chances de jogo!
 	 * @throws Exception
 	 */
 	public void contaChances() throws Exception{
