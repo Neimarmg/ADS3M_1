@@ -41,6 +41,7 @@ public class NaviosView {
 				+NaviosMod.getSubmarinos()
 				+" de " +NaviosMod.getUnidSubmarinos() +" unidades\n";
 		}	
+		return;		
 	}
 	
 	

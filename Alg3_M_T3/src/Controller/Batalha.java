@@ -46,7 +46,6 @@ public class Batalha {
 			MapaMod.setLinha(NiveisMod.getMapanivel2());
 			MapaMod.setColuna(NiveisMod.getMapanivel2());
 			m.criaMapa();
-			//n.executa(false, NiveisMod.getNivel2());
 			mv.imprime(true,"");	
 		}
 		
@@ -55,7 +54,6 @@ public class Batalha {
 			MapaMod.setLinha(NiveisMod.getMapanivel3());
 			MapaMod.setColuna(NiveisMod.getMapanivel3());
 			m.criaMapa();
-			//n.executa(false, NiveisMod.getNivel3());
 			mv.imprime(true,"");
 		}
 		
@@ -64,7 +62,6 @@ public class Batalha {
 			MapaMod.setLinha(NiveisMod.getMapanivel4());
 			MapaMod.setColuna(NiveisMod.getMapanivel4());
 			m.criaMapa();
-			//n.executa(false, NiveisMod.getNivel4());
 			mv.imprime(true,"");		
 		}
 		
@@ -73,7 +70,6 @@ public class Batalha {
 			MapaMod.setLinha(NiveisMod.getMapanivel5());
 			MapaMod.setColuna(NiveisMod.getMapanivel5());
 			m.criaMapa();
-			//n.executa(true, NiveisMod.getNivel5());
 			mv.imprime(true,"");		
 		}		
 	
@@ -83,6 +79,7 @@ public class Batalha {
 	public static int getAddn() {
 		return addn;
 	}
+	
 	
 	/**
 	 * 
@@ -97,6 +94,15 @@ public class Batalha {
 	
 	
 	/**
+	 * Informa quando o jogar venceu um nivel
+	 * @param nroFase
+	 * @throws Exception
+	 */
+	protected void informaVitoria(int nroFase) throws Exception{	
+		Prints.msgb("PARABENS VOCÊ VENCEU A FASE "+addn);
+	}
+	
+	/**
 	 * Avaliação para passagem do proximo nivel.
 	 * @throws Exception
 	 */
@@ -107,8 +113,8 @@ public class Batalha {
 			Prints.msg("\n n1 " +n1);
 			if (n1 == 0){
 				n1++;
-				addn++;	
-				Prints.msgb("PARABENS VOCÊ VENCEU A FASE 1 ");
+				informaVitoria(addn);
+				addn++;					
 				executaFase();
 			}
 		}
@@ -117,8 +123,8 @@ public class Batalha {
 			Prints.msg("n\n1 " +n2);
 			if (n2 == 0){
 				n2++;
+				informaVitoria(addn);
 				addn++;	
-				Prints.msgb("PARABENS VOCÊ VENCEU A FASE 2 ");
 				executaFase();
 			}
 		}		
@@ -126,8 +132,8 @@ public class Batalha {
 			Prints.msg("n\n1 " +n3);
 			if (n3 == 0){	
 				n3++;
+				informaVitoria(addn);
 				addn++;	
-				Prints.msgb("PARABENS VOCÊ VENCEU A FASE 3");
 				executaFase();
 			}
 		}
@@ -136,8 +142,8 @@ public class Batalha {
 			Prints.msg("n\n1 " +n4);
 			if (n4 == 0){	
 				n4++;
+				informaVitoria(addn);
 				addn++;	
-				Prints.msgb("PARABENS VOCÊ VENCEU A FASE 4");
 				executaFase();
 			}
 		}
@@ -183,8 +189,6 @@ public class Batalha {
 		}
 		contaChances();
 	}
-
-
 
 }
 

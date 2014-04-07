@@ -22,7 +22,7 @@ public class Interface extends Prints {
 	 * @throws Exception
 	 */
 	public void filtra() throws Exception {
-		menuFiltrar();;
+		menuFiltrar();
 		
 		switch (comando("")) {
 		
