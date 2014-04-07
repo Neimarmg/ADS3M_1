@@ -41,7 +41,7 @@ public class Batalha {
 	 */
 	protected void pulaFase() throws Exception{			
 		
-		if (addn == NiveisMod.getNivel2()) {			
+		if (addn == NiveisMod.getNivel2() && Inimigo.getAcertos() == NiveisMod.getPonton3()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel2());
 			MapaMod.setColuna(NiveisMod.getMapanivel2());
 			m.criaMapa();
@@ -50,7 +50,7 @@ public class Batalha {
 		}
 		
 		
-		if (addn == NiveisMod.getNivel3()) {			
+		if (addn == NiveisMod.getNivel3() && Inimigo.getAcertos() == NiveisMod.getPonton3()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel3());
 			MapaMod.setColuna(NiveisMod.getMapanivel3());
 			m.criaMapa();
@@ -59,16 +59,16 @@ public class Batalha {
 		}
 		
 		
-		if (addn == NiveisMod.getNivel4()) {			
+		if (addn == NiveisMod.getNivel4() && Inimigo.getAcertos() == NiveisMod.getPonton3()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel4());
 			MapaMod.setColuna(NiveisMod.getMapanivel4());
 			m.criaMapa();
 			//n.executa(false, NiveisMod.getNivel4());
-			mv.imprime(false,"");		
+			mv.imprime(true,"");		
 		}
 		
 		
-		if (addn == NiveisMod.getNivel5()) {			
+		if (addn == NiveisMod.getNivel5() && Inimigo.getAcertos() == NiveisMod.getPonton3()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel5());
 			MapaMod.setColuna(NiveisMod.getMapanivel5());
 			m.criaMapa();
@@ -108,7 +108,6 @@ public class Batalha {
 		}
 		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton2()) {			
-			Prints.msge("ddddddddddddddddddddddddd \n");
 			addn++;	
 			Prints.msgb("PARABENS VOCÊ VENCEU A FASE 2 ");
 			executaFase();
@@ -143,6 +142,7 @@ public class Batalha {
 			Prints.msg("Chances: " +Inimigo.getChances()+"\nPontuação: " +Inimigo.getAcertos());
 			avaliaFase();	
 		}else{
+			Prints.msg("\nChances: " +Inimigo.getChances()+"\nPontuação: " +Inimigo.getAcertos());
 			Prints.msge(					
 				"\nVOCÊ PERDEU O JOGO.\n"
 				+"Suas chances de jogo foram esgotadas.\n"
