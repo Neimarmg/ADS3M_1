@@ -61,8 +61,7 @@ public class Interface extends Prints {
 		switch (comando("")) {
 		
 		case "mapa":
-			mapa.criaMapa();
-			mv.imprime(true, "\nMAPA DO JOGO ");
+			j.executaMapaInicial();
 			impressao();
 			break;
 
@@ -111,10 +110,10 @@ public class Interface extends Prints {
 		switch (comando("")) {
 		
 		case "atirar":
-			j.atira();
-			Prints.msg("Chances: " +Inimigo.getChances() 
-				+"\nPontuação: " +Inimigo.getAcertos());
-			batalha();			
+			j.atira();		
+			if (Inimigo.getChances()>0) {	
+				batalha();
+			}
 			break;
 						
 		case "sair":
@@ -145,6 +144,7 @@ public class Interface extends Prints {
 		
 		case "definir":	
 			objetoNaoImplementado();
+			iniciaJogo();
 			break;
 				
 		case "sair":

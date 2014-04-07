@@ -11,6 +11,10 @@ public class Prints {
 	}
 	
 	
+	public static void msge(Object desc) {   
+		System .err.print(desc);
+	}
+	
 	/**
 	 * @param desc
 	 */
@@ -100,7 +104,6 @@ public class Prints {
 		msgb("	COMANDOS DE JOGO?\n\n"
 		+"=> JOGAR\n"
 		+"=> DEFINIR\n"
-		+"=> IMPRIMIR\n"
 		+"=> SAIR\n");
 	}
 

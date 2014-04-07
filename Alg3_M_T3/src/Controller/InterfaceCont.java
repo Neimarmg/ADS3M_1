@@ -15,6 +15,7 @@ public class InterfaceCont {
 	NiveisView niveis  = new NiveisView();
 	NaviosView navios = new NaviosView();
 	SoldadosView soldado = new SoldadosView();
+	Batalha b = new Batalha();
 
 	
 	
@@ -23,8 +24,7 @@ public class InterfaceCont {
 	 * @throws Exception
 	 */
 	public void abreInfocoes() throws Exception {
-		m.criaMapa();
-		mv.imprime(true,"Mapa do jogo");
+		b.executaMapaInicial();
 		Prints.msgl();
 		navios.imprime(false,true);
 		Prints.msgl();
