@@ -4,6 +4,7 @@ import Controller.Batalha;
 import Controller.Inimigo;
 import Controller.InterfaceCont;
 import Controller.Estrategia;
+import Controller.MapaCont;
 import Controller.SoldadoCont;
 import Model.MapaMod;
 import View.MapaView;
@@ -150,6 +151,7 @@ public class Interface extends Prints {
 		
 		case "definir":	
 			soldado.editaDados();
+			MapaCont.iniciaMapa();
 			Joga();
 			break;
 				

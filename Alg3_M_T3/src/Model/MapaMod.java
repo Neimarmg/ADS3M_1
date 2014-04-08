@@ -9,7 +9,7 @@ import View.Utilitarios.Prints;
  */
 public class MapaMod {
 	
-	private int i = 0 ,j = 0 ;
+	private static int i = 0 ,j = 0 ;
 
 	private static int linha = getLinha(); 
 	private static int coluna = getLinha();
@@ -44,7 +44,7 @@ public class MapaMod {
 	 * Cria tabluleiro do jogo
 	 * @throws Exception
 	 */
-	public void criaMapa() throws Exception{
+	public static void criaMapa() throws Exception{
 		try {
 			for (i = 0; i < linha; i++) {	
 				for (j = 0; j < coluna; j++) {

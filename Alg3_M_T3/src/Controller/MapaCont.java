@@ -1,5 +1,7 @@
 package Controller;
 
+import java.util.InputMismatchException;
+
 import Model.MapaMod;
 import View.MapaView;
 import View.Utilitarios.Prints;
@@ -8,19 +10,38 @@ import View.Utilitarios.Prints;
  * Classe de para edição personalização do navios "NÃO IMPLEMENTADA"
  * @author Neimar
  */
-public class MapaCont {
+public class MapaCont extends MapaMod {
 	
-	MapaMod mapaMod = new MapaMod();
+	
 	MapaView mapaView = new MapaView();
 	
 	
-	public void setaColuna() {
-		MapaMod.setColuna(Prints.digitaNumero("Digita nro de colunas "));
+	public static void setaColuna() {
+		try {
+			MapaMod.setColuna(Prints.digitaNumero("Digita nro de colunas "));
+			if (getColuna()> 30){
+				Prints.msge("\nO Nro de chances deve ser mair doque " +getColuna() +"\n");
+				setaColuna();
+			}			
+		} catch (InputMismatchException e) {
+			Prints.msge("\nEra esperado um numero!\n");
+			setaColuna();
+		}
 	}
 	
-	
-	public void setaLinha() {
-		MapaMod.setLinha(Prints.digitaNumero("Digita nro de linha "));	
+
+	public static void setaLinha() {
+		try{
+			MapaMod.setLinha(Prints.digitaNumero("Digita nro de linha "));	
+			if (getLinha() > 30){
+				Prints.msge("\nO Nro de chances deve ser mair doque " +getLinha() +"\n");
+				setaLinha();
+			}
+			
+		} catch (InputMismatchException e) {
+			Prints.msge("\nEra esperado um numero!\n");
+			setaLinha();
+		}
 	}
 		
 	
@@ -28,10 +49,12 @@ public class MapaCont {
 	 * Método controlador de personalização do mapa
 	 * @throws Exception
 	 */
-	public void iniciaMapa() throws Exception {
+	public static void iniciaMapa() throws Exception {
+		Prints.msgc("	REDEFINIR DIMENÇÕES DO MAPA");
 		setaColuna();
 		setaLinha();
-		mapaMod.criaMapa();
+		criaMapa();
+		
 	}	
 	
 	/**
