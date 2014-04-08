@@ -3,18 +3,22 @@ package Utilitarios;
 import java.util.Scanner;
 
 
-public class Formatos {	
-	Scanner var = new Scanner(System.in);
+public class Prints {	
+	static Scanner var = new Scanner(System.in);
 	
-	public void msg(Object desc) {   
+	public static void msg(Object desc) {   
 		System .out.print(desc);
 	}
 	
 	
+	public static void msge(Object desc) {   
+		System .err.print(desc);
+	}
+	
 	/**
 	 * @param desc
 	 */
-	public void msgb(Object desc) {
+	public static void msgb(Object desc) {
 		System .out.print(
 			"\n====================================================\n"
 			+desc
@@ -22,23 +26,37 @@ public class Formatos {
 	}
 	
 	
-	public void msgl() {
+	public static void msgc(Object desc) {
+		System .out.print(
+			"\n====================================================\n"
+			+desc);
+	}
+
+
+	public static void msgr(Object desc) {
+		System .out.print(
+			desc
+			+"\n====================================================\n");
+	}	
+	
+
+	public static void msgl() {
 		System .out.print(
 			"\n====================================================\n");
 	}
 	
 	
-	public void espacoInsuficiente() {
+	public static void espacoInsuficiente() {
 		System .err.print("\nEspaço insuficiente em disco para inserir dados.\n");
 	}
 	
 	
-	public void opcaoInvalida() {
+	public static void opcaoInvalida() {
 		System .err.println("\nOpção de comando inválido. Tente novamente.");
 	}
 	
 	
-	public void objetoNaoImplementado() {
+	public static void objetoNaoImplementado() {
 		System .err.print("\nNão implementado.\n");
 	}
 	
@@ -47,7 +65,7 @@ public class Formatos {
 	 * Método de label dos comandos do sistema
 	 * @param label
 	 */
-	public void paleta(String label) {
+	public static void paleta(String label) {
 		System .out.println();
 		if (label.equals("")){
 			System .out.print("COMANDO: ");
@@ -56,25 +74,34 @@ public class Formatos {
 		}
 	}
 	
+	/**
+	 * Valores boleanos
+	 * @param label
+	 * @return
+	 */
+	public static int digitaNumero(String label) {
+		paleta(label);
+		return var.nextInt();
+	}
 	
 	/**
-	 * Método de retorno que recebe a label com parâmento e retorna
+	 * Método de retorno que recebe ficheiro label com parâmento e retorna
 	 * uma string para filtros
 	 * @param label
 	 * @return
 	 */
-	public String comando(String label) {
+	public static String digita(String label) {
 		paleta(label);
 		return var.next().toLowerCase();
-	}	
+	}
 	
 	
-	public void sair(){
+	public static void sair(){
 		System.err.print("\nVocê optou por sair do programa. Obrigado.");
 	}
 	
 	
-	public void mostarMenuMaim() {		
+	public static void mostarMenuMaim() {		
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
 		+"=> INSERIR\n"
 		+"=> CONSULTAR\n"
@@ -87,7 +114,7 @@ public class Formatos {
 	/** 
 	 * @throws Exception
 	 */
-	public void menuInsert() throws Exception {
+	public static void menuInsert() throws Exception {
 		msgb(
 			"	GRAVAR DADOS EM: \n\n"	
 			+"=> ARQUIVO\n"
@@ -101,7 +128,7 @@ public class Formatos {
 	/** 
 	 * @throws Exception
 	 */
-	public void menuConsultas()throws Exception {	
+	public static void menuConsultas()throws Exception {	
 		msgb(
 			"	CONSULTAS EM: \n\n"	
 			+"=> ARQUIVO\n"
@@ -115,7 +142,7 @@ public class Formatos {
 	/** 
 	 * @throws Exception
 	 */
-	public void menuImprimir()throws Exception {	
+	public static void menuImprimir()throws Exception {	
 		msgb(
 			"	MENU OPÇÕES DE IMPRESSÃO:\n\n"	
 			+"=> ARQUIVO\n"
@@ -127,7 +154,7 @@ public class Formatos {
 	/**	
 	 * @throws Exception
 	 */
-	public void  nomeArquivo()throws Exception {	
+	public static void  nomeArquivo()throws Exception {	
 		msgb(
 			"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
 			+"=> Nome.Extenção\n"
@@ -139,7 +166,7 @@ public class Formatos {
 	/** 
 	 * @throws Exception
 	 */
-	public void menuArquivo()throws Exception {	
+	public static void menuArquivo()throws Exception {	
 		msgb(
 			"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
 			+"=> NOVO\n"
@@ -153,7 +180,7 @@ public class Formatos {
 	/** 
 	 * @throws Exception
 	 */
-	public void  menuInserirNovo()throws Exception {	
+	public static void menuInserirNovo()throws Exception {	
 		msgb(
 			"	OPÇÕES PARA INSERÇÃO DE DADOS:\n\n"	
 			+"=> NOVO\n"
@@ -166,7 +193,7 @@ public class Formatos {
 	/**
 	 * @throws Exception
 	 */
-	public void  menuConsultaArquivo()throws Exception {	
+	public static void menuConsultaArquivo()throws Exception {	
 		msgb(
 			"	OPÇÕES PARA CONSULTAR ARQUIVO:\n\n"	
 			+"=> NAVEGAR\n"

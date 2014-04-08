@@ -4,6 +4,7 @@ import Controller.Batalha;
 import Controller.Inimigo;
 import Controller.InterfaceCont;
 import Controller.Estrategia;
+import Controller.SoldadoCont;
 import Model.MapaMod;
 import View.MapaView;
 import View.Utilitarios.*;
@@ -15,11 +16,12 @@ import View.Utilitarios.*;
 public class Interface extends Prints {
 	
 	//String comando;
-	InterfaceCont ic =  new InterfaceCont();
-	Estrategia ti = new Estrategia();
-	Batalha j = new Batalha();
+	InterfaceCont interfaceCont =  new InterfaceCont();
+	Estrategia estrategia = new Estrategia();
+	Batalha batalha = new Batalha();
 	MapaMod mapa = new MapaMod();
-	MapaView mv = new MapaView();
+	MapaView mapaView = new MapaView();
+	SoldadoCont soldado = new SoldadoCont();
 	
 	/**
 	 * Método de filtragem de dados
@@ -28,15 +30,15 @@ public class Interface extends Prints {
 	public void filtra() throws Exception {
 		menuFiltrar();
 		
-		switch (comando("")) {
+		switch (digita("")) {
 		
 		case "navios":
-			ic.consultaNavios(true,false);
+			interfaceCont.consultaNavios(true,false);
 			filtra();
 			break;
 		
 		case "niveis":
-			ic.consultaNiveis(true);
+			interfaceCont.consultaNiveis(true);
 			filtra();
 			break;
 		
@@ -62,25 +64,25 @@ public class Interface extends Prints {
 	public void imprime() throws Exception {
 		Prints.menuImprimir();
 		
-		switch (comando("")) {
+		switch (digita("")) {
 		
 		case "mapa":
-			j.iniciaMapa();
+			batalha.iniciaMapa();
 			imprime();
 			break;
 
 		case "navios":
-			ic.consultaNavios(false,true);
+			interfaceCont.consultaNavios(false,true);
 			imprime();
 			break;
 			
 		case "niveis":
-			ic.consultaNiveis(false);
+			interfaceCont.consultaNiveis(false);
 			imprime();
 			break;
 			
 		case "soldado":
-			ic.consultaSoldado();
+			interfaceCont.consultaSoldado();
 			imprime();
 			break;		
 			
@@ -89,7 +91,7 @@ public class Interface extends Prints {
 			break;
 			
 		case "todos":
-			ic.listaConsultas();
+			interfaceCont.listaConsultas();
 			imprime();
 			break;
 			
@@ -111,10 +113,10 @@ public class Interface extends Prints {
 	public void batalha() throws Exception {
 		menuBatalha();
 		
-		switch (comando("")) {
+		switch (digita("")) {
 		
 		case "atirar":
-			j.atira();		
+			batalha.atira();		
 			if (Inimigo.getChances()>0) {	
 				batalha();
 			}
@@ -139,15 +141,15 @@ public class Interface extends Prints {
 	public void Joga() throws Exception {
 		menuJogar();
 		
-		switch (comando("")) {
+		switch (digita("")) {
 		
 		case "jogar":	
-			ti.tatica();
+			estrategia.tatica();
 			batalha();
 			break;
 		
 		case "definir":	
-			objetoNaoImplementado();
+			soldado.editaDados();
 			Joga();
 			break;
 				
@@ -168,17 +170,17 @@ public class Interface extends Prints {
 	 */
 	public void inicia() throws Exception {
 		
-		switch (comando("")) {
+		switch (digita("")) {
 		
 		case "iniciar":	
-			j.iniciaMapa();
+			batalha.iniciaMapa();
 			Joga();
 			break;
 		
 		case "imprimir":
 			imprime();
 			break;
-			
+
 		case "sair":
 			sair();
 			break;

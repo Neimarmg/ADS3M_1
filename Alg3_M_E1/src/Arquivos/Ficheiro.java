@@ -5,37 +5,32 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.util.Scanner;
 import java.nio.file.Paths;
 import java.nio.file.Path;
-
 import Aplicacao.Interface;
-import Utilitarios.Formatos;
-import Utilitarios.crud;
+import Utilitarios.Icrud;
+import Utilitarios.Prints;
 
 public class Ficheiro {
-	
-	Scanner var = new Scanner(System.in);
-	Formatos i = new Formatos();
-	crud n =  new crud();
-	Memoria m =  new Memoria();
+	Icrud in =  new Icrud();
+	Memoria memoria =  new Memoria();
 	
 	/**
 	 * @param nomeAquivo
 	 */
 	public void criaNovo(final String nomeAquivo) {
 		try {
-			i.msg("\nVerificando disco...\n");
-			if (m.calculaDisponivel() >= 6000) { // Verifica memória ao inserir dados
-				FileWriter c = new FileWriter(new File(nomeAquivo),true);
-				i.msgb("Novo arquivo criado: "+c);
-				c.close();
+			Prints.msg("\nVerificando disco...\n");
+			if (memoria.calculaDisponivel() >= 6000) { // Verifica memória ao inserir dados
+				FileWriter fw = new FileWriter(new File(nomeAquivo),true);
+				Prints.msgb("Novo arquivo criado: "+fw);
+				fw.close();
 			} else {
-				i.espacoInsuficiente();
-				m.imprime();
+				Prints.espacoInsuficiente();
+				memoria.imprime();
 			}
 		} catch (Exception e) {
-			i.msgb("Não foi possivél criar um novo arquivo.");
+			Prints.msgb("Não foi possivél criar um novo arquivo.");
 		}		
 	}
 	
@@ -46,13 +41,13 @@ public class Ficheiro {
 	 */
 	public void remove(String nomeArquivo) {
 		String nome = nomeArquivo; 
-		File f = new File(nome); 
-		if (f.exists()){ 
-			i.msgb("???" +f.getFreeSpace());
-			f.delete();	
-			i.msgb("O aquivo " +nome +" foi removido com sucesso.");			
+		File file = new File(nome); 
+		if (file.exists()){ 
+			Prints.msgb("???" +file.getFreeSpace());
+			file.delete();	
+			Prints.msgb("O aquivo " +nome +" foi removido com sucesso.");			
 		}else{			
-			i.msgb("Arquivo não encontrado!\nNão é possível remover.");
+			Prints.msgb("Arquivo não encontrado!\nNão é possível remover.");
 		}
 	} 
 	
@@ -62,7 +57,7 @@ public class Ficheiro {
 	 */
 	public void buscaExistente(final String nomeAquivo) {
 		Path p = Paths.get(nomeAquivo);
-		i.msg("Arquivo encontrado: "+p);
+		Prints.msg("Arquivo encontrado: "+p);
 	}
 	
 	/**
@@ -80,9 +75,9 @@ public class Ficheiro {
 			}
 			br.close();			
 		} catch (FileNotFoundException e) {
-			i.msgb("Nome do arquivo incorreto ou inexistente.");
-			Interface a = new Interface();
-			a.imprime();
+			Prints.msgb("Nome do arquivo incorreto ou inexistente.");
+			Interface Interface = new Interface();
+			Interface.imprime();
 		}
     }
 }

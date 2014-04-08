@@ -1,23 +1,22 @@
 package Estruturas;
 
 import Arquivos.Ficheiro;
-import Utilitarios.Formatos;
-import Utilitarios.crud;
+import Utilitarios.Prints;
+import Utilitarios.Icrud;
 
 public class Registrador {
 
 	String desc, fone , nome;
-	Formatos f = new Formatos();
-	Ficheiro a =  new Ficheiro();
-	crud i = new crud();
+	Ficheiro ficheiro =  new Ficheiro();
+	Icrud icrud = new Icrud();
 	ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	
 	/**
 	 * @throws Exception
 	 */
 	public void insereDados() throws Exception {
-		nome =  f.comando("Contato");
-		fone = 	f.comando("Telefone");
+		nome =  Prints.digita("Contato");
+		fone = 	Prints.digita("Telefone");
 		desc = nome +" " + fone;
 	}
 	
@@ -26,9 +25,9 @@ public class Registrador {
 	 * @throws Exception
 	 */
 	public  void insereLista() throws Exception {
-		f.menuInserirNovo();
+		Prints.menuInserirNovo();
 		
-		switch (f.comando("")) {
+		switch (Prints.digita("")) {
 		
 		case "novo":
 			insereDados();
@@ -43,11 +42,11 @@ public class Registrador {
 			break;
 		
 		case "sair":
-			f.sair();
+			Prints.sair();
 			break;
 		
 		default:
-			f.opcaoInvalida();
+			Prints.opcaoInvalida();
 			insereLista();
 			break;
 		}	
@@ -60,33 +59,33 @@ public class Registrador {
 	 */
 	public  void insereArquivo(String arquivo) throws Exception {
 
-		f.menuInserirNovo();
+		Prints.menuInserirNovo();
 		
-		switch (f.comando("")) {
+		switch (Prints.digita("")) {
 		
 		case "novo":
 			insereDados();
-			i.addNovo(arquivo,nome);
-			i.addNovo(arquivo,fone);
+			icrud.addNovo(arquivo,nome);
+			icrud.addNovo(arquivo,fone);
 			insereArquivo(arquivo);
 			break;
 			
 		case "imprimir":
-			f.msgl();
-			f.msg("Dados em aquivo: \n");
-			a.imprime(arquivo);
+			Prints.msgl();
+			Prints.msg("Dados em aquivo: \n");
+			ficheiro.imprime(arquivo);
 			insereArquivo(arquivo);
 			break;
 			
 		case "excluir":
-			desc =  f.comando("\nNome Contato a excluir");
-			i.exclui(arquivo, desc);
+			desc =  Prints.digita("\nNome Contato ficheiro excluir");
+			icrud.exclui(arquivo, desc);
 		case "sair":
-			f.sair();
+			Prints.sair();
 			break;
 		
 		default:
-			f.opcaoInvalida();
+			Prints.opcaoInvalida();
 			insereArquivo(arquivo);
 			break;
 		}
@@ -99,33 +98,33 @@ public class Registrador {
 	 */
 	public  void insereAmbas(String arquivo) throws Exception {
 		//executaComando();
-		f.menuInserirNovo();
+		Prints.menuInserirNovo();
 		
-		switch (f.comando("")) {
+		switch (Prints.digita("")) {
 		case "novo":
 			insereDados();
 			lista.insert(new Nodo<String>(nome));
 			lista.insert(new Nodo<String>(fone), lista.getHead());
-			i.addNovo(arquivo,desc);
+			icrud.addNovo(arquivo,desc);
 			insereAmbas(arquivo);
 			break;
 		
 		case "imprimir":
-			f.msgl();
-			f.msg("Dados em lista: ");
+			Prints.msgl();
+			Prints.msg("Dados em lista: ");
 			lista.print();
-			f.msgl();
-			f.msg("Dados em aquivo: ");
-			a.imprime(arquivo);
+			Prints.msgl();
+			Prints.msg("Dados em aquivo: ");
+			ficheiro.imprime(arquivo);
 			insereAmbas(arquivo);
 			break;
 			
 		case "sair":
-			f.sair();
+			Prints.sair();
 			break;
 		
 		default:
-			f.opcaoInvalida();
+			Prints.opcaoInvalida();
 			insereAmbas(arquivo);
 			break;
 		}

@@ -13,7 +13,7 @@ public class Inimigo {
 	
 	private static int chances = 0;
 	private static int acertos = 0;
-	MapaView mv = new MapaView();
+	MapaView mapaView = new MapaView();
 	
 	/**
 	 * @param acertos

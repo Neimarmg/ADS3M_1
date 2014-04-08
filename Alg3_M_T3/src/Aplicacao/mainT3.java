@@ -4,8 +4,8 @@ import View.Utilitarios.*;
 
 public class mainT3 {
 
-	Interface in = new Interface();	
-	Dia d = new Dia();
+	Interface Interface = new Interface();	
+	Dia dia = new Dia();
 
 	
 	private void escreveCabecalho() {
@@ -18,9 +18,9 @@ public class mainT3 {
 	 */
 	private void run() throws Exception {
 		escreveCabecalho();
-		d.defineSaudacao();
+		dia.defineSaudacao();
 		Prints.menuMain();
-		in.inicia();
+		Interface.inicia();
 	}
 	
 

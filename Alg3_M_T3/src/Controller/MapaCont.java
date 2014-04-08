@@ -10,8 +10,8 @@ import View.Utilitarios.Prints;
  */
 public class MapaCont {
 	
-	MapaMod m = new MapaMod();
-	MapaView mv = new MapaView();
+	MapaMod mapaMod = new MapaMod();
+	MapaView mapaView = new MapaView();
 	
 	
 	public void setaColuna() {
@@ -31,7 +31,7 @@ public class MapaCont {
 	public void iniciaMapa() throws Exception {
 		setaColuna();
 		setaLinha();
-		m.criaMapa();
+		mapaMod.criaMapa();
 	}	
 	
 	/**
@@ -41,6 +41,6 @@ public class MapaCont {
 	 * @throws Exception
 	 */
 	public void imprimeView(Boolean mostraMsgCabelho,String texto) throws Exception {
-		mv.imprime(mostraMsgCabelho, texto);		
+		mapaView.imprime(mostraMsgCabelho, texto);		
 	}	
 }

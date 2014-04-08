@@ -7,7 +7,7 @@ import View.Utilitarios.Prints;
  * @author Neimar
  */
 public class NaviosView {
-	String nome =" ";
+	String acum =" ";
 	
 	/**
 	 * Método que encontra um navio espeífico ou lista todos 
@@ -16,36 +16,36 @@ public class NaviosView {
 	 * @param parametro
 	 */
 	private void pesquisa(boolean filtrar, String parametro){
+		
 		if (parametro.equals("portaAvioes") && filtrar == true || filtrar == false) {
-			nome += "\nPortaAvioes " 
+			acum += "\nPortaAvioes " 
 				+NaviosMod.getPortaAvioes()
 				+" de " +NaviosMod.getUnidPortaAvioes() +" unidades\n";
 		} 
 			
 		if (parametro.equals("destroyers")&& filtrar == true || filtrar == false) {
-			nome += "\nDestroyers " 
+			acum += "\nDestroyers " 
 				+NaviosMod.getDestroyers()
 				+" de " +NaviosMod.getUnidTorpedeiros() +" unidades\n";
 		}
 			
 		if (parametro.equals("fragatas")&& filtrar == true || filtrar == false) {
-			nome += "\nFragatas " 
+			acum += "\nFragatas " 
 				+NaviosMod.getFragatas()
 				+" de " +NaviosMod.getUnidFragatas() +" unidades\n";
 		}
 				
 		if (parametro.equals("torpedeiros")&& filtrar == true || filtrar == false) {
-			nome += "\nTorpedeiros " 
+			acum += "\nTorpedeiros " 
 				+NaviosMod.getTorpedeiros()
 				+" de " +NaviosMod.getUnidTorpedeiros() +" unidades\n";;
 		} 
 		
 		if (parametro.equals("submarinos")&& filtrar == true || filtrar == false) {
-			nome += "\nSubmarinos " 
+			acum += "\nSubmarinos " 
 				+NaviosMod.getSubmarinos()
 				+" de " +NaviosMod.getUnidSubmarinos() +" unidades\n";
-		}	
-		return;		
+		}
 	}
 	
 	
@@ -56,9 +56,9 @@ public class NaviosView {
 	 */
 	public void executa(boolean filtrar, String parametro){
 		pesquisa(filtrar, parametro);
-		Prints.msg(nome);
+		Prints.msg(acum);
 		
-		if (filtrar == true && nome.equals(" ")) {
+		if (filtrar == true && acum.equals(" ")) {
 			Prints.msgb("Não foi encontrado nenhum navio com nome de " +parametro);
 		}else{
 			pesquisa(filtrar, parametro);			
@@ -86,7 +86,7 @@ public class NaviosView {
 	 */
 	public void imprime(boolean filtrar,Boolean mostraCabecalho){
 		if (filtrar == true) {
-			executa(filtrar,Prints.comando("Nome do navio "));
+			executa(filtrar,Prints.digita("Nome do navio "));
 		}else{
 			abilitaCabecalho(filtrar, mostraCabecalho);
 			executa(filtrar, " ");

@@ -10,7 +10,7 @@ import View.Utilitarios.Prints;
 public class MapaView {
 	int j,i;
 	char letra = 'A';
-	MapaMod m = new MapaMod();
+	MapaMod mapaMod = new MapaMod();
 	
 	public void setLetra(char letra) {
 		this.letra = letra;
@@ -61,7 +61,4 @@ public class MapaView {
 			Prints.msg("" +MapaMod.getLinha()+"x" +MapaMod.getColuna() +"\n\n");
 		}
 	}
-	
-	
-	
 }

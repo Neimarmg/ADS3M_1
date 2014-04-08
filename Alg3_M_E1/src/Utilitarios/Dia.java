@@ -4,16 +4,15 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Dia {
-	Pressagios s = new Pressagios(); 	
-	Formatos m = new Formatos();
+	Pressagios pressagios = new Pressagios(); 	
 	
-	Calendar dh = Calendar.getInstance();
+	Calendar diaHora = Calendar.getInstance();
 	SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 	
 	
 	public void ImprimeHora() {		
-		dh.set(Calendar.DST_OFFSET,0);		
-		m.msg("São " +sdf.format(dh.getTime()) +"hs");
+		diaHora.set(Calendar.DST_OFFSET,0);		
+		Prints.msg("São " +sdf.format(diaHora.getTime()) +"hs");
 	}
 	
 	/**
@@ -21,15 +20,15 @@ public class Dia {
 	 * @param hora
 	 */
 	public void defineCabecalho(Object hora) {		
-		m.msg("\nOlá!" +
+		Prints.msg("\nOlá!" +
 			  "\n" +defineNomenclatura() +hora +"\n");
 	}
 	
 	
 	public String defineNomenclatura() {
-		dh.set(Calendar.DST_OFFSET,0);
+		diaHora.set(Calendar.DST_OFFSET,0);
 		
-		int hora =  dh.get(Calendar.HOUR_OF_DAY);
+		int hora =  diaHora.get(Calendar.HOUR_OF_DAY);
 		
 		if (hora == 0) {
 			return "É ";
@@ -40,23 +39,23 @@ public class Dia {
 		
 	
 	public void defineSaudacao() {
-		dh.set(Calendar.DST_OFFSET,0);
+		diaHora.set(Calendar.DST_OFFSET,0);
 		
-		int hora =  dh.get(Calendar.HOUR_OF_DAY);
+		int hora =  diaHora.get(Calendar.HOUR_OF_DAY);
 		
 		if (hora >= 0 && hora <= 12) {
-			defineCabecalho(sdf.format(dh.getTime()) +" da manhã." +"");
-			s.desejaBomDia();
+			defineCabecalho(sdf.format(diaHora.getTime()) +" da manhã." +"");
+			pressagios.desejaBomDia();
 		}
 
 		if (hora >= 12  && hora <= 18) {
-			defineCabecalho(sdf.format(dh.getTime()) +" da tarde." +"");
-			s.desejaBoaTarde();
+			defineCabecalho(sdf.format(diaHora.getTime()) +" da tarde." +"");
+			pressagios.desejaBoaTarde();
 		}	
 		
 		if (hora > 18  && hora <= 24) {
-			defineCabecalho(sdf.format(dh.getTime()) +" da noite." +"");
-			s.desejaBoaNoite();
+			defineCabecalho(sdf.format(diaHora.getTime()) +" da noite." +"");
+			pressagios.desejaBoaNoite();
 		}	
 	}
 }

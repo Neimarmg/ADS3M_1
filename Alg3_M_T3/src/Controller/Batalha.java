@@ -19,11 +19,11 @@ public class Batalha {
 	private static int addn = 0;
 	int n1=0, n2=0, n3=0,n4=0;
 	
-	Inimigo c = new Inimigo();
-	MapaMod m = new MapaMod();
-	MapaView mv =  new MapaView();
-	NiveisView n = new NiveisView();
-	Estrategia e = new Estrategia();
+	Inimigo inimigo = new Inimigo();
+	MapaMod mapaMod = new MapaMod();
+	MapaView mapaView =  new MapaView();
+	NiveisView naviosView = new NiveisView();
+	Estrategia estrategia = new Estrategia();
 	
 	
 	/**
@@ -34,9 +34,9 @@ public class Batalha {
 		addn++;
 		MapaMod.setLinha(NiveisMod.getMapanivel1());
 		MapaMod.setColuna(NiveisMod.getMapanivel1());
-		m.criaMapa();
-		n.executa(true, NiveisMod.getNivel1());
-		mv.imprime(true,"");
+		mapaMod.criaMapa();
+		naviosView.executa(true, NiveisMod.getNivel1());
+		mapaView.imprime(true,"");
 	}
 	
 	
@@ -49,32 +49,32 @@ public class Batalha {
 		if (addn == NiveisMod.getNivel2()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel2());
 			MapaMod.setColuna(NiveisMod.getMapanivel2());
-			m.criaMapa();
-			mv.imprime(true,"");	
+			mapaMod.criaMapa();
+			mapaView.imprime(true,"");	
 		}
 		
 		
 		if (addn == NiveisMod.getNivel3()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel3());
 			MapaMod.setColuna(NiveisMod.getMapanivel3());
-			m.criaMapa();
-			mv.imprime(true,"");
+			mapaMod.criaMapa();
+			mapaView.imprime(true,"");
 		}
 		
 		
 		if (addn == NiveisMod.getNivel4()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel4());
 			MapaMod.setColuna(NiveisMod.getMapanivel4());
-			m.criaMapa();
-			mv.imprime(true,"");		
+			mapaMod.criaMapa();
+			mapaView.imprime(true,"");		
 		}
 		
 		
 		if (addn == NiveisMod.getNivel5()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel5());
 			MapaMod.setColuna(NiveisMod.getMapanivel5());
-			m.criaMapa();
-			mv.imprime(true,"");		
+			mapaMod.criaMapa();
+			mapaView.imprime(true,"");		
 		}		
 	
 	}
@@ -90,10 +90,10 @@ public class Batalha {
 	 * @throws Exception
 	 */
 	protected void executaFase() throws Exception{
-		mv.setLetra('A');
+		mapaView.setLetra('A');
 		pulaFase();
 		Estrategia.setNivel(getAddn());
-		e.tatica();
+		estrategia.tatica();
 	}
 	
 	
@@ -182,7 +182,7 @@ public class Batalha {
 	public void atira() throws Exception{
 		try {
 			Prints.msgl();
-			c.ValidaAlvo(Prints.digitaNumero("Nro linha"),
+			inimigo.ValidaAlvo(Prints.digitaNumero("Nro linha"),
 						 Prints.digitaNumero("Nro coluna" ),"O");
 		} catch (InputMismatchException e) {
 			Prints.msgb("Era esperado um dígito como cordenáda!");

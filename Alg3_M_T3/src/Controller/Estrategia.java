@@ -12,10 +12,10 @@ import View.Utilitarios.Prints;
  */
 public class Estrategia {
 	
-	MapaMod m = new MapaMod();
-	MapaView mv = new MapaView();
-	Inimigo c = new Inimigo(); 
-	SoldadosView sv = new SoldadosView();
+	MapaMod mapaMod = new MapaMod();
+	MapaView mapaView = new MapaView();
+	Inimigo inimigo = new Inimigo(); 
+	SoldadosView soldadoView = new SoldadosView();
 
 	private static int nivel;
 	private int contUnidades;
@@ -118,7 +118,7 @@ public class Estrategia {
 		
 		if(MapaMod.getColuna()*MapaMod.getLinha() == contUnidades){
 			posisciona();
-			sv.imprime();
+			soldadoView.imprime();
 		}else{
 			Prints.msgb("Mapa inesistente!");
 			tatica();

@@ -1,21 +1,19 @@
 package Aplicacao;
 
 import Navegacao.Consultas;
-import Utilitarios.Formatos;
+import Utilitarios.Prints;
 import Arquivos.Ficheiro;
 import Arquivos.Memoria;
 import Estruturas.ListaEncadeada;
 import Estruturas.Registrador;
 
-public class Interface<T> extends Formatos {
+public class Interface<T> extends Prints {
 	
-	String comando;
-	Formatos i = new Formatos();
-	Ficheiro f = new Ficheiro();
+	Ficheiro ficheiro = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
 	Registrador registra = new Registrador();
-	Consultas c = new Consultas();
-	Memoria m =  new Memoria();
+	Consultas consultas = new Consultas();
+	Memoria memoria =  new Memoria();
 
 	/** 
 	 * @throws Exception
@@ -23,7 +21,7 @@ public class Interface<T> extends Formatos {
 	public void consulta() throws Exception {	
 		menuConsultas();
 		
-			switch (comando("")) {
+			switch (digita("")) {
 			
 			case "lista":
 				objetoNaoImplementado();
@@ -31,11 +29,11 @@ public class Interface<T> extends Formatos {
 				break;
 				
 			case "arquivo":
-				c.carrega();
+				consultas.carrega();
 				break;
 				
 			case "binaria":
-				c.buscaBinaria(comando("Nome do arquivo"), comando("Parâmetro "));
+				consultas.buscaBinaria(digita("Nome do arquivo"), digita("Parâmetro "));
 				break;
 				
 			case "sair":
@@ -55,11 +53,10 @@ public class Interface<T> extends Formatos {
 	 */
 	public void salva() throws Exception {	
 		menuInsert();		
-		
-			
-			switch (comando("")) {			
+					
+			switch (digita("")) {			
 			case "arquivo":	
-				registra.insereArquivo(comando("Nome do arquivo"));
+				registra.insereArquivo(digita("Nome do arquivo"));
 				break;
 				
 			case "lista":		
@@ -67,7 +64,7 @@ public class Interface<T> extends Formatos {
 				break;
 	
 			case "ambos":		
-				registra.insereAmbas(comando("Nome do arquivo"));			
+				registra.insereAmbas(digita("Nome do arquivo"));			
 				break;
 				
 			case "sair":
@@ -89,10 +86,10 @@ public class Interface<T> extends Formatos {
 	public void imprime() throws Exception {	
 		menuImprimir();
 		
-		switch (comando("")) {		
+		switch (digita("")) {		
 		
 		case "arquivo":
-			f.imprime(comando("Nome do arquivo"));
+			ficheiro.imprime(digita("Nome do arquivo"));
 			imprime();
 			break;
 
@@ -101,7 +98,7 @@ public class Interface<T> extends Formatos {
 			break;
 			
 		default:
-			i.opcaoInvalida();
+			Prints.opcaoInvalida();
 			imprime();
 			break;
 		}		
@@ -113,20 +110,20 @@ public class Interface<T> extends Formatos {
 	public void manipulaAquivo() throws Exception {	
 		menuArquivo();
 		
-		switch (comando("")) {
+		switch (digita("")) {
 			
 		case "buscar":
-			f.buscaExistente(comando("Nome do arquivo"));
+			ficheiro.buscaExistente(digita("Nome do arquivo"));
 			manipulaAquivo();
 			break;
 		
 		case "novo":
-			f.criaNovo(comando("Nome do arquivo"));
+			ficheiro.criaNovo(digita("Nome do arquivo"));
 			manipulaAquivo();
 			break;
 		
 		case "remover":
-			f.remove(comando("Nome do arquivo"));
+			ficheiro.remove(digita("Nome do arquivo"));
 			manipulaAquivo();
 			break;
 		
@@ -146,7 +143,7 @@ public class Interface<T> extends Formatos {
 	 */
 	public void iniciaTarefas() throws Exception {
 			
-		switch (comando("")) {
+		switch (digita("")) {
 		
 		case "consultar":	
 			consulta();				
@@ -154,11 +151,11 @@ public class Interface<T> extends Formatos {
 			
 		case "inserir":
 			msg("\nVerificando disco...\n");
-			if (m.totalizaMenoria() > 60000){ // Verifica memória ao inserir dados.
+			if (memoria.totalizaMenoria() > 6000){ // Verifica memória ao inserir dados.
 			salva();
 			}else{
 				espacoInsuficiente();
-				m.imprime();
+				memoria.imprime();
 			}
 			break;
 			

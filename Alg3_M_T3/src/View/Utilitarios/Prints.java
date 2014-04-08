@@ -90,7 +90,7 @@ public class Prints {
 	 * @param label
 	 * @return
 	 */
-	public static String comando(String label) {
+	public static String digita(String label) {
 		paleta(label);
 		return var.next().toLowerCase();
 	}

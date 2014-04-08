@@ -6,20 +6,19 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import Arquivos.Ficheiro;
-import Utilitarios.Formatos;
+import Utilitarios.Prints;
 
 public class Consultas {
 	public int contador = 0;
-	Formatos i = new Formatos();
-	Ficheiro f = new Ficheiro();
+	Ficheiro ficheiro = new Ficheiro();
 	private BufferedReader br;
 	
 	/**
-	 * Método que realiza a navegação entre os registros 
+	 * Método que realiza ficheiro navegação entre os registros 
 	 * @param nomeArquivo
 	 */
 	public void	navega(String nomeArquivo) {
-		i.objetoNaoImplementado();
+		Prints.objetoNaoImplementado();
 	}	
 
 	
@@ -33,11 +32,11 @@ public class Consultas {
 			FileReader r = new FileReader(nomeArquivo);
 			br = new BufferedReader(r);
 			String linha = br.readLine();
-			i.msgb("Registro(s) encontrado(s):");
+			Prints.msgb("Registro(pressagios) encontrado(pressagios):");
 			while(linha != null ){
 				linha = br.readLine();
 				if (linha.equals(campo)){	
-					i.msg("> " +linha +"\n");
+					Prints.msg("> " +linha +"\n");
 					contador++;
 				}
 			}
@@ -46,37 +45,37 @@ public class Consultas {
 		} catch (NullPointerException e) {
 			e.getMessage();
 		} catch (FileNotFoundException e1) {
-			i.msgb("Arquivo inexistente.");
+			Prints.msgb("Arquivo inexistente.");
 		}
 	}
 	
 	
 	public void carrega() {
 		try {
-			i.menuConsultaArquivo();
+			Prints.menuConsultaArquivo();
 					
-			switch (i.comando("")) {
+			switch (Prints.digita("")) {
 			
 			case "navegar":
-				navega(i.comando("Nome do arquivo"));
+				navega(Prints.digita("Nome do arquivo"));
 				carrega();
 				break;
 
 			case "filtrar":				
-				especifica(i.comando("Nome do arquivo"),i.comando("Contato"));
+				especifica(Prints.digita("Nome do arquivo"),Prints.digita("Contato"));
 				carrega();
 				break;
 				
 			case "todos":
-				f.imprime(i.comando("Nome do arquivo"));
+				ficheiro.imprime(Prints.digita("Nome do arquivo"));
 				carrega();
 				break;
 				
 			case "sair":
-				i.sair();
+				Prints.sair();
 				break;
 			default:
-				i.opcaoInvalida();
+				Prints.opcaoInvalida();
 				carrega();
 				break;
 			}			
