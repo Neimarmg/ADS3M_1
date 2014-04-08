@@ -45,7 +45,7 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		insert(novo);
 	}
 	
-	
+	/**
 	private void InsereLista() {
 		ListaOrdenada<String> lista = new ListaOrdenada<String>();
 		
@@ -59,5 +59,5 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		
 		lista.print();
 	}
-
+*/
 }

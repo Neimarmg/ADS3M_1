@@ -10,7 +10,7 @@ public class Registrador {
 	Formatos f = new Formatos();
 	Ficheiro a =  new Ficheiro();
 	crud i = new crud();
-	ListaEncadeada<String> lista = new ListaEncadeada<String>();
+	ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	
 	/**
 	 * @throws Exception
