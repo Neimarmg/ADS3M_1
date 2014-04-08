@@ -1,32 +1,44 @@
 package Controller;
 
-import Controller.Utilitarios.Prints;
 import Model.MapaMod;
 import Model.SoldadoMod;
 import View.MapaView;
+import View.Utilitarios.Prints;
 
+/**
+ * Classe validadora de comandos
+ * @author Neimar, Aurelio
+ */
 public class Inimigo {
 	
 	private static int chances = 0;
 	private static int acertos = 0;
 	MapaView mv = new MapaView();
 	
-	
+	/**
+	 * @param acertos
+	 */
 	public static void setAcertos(int acertos) {
 		Inimigo.acertos = acertos;
 	}
 	
-	
+	/**
+	 * @param chances
+	 */
 	public static void setChances(int chances) {
 		Inimigo.chances = chances;
 	}
 	
-	
+	/**
+	 * @return
+	 */
 	public static int getAcertos() {		
 		return acertos;
 	}
 	
-	
+	/**
+	 * @return
+	 */
 	public static int getChances() {
 		return chances + SoldadoMod.getPontuacaoInicial();
 	}
@@ -54,7 +66,13 @@ public class Inimigo {
 		}
 	}
 
-	
+	/**
+	 * Método de validação dados
+	 * @param linha
+	 * @param coluna
+	 * @param dado
+	 * @throws Exception
+	 */
 	public void ValidaAlvo(int linha, int coluna,String dado) throws Exception {
 		
 		if ((linha >= MapaMod.getLinha() || coluna >= MapaMod.getColuna()) &&
@@ -63,7 +81,7 @@ public class Inimigo {
 		}else{
 			chances--;	
 			encontraAlvo(linha, coluna, dado);	
-			//mv.imprime(false," ");
+			//mv.imprime(false," "); //Imprime mapa so jogo com distribuição do navio no mapa
 		}	
 	}
 	

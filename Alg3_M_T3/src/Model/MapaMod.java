@@ -1,12 +1,15 @@
 package Model;
 
-import Controller.Utilitarios.Prints;
+import View.Utilitarios.Prints;
 
-
+/**
+ * Classe de criação do mapa
+ * @author Neimar
+ *
+ */
 public class MapaMod {
 	
 	private int i = 0 ,j = 0 ;
-	//private static int extancaoY;	
 
 	private static int linha = getLinha(); 
 	private static int coluna = getLinha();

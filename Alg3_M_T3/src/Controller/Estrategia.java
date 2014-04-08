@@ -1,14 +1,14 @@
 package Controller;
 
-import Controller.Utilitarios.Prints;
 import Model.MapaMod;
 import Model.NaviosMod;
 import View.MapaView;
 import View.SoldadosView;
+import View.Utilitarios.Prints;
 
 /**
  * Classe resposavel pelas distribuição das embarcaçãoe no mapa
- * @author moises
+ * @author Aureleio, Neimar
  */
 public class Estrategia {
 	

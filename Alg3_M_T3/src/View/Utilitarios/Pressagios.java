@@ -1,5 +1,10 @@
-package Controller.Utilitarios;
+package View.Utilitarios;
 
+/**
+ * Classe de umpressao de pressagios 
+ * @author Neimar
+ *
+ */
 public class Pressagios {
 	String sauda;	
 	

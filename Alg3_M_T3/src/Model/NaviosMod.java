@@ -1,6 +1,10 @@
 
 package Model;
 
+/**
+ * Classe de amazemamento de navios de batalha
+ * @author Neimar, Aurelio
+ */
 public class NaviosMod {
 	
 	private static int portaAvioes = 1;

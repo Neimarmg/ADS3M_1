@@ -1,9 +1,8 @@
 package Model;
 
 /**
- * Classe que define os niveis de jogo todo são estatico e finais 
- * @author moises
- *
+ * Classe que define os niveis de jogo todos são estatico e finais 
+ * @author Neimar,Aurelio
  */
 public class NiveisMod {
 	private static final int NIVEL1 = 1;

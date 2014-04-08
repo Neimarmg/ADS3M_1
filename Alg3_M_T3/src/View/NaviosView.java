@@ -1,7 +1,11 @@
 package View;
-import Controller.Utilitarios.Prints;
 import Model.NaviosMod;
+import View.Utilitarios.Prints;
 
+/**
+ *Classe de impressao e consulta a navios! 
+ * @author Neimar
+ */
 public class NaviosView {
 	String nome =" ";
 	
@@ -61,7 +65,11 @@ public class NaviosView {
 		}
 	}
 	
-	
+	/**
+	 * Abilita cabeçalho de impressão
+	 * @param filtrar
+	 * @param mostraCabecalho
+	 */
 	private void abilitaCabecalho(boolean filtrar,Boolean mostraCabecalho){
 		if (mostraCabecalho == true) {
 			if (filtrar == true) {

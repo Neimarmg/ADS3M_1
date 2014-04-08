@@ -1,11 +1,11 @@
 package Controller;
 
-import Controller.Utilitarios.Prints;
 import Model.MapaMod;
 import View.MapaView;
 import View.NaviosView;
 import View.NiveisView;
 import View.SoldadosView;
+import View.Utilitarios.Prints;
 
 public class InterfaceCont {
 	
@@ -20,11 +20,11 @@ public class InterfaceCont {
 	
 	
 	/**
-	 * Método de imprissao de todos os dados do jogo
+	 * Método que lista todas as consultas do jogo
 	 * @throws Exception
 	 */
-	public void abreInfocoes() throws Exception {
-		b.executaMapaInicial();
+	public void listaConsultas() throws Exception {
+		b.iniciaMapa();
 		Prints.msgl();
 		navios.imprime(false,true);
 		Prints.msgl();
@@ -34,7 +34,7 @@ public class InterfaceCont {
 	}
 	
 	/**
-	 * 
+	 * Metodo de consulta a navios
 	 * @param filtrar
 	 * @throws Exception
 	 */
@@ -45,6 +45,7 @@ public class InterfaceCont {
 	
 	
 	/**
+	 * Método de consulta aos nuveis de jogo
 	 * @param filtrar
 	 * @throws Exception
 	 */
@@ -54,6 +55,7 @@ public class InterfaceCont {
 	}
 	
 	/**
+	 * Método de consulta a dodos do soldado
 	 * @throws Exception
 	 */
 	public void consultaSoldado() throws Exception {

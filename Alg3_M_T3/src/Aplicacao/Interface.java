@@ -4,10 +4,14 @@ import Controller.Batalha;
 import Controller.Inimigo;
 import Controller.InterfaceCont;
 import Controller.Estrategia;
-import Controller.Utilitarios.*;
 import Model.MapaMod;
 import View.MapaView;
+import View.Utilitarios.*;
 
+/**
+ * Classe de execução do progra com interação com o usuário
+ * @author Neimar
+ */
 public class Interface extends Prints {
 	
 	//String comando;
@@ -37,7 +41,7 @@ public class Interface extends Prints {
 			break;
 		
 		case "retornar":
-			impressao();
+			imprime();
 			break;
 		case "sair":
 			
@@ -55,29 +59,29 @@ public class Interface extends Prints {
 	 * Método de geral de impressão
 	 * @throws Exception
 	 */
-	public void impressao() throws Exception {
+	public void imprime() throws Exception {
 		Prints.menuImprimir();
 		
 		switch (comando("")) {
 		
 		case "mapa":
-			j.executaMapaInicial();
-			impressao();
+			j.iniciaMapa();
+			imprime();
 			break;
 
 		case "navios":
 			ic.consultaNavios(false,true);
-			impressao();
+			imprime();
 			break;
 			
 		case "niveis":
 			ic.consultaNiveis(false);
-			impressao();
+			imprime();
 			break;
 			
 		case "soldado":
 			ic.consultaSoldado();
-			impressao();
+			imprime();
 			break;		
 			
 		case "filtrar":
@@ -85,8 +89,8 @@ public class Interface extends Prints {
 			break;
 			
 		case "todos":
-			ic.abreInfocoes();
-			impressao();
+			ic.listaConsultas();
+			imprime();
 			break;
 			
 		case "sair":
@@ -95,7 +99,7 @@ public class Interface extends Prints {
 			
 		default: 
 			opcaoInvalida();
-			impressao();			
+			imprime();			
 			break;
 		}
 	}
@@ -132,7 +136,7 @@ public class Interface extends Prints {
 	 * Método de inicia e executa jogo
 	 * @throws Exception
 	 */
-	public void iniciaJogo() throws Exception {
+	public void Joga() throws Exception {
 		menuJogar();
 		
 		switch (comando("")) {
@@ -144,7 +148,7 @@ public class Interface extends Prints {
 		
 		case "definir":	
 			objetoNaoImplementado();
-			iniciaJogo();
+			Joga();
 			break;
 				
 		case "sair":
@@ -153,26 +157,26 @@ public class Interface extends Prints {
 			
 		default: 
 			opcaoInvalida();
-			iniciaJogo();			
+			Joga();			
 			break;
 		}
 	}
 		
 	/**
-	 * 
+	 * Método de incialização da execução do programa
 	 * @throws Exception
 	 */
-	public void iniciaTarefas() throws Exception {
+	public void inicia() throws Exception {
 		
 		switch (comando("")) {
 		
 		case "iniciar":	
-			j.executaMapaInicial();
-			iniciaJogo();
+			j.iniciaMapa();
+			Joga();
 			break;
 		
 		case "imprimir":
-			impressao();
+			imprime();
 			break;
 			
 		case "sair":
@@ -181,7 +185,7 @@ public class Interface extends Prints {
 			
 		default: 
 			opcaoInvalida();
-			iniciaTarefas();			
+			inicia();			
 			break;
 		}
 	}

@@ -1,6 +1,6 @@
 package Aplicacao;
 
-import Controller.Utilitarios.*;
+import View.Utilitarios.*;
 
 public class mainT3 {
 
@@ -20,7 +20,7 @@ public class mainT3 {
 		escreveCabecalho();
 		d.defineSaudacao();
 		Prints.menuMain();
-		in.iniciaTarefas();
+		in.inicia();
 	}
 	
 

@@ -1,8 +1,12 @@
 package View;
 
-import Controller.Utilitarios.Prints;
 import Model.NiveisMod;
+import View.Utilitarios.Prints;
 
+/**
+ * Classe de impressão de nivieis de jogo
+ * @author Neimar, Aurelio
+ */
 public class NiveisView {
 	String nome =" ";
 	
@@ -45,6 +49,11 @@ public class NiveisView {
 		}		
 	}
 	
+	/**
+	 * Método de validação de busca
+	 * @param filtrar
+	 * @param parametro
+	 */
 	public void executa(boolean filtrar, int parametro){
 		pesquisa(filtrar, parametro);
 		Prints.msg(nome);

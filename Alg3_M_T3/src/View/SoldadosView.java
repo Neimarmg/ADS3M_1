@@ -1,10 +1,13 @@
 package View;
 
-import Controller.Utilitarios.Prints;
 import Model.SoldadoMod;
+import View.Utilitarios.Prints;
 
+/**
+ * Classe de impressão de dados do soldado
+ * @author Neimar, Aurelio
+ */
 public class SoldadosView extends SoldadoMod {
-	
 	
 	/**
 	 * Método de avalição de nome 
@@ -31,7 +34,9 @@ public class SoldadosView extends SoldadoMod {
 		}
 	}
 	
-	
+	/**
+	 * Método que imprime dados pessais do soldado
+	 */
 	public void imprime(){
 		avaliaNome();
 		avaliaPontos();

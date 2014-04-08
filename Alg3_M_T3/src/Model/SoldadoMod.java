@@ -1,5 +1,10 @@
 package Model;
 
+/**
+ * Calsse definido de dados pessois do soldado
+ * @author Neimar
+ *
+ */
 public class SoldadoMod {
 	private static int pontuacaoInicial =15;
 	private static String nomeSoldado = "Jose calos";

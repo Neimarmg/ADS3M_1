@@ -1,12 +1,12 @@
 package Controller;
 
-import Controller.Utilitarios.Prints;
 import Model.MapaMod;
 import View.MapaView;
+import View.Utilitarios.Prints;
 
 /**
- * Classe de para edição personalisão do nivel persolnalisado mapa "NÃO IMPLEMENTADA"
- * @author moises
+ * Classe de para edição personalização do navios "NÃO IMPLEMENTADA"
+ * @author Neimar
  */
 public class MapaCont {
 	
@@ -24,13 +24,22 @@ public class MapaCont {
 	}
 		
 	
+	/**
+	 * Método controlador de personalização do mapa
+	 * @throws Exception
+	 */
 	public void iniciaMapa() throws Exception {
 		setaColuna();
 		setaLinha();
 		m.criaMapa();
 	}	
 	
-	
+	/**
+	 * Método de impressão de dados
+	 * @param mostraMsgCabelho
+	 * @param texto
+	 * @throws Exception
+	 */
 	public void imprimeView(Boolean mostraMsgCabelho,String texto) throws Exception {
 		mv.imprime(mostraMsgCabelho, texto);		
 	}	

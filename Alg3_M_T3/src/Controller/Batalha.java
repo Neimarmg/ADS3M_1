@@ -4,13 +4,17 @@ package Controller;
 
 import java.util.InputMismatchException;
 
-import Controller.Utilitarios.Prints;
 import Controller.Inimigo;
 import Model.MapaMod;
 import Model.NiveisMod;
 import View.MapaView;
 import View.NiveisView;
+import View.Utilitarios.Prints;
 
+/**
+ * Classe de execução do jogo e controladora de passagens de fase do jogo
+ * @author Neimar,Airélio
+ */
 public class Batalha {
 	private static int addn = 0;
 	int n1=0, n2=0, n3=0,n4=0;
@@ -23,10 +27,10 @@ public class Batalha {
 	
 	
 	/**
-	 * Método de inicialização da mapa do jogo
+	 * Método de inicialização do mapa na fase 1
 	 * @throws Exception
 	 */
-	public void executaMapaInicial() throws Exception{
+	public void iniciaMapa() throws Exception{
 		addn++;
 		MapaMod.setLinha(NiveisMod.getMapanivel1());
 		MapaMod.setColuna(NiveisMod.getMapanivel1());
@@ -82,7 +86,7 @@ public class Batalha {
 	
 	
 	/**
-	 * 
+	 * Método de proscessamento do estrategia
 	 * @throws Exception
 	 */
 	protected void executaFase() throws Exception{
@@ -94,7 +98,7 @@ public class Batalha {
 	
 	
 	/**
-	 * Informa quando o jogar venceu um nivel
+	 * Imprime mensagem quando o jogador passou de nivel
 	 * @param nroFase
 	 * @throws Exception
 	 */
@@ -103,14 +107,13 @@ public class Batalha {
 	}
 	
 	/**
-	 * Avaliação para passagem do proximo nivel.
+	 * Avaliação para passagem das fases.
 	 * @throws Exception
 	 */
-	protected void avaliaFase() throws Exception{		
+	protected void avalia() throws Exception{		
 		
 		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton1()) {			
-			Prints.msg("\n n1 " +n1);
 			if (n1 == 0){
 				n1++;
 				informaVitoria(addn);
@@ -120,7 +123,6 @@ public class Batalha {
 		}
 		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton2()) {			
-			Prints.msg("n\n1 " +n2);
 			if (n2 == 0){
 				n2++;
 				informaVitoria(addn);
@@ -129,7 +131,6 @@ public class Batalha {
 			}
 		}		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton3()) {
-			Prints.msg("n\n1 " +n3);
 			if (n3 == 0){	
 				n3++;
 				informaVitoria(addn);
@@ -139,7 +140,6 @@ public class Batalha {
 		}
 		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton4()) {
-			Prints.msg("n\n1 " +n4);
 			if (n4 == 0){	
 				n4++;
 				informaVitoria(addn);
@@ -157,14 +157,14 @@ public class Batalha {
 	
 	
 	/**
-	 * Contado da chances de jogo!
+	 * Contado da chances que o jogador aida tem durante o jogo!
 	 * @throws Exception
 	 */
-	public void contaChances() throws Exception{
+	public void contaFase() throws Exception{
 		
 		if (Inimigo.getChances()>0) {
 			Prints.msg("Chances: " +Inimigo.getChances()+"\nPontuação: " +Inimigo.getAcertos());
-			avaliaFase();	
+			avalia();	
 		}else{
 			Prints.msg("\nChances: " +Inimigo.getChances()+"\nPontuação: " +Inimigo.getAcertos());
 			Prints.msge(					
@@ -187,7 +187,7 @@ public class Batalha {
 		} catch (InputMismatchException e) {
 			Prints.msgb("Era esperado um dígito como cordenáda!");
 		}
-		contaChances();
+		contaFase();
 	}
 
 }

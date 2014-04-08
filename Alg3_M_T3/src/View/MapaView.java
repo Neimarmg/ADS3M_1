@@ -1,8 +1,12 @@
 package View;
 
-import Controller.Utilitarios.Prints;
 import Model.MapaMod;
+import View.Utilitarios.Prints;
 
+/**
+ * Classe de impressao dados do mapa.
+ * @author Naimar, Aurélio
+ */
 public class MapaView {
 	int j,i;
 	char letra = 'A';
@@ -27,7 +31,7 @@ public class MapaView {
 	 * Mostra mensagem cabelho quando necessário 
 	 * @param mostraMsgCabecalho
 	 */
-	private void abilitaMensagem(boolean mostraMsgCabecalho,Object texto){
+	private void abilitaMsg(boolean mostraMsgCabecalho,Object texto){
 		if (mostraMsgCabecalho == true){
 			//p.msgl();
 			Prints.msg(texto +"\n");		
@@ -42,7 +46,7 @@ public class MapaView {
 	 */
 	public void imprime(boolean mostraMsgCabecalho,Object texto)throws Exception{
 		try {
-			abilitaMensagem(mostraMsgCabecalho,texto);
+			abilitaMsg(mostraMsgCabecalho,texto);
 			nomeiaConluna();
 			for (i = 0; i <  MapaMod.getLinha(); i++) {
 				Prints.msg("\n" +i +" ");

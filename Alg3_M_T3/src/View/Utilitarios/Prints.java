@@ -1,4 +1,4 @@
-package Controller.Utilitarios;
+package View.Utilitarios;
 
 import java.util.Scanner;
 
