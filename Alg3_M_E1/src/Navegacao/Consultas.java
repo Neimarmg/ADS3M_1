@@ -12,6 +12,7 @@ public class Consultas {
 	public int contador = 0;
 	Formatos i = new Formatos();
 	Ficheiro f = new Ficheiro();
+	private BufferedReader br;
 	
 	/**
 	 * Método que realiza a navegação entre os registros 
@@ -30,7 +31,7 @@ public class Consultas {
 	public void especifica(String nomeArquivo,String campo) throws IOException {
 		try {
 			FileReader r = new FileReader(nomeArquivo);
-			BufferedReader br = new BufferedReader(r);
+			br = new BufferedReader(r);
 			String linha = br.readLine();
 			i.msgb("Registro(s) encontrado(s):");
 			while(linha != null ){

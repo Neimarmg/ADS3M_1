@@ -26,7 +26,7 @@ public class Ficheiro {
 	public void criaNovo(final String nomeAquivo) {
 		try {
 			i.msg("\nVerificando disco...\n");
-			if (m.calculaDisponivel() > 60000) { // Verifica memória ao inserir dados
+			if (m.calculaDisponivel() >= 600) { // Verifica memória ao inserir dados
 				FileWriter c = new FileWriter(new File(nomeAquivo),true);
 				i.msgb("Novo arquivo criado: "+c);
 				c.close();

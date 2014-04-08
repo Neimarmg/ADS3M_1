@@ -1,7 +1,5 @@
 package Estruturas;
 
-import java.util.Scanner;
-
 import Arquivos.Ficheiro;
 import Utilitarios.Formatos;
 import Utilitarios.crud;
