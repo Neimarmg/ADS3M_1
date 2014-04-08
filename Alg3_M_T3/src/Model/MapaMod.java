@@ -3,7 +3,7 @@ package Model;
 import View.Utilitarios.Prints;
 
 /**
- * Classe de criação do mapa
+ * Classe de criação do mapaMod
  * @author Neimar
  *
  */
@@ -52,7 +52,7 @@ public class MapaMod {
 				}				
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
-			Prints.msgb("Não foi possível criar o mapa!");
+			Prints.msgb("Não foi possível criar o mapaMod!");
 		}
 	}
 }

@@ -2,7 +2,10 @@ package View.Utilitarios;
 
 import java.util.Scanner;
 
-
+/**
+ * Classe reponsavel pela impressão do programa 
+ * @author Neimar
+ */
 public class Prints {	
 	static Scanner var = new Scanner(System.in);
 	
@@ -14,6 +17,7 @@ public class Prints {
 	public static void msge(Object desc) {   
 		System .err.print(desc);
 	}
+	
 	
 	/**
 	 * @param desc
@@ -74,6 +78,7 @@ public class Prints {
 		}
 	}
 	
+	
 	/**
 	 * Valores boleanos
 	 * @param label
@@ -81,8 +86,9 @@ public class Prints {
 	 */
 	public static int digitaNumero(String label) {
 		paleta(label);
-		return var.nextInt();
+		return var.nextInt();		
 	}
+	
 	
 	/**
 	 * Método de retorno que recebe a label com parâmento e retorna
@@ -94,6 +100,7 @@ public class Prints {
 		paleta(label);
 		return var.next().toLowerCase();
 	}
+	
 	
 	public static void sair(){
 		System.err.print("\nVocê optou por sair do jogo. Obrigado.");

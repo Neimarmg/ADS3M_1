@@ -27,14 +27,14 @@ public class Batalha {
 	
 	
 	/**
-	 * Método de inicialização do mapa na fase 1
+	 * Método de inicialização do mapaMod na fase 1
 	 * @throws Exception
 	 */
 	public void iniciaMapa() throws Exception{
 		addn++;
 		MapaMod.setLinha(NiveisMod.getMapanivel1());
 		MapaMod.setColuna(NiveisMod.getMapanivel1());
-		mapaMod.criaMapa();
+		MapaMod.criaMapa();
 		naviosView.executa(true, NiveisMod.getNivel1());
 		mapaView.imprime(true,"");
 	}
@@ -49,7 +49,7 @@ public class Batalha {
 		if (addn == NiveisMod.getNivel2()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel2());
 			MapaMod.setColuna(NiveisMod.getMapanivel2());
-			mapaMod.criaMapa();
+			MapaMod.criaMapa();
 			mapaView.imprime(true,"");	
 		}
 		
@@ -57,7 +57,7 @@ public class Batalha {
 		if (addn == NiveisMod.getNivel3()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel3());
 			MapaMod.setColuna(NiveisMod.getMapanivel3());
-			mapaMod.criaMapa();
+			MapaMod.criaMapa();
 			mapaView.imprime(true,"");
 		}
 		
@@ -65,7 +65,7 @@ public class Batalha {
 		if (addn == NiveisMod.getNivel4()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel4());
 			MapaMod.setColuna(NiveisMod.getMapanivel4());
-			mapaMod.criaMapa();
+			MapaMod.criaMapa();
 			mapaView.imprime(true,"");		
 		}
 		
@@ -73,7 +73,7 @@ public class Batalha {
 		if (addn == NiveisMod.getNivel5()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel5());
 			MapaMod.setColuna(NiveisMod.getMapanivel5());
-			mapaMod.criaMapa();
+			MapaMod.criaMapa();
 			mapaView.imprime(true,"");		
 		}		
 	

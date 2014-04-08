@@ -7,7 +7,7 @@ import View.SoldadosView;
 import View.Utilitarios.Prints;
 
 /**
- * Classe resposavel pelas distribuição das embarcaçãoe no mapa
+ * Classe resposavel pelas distribuição das embarcaçãoe no mapaMod
  * @author Aureleio, Neimar
  */
 public class Estrategia {
@@ -26,9 +26,9 @@ public class Estrategia {
 	}
 
 	/**
-	 * Define posição do navio no mapa.
+	 * Define posição do navio no mapaMod.
 	 */
-	private void posisciona() {
+	private void posiciona() {
 		
 		for (int i = 0; i <  MapaMod.getLinha(); i++) {
 			for (int j = 0; j <  MapaMod.getColuna(); j++) {				
@@ -71,7 +71,7 @@ public class Estrategia {
 					MapaMod.mapa[i][j] = "-";					
 				}
 				
-				if (i == 8 && j >= ((nivel)*-1) && j < (NaviosMod.getUnidTorpedeiros()+nivel)){
+				if (i == 8 && j >= nivel && j < (NaviosMod.getUnidTorpedeiros()+nivel)){
 					MapaMod.mapa[i][j] = "-";					
 				}
 				
@@ -117,7 +117,7 @@ public class Estrategia {
 	private void carrega() throws Exception {
 		
 		if(MapaMod.getColuna()*MapaMod.getLinha() == contUnidades){
-			posisciona();
+			posiciona();
 			soldadoView.imprime();
 		}else{
 			Prints.msgb("Mapa inesistente!");

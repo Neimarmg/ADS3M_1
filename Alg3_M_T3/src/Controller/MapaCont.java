@@ -12,49 +12,44 @@ import View.Utilitarios.Prints;
  */
 public class MapaCont extends MapaMod {
 	
-	
 	MapaView mapaView = new MapaView();
 	
 	
-	public static void setaColuna() {
-		try {
-			MapaMod.setColuna(Prints.digitaNumero("Digita nro de colunas "));
-			if (getColuna()> 30){
-				Prints.msge("\nO Nro de chances deve ser mair doque " +getColuna() +"\n");
+	public static void setaColuna() throws Exception{
+		try{	
+			MapaMod.setColuna(Prints.digitaNumero("\nDigita nro de colunas "));
+			if (getColuna()<= 30){
+				Prints.msge("\nO Nro de chances deve ser mair doque 30\n");
 				setaColuna();
-			}			
+			}
 		} catch (InputMismatchException e) {
 			Prints.msge("\nEra esperado um numero!\n");
-			setaColuna();
 		}
 	}
 	
 
-	public static void setaLinha() {
-		try{
+	public static void setaLinha() throws Exception{
+		try {
 			MapaMod.setLinha(Prints.digitaNumero("Digita nro de linha "));	
-			if (getLinha() > 30){
-				Prints.msge("\nO Nro de chances deve ser mair doque " +getLinha() +"\n");
+			if (getLinha() <= 30){
+				Prints.msge("\nO Nro de chances deve ser mair doque 30\n");
 				setaLinha();
-			}
-			
+			}	
 		} catch (InputMismatchException e) {
 			Prints.msge("\nEra esperado um numero!\n");
-			setaLinha();
-		}
+		}					
 	}
 		
 	
 	/**
-	 * Método controlador de personalização do mapa
+	 * Método controlador de personalização do mapaMod
 	 * @throws Exception
 	 */
 	public static void iniciaMapa() throws Exception {
 		Prints.msgc("	REDEFINIR DIMENÇÕES DO MAPA");
 		setaColuna();
 		setaLinha();
-		criaMapa();
-		
+		criaMapa();		
 	}	
 	
 	/**

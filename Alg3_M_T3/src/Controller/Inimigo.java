@@ -81,7 +81,7 @@ public class Inimigo {
 		}else{
 			chances--;	
 			encontraAlvo(linha, coluna, dado);	
-			//mv.imprime(false," "); //Imprime mapa so jogo com distribuição do navio no mapa
+			//mapaView.imprime(false," "); //Imprime mapaMod so jogo com distribuição do navio no mapaMod
 		}	
 	}
 	

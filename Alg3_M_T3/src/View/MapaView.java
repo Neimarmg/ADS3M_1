@@ -4,7 +4,7 @@ import Model.MapaMod;
 import View.Utilitarios.Prints;
 
 /**
- * Classe de impressao dados do mapa.
+ * Classe de impressao dados do mapaMod.
  * @author Naimar, Aurélio
  */
 public class MapaView {
@@ -40,7 +40,7 @@ public class MapaView {
 	
 	
 	/**
-	 * Métode que desenha mapa de batalha
+	 * Métode que desenha mapaMod de batalha
 	 * @param mostraMsgCabelho
 	 * @throws Exception
 	 */
@@ -57,7 +57,7 @@ public class MapaView {
 			Prints.msg("\n");
 		
 		} catch (ArrayIndexOutOfBoundsException e) {
-			Prints.msgb("Não foi possível imprimir o mapa!");
+			Prints.msgb("Não foi possível imprimir o mapaMod!");
 			Prints.msg("" +MapaMod.getLinha()+"x" +MapaMod.getColuna() +"\n\n");
 		}
 	}
