@@ -79,7 +79,7 @@ public class Registrador {
 			
 		case "excluir":
 			desc =  Prints.digita("\nNome Contato ficheiro excluir");
-			icrud.exclui(arquivo, desc);
+			icrud.remove(arquivo, desc);
 		case "sair":
 			Prints.sair();
 			break;

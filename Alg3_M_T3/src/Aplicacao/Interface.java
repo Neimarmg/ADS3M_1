@@ -20,7 +20,7 @@ public class Interface extends Prints {
 	InterfaceCont interfaceCont =  new InterfaceCont();
 	Estrategia estrategia = new Estrategia();
 	Batalha batalha = new Batalha();
-	MapaMod mapa = new MapaMod();
+	MapaMod mapaMod = new MapaMod();
 	MapaView mapaView = new MapaView();
 	SoldadoCont soldado = new SoldadoCont();
 	
@@ -67,7 +67,7 @@ public class Interface extends Prints {
 		
 		switch (digita("")) {
 		
-		case "mapa":
+		case "mapaMod":
 			batalha.iniciaMapa();
 			imprime();
 			break;
@@ -152,6 +152,7 @@ public class Interface extends Prints {
 		case "definir":	
 			soldado.editaDados();
 			MapaCont.iniciaMapa();
+			mapaView.imprime(true, "\nMAPA PERSONALIZADO! \n");
 			Joga();
 			break;
 				

@@ -8,6 +8,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Icrud {
+	int contador=0;
+	
 	
 	/**
 	 * Insere novo registro em arquivo .txt!
@@ -38,28 +40,45 @@ public class Icrud {
 	 * @param desc
 	 * @throws IOException 
 	 */
-	public void exclui(String arquivo, String  desc) throws IOException {
-		try {                      
-			FileReader fr = new FileReader(arquivo);
-			BufferedReader br = new BufferedReader(fr);
-			String linha = br.readLine();
-			while(linha != null ){
-				linha = br.readLine();
-				if(linha.equals(desc)){
-					Prints.msg("\nRegistro encotrado:" +linha);
-					br.reset();
-					if(linha.equals("")) {
-						Prints.msg("\nRegistro excluído com sucesso." +desc);
-					}				
-				}
-			}
-			br.close();			
-		}catch(IOException e){
-			Prints.msg("\nNão foi possivél remover o registro.");
-		}catch(NullPointerException e){
-			Prints.msg("\nNão foi possivél remover o registro.");
+	public void remove(String nomeArquivo, String  desc) throws IOException {                 
+	       
+	    FileReader fileReader = null;    
+	    FileWriter fileWriter = null;     
+	    BufferedReader leitor = null;    
+	            
+	    //String nomeDoArquivo = nomeArquivo;  
+	    //String arquivoConferir = "d.txt";    
+	    String line = " i ";    
+	              
+	    try {    
+	    	//fileReader = new FileReader(new File(nomeDoArquivo));    
+	        fileWriter = new FileWriter(new File(nomeArquivo));   
+	        leitor = new BufferedReader(fileReader);  
+	        line = "";    
+	                  
+	        while ((line = leitor.readLine()) != null) {    
+	        	if(!line.trim().equals(desc.trim())) {   
+	        		
+	        		fileWriter.write(line + "\r\n");
+	        		//Prints.msge("dddddd  " +fileWriter);
+	            }    
+	        }	                
+	        
+	        } catch (NullPointerException e) {    
+	        	e.printStackTrace(); 
+	        	
+	        } finally {    
+	        
+	        try {    
+	             fileWriter.close();  
+	            // fileReader.close();    
+	        } catch (IOException e) {    
+	        	e.printStackTrace();    
+	        }      
 		}
-	}  
+	}    
+        	
+		  
 		
 	
 	/** 
