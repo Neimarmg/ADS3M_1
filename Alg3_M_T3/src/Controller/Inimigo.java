@@ -7,7 +7,7 @@ import View.Utilitarios.Prints;
 
 /**
  * Classe validadora de comandos
- * @author Neimar, Aurelio
+ * @author Neimar, Aurélio
  */
 public class Inimigo {
 	
@@ -43,7 +43,6 @@ public class Inimigo {
 		return chances + SoldadoMod.getPontuacaoInicial();
 	}
 	
-	
 	/**
 	 * Método de processamento da jogada
 	 * @param linha
@@ -54,11 +53,11 @@ public class Inimigo {
 		for (int i = 0; i <  MapaMod.getLinha(); i++) {
 			for (int j = 0; j < MapaMod.getLinha(); j++) {				
 				
-				if (i == linha && j == coluna && MapaMod.mapa[i][j].equals("-") ){
+				if (i == linha && j == coluna && MapaMod.mapa[i][j].equals("-")) {
 					acertos += 3;
 				}	
 				
-				if (i == linha && j == coluna ){
+				if (i == linha && j == coluna ) {
 					MapaMod.mapa[i][j] = dado;
 					Prints.msgl();					
 				}				
@@ -78,13 +77,11 @@ public class Inimigo {
 		if ((linha >= MapaMod.getLinha() || coluna >= MapaMod.getColuna()) &&
 			(linha < MapaMod.getLinha() || coluna < MapaMod.getColuna())){
 				Prints.msgb("As cordenadas não sao válidas!");
-		}else{
+		} else {
 			chances--;	
 			encontraAlvo(linha, coluna, dado);	
-			//mapaView.imprime(false," "); //Imprime mapaMod so jogo com distribuição do navio no mapaMod
+			// mapaView.imprime(false," ");
 		}	
 	}
 	
-	
-
 }

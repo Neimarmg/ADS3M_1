@@ -11,8 +11,8 @@ import View.MapaView;
 import View.Utilitarios.*;
 
 /**
- * Classe de execução do progra com interação com o usuário
- * @author Neimar
+ * Classe de execução do programa com interação com o usuário
+ * @author Neimar, Aurélio
  */
 public class Interface extends Prints {
 	
@@ -59,7 +59,7 @@ public class Interface extends Prints {
 	}
 	
 	/**
-	 * Método de geral de impressão
+	 * Método geral de impressão
 	 * @throws Exception
 	 */
 	public void imprime() throws Exception {
@@ -118,7 +118,7 @@ public class Interface extends Prints {
 		
 		case "atirar":
 			batalha.atira();		
-			if (Inimigo.getChances()>0) {	
+			if (Inimigo.getChances() >0) {	
 				batalha();
 			}
 			break;
@@ -136,7 +136,7 @@ public class Interface extends Prints {
 	
 	
 	/**
-	 * Método de inicia e executa jogo
+	 * Método que executa jogo
 	 * @throws Exception
 	 */
 	public void Joga() throws Exception {

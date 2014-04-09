@@ -9,8 +9,8 @@ public class mainT3 {
 
 	
 	private void escreveCabecalho() {
-		Prints.msg("Exercicío de matrizes T3\n");
-	    Prints.msgb("		JOGO BATALHA NAVAL \n\n		     BEM VINDO");
+		Prints.msg("Exercício de matrizes T3\n");
+	    Prints.msgb("		JOGO BATALHA NAVAL \n\n		     BEM-VINDO");
 	}
 	
 	/**
@@ -27,4 +27,5 @@ public class mainT3 {
 	public static void main(String[] args)throws Exception {
 		new mainT3().run();    
 	}
+	
 }

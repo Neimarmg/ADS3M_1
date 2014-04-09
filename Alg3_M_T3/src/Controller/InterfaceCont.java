@@ -17,8 +17,6 @@ public class InterfaceCont {
 	SoldadosView soldadoView = new SoldadosView();
 	Batalha batalha = new Batalha();
 
-	
-	
 	/**
 	 * Método que lista todas as consultas do jogo
 	 * @throws Exception
@@ -34,7 +32,7 @@ public class InterfaceCont {
 	}
 	
 	/**
-	 * Metodo de consulta a navios
+	 * Método de consulta a navios
 	 * @param filtrar
 	 * @throws Exception
 	 */
@@ -45,7 +43,7 @@ public class InterfaceCont {
 	
 	
 	/**
-	 * Método de consulta aos nuveis de jogo
+	 * Método de consulta aos níveis do jogo
 	 * @param filtrar
 	 * @throws Exception
 	 */
@@ -55,7 +53,7 @@ public class InterfaceCont {
 	}
 	
 	/**
-	 * Método de consulta a dodos do soldado
+	 * Método de consulta a dados do soldado
 	 * @throws Exception
 	 */
 	public void consultaSoldado() throws Exception {

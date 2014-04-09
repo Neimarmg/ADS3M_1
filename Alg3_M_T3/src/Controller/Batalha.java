@@ -1,6 +1,4 @@
-
 package Controller;
-
 
 import java.util.InputMismatchException;
 
@@ -12,8 +10,8 @@ import View.NiveisView;
 import View.Utilitarios.Prints;
 
 /**
- * Classe de execução do jogo e controladora de passagens de fase do jogo
- * @author Neimar,Airélio
+ * Classe de execução do jogo, bem como controladora de passagens de fase do jogo
+ * @author Neimar, Aurélio
  */
 public class Batalha {
 	private static int addn = 0;
@@ -30,7 +28,7 @@ public class Batalha {
 	 * Método de inicialização do mapaMod na fase 1
 	 * @throws Exception
 	 */
-	public void iniciaMapa() throws Exception{
+	public void iniciaMapa() throws Exception {
 		addn++;
 		MapaMod.setLinha(NiveisMod.getMapanivel1());
 		MapaMod.setColuna(NiveisMod.getMapanivel1());
@@ -41,10 +39,10 @@ public class Batalha {
 	
 	
 	/**
-	 * Método de execução partir da 2ª fase do jogo
+	 * Método de execução a partir da 2ª fase do jogo
 	 * @throws Exception
 	 */
-	protected void pulaFase() throws Exception{			
+	protected void pulaFase() throws Exception {			
 		
 		if (addn == NiveisMod.getNivel2()) {			
 			MapaMod.setLinha(NiveisMod.getMapanivel2());
@@ -86,10 +84,10 @@ public class Batalha {
 	
 	
 	/**
-	 * Método de proscessamento do estrategia
+	 * Método de processamento de estratégia
 	 * @throws Exception
 	 */
-	protected void executaFase() throws Exception{
+	protected void executaFase() throws Exception {
 		mapaView.setLetra('A');
 		pulaFase();
 		Estrategia.setNivel(getAddn());
@@ -98,23 +96,23 @@ public class Batalha {
 	
 	
 	/**
-	 * Imprime mensagem quando o jogador passou de nivel
+	 * Imprime mensagem quando o jogador passou de nível
 	 * @param nroFase
 	 * @throws Exception
 	 */
-	protected void informaVitoria(int nroFase) throws Exception{	
-		Prints.msgb("PARABENS VOCÊ VENCEU A FASE "+addn);
+	protected void informaVitoria(int nroFase) throws Exception {	
+		Prints.msgb("PARABÉNS, VOCÊ VENCEU A FASE "+addn);
 	}
 	
 	/**
 	 * Avaliação para passagem das fases.
 	 * @throws Exception
 	 */
-	protected void avalia() throws Exception{		
+	protected void avalia() throws Exception {		
 		
 		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton1()) {			
-			if (n1 == 0){
+			if (n1 == 0) {
 				n1++;
 				informaVitoria(addn);
 				addn++;					
@@ -123,7 +121,7 @@ public class Batalha {
 		}
 		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton2()) {			
-			if (n2 == 0){
+			if (n2 == 0) {
 				n2++;
 				informaVitoria(addn);
 				addn++;	
@@ -131,7 +129,7 @@ public class Batalha {
 			}
 		}		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton3()) {
-			if (n3 == 0){	
+			if (n3 == 0) {	
 				n3++;
 				informaVitoria(addn);
 				addn++;	
@@ -140,7 +138,7 @@ public class Batalha {
 		}
 		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton4()) {
-			if (n4 == 0){	
+			if (n4 == 0) {	
 				n4++;
 				informaVitoria(addn);
 				addn++;	
@@ -150,50 +148,44 @@ public class Batalha {
 		
 		if (Inimigo.getAcertos() == NiveisMod.getPonton5()) {
 			Prints.msge(
-				"\n\nPARABENS VOCÊ VENCEU A FASE 5\n"
+				"\n\nPARABÉNS, VOCÊ VENCEU A FASE 5\n"
 				+"SUPEROU TODOS OS DESAFIOS PROPOSTOS NO JOGO.\n");
 		}	
 	}
 	
 	
 	/**
-	 * Contado da chances que o jogador aida tem durante o jogo!
+	 * Contador de chances que o jogador ainda tem durante o jogo
 	 * @throws Exception
 	 */
-	public void contaFase() throws Exception{
+	public void contaFase() throws Exception {
 		
 		if (Inimigo.getChances()>0) {
-			Prints.msg("Chances: " +Inimigo.getChances()+"\nPontuação: " +Inimigo.getAcertos());
+			Prints.msg("Chances: " +Inimigo.getChances()+"\nPontuação: " + Inimigo.getAcertos());
 			avalia();	
-		}else{
-			Prints.msg("\nChances: " +Inimigo.getChances()+"\nPontuação: " +Inimigo.getAcertos());
+		} else {
+			Prints.msg("\nChances: " + Inimigo.getChances() + "\nPontuação: " + Inimigo.getAcertos());
 			Prints.msge(					
 				"\nVOCÊ PERDEU O JOGO.\n"
 				+"Suas chances de jogo foram esgotadas.\n"
-				+"Inicie O jogo novamete. \n");				
+				+"Inicie o jogo novamete. \n");				
 		}			
 	}
 
 	
 	/**
-	 * Método responsavel pela captação da cordenada.
+	 * Método responsavel pela captação da cordenada
 	 * @throws Exception
 	 */
-	public void atira() throws Exception{
+	public void atira() throws Exception {
 		try {
 			Prints.msgl();
-			inimigo.ValidaAlvo(Prints.digitaNumero("Nro linha"),
-						 Prints.digitaNumero("Nro coluna" ),"O");
+			inimigo.ValidaAlvo(Prints.digitaNumero("Nro. linha"),
+						 Prints.digitaNumero("Nro. coluna" ),"O");
 		} catch (InputMismatchException e) {
-			Prints.msgb("Era esperado um dígito como cordenáda!");
+			Prints.msgb("Era esperado um dígito como coordenada!");
 		}
 		contaFase();
 	}
 
 }
-
-
-
-
-
-
