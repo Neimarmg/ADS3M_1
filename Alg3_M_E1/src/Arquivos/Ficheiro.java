@@ -8,11 +8,11 @@ import java.io.FileWriter;
 import java.nio.file.Paths;
 import java.nio.file.Path;
 import Aplicacao.Interface;
-import Utilitarios.Icrud;
+import Utilitarios.crud;
 import Utilitarios.Prints;
 
 public class Ficheiro {
-	Icrud in =  new Icrud();
+	crud in =  new crud();
 	Memoria memoria =  new Memoria();
 	
 	/**

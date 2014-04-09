@@ -32,7 +32,7 @@ public class Consultas {
 			FileReader r = new FileReader(nomeArquivo);
 			br = new BufferedReader(r);
 			String linha = br.readLine();
-			Prints.msgb("Registro(pressagios) encontrado(pressagios):");
+			Prints.msgb("Registro encontrados:");
 			while(linha != null ){
 				linha = br.readLine();
 				if (linha.equals(campo)){	

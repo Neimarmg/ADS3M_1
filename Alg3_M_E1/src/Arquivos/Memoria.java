@@ -3,13 +3,13 @@ package Arquivos;
 import java.nio.file.FileStore;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
-
 import Utilitarios.Prints;
 
 public class Memoria {
 	
 	FileSystem fSistem  = FileSystems.getDefault();
-	
+
+
 	/**
 	 * Método que lista unidade de disco
 	 * @return
@@ -49,6 +49,5 @@ public class Memoria {
 		Prints.msg("\nLista Unidades: " +listaInidades() +"\n");
 		Prints.msg("Espaço total: " +totalizaMenoria() +"\n");
 		Prints.msg("Total disponivel: " +calculaDisponivel() +"\n");
-	}
-		
+	}	
 }

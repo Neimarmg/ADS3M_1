@@ -185,7 +185,7 @@ public class Prints {
 			"	OPÇÕES PARA INSERÇÃO DE DADOS:\n\n"	
 			+"=> NOVO\n"
 			+"=> IMPRIMIR\n"
-			+"=> EXCLUIR\n"
+			+"=> REMOVER\n"
 			+"=> SAIR\n"
 		);		
 	}

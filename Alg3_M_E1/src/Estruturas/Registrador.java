@@ -2,13 +2,13 @@ package Estruturas;
 
 import Arquivos.Ficheiro;
 import Utilitarios.Prints;
-import Utilitarios.Icrud;
+import Utilitarios.crud;
 
 public class Registrador {
 
 	String desc, fone , nome;
 	Ficheiro ficheiro =  new Ficheiro();
-	Icrud icrud = new Icrud();
+	crud crud = new crud();
 	ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	
 	/**
@@ -65,8 +65,8 @@ public class Registrador {
 		
 		case "novo":
 			insereDados();
-			icrud.addNovo(arquivo,nome);
-			icrud.addNovo(arquivo,fone);
+			crud.addNovo(arquivo,nome,true);
+			crud.addNovo(arquivo,fone,true);
 			insereArquivo(arquivo);
 			break;
 			
@@ -77,9 +77,9 @@ public class Registrador {
 			insereArquivo(arquivo);
 			break;
 			
-		case "excluir":
-			desc =  Prints.digita("\nNome Contato ficheiro excluir");
-			icrud.remove(arquivo, desc);
+		case "remover":
+			desc =  Prints.digita("\nNome para excluir");
+			crud.remove(arquivo, desc);
 		case "sair":
 			Prints.sair();
 			break;
@@ -105,7 +105,7 @@ public class Registrador {
 			insereDados();
 			lista.insert(new Nodo<String>(nome));
 			lista.insert(new Nodo<String>(fone), lista.getHead());
-			icrud.addNovo(arquivo,desc);
+			crud.addNovo(arquivo,desc,true);
 			insereAmbas(arquivo);
 			break;
 		
