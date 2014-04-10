@@ -93,6 +93,9 @@ public class Registrador {
 	
 	
 	/**
+	 * Obs. Não tinha conseguido entender a qual era a relação da lista 
+	 * com o arquivo até a a explição a aula do dia 10/4 pois, as inserção 
+	 * são sempre feita em saparado por essa motivo.
 	 * @param arquivo
 	 * @throws Exception
 	 */
