@@ -110,7 +110,7 @@ public class Prints {
 	public static void menuJogar() {		
 		msgb("	COMANDOS DE JOGO?\n\n"
 		+"=> JOGAR\n"
-		+"=> DEFINIR\n"
+		+"=> PERSONALIZAR\n"
 		+"=> SAIR\n");
 	}
 

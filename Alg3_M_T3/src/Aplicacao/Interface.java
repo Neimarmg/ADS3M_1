@@ -149,7 +149,7 @@ public class Interface extends Prints {
 			batalha();
 			break;
 		
-		case "definir":	
+		case "personalizar":	
 			soldado.editaDados();
 			MapaCont.iniciaMapa();
 			mapaView.imprime(true, "\nMAPA PERSONALIZADO! \n");
