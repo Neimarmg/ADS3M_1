@@ -16,7 +16,7 @@ public class MapaCont extends MapaMod {
 	
 	
 	public static void setaColuna() throws Exception {
-		try{	
+		try {	
 			MapaMod.setColuna(Prints.digitaNumero("\nDigite nro. de coluna "));
 			if (getColuna()<= 30){
 				Prints.msge("\nO Nro. de chances deve ser mair que 30\n");

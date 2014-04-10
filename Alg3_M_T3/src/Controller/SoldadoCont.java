@@ -9,15 +9,15 @@ public class SoldadoCont extends SoldadoMod {
 
 	
 	public void editaChances() {
-		try{
+		try {
 			setPontuacaoInicial(Prints.digitaNumero("Chances de jogo"));
 			if (getPontuacaoInicial() <= 15) {
 				Prints.msge("\nO Nro de chances deve ser maior que 15!\n");
 				editaChances();
 			} 
-		 }catch (InputMismatchException e) {
-			Prints.msge("\nEra esperado um número!\n");
-		}
+		 } catch (InputMismatchException e) {
+			 Prints.msge("\nEra esperado um número!\n");
+		 }
 	}
 		
 	

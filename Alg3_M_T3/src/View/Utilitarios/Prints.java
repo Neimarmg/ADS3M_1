@@ -3,8 +3,8 @@ package View.Utilitarios;
 import java.util.Scanner;
 
 /**
- * Classe reponsavel pela impressão do programa 
- * @author Neimar
+ * Classe responsável pela impressão do programa 
+ * @author Neimar, Aurélio
  */
 public class Prints {	
 	static Scanner var = new Scanner(System.in);
@@ -71,16 +71,16 @@ public class Prints {
 	 */
 	public static void paleta(String label) {
 		System .out.println();
-		if (label.equals("")){
+		if (label.equals("")) {
 			System .out.print("COMANDO: ");
-		}else{
-			System .out.print(label +": ");
+		} else {
+			System .out.print(label + ": ");
 		}
 	}
 	
 	
 	/**
-	 * Valores boleanos
+	 * Valores "booleans"
 	 * @param label
 	 * @return
 	 */
@@ -91,7 +91,7 @@ public class Prints {
 	
 	
 	/**
-	 * Método de retorno que recebe a label com parâmento e retorna
+	 * Método de retorno que recebe a label com parâmento, e retorna
 	 * uma string para filtros
 	 * @param label
 	 * @return
@@ -102,52 +102,52 @@ public class Prints {
 	}
 	
 	
-	public static void sair(){
+	public static void sair() {
 		System.err.print("\nVocê optou por sair do jogo. Obrigado.");
 	}
 	
 	
 	public static void menuJogar() {		
 		msgb("	COMANDOS DE JOGO?\n\n"
-		+"=> JOGAR\n"
-		+"=> PERSONALIZAR\n"
-		+"=> SAIR\n");
+		+ "=> JOGAR\n"
+		+ "=> PERSONALIZAR\n"
+		+ "=> SAIR\n");
 	}
 
 	
 	public static void menuMain() {		
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
-		+"=> INICIAR\n"
-		+"=> IMPRIMIR\n"
-		+"=> SAIR\n");
+		+ "=> INICIAR\n"
+		+ "=> IMPRIMIR\n"
+		+ "=> SAIR\n");
 	}
 
 	
 	public static void menuBatalha() {		
 		msgb("	COMANDOS DE JOGO?\n\n"
-		+"=> ATIRAR\n"
-		+"=> IMPRIMIR\n"
-		+"=> SAIR\n");
+		+ "=> ATIRAR\n"
+		+ "=> IMPRIMIR\n"
+		+ "=> SAIR\n");
 	}
 
 	
 	public static void menuImprimir() {		
 		msgb("	COMANDOS DE IMPRESSÃO?\n\n"
-		+"=> MAPA\n"
-		+"=> NAVIOS\n"		
-		+"=> NIVEIS\n"
-		+"=> SOLDADO\n"
-		+"=> FILTRAR\n"
-		+"=> TODOS\n"
-		+"=> SAIR\n");
+		+ "=> MAPA\n"
+		+ "=> NAVIOS\n"		
+		+ "=> NIVEIS\n"
+		+ "=> SOLDADO\n"
+		+ "=> FILTRAR\n"
+		+ "=> TODOS\n"
+		+ "=> SAIR\n");
 	}
 	
 	
 	public static void menuFiltrar() {		
 		msgb("	COMANDOS DE IMPRESSÃO?\n\n"
-		+"=> NAVIOS\n"		
-		+"=> NIVEIS\n"
-		+"=> RETORNAR\n"
-		+"=> SAIR\n");
+		+ "=> NAVIOS\n"		
+		+ "=> NIVEIS\n"
+		+ "=> RETORNAR\n"
+		+ "=> SAIR\n");
 	}
 }

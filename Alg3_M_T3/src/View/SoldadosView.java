@@ -10,34 +10,34 @@ import View.Utilitarios.Prints;
 public class SoldadosView extends SoldadoMod {
 	
 	/**
-	 * Método de avalição de nome 
+	 * Método de avaliação de nome 
 	 */
-	public void avaliaNome(){
+	public void avaliaNome() {
 		if (SoldadoMod.getNomeSoldado().equals(" ")) {
 			Prints.msg("\nO soldado ainda não possiu nome!\n");
 		}else{
 			Prints.msg("\nNome do jogador: " 
-				+SoldadoMod.getNomeSoldado() +"\n");
+			+ SoldadoMod.getNomeSoldado() + "\n");
 		}
 	}
 	
 	/**
-	 * Método de avalição da pontuação do soldado 
+	 * Método de avaliação da pontuação do soldado 
 	 */
-	public void avaliaPontos(){
+	public void avaliaPontos() {
 		if (SoldadoMod.getPontuacaoInicial() > 0 ) {
 			Prints.msg("Pontuação inicial: " 
-				+SoldadoMod.getPontuacaoInicial() +"\n");
-		}else{
-			Prints.msgr("O soldado " +SoldadoMod.getNomeSoldado()
-				+" não possui pontos para inicar o jogo!\n");
+			+ SoldadoMod.getPontuacaoInicial() +"\n");
+		} else {
+			Prints.msgr("O soldado " + SoldadoMod.getNomeSoldado()
+				+" não possui pontos para iniciar o jogo!\n");
 		}
 	}
 	
 	/**
-	 * Método que imprime dados pessais do soldado
+	 * Método que imprime dados do soldado
 	 */
-	public void imprime(){
+	public void imprime() {
 		avaliaNome();
 		avaliaPontos();
 	}

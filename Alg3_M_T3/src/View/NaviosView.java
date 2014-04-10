@@ -3,48 +3,48 @@ import Model.NaviosMod;
 import View.Utilitarios.Prints;
 
 /**
- *Classe de impressao e consulta a navios! 
+ *Classe de impressao e consulta à navios! 
  * @author Neimar
  */
 public class NaviosView {
 	String acum =" ";
 	
 	/**
-	 * Método que encontra um navio espeífico ou lista todos 
+	 * Método que encontra um navio específico ou lista todos, 
 	 * dependendo do parêmetro filtrar
 	 * @param filtrar
 	 * @param parametro
 	 */
-	private void pesquisa(boolean filtrar, String parametro){
+	private void pesquisa(boolean filtrar, String parametro) {
 		
 		if (parametro.equals("portaAvioes") && filtrar == true || filtrar == false) {
 			acum += "\nPortaAvioes " 
-				+NaviosMod.getPortaAvioes()
-				+" de " +NaviosMod.getUnidPortaAvioes() +" unidades\n";
+					+ NaviosMod.getPortaAvioes()
+					+ " de " +NaviosMod.getUnidPortaAvioes() + " unidades\n";
 		} 
 			
-		if (parametro.equals("destroyers")&& filtrar == true || filtrar == false) {
+		if (parametro.equals("destroyers") && filtrar == true || filtrar == false) {
 			acum += "\nDestroyers " 
-				+NaviosMod.getDestroyers()
-				+" de " +NaviosMod.getUnidTorpedeiros() +" unidades\n";
+					+ NaviosMod.getDestroyers()
+				    + " de " +NaviosMod.getUnidTorpedeiros() + " unidades\n";
 		}
 			
-		if (parametro.equals("fragatas")&& filtrar == true || filtrar == false) {
+		if (parametro.equals("fragatas") && filtrar == true || filtrar == false) {
 			acum += "\nFragatas " 
-				+NaviosMod.getFragatas()
-				+" de " +NaviosMod.getUnidFragatas() +" unidades\n";
+					+ NaviosMod.getFragatas()
+					+ " de " +NaviosMod.getUnidFragatas() + " unidades\n";
 		}
 				
-		if (parametro.equals("torpedeiros")&& filtrar == true || filtrar == false) {
+		if (parametro.equals("torpedeiros") && filtrar == true || filtrar == false) {
 			acum += "\nTorpedeiros " 
-				+NaviosMod.getTorpedeiros()
-				+" de " +NaviosMod.getUnidTorpedeiros() +" unidades\n";;
+					+ NaviosMod.getTorpedeiros()
+					+ " de " +NaviosMod.getUnidTorpedeiros() + " unidades\n";;
 		} 
 		
-		if (parametro.equals("submarinos")&& filtrar == true || filtrar == false) {
+		if (parametro.equals("submarinos") && filtrar == true || filtrar == false) {
 			acum += "\nSubmarinos " 
-				+NaviosMod.getSubmarinos()
-				+" de " +NaviosMod.getUnidSubmarinos() +" unidades\n";
+					+ NaviosMod.getSubmarinos()
+					+ " de " +NaviosMod.getUnidSubmarinos() + " unidades\n";
 		}
 	}
 	
@@ -54,13 +54,13 @@ public class NaviosView {
 	 * @param filtrar
 	 * @param parametro
 	 */
-	public void executa(boolean filtrar, String parametro){
+	public void executa(boolean filtrar, String parametro) {
 		pesquisa(filtrar, parametro);
 		Prints.msg(acum);
 		
 		if (filtrar == true && acum.equals(" ")) {
-			Prints.msgb("Não foi encontrado nenhum navio com nome de " +parametro);
-		}else{
+			Prints.msgb("Não foi encontrado nenhum navio com nome de " + parametro);
+		} else {
 			pesquisa(filtrar, parametro);			
 		}
 	}
@@ -70,24 +70,24 @@ public class NaviosView {
 	 * @param filtrar
 	 * @param mostraCabecalho
 	 */
-	private void abilitaCabecalho(boolean filtrar,Boolean mostraCabecalho){
+	private void abilitaCabecalho(boolean filtrar, Boolean mostraCabecalho) {
 		if (mostraCabecalho == true) {
 			if (filtrar == true) {
 				Prints.msgc("	CONSULTA DE NAVIOS\n");
-			}else{
+			} else {
 				Prints.msgc("	LISTA DE NAVIOS DO JOGO\n");
 			}
 		}
 	}
 	
 	/**
-	 * Método de impressão de navios inimigo
+	 * Método de impressão de navios inimigos
 	 * @param filtrar
 	 */
 	public void imprime(boolean filtrar,Boolean mostraCabecalho){
 		if (filtrar == true) {
 			executa(filtrar,Prints.digita("Nome do navio "));
-		}else{
+		} else {
 			abilitaCabecalho(filtrar, mostraCabecalho);
 			executa(filtrar, " ");
 		}

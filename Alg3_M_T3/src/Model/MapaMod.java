@@ -4,7 +4,7 @@ import View.Utilitarios.Prints;
 
 /**
  * Classe de criação do mapaMod
- * @author Neimar
+ * @author Neimar, Aurélio
  *
  */
 public class MapaMod {
@@ -44,7 +44,7 @@ public class MapaMod {
 	 * Cria tabluleiro do jogo
 	 * @throws Exception
 	 */
-	public static void criaMapa() throws Exception{
+	public static void criaMapa() throws Exception {
 		try {
 			for (i = 0; i < linha; i++) {	
 				for (j = 0; j < coluna; j++) {
