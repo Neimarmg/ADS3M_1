@@ -80,7 +80,8 @@ public class Inimigo {
 		} else {
 			chances--;	
 			encontraAlvo(linha, coluna, dado);	
-			// mapaView.imprime(false," ");
+			//mapaView.setLetra('A');//Imprime colunas referencia do mapa
+			//mapaView.imprime(false," ");//Imprime mapa para conferencia de posicinamento
 		}	
 	}
 	
