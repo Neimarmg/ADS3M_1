@@ -53,18 +53,19 @@ public class crud {
 		br = new BufferedReader(r);
 		String linha = br.readLine();		
 		try {				
-			while(linha != null ){
+			while(linha != null ){	
+				
 				if (linha.equals(desc)){	
 					acun += "#"+linha +"\n";
 					edita = true;
 					}else{
 					acun += linha +"\n";
-					edita = false;
+					edita = false;					
 				}
 				linha = br.readLine();
-				addNovo(nomeArquivo, acun);
 			}
-			
+			addNovo(nomeArquivo, acun);
+			br.close();
 		} catch (NullPointerException e) {
 			e.getMessage();
 		} catch (FileNotFoundException e1) {
