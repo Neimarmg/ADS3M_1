@@ -1,29 +1,29 @@
 package Model;
 
 /**
- * Classe que define os niveis de jogo todos são estatico e finais 
- * @author Neimar,Aurelio
+ * Classe que define os níveis de jogo. Todos são estáticos e finais 
+ * @author Neimar, Aurélio
  */
 public class NiveisMod {
 	private static final int NIVEL1 = 1;
-	private static final int MAPANIVEL1 = 10; //Tamanho do mapa 10x10
-	private static final int PONTON1 = 6; //Pontos para cada nivel no mapa
+	private static final int MAPANIVEL1 = 10; // Tamanho do mapaMod 10x10
+	private static final int PONTON1 = 6; // Pontos para cada nível no mapaMod
 	
 	private static final int NIVEL2 = 2;
-	private static final int MAPANIVEL2 = 15; //Tamanho do mapa 15x15
-	private static final int PONTON2 = 12; //Pontos para cada nivel no mapa
+	private static final int MAPANIVEL2 = 15; // Tamanho do mapaMod 15x15
+	private static final int PONTON2 = 12; // Pontos para cada nível no mapaMod
 	
 	private static final int NIVEL3 = 3;
-	private static final int MAPANIVEL3 = 20; //Tamanho do mapa 20x20
-	private static final int PONTON3 = 21; //Pontos para cada nivel no mapa
+	private static final int MAPANIVEL3 = 20; // Tamanho do mapaMod 20x20
+	private static final int PONTON3 = 21; //Pontos para cada nível no mapaMod
 	
 	private static final int NIVEL4 = 4;
-	private static final int MAPANIVEL4 = 25; //Tamanho do mapa 25x25
-	private static final int PONTON4 = 30; //Pontos para cada nivel no mapa
+	private static final int MAPANIVEL4 = 25; // Tamanho do mapaMod 25x25
+	private static final int PONTON4 = 30; // Pontos para cada nível no mapaMod
 	
 	private static final int NIVEL5 = 5;
-	private static final int MAPANIVEL5 = 30; //Tamanho do mapa 30x30
-	private static final int PONTON5 = 42 ; //Pontos para cada nivel no mapa
+	private static final int MAPANIVEL5 = 30; // Tamanho do mapaMod 30x30
+	private static final int PONTON5 = 42 ; // Pontos para cada nível no mapaMod
 	
 	public static int getNivel1() {
 		return NIVEL1;

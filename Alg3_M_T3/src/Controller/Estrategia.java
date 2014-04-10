@@ -7,15 +7,15 @@ import View.SoldadosView;
 import View.Utilitarios.Prints;
 
 /**
- * Classe resposavel pelas distribuição das embarcaçãoe no mapa
- * @author Aureleio, Neimar
+ * Classe responsável pela distribuição das embarcações no mapaMod
+ * @author Aurélio, Neimar
  */
 public class Estrategia {
 	
-	MapaMod m = new MapaMod();
-	MapaView mv = new MapaView();
-	Inimigo c = new Inimigo(); 
-	SoldadosView sv = new SoldadosView();
+	MapaMod mapaMod = new MapaMod();
+	MapaView mapaView = new MapaView();
+	Inimigo inimigo = new Inimigo(); 
+	SoldadosView soldadoView = new SoldadosView();
 
 	private static int nivel;
 	private int contUnidades;
@@ -26,67 +26,62 @@ public class Estrategia {
 	}
 
 	/**
-	 * Define posição do navio no mapa.
+	 * Define posição do navio no mapaMod
 	 */
-	private void posisciona() {
+	private void posiciona() {
 		
 		for (int i = 0; i <  MapaMod.getLinha(); i++) {
 			for (int j = 0; j <  MapaMod.getColuna(); j++) {				
 			
-				if (i == 0 && j >= nivel && j < (NaviosMod.getUnidPortaAvioes()+nivel)){
+				if (i == 0 && j >= nivel && j < (NaviosMod.getUnidPortaAvioes() + nivel)) {
 					MapaMod.mapa[i][j] = "-";					
 				}
 					
-				if (i == 5 && j >= nivel-1 && j < (NaviosMod.getUnidDestroyers()+nivel -1)){
+				if (i == 5 && j >= nivel-1 && j < (NaviosMod.getUnidDestroyers() + nivel -1)) {
 					MapaMod.mapa[i][j] = "-";					
 				}
 				
-				if (i == 2 && j >= nivel && j < (NaviosMod.getUnidDestroyers()+nivel)){
+				if (i == 2 && j >= nivel && j < (NaviosMod.getUnidDestroyers() + nivel)) {
 					MapaMod.mapa[i][j] = "-";					
 				}
 				
-				if (i == 3 && j >= (nivel+2) && j < (NaviosMod.getUnidFragatas()+nivel+2)){
+				if (i == 3 && j >= (nivel+2) && j < (NaviosMod.getUnidFragatas() + nivel +2)) {
 					MapaMod.mapa[i][j] = "-";					
 				}
 				
-				if (i == 4 && j >= (nivel+1) && j < (NaviosMod.getUnidFragatas()+nivel+1)){
-					MapaMod.mapa[i][j] = "-";					
-				}
-		
-				
-				if (i == 1 && j >= nivel && j < (NaviosMod.getUnidTorpedeiros()+nivel)){
-					MapaMod.mapa[i][j] = "-";					
-				}
-				
-				if (i == 6 && j >= (nivel+2) && j < (NaviosMod.getUnidTorpedeiros()+nivel+2)){
-					MapaMod.mapa[i][j] = "-";					
-				}
-				
-				if (i == 7 && j >= (nivel+1) && j < (NaviosMod.getUnidTorpedeiros()+nivel+1)){
+				if (i == 4 && j >= (nivel+1) && j < (NaviosMod.getUnidFragatas() + nivel +1)) {
 					MapaMod.mapa[i][j] = "-";					
 				}
 		
-				
-				if (i == 8 && j >= nivel && j > (NaviosMod.getUnidTorpedeiros()+nivel)){
+				if (i == 1 && j >= nivel && j < (NaviosMod.getUnidTorpedeiros()+nivel)) {
 					MapaMod.mapa[i][j] = "-";					
 				}
 				
-				if (i == 8 && j >= ((nivel)*-1) && j < (NaviosMod.getUnidTorpedeiros()+nivel)){
+				if (i == 6 && j >= (nivel+2) && j < (NaviosMod.getUnidTorpedeiros() + nivel +2)) {
 					MapaMod.mapa[i][j] = "-";					
 				}
 				
-				
-				if (i == 9 && j >= (nivel) && j < (NaviosMod.getUnidTorpedeiros()+nivel)){
+				if (i == 7 && j >= (nivel+1) && j < (NaviosMod.getUnidTorpedeiros() + nivel +1)) {
+					MapaMod.mapa[i][j] = "-";					
+				}
+		
+				if (i == 8 && j >= nivel && j > (NaviosMod.getUnidTorpedeiros() + nivel)) {
 					MapaMod.mapa[i][j] = "-";					
 				}
 				
-				
-				if (i == 9 && j >= (nivel) && j < (NaviosMod.getUnidTorpedeiros()+nivel)){
+				if (i == 8 && j >= nivel && j < (NaviosMod.getUnidTorpedeiros() + nivel)) {
 					MapaMod.mapa[i][j] = "-";					
 				}
 				
+				if (i == 9 && j >= (nivel) && j < (NaviosMod.getUnidTorpedeiros() + nivel)) {
+					MapaMod.mapa[i][j] = "-";					
+				}
 				
-				if (i == 9 && j >= (nivel) && j < (NaviosMod.getUnidTorpedeiros()+nivel)){
+				if (i == 9 && j >= (nivel) && j < (NaviosMod.getUnidTorpedeiros() + nivel)) {
+					MapaMod.mapa[i][j] = "-";					
+				}
+				
+				if (i == 9 && j >= (nivel) && j < (NaviosMod.getUnidTorpedeiros() + nivel)) {
 					MapaMod.mapa[i][j] = "-";					
 				}			
 			}			
@@ -95,14 +90,14 @@ public class Estrategia {
 
 	
 	/**
-	 * Método de validação ma matris
+	 * Método de validação na matriz
 	 * @throws Exception
 	 */
-	private void valida()throws Exception{		
+	private void valida()throws Exception {		
 		contUnidades = 0; 
 		for (int i = 0; i <  MapaMod.getLinha(); i++) {
 			for (int j = 0; j <  MapaMod.getColuna(); j++) {				
-				if (MapaMod.getMapa()[i][j] != null){
+				if (MapaMod.getMapa()[i][j] != null) {
 					contUnidades++;				
 				}			
 			}			
@@ -116,9 +111,9 @@ public class Estrategia {
 	 */
 	private void carrega() throws Exception {
 		
-		if(MapaMod.getColuna()*MapaMod.getLinha() == contUnidades){
-			posisciona();
-			sv.imprime();
+		if(MapaMod.getColuna()*MapaMod.getLinha() == contUnidades) {
+			posiciona();
+			soldadoView.imprime();
 		}else{
 			Prints.msgb("Mapa inesistente!");
 			tatica();
@@ -127,7 +122,7 @@ public class Estrategia {
 	
 	
 	/** 
-	 * Executa tática do inimigo ante de iniciar o o jogo
+	 * Executa tática do inimigo antes de iniciar o jogo
 	 * @throws Exception
 	 */
 	public void tatica()throws Exception {

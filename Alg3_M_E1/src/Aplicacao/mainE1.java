@@ -1,15 +1,14 @@
 package Aplicacao;
 
 import Utilitarios.Dia;
-import Utilitarios.Formatos;
+import Utilitarios.Prints;
 
 public class mainE1 {
-	Formatos i = new Formatos();
 	Interface<Object> in = new Interface<Object>();
 	Dia d = new Dia();
 	
 	private void escreveCabecalho() {
-	    i.msgb("	EXERCÍCIO DE ESTRUTURAS LINEARES E1");
+	    Prints.msgb("	EXERCÍCIO DE ESTRUTURAS LINEARES E1");
 	}
 	
 	
@@ -20,12 +19,12 @@ public class mainE1 {
 	private void run() throws Exception {
 		escreveCabecalho();
 		d.defineSaudacao();
-		i.mostarMenuMaim();
+		Prints.mostarMenuMaim();
 		in.iniciaTarefas();
 	}
 	
 
 	public static void main(String[] args)throws Exception {
-		new mainE1().run();    
+		new mainE1().run();   
 	}
 }

@@ -2,7 +2,7 @@ package View.Utilitarios;
 
 /**
  * Classe de umpressao de pressagios 
- * @author Neimar
+ * @author Neimar, Aurélio
  *
  */
 public class Pressagios {

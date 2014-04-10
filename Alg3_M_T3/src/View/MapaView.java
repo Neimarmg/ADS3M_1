@@ -4,22 +4,22 @@ import Model.MapaMod;
 import View.Utilitarios.Prints;
 
 /**
- * Classe de impressao dados do mapa.
+ * Classe de impressão dos dados do mapaMod.
  * @author Naimar, Aurélio
  */
 public class MapaView {
 	int j,i;
 	char letra = 'A';
-	MapaMod m = new MapaMod();
+	MapaMod mapaMod = new MapaMod();
 	
 	public void setLetra(char letra) {
 		this.letra = letra;
 	}
 	
 	/**
-	 * Mètodo definidor do cabeçalho das colunas
+	 * Método definidor do cabeçalho das colunas
 	 */
-	private void nomeiaConluna(){
+	private void nomeiaConluna() {
 		Prints.msg("+ ");
 		for (j = 0; j <  MapaMod.getColuna(); j++) {
 			Prints.msg(" " + letra++ );
@@ -28,28 +28,28 @@ public class MapaView {
 	
 	
 	/**
-	 * Mostra mensagem cabelho quando necessário 
+	 * Mostra mensagem cabeçalho quando necessário 
 	 * @param mostraMsgCabecalho
 	 */
-	private void abilitaMsg(boolean mostraMsgCabecalho,Object texto){
-		if (mostraMsgCabecalho == true){
+	private void abilitaMsg(boolean mostraMsgCabecalho,Object texto) {
+		if (mostraMsgCabecalho == true) {
 			//p.msgl();
-			Prints.msg(texto +"\n");		
+			Prints.msg(texto + "\n");		
 		}
 	}
 	
 	
 	/**
-	 * Métode que desenha mapa de batalha
+	 * Método que desenha mapaMod de batalha
 	 * @param mostraMsgCabelho
 	 * @throws Exception
 	 */
-	public void imprime(boolean mostraMsgCabecalho,Object texto)throws Exception{
+	public void imprime(boolean mostraMsgCabecalho,Object texto)throws Exception {
 		try {
 			abilitaMsg(mostraMsgCabecalho,texto);
 			nomeiaConluna();
 			for (i = 0; i <  MapaMod.getLinha(); i++) {
-				Prints.msg("\n" +i +" ");
+				Prints.msg("\n" + i + " ");
 				for (j = 0; j <  MapaMod.getColuna(); j++) {				
 					Prints.msg(" " + MapaMod.getMapa()[i][j]);				
 				}			
@@ -57,11 +57,8 @@ public class MapaView {
 			Prints.msg("\n");
 		
 		} catch (ArrayIndexOutOfBoundsException e) {
-			Prints.msgb("Não foi possível imprimir o mapa!");
-			Prints.msg("" +MapaMod.getLinha()+"x" +MapaMod.getColuna() +"\n\n");
+			Prints.msgb("Não foi possível imprimir o mapaMod!");
+			Prints.msg("" +MapaMod.getLinha() + "x" + MapaMod.getColuna() + "\n\n");
 		}
 	}
-	
-	
-	
 }

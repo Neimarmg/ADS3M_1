@@ -3,13 +3,13 @@ package Model;
 import View.Utilitarios.Prints;
 
 /**
- * Classe de criação do mapa
- * @author Neimar
+ * Classe de criação do mapaMod
+ * @author Neimar, Aurélio
  *
  */
 public class MapaMod {
 	
-	private int i = 0 ,j = 0 ;
+	private static int i = 0 ,j = 0 ;
 
 	private static int linha = getLinha(); 
 	private static int coluna = getLinha();
@@ -44,7 +44,7 @@ public class MapaMod {
 	 * Cria tabluleiro do jogo
 	 * @throws Exception
 	 */
-	public void criaMapa() throws Exception{
+	public static void criaMapa() throws Exception {
 		try {
 			for (i = 0; i < linha; i++) {	
 				for (j = 0; j < coluna; j++) {
@@ -52,7 +52,7 @@ public class MapaMod {
 				}				
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
-			Prints.msgb("Não foi possível criar o mapa!");
+			Prints.msgb("Não foi possível criar o mapaMod!");
 		}
 	}
 }

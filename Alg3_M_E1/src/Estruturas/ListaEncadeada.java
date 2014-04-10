@@ -1,12 +1,11 @@
 package Estruturas;
 
-import Utilitarios.Formatos;
+import Utilitarios.Prints;
 
 public class ListaEncadeada<T extends Comparable<T>> {
-	Formatos i = new Formatos();
 	
-	private Nodo<T> head; // will be a Nodo
-	private Nodo<T> tail; // will be a Nodo
+	private Nodo<T> head; // will be ficheiro Nodo
+	private Nodo<T> tail; // will be ficheiro Nodo
 	
 	public Nodo<T> getHead() {
 		return head;
@@ -17,12 +16,12 @@ public class ListaEncadeada<T extends Comparable<T>> {
 		try {
 			Nodo<?> nodo = head;
 			do {
-				i.msg("\n" +nodo.getData());
+				Prints.msg("\n" +nodo.getData());
 				nodo = nodo.getNext();
 			} while (nodo != null);
 			
 		} catch (NullPointerException e) {
-			i.msg("\nNão existem elementos na lista a serem impressos.\n");
+			Prints.msg("\nNão existem elementos na lista ficheiro serem impressos.\n");
 		}
 	}
 	

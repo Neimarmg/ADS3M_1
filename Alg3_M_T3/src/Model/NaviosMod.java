@@ -3,7 +3,7 @@ package Model;
 
 /**
  * Classe de amazemamento de navios de batalha
- * @author Neimar, Aurelio
+ * @author Neimar, Aurélio
  */
 public class NaviosMod {
 	
@@ -68,7 +68,6 @@ public class NaviosMod {
 		NaviosMod.fragatas = fragatas;
 	}
 	
-	
 	public static int getFragatas() {
 		return fragatas;
 	}
@@ -80,7 +79,6 @@ public class NaviosMod {
 	public static int getUnidFragatas() {
 		return UnidFragatas;
 	}
-	
 	
 	//=================<< torpedeiros >>==================
 	

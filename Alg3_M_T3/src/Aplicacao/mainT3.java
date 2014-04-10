@@ -4,13 +4,13 @@ import View.Utilitarios.*;
 
 public class mainT3 {
 
-	Interface in = new Interface();	
-	Dia d = new Dia();
+	Interface Interface = new Interface();	
+	Dia dia = new Dia();
 
 	
 	private void escreveCabecalho() {
-		Prints.msg("Exercicío de matrizes T3\n");
-	    Prints.msgb("		JOGO BATALHA NAVAL \n\n		     BEM VINDO");
+		Prints.msg("Exercício de matrizes T3\n");
+	    Prints.msgb("		JOGO BATALHA NAVAL \n\n		     BEM-VINDO");
 	}
 	
 	/**
@@ -18,13 +18,14 @@ public class mainT3 {
 	 */
 	private void run() throws Exception {
 		escreveCabecalho();
-		d.defineSaudacao();
+		dia.defineSaudacao();
 		Prints.menuMain();
-		in.inicia();
+		Interface.inicia();
 	}
 	
 
 	public static void main(String[] args)throws Exception {
 		new mainT3().run();    
 	}
+	
 }
