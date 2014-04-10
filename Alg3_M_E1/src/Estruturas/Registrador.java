@@ -65,8 +65,8 @@ public class Registrador {
 		
 		case "novo":
 			insereDados();
-			crud.addNovo(arquivo,nome,true);
-			crud.addNovo(arquivo,fone,true);
+			crud.addNovo(arquivo,nome);
+			crud.addNovo(arquivo,fone);
 			insereArquivo(arquivo);
 			break;
 			
@@ -105,7 +105,7 @@ public class Registrador {
 			insereDados();
 			lista.insert(new Nodo<String>(nome));
 			lista.insert(new Nodo<String>(fone), lista.getHead());
-			crud.addNovo(arquivo,desc,true);
+			crud.addNovo(arquivo,desc);
 			insereAmbas(arquivo);
 			break;
 		

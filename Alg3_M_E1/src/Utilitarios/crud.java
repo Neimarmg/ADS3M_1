@@ -1,6 +1,5 @@
 package Utilitarios;
 
-import java.beans.FeatureDescriptor;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -9,30 +8,31 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import Arquivos.Ficheiro;
-
+/**
+ * Classe para edição e arquivos
+ * @author moises
+ */
 public class crud {
 	String acun = "";
-		
+	Boolean edita = true;
+	
 	/**
 	 * Insere novo registro em arquivo .txt!
 	 * @param arquivo
 	 * @param desc
 	 * @throws IOException 
 	 */
-	public void addNovo(String arquivo,String  desc, Boolean edita ) throws IOException {
+	public void addNovo(String arquivo,String  desc) throws IOException {
 		FileWriter f;
 		BufferedWriter buff = null;
 		try {
 			f = new FileWriter(new File(arquivo),edita);
 			buff = new BufferedWriter(f);			
-			
 			if (edita == true){	
-				buff.newLine();
+				buff.newLine();				
 			}			
 			buff.write(desc);			
 			buff.close();	
-			Prints.msgb("Registro pasei:");
 		} catch (IOException e) {
 			Prints.msg("Não foi possivél inserir registro.");
 		}finally{
@@ -49,30 +49,28 @@ public class crud {
 	 */
 	public void remove(String nomeArquivo, String  desc) throws IOException {                 
 		BufferedReader br;
-		
-		try {
-			FileReader r = new FileReader(nomeArquivo);
-			br = new BufferedReader(r);
-			String linha = br.readLine();			
-			
+		FileReader r = new FileReader(nomeArquivo);
+		br = new BufferedReader(r);
+		String linha = br.readLine();		
+		try {				
 			while(linha != null ){
-				linha = br.readLine();
-				if (linha.equals(desc)){					
-					acun += "# "+linha +"\n";
-					addNovo(nomeArquivo, acun, true);
-				}else{
+				if (linha.equals(desc)){	
+					acun += "#"+linha +"\n";
+					edita = true;
+					}else{
 					acun += linha +"\n";
-					addNovo(nomeArquivo, acun, true);
+					edita = false;
 				}
+				linha = br.readLine();
+				addNovo(nomeArquivo, acun);
 			}
-			//Prints.msgb("AA ." +acun);
 			
 		} catch (NullPointerException e) {
 			e.getMessage();
 		} catch (FileNotFoundException e1) {
 			Prints.msgb("Arquivo inexistente.");
 		}
-	    System.exit(0);
+	  
 	}    
         	
 		  

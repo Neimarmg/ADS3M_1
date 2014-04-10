@@ -25,6 +25,6 @@ public class mainE1 {
 	
 
 	public static void main(String[] args)throws Exception {
-		new mainE1().run();    
+		new mainE1().run();   
 	}
 }
