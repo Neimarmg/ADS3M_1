@@ -93,9 +93,9 @@ public class Registrador {
 	
 	
 	/**
-	 * Obs. Não tinha conseguido entender a qual era a relação da lista 
-	 * com o arquivo até a a explição a aula do dia 10/4 pois, as inserção 
-	 * são sempre feita em saparado por essa motivo.
+	 * Obs. Não tinha ficado entendido qual era a relação da lista 
+	 * com o arquivo, até a a explicação em aula dia 10/4. Por esse motivo as inserções 
+	 * foram feitas em saparado
 	 * @param arquivo
 	 * @throws Exception
 	 */

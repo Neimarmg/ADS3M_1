@@ -87,16 +87,56 @@ public class Consultas {
 	
 	
 	/**
-	 * Realiza busaca bunária dentro do arquivo
+	 * Realiza busca binária dentro do arquivo
 	 * @param nomeArquivo
 	 * @param campo
 	 * @throws IOException
 	 */
 	public void buscaBinaria(String nomeArquivo,String campo) throws IOException {
 		
-		
-		
-		
+		/** 
+		 * Professor: Para entender o assunto pesquisamos na Internet. Após alterações chegamos no código TESTE abaixo.
+		 * Não convertemos para o seu projeto por falta de tempo. Achamos melhor entregar assim
+		 * 
+		 * 
+		 * int db[] = new int[10];
+	        int numero, i, inicio = 0, meio, fim = 4;
+	        boolean localizador = false;
+
+	        for (i = 0; i < 5; i++) {
+	            System.out.print("Digite o " + (i + 1) + " número: ");
+	            db[i] = in.nextInt();
+	        }
+
+	        System.out.print("\nNúmero a ser localizado? ");
+
+	        numero = in.nextInt();
+
+	        i = 0;
+
+	        meio = (inicio + fim) / 2;
+
+	        while (inicio <= fim && localizador == false) {
+	            if (db[meio] == numero) {
+	            	localizador = true;
+	            } else {
+	            	if (numero < db[meio]) {
+	            		fim = meio - 1;
+	                } else {
+	                    inicio = meio + 1;
+	                }
+	                meio = (inicio + fim) / 2;
+	            }
+	        }
+
+	        if (localizador) {
+	        	System.out.println("\nNúmero encontrado na posição [" + meio + "]" + ".");
+	        } else {
+	        	System.out.println("\nNúmero não encontrado");
+	        }
+	    in.close();    
+	    }
+	*/
 		
 	}
 }
