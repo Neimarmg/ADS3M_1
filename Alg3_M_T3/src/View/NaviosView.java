@@ -63,6 +63,7 @@ public class NaviosView {
 		} else {
 			pesquisa(filtrar, parametro);			
 		}
+		acum =""; //Limpa variavel de impressão 
 	}
 	
 	/**

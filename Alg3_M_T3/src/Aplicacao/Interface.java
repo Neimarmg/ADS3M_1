@@ -67,7 +67,7 @@ public class Interface extends Prints {
 		
 		switch (digita("")) {
 		
-		case "mapaMod":
+		case "mapa":
 			batalha.iniciaMapa();
 			imprime();
 			break;

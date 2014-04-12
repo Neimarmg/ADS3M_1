@@ -1,5 +1,6 @@
 package View;
 
+import Controller.Inimigo;
 import Model.SoldadoMod;
 import View.Utilitarios.Prints;
 
@@ -27,7 +28,7 @@ public class SoldadosView extends SoldadoMod {
 	public void avaliaPontos() {
 		if (SoldadoMod.getPontuacaoInicial() > 0 ) {
 			Prints.msg("Pontuação inicial: " 
-			+ SoldadoMod.getPontuacaoInicial() +"\n");
+			+Inimigo.getChances() +"\n"); // Imprime chances em tempo real do jogo!
 		} else {
 			Prints.msgr("O soldado " + SoldadoMod.getNomeSoldado()
 				+" não possui pontos para iniciar o jogo!\n");
