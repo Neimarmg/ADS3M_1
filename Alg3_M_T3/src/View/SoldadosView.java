@@ -1,5 +1,6 @@
 package View;
 
+import Controller.Inimigo;
 import Model.SoldadoMod;
 import View.Utilitarios.Prints;
 
@@ -15,7 +16,7 @@ public class SoldadosView extends SoldadoMod {
 	public void avaliaNome() {
 		if (SoldadoMod.getNomeSoldado().equals(" ")) {
 			Prints.msg("\nO soldado ainda não possiu nome!\n");
-		}else{
+		} else {
 			Prints.msg("\nNome do jogador: " 
 			+ SoldadoMod.getNomeSoldado() + "\n");
 		}
@@ -27,7 +28,7 @@ public class SoldadosView extends SoldadoMod {
 	public void avaliaPontos() {
 		if (SoldadoMod.getPontuacaoInicial() > 0 ) {
 			Prints.msg("Pontuação inicial: " 
-			+ SoldadoMod.getPontuacaoInicial() +"\n");
+			+ Inimigo.getChances() +"\n");
 		} else {
 			Prints.msgr("O soldado " + SoldadoMod.getNomeSoldado()
 				+" não possui pontos para iniciar o jogo!\n");

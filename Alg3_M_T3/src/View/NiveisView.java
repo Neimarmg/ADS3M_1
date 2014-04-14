@@ -63,6 +63,7 @@ public class NiveisView {
 		} else {
 			pesquisa(filtrar, parametro);			
 		}
+		acum = "";
 	}
 	
 	/**

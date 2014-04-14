@@ -168,7 +168,7 @@ public class Batalha {
 			Prints.msge(					
 				"\nVOCÊ PERDEU O JOGO.\n"
 				+"Suas chances de jogo foram esgotadas.\n"
-				+"Inicie o jogo novamete. \n");				
+				+"Inicie o jogo novamente. \n");				
 		}			
 	}
 
