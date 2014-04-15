@@ -7,11 +7,16 @@ public class mainE1 {
 	Interface<Object> in = new Interface<Object>();
 	Dia d = new Dia();
 	
+	/**
+	 * Descrição do cabeçalho principal do programa
+	 */
 	private void escreveCabecalho() {
-	    Prints.msgb("	EXERCÍCIO DE ESTRUTURAS LINEARES E1");
+		Prints.msgb("	EXERCÍCIO DE ESTRUTURAS LINEARES\n\n"
+			+"Listas encadeadas T1\n"
+			+"Pesquisa binária T2\n"
+			+"Algoritmos de ordenação T4");		
 	}
-	
-	
+		
 	
 	/**
 	 * @throws Exception
