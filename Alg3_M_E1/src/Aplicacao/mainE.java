@@ -1,9 +1,12 @@
 package Aplicacao;
 
+import javax.jws.Oneway;
+
+import Estruturas.Ordenadores;
 import Utilitarios.Dia;
 import Utilitarios.Prints;
 
-public class mainE1 {
+public class mainE {
 	Interface<Object> in = new Interface<Object>();
 	Dia d = new Dia();
 	
@@ -30,6 +33,10 @@ public class mainE1 {
 	
 
 	public static void main(String[] args)throws Exception {
-		new mainE1().run();   
+		//new mainE1().run();   
+		
+		Ordenadores o = new Ordenadores();
+		o.bubleSort();
+		o.pritBubleSort();
 	}
 }
