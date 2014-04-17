@@ -1,5 +1,6 @@
 package Aplicacao;
 
+import Estruturas.Ordenadores;
 import Navegacao.Consultas;
 import Utilitarios.Dia;
 import Utilitarios.Prints;
@@ -7,6 +8,7 @@ import Utilitarios.Prints;
 public class mainE{
 	Interface<Object> in = new Interface<Object>();
 	Consultas consulta = new Consultas();
+	Ordenadores ordenador = new Ordenadores();
 	Dia d = new Dia();
 
 	/**
@@ -39,7 +41,7 @@ public class mainE{
 			break;
 			
 		case "t4":	
-			Prints.objetoNaoImplementado();
+			ordenador.selecionaOrdenador();
 			selecionaAtividade();
 			break;
 			

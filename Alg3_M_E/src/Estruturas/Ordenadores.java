@@ -36,4 +36,34 @@ public class Ordenadores {
 	
 	}
 	
+	/**
+	 * Método responsável pela seleção dos ordenadores
+	 * @throws Exception
+	 */
+	public void selecionaOrdenador() throws Exception {	
+		Prints.menuOrdenadores();		
+					
+		switch (Prints.digita("")) {			
+			
+		case "bub":		
+		
+			break;
+		
+		case "quick":		
+		
+			break;
+	
+		case "comparar":		
+		
+			break;
+		case "sair":
+			Prints.sair();
+			break;
+				
+		default:
+			Prints.opcaoInvalida();
+			selecionaOrdenador();
+			break;
+		}	
+	}
 }

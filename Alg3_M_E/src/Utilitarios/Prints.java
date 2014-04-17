@@ -188,7 +188,7 @@ public class Prints {
 	public static void menuInserirNovo()throws Exception {	
 		msgb(
 			"	OPÇÕES PARA INSERÇÃO DE DADOS:\n\n"	
-			+"=> NOVO       'Habilita para grava novo registro'\n"
+			+"=> NOVO     'Habilita para grava novo registro'\n"
 			+"=> IMPRIMIR 'Imprime dados ordenados em arquivo'\n"
 			+"=> REMOVER  'Remove logicamente o registro'\n"
 			+"=> SAIR\n"
@@ -202,8 +202,8 @@ public class Prints {
 		msgb(
 			"	OPÇÕES PARA CONSULTAR ARQUIVO:\n\n"	
 			+"=> NAVEGAR  'Navega pelo arquivo com comando de teclado'\n"
-			+"=> FILTRAR      'Encontra um registro especifico no arquivo'\n"
-			+"=> ARQUIVO   'Imprime arquivo inteiro'\n"
+			+"=> FILTRAR  'Encontra um registro especifico no arquivo'\n"
+			+"=> ARQUIVO  'Imprime arquivo inteiro'\n"
 			+"=> SAIR\n"
 		);		
 	}
@@ -215,9 +215,9 @@ public class Prints {
 	public static void menuOrdenadores()throws Exception {	
 		msgb(
 			"	ORDENAR DADOS COM?:\n\n"	
-			+"=> BOBLE          'Ordena dados do arquivo com BubleSort'\n"
-			+"=> QUICK           'Ordena dados do arquivo com QuickSort'\n"
-			+"=> COMPARAR  'Imprime dados estatísticos dos dois ordenadores \n"
+			+"=> BUBLE    'Ordena dados do arquivo com BubleSort'\n"
+			+"=> QUICK    'Ordena dados do arquivo com QuickSort'\n"
+			+"=> COMPARAR 'Imprime dados estatísticos dos dois ordenadores \n"
 			+"=> SAIR\n"
 		);		
 	}
