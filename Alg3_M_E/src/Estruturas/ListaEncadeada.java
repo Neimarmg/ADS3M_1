@@ -13,24 +13,24 @@ public class ListaEncadeada<T extends Comparable<T>> {
 		return head;
 	}
 	
+	public static void setAcum(String acum) {
+		ListaEncadeada.acum = acum;
+	}
+	
 	public static String getAcum() {
 		return acum;
 	}
 	
 	/**
-	 * imprime na tela e salva e registros após a ordenação
-	 */
-	public void gravaArquivo(boolean imprimirLista) {
+	 * imprime quando abilitado na tela e edita registros após a ordenação
+	*/
+	public void ordenador(boolean impressaoPrevia) {
 		try {
 			Nodo<?> nodo = head;
 			do {
-				acum += "\n" +nodo.getData();
-				
-				if(imprimirLista){ // Imprime a lista para consulta prévia
-					Prints.msg("\n" +nodo.getData());
-				}
-				nodo = nodo.getNext();
-				
+				if(impressaoPrevia){Prints.msg("\n" +nodo.getData());}//Imprime a lista para consulta prévia em tempo de execução}
+				acum += "\n" +nodo.getData(); //Acumalador de ordeção
+				nodo = nodo.getNext();				
 			} while (nodo != null);			
 			
 		} catch (NullPointerException e) {

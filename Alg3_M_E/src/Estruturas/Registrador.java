@@ -33,7 +33,7 @@ public class Registrador {
 		case "novo":
 			insereDados();
 			crud.setAppend(true);
-			crud.addNovo(nomeArquivo, nome +"\n" +fone);
+			crud.addNovo(nomeArquivo, nome +"," +fone +"\n");
 			lista.leArquivo(nomeArquivo);
 			
 			insereLista(nomeArquivo);		

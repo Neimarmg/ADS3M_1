@@ -58,6 +58,7 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 	public void editaArquivo(String nomeArquivo) throws IOException {
 		crud.setAppend(false);
 		crud.addNovo(nomeArquivo, getAcum());
+		ListaEncadeada.setAcum("");
 	}
 	
 	
@@ -86,7 +87,7 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		} catch (FileNotFoundException e1) {
 			Prints.msgb("Arquivo inexistente.");
 		}
-		lista.gravaArquivo(false);
+		lista.ordenador(false);
 		editaArquivo(nomeArquivo);		
 	}
 }

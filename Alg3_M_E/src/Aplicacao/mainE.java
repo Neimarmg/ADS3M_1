@@ -27,6 +27,7 @@ public class mainE{
 		case "t1":	
 			Prints.mostarMenuT1();
 			in.iniciaTarefas();	
+			selecionaAtividade();
 			break;
 			
 		case "t2":			
@@ -34,14 +35,17 @@ public class mainE{
 			consulta.buscaBinaria(
 				Prints.digita("Nome do arquivo"), 
 				Prints.digita("Parâmetro "));
+			selecionaAtividade();
 			break;
 			
-		case "t4":
-
+		case "t4":	
+			Prints.objetoNaoImplementado();
+			selecionaAtividade();
 			break;
 			
-		case "arquivo":
-			
+		case "t5":
+			Prints.msge("Aguarda atividade do professor!");
+			selecionaAtividade();
 			break;
 		
 		case "sair":
