@@ -131,7 +131,6 @@ public class Prints {
 			"	CONSULTAS EM: \n\n"	
 			+"=> ARQUIVO\n"
 			+"=> BINARIA\n"
-			//+"=> LISTA\n"
 			+"=> SAIR\n"
 		);		
 	}
@@ -196,7 +195,7 @@ public class Prints {
 			"	OPÇÕES PARA CONSULTAR ARQUIVO:\n\n"	
 			+"=> NAVEGAR\n"
 			+"=> FILTRAR\n"
-			+"=> TODOS\n"
+			+"=> ARQUIVO (Imprime arquivo inteiro)\n"
 			+"=> SAIR\n"
 		);		
 	}

@@ -55,6 +55,17 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		insert(novo);
 	}
 	
+	public void editaArquivo(String nomeArquivo) throws IOException {
+		crud.setAppend(false);
+		crud.addNovo(nomeArquivo, getAcum());
+	}
+	
+	
+	/**
+	 * Método responsavel pela leitura dos dados do arquivo
+	 * @param nomeArquivo
+	 * @throws IOException
+	 */
 	public void leArquivo(String nomeArquivo) throws IOException {
 		ListaOrdenada<String> lista = new ListaOrdenada<String>();		
 		
@@ -62,7 +73,7 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 			FileReader file = new FileReader(nomeArquivo);
 			buff = new BufferedReader(file);
 			String linha = buff.readLine();
-			Prints.msgb("Registro em aquivo:");
+			
 			while(linha != null ){
 				linha = buff.readLine();
 				lista.insert(new Nodo<String>(linha), lista.getHead());
@@ -75,10 +86,7 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		} catch (FileNotFoundException e1) {
 			Prints.msgb("Arquivo inexistente.");
 		}
-		
 		lista.gravaArquivo(false);
-		crud.setAppend(false);
-		crud.addNovo(nomeArquivo, getAcum());
+		editaArquivo(nomeArquivo);		
 	}
-
 }

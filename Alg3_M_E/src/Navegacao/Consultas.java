@@ -23,9 +23,11 @@ public class Consultas {
 
 	
 	/**
+	 * Método global de impresão de dados de arquivo
 	 * @param nomeArquivo
-	 * @param especifica
-	 * @throws IOException 
+	 * @param campo
+	 * @param filtrar
+	 * @throws IOException
 	 */
 	public void especifica(String nomeArquivo,String campo, boolean filtrar) throws IOException {
 		try {
@@ -35,8 +37,10 @@ public class Consultas {
 			Prints.msgb("Registro encontrados:");
 			while(linha != null ){
 				linha = br.readLine();
-				if (linha.equals(campo) && filtrar == true){	
-					Prints.msg("> " +linha +"\n");
+				if (filtrar == true){	
+					if (linha.equals(campo)){
+						Prints.msg("> " +linha +"\n");
+					}
 				}else{
 					Prints.msg("> " +linha +"\n");
 				}				
@@ -67,8 +71,8 @@ public class Consultas {
 				carrega();
 				break;
 				
-			case "todos":
-				ficheiro.imprime(Prints.digita("Nome do arquivo"));
+			case "arquivo":
+				especifica(Prints.digita("Nome do arquivo"),"",false);
 				carrega();
 				break;
 				
