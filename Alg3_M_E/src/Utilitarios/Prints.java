@@ -62,7 +62,7 @@ public class Prints {
 	
 
 	/**
-	 * Método de label dos comandos do sistema
+	 * Método de Label dos comandos do sistema
 	 * @param label
 	 */
 	public static void paleta(String label) {
@@ -85,7 +85,7 @@ public class Prints {
 	}
 	
 	/**
-	 * Método de retorno que recebe ficheiro label com parâmento e retorna
+	 * Método de retorno que recebe ficheiro label com paramento e retorna
 	 * uma string para filtros
 	 * @param label
 	 * @return
@@ -113,8 +113,8 @@ public class Prints {
 	public static void mostarMenuT1() {		
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
 		+"=> INSERIR   'Insere registros em arquivo'\n"
-		+"=> CONSULTAR 'Conteudo do aquivo'\n"
-		+"=> IMPRIMIR  'Imprim arquivo selecionado'\n"
+		+"=> CONSULTAR 'Conteúdo do arquivo'\n"
+		+"=> IMPRIMIR  'Imprime arquivo selecionado'\n"
 		+"=> ARQUIVO   'Propriedades de arquivo'\n"
 		+"=> SAIR\n");
 	}
@@ -138,7 +138,7 @@ public class Prints {
 	public static void menuConsultas()throws Exception {	
 		msgb(
 			"	CONSULTAS EM: \n\n"	
-			+"=> ARQUIVO 'Acessa um aquivo especificado para consulta'\n"
+			+"=> ARQUIVO 'Acessa um arquivo especificado para consulta'\n"
 			+"=> SAIR\n"
 		);		
 	}
@@ -162,7 +162,7 @@ public class Prints {
 	public static void  nomeArquivo()throws Exception {	
 		msgb(
 			"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
-			+"=> Nome.Extenção\n"
+			+"=> Nome.Extensão\n"
 			+"=> SAIR\n"
 		);		
 	}
@@ -174,9 +174,9 @@ public class Prints {
 	public static void menuArquivo()throws Exception {	
 		msgb(
 			"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
-			+"=> NOVO    'Cria um novo arquivo embranco'\n"
-			+"=> BUSCAR  'Busca lista de aquivos exientes'\n"
-			+"=> REMOVER 'Remove aquivo existente'\n"
+			+"=> NOVO    'Cria um novo arquivo em branco'\n"
+			+"=> BUSCAR  'Busca lista de arquivos existentes'\n"
+			+"=> REMOVER 'Remove arquivo existente'\n"
 			+"=> SAIR\n"
 		);		
 	}
@@ -188,9 +188,9 @@ public class Prints {
 	public static void menuInserirNovo()throws Exception {	
 		msgb(
 			"	OPÇÕES PARA INSERÇÃO DE DADOS:\n\n"	
-			+"=> NOVO     'Abilita para grava novo registro'\n"
+			+"=> NOVO       'Habilita para grava novo registro'\n"
 			+"=> IMPRIMIR 'Imprime dados ordenados em arquivo'\n"
-			+"=> REMOVER  'remove logicamente o registro'\n"
+			+"=> REMOVER  'Remove logicamente o registro'\n"
 			+"=> SAIR\n"
 		);		
 	}
@@ -202,9 +202,24 @@ public class Prints {
 		msgb(
 			"	OPÇÕES PARA CONSULTAR ARQUIVO:\n\n"	
 			+"=> NAVEGAR  'Navega pelo arquivo com comando de teclado'\n"
-			+"=> FILTRAR  'Encontra um registro especifico no arquivo'\n"
-			+"=> ARQUIVO  'Imprime arquivo inteiro'\n"
+			+"=> FILTRAR      'Encontra um registro especifico no arquivo'\n"
+			+"=> ARQUIVO   'Imprime arquivo inteiro'\n"
 			+"=> SAIR\n"
 		);		
 	}
+
+		/**
+	* Metodo responsável pela execução das formas de ordenação
+	 * @throws Exception
+	 */
+	public static void menuOrdenadores()throws Exception {	
+		msgb(
+			"	ORDENAR DADOS COM?:\n\n"	
+			+"=> BOBLE          'Ordena dados do arquivo com BubleSort'\n"
+			+"=> QUICK           'Ordena dados do arquivo com QuickSort'\n"
+			+"=> COMPARAR  'Imprime dados estatísticos dos dois ordenadores \n"
+			+"=> SAIR\n"
+		);		
+	}
+
 }
