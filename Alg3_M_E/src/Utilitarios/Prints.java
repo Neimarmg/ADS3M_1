@@ -52,7 +52,7 @@ public class Prints {
 	
 	
 	public static void opcaoInvalida() {
-		System .err.println("\nOpção de comando inválido. Tente novamente.");
+		System .err.println("\nComando inválido! Tente novamente?");
 	}
 	
 	
@@ -101,7 +101,16 @@ public class Prints {
 	}
 	
 	
-	public static void mostarMenuMaim() {		
+	public static void menuSelecinaAtividade() {		
+		msgb("	QUAL É ATIVIDADE?\n\n"
+		+"=> T1 'Listas encadeadas'\n"
+		+"=> T2 'Pesquisa Binária'\n"
+		+"=> T4 'Algoritmos de ordenação'\n"
+		+"=> T5 '??'\n"
+		+"=> SAIR\n");
+	}
+	
+	public static void mostarMenuT1() {		
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
 		+"=> INSERIR   'Insere registros em arquivo'\n"
 		+"=> CONSULTAR 'Conteudo do aquivo'\n"
@@ -130,7 +139,6 @@ public class Prints {
 		msgb(
 			"	CONSULTAS EM: \n\n"	
 			+"=> ARQUIVO 'Acessa um aquivo especificado para consulta'\n"
-			+"=> BINARIA 'Realiza uma busca binária em um aquivo ordendo'\n"
 			+"=> SAIR\n"
 		);		
 	}

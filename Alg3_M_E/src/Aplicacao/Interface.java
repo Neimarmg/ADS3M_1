@@ -32,10 +32,6 @@ public class Interface<T> extends Prints {
 				consultas.carrega();
 				break;
 				
-			case "binaria":
-				consultas.buscaBinaria(digita("Nome do arquivo"), digita("Parâmetro "));
-				break;
-				
 			case "sair":
 				sair();
 				break;

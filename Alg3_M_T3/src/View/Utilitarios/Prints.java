@@ -56,7 +56,7 @@ public class Prints {
 	
 	
 	public static void opcaoInvalida() {
-		System .err.println("\nOpção de comando inválido. Tente novamente.");
+		System .err.println("\nComando inválido. Tente novamente.");
 	}
 	
 	

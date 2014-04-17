@@ -1,39 +1,72 @@
 package Aplicacao;
 
+import Navegacao.Consultas;
 import Utilitarios.Dia;
 import Utilitarios.Prints;
 
-public class mainE {
+public class mainE{
 	Interface<Object> in = new Interface<Object>();
+	Consultas consulta = new Consultas();
 	Dia d = new Dia();
-	
+
 	/**
 	 * Descrição do cabeçalho principal do programa
 	 */
 	private void escreveCabecalho() {
-		Prints.msgb("	EXERCÍCIO DE ESTRUTURAS LINEARES\n\n"
-			+"Listas encadeadas T1\n"
-			+"Pesquisa binária T2\n"
-			+"Algoritmos de ordenação T4");		
+		Prints.msgb("\n" +"	EXERCÍCIO DE ESTRUTURAS JAVA\n");
 	}
+	
+	/**
+	 *	Método de inicial do programa com definição das atividades solicitadas
+	 * @throws Exception
+	 */
+	private void selecionaAtividade() throws Exception {
+		Prints.menuSelecinaAtividade();	
+		switch (Prints.digita("Atividade")) {
 		
+		case "t1":	
+			Prints.mostarMenuT1();
+			in.iniciaTarefas();	
+			break;
+			
+		case "t2":			
+			Prints.msgc("	CONSULTA BINÁRIA\n\n");
+			consulta.buscaBinaria(
+				Prints.digita("Nome do arquivo"), 
+				Prints.digita("Parâmetro "));
+			break;
+			
+		case "t4":
+
+			break;
+			
+		case "arquivo":
+			
+			break;
+		
+		case "sair":
+			Prints.sair();
+			break;
+			
+		default: 
+			Prints.opcaoInvalida();
+			selecionaAtividade();
+			break;
+		}
+	}
+	
 	
 	/**
 	 * @throws Exception
 	 */
 	private void run() throws Exception {
 		escreveCabecalho();
-		d.defineSaudacao();
-		Prints.mostarMenuMaim();
-		in.iniciaTarefas();
+		d.defineSaudacao();		
+		selecionaAtividade();
 	}
 	
 
 	public static void main(String[] args)throws Exception {
-		new mainE().run();   
-		
-		//Ordenadores o = new Ordenadores();
-		//o.bubleSort();
-		//o.pritBubleSort();
+		new mainE().run();  	
 	}
 }
