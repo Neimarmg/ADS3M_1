@@ -19,10 +19,10 @@ public class Nodo<T extends Comparable<T>> implements Comparable<Nodo<T>> {
 		return chave;
 	}
 	
+	/*
  	private void setData(T chave) {
 		this.chave = chave;
-	}
-
+	} */
 	
 	public Nodo<T> getNext() {
 		return next;

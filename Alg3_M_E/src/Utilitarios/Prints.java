@@ -103,10 +103,10 @@ public class Prints {
 	
 	public static void mostarMenuMaim() {		
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
-		+"=> INSERIR\n"
-		+"=> CONSULTAR\n"
-		+"=> IMPRIMIR\n"
-		+"=> ARQUIVO\n"
+		+"=> INSERIR   'Insere registros em arquivo'\n"
+		+"=> CONSULTAR 'Conteudo do aquivo'\n"
+		+"=> IMPRIMIR  'Imprim arquivo selecionado'\n"
+		+"=> ARQUIVO   'Propriedades de arquivo'\n"
 		+"=> SAIR\n");
 	}
 	
@@ -117,7 +117,7 @@ public class Prints {
 	public static void menuInsert() throws Exception {
 		msgb(
 			"	GRAVAR DADOS EM: \n\n"	
-			+"=> ARQUIVO\n"
+			+"=> ARQUIVO 'Define qual arquivo o registro será inserido'\n"
 			+"=> SAIR\n"
 		);			
 	}
@@ -129,8 +129,8 @@ public class Prints {
 	public static void menuConsultas()throws Exception {	
 		msgb(
 			"	CONSULTAS EM: \n\n"	
-			+"=> ARQUIVO\n"
-			+"=> BINARIA\n"
+			+"=> ARQUIVO 'Acessa um aquivo especificado para consulta'\n"
+			+"=> BINARIA 'Realiza uma busca binária em um aquivo ordendo'\n"
 			+"=> SAIR\n"
 		);		
 	}
@@ -142,7 +142,7 @@ public class Prints {
 	public static void menuImprimir()throws Exception {	
 		msgb(
 			"	MENU OPÇÕES DE IMPRESSÃO:\n\n"	
-			+"=> ARQUIVO\n"
+			+"=> ARQUIVO 'Atalho para impressão do conteúdo do arquivo'\n"
 			+"=> SAIR\n"
 		);		
 	}
@@ -166,9 +166,9 @@ public class Prints {
 	public static void menuArquivo()throws Exception {	
 		msgb(
 			"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
-			+"=> NOVO\n"
-			+"=> BUSCAR\n"
-			+"=> REMOVER\n"
+			+"=> NOVO    'Cria um novo arquivo embranco'\n"
+			+"=> BUSCAR  'Busca lista de aquivos exientes'\n"
+			+"=> REMOVER 'Remove aquivo existente'\n"
 			+"=> SAIR\n"
 		);		
 	}
@@ -180,9 +180,9 @@ public class Prints {
 	public static void menuInserirNovo()throws Exception {	
 		msgb(
 			"	OPÇÕES PARA INSERÇÃO DE DADOS:\n\n"	
-			+"=> NOVO\n"
-			+"=> IMPRIMIR\n"
-			+"=> REMOVER\n"
+			+"=> NOVO     'Abilita para grava novo registro'\n"
+			+"=> IMPRIMIR 'Imprime dados ordenados em arquivo'\n"
+			+"=> REMOVER  'remove logicamente o registro'\n"
 			+"=> SAIR\n"
 		);		
 	}
@@ -193,9 +193,9 @@ public class Prints {
 	public static void menuConsultaArquivo()throws Exception {	
 		msgb(
 			"	OPÇÕES PARA CONSULTAR ARQUIVO:\n\n"	
-			+"=> NAVEGAR\n"
-			+"=> FILTRAR\n"
-			+"=> ARQUIVO (Imprime arquivo inteiro)\n"
+			+"=> NAVEGAR  'Navega pelo arquivo com comando de teclado'\n"
+			+"=> FILTRAR  'Encontra um registro especifico no arquivo'\n"
+			+"=> ARQUIVO  'Imprime arquivo inteiro'\n"
 			+"=> SAIR\n"
 		);		
 	}

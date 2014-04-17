@@ -109,45 +109,44 @@ public class Prints {
 	
 	public static void menuJogar() {		
 		msgb("	COMANDOS DE JOGO?\n\n"
-		+ "=> JOGAR\n"
-		+ "=> PERSONALIZAR\n"
-		+ "=> SAIR\n");
+		+ "=> JOGAR        'Abilita o jogador a jogar'\n"
+		+ "=> PERSONALIZAR 'Personaliza nivel inicial de jogo'\n"
+		+ "=> SAIR         'Sai o programa'\n");
 	}
 
 	
 	public static void menuMain() {		
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
-		+ "=> INICIAR\n"
-		+ "=> IMPRIMIR\n"
+		+ "=> INICIAR  'Iniciar mapa de jogo'\n"
+		+ "=> IMPRIMIR 'Imprimi opções de jogo'\n"
 		+ "=> SAIR\n");
 	}
 
 	
 	public static void menuBatalha() {		
 		msgb("	COMANDOS DE JOGO?\n\n"
-		+ "=> ATIRAR\n"
-		+ "=> IMPRIMIR\n"
+		+ "=> ATIRAR   'Abilita o jogador a inserir cordenadas'\n"
 		+ "=> SAIR\n");
 	}
 
 	
 	public static void menuImprimir() {		
 		msgb("	COMANDOS DE IMPRESSÃO?\n\n"
-		+ "=> MAPA\n"
-		+ "=> NAVIOS\n"		
-		+ "=> NIVEIS\n"
-		+ "=> SOLDADO\n"
-		+ "=> FILTRAR\n"
-		+ "=> TODOS\n"
+		+ "=> MAPA    'Imprime mapa atual'\n"
+		+ "=> NAVIOS  'Imprime navios existentes'\n"		
+		+ "=> NIVEIS  'Imprime niveis de jogo'\n"
+		+ "=> SOLDADO 'Imprime dodos do jogador'\n"
+		+ "=> FILTRAR 'Filtra dados'\n"
+		+ "=> TODOS   'Imprime todos os dados de jogo'\n"
 		+ "=> SAIR\n");
 	}
 	
 	
 	public static void menuFiltrar() {		
 		msgb("	COMANDOS DE IMPRESSÃO?\n\n"
-		+ "=> NAVIOS\n"		
-		+ "=> NIVEIS\n"
-		+ "=> RETORNAR\n"
+		+ "=> NAVIOS   'Opçao de filtro'\n"		
+		+ "=> NIVEIS   'Opçao de filtro'\n"
+		+ "=> RETORNAR 'Retorna ao menu imprimir'\n"
 		+ "=> SAIR\n");
 	}
 }

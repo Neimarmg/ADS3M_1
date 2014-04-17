@@ -7,7 +7,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.nio.file.Paths;
 import java.nio.file.Path;
-import Aplicacao.Interface;
 import Utilitarios.crud;
 import Utilitarios.Prints;
 
@@ -76,8 +75,7 @@ public class Ficheiro {
 			br.close();			
 		} catch (FileNotFoundException e) {
 			Prints.msgb("Nome do arquivo incorreto ou inexistente.");
-			Interface Interface = new Interface();
-			Interface.imprime();
+			Prints.sair();
 		}
     }
 }

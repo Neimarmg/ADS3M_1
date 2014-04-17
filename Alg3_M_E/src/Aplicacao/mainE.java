@@ -1,8 +1,5 @@
 package Aplicacao;
 
-import javax.jws.Oneway;
-
-import Estruturas.Ordenadores;
 import Utilitarios.Dia;
 import Utilitarios.Prints;
 
