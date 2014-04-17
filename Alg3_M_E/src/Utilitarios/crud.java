@@ -13,22 +13,30 @@ import java.io.IOException;
  * @author moises
  */
 public class crud {
-	String acun = "";
-	Boolean edita = true;
+	static String acun = "";
+	private static Boolean append = false;
 	
+	public static void setAppend(Boolean append) {
+		crud.append = append;
+	}
+	
+	public static Boolean getAppend() {
+		return append;
+	}
 	/**
 	 * Insere novo registro em arquivo .txt!
 	 * @param arquivo
 	 * @param desc
 	 * @throws IOException 
 	 */
-	public void addNovo(String arquivo,String  desc) throws IOException {
+	public static void addNovo(String arquivo,String  desc) throws IOException {
 		FileWriter f;
 		BufferedWriter buff = null;
 		try {
-			f = new FileWriter(new File(arquivo),edita);
+			f = new FileWriter(new File(arquivo),getAppend());
 			buff = new BufferedWriter(f);			
-			if (edita == true){	
+			
+			if (getAppend() == true){	
 				buff.newLine();				
 			}			
 			buff.write(desc);			
@@ -47,7 +55,7 @@ public class crud {
 	 * @param desc
 	 * @throws IOException 
 	 */
-	public void remove(String nomeArquivo, String  desc) throws IOException {                 
+	public static void remove(String nomeArquivo, String  desc) throws IOException {                 
 		BufferedReader br;
 		FileReader r = new FileReader(nomeArquivo);
 		br = new BufferedReader(r);
@@ -57,15 +65,15 @@ public class crud {
 				
 				if (linha.equals(desc)){	
 					acun += "#"+linha +"\n";
-					edita = true;
+					setAppend(true);
 					}else{
 					acun += linha +"\n";
-					edita = false;					
+					setAppend(false);					
 				}
 				linha = br.readLine();
-			}
-			addNovo(nomeArquivo, acun);
+			}			
 			br.close();
+			addNovo(nomeArquivo, acun);
 		} catch (NullPointerException e) {
 			e.getMessage();
 		} catch (FileNotFoundException e1) {

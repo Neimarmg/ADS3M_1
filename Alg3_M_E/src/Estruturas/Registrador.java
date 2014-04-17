@@ -1,6 +1,7 @@
 package Estruturas;
 
 import Arquivos.Ficheiro;
+import Navegacao.Consultas;
 import Utilitarios.Prints;
 import Utilitarios.crud;
 
@@ -8,7 +9,7 @@ public class Registrador {
 
 	String desc, fone , nome;
 	Ficheiro ficheiro =  new Ficheiro();
-	crud crud = new crud();
+	Consultas consulta = new Consultas();
 	ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	
 	/**
@@ -31,17 +32,21 @@ public class Registrador {
 		
 		case "novo":
 			insereDados();
-			//lista.insert(new Nodo<String>();
-			lista.insert(new Nodo<String>(nome +"/Fone:" +fone), lista.getHead());
-			insereLista(nomeArquivo);
+			crud.setAppend(true);
+			crud.addNovo(nomeArquivo, nome +"\n" +fone);
+			lista.leArquivo(nomeArquivo);
+			
+			insereLista(nomeArquivo);		
 			break;
 		
 		case "imprimir":
-			lista.print();
+			consulta.especifica(nomeArquivo, "", false);
 			insereLista(nomeArquivo);
 			break;
-		case  "remover" :
+			
+		case  "remover" :			
 			desc = Prints.digita("\nNome parágrafo excluir");
+			crud.setAppend(false);
 			crud.remove(nomeArquivo,desc);
 		case "sair":
 			Prints.sair();

@@ -1,6 +1,16 @@
 package Estruturas;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import Utilitarios.Prints;
+import Utilitarios.crud;
+
 public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
+
+	private BufferedReader buff;
 
 	
 	private Nodo<T> findBefore(Nodo<T> novo) {
@@ -18,7 +28,6 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 			if (comp > 0)
 				return anterior;
 		}
-		
 		return anterior;
 	}
 	
@@ -31,6 +40,7 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		} else {
 			super.insert(novo, anterior);
 		}
+		
 	}
 
 
@@ -45,19 +55,30 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		insert(novo);
 	}
 	
-	/**
-	private void InsereLista() {
-		ListaOrdenada<String> lista = new ListaOrdenada<String>();
+	public void leArquivo(String nomeArquivo) throws IOException {
+		ListaOrdenada<String> lista = new ListaOrdenada<String>();		
 		
-		lista.insert(new Nodo<String>("Rafael"));
-		lista.insert(new Nodo<String>("Tiago"), lista.getHead());
-		lista.append(new Nodo<String>("Mauro"));
-		lista.insert(new Nodo<String>("Carlos"));
-		lista.insert(new Nodo<String>("Raffael"));
-		lista.insert(new Nodo<String>("Rafael"));
-		lista.insert(new Nodo<String>("Raphael"));
+		try{
+			FileReader file = new FileReader(nomeArquivo);
+			buff = new BufferedReader(file);
+			String linha = buff.readLine();
+			Prints.msgb("Registro em aquivo:");
+			while(linha != null ){
+				linha = buff.readLine();
+				lista.insert(new Nodo<String>(linha), lista.getHead());
+				
+			}			
+			buff.close();
+			
+		} catch (NullPointerException e) {
+			e.getMessage();
+		} catch (FileNotFoundException e1) {
+			Prints.msgb("Arquivo inexistente.");
+		}
 		
-		lista.print();
+		lista.gravaArquivo(false);
+		crud.setAppend(false);
+		crud.addNovo(nomeArquivo, getAcum());
 	}
-*/
+
 }

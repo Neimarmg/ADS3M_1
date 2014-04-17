@@ -27,7 +27,7 @@ public class Consultas {
 	 * @param especifica
 	 * @throws IOException 
 	 */
-	public void especifica(String nomeArquivo,String campo) throws IOException {
+	public void especifica(String nomeArquivo,String campo, boolean filtrar) throws IOException {
 		try {
 			FileReader r = new FileReader(nomeArquivo);
 			br = new BufferedReader(r);
@@ -35,10 +35,11 @@ public class Consultas {
 			Prints.msgb("Registro encontrados:");
 			while(linha != null ){
 				linha = br.readLine();
-				if (linha.equals(campo)){	
+				if (linha.equals(campo) && filtrar == true){	
 					Prints.msg("> " +linha +"\n");
-					contador++;
-				}
+				}else{
+					Prints.msg("> " +linha +"\n");
+				}				
 			}
 			
 			
@@ -62,7 +63,7 @@ public class Consultas {
 				break;
 
 			case "filtrar":				
-				especifica(Prints.digita("Nome do arquivo"),Prints.digita("Contato"));
+				especifica(Prints.digita("Nome do arquivo"),Prints.digita("Contato"),true);
 				carrega();
 				break;
 				

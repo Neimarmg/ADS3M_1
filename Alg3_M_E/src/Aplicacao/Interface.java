@@ -57,7 +57,7 @@ public class Interface<T> extends Prints {
 		switch (digita("")) {			
 			
 		case "arquivo":		
-			registra.insereLista(digita("Nome do arquivo"));
+			registra.insereLista(digita("Nome do arquivo"));			
 			break;
 	
 		case "sair":
@@ -137,7 +137,7 @@ public class Interface<T> extends Prints {
 	 */
 	public void verificaInserir() throws Exception {
 		msg("\nVerificando disco...\n");
-		if (memoria.totalizaMenoria() < 6000){ // Verifica memória ao inserir dados.
+		if (memoria.totalizaMenoria() > 6000){ // Verifica memória ao inserir dados.
 			msg("\nVerificação concluída ha memória disponível!\n");
 			salva();
 		}else{
@@ -152,7 +152,7 @@ public class Interface<T> extends Prints {
 	 * @throws Exception
 	 */
 	public void iniciaTarefas() throws Exception {
-			
+		//registra.insereLista("l.txt");	
 		switch (digita("")) {
 		
 		case "consultar":	
