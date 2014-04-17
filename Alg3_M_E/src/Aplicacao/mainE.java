@@ -33,10 +33,10 @@ public class mainE {
 	
 
 	public static void main(String[] args)throws Exception {
-		//new mainE1().run();   
+		new mainE().run();   
 		
-		Ordenadores o = new Ordenadores();
-		o.bubleSort();
-		o.pritBubleSort();
+		//Ordenadores o = new Ordenadores();
+		//o.bubleSort();
+		//o.pritBubleSort();
 	}
 }

@@ -118,8 +118,6 @@ public class Prints {
 		msgb(
 			"	GRAVAR DADOS EM: \n\n"	
 			+"=> ARQUIVO\n"
-			+"=> LISTA\n"
-			+"=> AMBOS\n"
 			+"=> SAIR\n"
 		);			
 	}
@@ -133,7 +131,7 @@ public class Prints {
 			"	CONSULTAS EM: \n\n"	
 			+"=> ARQUIVO\n"
 			+"=> BINARIA\n"
-			+"=> LISTA\n"
+			//+"=> LISTA\n"
 			+"=> SAIR\n"
 		);		
 	}

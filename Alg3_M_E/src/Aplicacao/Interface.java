@@ -54,29 +54,21 @@ public class Interface<T> extends Prints {
 	public void salva() throws Exception {	
 		menuInsert();		
 					
-			switch (digita("")) {			
-			case "arquivo":	
-				registra.insereArquivo(digita("Nome do arquivo"));
-				break;
-				
-			case "lista":		
-				registra.insereLista();
-				break;
+		switch (digita("")) {			
+			
+		case "arquivo":		
+			registra.insereLista(digita("Nome do arquivo"));
+			break;
 	
-			case "ambos":		
-				registra.insereAmbas(digita("Nome do arquivo"));			
-				break;
+		case "sair":
+			sair();
+			break;
 				
-			case "sair":
-				sair();
-				break;
-				
-			default:
-				opcaoInvalida();
-				salva();
-				break;
-			}		
-	
+		default:
+			opcaoInvalida();
+			salva();
+			break;
+		}	
 	}	
 	
 
@@ -145,9 +137,9 @@ public class Interface<T> extends Prints {
 	 */
 	public void verificaInserir() throws Exception {
 		msg("\nVerificando disco...\n");
-		if (memoria.totalizaMenoria() > 6000){ // Verifica memória ao inserir dados.
+		if (memoria.totalizaMenoria() < 6000){ // Verifica memória ao inserir dados.
 			msg("\nVerificação concluída ha memória disponível!\n");
-			salva();;
+			salva();
 		}else{
 			espacoInsuficiente();
 			imprime();
