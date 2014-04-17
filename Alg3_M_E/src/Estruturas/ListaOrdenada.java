@@ -12,7 +12,11 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 
 	private BufferedReader buff;
 
-	
+	/**
+	 * Método de ordenação de dados
+	 * @param novo
+	 * @return
+	 */
 	private Nodo<T> findBefore(Nodo<T> novo) {
 		Nodo<T> atual = getHead();
 		Nodo<T> anterior = null;
@@ -55,15 +59,20 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		insert(novo);
 	}
 	
+	/**
+	 * Método responsavel por salva alterações 
+	 * @param nomeArquivo
+	 * @throws IOException
+	 */
 	public void editaArquivo(String nomeArquivo) throws IOException {
 		crud.setAppend(false);
 		crud.addNovo(nomeArquivo, getAcum());
-		ListaEncadeada.setAcum("");
+		ListaEncadeada.setAcum(""); //Parâmetro de limpeza de queche 
 	}
 	
 	
 	/**
-	 * Método responsavel pela leitura dos dados do arquivo
+	 * Método responsavel pela leitura dos dados em arquivo finalizar as alterações
 	 * @param nomeArquivo
 	 * @throws IOException
 	 */

@@ -29,7 +29,7 @@ public class Interface<T> extends Prints {
 				break;
 				
 			case "arquivo":
-				consultas.carrega();
+				consultas.selecionaComando();
 				break;
 				
 			case "sair":
@@ -77,7 +77,7 @@ public class Interface<T> extends Prints {
 		switch (digita("")) {		
 		
 		case "arquivo":
-			ficheiro.imprime(digita("Nome do arquivo"));
+			ficheiro.abreFicheiro(digita("Nome do arquivo"));
 			imprime();
 			break;
 

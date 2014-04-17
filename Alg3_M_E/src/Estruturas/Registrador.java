@@ -7,18 +7,18 @@ import Utilitarios.crud;
 
 public class Registrador {
 
-	String desc, fone , nome;
+	String fone , nome;
 	Ficheiro ficheiro =  new Ficheiro();
 	Consultas consulta = new Consultas();
 	ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	
 	/**
+	 * Método de inserção de dados no arquivo
 	 * @throws Exception
 	 */
 	public void insereDados() throws Exception {
 		nome =  Prints.digita("Contato");
 		fone = 	Prints.digita("Telefone");
-		desc = nome +" " + fone;
 	}
 	
 	
@@ -35,19 +35,17 @@ public class Registrador {
 			crud.setAppend(true);
 			crud.addNovo(nomeArquivo, nome +"," +fone +"\n");
 			lista.leArquivo(nomeArquivo);
-			
 			insereLista(nomeArquivo);		
 			break;
 		
 		case "imprimir":
-			consulta.especifica(nomeArquivo, "", false);
+			consulta.abreArquivo(nomeArquivo, "", false);
 			insereLista(nomeArquivo);
 			break;
 			
 		case  "remover" :			
-			desc = Prints.digita("\nNome parágrafo excluir");
-			crud.setAppend(false);
-			crud.remove(nomeArquivo,desc);
+			crud.setAppend(false); //Desabilita append para sobscrever dados no arquivo
+			crud.remove(nomeArquivo,Prints.digita("\nNome parágrafo excluir"));
 		case "sair":
 			Prints.sair();
 			break;

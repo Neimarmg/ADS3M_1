@@ -34,7 +34,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 			} while (nodo != null);			
 			
 		} catch (NullPointerException e) {
-			Prints.msg("\nNão existem elementos na lista ficheiro serem impressos.\n");
+			Prints.msg("\nNão existem dados no arquivo para serem impressos.\n");
 		}
 	}
 	

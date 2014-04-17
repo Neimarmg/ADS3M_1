@@ -45,16 +45,19 @@ public class Ordenadores {
 					
 		switch (Prints.digita("")) {			
 			
-		case "bub":		
-		
+		case "buble":		
+			
+			selecionaOrdenador();
 			break;
 		
 		case "quick":		
 		
+			selecionaOrdenador();
 			break;
 	
 		case "comparar":		
 		
+			selecionaOrdenador();
 			break;
 		case "sair":
 			Prints.sair();

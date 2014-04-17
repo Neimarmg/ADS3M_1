@@ -63,7 +63,7 @@ public class Ficheiro {
 	 * @param nomeAquivo
 	 * @throws Exception
 	 */
-	public void imprime(String nomeAquivo) throws Exception {
+	public void abreFicheiro(String nomeAquivo) throws Exception {
     	try {
 			FileReader f = new FileReader(nomeAquivo);
 			BufferedReader br = new BufferedReader(f);

@@ -23,13 +23,13 @@ public class Consultas {
 
 	
 	/**
-	 * Método global de impresão de dados de arquivo
+	 * Método global de impressão de dados de arquivo 
 	 * @param nomeArquivo
 	 * @param campo
 	 * @param filtrar
 	 * @throws IOException
 	 */
-	public void especifica(String nomeArquivo,String campo, boolean filtrar) throws IOException {
+	public void abreArquivo(String nomeArquivo,String campo, boolean filtrar) throws IOException {
 		try {
 			FileReader r = new FileReader(nomeArquivo);
 			br = new BufferedReader(r);
@@ -37,16 +37,14 @@ public class Consultas {
 			Prints.msgb("Registro encontrados:");
 			while(linha != null ){
 				linha = br.readLine();
-				if (filtrar == true){	
+				if (filtrar == true){//Imprime dados coincidente com o paramentro	
 					if (linha.equals(campo)){
 						Prints.msg("> " +linha +"\n");
 					}
 				}else{
 					Prints.msg("> " +linha +"\n");
 				}				
-			}
-			
-			
+			}			
 		} catch (NullPointerException e) {
 			e.getMessage();
 		} catch (FileNotFoundException e1) {
@@ -55,7 +53,11 @@ public class Consultas {
 	}
 	
 	
-	public void carrega() {
+	
+	/**
+	 * Seleciona comando de consulta
+	 */
+	public void selecionaComando() {
 		try {
 			Prints.menuConsultaArquivo();
 					
@@ -63,17 +65,17 @@ public class Consultas {
 			
 			case "navegar":
 				navega(Prints.digita("Nome do arquivo"));
-				carrega();
+				selecionaComando();
 				break;
 
 			case "filtrar":				
-				especifica(Prints.digita("Nome do arquivo"),Prints.digita("Contato"),true);
-				carrega();
+				abreArquivo(Prints.digita("Nome do arquivo"),Prints.digita("Contato"),true);
+				selecionaComando();
 				break;
 				
 			case "arquivo":
-				especifica(Prints.digita("Nome do arquivo"),"",false);
-				carrega();
+				abreArquivo(Prints.digita("Nome do arquivo"),"",false);
+				selecionaComando();
 				break;
 				
 			case "sair":
@@ -81,7 +83,7 @@ public class Consultas {
 				break;
 			default:
 				Prints.opcaoInvalida();
-				carrega();
+				selecionaComando();
 				break;
 			}			
 			
@@ -89,7 +91,7 @@ public class Consultas {
 			e.printStackTrace();
 		}
 	}
-	
+
 	
 	/**
 	 * Realiza busca binária dentro do arquivo
@@ -139,9 +141,6 @@ public class Consultas {
 	        } else {
 	        	System.out.println("\nNúmero não encontrado");
 	        }
-	    in.close();    
-	    }
-	*/
-		
-	}
+	    in.close(); */    
+	}		
 }
