@@ -29,7 +29,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 			Nodo<?> nodo = head;
 			do {
 				if(impressaoPrevia){Prints.msg("\n" +nodo.getData());}//Imprime a lista para consulta prévia em tempo de execução}
-				acum += "\n" +nodo.getData(); //Acumalador de ordeção
+				acum += "\n" +nodo.getData(); //Acumalador de ordenação
 				nodo = nodo.getNext();				
 			} while (nodo != null);			
 			

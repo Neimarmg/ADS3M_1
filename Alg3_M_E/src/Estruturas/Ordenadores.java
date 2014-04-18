@@ -4,39 +4,75 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Vector;
 
 import Utilitarios.Prints;
 
 public class Ordenadores {
 	
-	int v[]={1, 2, 3, 8, 4 ,6, 7, 5};
-	int aux;
+	int aux, i = 0;
+	static int tamanho = 1;
+	String vetor[] = new String[1];
 	boolean controle;
+	FileReader file;
+	BufferedReader buff;
 	String linha;
+
+	public static int getTamanho() {
+		return tamanho;
+	}
+	
+	/**
+	 *  
+	 * @param nomeArquivo
+	 * @throws IOException
+	 */
+	public  void defineTamanhaVetor(String nomeArquivo ) throws IOException{
+		file = new FileReader(nomeArquivo);		
+		buff = new BufferedReader(file);
+		linha = buff.readLine();
+		
+		while(linha != null ) {
+			linha = buff.readLine();
+			tamanho++;		
+		}
+		
+		Prints.msg("\t" +getTamanho() +"\n");
+	}
+	
 	
 	
 	/**
-	 * Método de carregaento de arquivo
+	 * Método de carregamento de arquivo para um array de strings
 	 * @param nomeArquivo
+	 * @throws IOException 
 	 */
-	public  void executaArquivo(String nomeArquivo){
-		try {
-			FileReader f = new FileReader(nomeArquivo);
-			BufferedReader br = new BufferedReader(f);
-			linha = br.readLine();
-			while(linha != null ) {
-				linha = br.readLine();
-				System.out.println(linha);
-			}
-			br.close();			
-		} catch (FileNotFoundException e) {
-			Prints.msgb("Nome do arquivo incorreto ou inexistente.");
-			Prints.sair();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}	
+	public  void executaArquivo(String nomeArquivo ) {
 		
+		try {
+			defineTamanhaVetor(nomeArquivo);
+			file = new FileReader(nomeArquivo);		
+			buff = new BufferedReader(file);
+			linha = buff.readLine();
+			vetor[1] = new String[getTamanho()];
+			while(linha != null ) {
+				linha = buff.readLine();
+				i++;
+				if (linha != null) {
+					vetor[i]= linha;	
+					Prints.msg("\n" +i +" " +vetor[i]);
+				}					
+			}			
+			buff.close();
+		} catch (FileNotFoundException e) {
+			Prints.msge("\nArquivo inexistenten\n");
+		} catch (IOException e) {
+			Prints.msge("\nO arquivo não pode ser fechado\n");
+		} catch (ArrayIndexOutOfBoundsException e) {
+			Prints.msge("\nO Espaço insufiente no array de armazenamento\n");
+		}
 	}
+	
 	
 	
 	
@@ -46,13 +82,14 @@ public class Ordenadores {
 //================<<Ordenação BubleSort>>=====================
 	
 	public void ordenaBubleSort(){
-		for (int i = 0; i < v.length; i++) {
+		
+		for (int i = 0; i < vetor.length; i++) {
 			controle = true;
-			for (int j = 0; j < v.length-1; j++) {
-				if (v[j] > v[j+1]) {
-					aux =v[j];
-					v[j] =v[j+1];
-					v[j+1] = aux;
+			for (int j = 0; j < vetor.length-1; j++) {
+				if (vetor[j] > vetor[j+1]) {
+					aux =vetor[j];
+					vetor[j] =vetor[j+1];
+					vetor[j+1] = aux;
 					controle = false;					
 				}		
 			}
@@ -89,8 +126,8 @@ public class Ordenadores {
 	 * Imprime dados do vetor ordenados
 	 */
 	public  void imprime(){
-		for (int i = 0; i < v.length; i++) {
-			Prints.msg("" +v[i] +"\n");
+		for (int i = 0; i < vetor.length; i++) {
+			Prints.msg("" +vetor[i] +"\n");
 		}
 	}
 		
@@ -101,9 +138,9 @@ public class Ordenadores {
 	 * @throws Exception
 	 */
 	public void selecionaOrdenador() throws Exception {	
-		Prints.menuOrdenadores();		
-					
-		switch (Prints.digita("")) {			
+		//Prints.menuOrdenadores();		
+		executaArquivo("l.txt");			
+		/*switch (Prints.digita("")) {			
 			
 		case "buble":		
 			
@@ -127,6 +164,6 @@ public class Ordenadores {
 			Prints.opcaoInvalida();
 			selecionaOrdenador();
 			break;
-		}	
+		}*/	
 	}
 }

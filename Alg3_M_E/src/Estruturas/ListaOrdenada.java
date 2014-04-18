@@ -8,6 +8,7 @@ import java.io.IOException;
 import Utilitarios.Prints;
 import Utilitarios.crud;
 
+
 public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 
 	private BufferedReader buff;
