@@ -1,5 +1,9 @@
 package Estruturas;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 import Utilitarios.Prints;
 
 public class Ordenadores {
@@ -8,7 +12,32 @@ public class Ordenadores {
 	int aux;
 	boolean controle;
 	
-	public void bubleSort(){
+	
+	public  void executaArquivo(){
+		try {
+			FileReader f = new FileReader(nomeAquivo);
+			BufferedReader br = new BufferedReader(f);
+			String linha = br.readLine();
+			while(linha != null ) {
+				linha = br.readLine();
+				System.out.println(linha);
+			}
+			br.close();			
+		} catch (FileNotFoundException e) {
+			Prints.msgb("Nome do arquivo incorreto ou inexistente.");
+			Prints.sair();
+		}	
+		
+	}
+	
+	
+	
+	
+
+	
+//================<<Ordenação BubleSort>>=====================
+	
+	public void ordenaBubleSort(){
 		for (int i = 0; i < v.length; i++) {
 			controle = true;
 			for (int j = 0; j < v.length-1; j++) {
@@ -25,16 +54,39 @@ public class Ordenadores {
 		}
 	}	
 		
-	public  void pritBubleSort(){
+	
+	
+//================<<Ordenação BubleSort>>=====================
+	
+	public  void ordenaQuickSort(){
+	
+	
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//=======================<<>>=================================
+	
+	/**
+	 * Imprime dados do vetor ordenados
+	 */
+	public  void imprime(){
 		for (int i = 0; i < v.length; i++) {
 			Prints.msg("" +v[i] +"\n");
 		}
 	}
+		
 	
-	
-	public  void quickSort(){
-	
-	}
 	
 	/**
 	 * Método responsável pela seleção dos ordenadores
