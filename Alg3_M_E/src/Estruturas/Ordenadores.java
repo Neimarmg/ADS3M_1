@@ -3,6 +3,7 @@ package Estruturas;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 import Utilitarios.Prints;
 
@@ -11,13 +12,18 @@ public class Ordenadores {
 	int v[]={1, 2, 3, 8, 4 ,6, 7, 5};
 	int aux;
 	boolean controle;
+	String linha;
 	
 	
-	public  void executaArquivo(){
+	/**
+	 * Método de carregaento de arquivo
+	 * @param nomeArquivo
+	 */
+	public  void executaArquivo(String nomeArquivo){
 		try {
-			FileReader f = new FileReader(nomeAquivo);
+			FileReader f = new FileReader(nomeArquivo);
 			BufferedReader br = new BufferedReader(f);
-			String linha = br.readLine();
+			linha = br.readLine();
 			while(linha != null ) {
 				linha = br.readLine();
 				System.out.println(linha);
@@ -26,6 +32,8 @@ public class Ordenadores {
 		} catch (FileNotFoundException e) {
 			Prints.msgb("Nome do arquivo incorreto ou inexistente.");
 			Prints.sair();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}	
 		
 	}
