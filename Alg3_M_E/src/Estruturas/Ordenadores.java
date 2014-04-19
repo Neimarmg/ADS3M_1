@@ -4,63 +4,35 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Vector;
-
 import Utilitarios.Prints;
 
 public class Ordenadores {
 	
-	int aux, i = 0;
-	static int tamanho = 1;
-	String vetor[] = new String[1];
+	String aux;
+	int index = 0, trocas = 0;
+	String vetor[] = new String[28];
 	boolean controle;
 	FileReader file;
 	BufferedReader buff;
 	String linha;
 
-	public static int getTamanho() {
-		return tamanho;
-	}
-	
+
 	/**
-	 *  
+	 * Método de carregamento de dados do arquivo para um array de strings
 	 * @param nomeArquivo
-	 * @throws IOException
-	 */
-	public  void defineTamanhaVetor(String nomeArquivo ) throws IOException{
-		file = new FileReader(nomeArquivo);		
-		buff = new BufferedReader(file);
-		linha = buff.readLine();
-		
-		while(linha != null ) {
-			linha = buff.readLine();
-			tamanho++;		
-		}
-		
-		Prints.msg("\t" +getTamanho() +"\n");
-	}
-	
-	
-	
-	/**
-	 * Método de carregamento de arquivo para um array de strings
-	 * @param nomeArquivo
+	 * @throws Exception 
 	 * @throws IOException 
 	 */
-	public  void executaArquivo(String nomeArquivo ) {
-		
+	public  void executaArquivo(String nomeArquivo ) throws Exception {
 		try {
-			defineTamanhaVetor(nomeArquivo);
 			file = new FileReader(nomeArquivo);		
 			buff = new BufferedReader(file);
 			linha = buff.readLine();
-			vetor[1] = new String[getTamanho()];
 			while(linha != null ) {
 				linha = buff.readLine();
-				i++;
+				index++;
 				if (linha != null) {
-					vetor[i]= linha;	
-					Prints.msg("\n" +i +" " +vetor[i]);
+					vetor[index]= linha;				
 				}					
 			}			
 			buff.close();
@@ -74,31 +46,59 @@ public class Ordenadores {
 	}
 	
 	
-	
-	
-	
-
-	
 //================<<Ordenação BubleSort>>=====================
 	
-	public void ordenaBubleSort(){
-		
-		for (int i = 0; i < vetor.length; i++) {
-			controle = true;
-			for (int j = 0; j < vetor.length-1; j++) {
-				if (vetor[j] > vetor[j+1]) {
-					aux =vetor[j];
-					vetor[j] =vetor[j+1];
-					vetor[j+1] = aux;
-					controle = false;					
-				}		
-			}
-			if (controle == true) {
-				break;
-			}
-		}
-	}	
-		
+	public void ordenaBubleSort(boolean crescente) throws Exception{		
+		try {
+			for (int i = 1; i < vetor.length; i++){	
+				controle = true;
+	         	for (int j = i+1; j < vetor.length; j++){	         		
+	         		if (crescente == true) {	         			 
+		                if (vetor[i].compareTo(vetor[j]) > 0) { //Ordem crescente  
+		                	aux = vetor[i];                	
+		                	vetor[i] = vetor[j];
+		                	vetor[j] = aux; 
+		                	trocas++;
+		                	controle = false;
+		                }
+	         		}else{
+		                if (vetor[i].compareTo(vetor[j]) < 0) { //Ordem descrescente  
+		                	aux = vetor[i];                	
+		                	vetor[i] = vetor[j];
+		                	vetor[j] = aux;
+		                	trocas++;
+		                	controle = false;
+		                }
+	         		}
+	         		
+	         		if (crescente == true) {
+						break;
+					}
+	         	}
+			}			
+			//imprimeBubleSort(crescente);
+		} catch (NullPointerException e) {
+			System.out.print("\n"); 
+			imprimeBubleSort(crescente);
+		}	    
+	}
+	
+	
+	/**
+	 * Medodo de impressão da lista de dados do ordenador BubleSort
+	 * @param crescente
+	 */
+	public void imprimeBubleSort(boolean crescente){	
+        if (crescente == true) {
+        	Prints.msgc("ORDEM CRESCENTE\n\n");
+		}else{
+			Prints.msgc("ORDEM DECRESCENTE\n\n");
+		}		
+		for (String dados : vetor) 
+        	if (dados != null) {	
+            	Prints.msg(dados + " \n");  
+        	}
+	}
 	
 	
 //================<<Ordenação BubleSort>>=====================
@@ -139,7 +139,8 @@ public class Ordenadores {
 	 */
 	public void selecionaOrdenador() throws Exception {	
 		//Prints.menuOrdenadores();		
-		executaArquivo("l.txt");			
+		executaArquivo("l.txt");
+		ordenaBubleSort(false);
 		/*switch (Prints.digita("")) {			
 			
 		case "buble":		

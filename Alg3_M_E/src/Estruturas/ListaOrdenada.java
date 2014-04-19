@@ -97,7 +97,7 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		} catch (FileNotFoundException e1) {
 			Prints.msgb("Arquivo inexistente.");
 		}
-		lista.ordenador(false);
+		lista.imprime(false);
 		editaArquivo(nomeArquivo);		
 	}
 }

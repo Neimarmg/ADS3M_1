@@ -42,7 +42,7 @@ public class mainE{
 			
 		case "t4":	
 			ordenador.selecionaOrdenador();
-			selecionaAtividade();
+			//selecionaAtividade();
 			break;
 			
 		case "t5":

@@ -24,7 +24,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	/**
 	 * imprime quando abilitado na tela e edita registros após a ordenação
 	*/
-	public void ordenador(boolean impressaoPrevia) {
+	public void imprime(boolean impressaoPrevia) {
 		try {
 			Nodo<?> nodo = head;
 			do {
