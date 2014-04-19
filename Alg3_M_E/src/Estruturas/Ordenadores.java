@@ -137,11 +137,32 @@ public class Ordenadores {
 	
 //================<< Ordenação QuickSort >>=================================================
 	
-	public  void ordenaQuickSort(){
+	 public static void quick_sort(int []v,int ini, int fim) {
+		   int meio;
+		 
+		   if (ini < fim) {
+		     meio = partition(v, ini, fim);
+		     quick_sort(v, ini, meio);
+		     quick_sort(v, meio + 1, fim);
+		   }
+		 }
+		 
+		 public static int partition(int []v, int ini, int fim) {
+		   int pivo, topo, i;
+		   pivo = v[ini];
+		   topo = ini;
+		 
+		   for (i = ini + 1; i <= fim; i++) {
+		     if (v[i] < pivo) {
+		       v[topo] = v[i];
+		       v[i] = v[topo + 1];
+		       topo++;
+		     }
+		   }
+		   v[topo] = pivo;
+		   return topo;
+		 }
 	
-	
-	
-	}
 		
 	
 	
@@ -174,8 +195,9 @@ public class Ordenadores {
 	 * @throws Exception
 	 */
 	public void selecionaOrdenador() throws Exception {			
-		Prints.menuOrdenadores();		
-			
+		quick_sort([]vetor, 0,tamanho);
+		//Prints.menuOrdenadores();		
+		/*	
 		switch (Prints.digita("")) {			
 			
 		case "buble":
@@ -201,6 +223,12 @@ public class Ordenadores {
 			Prints.opcaoInvalida();
 			selecionaOrdenador();
 			break;
-		}
+		}*/
+	}
+
+
+	private void quick_sort(String linha2, int ini, int tamanho2) {
+		// TODO Auto-generated method stub
+		
 	}
 }
