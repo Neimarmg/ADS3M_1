@@ -208,7 +208,7 @@ public class Prints {
 		);		
 	}
 
-		/**
+	/**
 	* Metodo responsável pela execução das formas de ordenação
 	 * @throws Exception
 	 */
@@ -222,4 +222,15 @@ public class Prints {
 		);		
 	}
 
+	/**
+	 * Menu de definição de modo de ordenção
+	 * @throws Exception
+	 */
+	public static void menuModoOrdenacao()throws Exception {	
+		msgb(
+			"	DESEJA ORDENAR PARA?:\n\n"	
+			+"=> C 'Exibe arquivo na ordem crescente'\n"
+			+"=> D 'Exibe arquivo na ordem decrescente'\n"
+		);		
+	}
 }

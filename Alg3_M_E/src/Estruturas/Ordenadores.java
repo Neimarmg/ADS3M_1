@@ -4,38 +4,43 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+
 import Utilitarios.Prints;
 
 public class Ordenadores {
 	
 	String aux;
-	int index = 0, trocas = 0;
-	String vetor[] = new String[28];
-	boolean controle;
+	int index = 0, trocas = 0 , tamanho = 100;
+	String vetor[] = new String[tamanho];
 	FileReader file;
 	BufferedReader buff;
 	String linha;
-
 
 	/**
 	 * Método de carregamento de dados do arquivo para um array de strings
 	 * @param nomeArquivo
 	 * @throws Exception 
-	 * @throws IOException 
+	 * @throws IOException z
 	 */
 	public  void executaArquivo(String nomeArquivo ) throws Exception {
 		try {
 			file = new FileReader(nomeArquivo);		
 			buff = new BufferedReader(file);
 			linha = buff.readLine();
+			
 			while(linha != null ) {
 				linha = buff.readLine();
-				index++;
-				if (linha != null) {
-					vetor[index]= linha;				
-				}					
-			}			
+				index++;				
+				vetor[index]= linha;
+			}
+			
+			//Aumenta tamanho do vetor.
+			for (int i = index; i < vetor.length; i++) {
+				vetor[i]= "";
+			}
+			
 			buff.close();
+			
 		} catch (FileNotFoundException e) {
 			Prints.msge("\nArquivo inexistenten\n");
 		} catch (IOException e) {
@@ -46,20 +51,41 @@ public class Ordenadores {
 	}
 	
 	
-//================<<Ordenação BubleSort>>=====================
+	/**
+	 * Exibe o cabeçalho do modo de ordenação crescente ou decrescente
+	 * @param crescente
+	 */
+	public void informaCabecalhoModo(boolean crescente){	
+        if (crescente == true) {
+        	Prints.msgc("ORDEM CRESCENTE\n\n");
+		}else{
+			Prints.msgc("ORDEM DECRESCENTE\n\n");
+		} 
+	}
 	
-	public void ordenaBubleSort(boolean crescente) throws Exception{		
+	
+	/**
+	 * Método responsável pela limpesa do vetor após ordenação
+	 * de modo que possa ter suas posições livres quando uma próxima ordenação for solicitada.
+	 */
+	public void limpaVetor(){	
+		for (int i = 0; i < vetor.length; i++) {
+			vetor[i]= "";
+		}
+	}
+
+//================<< Ordenação BubleSort >>=================================================
+	
+	public void ordenaBubleSort(boolean crescente, boolean mostraEstatisca) throws Exception{		
 		try {
-			for (int i = 1; i < vetor.length; i++){	
-				controle = true;
+			for (int i = 1; i < vetor.length; i++){
 	         	for (int j = i+1; j < vetor.length; j++){	         		
 	         		if (crescente == true) {	         			 
 		                if (vetor[i].compareTo(vetor[j]) > 0) { //Ordem crescente  
 		                	aux = vetor[i];                	
-		                	vetor[i] = vetor[j];
-		                	vetor[j] = aux; 
-		                	trocas++;
-		                	controle = false;
+			                vetor[i] = vetor[j];
+			                vetor[j] = aux;
+			                trocas++;
 		                }
 	         		}else{
 		                if (vetor[i].compareTo(vetor[j]) < 0) { //Ordem descrescente  
@@ -67,20 +93,28 @@ public class Ordenadores {
 		                	vetor[i] = vetor[j];
 		                	vetor[j] = aux;
 		                	trocas++;
-		                	controle = false;
 		                }
-	         		}
-	         		
-	         		if (crescente == true) {
-						break;
-					}
+	         		} 
 	         	}
-			}			
-			//imprimeBubleSort(crescente);
+	         }	         	 
+			imprimeBubleSort(crescente,mostraEstatisca);
 		} catch (NullPointerException e) {
-			System.out.print("\n"); 
-			imprimeBubleSort(crescente);
+			Prints.msge("\nO vetor de armazanamento esta definido como null!"); 			
 		}	    
+	}
+	
+	/**
+	 * Imforma dados estatíticos específicod da ordenção
+	 * @param mostraEstatica
+	 */
+	public void informaStatisticaBubleSort(boolean mostraEstatisca){	
+		if (mostraEstatisca == true) { 
+			Prints.msg(
+				"\nDADOS ESTATÍSTCOS DA ORDENAÇÃO\n"
+				+"\nTamanho do vetor: "+tamanho
+				+"\nTotal de trocas: " +trocas
+				+"\nTempo total: " );
+		}
 	}
 	
 	
@@ -88,63 +122,65 @@ public class Ordenadores {
 	 * Medodo de impressão da lista de dados do ordenador BubleSort
 	 * @param crescente
 	 */
-	public void imprimeBubleSort(boolean crescente){	
-        if (crescente == true) {
-        	Prints.msgc("ORDEM CRESCENTE\n\n");
-		}else{
-			Prints.msgc("ORDEM DECRESCENTE\n\n");
-		}		
-		for (String dados : vetor) 
-        	if (dados != null) {	
+	public void imprimeBubleSort(boolean crescente,boolean mostraEstatisca){	
+		informaCabecalhoModo(crescente);
+		for (String dados : vetor){ 
+        	if (dados != null && dados != "") {
             	Prints.msg(dados + " \n");  
-        	}
+        	}        	
+		}
+		//Prints.msgl();
+		informaStatisticaBubleSort(mostraEstatisca);
+		limpaVetor();
 	}
 	
 	
-//================<<Ordenação BubleSort>>=====================
+//================<< Ordenação QuickSort >>=================================================
 	
 	public  void ordenaQuickSort(){
 	
 	
 	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//=======================<<>>=================================
-	
-	/**
-	 * Imprime dados do vetor ordenados
-	 */
-	public  void imprime(){
-		for (int i = 0; i < vetor.length; i++) {
-			Prints.msg("" +vetor[i] +"\n");
-		}
-	}
 		
 	
 	
+	
+//==============<< Menus de acesso ao ordenadores >>========================================
+	/**
+	 * Método que define o modo de ordanção para todos os ordenadores
+	 * @return
+	 * @throws Exception
+	 */
+	public boolean defineModoOrdencao() throws Exception{	
+		Prints.menuModoOrdenacao();
+		String modo  = Prints.digita("Modo");
+		
+		if (modo.equals("c")) {
+			return true;
+			
+		}else if (modo.equals("d")){
+			return false;
+			
+		}else{//Comando de validação de modo de ordenação
+			Prints.opcaoInvalida();			
+			return defineModoOrdencao();
+		}		
+	}
+
+
 	/**
 	 * Método responsável pela seleção dos ordenadores
 	 * @throws Exception
 	 */
-	public void selecionaOrdenador() throws Exception {	
-		//Prints.menuOrdenadores();		
-		executaArquivo("l.txt");
-		ordenaBubleSort(false);
-		/*switch (Prints.digita("")) {			
+	public void selecionaOrdenador() throws Exception {			
+		Prints.menuOrdenadores();		
 			
-		case "buble":		
+		switch (Prints.digita("")) {			
 			
+		case "buble":
+			executaArquivo(Prints.digita("Nome do arquivo "));			
+			ordenaBubleSort(defineModoOrdencao(),true);
 			selecionaOrdenador();
 			break;
 		
@@ -165,6 +201,6 @@ public class Ordenadores {
 			Prints.opcaoInvalida();
 			selecionaOrdenador();
 			break;
-		}*/	
+		}
 	}
 }
