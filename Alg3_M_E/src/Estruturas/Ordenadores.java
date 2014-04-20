@@ -137,13 +137,14 @@ public class Ordenadores {
 	
 //================<< Ordenação QuickSort >>=================================================
 	
-	 public static void quick_sort(int []v,int ini, int fim) {
+	int inicio = 0, fim = tamanho;
+	 public void quick_sort() {
 		   int meio;
 		 
-		   if (ini < fim) {
-		     meio = partition(v, ini, fim);
-		     quick_sort(v, ini, meio);
-		     quick_sort(v, meio + 1, fim);
+		   if (inicio < fim) {
+		     meio = partition(vetor, inicio, fim);
+		     quick_sort(vetor, ini, meio);
+		     quick_sort(vetor, meio + 1, fim);
 		   }
 		 }
 		 
