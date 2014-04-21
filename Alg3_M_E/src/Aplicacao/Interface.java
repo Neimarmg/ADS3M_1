@@ -133,7 +133,7 @@ public class Interface<T> extends Prints {
 	 */
 	public void verificaInserir() throws Exception {
 		msg("\nVerificando disco...\n");
-		if (memoria.totalizaMenoria() > 6000){ // Verifica memória ao inserir dados.
+		if (memoria.totalizaMenoria() < 6000){ // Verifica memória ao inserir dados.
 			msg("\nVerificação concluída ha memória disponível!\n");
 			salva();
 		}else{

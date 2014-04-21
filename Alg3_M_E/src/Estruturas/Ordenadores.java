@@ -196,9 +196,9 @@ public class Ordenadores {
 	 * @throws Exception
 	 */
 	public void selecionaOrdenador() throws Exception {			
-		quick_sort([]vetor, 0,tamanho);
-		//Prints.menuOrdenadores();		
-		/*	
+		//quick_sort([]vetor, 0,tamanho);
+		Prints.menuOrdenadores();		
+			
 		switch (Prints.digita("")) {			
 			
 		case "buble":
@@ -224,7 +224,7 @@ public class Ordenadores {
 			Prints.opcaoInvalida();
 			selecionaOrdenador();
 			break;
-		}*/
+		}
 	}
 
 

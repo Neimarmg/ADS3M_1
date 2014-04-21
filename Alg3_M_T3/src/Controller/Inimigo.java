@@ -65,6 +65,7 @@ public class Inimigo {
 		}
 	}
 
+	
 	/**
 	 * Método de validação dados
 	 * @param linha

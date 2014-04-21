@@ -93,7 +93,7 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 			buff.close();
 			
 		} catch (NullPointerException e) {
-			e.getMessage();
+			Prints.msgb("Arquivo embranco.");;
 		} catch (FileNotFoundException e1) {
 			Prints.msgb("Arquivo inexistente.");
 		}
