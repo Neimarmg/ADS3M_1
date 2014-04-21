@@ -4,18 +4,19 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
 import Utilitarios.Prints;
 
 public class Ordenadores {
 	
-	String aux;
+	boolean validaArquivo; 
 	int index = 0, trocas = 0 , tamanho = 100;
 	String vetor[] = new String[tamanho];
 	FileReader file;
 	BufferedReader buff;
-	String linha;
-
+	String linha ,aux;
+	
+	//Ficheiro ficheiro = new Ficheiro();
+	
 	/**
 	 * Método que carrega dados do arquivo para um "array" de "strings"
 	 * @param nomeArquivo
@@ -23,7 +24,9 @@ public class Ordenadores {
 	 * @throws IOException z
 	 */
 	public  void executaArquivo(String nomeArquivo ) throws Exception {
+		
 		try {
+			validaArquivo = true; // Abilita de execução de ordenador
 			file = new FileReader(nomeArquivo);		
 			buff = new BufferedReader(file);
 			linha = buff.readLine();
@@ -42,7 +45,8 @@ public class Ordenadores {
 			buff.close();
 			
 		} catch (FileNotFoundException e) {
-			Prints.msge("\nArquivo inexistente.n\n");
+			Prints.msge("\nArquivo inexistente\n");
+			validaArquivo = false; //// Desabilita de execução de ordenador
 		} catch (IOException e) {
 			Prints.msge("\nO arquivo não pode ser fechado.\n");
 		} catch (ArrayIndexOutOfBoundsException e) {
@@ -75,7 +79,7 @@ public class Ordenadores {
 		}
 	}
 
-// << Ordenação BubleSort >>
+//========================= << Ordenação BubleSort >> ==============================
 	
 	public void ordenaBubleSort(boolean crescente, boolean mostraEstatisca) throws Exception{		
 		try {
@@ -135,7 +139,7 @@ public class Ordenadores {
 		limpaVetor();
 	}
 	
-// << Ordenação QuickSort >>
+// ======================== << Ordenação QuickSort >> ====================================
 	
 	int inicio = 0, fim = tamanho;
 	 public void quick_sort() {
@@ -186,25 +190,33 @@ public class Ordenadores {
 		}		
 	}
 
-
+	
 	/**
 	 * Método responsável pela seleção dos ordenadores
 	 * @throws Exception
 	 */
 	public void selecionaOrdenador() throws Exception {			
+		
 		//quick_sort([]vetor, 0,tamanho);
-		Prints.menuOrdenadores();		
+		Prints.menuOrdenadores();
+		
 			
 		switch (Prints.digita("")) {			
 			
 		case "buble":
-			executaArquivo(Prints.digita("Nome do arquivo "));			
-			ordenaBubleSort(defineModoOrdencao(),true);
-			selecionaOrdenador();
+			executaArquivo(Prints.digita("Nome do arquivo"));
+			if (validaArquivo == true){
+				ordenaBubleSort(defineModoOrdencao(),true);
+			}
+			selecionaOrdenador();			
 			break;
 		
 		case "quick":		
-		
+			executaArquivo(Prints.digita("Nome do arquivo"));
+			if (validaArquivo == true){
+				//??(defineModoOrdencao(),true);
+			}
+			selecionaOrdenador();	
 			selecionaOrdenador();
 			break;
 	

@@ -7,14 +7,17 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.nio.file.Paths;
 import java.nio.file.Path;
+
 import Utilitarios.crud;
 import Utilitarios.Prints;
 
 public class Ficheiro {
 	crud in =  new crud();
 	Memoria memoria =  new Memoria();
+
 	
 	/**
+	 * Verificador de memoria
 	 * @param nomeAquivo
 	 */
 	public void criaNovo(final String nomeAquivo) {
@@ -58,6 +61,7 @@ public class Ficheiro {
 		Path p = Paths.get(nomeAquivo);
 		Prints.msg("Arquivo encontrado: "+p);
 	}
+	
 	
 	/**
 	 * @param nomeAquivo
