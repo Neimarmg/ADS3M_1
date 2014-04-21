@@ -35,7 +35,7 @@ public class Ficheiro {
 	
 
 	/** 
-	 * Método de remoção de arquivo com verificação de existência do arquivo
+	 * Método de remoção de arquivo com verificação da existência do arquivo
 	 * @param nomeArquivo
 	 */
 	public void remove(String nomeArquivo) {

@@ -2,15 +2,13 @@ package Utilitarios;
 
 import java.util.Scanner;
 
-
 public class Prints {	
 	static Scanner var = new Scanner(System.in);
 	
 	public static void msg(Object desc) {   
 		System .out.print(desc);
 	}
-	
-	
+		
 	public static void msge(Object desc) {   
 		System .err.print(desc);
 	}
@@ -25,13 +23,11 @@ public class Prints {
 			+"\n====================================================\n");
 	}
 	
-	
 	public static void msgc(Object desc) {
 		System .out.print(
 			"\n====================================================\n"
 			+desc);
 	}
-
 
 	public static void msgr(Object desc) {
 		System .out.print(
@@ -39,20 +35,17 @@ public class Prints {
 			+"\n====================================================\n");
 	}	
 	
-
 	public static void msgl() {
 		System .out.print(
 			"\n====================================================\n");
 	}
 	
-	
 	public static void espacoInsuficiente() {
 		System .err.print("\nEspaço insuficiente em disco para inserir dados.\n");
 	}
 	
-	
 	public static void opcaoInvalida() {
-		System .err.println("\nComando inválido! Tente novamente?");
+		System .err.println("\nComando inválido!");
 	}
 	
 	
@@ -60,7 +53,6 @@ public class Prints {
 		System .err.print("\nNão implementado.\n");
 	}
 	
-
 	/**
 	 * Método de Label dos comandos do sistema
 	 * @param label
@@ -69,7 +61,7 @@ public class Prints {
 		System .out.println();
 		if (label.equals("")){
 			System .out.print("COMANDO: ");
-		}else{
+		} else {
 			System .out.print(label +": ");
 		}
 	}
@@ -85,8 +77,8 @@ public class Prints {
 	}
 	
 	/**
-	 * Método de retorno que recebe ficheiro label com paramento e retorna
-	 * uma string para filtros
+	 * Método de retorno que recebe ficheiro label com parâmetro,
+	 * e retorna uma string para filtros
 	 * @param label
 	 * @return
 	 */
@@ -95,11 +87,9 @@ public class Prints {
 		return var.next().toLowerCase();
 	}
 	
-	
 	public static void sair(){
 		System.err.print("\nVocê optou por sair do programa. Obrigado.");
 	}
-	
 	
 	public static void menuSelecinaAtividade() {		
 		msgb("	QUAL É ATIVIDADE?\n\n"
@@ -119,7 +109,6 @@ public class Prints {
 		+"=> SAIR\n");
 	}
 	
-	
 	/** 
 	 * @throws Exception
 	 */
@@ -130,7 +119,6 @@ public class Prints {
 			+"=> SAIR\n"
 		);			
 	}
-	
 	
 	/** 
 	 * @throws Exception
@@ -143,7 +131,6 @@ public class Prints {
 		);		
 	}
 	
-	
 	/** 
 	 * @throws Exception
 	 */
@@ -155,7 +142,6 @@ public class Prints {
 		);		
 	}
 	
-	
 	/**	
 	 * @throws Exception
 	 */
@@ -166,7 +152,6 @@ public class Prints {
 			+"=> SAIR\n"
 		);		
 	}
-	
 	
 	/** 
 	 * @throws Exception
@@ -181,14 +166,13 @@ public class Prints {
 		);		
 	}
 	
-	
 	/** 
 	 * @throws Exception
 	 */
 	public static void menuInserirNovo()throws Exception {	
 		msgb(
 			"	OPÇÕES PARA INSERÇÃO DE DADOS:\n\n"	
-			+"=> NOVO     'Habilita para grava novo registro'\n"
+			+"=> NOVO     'Habilita para gravar novo registro'\n"
 			+"=> IMPRIMIR 'Imprime dados ordenados em arquivo'\n"
 			+"=> REMOVER  'Remove logicamente o registro'\n"
 			+"=> SAIR\n"
@@ -202,7 +186,7 @@ public class Prints {
 		msgb(
 			"	OPÇÕES PARA CONSULTAR ARQUIVO:\n\n"	
 			+"=> NAVEGAR  'Navega pelo arquivo com comando de teclado'\n"
-			+"=> FILTRAR  'Encontra um registro especifico no arquivo'\n"
+			+"=> FILTRAR  'Encontra um registro específico no arquivo'\n"
 			+"=> ARQUIVO  'Imprime arquivo inteiro'\n"
 			+"=> SAIR\n"
 		);		
@@ -223,14 +207,14 @@ public class Prints {
 	}
 
 	/**
-	 * Menu de definição de modo de ordenção
+	 * Menu de definição de modo de ordenação
 	 * @throws Exception
 	 */
 	public static void menuModoOrdenacao()throws Exception {	
 		msgb(
-			"	DESEJA ORDENAR PARA?:\n\n"	
+			"	DESEJA ORDENAR PARA?\n\n"	
 			+"=> C 'Exibe arquivo na ordem crescente'\n"
 			+"=> D 'Exibe arquivo na ordem decrescente'\n"
-		);		
+		);
 	}
 }

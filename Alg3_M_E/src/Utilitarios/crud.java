@@ -24,7 +24,7 @@ public class crud {
 		return append;
 	}
 	/**
-	 * Insere novo registro em arquivo .txt!
+	 * Insere novo registro em arquivo .txt
 	 * @param arquivo
 	 * @param desc
 	 * @throws IOException 
@@ -36,19 +36,18 @@ public class crud {
 			f = new FileWriter(new File(arquivo),getAppend());
 			buff = new BufferedWriter(f);			
 			
-			if (getAppend() == true){	
+			if (getAppend() == true) {	
 				buff.newLine();				
 			}			
 			buff.write(desc);			
 			buff.close();	
 		} catch (IOException e) {
 			Prints.msg("Não foi possivél inserir registro.");
-		}finally{
+		} finally {
 			buff.close();
 		}
 	}
 		
-	
 	/**
 	 * Realiza ficheiro remoção lógica do registro 
 	 * @param arquivo
@@ -61,12 +60,12 @@ public class crud {
 		br = new BufferedReader(r);
 		String linha = br.readLine();		
 		try {				
-			while(linha != null ){	
+			while(linha != null ) {	
 				
-				if (linha.equals(desc)){	
+				if (linha.equals(desc)) {	
 					acun += "#"+linha +"\n";
 					setAppend(true);
-					}else{
+					} else {
 					acun += linha +"\n";
 					setAppend(false);					
 				}
@@ -82,9 +81,6 @@ public class crud {
 	  
 	}    
         	
-		  
-		
-	
 	/** 
 	 * Realiza ficheiro salva edição do registro
 	* 
@@ -93,7 +89,6 @@ public class crud {
 		Prints.objetoNaoImplementado();
 	} 
 		
-	
 	/** 
 	 * Realiza alteração do registro
 	* 
@@ -102,10 +97,6 @@ public class crud {
 		Prints.objetoNaoImplementado();
 	} 
 }
-
-
-
-
 
 /**
   FileReader fileReader = null;    

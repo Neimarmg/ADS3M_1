@@ -1,7 +1,7 @@
 package Navegacao;
 
 public class Direcao {
-	//Implementar métodos
+	// Implementar métodos
 
 	public void focaPrimeiro(){
 		/** 
@@ -13,7 +13,7 @@ public class Direcao {
 
 	public void focaProximo(){
 		/** 
-		 * Obs.: Movimenta para o o próximo registro da lista enquanto for diferente de null
+		 * Obs.: Movimenta para o próximo registro da lista enquanto for diferente de null
 		 * 
 		 */ 
 	}

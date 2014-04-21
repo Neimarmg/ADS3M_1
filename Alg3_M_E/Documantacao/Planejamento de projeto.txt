@@ -2,41 +2,39 @@ Planejamento inicial
 /**
 Estrutura de pasta
     src
-        "Dados" onde ser√° armazenado arquivo da lista
-        "Aplicao" Onde o programa principal ser√° executado
-        "Arquivos" Onde ser√° feito os controles de registros registro da lista
-        "Navegacao"  Onde ser√£o executadas as pesquisas a lista
-        "Estruturas" Onde ser√£o armazenadas as classes de estrutura do programa
+        "Dados" Onde ser· armazenado arquivo da lista
+        "Aplicacao" Onde o programa principal ser· executado
+        "Arquivos" Onde ser· feito os controles de registros da lista
+        "Navegacao" Onde ser„o executadas as pesquisas ‡ lista
+        "Estruturas" Onde ser„o armazenadas as classes de estrutura do programa
 */  
 
-//----------------<< Pacote armazenamento de dados >>-------------------------    		
+// << Pacote armazenamento de dados >>    		
 	Package Dados
 		
 			Arquivos de armazenamento "ListaTelefonica.txt"
 
 			
-//----------------<< Pacote de execu√ß√£o do programa >>-------------------------		
+// << Pacote de execuÁ„o do programa >>		
 	Package Aplicacao
 		    
-		//*Importa 
-		* Class formatos
+		// *Importa 
+		*  Class formatos
 		*
 		*/
 		class programa {
 				   
-			//M√©todos
+			// MÈtodos
 										 
 
-				private main(){
+				private main() {
 					/*
-					* Inicia Execu√ß√£o do programa
+					* Inicia ExecuÁ„o do programa
 					*/
 				}
-						
 		}         
 
-		
-//----------------<< Pacote gerenciamento de inclus√£o e exclus√£o >>-------------		
+// << Pacote gerenciamento de inclus„o e exclus„o >>
 	
     Package Arquivos
 		/**Importa 
@@ -44,10 +42,10 @@ Estrutura de pasta
 		*
 		*/		
 		class executaArquivo {
-			//M√©todos		
+			// MÈtodos		
 ]			try {
                 private leArquivoExitente() { 
-                    /**Localiza e Le arquivo existente 
+                    /**Localiza e lÍ arquivo existente 
                     * http://www.youtube.com/watch?v=C1sx-FEsgOk ler aquivo linha a linha
                     */
                 }
@@ -62,18 +60,18 @@ Estrutura de pasta
 					/** Comando inicializar so programa e de um arquivo 
                     *
                     */
-					se  comando =="le" ent√£o
+					se  comando == "lÍ" ent„o
 						leArquivoExitente()
-					sen√£o //comando =="Novo"
+					sen„o // comando == "Novo"
 						criaNovoArquivo
 					fim se   
                 }
                         
-                public imprimeArquivo(){
+                public imprimeArquivo() {
 					printMsg(?)
                 }
 			
-            } Catch(){
+            } Catch() {
 				printMsg(?)
 			}
 			
@@ -84,54 +82,46 @@ Estrutura de pasta
 		* class impressao
 		*/
 		class Registro {
-			//M√©todos
+			//MÈtodos
 				
-			try{	
-				public insereLinha(){
+			try {	
+				public insereLinha() {
 					/** Insere registro na lista
 					 * http://www.youtube.com/watch?v=2zHG7vhkYjI
 					 */
 				}
 				
-				public removeLinha(){
-					/** Realiza a remo√ß√£o l√≥gica do registro
+				public removeLinha() {
+					/** Realiza a remoÁ„o lÛgica do registro
 					 * 
 					 */
 				}  
-				
-				
-				
 			} Catch(){
 				printMsg(?)
 			}
 		}
-		
 		
 		/** importa
 		* class executaArquivo
 		* class impressao
 		*/
 		class Memoria {
-			//M√©todos
-			try{
-		
-				
-				private int calculaMenoria(){
-					/** Verifica mem√≥ria dispon√≠vel para inserir novo					 * 
+			// MÈtodos
+			try {
+				private int calculaMenoria() {
+					/** Verifica memÛria disponÌvel para inserir novo					 * 
 					 */
 				}
 				
-				
 				public executaVerificao(){
-					/** Inicia a verifica√ß√£o da mem√≥ria 
+					/** Inicia a verificaÁ„oo da memÛria 
 					 * 
 					 */
 					 calculaMenoria()
 				}
 				
-				
 				public imprimeStatusMomoria() {
-					/** imprime na tale mem√≥ria dispon√≠vel no disco
+					/** imprime na tela memÛria disponÌvel no disco
 					 * 
 					 */				
 					.printMsg(?)
@@ -139,43 +129,41 @@ Estrutura de pasta
 				
 			} Catch(){}
 		}
-//----------------<< Pacote de consultas ao dados  >>----------------------------				
+		
+// << Pacote de consultas ao dados  >>				
 	Package navegacao
 		
 		class consultas {
-			//m√©todos
+			// mÈtodos
 				
-				mover(){
-					/** obs. classe refer√™ncia para movimenta√ß√£o
+				mover() {
+					/** obs. classe referÍncia para movimentaÁ„o
 					 *  
 					 */ 
 				}			
 			}
             
-            
             class Direcao {
-                //motodos    
-                
-                
+                // mÈtodos
             }
 			
-//----------------<< Pacote de estruturas do sistema >>-------------------------	
+// << Pacote de estruturas do sistema >>	
 	Package Estruturas
 		
-		class Nodo{
+		class Nodo {
 		
 		}
-		class LitaEncadeada{
+		class LitaEncadeada {
 		
 		}
-		class ListaOrdenada{
+		class ListaOrdenada {
 		
 		}
 		
-		class impressao{
-			//m√©todos
-			public printMsg(object desc){
+		class impressao {
+			// mÈtodos
+			public printMsg(object desc) {
 				print(desc)
-				// imprime na tale mem√≥ria dispPlanejamento inicial    
+				// imprime na tela memÛria dispPlanejamento inicial    
 			}
 		}

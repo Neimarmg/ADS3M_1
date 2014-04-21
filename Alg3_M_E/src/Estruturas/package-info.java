@@ -3,4 +3,4 @@
  *
  */
 package Estruturas;
-// "Aplicao" Onde o programa principal será executado
+// "Aplicação" onde o programa principal será executado

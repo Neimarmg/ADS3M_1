@@ -17,7 +17,7 @@ public class Ordenadores {
 	String linha;
 
 	/**
-	 * Método de carregamento de dados do arquivo para um array de strings
+	 * Método que carrega dados do arquivo para um "array" de "strings"
 	 * @param nomeArquivo
 	 * @throws Exception 
 	 * @throws IOException z
@@ -42,11 +42,11 @@ public class Ordenadores {
 			buff.close();
 			
 		} catch (FileNotFoundException e) {
-			Prints.msge("\nArquivo inexistenten\n");
+			Prints.msge("\nArquivo inexistente.n\n");
 		} catch (IOException e) {
-			Prints.msge("\nO arquivo não pode ser fechado\n");
+			Prints.msge("\nO arquivo não pode ser fechado.\n");
 		} catch (ArrayIndexOutOfBoundsException e) {
-			Prints.msge("\nO Espaço insufiente no array de armazenamento\n");
+			Prints.msge("\nO Espaço insufiente no array de armazenamento.\n");
 		}
 	}
 	
@@ -65,8 +65,9 @@ public class Ordenadores {
 	
 	
 	/**
-	 * Método responsável pela limpesa do vetor após ordenação
-	 * de modo que possa ter suas posições livres quando uma próxima ordenação for solicitada.
+	 * Método responsável pela limpesa do vetor após ordenação,
+	 * de modo que possa ter suas posições livres,
+	 * quando uma próxima ordenação for solicitada
 	 */
 	public void limpaVetor(){	
 		for (int i = 0; i < vetor.length; i++) {
@@ -74,21 +75,21 @@ public class Ordenadores {
 		}
 	}
 
-//================<< Ordenação BubleSort >>=================================================
+// << Ordenação BubleSort >>
 	
 	public void ordenaBubleSort(boolean crescente, boolean mostraEstatisca) throws Exception{		
 		try {
 			for (int i = 1; i < vetor.length; i++){
 	         	for (int j = i+1; j < vetor.length; j++){	         		
 	         		if (crescente == true) {	         			 
-		                if (vetor[i].compareTo(vetor[j]) > 0) { //Ordem crescente  
+		                if (vetor[i].compareTo(vetor[j]) > 0) { // Ordem crescente  
 		                	aux = vetor[i];                	
 			                vetor[i] = vetor[j];
 			                vetor[j] = aux;
 			                trocas++;
 		                }
 	         		}else{
-		                if (vetor[i].compareTo(vetor[j]) < 0) { //Ordem descrescente  
+		                if (vetor[i].compareTo(vetor[j]) < 0) { // Ordem decrescente  
 		                	aux = vetor[i];                	
 		                	vetor[i] = vetor[j];
 		                	vetor[j] = aux;
@@ -99,18 +100,18 @@ public class Ordenadores {
 	         }	         	 
 			imprimeBubleSort(crescente,mostraEstatisca);
 		} catch (NullPointerException e) {
-			Prints.msge("\nO vetor de armazanamento esta definido como null!"); 			
+			Prints.msge("\nO vetor de armazanamento está definido como null!"); 			
 		}	    
 	}
 	
 	/**
-	 * Imforma dados estatíticos específicod da ordenção
+	 * Informa dados estatísticos específicos da ordenação
 	 * @param mostraEstatica
 	 */
 	public void informaStatisticaBubleSort(boolean mostraEstatisca){	
 		if (mostraEstatisca == true) { 
 			Prints.msg(
-				"\nDADOS ESTATÍSTCOS DA ORDENAÇÃO\n"
+				"\nDADOS ESTATÍSTICOS DA ORDENAÇÃO\n"
 				+"\nTamanho do vetor: "+tamanho
 				+"\nTotal de trocas: " +trocas
 				+"\nTempo total: " );
@@ -119,7 +120,7 @@ public class Ordenadores {
 	
 	
 	/**
-	 * Medodo de impressão da lista de dados do ordenador BubleSort
+	 * Médodo de impressão da lista de dados do ordenador BubleSort
 	 * @param crescente
 	 */
 	public void imprimeBubleSort(boolean crescente,boolean mostraEstatisca){	
@@ -134,8 +135,7 @@ public class Ordenadores {
 		limpaVetor();
 	}
 	
-	
-//================<< Ordenação QuickSort >>=================================================
+// << Ordenação QuickSort >>
 	
 	int inicio = 0, fim = tamanho;
 	 public void quick_sort() {
@@ -164,13 +164,9 @@ public class Ordenadores {
 		   return topo;
 		 }
 	
-		
-	
-	
-	
-//==============<< Menus de acesso ao ordenadores >>========================================
+// << Menu de acesso aos ordenadores >>
 	/**
-	 * Método que define o modo de ordanção para todos os ordenadores
+	 * Método que define o modo de ordenação para todos os ordenadores
 	 * @return
 	 * @throws Exception
 	 */
@@ -181,10 +177,10 @@ public class Ordenadores {
 		if (modo.equals("c")) {
 			return true;
 			
-		}else if (modo.equals("d")){
+		} else if (modo.equals("d")) {
 			return false;
 			
-		}else{//Comando de validação de modo de ordenação
+		} else { // Comando de validação de modo de ordenação
 			Prints.opcaoInvalida();			
 			return defineModoOrdencao();
 		}		
@@ -226,7 +222,6 @@ public class Ordenadores {
 			break;
 		}
 	}
-
 
 	private void quick_sort(String linha2, int ini, int tamanho2) {
 		// TODO Auto-generated method stub

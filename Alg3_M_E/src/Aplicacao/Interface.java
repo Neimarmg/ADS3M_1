@@ -128,15 +128,15 @@ public class Interface<T> extends Prints {
 	
 	
 	/**
-	 * Método de verificação de memoria para inserção de novos dados
+	 * Método de verificação de memória para inserção de novos dados
 	 * @throws Exception
 	 */
 	public void verificaInserir() throws Exception {
 		msg("\nVerificando disco...\n");
-		if (memoria.totalizaMenoria() < 6000){ // Verifica memória ao inserir dados.
-			msg("\nVerificação concluída ha memória disponível!\n");
+		if (memoria.totalizaMenoria() < 6000){ // Verifica memória ao inserir dados
+			msg("\nVerificação concluída, há memória disponível!\n");
 			salva();
-		}else{
+		} else {
 			espacoInsuficiente();
 			imprime();
 		}
@@ -144,11 +144,11 @@ public class Interface<T> extends Prints {
 	
 	
 	/**
-	 *	Método de inicial do programa com definição das atividades
+	 *	Método com definição das atividades
 	 * @throws Exception
 	 */
 	public void iniciaTarefas() throws Exception {
-		//registra.insereLista("l.txt");	
+		// registra.insereLista("l.txt");	
 		switch (digita("")) {
 		
 		case "consultar":	

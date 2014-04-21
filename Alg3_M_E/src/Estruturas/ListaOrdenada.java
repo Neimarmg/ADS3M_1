@@ -45,7 +45,6 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		} else {
 			super.insert(novo, anterior);
 		}
-		
 	}
 
 
@@ -61,19 +60,19 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 	}
 	
 	/**
-	 * Método responsavel por salva alterações 
+	 * Método responsável por salvar alterações 
 	 * @param nomeArquivo
 	 * @throws IOException
 	 */
 	public void editaArquivo(String nomeArquivo) throws IOException {
 		crud.setAppend(false);
 		crud.addNovo(nomeArquivo, getAcum());
-		ListaEncadeada.setAcum(""); //Parâmetro de limpeza de queche 
+		ListaEncadeada.setAcum(""); //Parâmetro de limpeza de "cache" 
 	}
 	
 	
 	/**
-	 * Método responsavel pela leitura dos dados em arquivo finalizar as alterações
+	 * Método responsável pela leitura dos dados em arquivo e finalização das alterações
 	 * @param nomeArquivo
 	 * @throws IOException
 	 */

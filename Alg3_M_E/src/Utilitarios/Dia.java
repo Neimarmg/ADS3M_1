@@ -4,11 +4,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Dia {
-	Pressagios pressagios = new Pressagios(); 	
+	Pressagios pressagios = new Pressagios();
 	
 	Calendar diaHora = Calendar.getInstance();
 	SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-	
 	
 	public void ImprimeHora() {		
 		diaHora.set(Calendar.DST_OFFSET,0);		
@@ -24,7 +23,6 @@ public class Dia {
 			  "\n" +defineNomenclatura() +hora +"\n");
 	}
 	
-	
 	public String defineNomenclatura() {
 		diaHora.set(Calendar.DST_OFFSET,0);
 		
@@ -33,11 +31,8 @@ public class Dia {
 		if (hora == 0) {
 			return "É ";
 		} return "São ";
-		
-	
 	}
 		
-	
 	public void defineSaudacao() {
 		diaHora.set(Calendar.DST_OFFSET,0);
 		

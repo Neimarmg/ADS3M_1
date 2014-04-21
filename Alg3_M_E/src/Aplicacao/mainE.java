@@ -12,14 +12,14 @@ public class mainE{
 	Dia d = new Dia();
 
 	/**
-	 * Descrição do cabeçalho principal do programa
+	 * Descrição do cabeçalho principal
 	 */
 	private void escreveCabecalho() {
 		Prints.msgb("\n" +"	EXERCÍCIO DE ESTRUTURAS JAVA\n");
 	}
 	
 	/**
-	 *	Método de inicial do programa com definição das atividades solicitadas
+	 *	Método com definição das atividades solicitadas
 	 * @throws Exception
 	 */
 	private void selecionaAtividade() throws Exception {

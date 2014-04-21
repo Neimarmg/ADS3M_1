@@ -21,7 +21,6 @@ public class Consultas {
 		Prints.objetoNaoImplementado();
 	}	
 
-	
 	/**
 	 * Método global de impressão de dados de arquivo 
 	 * @param nomeArquivo
@@ -35,13 +34,13 @@ public class Consultas {
 			br = new BufferedReader(r);
 			String linha = br.readLine();
 			Prints.msgb("Registro encontrados:");
-			while(linha != null ){
+			while(linha != null ) {
 				linha = br.readLine();
-				if (filtrar == true){//Imprime dados coincidente com o paramentro	
-					if (linha.equals(campo)){
+				if (filtrar == true) { // Imprime dados coincidentes com o parâmetro	
+					if (linha.equals(campo)) {
 						Prints.msg("> " +linha +"\n");
 					}
-				}else{
+				} else {
 					Prints.msg("> " +linha +"\n");
 				}				
 			}			
@@ -51,8 +50,6 @@ public class Consultas {
 			Prints.msgb("Arquivo inexistente.");
 		}
 	}
-	
-	
 	
 	/**
 	 * Seleciona comando de consulta
@@ -92,7 +89,6 @@ public class Consultas {
 		}
 	}
 
-	
 	/**
 	 * Realiza busca binária dentro do arquivo
 	 * @param nomeArquivo

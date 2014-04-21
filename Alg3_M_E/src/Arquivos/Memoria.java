@@ -17,7 +17,7 @@ public class Memoria {
 	private String listaInidades() {
 		for (FileStore store : fSistem.getFileStores()) {
 			return store.toString();
-		}return "?";
+		} return "?";
 	}
 	
 	
@@ -29,7 +29,7 @@ public class Memoria {
 	public int totalizaMenoria()throws Exception{			
 		for (FileStore store : fSistem.getFileStores()) {
 			return (int) store.getTotalSpace();
-		}return 0;
+		} return 0;
 	}
 	
 	
@@ -41,7 +41,7 @@ public class Memoria {
 	public int calculaDisponivel()throws Exception {
 		for (FileStore store : fSistem.getFileStores()) {
 			return (int) store.getUsableSpace();		
-		}return 0; 
+		} return 0; 
 	}
 	
 	

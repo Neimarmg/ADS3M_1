@@ -44,7 +44,7 @@ public class Registrador {
 			break;
 			
 		case  "remover" :			
-			crud.setAppend(false); //Desabilita append para sobscrever dados no arquivo
+			crud.setAppend(false); // Desabilita append para sobscrever dados no arquivo
 			crud.remove(nomeArquivo,Prints.digita("\nNome parágrafo excluir"));
 		case "sair":
 			Prints.sair();
