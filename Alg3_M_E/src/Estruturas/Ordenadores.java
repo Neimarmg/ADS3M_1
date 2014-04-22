@@ -4,9 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
-
-import javax.security.auth.x500.X500Principal;
 
 import Utilitarios.Prints;
 
@@ -17,12 +14,12 @@ import Utilitarios.Prints;
 public class Ordenadores {
 	
 	boolean validaArquivo; 
-	int index = 0, trocas = 0 , tamanho = 35;
+	int index = 0, trocas = 0 , tamanho = 100;
 	String vetor[] = new String[tamanho];
 	FileReader file;
 	BufferedReader buff;
 	String linha ,aux;
-	private int esquerda;
+
 	
 	//Ficheiro ficheiro = new Ficheiro();
 	
@@ -68,14 +65,17 @@ public class Ordenadores {
 	
 	/**
 	 * Exibe o cabeçalho do modo de ordenação crescente ou decrescente
-	 * @param crescente
+	 * @param modo
+	 * @param exibecabecalho
 	 */
-	private  void informaCabecalhoModo(boolean crescente){	
-        if (crescente == true) {
-        	Prints.msgc("ORDEM CRESCENTE\n\n");
-		}else{
-			Prints.msgc("ORDEM DECRESCENTE\n\n");
-		} 
+	private  void informaCabecalhoModo(boolean modo,boolean exibecabecalho){	
+		 if (exibecabecalho == true) {
+			if (modo == true) {
+	        	Prints.msgc("ORDEM CRESCENTE\n\n");
+			}else{
+				Prints.msgc("ORDEM DECRESCENTE\n\n");
+			}
+		 }
 	}
 	
 	
@@ -84,9 +84,11 @@ public class Ordenadores {
 	 * de modo que possa ter suas posições livres,
 	 * quando uma próxima ordenação for solicitada
 	 */
-	private  void limpaVetor(){	
-		for (int i = 0; i < vetor.length; i++) {
-			vetor[i]= "";
+	private  void limpaVetor(boolean limpar){
+		if(limpar == true){
+			for (int i = 0; i < vetor.length; i++) {
+				vetor[i]= "";
+			}
 		}
 	}
 
@@ -121,7 +123,7 @@ public class Ordenadores {
 	         		} 
 	         	}
 	         }	         	 
-			imprimeOrdenacao(modo,mostraEstatisca);
+			imprimeOrdenacao(modo,mostraEstatisca,true,true);
 		} catch (NullPointerException e) {
 			Prints.msge("\nO vetor de armazanamento está definido como null!"); 			
 		}	    
@@ -131,61 +133,71 @@ public class Ordenadores {
 	
 // ======================== << Ordenação QuickSort >> ====================================
 	
-	public static void quicksort(int vet[], int ini, int fim) {
-        int meio;
- 
-        if (ini < fim) {
-            meio = partition(vet, ini, fim);
-            quicksort(vet, ini, meio);
-            quicksort(vet, meio + 1, fim);
-        }
-    }
- 
-    public static int partition(int vet[], int ini, int fim) {
-        int pivo, topo, i;
-        pivo = vet[ini];
-        topo = ini;
-        Prints.msg("\npivo " +pivo +"\n");
-        for (i = ini + 1; i <= fim; i++) {
-            if (vet[i] < pivo) {
-                vet[topo] = vet[i];
-                vet[i] = vet[topo + 1];
-                topo++;
+	/**
+	 * Metodo reponsavel para o particionamento do vetor
+	 * @param vet
+	 * @param inicio
+	 * @param fim
+	 * @return
+	 */
+    public int perticionaVetor(String vet[], int inicio, int fim) {
+        String pivoInicio; 
+        int i, pivoFim;
+        
+        pivoInicio = vetor[inicio];
+        pivoFim = inicio;
+        
+        Prints.msg("\npivoInicio " +vetor[inicio] +"\n");
+        
+        for (i = pivoFim + 1; i <= fim; i++) {
+            if (vetor[i].compareTo(vet[i]) > pivoInicio.compareTo(pivoInicio)) {
+                vetor[pivoFim] = vetor[i];
+                vetor[i] = vetor[pivoFim + 1];
+                pivoFim++;
+                trocas++;
             }
         }
-        vet[topo] = pivo;
-        return topo;
+        
+        vetor[pivoFim] = pivoInicio;
+        Prints.msg("\npivoFim " +pivoFim +"\n");
+        return pivoFim;
     }
  
     
-    public static void ma() {
- 
-        //Scanner in = new Scanner(System.in);
- 
-    	int v[] = new int[35];
-        int i;
- 	
-        for (i = 0; i < v.length; i++) {
-            v[i] = i*-3/2 ;
-            System.out.println((i + 1) + "° número: " + v[i]);
-        }
- 
-        quicksort(v, 0, (v.length - 1));
- 
-       
-        for (i = 0; i < v.length; i++) {        	
-            System.out.println((i + 1) + "° número: " + v[i]);
-        }
- 
+    /**
+     * Método de execução do ordenador
+     * @param vet
+     * @param inicio
+     * @param fim
+     */
+	public void executaQuickSort(String vet[], int inicio, int fim) {
+        int meio;
+        
+        if (inicio < fim) {
+            meio = perticionaVetor(vet, inicio, fim);
+            Prints.msgr("\nMeio " +meio);
+            executaQuickSort(vet, inicio, meio);
+            executaQuickSort(vet, meio + 1, fim);
+           
+        }        
+    }   
+    
+	
+	/**
+	 * Método reponsável pelo carregamento do erdenador
+	 * @throws Exception
+	 */
+    public void carregaQuickSort() throws Exception {
+    	executaArquivo("l.txt" /*Prints.digita("Nome do arquivo"))*/);
+    	if (validaArquivo == true){
+    		executaQuickSort(vetor, 1, (vetor.length - 1));
+    		imprimeOrdenacao(true, true, false, true);
+    	} 
     }
 	 
 	
 //=============== << Menu de acesso aos ordenadores >> ===============================
 	
-
-
-
-
 	/**
 	 * Informa dados estatísticos específicos da ordenação
 	 * @param mostraEstatica
@@ -204,9 +216,12 @@ public class Ordenadores {
 	/**
 	 * Médodo de impressão da lista de dados dos ordenadores
 	 * @param modo
+	 * @param mostraEstatisca
+	 * @param limpar
+	 * @param exibecabecalho
 	 */
-	private  void imprimeOrdenacao(boolean modo,boolean mostraEstatisca){	
-		informaCabecalhoModo(modo);
+	private  void imprimeOrdenacao(boolean modo,boolean mostraEstatisca,boolean limpar,boolean exibecabecalho){	
+		informaCabecalhoModo(modo,exibecabecalho);
 		for (String dados : vetor){ 
         	if (dados != null && dados != "") {
             	Prints.msg(dados + " \n");  
@@ -214,7 +229,7 @@ public class Ordenadores {
 		}
 		Prints.msgl();
 		informaStatistica(mostraEstatisca);
-		limpaVetor();
+		limpaVetor(limpar);
 	}
 
 
@@ -240,6 +255,7 @@ public class Ordenadores {
 	}
 
 	
+	
 	/**
 	 * Método responsável pela seleção dos ordenadores
 	 * @throws Exception
@@ -258,11 +274,7 @@ public class Ordenadores {
 			break;
 		
 		case "quick":		
-			executaArquivo("l.txt" /*Prints.digita("Nome do arquivo"))*/);
-			if (validaArquivo == true){
-				ma();
-				//imprimeOrdenacao(true, true);
-			}
+			carregaQuickSort();			
 			//selecionaOrdenador();
 			break;
 	
