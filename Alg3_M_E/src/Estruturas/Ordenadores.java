@@ -4,16 +4,25 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
+
+import javax.security.auth.x500.X500Principal;
+
 import Utilitarios.Prints;
 
+/**
+ *Classe responsavel pela ondenação de dados de arquivo 
+ * @author Neimar e Aurélio
+ */
 public class Ordenadores {
 	
 	boolean validaArquivo; 
-	int index = 0, trocas = 0 , tamanho = 100;
+	int index = 0, trocas = 0 , tamanho = 35;
 	String vetor[] = new String[tamanho];
 	FileReader file;
 	BufferedReader buff;
 	String linha ,aux;
+	private int esquerda;
 	
 	//Ficheiro ficheiro = new Ficheiro();
 	
@@ -23,7 +32,7 @@ public class Ordenadores {
 	 * @throws Exception 
 	 * @throws IOException z
 	 */
-	public  void executaArquivo(String nomeArquivo ) throws Exception {
+	private void executaArquivo(String nomeArquivo) throws Exception {
 		
 		try {
 			validaArquivo = true; // Abilita de execução de ordenador
@@ -35,6 +44,8 @@ public class Ordenadores {
 				linha = buff.readLine();
 				index++;				
 				vetor[index]= linha;
+				//Prints.msg(vetor[index] +"\n");
+				
 			}
 			
 			//Aumenta tamanho do vetor.
@@ -46,7 +57,7 @@ public class Ordenadores {
 			
 		} catch (FileNotFoundException e) {
 			Prints.msge("\nArquivo inexistente\n");
-			validaArquivo = false; //// Desabilita de execução de ordenador
+			validaArquivo = false; // Desabilita a execução de ordenador
 		} catch (IOException e) {
 			Prints.msge("\nO arquivo não pode ser fechado.\n");
 		} catch (ArrayIndexOutOfBoundsException e) {
@@ -59,7 +70,7 @@ public class Ordenadores {
 	 * Exibe o cabeçalho do modo de ordenação crescente ou decrescente
 	 * @param crescente
 	 */
-	public void informaCabecalhoModo(boolean crescente){	
+	private  void informaCabecalhoModo(boolean crescente){	
         if (crescente == true) {
         	Prints.msgc("ORDEM CRESCENTE\n\n");
 		}else{
@@ -73,19 +84,27 @@ public class Ordenadores {
 	 * de modo que possa ter suas posições livres,
 	 * quando uma próxima ordenação for solicitada
 	 */
-	public void limpaVetor(){	
+	private  void limpaVetor(){	
 		for (int i = 0; i < vetor.length; i++) {
 			vetor[i]= "";
 		}
 	}
 
+	
+	
 //========================= << Ordenação BubleSort >> ==============================
 	
-	public void ordenaBubleSort(boolean crescente, boolean mostraEstatisca) throws Exception{		
+	/**
+	 * Metodo responsavel pela ordenação dos dados captados do arquivo
+	 * @param modo
+	 * @param mostraEstatisca
+	 * @throws Exception
+	 */
+	private  void ordenaBubleSort(boolean modo, boolean mostraEstatisca) throws Exception{		
 		try {
 			for (int i = 1; i < vetor.length; i++){
 	         	for (int j = i+1; j < vetor.length; j++){	         		
-	         		if (crescente == true) {	         			 
+	         		if (modo == true) {	         			 
 		                if (vetor[i].compareTo(vetor[j]) > 0) { // Ordem crescente  
 		                	aux = vetor[i];                	
 			                vetor[i] = vetor[j];
@@ -102,79 +121,109 @@ public class Ordenadores {
 	         		} 
 	         	}
 	         }	         	 
-			imprimeBubleSort(crescente,mostraEstatisca);
+			imprimeOrdenacao(modo,mostraEstatisca);
 		} catch (NullPointerException e) {
 			Prints.msge("\nO vetor de armazanamento está definido como null!"); 			
 		}	    
 	}
 	
+	
+	
+// ======================== << Ordenação QuickSort >> ====================================
+	
+	public static void quicksort(int vet[], int ini, int fim) {
+        int meio;
+ 
+        if (ini < fim) {
+            meio = partition(vet, ini, fim);
+            quicksort(vet, ini, meio);
+            quicksort(vet, meio + 1, fim);
+        }
+    }
+ 
+    public static int partition(int vet[], int ini, int fim) {
+        int pivo, topo, i;
+        pivo = vet[ini];
+        topo = ini;
+        Prints.msg("\npivo " +pivo +"\n");
+        for (i = ini + 1; i <= fim; i++) {
+            if (vet[i] < pivo) {
+                vet[topo] = vet[i];
+                vet[i] = vet[topo + 1];
+                topo++;
+            }
+        }
+        vet[topo] = pivo;
+        return topo;
+    }
+ 
+    
+    public static void ma() {
+ 
+        //Scanner in = new Scanner(System.in);
+ 
+    	int v[] = new int[35];
+        int i;
+ 	
+        for (i = 0; i < v.length; i++) {
+            v[i] = i*-3/2 ;
+            System.out.println((i + 1) + "° número: " + v[i]);
+        }
+ 
+        quicksort(v, 0, (v.length - 1));
+ 
+       
+        for (i = 0; i < v.length; i++) {        	
+            System.out.println((i + 1) + "° número: " + v[i]);
+        }
+ 
+    }
+	 
+	
+//=============== << Menu de acesso aos ordenadores >> ===============================
+	
+
+
+
+
 	/**
 	 * Informa dados estatísticos específicos da ordenação
 	 * @param mostraEstatica
 	 */
-	public void informaStatisticaBubleSort(boolean mostraEstatisca){	
+	private  void informaStatistica(boolean mostraEstatisca){	
 		if (mostraEstatisca == true) { 
 			Prints.msg(
 				"\nDADOS ESTATÍSTICOS DA ORDENAÇÃO\n"
-				+"\nTamanho do vetor: "+tamanho
+				+"\nTamanho do vetor: " +tamanho
 				+"\nTotal de trocas: " +trocas
-				+"\nTempo total: " );
+				+"\nTempo total: \n" );
 		}
 	}
 	
 	
 	/**
-	 * Médodo de impressão da lista de dados do ordenador BubleSort
-	 * @param crescente
+	 * Médodo de impressão da lista de dados dos ordenadores
+	 * @param modo
 	 */
-	public void imprimeBubleSort(boolean crescente,boolean mostraEstatisca){	
-		informaCabecalhoModo(crescente);
+	private  void imprimeOrdenacao(boolean modo,boolean mostraEstatisca){	
+		informaCabecalhoModo(modo);
 		for (String dados : vetor){ 
         	if (dados != null && dados != "") {
             	Prints.msg(dados + " \n");  
         	}        	
 		}
-		//Prints.msgl();
-		informaStatisticaBubleSort(mostraEstatisca);
+		Prints.msgl();
+		informaStatistica(mostraEstatisca);
 		limpaVetor();
 	}
-	
-// ======================== << Ordenação QuickSort >> ====================================
-	
-	int inicio = 0, fim = tamanho;
-	 public void quick_sort() {
-		   int meio;
-		 
-		   if (inicio < fim) {
-		     meio = partition(vetor, inicio, fim);
-		     quick_sort(vetor, ini, meio);
-		     quick_sort(vetor, meio + 1, fim);
-		   }
-		 }
-		 
-		 public static int partition(int []v, int ini, int fim) {
-		   int pivo, topo, i;
-		   pivo = v[ini];
-		   topo = ini;
-		 
-		   for (i = ini + 1; i <= fim; i++) {
-		     if (v[i] < pivo) {
-		       v[topo] = v[i];
-		       v[i] = v[topo + 1];
-		       topo++;
-		     }
-		   }
-		   v[topo] = pivo;
-		   return topo;
-		 }
-	
-// << Menu de acesso aos ordenadores >>
+
+
 	/**
 	 * Método que define o modo de ordenação para todos os ordenadores
 	 * @return
 	 * @throws Exception
 	 */
-	public boolean defineModoOrdencao() throws Exception{	
+	private boolean defineModoOrdencao() throws Exception{	
 		Prints.menuModoOrdenacao();
 		String modo  = Prints.digita("Modo");
 		
@@ -197,11 +246,8 @@ public class Ordenadores {
 	 */
 	public void selecionaOrdenador() throws Exception {			
 		
-		//quick_sort([]vetor, 0,tamanho);
-		Prints.menuOrdenadores();
-		
-			
-		switch (Prints.digita("")) {			
+		Prints.menuOrdenadores();				
+		switch ("quick" /*Prints.digita("")*/) {			
 			
 		case "buble":
 			executaArquivo(Prints.digita("Nome do arquivo"));
@@ -212,12 +258,12 @@ public class Ordenadores {
 			break;
 		
 		case "quick":		
-			executaArquivo(Prints.digita("Nome do arquivo"));
+			executaArquivo("l.txt" /*Prints.digita("Nome do arquivo"))*/);
 			if (validaArquivo == true){
-				//??(defineModoOrdencao(),true);
+				ma();
+				//imprimeOrdenacao(true, true);
 			}
-			selecionaOrdenador();	
-			selecionaOrdenador();
+			//selecionaOrdenador();
 			break;
 	
 		case "comparar":		
@@ -233,10 +279,5 @@ public class Ordenadores {
 			selecionaOrdenador();
 			break;
 		}
-	}
-
-	private void quick_sort(String linha2, int ini, int tamanho2) {
-		// TODO Auto-generated method stub
-		
 	}
 }
