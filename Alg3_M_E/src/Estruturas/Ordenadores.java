@@ -66,10 +66,10 @@ public class Ordenadores {
 	/**
 	 * Exibe o cabeçalho do modo de ordenação crescente ou decrescente
 	 * @param modo
-	 * @param exibecabecalho
+	 * @param exibirCabecalho
 	 */
-	private  void informaCabecalhoModo(boolean modo,boolean exibecabecalho){	
-		 if (exibecabecalho == true) {
+	private  void informaCabecalhoModo(boolean modo,boolean exibirCabecalho){	
+		 if (exibirCabecalho == true) {
 			if (modo == true) {
 	        	Prints.msgc("ORDEM CRESCENTE\n\n");
 			}else{
@@ -84,8 +84,8 @@ public class Ordenadores {
 	 * de modo que possa ter suas posições livres,
 	 * quando uma próxima ordenação for solicitada
 	 */
-	private  void limpaVetor(boolean limpar){
-		if(limpar == true){
+	private  void limpaVetor(boolean limparVetor){
+		if(limparVetor == true){
 			for (int i = 0; i < vetor.length; i++) {
 				vetor[i]= "";
 			}
@@ -102,7 +102,7 @@ public class Ordenadores {
 	 * @param mostraEstatisca
 	 * @throws Exception
 	 */
-	private  void ordenaBubleSort(boolean modo, boolean mostraEstatisca) throws Exception{		
+	private  void ordenaBuble(boolean modo, boolean mostraEstatisca) throws Exception{		
 		try {
 			for (int i = 1; i < vetor.length; i++){
 	         	for (int j = i+1; j < vetor.length; j++){	         		
@@ -140,7 +140,7 @@ public class Ordenadores {
 	 * @param fim
 	 * @return
 	 */
-    public int perticionaVetor(String vet[], int inicio, int fim) {
+	private int perticionaVetor(String vet[], int inicio, int fim) {
         String pivoInicio; 
         int i, pivoFim;
         
@@ -170,14 +170,14 @@ public class Ordenadores {
      * @param inicio
      * @param fim
      */
-	public void executaQuickSort(String vet[], int inicio, int fim) {
+	private void executaQuick(String vet[], int inicio, int fim) {
         int meio;
         
         if (inicio < fim) {
             meio = perticionaVetor(vet, inicio, fim);
             Prints.msgr("\nMeio " +meio);
-            executaQuickSort(vet, inicio, meio);
-            executaQuickSort(vet, meio + 1, fim);
+            executaQuick(vet, inicio, meio);
+            executaQuick(vet, meio + 1, fim);
            
         }        
     }   
@@ -187,10 +187,10 @@ public class Ordenadores {
 	 * Método reponsável pelo carregamento do erdenador
 	 * @throws Exception
 	 */
-    public void carregaQuickSort() throws Exception {
+	private void carregaQuick() throws Exception {
     	executaArquivo("l.txt" /*Prints.digita("Nome do arquivo"))*/);
     	if (validaArquivo == true){
-    		executaQuickSort(vetor, 1, (vetor.length - 1));
+    		executaQuick(vetor, 1, (vetor.length - 1));
     		imprimeOrdenacao(true, true, false, true);
     	} 
     }
@@ -263,18 +263,18 @@ public class Ordenadores {
 	public void selecionaOrdenador() throws Exception {			
 		
 		Prints.menuOrdenadores();				
-		switch ("quick" /*Prints.digita("")*/) {			
+		switch (Prints.digita("")) {			
 			
 		case "buble":
 			executaArquivo(Prints.digita("Nome do arquivo"));
 			if (validaArquivo == true){
-				ordenaBubleSort(defineModoOrdencao(),true);
+				ordenaBuble(defineModoOrdencao(),true);
 			}
 			selecionaOrdenador();			
 			break;
 		
 		case "quick":		
-			carregaQuickSort();			
+			carregaQuick();			
 			//selecionaOrdenador();
 			break;
 	
