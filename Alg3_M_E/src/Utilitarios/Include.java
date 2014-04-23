@@ -85,7 +85,7 @@ public class Include {
 	 * Realiza ficheiro salva edição do registro
 	* 
 	*/			
-	public void salva() {
+	public static void salva() {
 		Prints.objetoNaoImplementado();
 	} 
 		
@@ -93,7 +93,7 @@ public class Include {
 	 * Realiza alteração do registro
 	* 
 	*/
-	public void altera() {
+	public static void altera() {
 		Prints.objetoNaoImplementado();
 	} 
 }

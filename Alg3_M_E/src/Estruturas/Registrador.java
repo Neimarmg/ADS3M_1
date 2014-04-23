@@ -20,7 +20,7 @@ public class Registrador {
 	 * Método de inserção de dados no arquivo
 	 * @throws Exception
 	 */
-	public void insereDados() throws Exception {
+	public void leTeclado() throws Exception {
 		nome =  Prints.digita("Contato");
 		fone = 	Prints.digita("Telefone");
 	}
@@ -30,27 +30,27 @@ public class Registrador {
 	 * Método de manipulação de dados de arquivos
 	 * @throws Exception
 	 */
-	public  void executaComandos(String nomeArquivo) throws Exception {
+	public  void executaComando(String nomeArquivo) throws Exception {
 		Prints.menuEditarArquivo();
 		
 		switch (Prints.digita("")) {
 		
 		case "novo":
-			insereDados();
+			leTeclado();
 			Include.setAppend(true);
 			Include.addNovo(nomeArquivo, nome +"," +fone +"\n"); //Insere na última linha do arquivo
 			lista.leArquivo(nomeArquivo); //Lê arquivo após a insersão e padroniza a edição
-			executaComandos(nomeArquivo); //loop para novas ações do menu		
+			executaComando(nomeArquivo); //loop para novas ações do menu		
 			break;
 		
 		case "editar":
 			Prints.objetoNaoImplementado();
-			executaComandos(nomeArquivo);
+			executaComando(nomeArquivo);
 			break;
 			
 		case "imprimir":
 			consulta.abreArquivo(nomeArquivo, "", false);
-			executaComandos(nomeArquivo);//loop para novas ações do menu
+			executaComando(nomeArquivo);//loop para novas ações do menu
 			break;
 		
 		case  "remover" :			
@@ -62,7 +62,7 @@ public class Registrador {
 		
 		default:
 			Prints.opcaoInvalida();
-			executaComandos(nomeArquivo);//loop para novas ações do menu
+			executaComando(nomeArquivo);//loop para novas ações do menu
 			break;
 		}	
 	}

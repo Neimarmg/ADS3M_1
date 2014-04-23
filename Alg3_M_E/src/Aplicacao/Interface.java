@@ -53,7 +53,7 @@ public class Interface<T> extends Prints {
 		switch (digita("")) {			
 			
 		case "arquivo":		
-			registra.executaComandos(digita("Nome do arquivo"));			
+			registra.executaComando(digita("Nome do arquivo"));			
 			break;
 	
 		case "sair":

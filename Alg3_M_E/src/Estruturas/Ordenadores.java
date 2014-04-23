@@ -100,7 +100,7 @@ public class Ordenadores {
 	 * @param mostraEstatisca
 	 * @throws Exception
 	 */
-	private  void ordenaBuble(boolean ordem, boolean mostraEstatisca) throws Exception{		
+	private  void bubleSortOrdena(boolean ordem, boolean mostraEstatisca) throws Exception{		
 		try {
 			for (int i = 1; i < vetor.length; i++){
 	         	for (int j = i+1; j < vetor.length; j++){	         		
@@ -132,10 +132,10 @@ public class Ordenadores {
 	 * Metodo respensalvel pelo carregamento do ordenador bubleSort
 	 * @throws Exception
 	 */
-	private void carregaBuble() throws Exception {
+	private void bubleSortCarrega() throws Exception {
 		executaArquivo(Prints.digita("Nome do arquivo"));
 		if (validaArquivo == true){
-			ordenaBuble(defineOrdem(),true);
+			bubleSortOrdena(defineOrdem(),true);
 		}
 	}
 	
@@ -148,7 +148,7 @@ public class Ordenadores {
 	 * @param fim
 	 * @return
 	 */
-	private int perticionaVetor(String vet[], int inicio, int fim) {
+	private int quickSortParticiona(String vet[], int inicio, int fim) {
         String pivo; 
         int i = 0, direita = 0;
         
@@ -183,14 +183,14 @@ public class Ordenadores {
      * @param inicio
      * @param fim
      */
-	private void executaQuick(String vet[], int inicio, int fim) {
+	private void quickSortOrdena(String vet[], int inicio, int fim) {
         int meio;
         
         if (inicio < fim) {
-            meio = perticionaVetor(vet, inicio, fim);
+            meio = quickSortParticiona(vet, inicio, fim);
             	//Prints.msgr("\nMeio " +meio);
-            executaQuick(vet, inicio, meio);
-            executaQuick(vet, meio + 1, fim);
+            quickSortOrdena(vet, inicio, meio);
+            quickSortOrdena(vet, meio + 1, fim);
         }       
     }   
     
@@ -199,12 +199,12 @@ public class Ordenadores {
 	 * Método reponsável pelo carregamento do erdenador QuickSort
 	 * @throws Exception
 	 */
-	private void carregaQuick() throws Exception {
+	private void quickSortCarrega() throws Exception {
     	executaArquivo("l.txt" /*Prints.digita("Nome do arquivo"))*/);
     	
     	if (validaArquivo == true){
     		//imprimeOrdenacao(true, false, false, false);
-    		executaQuick(vetor, 1, (vetor.length - 1));
+    		quickSortOrdena(vetor, 1, (vetor.length - 1));
     		imprimeOrdenacao(true, true, true, true);
     	}    	
      }
@@ -280,12 +280,12 @@ public class Ordenadores {
 		switch ("quick" /*Prints.digita("")*/) {			
 			
 		case "buble":
-			carregaBuble();
+			bubleSortCarrega();
 			selecionaOrdenador();			
 			break;
 		
 		case "quick":		
-			carregaQuick();			
+			quickSortCarrega();			
 			//selecionaOrdenador();
 			break;
 	
