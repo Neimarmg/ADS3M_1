@@ -11,7 +11,7 @@ public class Memoria {
 
 
 	/**
-	 * Método que lista unidade de disco
+	 * Método que lista unidade de disco existentes
 	 * @return
 	 */
 	private String listaInidades() {
@@ -22,11 +22,11 @@ public class Memoria {
 	
 	
 	/**
-	 * Método que totaliza ficheiro memória total da unidade de disco
+	 * Método que calcula total de memória dispenivel na unidade de disco
 	 * @return
 	 * @throws Exception
 	 */
-	public int totalizaMenoria()throws Exception{			
+	public int calcula()throws Exception{			
 		for (FileStore store : fSistem.getFileStores()) {
 			return (int) store.getTotalSpace();
 		} return 0;
@@ -34,20 +34,24 @@ public class Memoria {
 	
 	
 	/**
-	 * Método que calcula ficheiro memória disponível na unidade de disco
+	 * Método que executa a verificação de memória disponível na unidade de disco
 	 * @return
 	 * @throws Exception
 	 */
-	public int calculaDisponivel()throws Exception {
+	public int verifica()throws Exception {
 		for (FileStore store : fSistem.getFileStores()) {
 			return (int) store.getUsableSpace();		
 		} return 0; 
 	}
 	
 	
+	/**
+	 * Método de impressão da status da memória
+	 * @throws Exception
+	 */
 	public void imprime()throws Exception {
 		Prints.msg("\nLista Unidades: " +listaInidades() +"\n");
-		Prints.msg("Espaço total: " +totalizaMenoria() +"\n");
-		Prints.msg("Total disponivel: " +calculaDisponivel() +"\n");
+		Prints.msg("Espaço total: " +calcula() +"\n");
+		Prints.msg("Total disponivel: " +verifica() +"\n");
 	}	
 }

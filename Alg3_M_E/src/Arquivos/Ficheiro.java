@@ -8,11 +8,11 @@ import java.io.FileWriter;
 import java.nio.file.Paths;
 import java.nio.file.Path;
 
-import Utilitarios.crud;
+import Utilitarios.Include;
 import Utilitarios.Prints;
 
 public class Ficheiro {
-	crud in =  new crud();
+	Include in =  new Include();
 	Memoria memoria =  new Memoria();
 
 	
@@ -23,7 +23,7 @@ public class Ficheiro {
 	public void criaNovo(final String nomeAquivo) {
 		try {
 			Prints.msg("\nVerificando disco...\n");
-			if (memoria.calculaDisponivel() >= 6000) { // Verifica memória ao inserir dados
+			if (memoria.verifica() >= 6000) { // Verifica memória ao inserir dados
 				FileWriter fw = new FileWriter(new File(nomeAquivo),true);
 				Prints.msgb("Novo arquivo criado: "+fw);
 				fw.close();
@@ -57,7 +57,7 @@ public class Ficheiro {
 	/**
 	 * @param nomeAquivo
 	 */
-	public void buscaExistente(final String nomeAquivo) {
+	public void buscaArquivo(final String nomeAquivo) {
 		Path p = Paths.get(nomeAquivo);
 		Prints.msg("Arquivo encontrado: "+p);
 	}
@@ -67,7 +67,7 @@ public class Ficheiro {
 	 * @param nomeAquivo
 	 * @throws Exception
 	 */
-	public void abreFicheiro(String nomeAquivo) throws Exception {
+	public void abre(String nomeAquivo) throws Exception {
     	try {
 			FileReader f = new FileReader(nomeAquivo);
 			BufferedReader br = new BufferedReader(f);

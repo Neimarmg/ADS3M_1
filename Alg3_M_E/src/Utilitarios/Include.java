@@ -12,12 +12,12 @@ import java.io.IOException;
  * Classe para edição e arquivos
  * @author moises
  */
-public class crud {
+public class Include {
 	static String acun = "";
 	private static Boolean append = false;
 	
 	public static void setAppend(Boolean append) {
-		crud.append = append;
+		Include.append = append;
 	}
 	
 	public static Boolean getAppend() {

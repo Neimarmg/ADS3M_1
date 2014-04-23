@@ -102,7 +102,7 @@ public class Prints {
 	
 	public static void mostarMenuT1() {		
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
-		+"=> INSERIR   'Insere registros em arquivo'\n"
+		+"=> EXECUTAR  'Executa ações em arquivo existentes'\n"
 		+"=> CONSULTAR 'Conteúdo do arquivo'\n"
 		+"=> IMPRIMIR  'Imprime arquivo selecionado'\n"
 		+"=> ARQUIVO   'Propriedades de arquivo'\n"
@@ -169,12 +169,13 @@ public class Prints {
 	/** 
 	 * @throws Exception
 	 */
-	public static void menuInserirNovo()throws Exception {	
+	public static void menuEditarArquivo()throws Exception {	
 		msgb(
 			"	OPÇÕES PARA INSERÇÃO DE DADOS:\n\n"	
-			+"=> NOVO     'Habilita para gravar novo registro'\n"
-			+"=> IMPRIMIR 'Imprime dados ordenados em arquivo'\n"
+			+"=> NOVO     'Habilita para gravar novo registro'\n"			
+			+"=> EDITAR   'Editar dados do arquivo'\n"
 			+"=> REMOVER  'Remove logicamente o registro'\n"
+			+"=> IMPRIMIR 'Imprime dados ordenados em arquivo'\n"
 			+"=> SAIR\n"
 		);		
 	}

@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import Utilitarios.Prints;
-import Utilitarios.crud;
+import Utilitarios.Include;
 
 
 public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
@@ -65,8 +65,8 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 	 * @throws IOException
 	 */
 	public void editaArquivo(String nomeArquivo) throws IOException {
-		crud.setAppend(false);
-		crud.addNovo(nomeArquivo, getAcum());
+		Include.setAppend(false);
+		Include.addNovo(nomeArquivo, getAcum());
 		ListaEncadeada.setAcum(""); //Parâmetro de limpeza de "cache" 
 	}
 	

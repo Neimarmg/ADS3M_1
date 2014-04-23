@@ -3,8 +3,12 @@ package Estruturas;
 import Arquivos.Ficheiro;
 import Navegacao.Consultas;
 import Utilitarios.Prints;
-import Utilitarios.crud;
+import Utilitarios.Include;
 
+/**
+ * Classe responsável pela manipulação de dados em arquivo edição, exclusão e inserção
+ * @author Neimar, Aurélio
+ */
 public class Registrador {
 
 	String fone , nome;
@@ -23,36 +27,42 @@ public class Registrador {
 	
 	
 	/**
+	 * Método de manipulação de dados de arquivos
 	 * @throws Exception
 	 */
-	public  void insereLista(String nomeArquivo) throws Exception {
-		Prints.menuInserirNovo();
+	public  void executaComandos(String nomeArquivo) throws Exception {
+		Prints.menuEditarArquivo();
 		
 		switch (Prints.digita("")) {
 		
 		case "novo":
 			insereDados();
-			crud.setAppend(true);
-			crud.addNovo(nomeArquivo, nome +"," +fone +"\n");
-			lista.leArquivo(nomeArquivo);
-			insereLista(nomeArquivo);		
+			Include.setAppend(true);
+			Include.addNovo(nomeArquivo, nome +"," +fone +"\n"); //Insere na última linha do arquivo
+			lista.leArquivo(nomeArquivo); //Lê arquivo após a insersão e padroniza a edição
+			executaComandos(nomeArquivo); //loop para novas ações do menu		
 			break;
 		
-		case "imprimir":
-			consulta.abreArquivo(nomeArquivo, "", false);
-			insereLista(nomeArquivo);
+		case "editar":
+			Prints.objetoNaoImplementado();
+			executaComandos(nomeArquivo);
 			break;
 			
+		case "imprimir":
+			consulta.abreArquivo(nomeArquivo, "", false);
+			executaComandos(nomeArquivo);//loop para novas ações do menu
+			break;
+		
 		case  "remover" :			
-			crud.setAppend(false); // Desabilita append para sobscrever dados no arquivo
-			crud.remove(nomeArquivo,Prints.digita("\nNome parágrafo excluir"));
+			Include.setAppend(false); // Desabilita append para sobscrever dados no arquivo
+			Include.remove(nomeArquivo,Prints.digita("\nOque deseja excluir"));
 		case "sair":
 			Prints.sair();
 			break;
 		
 		default:
 			Prints.opcaoInvalida();
-			insereLista(nomeArquivo);
+			executaComandos(nomeArquivo);//loop para novas ações do menu
 			break;
 		}	
 	}
