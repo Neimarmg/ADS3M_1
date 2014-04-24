@@ -148,32 +148,27 @@ public class Ordenadores {
 	 * @param fim
 	 * @return
 	 */
-	private int quickSortParticiona(String vet[], int inicio, int fim) {
-        String pivo; 
-        int i = 0, direita = 0;
-        
-        pivo = vet[inicio];
-        direita = inicio;
-        
-        //Prints.msg("\npivoInicio " +vet[inicio] +"\n");
-        
-        for (i = inicio + 1; i <= fim; i++) {
-        	//Prints.msg("\n\ni " +i +" fim "+fim +" cont "+trocas);
-        	//Prints.msg("\nVET I: " +vetor[i] +" PIVO: "+pivo);
-        	if (pivo.compareTo(pivo) > vetor[i].compareTo(vetor[i])) {
-                
-        		vetor[direita] = vetor[i];
-                vetor[i] = vetor[direita + 1];
-                direita++;
-                trocas++;
-                Prints.msg("\npassei ");
-            }
-        	//Prints.msg("\nvet " +vetor[i] +"\n");    
-        }
-        
-        vet[direita] = pivo;
-        //Prints.msg("\npivoFim " +topo +"\n");
-        return direita;
+	private void quickSortParticiona(String []vet, int esq, int dir,int i, int j) {
+		String pivo;
+		i = esq; 
+		j = dir;
+		//Prints.msg("\nj " +j);
+		pivo = vetor[(i + j)/2]; /* obtem o pivo x */
+		do {
+			while (pivo.compareTo(pivo) > vetor[i].compareTo(vetor[i])){ 
+				i++;
+			}
+			while (pivo.compareTo(pivo) < vetor[j].compareTo(vetor[j])){
+				j--;
+			}
+			
+			if (i < j) {
+				aux = vetor[i];
+				vetor[i] = vetor[j];
+				vetor[j] = aux;
+				i++; (j)--;
+			}
+		} while (i <= j);
     }
  
     
@@ -183,15 +178,11 @@ public class Ordenadores {
      * @param inicio
      * @param fim
      */
-	private void quickSortOrdena(String vet[], int inicio, int fim) {
-        int meio;
-        
-        if (inicio < fim) {
-            meio = quickSortParticiona(vet, inicio, fim);
-            	//Prints.msgr("\nMeio " +meio);
-            quickSortOrdena(vet, inicio, meio);
-            quickSortOrdena(vet, meio + 1, fim);
-        }       
+	private void quickSortOrdena(String []vet, int esq, int dir) {
+		int i = 0 , j = 0;
+		quickSortParticiona(vet, esq, dir, i, j);
+		if (esq < j) quickSortOrdena(vet, esq, j);
+		if (i < dir) quickSortOrdena(vet, i, dir);  
     }   
     
 	
@@ -203,8 +194,8 @@ public class Ordenadores {
     	executaArquivo("l.txt" /*Prints.digita("Nome do arquivo"))*/);
     	
     	if (validaArquivo == true){
-    		//imprimeOrdenacao(true, false, false, false);
-    		quickSortOrdena(vetor, 1, (vetor.length - 1));
+    		imprimeOrdenacao(true, false, false, false);
+    		quickSortOrdena(vetor, 1, vetor.length - 1);
     		imprimeOrdenacao(true, true, true, true);
     	}    	
      }
@@ -276,8 +267,8 @@ public class Ordenadores {
 	 */
 	public void selecionaOrdenador() throws Exception {			
 		
-		//Prints.menuOrdenadores();				
-		switch ("quick" /*Prints.digita("")*/) {			
+		Prints.menuOrdenadores();				
+		switch (Prints.digita("")) {			
 			
 		case "buble":
 			bubleSortCarrega();
@@ -286,7 +277,7 @@ public class Ordenadores {
 		
 		case "quick":		
 			quickSortCarrega();			
-			//selecionaOrdenador();
+			selecionaOrdenador();
 			break;
 	
 		case "comparar":		
