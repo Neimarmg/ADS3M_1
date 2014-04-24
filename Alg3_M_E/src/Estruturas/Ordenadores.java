@@ -14,7 +14,7 @@ import Utilitarios.Prints;
 public class Ordenadores {
 	
 	boolean validaArquivo; 
-	int index = 0, trocas = 0 , tamanho = 35;
+	int index = 0, trocas = 0 , tamanho = 34;
 	String vetor[] = new String[tamanho];
 	FileReader file;
 	BufferedReader buff;
@@ -40,9 +40,7 @@ public class Ordenadores {
 				index++;				
 				vetor[index]= linha;
 				//Prints.msg(vetor[index] +"\n");
-				
-			}
-			
+			}			
 			//Aumenta tamanho do vetor.
 			for (int i = index; i < vetor.length; i++) {
 				vetor[i]= "";
@@ -149,32 +147,35 @@ public class Ordenadores {
 	 * @return
 	 */
 	private void quickSortParticiona(String []vet, int esq, int dir,int i, int j) {
-		String pivo;
-		i = esq; 
-		j = dir;
-		
-		pivo = vetor[(i + j)/2]; /* obtem o pivo x */
-		do {
-			Prints.msg("\ni " +pivo.compareTo(pivo) + vetor[i].compareTo(vetor[i]));
-			while (pivo.compareTo(pivo) > vetor[i].compareTo(vetor[i])){ 
-				i++;
-				
-			}
-			while (pivo.compareTo(pivo) < vetor[j].compareTo(vetor[j])){
-				j--;
-				
-			}
+		try {	
+			String pivo;
+			i = esq; 
+			j = dir;		
 			
-			if (j < i) {
-				aux = vetor[i];
-				vetor[i] = vetor[j];
-				vetor[j] = aux;
-				i++; (j)--;
-			}
-		} while (i <= j);
+			pivo = vetor[i + j/2]; /* obtem o pivo */
+			
+			do {			
+				//while (vetor[i].compareTo(vetor[i]) > pivo.compareTo(pivo))(i)++;
+				
+				//while (vetor[j].compareTo(vetor[j]) < pivo.compareTo(pivo))(j)--;	
+
+					
+				if (i <= j ) {
+					aux = vetor[i];
+					vetor[i] = vetor[j];
+					vetor[j] = aux;
+					(i)++; (j)--;
+					trocas++;
+				}
+									
+			} while (i <= tamanho);
+
+		} catch (NullPointerException e) {
+			e.getMessage();
+		}
     }
  
-    
+
     /**
      * Método de execução do ordenador
      * @param vet
@@ -183,9 +184,10 @@ public class Ordenadores {
      */
 	private void quickSortOrdena(String []vet, int esq, int dir) {
 		int i = 0 , j = 0;
+		imprimeOrdenacao(true, true, true, true);
 		quickSortParticiona(vet, esq, dir, i, j);
-		if (esq < j) quickSortOrdena(vet, esq, j);
-		if (i < dir) quickSortOrdena(vet, i, dir);  
+		if (esq <= j)quickSortOrdena(vet, esq, j);
+		if (i <= dir)quickSortOrdena(vet, i, dir);  
     }   
     
 	
@@ -198,7 +200,7 @@ public class Ordenadores {
     	
     	if (validaArquivo == true){
     		imprimeOrdenacao(true, false, false, false);
-    		quickSortOrdena(vetor, 1, vetor.length - 1);
+    		quickSortOrdena(vetor, 1, tamanho-1);
     		imprimeOrdenacao(true, true, true, true);
     	}    	
      }
