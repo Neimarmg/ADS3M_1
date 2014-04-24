@@ -152,17 +152,20 @@ public class Ordenadores {
 		String pivo;
 		i = esq; 
 		j = dir;
-		//Prints.msg("\nj " +j);
+		
 		pivo = vetor[(i + j)/2]; /* obtem o pivo x */
 		do {
+			Prints.msg("\ni " +pivo.compareTo(pivo) + vetor[i].compareTo(vetor[i]));
 			while (pivo.compareTo(pivo) > vetor[i].compareTo(vetor[i])){ 
 				i++;
+				
 			}
 			while (pivo.compareTo(pivo) < vetor[j].compareTo(vetor[j])){
 				j--;
+				
 			}
 			
-			if (i < j) {
+			if (j < i) {
 				aux = vetor[i];
 				vetor[i] = vetor[j];
 				vetor[j] = aux;
@@ -267,8 +270,8 @@ public class Ordenadores {
 	 */
 	public void selecionaOrdenador() throws Exception {			
 		
-		Prints.menuOrdenadores();				
-		switch (Prints.digita("")) {			
+		//Prints.menuOrdenadores();				
+		switch ("quick" /*Prints.digita("")*/) {			
 			
 		case "buble":
 			bubleSortCarrega();
