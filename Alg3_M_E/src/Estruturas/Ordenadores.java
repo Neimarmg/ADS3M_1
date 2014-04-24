@@ -155,9 +155,9 @@ public class Ordenadores {
 			pivo = vetor[i + j/2]; /* obtem o pivo */
 			
 			do {			
-				//while (vetor[i].compareTo(vetor[i]) > pivo.compareTo(pivo))(i)++;
+				while (vetor[i].compareTo(vetor[i]) > pivo.compareTo(pivo))(i)++;
 				
-				//while (vetor[j].compareTo(vetor[j]) < pivo.compareTo(pivo))(j)--;	
+				while (vetor[j].compareTo(vetor[j]) < pivo.compareTo(pivo))(j)--;	
 
 					
 				if (i <= j ) {
@@ -186,8 +186,8 @@ public class Ordenadores {
 		int i = 0 , j = 0;
 		imprimeOrdenacao(true, true, true, true);
 		quickSortParticiona(vet, esq, dir, i, j);
-		if (esq <= j)quickSortOrdena(vet, esq, j);
-		if (i <= dir)quickSortOrdena(vet, i, dir);  
+		if (esq < j)quickSortOrdena(vet, esq, j);
+		if (i < dir)quickSortOrdena(vet, i, dir);  
     }   
     
 	
@@ -199,7 +199,7 @@ public class Ordenadores {
     	executaArquivo("l.txt" /*Prints.digita("Nome do arquivo"))*/);
     	
     	if (validaArquivo == true){
-    		imprimeOrdenacao(true, false, false, false);
+    		//imprimeOrdenacao(true, false, false, false);
     		quickSortOrdena(vetor, 1, tamanho-1);
     		imprimeOrdenacao(true, true, true, true);
     	}    	
