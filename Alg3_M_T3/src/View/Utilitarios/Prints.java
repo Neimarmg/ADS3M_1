@@ -119,6 +119,7 @@ public class Prints {
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
 		+ "=> INICIAR  'Iniciar mapa de jogo'\n"
 		+ "=> IMPRIMIR 'Imprimi opções de jogo'\n"
+		+ "=> REGRAS   'Imprimi todas as regras do jogo'\n"
 		+ "=> SAIR\n");
 	}
 

@@ -118,7 +118,7 @@ public class Interface extends Prints {
 		
 		case "atirar":
 			batalha.atira();		
-			if (Inimigo.getChances() >0) {	
+			if (Inimigo.getChances() > 0) {	
 				batalha();
 			}
 			break;
@@ -182,6 +182,12 @@ public class Interface extends Prints {
 		
 		case "imprimir":
 			imprime();
+			break;
+		
+		case "regras":
+			mapaView.imprimeRegras();
+			Prints.menuMain();
+			inicia();
 			break;
 
 		case "sair":

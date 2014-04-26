@@ -39,7 +39,7 @@ public class Batalha {
 	
 	
 	/**
-	 * Método de execução a partir da 2ª fase do jogo
+	 * Método de execução a partir da 2ª fase do jogo e avança para próximo nivel
 	 * @throws Exception
 	 */
 	protected void pulaFase() throws Exception {			
@@ -48,6 +48,7 @@ public class Batalha {
 			MapaMod.setLinha(NiveisMod.getMapanivel2());
 			MapaMod.setColuna(NiveisMod.getMapanivel2());
 			MapaMod.criaMapa();
+			naviosView.executa(true, NiveisMod.getNivel2());
 			mapaView.imprime(true,"");	
 		}
 		
@@ -56,6 +57,7 @@ public class Batalha {
 			MapaMod.setLinha(NiveisMod.getMapanivel3());
 			MapaMod.setColuna(NiveisMod.getMapanivel3());
 			MapaMod.criaMapa();
+			naviosView.executa(true, NiveisMod.getNivel3());
 			mapaView.imprime(true,"");
 		}
 		
@@ -64,6 +66,7 @@ public class Batalha {
 			MapaMod.setLinha(NiveisMod.getMapanivel4());
 			MapaMod.setColuna(NiveisMod.getMapanivel4());
 			MapaMod.criaMapa();
+			naviosView.executa(true, NiveisMod.getNivel4());
 			mapaView.imprime(true,"");		
 		}
 		
@@ -72,6 +75,7 @@ public class Batalha {
 			MapaMod.setLinha(NiveisMod.getMapanivel5());
 			MapaMod.setColuna(NiveisMod.getMapanivel5());
 			MapaMod.criaMapa();
+			naviosView.executa(true, NiveisMod.getNivel5());
 			mapaView.imprime(true,"");		
 		}		
 	
@@ -181,7 +185,7 @@ public class Batalha {
 		try {
 			Prints.msgl();
 			inimigo.ValidaAlvo(Prints.digitaNumero("Nro. linha"),
-						 Prints.digitaNumero("Nro. coluna" ),"O");
+			Prints.digitaNumero("Nro. coluna" ),"O");
 		} catch (InputMismatchException e) {
 			Prints.msgb("Era esperado um dígito como coordenada!");
 		}
