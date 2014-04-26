@@ -146,32 +146,29 @@ public class Ordenadores {
 	 * @param fim
 	 * @return
 	 */
-	private void quickSortParticiona(String []vet, int esq, int dir,int i, int j) {
+	private void quickSortParticiona(String []vet, int i, int j) {
 		try {	
 			String pivo;
-			i = esq; 
-			j = dir;		
 			
-			pivo = vetor[i + j/2]; /* obtem o pivo */
+			pivo = vet[i + j/2]; /* obtem o pivo */
 			
 			do {			
-				while (vetor[i].compareTo(vetor[i]) > pivo.compareTo(pivo))(i)++;
+				while (vet[i].compareTo(vet[i]) > pivo.compareTo(pivo))(i)++;
 				
-				while (vetor[j].compareTo(vetor[j]) < pivo.compareTo(pivo))(j)--;	
-
+				while (vet[j].compareTo(vet[j]) < pivo.compareTo(pivo))(j)--;	
 					
 				if (i <= j ) {
-					aux = vetor[i];
-					vetor[i] = vetor[j];
-					vetor[j] = aux;
+					aux = vet[i];
+					vet[i] = vet[j];
+					vet[j] = aux;
 					(i)++; (j)--;
 					trocas++;
 				}
 									
-			} while (i <= tamanho);
+			} while (i <= j);
 
 		} catch (NullPointerException e) {
-			e.getMessage();
+			Prints.msge("\nO vetor de armazanamento está definido como null!"); 	
 		}
     }
  
@@ -183,11 +180,10 @@ public class Ordenadores {
      * @param fim
      */
 	private void quickSortOrdena(String []vet, int esq, int dir) {
-		int i = 0 , j = 0;
-		imprimeOrdenacao(true, true, true, true);
-		quickSortParticiona(vet, esq, dir, i, j);
-		if (esq < j)quickSortOrdena(vet, esq, j);
-		if (i < dir)quickSortOrdena(vet, i, dir);  
+		int i = esq , j = dir;
+		quickSortParticiona(vetor, i, j);
+		if (esq < j)quickSortOrdena(vetor, esq, j);
+		if (i < dir)quickSortOrdena(vetor, i, dir);  
     }   
     
 	
