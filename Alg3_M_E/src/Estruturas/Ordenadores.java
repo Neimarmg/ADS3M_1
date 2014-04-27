@@ -14,7 +14,7 @@ import Utilitarios.Prints;
 public class Ordenadores {
 	
 	boolean validaArquivo; 
-	int index = 0, trocas = 0 , tamanho = 34;
+	int index = 0, comparacoes = 0 , tamanho = 36;
 	String vetor[] = new String[tamanho];
 	FileReader file;
 	BufferedReader buff;
@@ -83,12 +83,23 @@ public class Ordenadores {
 	private  void limpaVetor(boolean limparVetor){
 		if(limparVetor == true){
 			for (int i = 0; i < vetor.length; i++) {
-				vetor[i]= "";
+				vetor[i]= "";				
 			}
 		}
+		index = 0;
 	}
 
 	
+	/**
+	 * Método geral responsavel pela troca dos dados do no vetor
+	 * @param i
+	 * @param j
+	 */
+	private void trocaItens(int i, int j){
+		aux = vetor[i];                	
+        vetor[i] = vetor[j];
+        vetor[j] = aux;	
+	}
 	
 //========================= << Ordenação BubleSort >> ==============================
 	
@@ -104,17 +115,13 @@ public class Ordenadores {
 	         	for (int j = i+1; j < vetor.length; j++){	         		
 	         		if (ordem == true) {	         			 
 		                if (vetor[i].compareTo(vetor[j]) > 0) { // Ordem crescente  
-		                	aux = vetor[i];                	
-			                vetor[i] = vetor[j];
-			                vetor[j] = aux;
-			                trocas++;
+		                   	trocaItens(i, j);
+			                comparacoes++;
 		                }
 	         		}else{
 		                if (vetor[i].compareTo(vetor[j]) < 0) { // Ordem decrescente  
-		                	aux = vetor[i];                	
-		                	vetor[i] = vetor[j];
-		                	vetor[j] = aux;
-		                	trocas++;
+		                	trocaItens(i, j);
+		                	comparacoes++;
 		                }
 	         		} 
 	         	}
@@ -138,6 +145,7 @@ public class Ordenadores {
 	}
 	
 // ======================== << Ordenação QuickSort >> ====================================
+
 	
 	/**
 	 * Metodo reponsavel para o particionamento do vetor
@@ -146,29 +154,39 @@ public class Ordenadores {
 	 * @param fim
 	 * @return
 	 */
-	private void quickSortParticiona(String []vet, int i, int j) {
+	int v = 0;
+	private void quickSortParticiona(String []vet, int esq, int dir, int i, int j) {
+		
 		try {	
 			String pivo;
 			
-			pivo = vet[i + j/2]; /* obtem o pivo */
+			i = esq+1; 
+			j = dir-1;
+			pivo = vet[(i + j)/2]; /* obtem o pivo x */
 			
-			do {			
-				while (vet[i].compareTo(vet[i]) > pivo.compareTo(pivo))(i)++;
-				
-				while (vet[j].compareTo(vet[j]) < pivo.compareTo(pivo))(j)--;	
-					
-				if (i <= j ) {
-					aux = vet[i];
-					vet[i] = vet[j];
-					vet[j] = aux;
-					(i)++; (j)--;
-					trocas++;
+			do{
+				while (pivo.compareTo(vet[i]) > vet[i].compareTo(pivo)){
+					(i)++;	
+					//v++;	
 				}
-									
-			} while (i <= j);
-
+				
+				while (pivo.compareTo(vet[j]) < vet[j].compareTo(pivo)){
+					(j)--;
+					trocaItens(i, j);
+					
+				}
+				//Prints.msgc("");
+				
+				if (i <= j) {
+					trocaItens(i, j);										
+					(i)++; (j)--;
+					
+				}				
+			}while (i > j);
+			
 		} catch (NullPointerException e) {
-			Prints.msge("\nO vetor de armazanamento está definido como null!"); 	
+			Prints.msge("\nO vetor de armazanamento está definido como null!"); 
+			
 		}
     }
  
@@ -179,11 +197,13 @@ public class Ordenadores {
      * @param inicio
      * @param fim
      */
-	private void quickSortOrdena(String []vet, int esq, int dir) {
-		int i = esq , j = dir;
-		quickSortParticiona(vetor, i, j);
-		if (esq < j)quickSortOrdena(vetor, esq, j);
-		if (i < dir)quickSortOrdena(vetor, i, dir);  
+	private void quickSortOrdena(String []vet,int esq , int dir) {
+		int i = 0, j = dir;
+		quickSortParticiona(vet, esq, dir, i, j);
+		
+		v++;
+		
+		Prints.msg("\nVotas i " +v);
     }   
     
 	
@@ -192,11 +212,11 @@ public class Ordenadores {
 	 * @throws Exception
 	 */
 	private void quickSortCarrega() throws Exception {
-    	executaArquivo("l.txt" /*Prints.digita("Nome do arquivo"))*/);
+    	executaArquivo(/*"l.txt"*/Prints.digita("Nome do arquivo"));
     	
     	if (validaArquivo == true){
     		//imprimeOrdenacao(true, false, false, false);
-    		quickSortOrdena(vetor, 1, tamanho-1);
+    		quickSortOrdena(vetor, 0, tamanho);
     		imprimeOrdenacao(true, true, true, true);
     	}    	
      }
@@ -213,7 +233,7 @@ public class Ordenadores {
 			Prints.msg(
 				"\nDADOS ESTATÍSTICOS DA ORDENAÇÃO\n"
 				+"\nTamanho do vetor: " +tamanho
-				+"\nTotal de trocas: " +trocas
+				+"\nTotal de comparacoes: " +comparacoes
 				+"\nTempo total: \n" );
 		}
 	}
@@ -226,7 +246,7 @@ public class Ordenadores {
 	 * @param limpaVetor
 	 * @param exibecabecalho
 	 */
-	private  void imprimeOrdenacao(boolean ordem,boolean mostraEstatisca,boolean limpaVetor,boolean exibecabecalho){	
+	private  void imprimeOrdenacao(boolean ordem, boolean mostraEstatisca, boolean limpaVetor, boolean exibecabecalho){	
 		informaCabecalhoModo(ordem,exibecabecalho);
 		for (String dados : vetor){ 
         	if (dados != null && dados != "") {
@@ -268,8 +288,8 @@ public class Ordenadores {
 	 */
 	public void selecionaOrdenador() throws Exception {			
 		
-		//Prints.menuOrdenadores();				
-		switch ("quick" /*Prints.digita("")*/) {			
+		Prints.menuOrdenadores();				
+		switch (Prints.digita("")) {			
 			
 		case "buble":
 			bubleSortCarrega();
@@ -282,7 +302,6 @@ public class Ordenadores {
 			break;
 	
 		case "comparar":		
-		
 			selecionaOrdenador();
 			break;
 		case "sair":

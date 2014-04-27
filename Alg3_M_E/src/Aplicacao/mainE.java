@@ -46,7 +46,7 @@ public class mainE{
 			break;
 			
 		case "t5":
-			Prints.msge("Aguarda atividade do professor!");
+			Prints.msge("\nAguarda implementação!");
 			selecionaAtividade();
 			break;
 		
