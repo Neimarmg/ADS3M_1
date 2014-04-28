@@ -20,9 +20,8 @@ public class Ordenadores {
 	String vetor[] = new String[tamanho];
 	FileReader file;
 	BufferedReader buff;
-	String linha ,aux;
+	String linha ,aux, pivo;
 	long tempoExecucao;
-	SimpleDateFormat sdf = new SimpleDateFormat("0:00");
 
 	
 	/**
@@ -31,7 +30,7 @@ public class Ordenadores {
 	 * @throws Exception 
 	 * @throws IOException z
 	 */
-	private void executaArquivo(String nomeArquivo) throws Exception {
+	private void leArquivo(String nomeArquivo) throws Exception {
 		
 		try {
 			validaArquivo = true; // Abilita de execução de ordenador
@@ -45,8 +44,8 @@ public class Ordenadores {
 				vetor[index]= linha;
 				//Prints.msg(vetor[index] +"\n");
 			}			
-			//Aumenta tamanho do vetor.
-			for (int i = index; i < vetor.length; i++) {
+			
+			for (int i = index; i < vetor.length; i++) { //Aumenta tamanho do vetor.
 				vetor[i]= "";
 			}
 			
@@ -130,7 +129,7 @@ public class Ordenadores {
 	         		} 
 	         	}
 	         }			
-			tempoExecucao  = DateFormat.SECOND_FIELD; 
+			tempoExecucao  = DateFormat.MILLISECOND_FIELD; 
 			imprimeOrdenacao(ordem,mostraEstatisca,true,true);
 		} catch (NullPointerException e) {
 			Prints.msge("\nO vetor de armazanamento está definido como null!"); 			
@@ -143,7 +142,7 @@ public class Ordenadores {
 	 * @throws Exception
 	 */
 	private void bubleSortCarrega() throws Exception {
-		executaArquivo(Prints.digita("Nome do arquivo"));
+		leArquivo(Prints.digita("Nome do arquivo"));
 		if (validaArquivo == true){
 			bubleSortOrdena(defineOrdem(),true);
 		}
@@ -152,6 +151,57 @@ public class Ordenadores {
 	
 // ======================== << Ordenação QuickSort >> ====================================
 
+	
+	
+	
+	
+	public void quickSortOrdenar(String []vet, int inicio, int fim) {
+		int i, j;
+		
+		pivo = vet[inicio+fim/2];
+		for (i = inicio; i < vetor.length; i++) {
+
+			/*
+			for (j = inicio; j < vetor.length/2; j++) {
+				if (pivo.compareTo(vetor[i]) < vet[j].compareTo(vet[j]) && fim/2 >= j ){
+					trocaItens(i , j);
+					comparacoes++;				
+				}
+			}
+			
+			for (j = fim -1 ; j >= vet.length - (fim -1)  ; j--) {
+				
+				if (pivo.compareTo(vetor[i]) > vet[j].compareTo(vet[j]) && fim/2 <= j ){
+					trocaItens(i , j);
+					comparacoes++;	
+				}				
+			}
+			*/
+			for (j = 1 ; j < vetor.length; j++){
+				if (vetor[j].compareTo(vetor[j]) < 0 ){
+					trocaItens(i , j);
+					comparacoes++;
+				}
+					
+			}
+		}
+		
+	}
+	
+	
+	public void quickSortExecuta(String []vet, int inicio, int fim ) {
+		
+		quickSortOrdenar(vet, inicio, fim);
+		
+	}	
+	
+	
+	public void quickSortCarrega() throws Exception {
+		leArquivo(Prints.digita("Nome do arquivo"));
+		quickSortExecuta(vetor, 1 , tamanho);
+		imprimeOrdenacao(true, true, true,  true);
+	}
+	
 	
 //=============== << Menu de acesso aos ordenadores >> ===============================
 	
@@ -228,8 +278,8 @@ public class Ordenadores {
 			break;
 		
 		case "quick":		
-			//quickSortCarrega();			
-			selecionaOrdenador();
+			quickSortCarrega();			
+			//selecionaOrdenador();
 			break;
 	
 		case "comparar":
