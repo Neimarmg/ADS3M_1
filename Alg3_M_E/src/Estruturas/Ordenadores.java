@@ -97,7 +97,7 @@ public class Ordenadores {
 	 * @param i
 	 * @param j
 	 */
-	private void trocasBubleSort(int i, int j){
+	private void trocasItensBubleSort(int i, int j){
 		aux = vetor[i];                	
         vetor[i] = vetor[j];
         vetor[j] = aux;	
@@ -110,18 +110,18 @@ public class Ordenadores {
 	 * @param mostraEstatisca
 	 * @throws Exception
 	 */
-	private  void bubleSortOrdena(boolean ordem, boolean mostraEstatisca) throws Exception{		
+	private  void ordenaBubleSort(boolean ordem, boolean mostraEstatisca) throws Exception{		
 		try {
 			for (int i = 1; i < vetor.length; i++){
 	         	for (int j = i+1; j < vetor.length; j++){	         		
 	         		if (ordem == true) {	         			 
 		                if (vetor[i].compareTo(vetor[j]) > 0) { // Ordem crescente  
-		                   	trocasBubleSort(i, j);
+		                   	trocasItensBubleSort(i, j);
 			                comparacoes++;
 		                }
 	         		}else{
 		                if (vetor[i].compareTo(vetor[j]) < 0) { // Ordem decrescente  
-		                	trocasBubleSort(i, j);
+		                	trocasItensBubleSort(i, j);
 		                	comparacoes++;
 		                }
 	         		} 
@@ -139,10 +139,10 @@ public class Ordenadores {
 	 * Metodo respensalvel pelo carregamento do ordenador bubleSort
 	 * @throws Exception
 	 */
-	private void bubleSortCarrega() throws Exception {
+	private void carregaBubleSort() throws Exception {
 		leArquivo(Prints.digita("Nome do arquivo"));
 		if (validaArquivo == true){
-			bubleSortOrdena(defineOrdem(),true);
+			ordenaBubleSort(especificaOrdem(),true);
 		}		 
 	}
 	
@@ -155,7 +155,7 @@ public class Ordenadores {
 	 * @param fim
 	 * @return
 	 */
-	public int quickSortParticiona(String vet[], int ini, int fim, boolean ordem) {
+	private int particionaVetorQuickSort(String vet[], int ini, int fim, boolean ordem) {
 		int i;
 	    pivo = vet[ini];
 	    topo = ini;
@@ -189,12 +189,12 @@ public class Ordenadores {
 	 * @param ini
 	 * @param fim
 	 */
-	public void quickSortOrdena(String vet[], int ini, int fim, boolean ordem) {
+	private void ordenaQuickSort(String vet[], int ini, int fim, boolean ordem) {
 		int meio;		
 		if (ini < fim) {
-			meio = quickSortParticiona(vet, ini, fim, ordem);
-		    quickSortOrdena(vet, ini, meio, ordem);
-		    quickSortOrdena(vet, meio + 1, fim, ordem);
+			meio = particionaVetorQuickSort(vet, ini, fim, ordem);
+		    ordenaQuickSort(vet, ini, meio, ordem);
+		    ordenaQuickSort(vet, meio + 1, fim, ordem);
 		}		
 	}
 	
@@ -203,12 +203,12 @@ public class Ordenadores {
 	 * Método de carregamento e validação do ordenador 
 	 * @throws Exception
 	 */
-	public void quickSortCarrega() throws Exception {
+	private void carregaQuickSort() throws Exception {
 		leArquivo(Prints.digita("Nome do arquivo"));
 		
 		if (validaArquivo == true){ 
-			boolean ordem = defineOrdem();
-			quickSortOrdena(vetor, 1, (vetor.length-2),ordem );
+			boolean ordem = especificaOrdem();
+			ordenaQuickSort(vetor, 1, (vetor.length-2),ordem );
 			imprimeOrdenacao(ordem, true, true, true);
 		}	    
 	}
@@ -256,7 +256,7 @@ public class Ordenadores {
 	 * @return
 	 * @throws Exception
 	 */
-	private boolean defineOrdem() throws Exception{	
+	private boolean especificaOrdem() throws Exception{	
 		Prints.menuModoOrdenacao();
 		String modo  = Prints.digita("Modo");
 		
@@ -268,7 +268,7 @@ public class Ordenadores {
 			
 		} else { // Comando de validação de modo de ordenação
 			Prints.opcaoInvalida();			
-			return defineOrdem();
+			return especificaOrdem();
 		}		
 	}
 
@@ -284,13 +284,13 @@ public class Ordenadores {
 			
 		case "buble":
 			nomeOrdenador = "BUBLE SORT ";
-			bubleSortCarrega();
+			carregaBubleSort();
 			selecionaOrdenador();			
 			break;
 		
 		case "quick":		
 			nomeOrdenador = "QUICK SORT ";
-			quickSortCarrega();			
+			carregaQuickSort();			
 			selecionaOrdenador();
 			break;
 	
