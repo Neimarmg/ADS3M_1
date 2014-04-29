@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+import Utilitarios.Dia;
 import Utilitarios.Prints;
 
 /**
@@ -16,7 +17,7 @@ import Utilitarios.Prints;
 public class Ordenadores {
 	
 	boolean validaArquivo; 
-	int index = 0, comparacoes = 0 , tamanho = 36;
+	int index = 0, comparacoes = 0 , tamanho = 34;
 	String vetor[] = new String[tamanho];
 	FileReader file;
 	BufferedReader buff;
@@ -151,57 +152,40 @@ public class Ordenadores {
 	
 // ======================== << Ordenação QuickSort >> ====================================
 
-	
-	
-	
-	
-	public void quickSortOrdenar(String []vet, int inicio, int fim) {
-		int i, j;
-		
-		pivo = vet[inicio+fim/2];
-		for (i = inicio; i < vetor.length; i++) {
 
-			/*
-			for (j = inicio; j < vetor.length/2; j++) {
-				if (pivo.compareTo(vetor[i]) < vet[j].compareTo(vet[j]) && fim/2 >= j ){
-					trocaItens(i , j);
-					comparacoes++;				
-				}
-			}
-			
-			for (j = fim -1 ; j >= vet.length - (fim -1)  ; j--) {
-				
-				if (pivo.compareTo(vetor[i]) > vet[j].compareTo(vet[j]) && fim/2 <= j ){
-					trocaItens(i , j);
-					comparacoes++;	
-				}				
-			}
-			*/
-			for (j = 1 ; j < vetor.length; j++){
-				if (vetor[j].compareTo(vetor[j]) < 0 ){
-					trocaItens(i , j);
-					comparacoes++;
-				}
-					
-			}
+	 
+	public int quickSortParticiona(String vet[], int ini, int fim) {
+		int topo, i;
+	    pivo = vet[ini];
+	    topo = ini;
+	 
+	    for (i = ini + 1; i <= fim; i++) {
+	    	if (vet[i].compareTo(pivo) < 0) {
+	    		vet[topo] = vet[i];
+	    		vet[i] = vet[topo + 1];
+	            topo++;
+	        }
+	     }
+	    vet[topo] = vet[i];
+	    return topo;
+	 }
+	 
+	    
+	public void quickSortOrdena(String vet[], int ini, int fim) {
+		int meio;
+		
+		if (ini < fim) {
+			meio = quickSortParticiona(vet, ini, fim);
+		    quickSortOrdena(vet, ini, meio);
+		    quickSortOrdena(vet, meio + 1, fim);
 		}
-		
 	}
-	
-	
-	public void quickSortExecuta(String []vet, int inicio, int fim ) {
-		
-		quickSortOrdenar(vet, inicio, fim);
-		
-	}	
-	
-	
+		 
 	public void quickSortCarrega() throws Exception {
 		leArquivo(Prints.digita("Nome do arquivo"));
-		quickSortExecuta(vetor, 1 , tamanho);
-		imprimeOrdenacao(true, true, true,  true);
+	    quickSortOrdena(vetor, 1, (vetor.length-2));
+	    imprimeOrdenacao(true, true, true, true);
 	}
-	
 	
 //=============== << Menu de acesso aos ordenadores >> ===============================
 	
