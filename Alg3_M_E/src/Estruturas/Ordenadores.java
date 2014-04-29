@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.DateFormat;
 import Utilitarios.Prints;
 
 /**
@@ -14,7 +13,7 @@ import Utilitarios.Prints;
 public class Ordenadores {
 	
 	boolean validaArquivo; 
-	int topo, index = 0, comparacoes = 0 , tamanho = 34;
+	int topo, index = 0, comparacoes = 0, tamanho = 34;
 	String vetor[] = new String[tamanho];
 	FileReader file;
 	BufferedReader buff;
@@ -127,11 +126,11 @@ public class Ordenadores {
 		                }
 	         		} 
 	         	}
+	         	tempoExecucao  = System.currentTimeMillis();
 	         }			
-			tempoExecucao  = DateFormat.MILLISECOND_FIELD; 
 			imprimeOrdenacao(ordem,mostraEstatisca,true,true);
 		} catch (NullPointerException e) {
-			Prints.msge("\nO vetor de armazanamento está definido como null!"); 			
+		 	Prints.msge("\nO vetor de armazanamento está definido como null!"); 			
 		}	    
 	}
 	
@@ -144,14 +143,13 @@ public class Ordenadores {
 		leArquivo(Prints.digita("Nome do arquivo"));
 		if (validaArquivo == true){
 			bubleSortOrdena(defineOrdem(),true);
-		}
-		 
+		}		 
 	}
 	
 // ======================== << Ordenação QuickSort >> ====================================
 
 	/**
-	 * Método que partiona o vetor para a pre ordenação
+	 * Método que partiona o vetor e ordena as partes
 	 * @param vet
 	 * @param ini
 	 * @param fim
@@ -177,7 +175,8 @@ public class Ordenadores {
 			    	topo++;
 			    	comparacoes++;
 		    	}	
-		    }		   
+		    }	
+	    	tempoExecucao  = System.currentTimeMillis();
 	     }
 	    vet[topo] = pivo;
 	    return topo;
@@ -201,7 +200,7 @@ public class Ordenadores {
 	
 	
 	/**
-	 * Método de carregamento do ordenador
+	 * Método de carregamento e validação do ordenador 
 	 * @throws Exception
 	 */
 	public void quickSortCarrega() throws Exception {
@@ -217,36 +216,18 @@ public class Ordenadores {
 //=============== << Menu de acesso aos ordenadores >> ===============================
 	
 	/**
-	 * Método de comparação entre ordenadores
-	 * @throws Exception
-	 */
-	public void comparaOrdenadores() throws Exception {
-		leArquivo(Prints.digita("Nome do arquivo"));
-		
-		if (validaArquivo == true){ 
-			boolean ordem = defineOrdem();
-			bubleSortOrdena(false, true);
-			informaStatistica(true);
-			comparacoes = 0;
-			quickSortOrdena(vetor, 1, (vetor.length-2),ordem );			
-		}	    
-	}
-	
-	
-	
-	
-	/**
 	 * Informa dados estatísticos específicos da ordenação
 	 * @param mostraEstatica
 	 */
 	private  void informaStatistica(boolean mostraEstatisca){	
 		if (mostraEstatisca == true) { 
 			Prints.msg(
-				"\nDADOS ESTATÍSTICOS DA ORDENAÇÃO\n"
+				"\nDADOS ESTATÍSTICOS DA ORDENAÇÃO " +nomeOrdenador
 				+"\nTamanho do vetor: " +tamanho
 				+"\nTotal de comparacoes: " +comparacoes
 				+"\nTempo total: " +tempoExecucao +"\n");
 		}
+		comparacoes = 0;		
 	}
 	
 	
@@ -314,7 +295,7 @@ public class Ordenadores {
 			break;
 	
 		case "comparar":
-			comparaOrdenadores();
+			Prints.objetoNaoImplementado();
 			selecionaOrdenador();
 			break;
 		case "sair":
