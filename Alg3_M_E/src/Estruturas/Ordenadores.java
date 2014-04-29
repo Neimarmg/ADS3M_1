@@ -5,9 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-
-import Utilitarios.Dia;
 import Utilitarios.Prints;
 
 /**
@@ -17,11 +14,11 @@ import Utilitarios.Prints;
 public class Ordenadores {
 	
 	boolean validaArquivo; 
-	int index = 0, comparacoes = 0 , tamanho = 34;
+	int topo, index = 0, comparacoes = 0 , tamanho = 34;
 	String vetor[] = new String[tamanho];
 	FileReader file;
 	BufferedReader buff;
-	String linha ,aux, pivo;
+	String linha ,aux, pivo, nomeOrdenador;
 	long tempoExecucao;
 
 	
@@ -71,9 +68,9 @@ public class Ordenadores {
 	private  void informaCabecalhoModo(boolean ordem,boolean exibirCabecalho){	
 		 if (exibirCabecalho == true) {
 			if (ordem == true) {
-	        	Prints.msgc("ORDEM CRESCENTE\n\n");
+	        	Prints.msgc("	ORDEM CRESCENTE "+nomeOrdenador +"\n\n");
 			}else{
-				Prints.msgc("ORDEM DECRESCENTE\n\n");
+				Prints.msgc("	ORDEM DECRESCENTE "+nomeOrdenador +"\n\n");
 			}
 		 }
 	}
@@ -94,18 +91,19 @@ public class Ordenadores {
 	}
 
 	
+//========================= << Ordenação BubleSort >> ==============================
+	
 	/**
 	 * Método geral responsavel pela troca dos dados do no vetor
 	 * @param i
 	 * @param j
 	 */
-	private void trocaItens(int i, int j){
+	private void trocasBubleSort(int i, int j){
 		aux = vetor[i];                	
         vetor[i] = vetor[j];
         vetor[j] = aux;	
 	}
-	
-//========================= << Ordenação BubleSort >> ==============================
+		
 	
 	/**
 	 * Metodo responsavel pela ordenação dos dados captados do arquivo
@@ -119,12 +117,12 @@ public class Ordenadores {
 	         	for (int j = i+1; j < vetor.length; j++){	         		
 	         		if (ordem == true) {	         			 
 		                if (vetor[i].compareTo(vetor[j]) > 0) { // Ordem crescente  
-		                   	trocaItens(i, j);
+		                   	trocasBubleSort(i, j);
 			                comparacoes++;
 		                }
 	         		}else{
 		                if (vetor[i].compareTo(vetor[j]) < 0) { // Ordem decrescente  
-		                	trocaItens(i, j);
+		                	trocasBubleSort(i, j);
 		                	comparacoes++;
 		                }
 	         		} 
@@ -152,42 +150,90 @@ public class Ordenadores {
 	
 // ======================== << Ordenação QuickSort >> ====================================
 
-
-	 
-	public int quickSortParticiona(String vet[], int ini, int fim) {
-		int topo, i;
+	/**
+	 * Método que partiona o vetor para a pre ordenação
+	 * @param vet
+	 * @param ini
+	 * @param fim
+	 * @return
+	 */
+	public int quickSortParticiona(String vet[], int ini, int fim, boolean ordem) {
+		int i;
 	    pivo = vet[ini];
 	    topo = ini;
 	 
 	    for (i = ini + 1; i <= fim; i++) {
-	    	if (vet[i].compareTo(pivo) < 0) {
-	    		vet[topo] = vet[i];
-	    		vet[i] = vet[topo + 1];
-	            topo++;
-	        }
+	    	if(ordem == true){
+		    	if (vet[i].compareTo(pivo) < 0) {
+		    		vet[topo] = vet[i];
+			    	vet[i] = vet[topo + 1];		            
+			    	 topo++;
+			    	comparacoes++;
+		    	}
+		    }else{
+		    	if (vet[i].compareTo(pivo) > 0) {
+		    		vet[topo] = vet[i];
+			    	vet[i] = vet[topo + 1];		            
+			    	topo++;
+			    	comparacoes++;
+		    	}	
+		    }		   
 	     }
-	    vet[topo] = vet[i];
+	    vet[topo] = pivo;
 	    return topo;
 	 }
 	 
-	    
-	public void quickSortOrdena(String vet[], int ini, int fim) {
-		int meio;
-		
+	
+	/**
+	 * Método que executa as etapas a ordenação do vetor
+	 * @param vet
+	 * @param ini
+	 * @param fim
+	 */
+	public void quickSortOrdena(String vet[], int ini, int fim, boolean ordem) {
+		int meio;		
 		if (ini < fim) {
-			meio = quickSortParticiona(vet, ini, fim);
-		    quickSortOrdena(vet, ini, meio);
-		    quickSortOrdena(vet, meio + 1, fim);
-		}
+			meio = quickSortParticiona(vet, ini, fim, ordem);
+		    quickSortOrdena(vet, ini, meio, ordem);
+		    quickSortOrdena(vet, meio + 1, fim, ordem);
+		}		
 	}
-		 
+	
+	
+	/**
+	 * Método de carregamento do ordenador
+	 * @throws Exception
+	 */
 	public void quickSortCarrega() throws Exception {
 		leArquivo(Prints.digita("Nome do arquivo"));
-	    quickSortOrdena(vetor, 1, (vetor.length-2));
-	    imprimeOrdenacao(true, true, true, true);
+		
+		if (validaArquivo == true){ 
+			boolean ordem = defineOrdem();
+			quickSortOrdena(vetor, 1, (vetor.length-2),ordem );
+			imprimeOrdenacao(ordem, true, true, true);
+		}	    
 	}
 	
 //=============== << Menu de acesso aos ordenadores >> ===============================
+	
+	/**
+	 * Método de comparação entre ordenadores
+	 * @throws Exception
+	 */
+	public void comparaOrdenadores() throws Exception {
+		leArquivo(Prints.digita("Nome do arquivo"));
+		
+		if (validaArquivo == true){ 
+			boolean ordem = defineOrdem();
+			bubleSortOrdena(false, true);
+			informaStatistica(true);
+			comparacoes = 0;
+			quickSortOrdena(vetor, 1, (vetor.length-2),ordem );			
+		}	    
+	}
+	
+	
+	
 	
 	/**
 	 * Informa dados estatísticos específicos da ordenação
@@ -246,7 +292,6 @@ public class Ordenadores {
 	}
 
 	
-	
 	/**
 	 * Método responsável pela seleção dos comandos para execuçao dos ordenadores
 	 * @throws Exception
@@ -257,17 +302,19 @@ public class Ordenadores {
 		switch (Prints.digita("")) {			
 			
 		case "buble":
+			nomeOrdenador = "BUBLE SORT ";
 			bubleSortCarrega();
 			selecionaOrdenador();			
 			break;
 		
 		case "quick":		
+			nomeOrdenador = "QUICK SORT ";
 			quickSortCarrega();			
-			//selecionaOrdenador();
+			selecionaOrdenador();
 			break;
 	
 		case "comparar":
-			imprimeOrdenacao(false, true, true, false);
+			comparaOrdenadores();
 			selecionaOrdenador();
 			break;
 		case "sair":
