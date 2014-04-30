@@ -13,19 +13,25 @@ import Utilitarios.Prints;
 public class Ordenadores {
 	
 	boolean validaArquivo; 
-	int topo, index = 0, comparacoes = 0, tamanho = 34;
+	int topo;
+	int index = 0;
+	int comparacoes = 0;
+	int tamanho = 34;
+	long tempoExecucao;
 	String vetor[] = new String[tamanho];
+	String aux;
+	String pivo;
+	String nomeOrdenador;
+	String linha;
 	FileReader file;
 	BufferedReader buff;
-	String linha ,aux, pivo, nomeOrdenador;
-	long tempoExecucao;
 
 	
 	/**
 	 * Método que carrega dados do arquivo para um "array" de "strings"
 	 * @param nomeArquivo
 	 * @throws Exception 
-	 * @throws IOException z
+	 * @throws IOException
 	 */
 	private void leArquivo(String nomeArquivo) throws Exception {
 		
@@ -42,7 +48,7 @@ public class Ordenadores {
 				//Prints.msg(vetor[index] +"\n");
 			}			
 			
-			for (int i = index; i < vetor.length; i++) { //Aumenta tamanho do vetor.
+			for (int i = index; i < vetor.length; i++) { //Complementa o vetor após carregamento dos dados do arquivo.
 				vetor[i]= "";
 			}
 			
@@ -51,8 +57,10 @@ public class Ordenadores {
 		} catch (FileNotFoundException e) {
 			Prints.msge("\nArquivo inexistente\n");
 			validaArquivo = false; // Desabilita a execução de ordenador
+		
 		} catch (IOException e) {
 			Prints.msge("\nO arquivo não pode ser fechado.\n");
+		
 		} catch (ArrayIndexOutOfBoundsException e) {
 			Prints.msge("\nO Espaço insufiente no array de armazenamento.\n");
 		}
@@ -60,7 +68,7 @@ public class Ordenadores {
 	
 	
 	/**
-	 * Exibe o cabeçalho do modo de ordenação crescente ou decrescente
+	 * Métofo que exibe o cabeçalho com a ordem de execução, crescente ou decrescente
 	 * @param ordem
 	 * @param exibirCabecalho
 	 */
@@ -78,7 +86,7 @@ public class Ordenadores {
 	/**
 	 * Método responsável pela limpesa do vetor após ordenação,
 	 * de modo que possa ter suas posições livres,
-	 * quando uma próxima ordenação for solicitada
+	 * quando uma próxima ordenação for solicitada em tempo de execução.
 	 */
 	private  void limpaVetor(boolean limparVetor){
 		if(limparVetor == true){
@@ -86,14 +94,14 @@ public class Ordenadores {
 				vetor[i]= "";				
 			}
 		}
-		index = 0;
+		index = 0; //Limpa index do vetor executado anteriormente.
 	}
 
 	
 //========================= << Ordenação BubleSort >> ==============================
 	
 	/**
-	 * Método geral responsavel pela troca dos dados do no vetor
+	 * Método responsável pela manipulação do vetor, durante a ordenação do bubleSort
 	 * @param i
 	 * @param j
 	 */
@@ -105,7 +113,7 @@ public class Ordenadores {
 		
 	
 	/**
-	 * Metodo responsavel pela ordenação dos dados captados do arquivo
+	 * Metodo responsável pela ordenação do BubleSort
 	 * @param ordem
 	 * @param mostraEstatisca
 	 * @throws Exception
@@ -128,7 +136,8 @@ public class Ordenadores {
 	         	}
 	         	tempoExecucao  = System.currentTimeMillis();
 	         }			
-			imprimeOrdenacao(ordem,mostraEstatisca,true,true);
+			imprime(ordem,mostraEstatisca,true,true);
+			
 		} catch (NullPointerException e) {
 		 	Prints.msge("\nO vetor de armazanamento está definido como null!"); 			
 		}	    
@@ -149,11 +158,11 @@ public class Ordenadores {
 // ======================== << Ordenação QuickSort >> ====================================
 
 	/**
-	 * Método que partiona o vetor e ordena as partes
+	 * Método que partiona o vetor e ordena as partes idividualmente
 	 * @param vet
 	 * @param ini
 	 * @param fim
-	 * @return
+	 * @return topo
 	 */
 	private int particionaVetorQuickSort(String vet[], int ini, int fim, boolean ordem) {
 		int i;
@@ -209,7 +218,7 @@ public class Ordenadores {
 		if (validaArquivo == true){ 
 			boolean ordem = especificaOrdem();
 			ordenaQuickSort(vetor, 1, (vetor.length-2),ordem );
-			imprimeOrdenacao(ordem, true, true, true);
+			imprime(ordem, true, true, true);
 		}	    
 	}
 	
@@ -232,13 +241,13 @@ public class Ordenadores {
 	
 	
 	/**
-	 * Médodo de impressão da lista de dados dos ordenadores
+	 * Médodo geral de impressão da lista de dados dos ordenadores
 	 * @param ordem
 	 * @param mostraEstatisca
 	 * @param limpaVetor
 	 * @param exibecabecalho
 	 */
-	private  void imprimeOrdenacao(boolean ordem, boolean mostraEstatisca, boolean limpaVetor, boolean exibecabecalho){	
+	private  void imprime(boolean ordem, boolean mostraEstatisca, boolean limpaVetor, boolean exibecabecalho){	
 		informaCabecalhoModo(ordem,exibecabecalho);
 		for (String dados : vetor){ 
         	if (dados != null && dados != "") {
@@ -258,7 +267,7 @@ public class Ordenadores {
 	 */
 	private boolean especificaOrdem() throws Exception{	
 		Prints.menuModoOrdenacao();
-		String modo  = Prints.digita("Modo");
+		String modo  = Prints.digita("Ordem");
 		
 		if (modo.equals("c")) { //Define ordem crescente
 			return true;
