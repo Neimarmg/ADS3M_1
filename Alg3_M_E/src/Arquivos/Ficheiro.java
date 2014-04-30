@@ -41,13 +41,11 @@ public class Ficheiro {
 	 * Método de remoção de arquivo com verificação da existência do arquivo
 	 * @param nomeArquivo
 	 */
-	public void remove(String nomeArquivo) {
-		String nome = nomeArquivo; 
-		File file = new File(nome); 
+	public void remove(String nomeArquivo) { 
+		File file = new File(nomeArquivo); 
 		if (file.exists()){ 
-			Prints.msgb("???" +file.getFreeSpace());
-			file.delete();	
-			Prints.msgb("O aquivo " +nome +" foi removido com sucesso.");			
+			file.delete();
+			Prints.msgr("O aquivo " +nomeArquivo +" foi removido com sucesso.");			
 		}else{			
 			Prints.msgb("Arquivo não encontrado!\nNão é possível remover.");
 		}
