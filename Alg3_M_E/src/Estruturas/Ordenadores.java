@@ -7,7 +7,7 @@ import java.io.IOException;
 import Utilitarios.Prints;
 
 /**
- *Classe responsavel pela ondenação de dados de arquivo 
+ *Classe responsavel pela ondenação de dados carregados de um arquivo 
  * @author Neimar e Aurélio
  */
 public class Ordenadores {
