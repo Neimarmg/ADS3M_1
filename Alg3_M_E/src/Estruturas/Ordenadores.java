@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
 import Utilitarios.Prints;
 
 /**
@@ -16,7 +15,7 @@ public class Ordenadores {
 	boolean validaArquivo; 
 	int topo;
 	int index = 0;
-	int comparacoes = 0;
+	int comparacoes;
 	int tamanho = 34;
 	long tempoExecucao;
 	String vetor[] = new String[tamanho];
@@ -46,7 +45,6 @@ public class Ordenadores {
 				linha = buff.readLine();
 				index++;				
 				vetor[index]= linha;
-				//Prints.msg(vetor[index] +"\n");
 			}			
 			
 			for (int i = index; i < vetor.length; i++) { //Complementa o vetor após carregamento dos dados do arquivo.
@@ -134,11 +132,10 @@ public class Ordenadores {
 		                	comparacoes++;
 		                }
 	         		} 
-	         	}
-	         	tempoExecucao  = System.currentTimeMillis();
+	         	}	         	
+	         	tempoExecucao  = System.currentTimeMillis();	         	
 	         }			
-			//imprime(ordem,mostraEstatisca,true,true);
-			
+	
 		} catch (NullPointerException e) {
 		 	Prints.msge("\nO vetor de armazanamento está definido como null!"); 			
 		}	    
@@ -161,9 +158,13 @@ public class Ordenadores {
 	 * Metodo respensável pelo carregamento do ordenador bubleSort
 	 * @throws Exception
 	 */
-	private void carregaBubleSort() throws Exception{
+	private void carregaBubleSort(boolean imprimir) throws Exception{
+		limpaVetor(true); // Garante que o vetor limpo antes do carregamento do ordenador
 		executaBubleSort();
-		imprime(true,true, true, true);
+		
+		if (imprimir == true){//Abilita impressão do vetor quando solicitado
+			imprime(true,true, true, true);
+		}
 	}
 	
 	
@@ -197,7 +198,7 @@ public class Ordenadores {
 			    	topo++;
 			    	comparacoes++;
 		    	}	
-		    }	
+		    }
 	    	tempoExecucao  = System.currentTimeMillis();
 	     }
 	    vet[topo] = pivo;
@@ -226,16 +227,38 @@ public class Ordenadores {
 	 * @throws Exception
 	 */
 	private void carregaQuickSort(boolean imprimir) throws Exception {
+		limpaVetor(true); // Garante que o vetor limpo antes do carregamento do ordenador
 		leArquivo(Prints.digita("Nome do arquivo"));
 		
 		if (validaArquivo == true){ 
 			boolean ordem = especificaOrdem();
 			ordenaQuickSort(vetor, 1, (vetor.length-2),ordem );
-			if(imprimir == true){
+			
+			if(imprimir == true){ //Abilita impressão do vetor quando solicitado
 				imprime(ordem, true, true, true);
 			}
 		}	    
 	}
+
+	
+//=============== << Comparação estatística de ordenadores >> ===============================
+	
+	/**
+	 * Método estatístico de compara performance dos ordenadores
+	 * @throws Exception
+	 */
+	public  void comoparaOrdenadores() throws Exception{
+		limpaVetor(true);
+		nomeOrdenador = "BUBLE SORT COMPARARADA";
+		carregaBubleSort(false);
+		informaStatistica(true);
+		limpaVetor(true);
+		nomeOrdenador = "QUICK SORT COMPARARDA";
+		carregaBubleSort(false);
+		informaStatistica(true);
+		selecionaOrdenador();
+	}
+	
 	
 //=============== << Menu de acesso aos ordenadores >> ===============================
 	
@@ -249,8 +272,8 @@ public class Ordenadores {
 				"\nDADOS ESTATÍSTICOS DA ORDENAÇÃO " +nomeOrdenador.toUpperCase()
 				+"\nTamanho do vetor: " +tamanho
 				+"\nTotal de comparacoes: " +comparacoes
-				+"\nTempo total: " +tempoExecucao +"\n");
-		}		
+				+"\nTempo total: " +tempoExecucao +"mls\n");
+		}
 	}
 	
 	
@@ -307,7 +330,7 @@ public class Ordenadores {
 		switch (nomeOrdenador) {			
 			
 		case "buble":
-			carregaBubleSort();
+			carregaBubleSort(true);
 			selecionaOrdenador();			
 			break;
 		
@@ -317,9 +340,10 @@ public class Ordenadores {
 			break;
 	
 		case "comparar":
-			Prints.objetoNaoImplementado();
+			comoparaOrdenadores();
 			selecionaOrdenador();
 			break;
+			
 		case "sair":
 			Prints.sair();
 			break;

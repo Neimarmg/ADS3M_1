@@ -118,7 +118,8 @@ public class Prints {
 		return "Status: " +r;
 	}
 
-//
+//=================== << Lista de menus >> =================================
+	
 	public static void menuSelecinaAtividade() {		
 		msgb("	QUAL É ATIVIDADE?\n\n"
 		+"=> T1 'Listas encadeadas'       " +status(7) +"\n"
@@ -127,6 +128,7 @@ public class Prints {
 		+"=> T5 'Arvores'                 " +status(1) +"\n"
 		+"=> SAIR\n");
 	}
+	
 	
 	public static void mostarMenuT1() {		
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
