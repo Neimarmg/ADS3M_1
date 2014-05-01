@@ -9,7 +9,6 @@ public class mainT3 {
 
 	
 	private void escreveCabecalho() {
-		Prints.msg("Exercício de matrizes T3\n");
 	    Prints.msgb("		JOGO BATALHA NAVAL \n\n		     BEM-VINDO");
 	}
 	
