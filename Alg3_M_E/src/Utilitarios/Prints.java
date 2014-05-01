@@ -91,12 +91,40 @@ public class Prints {
 		System.err.print("\nVocê optou por sair do programa. Obrigado.");
 	}
 	
+	
+	/**
+	 * Método de definção de status das atividades do programa
+	 * @param status
+	 * @return
+	 */
+	public static String status(int status){
+		String r;
+		
+		switch (status) {
+		
+		case 0:	r = "Não definido "; break;
+		case 1:	r = "Em planejamento "; break;
+		case 2:	r = "Em desenvolvimento "; break;
+		case 3:	r = "Em testes "; break;
+		case 4:	r = "Em revisão "; break;
+		case 5:	r = "Concluído(a) parcialmente "; break;
+		case 6:	r = "Concluído(a) "; break;
+		case 7:	r = "Finalizado(a) "; break;
+		
+		default:
+			r = "inválido "; break;
+		}
+
+		return "Status: " +r;
+	}
+
+//
 	public static void menuSelecinaAtividade() {		
 		msgb("	QUAL É ATIVIDADE?\n\n"
-		+"=> T1 'Listas encadeadas'\n"
-		+"=> T2 'Pesquisa Binária'\n"
-		+"=> T4 'Algoritmos de ordenação'\n"
-		+"=> T5 '??'\n"
+		+"=> T1 'Listas encadeadas'       " +status(7) +"\n"
+		+"=> T2 'Pesquisa Binária'        " +status(0) +"\n"
+		+"=> T4 'Algoritmos de ordenação' " +status(7) +"\n"
+		+"=> T5 'Arvores'                 " +status(1) +"\n"
 		+"=> SAIR\n");
 	}
 	

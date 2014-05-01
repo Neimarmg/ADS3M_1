@@ -28,6 +28,7 @@ public class mainE{
 		
 		case "t1":	
 			Prints.mostarMenuT1();
+			
 			in.iniciaTarefas();	
 			selecionaAtividade();
 			break;

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+
 import Utilitarios.Prints;
 
 /**
@@ -72,12 +73,12 @@ public class Ordenadores {
 	 * @param ordem
 	 * @param exibirCabecalho
 	 */
-	private  void informaCabecalhoModo(boolean ordem,boolean exibirCabecalho){	
+	private  void informaCabecalhoOrdem(boolean ordem,boolean exibirCabecalho){	
 		 if (exibirCabecalho == true) {
 			if (ordem == true) {
-	        	Prints.msgc("	ORDEM CRESCENTE "+nomeOrdenador +"\n\n");
+	        	Prints.msgc("	ORDEM CRESCENTE "+nomeOrdenador.toUpperCase() +"\n\n");
 			}else{
-				Prints.msgc("	ORDEM DECRESCENTE "+nomeOrdenador +"\n\n");
+				Prints.msgc("	ORDEM DECRESCENTE "+nomeOrdenador.toUpperCase() +"\n\n");
 			}
 		 }
 	}
@@ -118,11 +119,11 @@ public class Ordenadores {
 	 * @param mostraEstatisca
 	 * @throws Exception
 	 */
-	private  void ordenaBubleSort(boolean ordem, boolean mostraEstatisca) throws Exception{		
+	private  void ordenaBubleSort(boolean ordem ) throws Exception{		
 		try {
 			for (int i = 1; i < vetor.length; i++){
 	         	for (int j = i+1; j < vetor.length; j++){	         		
-	         		if (ordem == true) {	         			 
+	         		if (ordem == true) {	         			
 		                if (vetor[i].compareTo(vetor[j]) > 0) { // Ordem crescente  
 		                   	trocasItensBubleSort(i, j);
 			                comparacoes++;
@@ -136,7 +137,7 @@ public class Ordenadores {
 	         	}
 	         	tempoExecucao  = System.currentTimeMillis();
 	         }			
-			imprime(ordem,mostraEstatisca,true,true);
+			//imprime(ordem,mostraEstatisca,true,true);
 			
 		} catch (NullPointerException e) {
 		 	Prints.msge("\nO vetor de armazanamento está definido como null!"); 			
@@ -145,18 +146,30 @@ public class Ordenadores {
 	
 	
 	/**
-	 * Metodo respensalvel pelo carregamento do ordenador bubleSort
+	 * Metodo respensável pelo execução do ordenador bubleSort
 	 * @throws Exception
 	 */
-	private void carregaBubleSort() throws Exception {
+	private void executaBubleSort() throws Exception {
 		leArquivo(Prints.digita("Nome do arquivo"));
 		if (validaArquivo == true){
-			ordenaBubleSort(especificaOrdem(),true);
+			ordenaBubleSort(especificaOrdem());
 		}		 
 	}
+		
+	
+	/**
+	 * Metodo respensável pelo carregamento do ordenador bubleSort
+	 * @throws Exception
+	 */
+	private void carregaBubleSort() throws Exception{
+		executaBubleSort();
+		imprime(true,true, true, true);
+	}
+	
 	
 // ======================== << Ordenação QuickSort >> ====================================
 
+	
 	/**
 	 * Método que partiona o vetor e ordena as partes idividualmente
 	 * @param vet
@@ -212,13 +225,15 @@ public class Ordenadores {
 	 * Método de carregamento e validação do ordenador 
 	 * @throws Exception
 	 */
-	private void carregaQuickSort() throws Exception {
+	private void carregaQuickSort(boolean imprimir) throws Exception {
 		leArquivo(Prints.digita("Nome do arquivo"));
 		
 		if (validaArquivo == true){ 
 			boolean ordem = especificaOrdem();
 			ordenaQuickSort(vetor, 1, (vetor.length-2),ordem );
-			imprime(ordem, true, true, true);
+			if(imprimir == true){
+				imprime(ordem, true, true, true);
+			}
 		}	    
 	}
 	
@@ -231,12 +246,11 @@ public class Ordenadores {
 	private  void informaStatistica(boolean mostraEstatisca){	
 		if (mostraEstatisca == true) { 
 			Prints.msg(
-				"\nDADOS ESTATÍSTICOS DA ORDENAÇÃO " +nomeOrdenador
+				"\nDADOS ESTATÍSTICOS DA ORDENAÇÃO " +nomeOrdenador.toUpperCase()
 				+"\nTamanho do vetor: " +tamanho
 				+"\nTotal de comparacoes: " +comparacoes
 				+"\nTempo total: " +tempoExecucao +"\n");
-		}
-		comparacoes = 0;		
+		}		
 	}
 	
 	
@@ -248,7 +262,7 @@ public class Ordenadores {
 	 * @param exibecabecalho
 	 */
 	private  void imprime(boolean ordem, boolean mostraEstatisca, boolean limpaVetor, boolean exibecabecalho){	
-		informaCabecalhoModo(ordem,exibecabecalho);
+		informaCabecalhoOrdem(ordem,exibecabecalho);
 		for (String dados : vetor){ 
         	if (dados != null && dados != "") {
             	Prints.msg(dados + " \n");  
@@ -288,18 +302,17 @@ public class Ordenadores {
 	 */
 	public void selecionaOrdenador() throws Exception {			
 		
-		Prints.menuOrdenadores();				
-		switch (Prints.digita("")) {			
+		Prints.menuOrdenadores();
+		nomeOrdenador =Prints.digita("");
+		switch (nomeOrdenador) {			
 			
 		case "buble":
-			nomeOrdenador = "BUBLE SORT ";
 			carregaBubleSort();
 			selecionaOrdenador();			
 			break;
 		
 		case "quick":		
-			nomeOrdenador = "QUICK SORT ";
-			carregaQuickSort();			
+			carregaQuickSort(true);			
 			selecionaOrdenador();
 			break;
 	
