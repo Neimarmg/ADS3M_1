@@ -77,7 +77,7 @@ public class Prints {
 			System .out.print(label + ": ");
 		}
 	}
-	
+
 	
 	/**
 	 * Valores "booleans"
@@ -107,47 +107,30 @@ public class Prints {
 	}
 	
 	
-	public static void menuJogar() {		
-		msgb("	COMANDOS DE JOGO?\n\n"
-		+ "=> JOGAR        'Abilita o jogador a jogar'\n"
-		+ "=> PERSONALIZAR 'Personaliza nivel inicial de jogo'\n"
-		+ "=> SAIR         'Sai o programa'\n");
+	/**
+	 * Método de definção de status das atividades do programa
+	 * @param status
+	 * @return
+	 */
+	public static String status(int status){
+		String r;
+		
+		switch (status) {
+		
+		case 0:	r = "Não definido "; break;
+		case 1:	r = "Em planejamento "; break;
+		case 2:	r = "Em desenvolvimento "; break;
+		case 3:	r = "Em testes "; break;
+		case 4:	r = "Em revisão "; break;
+		case 5:	r = "Concluído(a) parcialmente "; break;
+		case 6:	r = "Concluído(a) "; break;
+		case 7:	r = "Finalizado(a) "; break;
+		
+		default:
+			r = "inválido "; break;
+		}
+		
+		return "Status: " +r;
 	}
 
-	
-	public static void menuMain() {		
-		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
-		+ "=> INICIAR  'Iniciar mapa de jogo'\n"
-		+ "=> IMPRIMIR 'Imprimi opções de jogo'\n"
-		+ "=> REGRAS   'Imprimi todas as regras do jogo'\n"
-		+ "=> SAIR\n");
-	}
-
-	
-	public static void menuBatalha() {		
-		msgb("	COMANDOS DE JOGO?\n\n"
-		+ "=> ATIRAR   'Abilita o jogador a inserir cordenadas'\n"
-		+ "=> SAIR\n");
-	}
-
-	
-	public static void menuImprimir() {		
-		msgb("	COMANDOS DE IMPRESSÃO?\n\n"
-		+ "=> MAPA    'Imprime mapa atual'\n"
-		+ "=> NAVIOS  'Imprime navios existentes'\n"		
-		+ "=> NIVEIS  'Imprime niveis de jogo'\n"
-		+ "=> SOLDADO 'Imprime dodos do jogador'\n"
-		+ "=> FILTRAR 'Filtra dados'\n"
-		+ "=> TODOS   'Imprime todos os dados de jogo'\n"
-		+ "=> SAIR\n");
-	}
-	
-	
-	public static void menuFiltrar() {		
-		msgb("	COMANDOS DE IMPRESSÃO?\n\n"
-		+ "=> NAVIOS   'Opçao de filtro'\n"		
-		+ "=> NIVEIS   'Opçao de filtro'\n"
-		+ "=> RETORNAR 'Retorna ao menu imprimir'\n"
-		+ "=> SAIR\n");
-	}
 }

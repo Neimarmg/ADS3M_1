@@ -29,7 +29,7 @@ public class Interface extends Prints {
 	 * @throws Exception
 	 */
 	public void filtra() throws Exception {
-		menuFiltrar();
+		Menus.menuFiltrar();
 		
 		switch (digita("")) {
 		
@@ -63,7 +63,7 @@ public class Interface extends Prints {
 	 * @throws Exception
 	 */
 	public void imprime() throws Exception {
-		Prints.menuImprimir();
+		Menus.menuImprimir();
 		
 		switch (digita("")) {
 		
@@ -112,7 +112,7 @@ public class Interface extends Prints {
 	 * @throws Exception
 	 */
 	public void batalha() throws Exception {
-		menuBatalha();
+		Menus.menuBatalha();
 		
 		switch (digita("")) {
 		
@@ -140,7 +140,7 @@ public class Interface extends Prints {
 	 * @throws Exception
 	 */
 	public void Joga() throws Exception {
-		menuJogar();
+		Menus.menuJogar();
 		
 		switch (digita("")) {
 		
@@ -186,7 +186,7 @@ public class Interface extends Prints {
 		
 		case "regras":
 			mapaView.imprimeRegras();
-			Prints.menuMain();
+			Menus.menuMain();
 			inicia();
 			break;
 

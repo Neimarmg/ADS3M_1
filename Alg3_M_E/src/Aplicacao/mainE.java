@@ -23,11 +23,11 @@ public class mainE{
 	 * @throws Exception
 	 */
 	private void selecionaAtividade() throws Exception {
-		Prints.menuSelecinaAtividade();	
+		Menus.menuSelecinaAtividade();	
 		switch (Prints.digita("Atividade")) {
 		
 		case "t1":	
-			Prints.mostarMenuT1();
+			Menus.mostarMenuT1();
 			
 			in.iniciaTarefas();	
 			selecionaAtividade();

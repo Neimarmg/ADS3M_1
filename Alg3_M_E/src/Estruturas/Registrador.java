@@ -1,5 +1,6 @@
 package Estruturas;
 
+import Aplicacao.Menus;
 import Arquivos.Ficheiro;
 import Navegacao.Consultas;
 import Utilitarios.Prints;
@@ -31,7 +32,7 @@ public class Registrador {
 	 * @throws Exception
 	 */
 	public  void executaComando(String nomeArquivo) throws Exception {
-		Prints.menuEditarArquivo();
+		Menus.menuEditarArquivo();
 		
 		switch (Prints.digita("")) {
 		

@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+
+import Aplicacao.Menus;
 import Utilitarios.Prints;
 
 /**
@@ -303,7 +305,7 @@ public class Ordenadores {
 	 * @throws Exception
 	 */
 	private boolean especificaOrdem() throws Exception{	
-		Prints.menuModoOrdenacao();
+		Menus.menuModoOrdenacao();
 		String modo  = Prints.digita("Ordem");
 		
 		if (modo.equals("c")) { //Define ordem crescente
@@ -325,7 +327,7 @@ public class Ordenadores {
 	 */
 	public void selecionaOrdenador() throws Exception {			
 		
-		Prints.menuOrdenadores();
+		Menus.menuOrdenadores();
 		nomeOrdenador =Prints.digita("");
 		switch (nomeOrdenador) {			
 			

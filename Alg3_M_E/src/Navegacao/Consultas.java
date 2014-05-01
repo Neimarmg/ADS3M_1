@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import Aplicacao.Menus;
 import Arquivos.Ficheiro;
 import Utilitarios.Prints;
 
@@ -56,7 +57,7 @@ public class Consultas {
 	 */
 	public void selecionaComando() {
 		try {
-			Prints.menuConsultaArquivo();
+			Menus.menuConsultaArquivo();
 					
 			switch (Prints.digita("")) {
 			

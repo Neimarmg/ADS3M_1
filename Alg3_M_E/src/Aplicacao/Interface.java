@@ -19,7 +19,7 @@ public class Interface<T> extends Prints {
 	 * @throws Exception
 	 */
 	public void consulta() throws Exception {	
-		menuConsultas();
+		Menus.menuConsultas();
 		
 			switch (digita("")) {
 			
@@ -48,7 +48,7 @@ public class Interface<T> extends Prints {
 	 * @throws Exception
 	 */
 	public void salva() throws Exception {	
-		menuInsert();		
+		Menus.menuInsert();		
 					
 		switch (digita("")) {			
 			
@@ -72,7 +72,7 @@ public class Interface<T> extends Prints {
 	 * @throws Exception
 	 */
 	public void imprime() throws Exception {	
-		menuImprimir();
+		Menus.menuImprimir();
 		
 		switch (digita("")) {		
 		
@@ -96,7 +96,7 @@ public class Interface<T> extends Prints {
 	 * @throws Exception
 	 */
 	public void manipulaAquivo() throws Exception {	
-		menuArquivo();
+		Menus.menuArquivo();
 		
 		switch (digita("")) {
 			

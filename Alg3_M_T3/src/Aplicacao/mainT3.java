@@ -19,7 +19,7 @@ public class mainT3 {
 	private void run() throws Exception {
 		escreveCabecalho();
 		dia.defineSaudacao();
-		Prints.menuMain();
+		Menus.menuMain();
 		Interface.inicia();
 	}
 	
