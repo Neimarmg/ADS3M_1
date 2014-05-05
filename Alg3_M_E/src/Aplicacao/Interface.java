@@ -9,16 +9,16 @@ import Estruturas.Registrador;
 
 public class Interface<T> extends Prints {
 	
-	Ficheiro ficheiro = new Ficheiro();
+	static Ficheiro ficheiro = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
-	Registrador registra = new Registrador();
-	Consultas consultas = new Consultas();
-	Memoria memoria =  new Memoria();
+	static Registrador registra = new Registrador();
+	static Consultas consultas = new Consultas();
+	static Memoria memoria =  new Memoria();
 
 	/** 
 	 * @throws Exception
 	 */
-	public void consulta() throws Exception {	
+	public static void consulta() throws Exception {	
 		Menus.menuConsultas();
 		
 			switch (digita("")) {
@@ -47,7 +47,7 @@ public class Interface<T> extends Prints {
 	/**
 	 * @throws Exception
 	 */
-	public void salva() throws Exception {	
+	public static void salva() throws Exception {	
 		Menus.menuInsert();		
 					
 		switch (digita("")) {			
@@ -71,7 +71,7 @@ public class Interface<T> extends Prints {
 	/** 
 	 * @throws Exception
 	 */
-	public void imprime() throws Exception {	
+	public static void imprime() throws Exception {	
 		Menus.menuImprimir();
 		
 		switch (digita("")) {		
@@ -95,7 +95,7 @@ public class Interface<T> extends Prints {
 	/** 
 	 * @throws Exception
 	 */
-	public void manipulaAquivo() throws Exception {	
+	public static void manipulaAquivo() throws Exception {	
 		Menus.menuArquivo();
 		
 		switch (digita("")) {
@@ -131,7 +131,7 @@ public class Interface<T> extends Prints {
 	 * Método de verificação de memória para inserção de novos dados
 	 * @throws Exception
 	 */
-	public void verificaInserir() throws Exception {
+	public static void verificaInserir() throws Exception {
 		msg("\nVerificando disco...\n");
 		if (memoria.calcula() < 6000){ // Verifica memória ao inserir dados
 			msg("\nVerificação concluída, há memória disponível!\n");
@@ -147,7 +147,7 @@ public class Interface<T> extends Prints {
 	 *	Método com definição das atividades
 	 * @throws Exception
 	 */
-	public void iniciaTarefas() throws Exception {
+	public static void iniciaTarefas() throws Exception {
 		
 		switch (digita("")) {
 		
