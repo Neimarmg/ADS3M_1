@@ -1,11 +1,11 @@
 package Aplicacao;
 
-import Navegacao.Consultas;
+import Controles.Navegacao.Consultas;
 import Utilitarios.Prints;
-import Arquivos.Ficheiro;
-import Arquivos.Memoria;
+import Controles.Arquivos.Ficheiro;
+import Controles.Arquivos.Memoria;
 import Estruturas.ListaEncadeada;
-import Estruturas.Registrador;
+import Controles.Registrador;
 
 public class Interface<T> extends Prints {
 	

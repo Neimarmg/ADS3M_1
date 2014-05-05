@@ -1,4 +1,4 @@
-package Navegacao;
+package Controles.Navegacao;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import Aplicacao.Menus;
-import Arquivos.Ficheiro;
+import  Controles.Arquivos.Ficheiro;
 import Utilitarios.Prints;
 
 public class Consultas {

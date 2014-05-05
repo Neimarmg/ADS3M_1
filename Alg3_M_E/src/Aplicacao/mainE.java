@@ -1,7 +1,7 @@
 package Aplicacao;
 
 import Estruturas.Ordenadores;
-import Navegacao.Consultas;
+import Controles.Navegacao.Consultas;
 import Utilitarios.Dia;
 import Utilitarios.Prints;
 

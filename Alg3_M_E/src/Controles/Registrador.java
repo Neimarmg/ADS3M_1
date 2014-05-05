@@ -1,8 +1,9 @@
-package Estruturas;
+package Controles;
 
 import Aplicacao.Menus;
-import Arquivos.Ficheiro;
-import Navegacao.Consultas;
+import Controles.Arquivos.Ficheiro;
+import Controles.Navegacao.Consultas;
+import Estruturas.ListaOrdenada;
 import Utilitarios.Prints;
 import Utilitarios.Include;
 
