@@ -2,6 +2,7 @@ package Aplicacao;
 
 import Estruturas.Ordenadores;
 import Controles.Navegacao.Consultas;
+import Utilitarios.Auxiliar;
 import Utilitarios.Dia;
 import Utilitarios.Prints;
 
@@ -23,7 +24,7 @@ public class mainE{
 	 */
 	private void selecionaAtividade() throws Exception {
 		Menus.menuSelecinaAtividade();	
-		switch (Prints.digita("Atividade")) {
+		switch (Auxiliar.digita("Atividade")) {
 		
 		case "t1":	
 			Menus.mostarMenuT1();			
@@ -33,8 +34,8 @@ public class mainE{
 		case "t2":			
 			Prints.msgc("	CONSULTA BINÁRIA\n\n");
 			consulta.buscaBinaria(
-				Prints.digita("Nome do arquivo"), 
-				Prints.digita("Parâmetro "));
+					Auxiliar.digita("Nome do arquivo"), 
+					Auxiliar.digita("Parâmetro "));
 			selecionaAtividade();
 			break;
 			

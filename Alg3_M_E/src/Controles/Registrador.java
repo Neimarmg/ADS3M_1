@@ -4,6 +4,7 @@ import Aplicacao.Menus;
 import Controles.Arquivos.Ficheiro;
 import Controles.Navegacao.Consultas;
 import Estruturas.ListaOrdenada;
+import Utilitarios.Auxiliar;
 import Utilitarios.Prints;
 import Utilitarios.Include;
 
@@ -23,8 +24,8 @@ public class Registrador {
 	 * @throws Exception
 	 */
 	public void leTeclado() throws Exception {
-		nome =  Prints.digita("Contato");
-		fone = 	Prints.digita("Telefone");
+		nome =  Auxiliar.digita("Contato");
+		fone = 	Auxiliar.digita("Telefone");
 	}
 	
 	
@@ -35,7 +36,7 @@ public class Registrador {
 	public  void executaComando(String nomeArquivo) throws Exception {
 		Menus.menuEditarArquivo();
 		
-		switch (Prints.digita("")) {
+		switch (Auxiliar.digita("")) {
 		
 		case "novo":
 			leTeclado();
@@ -57,7 +58,7 @@ public class Registrador {
 		
 		case  "remover" :			
 			Include.setAppend(false); // Desabilita append para sobscrever dados no arquivo
-			Include.remove(nomeArquivo,Prints.digita("\nOque deseja excluir"));
+			Include.remove(nomeArquivo,Auxiliar.digita("\nOque deseja excluir"));
 		case "sair":
 			Prints.sair();
 			break;

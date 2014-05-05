@@ -1,6 +1,7 @@
 package Aplicacao;
 
 import Controles.Navegacao.Consultas;
+import Utilitarios.Auxiliar;
 import Utilitarios.Prints;
 import Controles.Arquivos.Ficheiro;
 import Controles.Arquivos.Memoria;
@@ -21,7 +22,7 @@ public class Interface<T> extends Prints {
 	public static void consulta() throws Exception {	
 		Menus.menuConsultas();
 		
-			switch (digita("")) {
+			switch (Auxiliar.digita("")) {
 			
 			case "lista":
 				objetoNaoImplementado();
@@ -50,10 +51,10 @@ public class Interface<T> extends Prints {
 	public static void salva() throws Exception {	
 		Menus.menuInsert();		
 					
-		switch (digita("")) {			
+		switch (Auxiliar.digita("")) {			
 			
 		case "arquivo":		
-			registra.executaComando(digita("Nome do arquivo"));			
+			registra.executaComando(Auxiliar.digita("Nome do arquivo"));			
 			break;
 	
 		case "sair":
@@ -74,10 +75,10 @@ public class Interface<T> extends Prints {
 	public static void imprime() throws Exception {	
 		Menus.menuImprimir();
 		
-		switch (digita("")) {		
+		switch (Auxiliar.digita("")) {		
 		
 		case "arquivo":
-			ficheiro.abre(digita("Nome do arquivo"));
+			ficheiro.abre(Auxiliar.digita("Nome do arquivo"));
 			imprime();
 			break;
 
@@ -98,20 +99,20 @@ public class Interface<T> extends Prints {
 	public static void manipulaAquivo() throws Exception {	
 		Menus.menuArquivo();
 		
-		switch (digita("")) {
+		switch (Auxiliar.digita("")) {
 			
 		case "buscar":
-			ficheiro.buscaArquivo(digita("Nome do arquivo"));
+			ficheiro.buscaArquivo(Auxiliar.digita("Nome do arquivo"));
 			manipulaAquivo();
 			break;
 		
 		case "novo":
-			ficheiro.criaNovo(digita("Nome do arquivo"));
+			ficheiro.criaNovo(Auxiliar.digita("Nome do arquivo"));
 			manipulaAquivo();
 			break;
 		
 		case "remover":
-			ficheiro.remove(digita("Nome do arquivo"));
+			ficheiro.remove(Auxiliar.digita("Nome do arquivo"));
 			manipulaAquivo();
 			break;
 		
@@ -149,7 +150,7 @@ public class Interface<T> extends Prints {
 	 */
 	public static void iniciaTarefas() throws Exception {
 		
-		switch (digita("")) {
+		switch (Auxiliar.digita("")) {
 		
 		case "consultar":	
 			consulta();				

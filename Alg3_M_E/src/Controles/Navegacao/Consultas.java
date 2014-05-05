@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import Aplicacao.Menus;
 import  Controles.Arquivos.Ficheiro;
+import Utilitarios.Auxiliar;
 import Utilitarios.Prints;
 
 public class Consultas {
@@ -59,20 +60,20 @@ public class Consultas {
 		try {
 			Menus.menuConsultaArquivo();
 					
-			switch (Prints.digita("")) {
+			switch (Auxiliar.digita("")) {
 			
 			case "navegar":
-				navega(Prints.digita("Nome do arquivo"));
+				navega(Auxiliar.digita("Nome do arquivo"));
 				selecionaComando();
 				break;
 
 			case "filtrar":				
-				abreArquivo(Prints.digita("Nome do arquivo"),Prints.digita("Contato"),true);
+				abreArquivo(Auxiliar.digita("Nome do arquivo"),Auxiliar.digita("Contato"),true);
 				selecionaComando();
 				break;
 				
 			case "arquivo":
-				abreArquivo(Prints.digita("Nome do arquivo"),"",false);
+				abreArquivo(Auxiliar.digita("Nome do arquivo"),"",false);
 				selecionaComando();
 				break;
 				

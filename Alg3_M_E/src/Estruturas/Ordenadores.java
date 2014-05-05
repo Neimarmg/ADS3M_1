@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import Aplicacao.Menus;
+import Utilitarios.Auxiliar;
 import Utilitarios.Prints;
 
 /**
@@ -149,9 +150,9 @@ public class Ordenadores {
 	 * @throws Exception
 	 */
 	private void executaBubleSort() throws Exception {
-		leArquivo(Prints.digita("Nome do arquivo"));
+		leArquivo(Auxiliar.digita("Nome do arquivo"));
 		if (validaArquivo == true){
-			ordenaBubleSort(especificaOrdem());
+			ordenaBubleSort(especificaOrdem(true));
 		}		 
 	}
 		
@@ -230,10 +231,10 @@ public class Ordenadores {
 	 */
 	private void carregaQuickSort(boolean imprimir) throws Exception {
 		limpaVetor(true); // Garante que o vetor limpo antes do carregamento do ordenador
-		leArquivo(Prints.digita("Nome do arquivo"));
+		leArquivo(Auxiliar.digita("Nome do arquivo"));
 		
 		if (validaArquivo == true){ 
-			boolean ordem = especificaOrdem();
+			boolean ordem = especificaOrdem(true);
 			ordenaQuickSort(vetor, 1, (vetor.length-2),ordem );
 			
 			if(imprimir == true){ //Abilita impressão do vetor quando solicitado
@@ -304,19 +305,19 @@ public class Ordenadores {
 	 * @return
 	 * @throws Exception
 	 */
-	private boolean especificaOrdem() throws Exception{	
-		Menus.menuModoOrdenacao();
-		String modo  = Prints.digita("Ordem");
+	private boolean especificaOrdem(Boolean ativaMenu) throws Exception{	
+		Menus.menuModoOrdenacao(ativaMenu);
+		String modo  = Auxiliar.digita("Ordem");
 		
 		if (modo.equals("c")) { //Define ordem crescente
 			return true;
 			
-		} else if (modo.equals("d")) { //Define ordem decrescete
+		} else if (modo.equals("d")) { //Define ordem decrescente
 			return false;
 			
 		} else { // Comando de validação de modo de ordenação
 			Prints.opcaoInvalida();			
-			return especificaOrdem();
+			return especificaOrdem(ativaMenu);
 		}		
 	}
 
@@ -328,7 +329,7 @@ public class Ordenadores {
 	public void selecionaOrdenador() throws Exception {			
 		
 		Menus.menuOrdenadores();
-		nomeOrdenador =Prints.digita("");
+		nomeOrdenador = Auxiliar.digita("");
 		switch (nomeOrdenador) {			
 			
 		case "buble":

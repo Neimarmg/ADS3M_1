@@ -1,15 +1,16 @@
 package Aplicacao;
 
+import Utilitarios.Auxiliar;
 import Utilitarios.Prints;
 
 public class Menus extends Prints{
 	
 		public static void menuSelecinaAtividade() {		
 			msgb("	QUAL É ATIVIDADE?\n\n"
-			+"=> T1 'Listas encadeadas'       " +Prints.status(7) +"\n"
-			+"=> T2 'Pesquisa Binária'        " +Prints.status(0) +"\n"
-			+"=> T4 'Algoritmos de ordenação' " +Prints.status(7) +"\n"
-			+"=> T5 'Arvores'                 " +Prints.status(1) +"\n"
+			+"=> T1 'Listas encadeadas'       " +Auxiliar.statusAcao(7) +"\n"
+			+"=> T2 'Pesquisa Binária'        " +Auxiliar.statusAcao(0) +"\n"
+			+"=> T4 'Algoritmos de ordenação' " +Auxiliar.statusAcao(7) +"\n"
+			+"=> T5 'Arvores'                 " +Auxiliar.statusAcao(1) +"\n"
 			+"=> SAIR\n");
 		}
 		
@@ -125,11 +126,13 @@ public class Menus extends Prints{
 		 * Menu de definição de modo de ordenação
 		 * @throws Exception
 		 */
-		public static void menuModoOrdenacao()throws Exception {	
-			msgb(
-				"	DESEJA ORDENAR PARA?\n\n"	
-				+"=> C 'Exibe arquivo na ordem crescente'\n"
-				+"=> D 'Exibe arquivo na ordem decrescente'\n"
-			);
+		public static void menuModoOrdenacao(boolean ativaMenu)throws Exception {	
+			if(ativaMenu == true){
+				msgb(
+					"	DESEJA ORDENAR PARA?\n\n"	
+					+"=> C 'Exibe arquivo na ordem crescente'\n"
+					+"=> D 'Exibe arquivo na ordem decrescente'\n"
+				);
+			}
 		}
 }
