@@ -1,7 +1,7 @@
-package Controles;
+package Controller;
 
-import Controles.Arquivos.Ficheiro;
-import Controles.Navegacao.Consultas;
+import Controller.Arquivos.Ficheiro;
+import Controller.Navegacao.Consultas;
 import model.Lista.ListaOrdenada;
 import model.Utilitarios.Auxiliar;
 import model.Utilitarios.Include;

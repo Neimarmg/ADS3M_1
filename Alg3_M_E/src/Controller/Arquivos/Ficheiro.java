@@ -1,4 +1,4 @@
-package  Controles.Arquivos;
+package  Controller.Arquivos;
 
 import java.io.BufferedReader;
 import java.io.File;

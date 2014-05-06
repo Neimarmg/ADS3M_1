@@ -1,11 +1,11 @@
-package Controles.Navegacao;
+package Controller.Navegacao;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import Controles.Arquivos.Ficheiro;
+import Controller.Arquivos.Ficheiro;
 import model.Utilitarios.Auxiliar;
 import Wiew.Menus;
 import Wiew.Prints;

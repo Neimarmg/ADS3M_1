@@ -1,11 +1,16 @@
+
 package Wiew;
 
 import model.Ordenadores;
-import Controles.Navegacao.Consultas;
+import Controller.acoest1;
+import Controller.Navegacao.Consultas;
+import model.Arvore.ArvoreBinaria;
+import model.Arvore.ArvoreBinaria.arvore;
 import model.Utilitarios.Auxiliar;
 import model.Utilitarios.Dia;
 
 public class App{
+
 	Consultas consulta = new Consultas();
 	Ordenadores ordenador = new Ordenadores();
 	Dia d = new Dia();
@@ -27,7 +32,7 @@ public class App{
 		
 		case "t1":	
 			Menus.mostarMenuT1();			
-			Interface.iniciaTarefas();	
+			acoest1.iniciaTarefas();	
 			break;
 			
 		case "t2":			
@@ -44,6 +49,7 @@ public class App{
 			
 		case "t5":
 			Prints.msge("\nAguarda implementação!");
+			
 			selecionaAtividade();
 			break;
 		
@@ -58,7 +64,7 @@ public class App{
 		}
 	}
 	
-	
+
 	/**
 	 * @throws Exception
 	 */
@@ -70,6 +76,7 @@ public class App{
 	
 
 	public static void main(String[] args)throws Exception {
-		new App().run();  	
+		new App().run(); 
+		ArvoreBinaria.executa();
 	}
 }

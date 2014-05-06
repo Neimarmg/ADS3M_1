@@ -21,6 +21,8 @@ public class Auxiliar {
 		String r;		
 		switch (status) {
 		
+		case -1:	r = "Pendente "; 
+			break;
 		case 0:	r = "Não definido "; 
 			break;
 		case 1:	r = "Em planejamento "; 

@@ -1,29 +1,34 @@
 package model.Arvore;
 
+import Wiew.Prints;
+
 /**
  * Classe responsavel pela pela estrrutura da arvore binária
  * @author neimar, Aurélio
  */
 public class ArvoreBinaria {
 	
-	private static class arvore {		 
-        public int num;
+	public static class arvore {		 
+        public int raiz;
         public arvore dir, esq;
     }
  
 	
-    public static arvore inserir(arvore aux, int num) {
+    public static arvore insere(arvore aux, int r) {
         if (aux == null) {
             aux = new arvore();
-            aux.num = num;
+            aux.raiz = r;
             aux.esq = null;
             aux.dir = null;
  
-        } else if (num < aux.num) {
-            aux.esq = inserir(aux.esq, num);
+        } else if (r < aux.raiz) {
+            aux.esq = insere(aux.esq, r);
+            Prints.msg("\na " +r);
         } else {
-            aux.dir = inserir(aux.dir, num);
+            aux.dir = insere(aux.dir, r);
+            Prints.msg("\nb " +r);
         }
+        
         return aux;
     }
  
@@ -34,14 +39,38 @@ public class ArvoreBinaria {
     }
     
     
-    public static void imprimir(arvore aux) {
+    public static void imprime(arvore aux) {
         if (aux != null) {
-            imprimir(aux.esq);
-            System.out.print(aux.num + ", ");
-            imprimir(aux.dir);
+            imprime(aux.esq);
+            System.out.print(aux.raiz + ", ");
+            imprime(aux.dir);           
         }
+        
+        
     }
     
-    
-    
+    public static void executa() {
+   	 arvore a = null;
+       imprime(a); 
+        a = insere(a, 32);
+        a = insere(a, 4);
+        a = insere(a, 15);
+        a = insere(a, 8);
+        a = insere(a, 65);
+        a = insere(a, 3);
+        a = insere(a, 9);
+        imprime(a); 
+        
+         
+        System.out.print("A : ");
+        imprime(a);
+        System.out.println();
+       
+        a = insere(a, 10);
+               
+        System.out.print("A : ");
+        imprime(a);
+        System.out.println();
+   	
    }
+ }

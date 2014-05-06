@@ -1,4 +1,4 @@
-package  Controles.Navegacao;
+package  Controller.Navegacao;
 
 public class Direcao {
 	// Implementar métodos

@@ -1,4 +1,4 @@
-package  Controles.Arquivos;
+package  Controller.Arquivos;
 
 import java.nio.file.FileStore;
 import java.nio.file.FileSystem;
