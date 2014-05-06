@@ -1,5 +1,5 @@
 
-package Wiew;
+package Aplicacao;
 
 import model.Ordenadores;
 import Controller.interacao;

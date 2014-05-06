@@ -7,8 +7,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.nio.file.Paths;
 import java.nio.file.Path;
+
 import model.Utilitarios.Include;
-import Wiew.Prints;
+import Aplicacao.Prints;
 
 public class Ficheiro {
 	Include in =  new Include();

@@ -1,6 +1,6 @@
 package model.Utilitarios;
 
-import Wiew.Prints;
+import Aplicacao.Prints;
 
 public class Pressagios {
 	String sauda;	

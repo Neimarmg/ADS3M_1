@@ -4,7 +4,7 @@ import java.nio.file.FileStore;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 
-import Wiew.Prints;
+import Aplicacao.Prints;
 
 public class Memoria {
 	

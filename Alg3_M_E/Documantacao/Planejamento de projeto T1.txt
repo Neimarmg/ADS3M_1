@@ -3,7 +3,7 @@ Planejamento inicial
 Estrutura de pasta
     src
         "Dados" Onde será armazenado arquivo da lista
-        "Wiew" Onde o programa principal será executado
+        "Aplicacao" Onde o programa principal será executado
         "Arquivos" Onde será feito os controles de registros da lista
         "Navegacao" Onde serão executadas as pesquisas à lista
         "model" Onde serão armazenadas as classes de estrutura do programa
@@ -16,7 +16,7 @@ Estrutura de pasta
 
 			
 // << Pacote de execução do programa >>		
-	Package Wiew
+	Package Aplicacao
 		    
 		// *Importa 
 		*  Class formatos

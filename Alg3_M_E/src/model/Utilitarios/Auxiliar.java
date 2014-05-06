@@ -2,8 +2,8 @@ package model.Utilitarios;
 
 import java.util.Scanner;
 
-import Wiew.Menus;
-import Wiew.Prints;
+import Aplicacao.Menus;
+import Aplicacao.Prints;
 
 /**
  * Classe com metodos globais do programa

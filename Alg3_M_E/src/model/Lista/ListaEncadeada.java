@@ -1,6 +1,6 @@
 package model.Lista;
 
-import Wiew.Prints;
+import Aplicacao.Prints;
 
 public class ListaEncadeada<T extends Comparable<T>> {
 	

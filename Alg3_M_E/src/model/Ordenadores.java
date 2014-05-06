@@ -6,8 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import model.Utilitarios.Auxiliar;
-import Wiew.Menus;
-import Wiew.Prints;
+import Aplicacao.Menus;
+import Aplicacao.Prints;
 
 /**
  *Classe responsavel pela ondenação de dados carregados de um arquivo 

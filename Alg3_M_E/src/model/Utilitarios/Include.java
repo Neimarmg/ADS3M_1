@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import Wiew.Prints;
+import Aplicacao.Prints;
 
 /**
  * Classe para edição e arquivos

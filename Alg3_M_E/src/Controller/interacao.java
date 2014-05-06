@@ -1,9 +1,9 @@
 package Controller;
 
-import Wiew.Menus;
-import Wiew.Prints;
 import model.Lista.ListaEncadeada;
 import model.Utilitarios.Auxiliar;
+import Aplicacao.Menus;
+import Aplicacao.Prints;
 import Controller.Arquivos.Ficheiro;
 import Controller.Arquivos.Memoria;
 import Controller.Navegacao.Consultas;

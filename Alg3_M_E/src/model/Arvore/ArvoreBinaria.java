@@ -1,6 +1,6 @@
 package model.Arvore;
 
-import Wiew.Prints;
+import Aplicacao.Prints;
 
 /**
  * Classe responsavel pela pela estrrutura da arvore binária
