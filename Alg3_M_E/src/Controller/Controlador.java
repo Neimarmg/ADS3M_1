@@ -8,7 +8,7 @@ import Controller.Arquivos.Ficheiro;
 import Controller.Arquivos.Memoria;
 import Controller.Navegacao.Consultas;
 
-public class acoest1<T> {
+public class Controlador<T> {
 	
 	static Ficheiro ficheiro = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();

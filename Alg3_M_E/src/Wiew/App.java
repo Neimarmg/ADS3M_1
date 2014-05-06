@@ -2,7 +2,7 @@
 package Wiew;
 
 import model.Ordenadores;
-import Controller.acoest1;
+import Controller.Controlador;
 import Controller.Navegacao.Consultas;
 import model.Arvore.ArvoreBinaria;
 import model.Arvore.ArvoreBinaria.arvore;
@@ -32,7 +32,7 @@ public class App{
 		
 		case "t1":	
 			Menus.mostarMenuT1();			
-			acoest1.iniciaTarefas();	
+			Controlador.iniciaTarefas();	
 			break;
 			
 		case "t2":			
