@@ -6,12 +6,12 @@ import java.util.Calendar;
 import Wiew.Prints;
 
 public class Dia {
-	Pressagios pressagios = new Pressagios();
+	static Pressagios pressagios = new Pressagios();
 	
-	Calendar diaHora = Calendar.getInstance();
-	SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+	static Calendar diaHora = Calendar.getInstance();
+	static SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 	
-	public void ImprimeHora() {		
+	public static void ImprimeHora() {		
 		diaHora.set(Calendar.DST_OFFSET,0);		
 		Prints.msg("São " +sdf.format(diaHora.getTime()) +"hs");
 	}
@@ -20,12 +20,12 @@ public class Dia {
 	 * 
 	 * @param hora
 	 */
-	public void defineCabecalho(Object hora) {		
+	public static void defineCabecalho(Object hora) {		
 		Prints.msg("\nOlá!" +
 			  "\n" +defineNomenclatura() +hora +"\n");
 	}
 	
-	public String defineNomenclatura() {
+	public static String defineNomenclatura() {
 		diaHora.set(Calendar.DST_OFFSET,0);
 		
 		int hora =  diaHora.get(Calendar.HOUR_OF_DAY);
@@ -35,7 +35,7 @@ public class Dia {
 		} return "São ";
 	}
 		
-	public void defineSaudacao() {
+	public static void defineSaudacao() {
 		diaHora.set(Calendar.DST_OFFSET,0);
 		
 		int hora =  diaHora.get(Calendar.HOUR_OF_DAY);

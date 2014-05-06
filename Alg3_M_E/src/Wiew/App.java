@@ -2,18 +2,20 @@
 package Wiew;
 
 import model.Ordenadores;
-import Controller.Controlador;
+import Controller.interacao;
 import Controller.Navegacao.Consultas;
 import model.Arvore.ArvoreBinaria;
-import model.Arvore.ArvoreBinaria.arvore;
 import model.Utilitarios.Auxiliar;
 import model.Utilitarios.Dia;
 
+/**
+ * Classe principal de execução do programa
+ * @author Neimar
+ */
 public class App{
 
 	Consultas consulta = new Consultas();
 	Ordenadores ordenador = new Ordenadores();
-	Dia d = new Dia();
 
 	/**
 	 * Descrição do cabeçalho principal
@@ -32,7 +34,7 @@ public class App{
 		
 		case "t1":	
 			Menus.mostarMenuT1();			
-			Controlador.iniciaTarefas();	
+			interacao.iniciaTarefas();	
 			break;
 			
 		case "t2":			
@@ -70,7 +72,7 @@ public class App{
 	 */
 	private void run() throws Exception {
 		escreveCabecalho();
-		d.defineSaudacao();		
+		Dia.defineSaudacao();		
 		selecionaAtividade();
 	}
 	

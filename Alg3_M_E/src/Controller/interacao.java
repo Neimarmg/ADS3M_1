@@ -8,7 +8,7 @@ import Controller.Arquivos.Ficheiro;
 import Controller.Arquivos.Memoria;
 import Controller.Navegacao.Consultas;
 
-public class Controlador<T> {
+public class interacao<T> {
 	
 	static Ficheiro ficheiro = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
@@ -48,7 +48,7 @@ public class Controlador<T> {
 	/**
 	 * @throws Exception
 	 */
-	public static void salva() throws Exception {	
+	public static void registra() throws Exception {	
 		Menus.menuInsert();		
 					
 		switch (Auxiliar.digita("")) {			
@@ -63,7 +63,7 @@ public class Controlador<T> {
 				
 		default:
 			Prints.opcaoInvalida();
-			salva();
+			registra();
 			break;
 		}	
 	}	
@@ -136,7 +136,7 @@ public class Controlador<T> {
 		Prints.msg("\nVerificando disco...\n");
 		if (memoria.calcula() < 6000){ // Verifica memória ao inserir dados
 			Prints.msg("\nVerificação concluída, há memória disponível!\n");
-			salva();
+			registra();
 		} else {
 			Prints.espacoInsuficiente();
 			imprime();
