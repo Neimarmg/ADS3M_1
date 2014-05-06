@@ -1,6 +1,6 @@
-package Estruturas;
+package model;
 
-import Utilitarios.Prints;
+import Wiew.Prints;
 
 public class ListaEncadeada<T extends Comparable<T>> {
 	

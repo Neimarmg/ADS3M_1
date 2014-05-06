@@ -1,4 +1,4 @@
-package View.Utilitarios;
+package Model.Utilitarios;
 
 /**
  * Classe de umpressao de pressagios 

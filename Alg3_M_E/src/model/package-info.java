@@ -2,5 +2,5 @@
  * @author moises
  *
  */
-package Estruturas;
+package model;
 // "Aplicação" onde o programa principal será executado

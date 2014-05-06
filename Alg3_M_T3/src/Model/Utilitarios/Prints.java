@@ -1,4 +1,4 @@
-package View.Utilitarios;
+package Model.Utilitarios;
 
 import java.util.Scanner;
 

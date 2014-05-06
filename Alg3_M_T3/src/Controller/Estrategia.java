@@ -4,7 +4,7 @@ import Model.MapaMod;
 import Model.NaviosMod;
 import View.MapaView;
 import View.SoldadosView;
-import View.Utilitarios.Prints;
+import Model.Utilitarios.Prints;
 
 /**
  * Classe responsável pela distribuição das embarcações no mapaMod

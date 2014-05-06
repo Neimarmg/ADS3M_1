@@ -1,13 +1,13 @@
-package Estruturas;
+package model;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import Aplicacao.Menus;
-import Utilitarios.Auxiliar;
-import Utilitarios.Prints;
+import model.Utilitarios.Auxiliar;
+import Wiew.Menus;
+import Wiew.Prints;
 
 /**
  *Classe responsavel pela ondenação de dados carregados de um arquivo 
@@ -19,7 +19,7 @@ public class Ordenadores {
 	int topo;
 	int index = 0;
 	int comparacoes;
-	int tamanho = 34;
+	int tamanho = 50;
 	long tempoExecucao;
 	String vetor[] = new String[tamanho];
 	String aux;
@@ -152,7 +152,7 @@ public class Ordenadores {
 	private void executaBubleSort() throws Exception {
 		leArquivo(Auxiliar.digita("Nome do arquivo"));
 		if (validaArquivo == true){
-			ordenaBubleSort(especificaOrdem(true));
+			ordenaBubleSort(Auxiliar.defineOrdem(true));
 		}		 
 	}
 		
@@ -234,7 +234,7 @@ public class Ordenadores {
 		leArquivo(Auxiliar.digita("Nome do arquivo"));
 		
 		if (validaArquivo == true){ 
-			boolean ordem = especificaOrdem(true);
+			boolean ordem = Auxiliar.defineOrdem(true);
 			ordenaQuickSort(vetor, 1, (vetor.length-2),ordem );
 			
 			if(imprimir == true){ //Abilita impressão do vetor quando solicitado
@@ -299,27 +299,6 @@ public class Ordenadores {
 		limpaVetor(limpaVetor);
 	}
 
-
-	/**
-	 * Método que define a ordem de ordenação para todos os ordenadores
-	 * @return
-	 * @throws Exception
-	 */
-	private boolean especificaOrdem(Boolean ativaMenu) throws Exception{	
-		Menus.menuModoOrdenacao(ativaMenu);
-		String modo  = Auxiliar.digita("Ordem");
-		
-		if (modo.equals("c")) { //Define ordem crescente
-			return true;
-			
-		} else if (modo.equals("d")) { //Define ordem decrescente
-			return false;
-			
-		} else { // Comando de validação de modo de ordenação
-			Prints.opcaoInvalida();			
-			return especificaOrdem(ativaMenu);
-		}		
-	}
 
 	
 	/**

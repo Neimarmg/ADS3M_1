@@ -1,7 +1,6 @@
-package Aplicacao;
+package Wiew;
 
-import Utilitarios.Auxiliar;
-import Utilitarios.Prints;
+import model.Utilitarios.Auxiliar;
 
 public class Menus extends Prints{
 	

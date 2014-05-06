@@ -1,12 +1,12 @@
 package Controles;
 
-import Aplicacao.Menus;
+import model.ListaOrdenada;
 import Controles.Arquivos.Ficheiro;
 import Controles.Navegacao.Consultas;
-import Estruturas.ListaOrdenada;
-import Utilitarios.Auxiliar;
-import Utilitarios.Prints;
-import Utilitarios.Include;
+import model.Utilitarios.Auxiliar;
+import model.Utilitarios.Include;
+import Wiew.Menus;
+import Wiew.Prints;
 
 /**
  * Classe responsável pela manipulação de dados em arquivo edição, exclusão e inserção

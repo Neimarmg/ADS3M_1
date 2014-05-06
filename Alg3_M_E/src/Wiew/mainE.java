@@ -1,10 +1,9 @@
-package Aplicacao;
+package Wiew;
 
-import Estruturas.Ordenadores;
+import model.Ordenadores;
 import Controles.Navegacao.Consultas;
-import Utilitarios.Auxiliar;
-import Utilitarios.Dia;
-import Utilitarios.Prints;
+import model.Utilitarios.Auxiliar;
+import model.Utilitarios.Dia;
 
 public class mainE{
 	Consultas consulta = new Consultas();

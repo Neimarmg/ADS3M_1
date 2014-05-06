@@ -7,7 +7,7 @@ import Model.MapaMod;
 import Model.NiveisMod;
 import View.MapaView;
 import View.NiveisView;
-import View.Utilitarios.Prints;
+import Model.Utilitarios.Prints;
 
 /**
  * Classe de execução do jogo, bem como controladora de passagens de fase do jogo

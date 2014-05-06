@@ -3,7 +3,8 @@ package  Controles.Arquivos;
 import java.nio.file.FileStore;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
-import Utilitarios.Prints;
+
+import Wiew.Prints;
 
 public class Memoria {
 	

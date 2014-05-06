@@ -2,7 +2,7 @@ package View;
 
 import Controller.Inimigo;
 import Model.SoldadoMod;
-import View.Utilitarios.Prints;
+import Model.Utilitarios.Prints;
 
 /**
  * Classe de impressão de dados do soldado

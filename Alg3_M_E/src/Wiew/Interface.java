@@ -1,14 +1,13 @@
-package Aplicacao;
+package Wiew;
 
+import model.ListaEncadeada;
 import Controles.Navegacao.Consultas;
-import Utilitarios.Auxiliar;
-import Utilitarios.Prints;
+import model.Utilitarios.Auxiliar;
 import Controles.Arquivos.Ficheiro;
 import Controles.Arquivos.Memoria;
-import Estruturas.ListaEncadeada;
 import Controles.Registrador;
 
-public class Interface<T> extends Prints {
+public class Interface<T> {
 	
 	static Ficheiro ficheiro = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
@@ -25,7 +24,7 @@ public class Interface<T> extends Prints {
 			switch (Auxiliar.digita("")) {
 			
 			case "lista":
-				objetoNaoImplementado();
+				Prints.objetoNaoImplementado();
 				consulta();
 				break;
 				
@@ -34,11 +33,11 @@ public class Interface<T> extends Prints {
 				break;
 				
 			case "sair":
-				sair();
+				Prints.sair();
 				break;
 				
 			default:
-				opcaoInvalida();
+				Prints.opcaoInvalida();
 				consulta();
 				break;
 			}
@@ -58,11 +57,11 @@ public class Interface<T> extends Prints {
 			break;
 	
 		case "sair":
-			sair();
+			Prints.sair();
 			break;
 				
 		default:
-			opcaoInvalida();
+			Prints.opcaoInvalida();
 			salva();
 			break;
 		}	
@@ -83,7 +82,7 @@ public class Interface<T> extends Prints {
 			break;
 
 		case "sair":
-			sair();
+			Prints.sair();
 			break;
 			
 		default:
@@ -117,11 +116,11 @@ public class Interface<T> extends Prints {
 			break;
 		
 		case "sair":
-			sair();
+			Prints.sair();
 			break;
 			
 		default:
-			opcaoInvalida();
+			Prints.opcaoInvalida();
 			manipulaAquivo();
 			break;
 		}		
@@ -133,12 +132,12 @@ public class Interface<T> extends Prints {
 	 * @throws Exception
 	 */
 	public static void verificaInserir() throws Exception {
-		msg("\nVerificando disco...\n");
+		Prints.msg("\nVerificando disco...\n");
 		if (memoria.calcula() < 6000){ // Verifica memória ao inserir dados
-			msg("\nVerificação concluída, há memória disponível!\n");
+			Prints.msg("\nVerificação concluída, há memória disponível!\n");
 			salva();
 		} else {
-			espacoInsuficiente();
+			Prints.espacoInsuficiente();
 			imprime();
 		}
 	}
@@ -169,11 +168,11 @@ public class Interface<T> extends Prints {
 			break;
 		
 		case "sair":
-			sair();
+			Prints.sair();
 			break;
 			
 		default: 
-			opcaoInvalida();
+			Prints.opcaoInvalida();
 			iniciaTarefas();
 			break;
 		}

@@ -1,6 +1,6 @@
-package Aplicacao;
+package View;
 
-import View.Utilitarios.*;
+import Model.Utilitarios.*;
 
 public class mainT3 {
 

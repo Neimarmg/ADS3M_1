@@ -1,4 +1,4 @@
-package Estruturas;
+package model;
 
 public class Nodo<T extends Comparable<T>> implements Comparable<Nodo<T>> {
 

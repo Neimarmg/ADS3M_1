@@ -1,4 +1,4 @@
-package Aplicacao;
+package View;
 
 import Controller.Batalha;
 import Controller.Inimigo;
@@ -7,8 +7,7 @@ import Controller.Estrategia;
 import Controller.MapaCont;
 import Controller.SoldadoCont;
 import Model.MapaMod;
-import View.MapaView;
-import View.Utilitarios.*;
+import Model.Utilitarios.*;
 
 /**
  * Classe de execução do programa com interação com o usuário

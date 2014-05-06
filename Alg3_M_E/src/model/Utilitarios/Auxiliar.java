@@ -1,7 +1,14 @@
-package Utilitarios;
+package model.Utilitarios;
 
 import java.util.Scanner;
 
+import Wiew.Menus;
+import Wiew.Prints;
+
+/**
+ * Classe com metodos globais do programa
+ * @author Neimar
+ */
 public class Auxiliar {
 	static Scanner var = new Scanner(System.in);
 	
@@ -11,8 +18,7 @@ public class Auxiliar {
 	 * @return
 	 */
 	public static String statusAcao(int status){
-		String r;
-		
+		String r;		
 		switch (status) {
 		
 		case 0:	r = "Não definido "; 
@@ -36,6 +42,9 @@ public class Auxiliar {
 		}
 		return "Status: " +r;
 	}
+	
+	
+//============================================================================	
 	
 	/**
 	 * Método de Label dos comandos do sistema
@@ -71,5 +80,27 @@ public class Auxiliar {
 		return var.next().toLowerCase();
 	}
 	
+//============================================================================
+
+	/**
+	 * Método que define a ordem de ordenação para todos os ordenadores
+	 * @return
+	 * @throws Exception
+	 */
+	public static boolean defineOrdem(Boolean ativaMenu) throws Exception{	
+		Menus.menuModoOrdenacao(ativaMenu);
+		String modo  = Auxiliar.digita("Ordem");
+		
+		if (modo.equals("c")) { //Define ordem crescente
+			return true;
+			
+		} else if (modo.equals("d")) { //Define ordem decrescente
+			return false;
+			
+		} else { // Comando de validação de modo de ordenação
+			Prints.opcaoInvalida();			
+			return defineOrdem(ativaMenu);
+		}		
+	}
 
 }

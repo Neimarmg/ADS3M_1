@@ -5,10 +5,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import Aplicacao.Menus;
-import  Controles.Arquivos.Ficheiro;
-import Utilitarios.Auxiliar;
-import Utilitarios.Prints;
+import Controles.Arquivos.Ficheiro;
+import model.Utilitarios.Auxiliar;
+import Wiew.Menus;
+import Wiew.Prints;
 
 public class Consultas {
 	public int contador = 0;

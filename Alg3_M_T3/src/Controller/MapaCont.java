@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 
 import Model.MapaMod;
 import View.MapaView;
-import View.Utilitarios.Prints;
+import Model.Utilitarios.Prints;
 
 /**
  * Classe para edição e personalização dos navios (NÃO IMPLEMENTADA)

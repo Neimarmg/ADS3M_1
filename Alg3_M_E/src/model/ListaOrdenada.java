@@ -1,12 +1,12 @@
-package Estruturas;
+package model;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import Utilitarios.Prints;
-import Utilitarios.Include;
+import model.Utilitarios.Include;
+import Wiew.Prints;
 
 
 public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {

@@ -1,6 +1,6 @@
 package View;
 import Model.NaviosMod;
-import View.Utilitarios.Prints;
+import Model.Utilitarios.Prints;
 
 /**
  *Classe de impressao e consulta à navios! 

@@ -1,7 +1,7 @@
 package View;
 
 import Model.MapaMod;
-import View.Utilitarios.Prints;
+import Model.Utilitarios.Prints;
 
 /**
  * Classe de impressão dos dados do mapaMod.
