@@ -1,4 +1,4 @@
-package model;
+package model.Lista;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

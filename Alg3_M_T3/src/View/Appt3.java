@@ -2,7 +2,7 @@ package View;
 
 import Model.Utilitarios.*;
 
-public class mainT3 {
+public class Appt3 {
 
 	Interface Interface = new Interface();	
 	Dia dia = new Dia();
@@ -24,7 +24,7 @@ public class mainT3 {
 	
 
 	public static void main(String[] args)throws Exception {
-		new mainT3().run();    
+		new Appt3().run();    
 	}
 	
 }

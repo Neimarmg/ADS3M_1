@@ -5,7 +5,7 @@ import Controles.Navegacao.Consultas;
 import model.Utilitarios.Auxiliar;
 import model.Utilitarios.Dia;
 
-public class mainE{
+public class App{
 	Consultas consulta = new Consultas();
 	Ordenadores ordenador = new Ordenadores();
 	Dia d = new Dia();
@@ -70,6 +70,6 @@ public class mainE{
 	
 
 	public static void main(String[] args)throws Exception {
-		new mainE().run();  	
+		new App().run();  	
 	}
 }

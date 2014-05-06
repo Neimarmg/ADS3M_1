@@ -1,4 +1,4 @@
-package model;
+package model.Lista;
 
 public class Nodo<T extends Comparable<T>> implements Comparable<Nodo<T>> {
 

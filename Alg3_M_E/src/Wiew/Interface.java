@@ -1,7 +1,7 @@
 package Wiew;
 
-import model.ListaEncadeada;
 import Controles.Navegacao.Consultas;
+import model.Lista.ListaEncadeada;
 import model.Utilitarios.Auxiliar;
 import Controles.Arquivos.Ficheiro;
 import Controles.Arquivos.Memoria;

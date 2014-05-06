@@ -1,8 +1,8 @@
 package Controles;
 
-import model.ListaOrdenada;
 import Controles.Arquivos.Ficheiro;
 import Controles.Navegacao.Consultas;
+import model.Lista.ListaOrdenada;
 import model.Utilitarios.Auxiliar;
 import model.Utilitarios.Include;
 import Wiew.Menus;
