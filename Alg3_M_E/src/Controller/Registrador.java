@@ -41,8 +41,16 @@ public class Registrador {
 		case "novo":
 			leTeclado();
 			Include.setAppend(true);
-			Include.addNovo(nomeArquivo, nome +"," +fone +"\n"); //Insere na última linha do arquivo
-			lista.leArquivo(nomeArquivo); //Lê arquivo após a insersão e padroniza a edição
+			
+			if(Auxiliar.getOpcao().equals("LISTA")){ //Definição de atividade
+				Include.addNovo(nomeArquivo, nome +"," +fone +"\n"); //Insere na última linha do arquivo
+				lista.leArquivo(nomeArquivo); //Lê arquivo após a insersão e padroniza a edição
+			}
+			
+			if(Auxiliar.getOpcao().equals("ARVORE")){//Definição de atividade
+				
+			}				
+			
 			executaComando(nomeArquivo); //loop para novas ações do menu		
 			break;
 		

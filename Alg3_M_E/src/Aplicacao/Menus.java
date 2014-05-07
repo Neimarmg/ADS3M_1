@@ -4,7 +4,7 @@ import model.Utilitarios.Auxiliar;
 
 public class Menus extends Prints{
 	
-		public static void menuSelecinaAtividade() {		
+		public static void menuSelecinaAtividade(){		
 			msgb("	QUAL É ATIVIDADE?\n\n"
 			+"=> T1 'Listas encadeadas'       " +Auxiliar.statusAcao(7) +"\n"
 			+"=> T2 'Pesquisa Binária'        " +Auxiliar.statusAcao(-1) +"\n"
@@ -14,7 +14,7 @@ public class Menus extends Prints{
 		}
 		
 		
-		public static void mostarMenuT1() {		
+		public static void mostarMenuApp() {		
 			msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
 			+"=> EXECUTAR  'Executa ações em arquivo existentes'\n"
 			+"=> CONSULTAR 'Conteúdo do arquivo'\n"
@@ -23,17 +23,6 @@ public class Menus extends Prints{
 			+"=> SAIR\n");
 		}
 		
-		/** 
-		 * @throws Exception
-		 */
-		public static void menuInsert() throws Exception {
-			msgb(
-				"	MANIPULAR DADOS EM: \n\n"	
-				+"=> LISTA  'Utiliza a extrutura de listas'\n"
-				+"=> ARVORE 'Utiliza a extrutura de listas'\n"
-				+"=> SAIR\n"
-			);			
-		}
 		
 		/** 
 		 * @throws Exception
@@ -86,7 +75,7 @@ public class Menus extends Prints{
 		 */
 		public static void menuEditarArquivo()throws Exception {	
 			msgb(
-				"	OPÇÕES PARA INSERÇÃO DE DADOS:\n\n"	
+				"	EDIÇÃO DE ARQUIVO COM ESTRUTURA DE " +Auxiliar.getOpcao() +":\n\n"	
 				+"=> NOVO     'Habilita para gravar novo registro'\n"			
 				+"=> EDITAR   'Editar dados do arquivo'\n"
 				+"=> REMOVER  'Remove logicamente o registro'\n"

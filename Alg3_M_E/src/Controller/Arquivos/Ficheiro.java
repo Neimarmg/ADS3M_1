@@ -55,9 +55,9 @@ public class Ficheiro {
 	/**
 	 * @param nomeAquivo
 	 */
-	public void buscaArquivo(final String nomeAquivo) {
-		Path p = Paths.get(nomeAquivo);
-		Prints.msg("Arquivo encontrado: "+p);
+	public static void validadaArquivo(final String nomeAquivo) {
+		Path p = Paths.get(nomeAquivo);				
+		Prints.msg("Arquivo encontrado: "+p.toFile());
 	}
 	
 	

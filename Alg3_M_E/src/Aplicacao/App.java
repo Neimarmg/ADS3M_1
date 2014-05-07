@@ -3,6 +3,7 @@ package Aplicacao;
 
 import model.Ordenadores;
 import Controller.interacao;
+import Controller.Arquivos.Ficheiro;
 import Controller.Navegacao.Consultas;
 import model.Arvore.ArvoreBinaria;
 import model.Utilitarios.Auxiliar;
@@ -13,7 +14,7 @@ import model.Utilitarios.Dia;
  * @author Neimar
  */
 public class App{
-
+	
 	Consultas consulta = new Consultas();
 	Ordenadores ordenador = new Ordenadores();
 
@@ -33,7 +34,8 @@ public class App{
 		switch (Auxiliar.digita("Atividade")) {
 		
 		case "t1":	
-			Menus.mostarMenuT1();			
+			Auxiliar.setOpcao("LISTA");
+			Menus.mostarMenuApp();
 			interacao.iniciaTarefas();	
 			break;
 			
@@ -50,8 +52,9 @@ public class App{
 			break;
 			
 		case "t5":
-			Prints.msge("\nAguarda implementação!");
-			
+			Auxiliar.setOpcao("ARVORE");
+			Menus.mostarMenuApp();
+			interacao.iniciaTarefas();
 			selecionaAtividade();
 			break;
 		

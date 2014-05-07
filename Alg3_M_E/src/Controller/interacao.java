@@ -45,34 +45,6 @@ public class interacao<T> {
 		
 	}
 
-	/**
-	 * @throws Exception
-	 */
-	public static void grava() throws Exception {	
-		Menus.menuInsert();		
-					
-		switch (Auxiliar.digita("")) {			
-			
-		case "lista":		
-			Registrador.executaComando(Auxiliar.digita("Nome do arquivo"));			
-			break;
-	
-		case "arvore":
-			Prints.sair();
-			break;
-				
-		case "sair":
-			Prints.sair();
-			break;		
-		
-		default:
-			Prints.opcaoInvalida();
-			grava();
-			break;
-		}	
-	}	
-	
-
 	/** 
 	 * @throws Exception
 	 */
@@ -106,7 +78,7 @@ public class interacao<T> {
 		switch (Auxiliar.digita("")) {
 			
 		case "buscar":
-			ficheiro.buscaArquivo(Auxiliar.digita("Nome do arquivo"));
+			Ficheiro.validadaArquivo(Auxiliar.digita("Nome do arquivo"));
 			manipulaAquivo();
 			break;
 		
@@ -138,13 +110,14 @@ public class interacao<T> {
 	 */
 	public static void verificaInserir() throws Exception {
 		Prints.msg("\nVerificando disco...\n");
-		if (memoria.calcula() < 6000){ // Verifica memória ao inserir dados
+		//if (memoria.calcula() > 6000){ // Verifica memória ao inserir dados
 			Prints.msg("\nVerificação concluída, há memória disponível!\n");
-			grava();
-		} else {
+			Registrador.executaComando(Auxiliar.digita("Nome do arquivo"));	
+			
+		/*} else {
 			Prints.espacoInsuficiente();
 			imprime();
-		}
+		}*/
 	}
 	
 	

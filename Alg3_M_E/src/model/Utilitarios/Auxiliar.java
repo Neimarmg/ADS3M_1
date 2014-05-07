@@ -6,11 +6,22 @@ import Aplicacao.Menus;
 import Aplicacao.Prints;
 
 /**
- * Classe com metodos globais do programa
+ * Classe com metodos globais de apoio a execução do programa
  * @author Neimar
  */
 public class Auxiliar {
 	static Scanner var = new Scanner(System.in);
+	static String opcao; // variavel global de apoio para parametro strings
+	
+	
+	public static void setOpcao(String opcao) {
+		Auxiliar.opcao = opcao;
+	}
+	
+	public static String getOpcao() {
+		return opcao;
+	}
+	
 	
 	/**
 	 * Método de definção de status das atividades do programa
