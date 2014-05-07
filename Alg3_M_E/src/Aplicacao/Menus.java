@@ -28,8 +28,9 @@ public class Menus extends Prints{
 		 */
 		public static void menuInsert() throws Exception {
 			msgb(
-				"	GRAVAR DADOS EM: \n\n"	
-				+"=> ARQUIVO 'Define qual arquivo o registro será inserido'\n"
+				"	MANIPULAR DADOS EM: \n\n"	
+				+"=> LISTA  'Utiliza a extrutura de listas'\n"
+				+"=> ARVORE 'Utiliza a extrutura de listas'\n"
 				+"=> SAIR\n"
 			);			
 		}

@@ -250,7 +250,7 @@ public class Ordenadores {
 	 * Método estatístico de compara performance dos ordenadores
 	 * @throws Exception
 	 */
-	public  void comoparaOrdenadores() throws Exception{
+	public  void comparaOrdenadores() throws Exception{
 		limpaVetor(true);
 		nomeOrdenador = "BUBLE SORT COMPARARADA";
 		carregaBubleSort(false);
@@ -322,7 +322,7 @@ public class Ordenadores {
 			break;
 	
 		case "comparar":
-			comoparaOrdenadores();
+			comparaOrdenadores();
 			selecionaOrdenador();
 			break;
 			

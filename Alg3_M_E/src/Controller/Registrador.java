@@ -58,7 +58,7 @@ public class Registrador {
 		
 		case  "remover" :			
 			Include.setAppend(false); // Desabilita append para sobscrever dados no arquivo
-			Include.remove(nomeArquivo,Auxiliar.digita("\nOque deseja excluir"));
+			Include.remove(nomeArquivo,Auxiliar.digita("\nDigite um contato para excluir"));
 		case "sair":
 			Prints.sair();
 			break;

@@ -12,7 +12,7 @@ public class interacao<T> {
 	
 	static Ficheiro ficheiro = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
-	static Registrador registra = new Registrador();
+	static Registrador Registrador = new Registrador();
 	static Consultas consultas = new Consultas();
 	static Memoria memoria =  new Memoria();
 
@@ -48,22 +48,26 @@ public class interacao<T> {
 	/**
 	 * @throws Exception
 	 */
-	public static void registra() throws Exception {	
+	public static void grava() throws Exception {	
 		Menus.menuInsert();		
 					
 		switch (Auxiliar.digita("")) {			
 			
-		case "arquivo":		
-			registra.executaComando(Auxiliar.digita("Nome do arquivo"));			
+		case "lista":		
+			Registrador.executaComando(Auxiliar.digita("Nome do arquivo"));			
 			break;
 	
-		case "sair":
+		case "arvore":
 			Prints.sair();
 			break;
 				
+		case "sair":
+			Prints.sair();
+			break;		
+		
 		default:
 			Prints.opcaoInvalida();
-			registra();
+			grava();
 			break;
 		}	
 	}	
@@ -136,7 +140,7 @@ public class interacao<T> {
 		Prints.msg("\nVerificando disco...\n");
 		if (memoria.calcula() < 6000){ // Verifica memória ao inserir dados
 			Prints.msg("\nVerificação concluída, há memória disponível!\n");
-			registra();
+			grava();
 		} else {
 			Prints.espacoInsuficiente();
 			imprime();

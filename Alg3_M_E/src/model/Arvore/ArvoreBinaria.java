@@ -35,7 +35,6 @@ public class ArvoreBinaria {
     
     public static void remover(arvore aux, int num) {
     	
-    	
     }
     
     
