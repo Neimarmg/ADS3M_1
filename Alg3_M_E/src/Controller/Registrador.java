@@ -42,16 +42,16 @@ public class Registrador {
 			leTeclado();
 			Include.setAppend(true);
 			
-			if(Auxiliar.getOpcao().equals("LISTA")){ //Definição de atividade
-				Include.addNovo(nomeArquivo, nome +"," +fone +"\n"); //Insere na última linha do arquivo
-				lista.leArquivo(nomeArquivo); //Lê arquivo após a insersão e padroniza a edição
+			if (Auxiliar.getOpcao().equals("LISTA")) { // Definição de atividade
+				Include.addNovo(nomeArquivo, nome + "," + fone + "\n"); // Insere na última linha do arquivo
+				lista.leArquivo(nomeArquivo); // Lê arquivo após a insersão e padroniza a edição
 			}
 			
-			if(Auxiliar.getOpcao().equals("ARVORE")){//Definição de atividade
+			if (Auxiliar.getOpcao().equals("ARVORE")) { //Definição de atividade
 				
 			}				
 			
-			executaComando(nomeArquivo); //loop para novas ações do menu		
+			executaComando(nomeArquivo); // Loop para novas ações do menu		
 			break;
 		
 		case "editar":
@@ -61,11 +61,11 @@ public class Registrador {
 			
 		case "imprimir":
 			consulta.abreArquivo(nomeArquivo, "", false);
-			executaComando(nomeArquivo);//loop para novas ações do menu
+			executaComando(nomeArquivo); // Loop para novas ações do menu
 			break;
 		
 		case  "remover" :			
-			Include.setAppend(false); // Desabilita append para sobscrever dados no arquivo
+			Include.setAppend(false); // Desabilita "append" para sobscrever dados no arquivo
 			Include.remove(nomeArquivo,Auxiliar.digita("\nDigite um contato para excluir"));
 		case "sair":
 			Prints.sair();
@@ -73,7 +73,7 @@ public class Registrador {
 		
 		default:
 			Prints.opcaoInvalida();
-			executaComando(nomeArquivo);//loop para novas ações do menu
+			executaComando(nomeArquivo); // Loop para novas ações do menu
 			break;
 		}	
 	}

@@ -1,4 +1,3 @@
-
 package Aplicacao;
 
 import model.Ordenadores;
@@ -11,7 +10,7 @@ import model.Utilitarios.Dia;
 
 /**
  * Classe principal de execução do programa
- * @author Neimar
+ * @author Neimar, Aurélio
  */
 public class App{
 	
@@ -52,7 +51,7 @@ public class App{
 			break;
 			
 		case "t5":
-			Auxiliar.setOpcao("ARVORE");
+			Auxiliar.setOpcao("ÁRVORE");
 			Menus.mostarMenuApp();
 			interacao.iniciaTarefas();
 			selecionaAtividade();

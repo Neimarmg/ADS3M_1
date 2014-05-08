@@ -16,20 +16,20 @@ public class Prints {
 	public static void msgb(Object desc) {
 		System .out.print(
 			"\n====================================================\n"
-			+desc
-			+"\n====================================================\n");
+			+ desc
+			+ "\n====================================================\n");
 	}
 	
 	public static void msgc(Object desc) {
 		System .out.print(
 			"\n====================================================\n"
-			+desc);
+			+ desc);
 	}
 
 	public static void msgr(Object desc) {
 		System .out.print(
 			desc
-			+"\n====================================================\n");
+			+ "\n====================================================\n");
 	}	
 	
 	public static void msgl() {
@@ -51,7 +51,7 @@ public class Prints {
 	}
 	
 	
-	public static void sair(){
+	public static void sair() {
 		System.err.print("\nVocê optou por sair do programa. Obrigado.");
 	}
 

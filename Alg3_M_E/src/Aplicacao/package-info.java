@@ -3,4 +3,4 @@
  *
  */
 package Aplicacao;
-//"Aplicaçao" Onde o programa principal será executado
+// "Aplicação" Onde o programa principal será executado

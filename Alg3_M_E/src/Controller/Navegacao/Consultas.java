@@ -35,15 +35,15 @@ public class Consultas {
 			FileReader r = new FileReader(nomeArquivo);
 			br = new BufferedReader(r);
 			String linha = br.readLine();
-			Prints.msgb("Registro encontrados:");
+			Prints.msgb("Registros encontrados:");
 			while(linha != null ) {
 				linha = br.readLine();
 				if (filtrar == true) { // Imprime dados coincidentes com o parâmetro	
 					if (linha.equals(campo)) {
-						Prints.msg("> " +linha +"\n");
+						Prints.msg("> " + linha + "\n");
 					}
 				} else {
-					Prints.msg("> " +linha +"\n");
+					Prints.msg("> " + linha + "\n");
 				}				
 			}			
 		} catch (NullPointerException e) {

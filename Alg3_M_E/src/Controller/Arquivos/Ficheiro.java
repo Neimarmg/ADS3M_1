@@ -17,7 +17,7 @@ public class Ficheiro {
 
 	
 	/**
-	 * Verificador de memoria
+	 * Verificador de memória
 	 * @param nomeAquivo
 	 */
 	public void criaNovo(final String nomeAquivo) {
@@ -25,7 +25,7 @@ public class Ficheiro {
 			Prints.msg("\nVerificando disco...\n");
 			if (memoria.verifica() >= 6000) { // Verifica memória ao inserir dados
 				FileWriter fw = new FileWriter(new File(nomeAquivo),true);
-				Prints.msgb("Novo arquivo criado: "+fw);
+				Prints.msgb("Novo arquivo criado: " + fw);
 				fw.close();
 			} else {
 				Prints.espacoInsuficiente();
@@ -43,10 +43,10 @@ public class Ficheiro {
 	 */
 	public void remove(String nomeArquivo) { 
 		File file = new File(nomeArquivo); 
-		if (file.exists()){ 
+		if (file.exists()) { 
 			file.delete();
-			Prints.msgr("O aquivo " +nomeArquivo +" foi removido com sucesso.");			
-		}else{			
+			Prints.msgr("O aquivo " + nomeArquivo + " foi removido com sucesso.");			
+		} else {			
 			Prints.msgb("Arquivo não encontrado!\nNão é possível remover.");
 		}
 	} 
@@ -57,7 +57,7 @@ public class Ficheiro {
 	 */
 	public static void validadaArquivo(final String nomeAquivo) {
 		Path p = Paths.get(nomeAquivo);				
-		Prints.msg("Arquivo encontrado: "+p.toFile());
+		Prints.msg("Arquivo encontrado: " + p.toFile());
 	}
 	
 	

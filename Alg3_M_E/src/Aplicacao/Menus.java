@@ -2,21 +2,21 @@ package Aplicacao;
 
 import model.Utilitarios.Auxiliar;
 
-public class Menus extends Prints{
+public class Menus extends Prints {
 	
-		public static void menuSelecinaAtividade(){		
-			msgb("	QUAL É ATIVIDADE?\n\n"
-			+"=> T1 'Listas encadeadas'       " +Auxiliar.statusAcao(7) +"\n"
-			+"=> T2 'Pesquisa Binária'        " +Auxiliar.statusAcao(-1) +"\n"
-			+"=> T4 'Algoritmos de ordenação' " +Auxiliar.statusAcao(7) +"\n"
-			+"=> T5 'Arvores'                 " +Auxiliar.statusAcao(2) +"\n"
+		public static void menuSelecinaAtividade() {		
+			msgb("	QUAL ATIVIDADE?\n\n"
+			+"=> T1 'Listas encadeadas'       " +Auxiliar.statusAcao(7) + "\n"
+			+"=> T2 'Pesquisa Binária'        " +Auxiliar.statusAcao(-1) + "\n"
+			+"=> T4 'Algoritmos de ordenação' " +Auxiliar.statusAcao(7) + "\n"
+			+"=> T5 'Arvores'                 " +Auxiliar.statusAcao(2) + "\n"
 			+"=> SAIR\n");
 		}
 		
 		
 		public static void mostarMenuApp() {		
 			msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
-			+"=> EXECUTAR  'Executa ações em arquivo existentes'\n"
+			+"=> EXECUTAR  'Executa ações em arquivo existente'\n"
 			+"=> CONSULTAR 'Conteúdo do arquivo'\n"
 			+"=> IMPRIMIR  'Imprime arquivo selecionado'\n"
 			+"=> ARQUIVO   'Propriedades de arquivo'\n"
@@ -77,7 +77,7 @@ public class Menus extends Prints{
 			msgb(
 				"	EDIÇÃO DE ARQUIVO COM ESTRUTURA DE " +Auxiliar.getOpcao() +":\n\n"	
 				+"=> NOVO     'Habilita para gravar novo registro'\n"			
-				+"=> EDITAR   'Editar dados do arquivo'\n"
+				+"=> EDITAR   'Edita dados do arquivo'\n"
 				+"=> REMOVER  'Remove logicamente o registro'\n"
 				+"=> IMPRIMIR 'Imprime dados ordenados em arquivo'\n"
 				+"=> SAIR\n"
@@ -103,7 +103,7 @@ public class Menus extends Prints{
 		 */
 		public static void menuOrdenadores()throws Exception {	
 			msgb(
-				"	ORDENAR DADOS COM?:\n\n"	
+				"	COMO ORDENAR DADOS?\n\n"	
 				+"=> BUBLE    'Ordena dados do arquivo com BubleSort'\n"
 				+"=> QUICK    'Ordena dados do arquivo com QuickSort'\n"
 				+"=> COMPARAR 'Imprime dados estatísticos dos dois ordenadores \n"

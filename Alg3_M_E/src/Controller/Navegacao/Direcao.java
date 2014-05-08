@@ -3,7 +3,7 @@ package  Controller.Navegacao;
 public class Direcao {
 	// Implementar métodos
 
-	public void focaPrimeiro(){
+	public void focaPrimeiro() {
 		/** 
 		 * Obs.: Movimenta para o primeiro registro da lista
 		 *  
@@ -11,25 +11,25 @@ public class Direcao {
 	}
 
 
-	public void focaProximo(){
+	public void focaProximo() {
 		/** 
-		 * Obs.: Movimenta para o próximo registro da lista enquanto for diferente de null
+		 *  Obs.: Movimenta para o próximo registro da lista enquanto for diferente de "null"
 		 * 
 		 */ 
 	}
 
 
-	public void focaAnterior(){
+	public void focaAnterior() {
 		/** 
-		 * Obs.: Movimenta para o registro da lista enquanto for diferente de null
-		 *  Obs.: Invalida ação quando o primeiro registro for null
+		 *  Obs.: Movimenta para o registro da lista enquanto for diferente de "null"
+		 *  Obs.: Invalída ação quando o primeiro registro for "null"
 		 */ 
 	}
 
-	public void focaUlltimo(){
+	public void focaUlltimo() {
 		/** 
-		 * Obs.: Movimenta para o registro da lista enquanto primeiro for diferente de null
-		 *  Obs.: Invalida ação quando o registro for null
+		 *  Obs.: Movimenta para o registro da lista enquanto primeiro for diferente de "null"
+		 *  Obs.: Invalída ação quando o registro for "null"
 		 */ 
 	}
 

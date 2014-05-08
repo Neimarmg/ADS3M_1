@@ -2,5 +2,5 @@
  * @author Neimar
  *
  */
-package Documantacao;
+package Documentacao;
 // Pacote de documentação e planejamento do programa

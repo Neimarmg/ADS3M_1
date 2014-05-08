@@ -12,7 +12,7 @@ public class Memoria {
 
 
 	/**
-	 * Método que lista unidade de disco existentes
+	 * Método que lista unidade de disco existente
 	 * @return
 	 */
 	private String listaInidades() {
@@ -23,7 +23,7 @@ public class Memoria {
 	
 	
 	/**
-	 * Método que calcula total de memória dispenivel na unidade de disco
+	 * Método que calcula total de memória disponível na unidade de disco
 	 * @return
 	 * @throws Exception
 	 */
@@ -47,12 +47,12 @@ public class Memoria {
 	
 	
 	/**
-	 * Método de impressão da status da memória
+	 * Método de impressão do status da memória
 	 * @throws Exception
 	 */
 	public void imprime()throws Exception {
-		Prints.msg("\nLista Unidades: " +listaInidades() +"\n");
-		Prints.msg("Espaço total: " +calcula() +"\n");
-		Prints.msg("Total disponivel: " +verifica() +"\n");
+		Prints.msg("\nLista Unidades: " +listaInidades() + "\n");
+		Prints.msg("Espaço total: " + calcula() + "\n");
+		Prints.msg("Total disponível: " +verifica() + "\n");
 	}	
 }
