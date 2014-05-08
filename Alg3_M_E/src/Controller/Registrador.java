@@ -34,16 +34,14 @@ public class Registrador {
 	 * @throws IOException
 	 */
 	public void leArquivo(String nomeArquivo) throws IOException {		
+		
 		try{
 			FileReader file = new FileReader(nomeArquivo);
 			BufferedReader buff = new BufferedReader(file);
-			String linha = buff.readLine();
-			
+			String linha = buff.readLine();			
 			while(linha != null ){
-				linha = buff.readLine();
-				
-				lista.insert(new Nodo<String>(linha), lista.getHead());
-				
+				linha = buff.readLine();				
+				lista.insert(new Nodo<String>(linha), lista.getHead());				
 			}			
 			buff.close();
 			
@@ -51,8 +49,7 @@ public class Registrador {
 			Prints.msgb("Arquivo embranco.");;
 		} catch (FileNotFoundException e1) {
 			Prints.msgb("Arquivo inexistente.");
-		}
-		
+		}		
 		lista.imprime(false);	
 	}
 	
