@@ -1,17 +1,9 @@
 package model.Lista;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-
 import model.Utilitarios.Include;
-import Aplicacao.Prints;
-
 
 public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
-
-	private BufferedReader buff;
 
 	/**
 	 * Método de ordenação de dados
@@ -68,35 +60,6 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		Include.setAppend(false);
 		Include.addNovo(nomeArquivo, getAcum());
 		ListaEncadeada.setAcum(""); //Parâmetro de limpeza de "cache" 
-	}
-	
-	
-	/**
-	 * Método responsável pela leitura dos dados em arquivo e finalização das alterações
-	 * @param nomeArquivo
-	 * @throws IOException
-	 */
-	public void leArquivo(String nomeArquivo) throws IOException {
-		ListaOrdenada<String> lista = new ListaOrdenada<String>();		
-		
-		try{
-			FileReader file = new FileReader(nomeArquivo);
-			buff = new BufferedReader(file);
-			String linha = buff.readLine();
-			
-			while(linha != null ){
-				linha = buff.readLine();
-				lista.insert(new Nodo<String>(linha), lista.getHead());
-				
-			}			
-			buff.close();
-			
-		} catch (NullPointerException e) {
-			Prints.msgb("Arquivo embranco.");;
-		} catch (FileNotFoundException e1) {
-			Prints.msgb("Arquivo inexistente.");
-		}
-		lista.imprime(false);
-		editaArquivo(nomeArquivo);		
+
 	}
 }
