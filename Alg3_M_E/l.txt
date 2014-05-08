@@ -1,8 +1,10 @@
 
 
 
+
 #Mateus,24587885
 #agatha,124578
+#beltrão,13235466
 #demetrio,121245 
 #normandino,213564
 #teves,235425443
@@ -16,7 +18,6 @@ altemir,135658
 arduino,1235641 
 arton,2315658 
 astolfo,99668823
-#beltrão,13235466
 carlos,2457878 
 casemiro,12354155 
 castro,12478989 
@@ -28,6 +29,7 @@ joel,12455689
 jovencio,121214455 
 lara,123568956 
 maltam,1235664
+pharquer,22154855
 ravier,1235646
 sanpaio,124552556 
 volmam,126684

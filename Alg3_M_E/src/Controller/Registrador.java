@@ -10,7 +10,8 @@ import Aplicacao.Prints;
 import Controller.Arquivos.Ficheiro;
 import Controller.Navegacao.Consultas;
 import model.Contatos;
-import model.Arvore.ArvoreBinaria;
+import model.Arvore.ArvoreBinariaAVL;
+import model.Arvore.ArvoreBinariaAVL.arvore;
 import model.Lista.ListaOrdenada;
 import model.Lista.Nodo;
 import model.Utilitarios.Auxiliar;
@@ -22,10 +23,10 @@ import model.Utilitarios.Include;
  */
 public class Registrador {
 
-	ArvoreBinaria arvore =  new ArvoreBinaria(); 
+	ArvoreBinariaAVL arvore =  new ArvoreBinariaAVL(); 
 	Ficheiro ficheiro =  new Ficheiro();
-	Consultas consulta = new Consultas();
-	ListaOrdenada<String> lista = new ListaOrdenada<String>();
+	static Consultas consulta = new Consultas();
+	static ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	
 		
 	/**
@@ -33,7 +34,7 @@ public class Registrador {
 	 * @param nomeArquivo
 	 * @throws IOException
 	 */
-	public void leArquivo(String nomeArquivo) throws IOException {		
+	public static void leArquivo(String nomeArquivo) throws IOException {		
 		
 		try{
 			FileReader file = new FileReader(nomeArquivo);
@@ -58,7 +59,7 @@ public class Registrador {
 	 * Método de inserção de dados no arquivo
 	 * @throws Exception
 	 */
-	public void leTeclado() throws Exception {
+	public static void leTeclado() throws Exception {
 		Contatos.setNome(Auxiliar.digita("Contato")); 
 		Contatos.setFone(Auxiliar.digita("Telefone"));
 	}
@@ -69,8 +70,8 @@ public class Registrador {
 	 * @param nomeArquivo
 	 * @throws Exception
 	 */
-	public void insereNovoRegistro(String nomeArquivo) throws Exception {
-		leTeclado();
+	public static void insereNovoRegistro(String nomeArquivo) throws Exception {
+		//leTeclado();
 		Include.setAppend(true);
 		
 		if(Auxiliar.getOpcao().equals("LISTA")){ //Definição de atividade
@@ -79,6 +80,28 @@ public class Registrador {
 			lista.editaArquivo(nomeArquivo);	
 			
 		}else if(Auxiliar.getOpcao().equals("ARVORE")){//Definição de atividade
+			
+			arvore a = null;
+			
+		    a = ArvoreBinariaAVL.inserir(a, 10 );
+		    a = ArvoreBinariaAVL.inserir(a, 4);
+		    a = ArvoreBinariaAVL.inserir(a, 7);
+		    a = ArvoreBinariaAVL.inserir(a, 58);
+		    a = ArvoreBinariaAVL.inserir(a, 24);
+		    a = ArvoreBinariaAVL.inserir(a, 3);
+		    a = ArvoreBinariaAVL.inserir(a, 99);
+		 
+		    System.out.print("EM : ");
+		    ArvoreBinariaAVL.exibiremordem(a);
+		    System.out.println();
+		      
+		    System.out.print("PRE : ");
+		    ArvoreBinariaAVL.exibirpreordem(a);
+		    System.out.println();
+		       
+		    System.out.print("POS : ");
+		    ArvoreBinariaAVL.exibirposordem(a);
+		    System.out.println();	
 			
 			
 		}
@@ -89,7 +112,7 @@ public class Registrador {
 	 * Método de manipulação de dados de arquivos
 	 * @throws Exception
 	 */
-	public void executaComando(String nomeArquivo) throws Exception {
+	public static void executaComando(String nomeArquivo) throws Exception {
 		Menus.menuEditarArquivo();
 		
 		switch (Auxiliar.digita("")) {

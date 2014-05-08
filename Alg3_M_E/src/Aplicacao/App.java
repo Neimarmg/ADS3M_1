@@ -4,7 +4,6 @@ import model.Ordenadores;
 import Controller.Registrador;
 import Controller.interacao;
 import Controller.Navegacao.Consultas;
-import model.Arvore.ArvoreBinaria;
 import model.Utilitarios.Auxiliar;
 import model.Utilitarios.Dia;
 
@@ -52,9 +51,10 @@ public class App{
 			break;
 			
 		case "t5":
-			Auxiliar.setOpcao("ÁRVORE");
+			Auxiliar.setOpcao("ARVORE");
 			Menus.mostarMenuApp();
 			//interacao.iniciaTarefas();
+			Registrador.executaComando("l.txt");
 			selecionaAtividade();
 			break;
 		
