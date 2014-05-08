@@ -12,7 +12,6 @@ public class interacao<T> {
 	
 	static Ficheiro ficheiro = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
-	static Registrador Registrador = new Registrador();
 	static Consultas consultas = new Consultas();
 	static Memoria memoria =  new Memoria();
 

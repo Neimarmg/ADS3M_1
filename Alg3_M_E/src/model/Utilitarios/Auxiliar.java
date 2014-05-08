@@ -107,11 +107,7 @@ public class Auxiliar {
 		if (modo.equals("c")) { // Define ordem crescente
 			return true;
 			
-<<<<<<< HEAD
 		} else if (modo.equals("d")) { //Define ordem decrescente
-=======
-		} else if (modo.equals("dia")) { // Define ordem decrescente
->>>>>>> f2bcec69c2a9273dffdb5ffed6d1b8f1db661323
 			return false;
 			
 		} else { // Comando de validação de modo de ordenação

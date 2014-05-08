@@ -53,8 +53,8 @@ public class App{
 		case "t5":
 			Auxiliar.setOpcao("ARVORE");
 			Menus.mostarMenuApp();
-			//interacao.iniciaTarefas();
-			Registrador.executaComando("l.txt");
+			interacao.iniciaTarefas();
+			//Registrador.executaComando("l.txt");
 			selecionaAtividade();
 			break;
 		
