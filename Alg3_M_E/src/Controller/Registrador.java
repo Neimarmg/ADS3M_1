@@ -99,13 +99,12 @@ public class Registrador {
 		switch (Auxiliar.digita("")) {
 		
 		case "novo":
-<<<<<<< HEAD
 			leTeclado();
 			Include.setAppend(true);
 			
 			if (Auxiliar.getOpcao().equals("LISTA")) { // Definição de atividade
-				Include.addNovo(nomeArquivo, nome + "," + fone + "\n"); // Insere na última linha do arquivo
-				lista.leArquivo(nomeArquivo); // Lê arquivo após a insersão e padroniza a edição
+				Include.addNovo(nomeArquivo, Contatos.getNome() + "," + Contatos.getFone() +"\n"); // Insere na última linha do arquivo
+				leArquivo(nomeArquivo); // Lê arquivo após a insersão e padroniza a edição
 			}
 			
 			if (Auxiliar.getOpcao().equals("ARVORE")) { //Definição de atividade
@@ -113,10 +112,10 @@ public class Registrador {
 			}				
 			
 			executaComando(nomeArquivo); // Loop para novas ações do menu		
-=======
+
 			insereNovoRegistro(nomeArquivo);
 			executaComando(nomeArquivo); //loop para novas ações do menu
->>>>>>> 2d8799445860b9aaf9e07a1b235bba70da5f229f
+
 			break;
 		
 		case "editar":
