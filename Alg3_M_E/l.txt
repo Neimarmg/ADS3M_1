@@ -6,6 +6,7 @@
 #demetrio,121245 
 #normandino,213564
 #teves,235425443
+abaco,1323644
 abgail,124578 
 acirio,1245896 
 adroaldo,2135465
@@ -15,6 +16,7 @@ altemir,135658
 arduino,1235641 
 arton,2315658 
 astolfo,99668823
+#beltrão,13235466
 carlos,2457878 
 casemiro,12354155 
 castro,12478989 

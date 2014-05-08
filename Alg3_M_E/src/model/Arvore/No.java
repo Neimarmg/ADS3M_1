@@ -3,17 +3,17 @@ package model.Arvore;
 import model.Contatos;
 
 public class No {
-    private Contatos aluno;
+    private Contatos nome;
 
     public No(Contatos aluno) {
-        this.aluno = aluno;
+        this.nome = aluno;
     }
 
-    public Contatos getAluno() {
-        return aluno;
-    }
-
-    public void setAluno(Contatos aluno) {
-        this.aluno = aluno;
-    }
+    public void setNome(Contatos nome) {
+		this.nome = nome;
+	}
+    
+    public Contatos getNome() {
+		return nome;
+	}
 }
