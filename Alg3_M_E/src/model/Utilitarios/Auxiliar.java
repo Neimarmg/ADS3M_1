@@ -6,12 +6,12 @@ import Aplicacao.Menus;
 import Aplicacao.Prints;
 
 /**
- * Classe com metodos globais de apoio a execução do programa
- * @author Neimar
+ * Classe com métodos globais de apoio a execução do programa
+ * @author Neimar, Aurélio
  */
 public class Auxiliar {
 	static Scanner var = new Scanner(System.in);
-	static String opcao; // variavel global de apoio para parametro strings
+	static String opcao; // Variável global de apoio para parâmetro "strings"
 	
 	
 	public static void setOpcao(String opcao) {
@@ -28,7 +28,7 @@ public class Auxiliar {
 	 * @param status
 	 * @return
 	 */
-	public static String statusAcao(int status){
+	public static String statusAcao(int status) {
 		String r;		
 		switch (status) {
 		
@@ -40,7 +40,7 @@ public class Auxiliar {
 			break;
 		case 2:	r = "Em desenvolvimento "; 
 			break;
-		case 3:	r = "Em testes "; 
+		case 3:	r = "Em teste "; 
 			break;
 		case 4:	r = "Em revisão "; 
 			break;
@@ -65,7 +65,7 @@ public class Auxiliar {
 	 */
 	public static void paleta(String label) {
 		Prints.msg("\n");
-		if (label.equals("")){
+		if (label.equals("")) {
 			Prints.msg("COMANDO: ");
 		} else {
 			Prints.msg(label +": ");
@@ -84,7 +84,7 @@ public class Auxiliar {
 	
 	/**
 	 * Método de retorno que recebe ficheiro label com parâmetro,
-	 * e retorna uma string para filtros
+	 * e retorna uma "string" para filtros
 	 * @param label
 	 * @return
 	 */
@@ -100,14 +100,14 @@ public class Auxiliar {
 	 * @return
 	 * @throws Exception
 	 */
-	public static boolean defineOrdem(Boolean ativaMenu) throws Exception{	
+	public static boolean defineOrdem(Boolean ativaMenu) throws Exception {	
 		Menus.menuModoOrdenacao(ativaMenu);
 		String modo  = Auxiliar.digita("Ordem");
 		
-		if (modo.equals("c")) { //Define ordem crescente
+		if (modo.equals("c")) { // Define ordem crescente
 			return true;
 			
-		} else if (modo.equals("dia")) { //Define ordem decrescente
+		} else if (modo.equals("dia")) { // Define ordem decrescente
 			return false;
 			
 		} else { // Comando de validação de modo de ordenação

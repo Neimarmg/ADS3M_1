@@ -59,7 +59,7 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 	public void editaArquivo(String nomeArquivo) throws IOException {
 		Include.setAppend(false);
 		Include.addNovo(nomeArquivo, getAcum());
-		ListaEncadeada.setAcum(""); //Parâmetro de limpeza de "cache" 
-
+		ListaEncadeada.setAcum(""); // Parâmetro de limpeza de "cache" 
 	}
+	
 }

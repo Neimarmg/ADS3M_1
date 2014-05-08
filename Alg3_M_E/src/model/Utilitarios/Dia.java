@@ -13,7 +13,7 @@ public class Dia {
 	
 	public static void ImprimeHora() {		
 		diaHora.set(Calendar.DST_OFFSET,0);		
-		Prints.msg("São " +sdf.format(diaHora.getTime()) +"hs");
+		Prints.msg("São " + sdf.format(diaHora.getTime()) + "hs");
 	}
 	
 	/**
@@ -22,7 +22,7 @@ public class Dia {
 	 */
 	public static void defineCabecalho(Object hora) {		
 		Prints.msg("\nOlá!" +
-			  "\n" +defineNomenclatura() +hora +"\n");
+			  "\n" + defineNomenclatura() + hora + "\n");
 	}
 	
 	public static String defineNomenclatura() {

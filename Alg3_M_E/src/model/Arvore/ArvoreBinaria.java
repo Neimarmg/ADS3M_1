@@ -12,5 +12,4 @@ import Aplicacao.Prints;
 
 public class ArvoreBinaria {
 
-
 }
