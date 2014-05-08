@@ -2,8 +2,8 @@
 package Aplicacao;
 
 import model.Ordenadores;
+import Controller.Registrador;
 import Controller.interacao;
-import Controller.Arquivos.Ficheiro;
 import Controller.Navegacao.Consultas;
 import model.Arvore.ArvoreBinaria;
 import model.Utilitarios.Auxiliar;
@@ -36,6 +36,7 @@ public class App{
 		case "t1":	
 			Auxiliar.setOpcao("LISTA");
 			Menus.mostarMenuApp();
+			
 			interacao.iniciaTarefas();	
 			break;
 			
@@ -54,7 +55,7 @@ public class App{
 		case "t5":
 			Auxiliar.setOpcao("ARVORE");
 			Menus.mostarMenuApp();
-			interacao.iniciaTarefas();
+			//interacao.iniciaTarefas();
 			selecionaAtividade();
 			break;
 		
@@ -82,6 +83,5 @@ public class App{
 
 	public static void main(String[] args)throws Exception {
 		new App().run(); 
-		ArvoreBinaria.executa();
 	}
 }
