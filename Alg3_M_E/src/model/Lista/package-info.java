@@ -1,5 +1,5 @@
 /**
- * Pasta de definição estrutura de lista
- * @author neimar
+ * Pasta de definição da estrutura de lista
+ * @author Neimar
  */
 package model.Lista;
