@@ -1,7 +1,6 @@
 package Aplicacao;
 
 import model.Ordenadores;
-import Controller.Registrador;
 import Controller.interacao;
 import Controller.Navegacao.Consultas;
 import model.Utilitarios.Auxiliar;
