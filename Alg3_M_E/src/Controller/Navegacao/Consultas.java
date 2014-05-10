@@ -104,7 +104,7 @@ public class Consultas {
 	    boolean localizador = false;
 
 	    for (i = 0; i < 5; i++) {
-	    	db[i] = Auxiliar.digitaNumero("Digite o " + (i + 1) + " número: ");
+	    	db[i] = Auxiliar.digitaNumero("Digite um " + (i + 1) + " número: ");
 	    }
 	    
 	    numero = Auxiliar.digitaNumero("\nNúmero a ser localizado? ");

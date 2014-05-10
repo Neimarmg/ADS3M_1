@@ -2,6 +2,7 @@ package Aplicacao;
 
 import model.Ordenadores;
 import Controller.interacao;
+import Controller.Navegacao.Consultas;
 import model.Utilitarios.Auxiliar;
 import model.Utilitarios.Dia;
 
@@ -11,6 +12,7 @@ import model.Utilitarios.Dia;
  */
 public class App{
 	
+	Consultas consulta = new Consultas();
 	Ordenadores ordenador = new Ordenadores();
 	
 	/**
@@ -38,7 +40,7 @@ public class App{
 				
 			case "t2":			
 				Prints.msgc("	CONSULTA BINÁRIA\n\n");
-		
+				consulta.buscaBinaria("", "");
 				break;
 				
 			case "t4":	
