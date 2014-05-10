@@ -97,48 +97,40 @@ public class Consultas {
 	 * @param campo
 	 * @throws IOException
 	 */
-	public void buscaBinaria(String nomeArquivo,String campo) throws IOException {
+	public void buscaBinaria(String nomeArquivo,String campo)  {
 		
-		/** 
-		 * Professor: Para entender o assunto pesquisamos na Internet. Após alterações chegamos no código TESTE abaixo.
-		 * Não convertemos para o seu projeto por falta de tempo. Achamos melhor entregar assim
-		 * 
-		 * 
-		 * int db[] = new int[10];
-	        int numero, i, inicio = 0, meio, fim = 4;
-	        boolean localizador = false;
+		int db[] = new int[10];
+	    int numero, i, inicio = 0, meio, fim = 4;
+	    boolean localizador = false;
 
-	        for (i = 0; i < 5; i++) {
-	            System.out.print("Digite o " + (i + 1) + " número: ");
-	            db[i] = in.nextInt();
-	        }
+	    for (i = 0; i < 5; i++) {
+	    	db[i] = Auxiliar.digitaNumero("Digite o " + (i + 1) + " número: ");
+	    }
+	    
+	    numero = Auxiliar.digitaNumero("\nNúmero a ser localizado? ");
 
-	        System.out.print("\nNúmero a ser localizado? ");
+	    i = 0;
 
-	        numero = in.nextInt();
+	    meio = (inicio + fim) / 2;
 
-	        i = 0;
-
-	        meio = (inicio + fim) / 2;
-
-	        while (inicio <= fim && localizador == false) {
-	            if (db[meio] == numero) {
-	            	localizador = true;
-	            } else {
-	            	if (numero < db[meio]) {
-	            		fim = meio - 1;
-	                } else {
-	                    inicio = meio + 1;
-	                }
-	                meio = (inicio + fim) / 2;
+	    while (inicio <= fim && localizador == false) {
+	    	if (db[meio] == numero) {
+	    		localizador = true;
+	        
+	    	}else {
+	           	
+	        	if (numero < db[meio]) {
+	        		fim = meio - 1;	        	
+	            }else {
+	            	inicio = meio + 1;
 	            }
-	        }
-
-	        if (localizador) {
-	        	System.out.println("\nNúmero encontrado na posição [" + meio + "]" + ".");
-	        } else {
-	        	System.out.println("\nNúmero não encontrado");
-	        }
-	    in.close(); */    
-	}		
+	        	meio = (inicio + fim) / 2;
+	       }
+	   }
+	   if (localizador) {
+	    	Prints.msg("\nNúmero encontrado na posição [" + meio + "]" + ".");
+	   } else {
+		   Prints.msg("\nNúmero não encontrado");
+	   }
+	}
 }

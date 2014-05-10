@@ -27,7 +27,6 @@ public class Registrador {
 	Ficheiro ficheiro =  new Ficheiro();
 	static Consultas consulta = new Consultas();
 	static ListaOrdenada<String> lista = new ListaOrdenada<String>();
-	
 		
 	/**
 	 * Método responsável pela leitura dos dados em arquivo e finalização das alterações

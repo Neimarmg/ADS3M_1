@@ -2,7 +2,6 @@ package Aplicacao;
 
 import model.Ordenadores;
 import Controller.interacao;
-import Controller.Navegacao.Consultas;
 import model.Utilitarios.Auxiliar;
 import model.Utilitarios.Dia;
 
@@ -12,9 +11,8 @@ import model.Utilitarios.Dia;
  */
 public class App{
 	
-	Consultas consulta = new Consultas();
 	Ordenadores ordenador = new Ordenadores();
-
+	
 	/**
 	 * Descrição do cabeçalho principal
 	 */
@@ -27,44 +25,46 @@ public class App{
 	 * @throws Exception
 	 */
 	private void selecionaAtividade() throws Exception {
-		Menus.menuSelecinaAtividade();	
-		switch (Auxiliar.digita("Atividade")) {
+	
+		try {		
+			Menus.menuSelecinaAtividade();	
+			switch (Auxiliar.digita("Atividade")) {
+			
+			case "t1":	
+				Auxiliar.setOpcao("LISTA");
+				Menus.mostarMenuApp();				
+				interacao.iniciaTarefas();	
+				break;
+				
+			case "t2":			
+				Prints.msgc("	CONSULTA BINÁRIA\n\n");
 		
-		case "t1":	
-			Auxiliar.setOpcao("LISTA");
-			Menus.mostarMenuApp();
+				break;
+				
+			case "t4":	
+				ordenador.selecionaOrdenador();			
+				break;
+				
+			case "t5":
+				Auxiliar.setOpcao("ARVORE");
+				Menus.mostarMenuApp();
+				interacao.iniciaTarefas();
+				//Registrador.executaComando("l.txt");
+				selecionaAtividade();
+				break;
 			
-			interacao.iniciaTarefas();	
-			break;
+			case "sair":
+				Prints.sair();
+				break;
+				
+			default: 
+				Prints.opcaoInvalida();
+				selecionaAtividade();
+				break;
+			}
 			
-		case "t2":			
-			Prints.msgc("	CONSULTA BINÁRIA\n\n");
-			consulta.buscaBinaria(
-					Auxiliar.digita("Nome do arquivo"), 
-					Auxiliar.digita("Parâmetro "));
-			selecionaAtividade();
-			break;
-			
-		case "t4":	
-			ordenador.selecionaOrdenador();			
-			break;
-			
-		case "t5":
-			Auxiliar.setOpcao("ARVORE");
-			Menus.mostarMenuApp();
-			interacao.iniciaTarefas();
-			//Registrador.executaComando("l.txt");
-			selecionaAtividade();
-			break;
-		
-		case "sair":
-			Prints.sair();
-			break;
-			
-		default: 
-			Prints.opcaoInvalida();
-			selecionaAtividade();
-			break;
+		} catch (ClassNotFoundException e) {
+			Prints.msge("Comando não suportada em JavaSE igual ou inferior 6.1 ");
 		}
 	}
 	
