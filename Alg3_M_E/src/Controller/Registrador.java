@@ -127,7 +127,7 @@ public class Registrador {
 			break;
 			
 		case "imprimir":
-			consulta.abreArquivo(nomeArquivo, "", false);
+			consulta.consultaArquivo(nomeArquivo, "", false);
 			executaComando(nomeArquivo); // Loop para novas ações do menu
 			break;
 		

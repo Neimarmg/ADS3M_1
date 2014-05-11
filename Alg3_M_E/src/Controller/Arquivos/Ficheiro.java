@@ -1,13 +1,9 @@
 package  Controller.Arquivos;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.nio.file.Paths;
 import java.nio.file.Path;
-
 import model.Utilitarios.Include;
 import Aplicacao.Prints;
 
@@ -60,24 +56,4 @@ public class Ficheiro {
 		Prints.msg("Arquivo encontrado: " + p.toFile());
 	}
 	
-	
-	/**
-	 * @param nomeAquivo
-	 * @throws Exception
-	 */
-	public void abre(String nomeAquivo) throws Exception {
-    	try {
-			FileReader f = new FileReader(nomeAquivo);
-			BufferedReader br = new BufferedReader(f);
-			String linha = br.readLine();
-			while(linha != null ) {
-				linha = br.readLine();
-				System.out.println(linha);
-			}
-			br.close();			
-		} catch (FileNotFoundException e) {
-			Prints.msgb("Nome do arquivo incorreto ou inexistente.");
-			Prints.sair();
-		}
-    }
 }

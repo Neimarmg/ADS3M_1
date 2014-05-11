@@ -40,7 +40,10 @@ public class App{
 				
 			case "t2":			
 				Prints.msgc("	CONSULTA BINÁRIA\n\n");
-				consulta.buscaBinaria("", "");
+				consulta.carregaBuscaBinaria(
+					Auxiliar.digita("Nome do arquivo? "), 
+					Auxiliar.digita("Nome a ser localizado? ")
+				);
 				break;
 				
 			case "t4":	

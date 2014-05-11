@@ -53,7 +53,7 @@ public class interacao<T> {
 		switch (Auxiliar.digita("")) {		
 		
 		case "arquivo":
-			ficheiro.abre(Auxiliar.digita("Nome do arquivo"));
+			consultas.consultaArquivo(Auxiliar.digita("Nome do arquivo"),"",false);
 			imprime();
 			break;
 
