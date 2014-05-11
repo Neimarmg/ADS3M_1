@@ -53,31 +53,28 @@ public class Consultas {
 		}
 	}
 	
-//====================<< Busca binaria de rigitros >> =======================================	
+//====================<< Busca binária de rigitros >> =======================================	
 	
 	int db[] = new int [Auxiliar.getTamanho()];
-	String nome; 
-	int i, idContato, inicio = 0, meio, fim = Auxiliar.getTamanho();
+	int i, inicio = 0, meio, fim = Auxiliar.getTamanho();
     boolean localizador = false;
-
+    
+    
 	/**
-	 * Realiza busca binária dentro do arquivo
-	 * @param nomeArquivo
+	 * Realiza busca binária dentro do vetor carregado do arquivo
 	 * @param campo
 	 */
-	public void executaBuscaBinaria(String nomeArquivo,String campo){
-		
+	private void executaBuscaBinaria(int campo){
 	    i = 0;
-
 	    meio = (inicio + fim) / 2;
 
 	    while (inicio <= fim && localizador == false) {
-	    	if (db[meio] == idContato) {
+	    	if (db[meio] == campo) {
 	    		localizador = true;
 
 	    	}else {
-
-	        	if (idContato < db[meio]) {
+	    		
+	        	if (campo < db[meio]) {
 	        		fim = meio - 1;	        	
 	            }else {
 	            	inicio = meio + 1;
@@ -85,37 +82,47 @@ public class Consultas {
 	        	meio = (inicio + fim) / 2;
 	       }
 	   }
-	    
-
 	}
-
 	
-	public void imprimeBuscaBinaria(){		
-		if (localizador) {
-			Prints.msg("\nNúmero encontrado na posição [" + meio + "] " +".");
+
+	/**
+	 * Imprime resultado da busca binária
+	 * @param campo
+	 */
+	private void imprimeBuscaBinaria(int campo){		
+		if (localizador == true) {
+			Prints.msgb("	RESULTADO DE BUSCA BINÁRIA\n"
+				+ "\nRegistro encontrado"
+				+ "\n\nPosição [" + meio + "] " +Auxiliar.vetor[meio-1]);
 		} else {
-		   	Prints.msg("\nNúmero não encontrado");
+		   	Prints.msge("\nNúmero não encontrado");
 		}
 	}
 	
 	
-	
-	public void carregaBuscaBinaria(String nomeArquivo,String campo) throws Exception {
-			Auxiliar.carregaArquivo(nomeArquivo);
+	/**
+	 * Método responsável pelo carregamento do arquivo.
+	 * @param nomeArquivo
+	 * @param campo
+	 * @throws Exception
+	 */
+	public void carregaBuscaBinaria(String nomeArquivo,int campo) throws Exception {
+		Auxiliar.carregaArquivo(nomeArquivo);			
+		
+		if (campo <= Auxiliar.getTamanho()){
+		
+			for (i = 0; i < Auxiliar.getTamanho(); i++) {		    	
+				db[i] = i;
+				Prints.msg("\nId: " +i +" " +Auxiliar.vetor[i]);
+			}
 			
-		    for (i = 0; i < Auxiliar.getTamanho(); i++) {
-		    	Prints.msg("\n" +Auxiliar.vetor[i]);
-		    	if (Auxiliar.vetor[i] != null ){
-
-		    		db[i] = i; 
-		    		
-		    		if (nome.equals(Auxiliar.vetor[i])){
-		    			idContato = i;
-		    		}
-		    	}
-		    }
-		    
-		   // imprimeBuscaBinaria();
+			executaBuscaBinaria(campo);
+			imprimeBuscaBinaria(campo);
+			
+		}else{
+			Prints.msge("\nId inesistente!");
+		}
+		Auxiliar.setIndex(0); //Limpa vertor para próxima consulta
 	}
 	
 	
@@ -135,11 +142,16 @@ public class Consultas {
 				selecionaComando();
 				break;
 
-			case "filtrar":				
+			case "nome":				
 				consultaArquivo(Auxiliar.digita("Nome do arquivo"),Auxiliar.digita("Contato"),true);
 				selecionaComando();
 				break;
-				
+			
+			case "id":
+				carregaBuscaBinaria(Auxiliar.digita("Nome do arquivo"),	Auxiliar.digitaNumero("Nome a ser localizado"));
+				selecionaComando();
+				break;		
+			
 			case "arquivo":
 				consultaArquivo(Auxiliar.digita("Nome do arquivo"),"",false);
 				selecionaComando();

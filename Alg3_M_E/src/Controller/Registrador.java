@@ -70,7 +70,7 @@ public class Registrador {
 	 * @throws Exception
 	 */
 	public static void insereNovoRegistro(String nomeArquivo) throws Exception {
-		//leTeclado();
+		leTeclado();
 		Include.setAppend(true);
 		
 		if(Auxiliar.getOpcao().equals("LISTA")){ //Definição de atividade

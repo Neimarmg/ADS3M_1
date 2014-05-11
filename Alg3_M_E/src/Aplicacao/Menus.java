@@ -7,7 +7,7 @@ public class Menus extends Prints {
 		public static void menuSelecinaAtividade() {		
 			msgb("	QUAL ATIVIDADE?\n\n"
 			+"=> T1 'Listas encadeadas'       " +Auxiliar.statusAcao(7) + "\n"
-			+"=> T2 'Pesquisa Binária'        " +Auxiliar.statusAcao(2) + "\n"
+			+"=> T2 'Pesquisa Binária'        " +Auxiliar.statusAcao(7) + "\n"
 			+"=> T4 'Algoritmos de ordenação' " +Auxiliar.statusAcao(7) + "\n"
 			+"=> T5 'Arvores'                 " +Auxiliar.statusAcao(2) + "\n"
 			+"=> SAIR\n");
@@ -91,7 +91,8 @@ public class Menus extends Prints {
 			msgb(
 				"	OPÇÕES PARA CONSULTAR ARQUIVO:\n\n"	
 				+"=> NAVEGAR  'Navega pelo arquivo com comando de teclado'\n"
-				+"=> FILTRAR  'Encontra um registro específico no arquivo'\n"
+				+"=> NOME     'Encontra um nome específico do arquivo'\n"
+				+"=> ID       'Encontra um id atraves de uma busca binária'\n"
 				+"=> ARQUIVO  'Imprime arquivo inteiro'\n"
 				+"=> SAIR\n"
 			);		
