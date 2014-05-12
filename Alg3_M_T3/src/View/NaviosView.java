@@ -1,17 +1,17 @@
 package View;
 import Model.NaviosMod;
-import View.Utilitarios.Prints;
+import Model.Utilitarios.Prints;
 
 /**
- *Classe de impressão e consulta à navios! 
- * @author Neimar, Aurélio
+ *Classe de impressao e consulta à navios! 
+ * @author Neimar
  */
 public class NaviosView {
 	String acum =" ";
 	
 	/**
 	 * Método que encontra um navio específico ou lista todos, 
-	 * dependendo do parâmetro filtrar
+	 * dependendo do parêmetro filtrar
 	 * @param filtrar
 	 * @param parametro
 	 */
@@ -50,7 +50,7 @@ public class NaviosView {
 	
 	
 	/**
-	 * Método de avaliação de retorno de parâmetro
+	 * Método de avalição de retorno de parâmetro
 	 * @param filtrar
 	 * @param parametro
 	 */
@@ -63,7 +63,7 @@ public class NaviosView {
 		} else {
 			pesquisa(filtrar, parametro);			
 		}
-		acum = "";
+		acum =""; //Limpa variavel de impressão 
 	}
 	
 	/**

@@ -1,7 +1,7 @@
 package View;
 
 import Model.MapaMod;
-import View.Utilitarios.Prints;
+import Model.Utilitarios.Prints;
 
 /**
  * Classe de impressão dos dados do mapaMod.
@@ -60,5 +60,32 @@ public class MapaView {
 			Prints.msgb("Não foi possível imprimir o mapaMod!");
 			Prints.msg("" +MapaMod.getLinha() + "x" + MapaMod.getColuna() + "\n\n");
 		}
+	}
+	
+	/**
+	 * Imprime ragras o jogo
+	 */
+	public void imprimeRegras() {
+		Prints.msgb("	REGRAS DO JOGO?\n\n"
+				+ "=> Digitar o comando 'iniciar' onde será impresso o\n"
+				+ "   mapa inicial do jogo \n\n"		
+				+ "=> Digitar o comando 'jogar' para confirmar que o \n"
+				+ "   jogador vai iniciar o jogo assim até serem \n\n"
+				+ "=> Digitar o comando atirar para poder informar as \n"
+				+ "   coordenada e do tiro, seguindo esgotadas as chances \n"
+				+ "   ou até que jogador perca ou vença o jogo\n\n"   
+				+ "=> O jogado inicia o jogo com 15 chances,\n\n"
+				+ "=> Com 0 pontos os jogador inicia o nível 1\n\n"
+				+ "=> Com 6 pontos os jogador passa para o nível 2\n\n"
+				+ "=> Com 12 pontos os jogador passa para o nível 3\n\n"
+				+ "=> Com 21 pontos os jogador passa para o nível 4\n\n"
+				+ "=> Com 30 pontos os jogador passa para o nível 5,\n"
+				+ "   nível máximo\n\n"
+				+ "=> Para atingir a pontuação máxima de 42 pontos o \n"
+				+ "   jogador não poderá errar nenhuma tiro\n\n"
+				+ "=> O jogador ainda pode jogar em um nível personalizado\n"
+				+ "   onde o jogador\n\n"
+				+ "=> Com definições prórpias de mapa e numero de chances\n");
+
 	}
 }

@@ -1,7 +1,7 @@
 package View;
 
 import Model.NiveisMod;
-import View.Utilitarios.Prints;
+import Model.Utilitarios.Prints;
 
 /**
  * Classe de impressão de níveis de jogo
@@ -63,7 +63,7 @@ public class NiveisView {
 		} else {
 			pesquisa(filtrar, parametro);			
 		}
-		acum = "";
+		acum =""; //Limpa variavel de impressão 
 	}
 	
 	/**

@@ -5,7 +5,7 @@ import View.MapaView;
 import View.NaviosView;
 import View.NiveisView;
 import View.SoldadosView;
-import View.Utilitarios.Prints;
+import Model.Utilitarios.Prints;
 
 public class InterfaceCont {
 	
