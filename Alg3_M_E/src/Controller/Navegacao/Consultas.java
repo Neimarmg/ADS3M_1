@@ -53,7 +53,7 @@ public class Consultas {
 		}
 	}
 	
-//====================<< Busca binária de rigitros >> =======================================	
+//====================<< Busca binária de registros >> =======================================	
 	
 	int db[] = new int [Auxiliar.getTamanho()];
 	int i, inicio = 0, meio, fim = Auxiliar.getTamanho();
@@ -120,7 +120,7 @@ public class Consultas {
 			imprimeBuscaBinaria(campo);
 			
 		}else{
-			Prints.msge("\nId inesistente!");
+			Prints.msge("\nId inexistente!");
 		}
 		Auxiliar.setIndex(0); //Limpa vertor para próxima consulta
 	}
