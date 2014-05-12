@@ -1,7 +1,5 @@
 package model;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import model.Utilitarios.Auxiliar;
 import Aplicacao.Menus;
 import Aplicacao.Prints;
@@ -18,9 +16,7 @@ public class Ordenadores {
 	String aux;
 	String pivo;
 	String nomeOrdenador;
-	String linha;
-	FileReader file;
-	BufferedReader buff;
+
 
 	
 //========================= << Ordenação BubleSort >> ==============================

@@ -55,7 +55,7 @@ public class Consultas {
 	
 //====================<< Busca binária de registros >> =======================================	
 	
-	int db[] = new int [Auxiliar.getTamanho()];
+	int vet[] = new int [Auxiliar.getTamanho()];
 	int i, inicio = 0, meio, fim = Auxiliar.getTamanho();
     boolean localizador = false;
     
@@ -69,12 +69,12 @@ public class Consultas {
 	    meio = (inicio + fim) / 2;
 
 	    while (inicio <= fim && localizador == false) {
-	    	if (db[meio] == campo) {
+	    	if (vet[meio] == campo) {
 	    		localizador = true;
 
 	    	}else {
 	    		
-	        	if (campo < db[meio]) {
+	        	if (campo < vet[meio]) {
 	        		fim = meio - 1;	        	
 	            }else {
 	            	inicio = meio + 1;
@@ -112,7 +112,7 @@ public class Consultas {
 		if (campo <= Auxiliar.getTamanho()){
 		
 			for (i = 0; i < Auxiliar.getTamanho(); i++) {		    	
-				db[i] = i;
+				vet[i] = i;
 				Prints.msg("\nId: " +i +" " +Auxiliar.vetor[i]);
 			}
 			
