@@ -52,18 +52,18 @@ public class Dia {
 		
 		int hora =  diaHora.get(Calendar.HOUR_OF_DAY);
 		
-		if (hora >= 0 && hora <= 12) {
-			defineCabecalho(sdf.format(diaHora.getTime()) + " da manhã." + "");
+		if (hora >= 0 && hora < 12) {
+			defineCabecalho(sdf.format(diaHora.getTime()) +" da manhã." +"");
 			pressagios.desejaBomDia();
 		}
 
-		if (hora >= 12  && hora <= 18) {
-			defineCabecalho(sdf.format(diaHora.getTime()) + " da tarde." + "");
+		if (hora >= 12  && hora < 18) {
+			defineCabecalho(sdf.format(diaHora.getTime()) +" da tarde." +"");
 			pressagios.desejaBoaTarde();
 		}	
 		
-		if (hora > 18  && hora <= 24) {
-			defineCabecalho(sdf.format(diaHora.getTime()) + " da noite." + "");
+		if (hora >= 18  && hora <= 24) {
+			defineCabecalho(sdf.format(diaHora.getTime()) +" da noite." +"");
 			pressagios.desejaBoaNoite();
 		}	
 	}

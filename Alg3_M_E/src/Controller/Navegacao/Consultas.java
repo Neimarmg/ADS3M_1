@@ -68,7 +68,7 @@ public class Consultas {
 		if (localizador == true) {
 			Prints.msgb("	RESULTADO DE BUSCA BINÁRIA\n"
 				+ "\nRegistro encontrado"
-				+ "\n\nPosição [" + meio + "] " +Auxiliar.vetor[meio-1]);
+				+ "\n\nPosição [" + meio + "] " +Auxiliar.vetor[meio]);
 		} else {
 		   	Prints.msge("\nNúmero não encontrado");
 		}

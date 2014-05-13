@@ -109,7 +109,7 @@ public class interacao<T> {
 	 */
 	public static void verificaInserir() throws Exception {
 		Prints.msg("\nVerificando disco...\n");
-		if (memoria.calcula() < 6000){ // Verifica memória ao inserir dados
+		if (memoria.calcula() > 6000){ // Verifica memória ao inserir dados
 			Prints.msg("\nVerificação concluída, há memória disponível!\n");
 			Registrador.executaComando(Auxiliar.digita("Nome do arquivo"));	
 			
