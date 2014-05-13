@@ -163,11 +163,6 @@ public class Auxiliar {
 		}		
 	}
 	
-	
-	public static int getTamanho() {
-		return tamanho;
-	}
-	
 	public static void setIndex(int index) {
 		Auxiliar.index = index;
 	}
@@ -178,5 +173,13 @@ public class Auxiliar {
 	
 	public static boolean getValidaArquivo() {
 		return validaArquivo;
+	}
+	
+	public static void setVetor(String[] vetor) {
+		Auxiliar.vetor = vetor;
+	}
+	
+	public static String[] getVetor() {
+		return vetor;
 	}
 }

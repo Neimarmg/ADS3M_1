@@ -55,8 +55,8 @@ public class Consultas {
 	
 //====================<< Busca binária de registros >> =======================================	
 	
-	int vet[] = new int [Auxiliar.getTamanho()];
-	int i, inicio = 0, meio, fim = Auxiliar.getTamanho();
+	int vet[] = new int [Auxiliar.getVetor().length];
+	int i, inicio = 0, meio, fim = Auxiliar.getVetor().length;
     boolean localizador = false;
     
     
@@ -109,16 +109,16 @@ public class Consultas {
 	public void carregaBuscaBinaria(String nomeArquivo,int campo) throws Exception {
 		Auxiliar.carregaArquivo(nomeArquivo);			
 		
-		if (campo <= Auxiliar.getTamanho()){
+		if (campo <= Auxiliar.getVetor().length){
 		
-			for (i = 0; i < Auxiliar.getTamanho(); i++) {		    	
+			for (i = 0; i < Auxiliar.getVetor().length; i++) {		    	
 				vet[i] = i;
 				Prints.msg("\nId: " +i +" " +Auxiliar.vetor[i]);
 			}
 			
 			executaBuscaBinaria(campo);
 			imprimeBuscaBinaria(campo);
-			
+
 		}else{
 			Prints.msge("\nId inexistente!");
 		}

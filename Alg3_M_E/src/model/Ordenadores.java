@@ -42,7 +42,7 @@ public class Ordenadores {
 	private  void ordenaBubleSort(boolean ordem) throws Exception {		
 		try {
 			for (int i = 1; i < Auxiliar.vetor.length; i++) {
-	         	for (int j = i+1; j < Auxiliar.vetor.length; j++) {	         		
+	         	for (int j = i+1; j < Auxiliar.getVetor().length; j++) {	         		
 	         		if (ordem == true) {	         			
 		                if (Auxiliar.vetor[i].compareTo(Auxiliar.vetor[j]) > 0) { // Ordem crescente  
 		                   	trocasItensBubleSort(i, j);
@@ -224,7 +224,7 @@ public class Ordenadores {
 		if (mostraEstatisca == true) { 
 			Prints.msg(
 				"\nDADOS ESTATÍSTICOS DA ORDENAÇÃO " + nomeOrdenador.toUpperCase()
-				+ "\nTamanho do vetor: " + Auxiliar.getTamanho()
+				+ "\nTamanho do vetor: " + Auxiliar.getVetor().length
 				+ "\nTotal de comparacoes: " + comparacoes
 				+ "\nTempo total: " + tempoExecucao + "mls\n");
 		}

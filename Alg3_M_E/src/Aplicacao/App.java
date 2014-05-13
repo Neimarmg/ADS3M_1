@@ -78,10 +78,11 @@ public class App{
 		escreveCabecalho();
 		Dia.defineSaudacao();		
 		selecionaAtividade();
+		
 	}
 	
 
-	public static void main(String[] args)throws Exception {
+	public static void main(String[] args)throws Exception {		
 		new App().run(); 
 	}
 }
