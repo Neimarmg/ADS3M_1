@@ -1,5 +1,7 @@
 package Aplicacao;
 
+import java.util.InputMismatchException;
+
 import model.Ordenadores;
 import Controller.interacao;
 import Controller.Navegacao.Consultas;
@@ -40,7 +42,10 @@ public class App{
 				
 			case "t2":			
 				Prints.msgc("	CONSULTA BINÁRIA\n");
-				consulta.carregaBuscaBinaria(Auxiliar.digita("Nome do arquivo"), Auxiliar.digitaNumero("Nome a ser localizado"));
+				consulta.carregaBuscaBinaria(
+					Auxiliar.digita("Nome do arquivo"), 
+					Auxiliar.digitaNumero("Nome a ser localizado")
+				);
 				break;
 				
 			case "t4":	
@@ -67,6 +72,8 @@ public class App{
 			
 		} catch (ClassNotFoundException e) {
 			Prints.msge("Comando não suportada em JavaSE igual ou inferior 6.1 ");
+		} catch (InputMismatchException e) {
+			Prints.msge("\nValor(es) digitado é inválido!");
 		}
 	}
 	

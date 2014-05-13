@@ -13,9 +13,9 @@ public class Menus extends Prints{
 	
 	public static void menuMain() {		
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
-		+ "=> INICIAR  'Iniciar mapa de jogo'            "+Prints.status(7) +"\n"
-		+ "=> IMPRIMIR 'Imprimi opções de jogo'          "+Prints.status(7) +"\n"
-		+ "=> REGRAS   'Imprimi todas as regras do jogo' "+Prints.status(7) +"\n"
+		+ "=> INICIAR  'Iniciar mapa de jogo'            "+Prints.statusAcao(7,7) +"\n"
+		+ "=> IMPRIMIR 'Imprimi opções de jogo'          "+Prints.statusAcao(7,7) +"\n"
+		+ "=> REGRAS   'Imprimi todas as regras do jogo' "+Prints.statusAcao(7,7) +"\n"
 		+ "=> SAIR\n");
 	}
 

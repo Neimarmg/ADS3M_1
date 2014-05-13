@@ -60,6 +60,21 @@ public class Consultas {
     boolean localizador = false;
     
     
+    /**
+	 * Imprime resultado da busca binária
+	 * @param campo
+	 */
+	private void imprimeBuscaBinaria(int campo){		
+		if (localizador == true) {
+			Prints.msgb("	RESULTADO DE BUSCA BINÁRIA\n"
+				+ "\nRegistro encontrado"
+				+ "\n\nPosição [" + meio + "] " +Auxiliar.vetor[meio-1]);
+		} else {
+		   	Prints.msge("\nNúmero não encontrado");
+		}
+	}
+		
+    
 	/**
 	 * Realiza busca binária dentro do vetor carregado do arquivo
 	 * @param campo
@@ -85,20 +100,6 @@ public class Consultas {
 	}
 	
 
-	/**
-	 * Imprime resultado da busca binária
-	 * @param campo
-	 */
-	private void imprimeBuscaBinaria(int campo){		
-		if (localizador == true) {
-			Prints.msgb("	RESULTADO DE BUSCA BINÁRIA\n"
-				+ "\nRegistro encontrado"
-				+ "\n\nPosição [" + meio + "] " +Auxiliar.vetor[meio-1]);
-		} else {
-		   	Prints.msge("\nNúmero não encontrado");
-		}
-	}
-	
 	
 	/**
 	 * Método responsável pelo carregamento do arquivo.

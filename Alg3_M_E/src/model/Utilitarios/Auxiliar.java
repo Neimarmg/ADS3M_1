@@ -32,31 +32,41 @@ public class Auxiliar {
 	 * @param status
 	 * @return
 	 */
-	public static String statusAcao(int status) {
-		String r;		
-		switch (status) {
+	public static String statusAcao(int status, int sucesso) {
+		String r, s;	
 		
-		case -1:	r = "Pendente "; 
+		if (sucesso == 7) {//Avaliação de sucesso da atividade
+			s = "com sucesso!";
+		}else if(sucesso == -1){
+			s = "sem sucesso"; 
+		}else{
+			s = "...";
+		}
+		
+		switch (status) { // Definidor de status da atividade
+		
+		case -1:r = "Pendente " +s; 
 			break;
-		case 0:	r = "Não definido "; 
+		case 0:	r = "Não definido " +s; 
 			break;
-		case 1:	r = "Em planejamento "; 
+		case 1:	r = "Em planejamento " +s; 
 			break;
-		case 2:	r = "Em desenvolvimento "; 
+		case 2:	r = "Em desenvolvimento " +s; 
 			break;
-		case 3:	r = "Em teste "; 
+		case 3:	r = "Em teste " +s; 
 			break;
-		case 4:	r = "Em revisão "; 
+		case 4:	r = "Em revisão " +s; 
 			break;
-		case 5:	r = "Concluído(a) parcialmente "; 
+		case 5:	r = "Concluído(a) parcialmente " +s; 
 			break;
-		case 6:	r = "Concluído(a) "; 
+		case 6:	r = "Concluído(a) " +s; 
 			break;
-		case 7:	r = "Finalizado(a) "; 
+		case 7:	r = "Finalizado(a) " +s; 
 			break;		
 		default:
 			r = "inválido "; break;
 		}
+		
 		return "Status: " +r;
 	}
 	
@@ -174,11 +184,7 @@ public class Auxiliar {
 	public static boolean getValidaArquivo() {
 		return validaArquivo;
 	}
-	
-	public static void setVetor(String[] vetor) {
-		Auxiliar.vetor = vetor;
-	}
-	
+
 	public static String[] getVetor() {
 		return vetor;
 	}

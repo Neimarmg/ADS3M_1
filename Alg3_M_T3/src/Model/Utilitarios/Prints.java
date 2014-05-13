@@ -24,15 +24,15 @@ public class Prints {
 	 */
 	public static void msgb(Object desc) {
 		System .out.print(
-			"\n====================================================\n"
+			"\n=====================================================================\n"
 			+desc
-			+"\n====================================================\n");
+			+"\n=====================================================================\n");
 	}
 	
 	
 	public static void msgc(Object desc) {
 		System .out.print(
-			"\n====================================================\n"
+			"\n=====================================================================\n"
 			+desc);
 	}
 
@@ -40,13 +40,13 @@ public class Prints {
 	public static void msgr(Object desc) {
 		System .out.print(
 			desc
-			+"\n====================================================\n");
+			+"\n=====================================================================\n");
 	}	
 	
 
 	public static void msgl() {
 		System .out.print(
-			"\n====================================================\n");
+			"\n=====================================================================\n");
 	}
 	
 	
@@ -112,26 +112,41 @@ public class Prints {
 	 * @param status
 	 * @return
 	 */
-	public static String status(int status){
-		String r;
+	public static String statusAcao(int status, int sucesso) {
+		String r, s;	
 		
-		switch (status) {
+		if (sucesso == 7) {//Avaliação de sucesso da atividade
+			s = "com sucesso!";
+		}else if(sucesso == -1){
+			s = "sem sucesso"; 
+		}else{
+			s = "...";
+		}
 		
-		case -1: r = "Pendente ";break;
-		case 0:	r = "Não definido "; break;
-		case 1:	r = "Em planejamento "; break;
-		case 2:	r = "Em desenvolvimento "; break;
-		case 3:	r = "Em testes "; break;
-		case 4:	r = "Em revisão "; break;
-		case 5:	r = "Concluído(a) parcialmente "; break;
-		case 6:	r = "Concluído(a) "; break;
-		case 7:	r = "Finalizado(a) "; break;
+		switch (status) { // Definidor de status da atividade
 		
+		case -1:r = "Pendente " +s; 
+			break;
+		case 0:	r = "Não definido " +s; 
+			break;
+		case 1:	r = "Em planejamento " +s; 
+			break;
+		case 2:	r = "Em desenvolvimento " +s; 
+			break;
+		case 3:	r = "Em teste " +s; 
+			break;
+		case 4:	r = "Em revisão " +s; 
+			break;
+		case 5:	r = "Concluído(a) parcialmente " +s; 
+			break;
+		case 6:	r = "Concluído(a) " +s; 
+			break;
+		case 7:	r = "Finalizado(a) " +s; 
+			break;		
 		default:
 			r = "inválido "; break;
 		}
 		
 		return "Status: " +r;
 	}
-
 }
