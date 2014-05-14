@@ -3,6 +3,7 @@ package Aplicacao;
 import java.util.InputMismatchException;
 
 import model.Ordenadores;
+import Controller.Registrador;
 import Controller.interacao;
 import Controller.Navegacao.Consultas;
 import model.Utilitarios.Auxiliar;
@@ -54,10 +55,10 @@ public class App{
 				
 			case "t5":
 				Auxiliar.setOpcao("ARVORE");
-				Menus.mostarMenuApp();
-				interacao.iniciaTarefas();
-				//Registrador.executaComando("l.txt");
-				selecionaAtividade();
+				//Menus.mostarMenuApp();
+				//interacao.iniciaTarefas();
+				Registrador.executaComando("l.txt");
+				//selecionaAtividade();
 				break;
 			
 			case "sair":
