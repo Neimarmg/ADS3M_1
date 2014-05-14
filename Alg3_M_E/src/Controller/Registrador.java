@@ -69,11 +69,11 @@ public class Registrador {
 	 * @throws Exception
 	 */
 	public static void insereNovoRegistro(String nomeArquivo) throws Exception {
-		//leTeclado();
+		leTeclado();
 		Include.setAppend(true);
+		Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); //Insere na última linha do arquivo
 		
-		if(Auxiliar.getOpcao().equals("LISTA")){ //Definição de atividade
-			Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); //Insere na última linha do arquivo
+		if(Auxiliar.getOpcao().equals("LISTA")){ //Definição de atividade			
 			leArquivo(nomeArquivo); //Lê arquivo após a insersão e padroniza a edição
 			lista.editaArquivo(nomeArquivo);	
 			
