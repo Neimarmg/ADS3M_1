@@ -11,7 +11,7 @@ import Controller.Arquivos.Ficheiro;
 import Controller.Navegacao.Consultas;
 import model.Contatos;
 import model.Arvore.ArvoreBinariaAVL;
-import model.Arvore.ArvoreBinariaAVL.arvore;
+import model.Arvore.ArvoreBinariaAVL.Arvore;
 import model.Lista.ListaOrdenada;
 import model.Lista.Nodo;
 import model.Utilitarios.Auxiliar;
@@ -79,28 +79,10 @@ public class Registrador {
 			lista.editaArquivo(nomeArquivo);	
 			
 		}else if(Auxiliar.getOpcao().equals("ARVORE")){//Definição de atividade
-			
-			arvore a = null;
-			
-		    a = ArvoreBinariaAVL.inserir(a, 10 );
-		    a = ArvoreBinariaAVL.inserir(a, 4);
-		    a = ArvoreBinariaAVL.inserir(a, 7);
-		    a = ArvoreBinariaAVL.inserir(a, 58);
-		    a = ArvoreBinariaAVL.inserir(a, 24);
-		    a = ArvoreBinariaAVL.inserir(a, 3);
-		    a = ArvoreBinariaAVL.inserir(a, 99);
-		 
-		    System.out.print("EM : ");
-		    ArvoreBinariaAVL.exibiremordem(a);
-		    System.out.println();
-		      
-		    System.out.print("PRE : ");
-		    ArvoreBinariaAVL.exibirpreordem(a);
-		    System.out.println();
-		       
-		    System.out.print("POS : ");
-		    ArvoreBinariaAVL.exibirposordem(a);
-		    System.out.println();	
+			ArvoreBinariaAVL.executa("neimar");
+			ArvoreBinariaAVL.executa("andre");
+			ArvoreBinariaAVL.executa("santos");
+			ArvoreBinariaAVL.executa("carlos");
 			
 			
 		}
