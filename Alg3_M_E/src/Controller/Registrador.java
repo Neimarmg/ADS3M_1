@@ -10,8 +10,7 @@ import Aplicacao.Prints;
 import Controller.Arquivos.Ficheiro;
 import Controller.Navegacao.Consultas;
 import model.Contatos;
-import model.Arvore.ArvoreBinariaAVL;
-import model.Arvore.ArvoreBinariaAVL.Arvore;
+import model.Arvore.ArvoreBinaria;
 import model.Lista.ListaOrdenada;
 import model.Lista.Nodo;
 import model.Utilitarios.Auxiliar;
@@ -23,7 +22,7 @@ import model.Utilitarios.Include;
  */
 public class Registrador {
 
-	ArvoreBinariaAVL arvore =  new ArvoreBinariaAVL(); 
+	ArvoreBinaria arvore =  new ArvoreBinaria(); 
 	Ficheiro ficheiro =  new Ficheiro();
 	static Consultas consulta = new Consultas();
 	static ListaOrdenada<String> lista = new ListaOrdenada<String>();
@@ -41,7 +40,7 @@ public class Registrador {
 			String linha = buff.readLine();			
 			while(linha != null ){
 				linha = buff.readLine();				
-				lista.insert(new Nodo<String>(linha), lista.getHead());				
+				lista.insert(new Nodo<String>(linha), lista.getHead());			
 			}			
 			buff.close();
 			
@@ -70,7 +69,7 @@ public class Registrador {
 	 * @throws Exception
 	 */
 	public static void insereNovoRegistro(String nomeArquivo) throws Exception {
-		leTeclado();
+		//leTeclado();
 		Include.setAppend(true);
 		
 		if(Auxiliar.getOpcao().equals("LISTA")){ //Definição de atividade
@@ -78,17 +77,16 @@ public class Registrador {
 			leArquivo(nomeArquivo); //Lê arquivo após a insersão e padroniza a edição
 			lista.editaArquivo(nomeArquivo);	
 			
-		}else if(Auxiliar.getOpcao().equals("ARVORE")){//Definição de atividade
-			ArvoreBinariaAVL.executa("neimar");
-			ArvoreBinariaAVL.executa("andre");
-			ArvoreBinariaAVL.executa("santos");
-			ArvoreBinariaAVL.executa("carlos");
+		}else if(Auxiliar.getOpcao().equals("ARVORE")){//Definição de atividade           
+			Auxiliar.carregaArquivo(nomeArquivo);
 			
-			
+			for (int i = 0; i < Auxiliar.vetor.length; i++) {				
+				ArvoreBinaria.executa(null,Auxiliar.vetor[i], true);
+			}			
 		}
 	}
-	
-	
+
+
 	/**
 	 * Método de manipulação de dados de arquivos
 	 * @throws Exception
