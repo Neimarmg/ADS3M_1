@@ -22,14 +22,14 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	}
 	
 	/**
-	 * Imprime quando habilitado na tela e edita registros após a ordenação
+	 * imprime quando abilitado na tela e edita registros após a ordenação
 	*/
 	public void imprime(boolean impressaoPrevia) {
 		try {
 			Nodo<?> nodo = head;
 			do {
-				if (impressaoPrevia){Prints.msg("\n" + nodo.getData());} // Imprime a lista para consulta prévia em tempo de execução
-				acum += "\n" +nodo.getData(); // Acumalador de ordenação
+				if(impressaoPrevia){Prints.msg("\n" +nodo.getData());} //Imprime a lista para consulta prévia em tempo de execução}
+				acum += "\n" +nodo.getData(); //Acumalador de ordenação
 				nodo = nodo.getNext();				
 			} while (nodo != null);			
 			

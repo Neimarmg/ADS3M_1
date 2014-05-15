@@ -1,5 +1,5 @@
 /**
  * Pasta destinada à agrupar a estrura da árvre binária
- * @author Neimar
+ * @author neimar
  */
 package model.Arvore;

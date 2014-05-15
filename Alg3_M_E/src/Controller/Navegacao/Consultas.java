@@ -64,11 +64,11 @@ public class Consultas {
 	 * Imprime resultado da busca binária
 	 * @param campo
 	 */
-	private void imprimeBuscaBinaria(int campo) {		
+	private void imprimeBuscaBinaria(int campo){		
 		if (localizador == true) {
 			Prints.msgb("	RESULTADO DE BUSCA BINÁRIA\n"
 				+ "\nRegistro encontrado"
-				+ "\n\nPosição [" + meio + "] " + Auxiliar.vetor[meio]);
+				+ "\n\nPosição [" + meio + "] " +Auxiliar.vetor[meio]);
 		} else {
 		   	Prints.msge("\nNúmero não encontrado");
 		}
@@ -79,7 +79,7 @@ public class Consultas {
 	 * Realiza busca binária dentro do vetor carregado do arquivo
 	 * @param campo
 	 */
-	private void executaBuscaBinaria(int campo) {
+	private void executaBuscaBinaria(int campo){
 	    i = 0;
 	    meio = (inicio + fim) / 2;
 
@@ -87,7 +87,7 @@ public class Consultas {
 	    	if (vet[meio] == campo) {
 	    		localizador = true;
 
-	    	} else {
+	    	}else {
 	    		
 	        	if (campo < vet[meio]) {
 	        		fim = meio - 1;	        	
@@ -120,10 +120,10 @@ public class Consultas {
 			executaBuscaBinaria(campo);
 			imprimeBuscaBinaria(campo);
 
-		} else {
+		}else{
 			Prints.msge("\nId inexistente!");
 		}
-		Auxiliar.setIndex(0); // Limpa vetor para próxima consulta
+		Auxiliar.setIndex(0); //Limpa vertor para próxima consulta
 	}
 	
 	
@@ -161,7 +161,6 @@ public class Consultas {
 			case "sair":
 				Prints.sair();
 				break;
-				
 			default:
 				Prints.opcaoInvalida();
 				selecionaComando();
@@ -173,3 +172,4 @@ public class Consultas {
 		}
 	}
 }
+	

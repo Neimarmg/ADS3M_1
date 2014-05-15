@@ -1,8 +1,8 @@
 package model.Arvore;
 
-public class Arvore {		 
 
-	private static String raiz;
+public class Arvore {		 
+    private static String raiz;
     private static Arvore dir;
 	private static Arvore esq;
     
@@ -33,5 +33,6 @@ public class Arvore {
     public static Arvore getEsq() {
 		return esq;
 	}
+
 
 }

@@ -4,7 +4,7 @@ import Model.MapaMod;
 import Model.Utilitarios.Prints;
 
 /**
- * Classe de impressão dos dados do mapaMod
+ * Classe de impressão dos dados do mapaMod.
  * @author Naimar, Aurélio
  */
 public class MapaView {

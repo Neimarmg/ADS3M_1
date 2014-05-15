@@ -6,7 +6,7 @@ import Aplicacao.Prints;
 
 /**
  * Classe responsável pela ondenação de dados carregados de um arquivo 
- * @author Neimar, Aurélio
+ * @author Neimar e Aurélio
  */
 public class Ordenadores {
 	
@@ -22,7 +22,7 @@ public class Ordenadores {
 //========================= << Ordenação BubleSort >> ==============================
 	
 	/**
-	 * Método responsável pela manipulação do vetor durante ordenação bubleSort
+	 * Método responsável pela manipulação do vetor, durante a ordenação do bubleSort
 	 * @param i
 	 * @param j
 	 */
@@ -34,7 +34,7 @@ public class Ordenadores {
 		
 	
 	/**
-	 * Metodo responsável pela ordenação BubleSort
+	 * Metodo responsável pela ordenação do BubleSort
 	 * @param ordem
 	 * @param mostraEstatisca
 	 * @throws Exception
@@ -95,7 +95,7 @@ public class Ordenadores {
 
 	
 	/**
-	 * Método que partiona o vetor e ordena as partes individualmente
+	 * Método que partiona o vetor e ordena as partes idividualmente
 	 * @param vet
 	 * @param ini
 	 * @param fim
@@ -150,14 +150,14 @@ public class Ordenadores {
 	 * @throws Exception
 	 */
 	private void carregaQuickSort(boolean imprimir) throws Exception {
-		limpaVetor(true); // Garante vetor limpo antes do carregamento do ordenador
+		limpaVetor(true); // Garante que o vetor limpo antes do carregamento do ordenador
 		Auxiliar.carregaArquivo(Auxiliar.digita("Nome do arquivo"));
 		
 		if (Auxiliar.getValidaArquivo() == true) { 
 			boolean ordem = Auxiliar.defineOrdem(true);
 			ordenaQuickSort(Auxiliar.vetor, 1, (Auxiliar.vetor.length-2),ordem );
 			
-			if (imprimir == true){ // Habilita impressão do vetor quando solicitado
+			if (imprimir == true){ //Abilita impressão do vetor quando solicitado
 				imprime(ordem, true, true, true);
 			}
 		}	    
@@ -190,7 +190,7 @@ public class Ordenadores {
 	 * @param ordem
 	 * @param exibirCabecalho
 	 */
-	private  void informaCabecalhoOrdem(boolean ordem,boolean exibirCabecalho) {	
+	private  void informaCabecalhoOrdem(boolean ordem,boolean exibirCabecalho){	
 		 if (exibirCabecalho == true) {
 			if (ordem == true) {
 	        	Prints.msgc("	ORDEM CRESCENTE " + nomeOrdenador.toUpperCase() + "\n\n");
@@ -212,7 +212,7 @@ public class Ordenadores {
 				Auxiliar.vetor[i]= "";				
 			}
 		}
-		Auxiliar.setIndex(0); // Limpa "index" do vetor executado anteriormente
+		Auxiliar.setIndex(0); // Limpa index do vetor executado anteriormente
 	}
 
 	

@@ -17,7 +17,7 @@ import model.Utilitarios.Auxiliar;
 import model.Utilitarios.Include;
 
 /**
- * Classe responsável pela manipulação de dados em arquivo: edição, exclusão e inserção
+ * Classe responsável pela manipulação de dados em arquivo edição, exclusão e inserção
  * @author Neimar, Aurélio
  */
 public class Registrador {
@@ -34,7 +34,7 @@ public class Registrador {
 	 */
 	public static void leArquivo(String nomeArquivo) throws IOException {		
 		
-		try {
+		try{
 			FileReader file = new FileReader(nomeArquivo);
 			BufferedReader buff = new BufferedReader(file);
 			String linha = buff.readLine();			
@@ -45,7 +45,7 @@ public class Registrador {
 			buff.close();
 			
 		} catch (NullPointerException e) {
-			Prints.msgb("Arquivo em branco.");;
+			Prints.msgb("Arquivo embranco.");;
 		} catch (FileNotFoundException e1) {
 			Prints.msgb("Arquivo inexistente.");
 		}		
@@ -73,11 +73,11 @@ public class Registrador {
 		Include.setAppend(true);
 		Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); //Insere na última linha do arquivo
 		
-		if (Auxiliar.getOpcao().equals("LISTA")) { // Definição de atividade			
-			leArquivo(nomeArquivo); // Lê arquivo após a insersão e padroniza a edição
+		if(Auxiliar.getOpcao().equals("LISTA")){ //Definição de atividade			
+			leArquivo(nomeArquivo); //Lê arquivo após a insersão e padroniza a edição
 			lista.editaArquivo(nomeArquivo);	
 			
-		} else if (Auxiliar.getOpcao().equals("ARVORE")) { // Definição de atividade           
+		}else if(Auxiliar.getOpcao().equals("ARVORE")){//Definição de atividade           
 			Auxiliar.carregaArquivo(nomeArquivo);
 			
 			for (int i = 0; i < Auxiliar.vetor.length; i++) {				
@@ -98,7 +98,7 @@ public class Registrador {
 		
 		case "novo":
 			insereNovoRegistro(nomeArquivo);
-			executaComando(nomeArquivo); // Loop para novas ações do menu
+			executaComando(nomeArquivo); //loop para novas ações do menu
 			break;
 		
 		case "editar":

@@ -10,7 +10,7 @@ import Aplicacao.Menus;
 import Aplicacao.Prints;
 
 /**
- * Classe com métodos globais de apoio à execução do programa
+ * Classe com métodos globais de apoio a execução do programa
  * @author Neimar, Aurélio
  */
 public class Auxiliar {
@@ -35,33 +35,33 @@ public class Auxiliar {
 	public static String statusAcao(int status, int sucesso) {
 		String r, s;	
 		
-		if (sucesso == 7) { // Avaliação de sucesso da atividade
+		if (sucesso == 7) {//Avaliação de sucesso da atividade
 			s = "com sucesso!";
-		} else if(sucesso == -1) {
+		}else if(sucesso == -1){
 			s = "sem sucesso"; 
-		} else {
+		}else{
 			s = "...";
 		}
 		
-		switch (status) { // Definidor de "status" da atividade
+		switch (status) { // Definidor de status da atividade
 		
-		case -1:r = "Pendente " + s; 
+		case -1:r = "Pendente " +s; 
 			break;
-		case 0:	r = "Não definido " + s; 
+		case 0:	r = "Não definido " +s; 
 			break;
-		case 1:	r = "Em planejamento " + s; 
+		case 1:	r = "Em planejamento " +s; 
 			break;
-		case 2:	r = "Em desenvolvimento " + s; 
+		case 2:	r = "Em desenvolvimento " +s; 
 			break;
-		case 3:	r = "Em teste " + s; 
+		case 3:	r = "Em teste " +s; 
 			break;
-		case 4:	r = "Em revisão " + s; 
+		case 4:	r = "Em revisão " +s; 
 			break;
-		case 5:	r = "Concluído(a) parcialmente " + s; 
+		case 5:	r = "Concluído(a) parcialmente " +s; 
 			break;
-		case 6:	r = "Concluído(a) " + s; 
+		case 6:	r = "Concluído(a) " +s; 
 			break;
-		case 7:	r = "Finalizado(a) " + s; 
+		case 7:	r = "Finalizado(a) " +s; 
 			break;		
 		default:
 			r = "inválido "; break;
@@ -97,7 +97,7 @@ public class Auxiliar {
 	}
 	
 	/**
-	 * Método de retorno que recebe ficheiro "label" com parâmetro,
+	 * Método de retorno que recebe ficheiro label com parâmetro,
 	 * e retorna uma "string" para filtros
 	 * @param label
 	 * @return
@@ -121,7 +121,7 @@ public class Auxiliar {
 		if (modo.equals("c")) { // Define ordem crescente
 			return true;
 			
-		} else if (modo.equals("d")) { // Define ordem decrescente
+		} else if (modo.equals("d")) { //Define ordem decrescente
 			return false;
 			
 		} else { // Comando de validação de modo de ordenação
@@ -144,7 +144,7 @@ public class Auxiliar {
 	public static void carregaArquivo(String nomeArquivo) throws Exception {
 		
 		try {
-			validaArquivo = true; // Habilita execução de ordenador
+			validaArquivo = true; // Abilita execução de ordenador
 			file = new FileReader(nomeArquivo);		
 			buff = new BufferedReader(file);
 			linha = buff.readLine();
