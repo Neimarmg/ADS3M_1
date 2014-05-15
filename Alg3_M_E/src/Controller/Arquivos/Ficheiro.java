@@ -28,7 +28,7 @@ public class Ficheiro {
 				memoria.imprime();
 			}
 		} catch (Exception e) {
-			Prints.msgb("Não foi possivél criar um novo arquivo.");
+			Prints.msgb("Não foi possível criar um novo arquivo.");
 		}		
 	}
 	

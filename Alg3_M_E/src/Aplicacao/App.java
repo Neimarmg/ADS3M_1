@@ -13,7 +13,7 @@ import model.Utilitarios.Dia;
  * Classe principal de execução do programa
  * @author Neimar, Aurélio
  */
-public class App{
+public class App {
 	
 	Consultas consulta = new Consultas();
 	Ordenadores ordenador = new Ordenadores();
@@ -54,11 +54,11 @@ public class App{
 				break;
 				
 			case "t5":
-				Auxiliar.setOpcao("ARVORE");
-				//Menus.mostarMenuApp();
-				//interacao.iniciaTarefas();
+				Auxiliar.setOpcao("ÁRVORE");
+				// Menus.mostarMenuApp();
+				// interacao.iniciaTarefas();
 				Registrador.executaComando("l.txt");
-				//selecionaAtividade();
+				// selecionaAtividade();
 				break;
 			
 			case "sair":
@@ -72,9 +72,9 @@ public class App{
 			}
 			
 		} catch (ClassNotFoundException e) {
-			Prints.msge("Comando não suportada em JavaSE igual ou inferior 6.1 ");
+			Prints.msge("Comando não suportado em JavaSE igual ou inferior 6.1 ");
 		} catch (InputMismatchException e) {
-			Prints.msge("\nValor(es) digitado é inválido!");
+			Prints.msge("\nValor(es) digitado(s) inválido(s)!");
 		}
 	}
 	
