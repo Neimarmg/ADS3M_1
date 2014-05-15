@@ -33,6 +33,7 @@ public class ArvoreBinaria{
 		
 	}
 	
+	
 	public static void consulta(Arvore aux , boolean print ) {
 		
 	}

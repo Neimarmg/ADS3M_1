@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import Aplicacao.Menus;
 import Aplicacao.Prints;
+import Controller.Registrador;
 import Controller.Arquivos.Ficheiro;
 import model.Utilitarios.Auxiliar;
 
@@ -126,12 +127,20 @@ public class Consultas {
 		Auxiliar.setIndex(0); // Limpa vetor para próxima consulta
 	}
 
+
 //====================<< Busca na arvore na arvore >> ========================================		
 
-	
-	
-	
-	
+	public void consultaEstruturas() throws IOException{
+		
+		
+		if (Auxiliar.getOpcao().equals("LISTA")){
+			Registrador.leArquivo(Auxiliar.digita("Nome do arquivo"));
+			
+		} else if (Auxiliar.getOpcao().equals("ARVORE")){
+			
+			
+		}	
+	}
 //====================<< Menu busca >> ========================================================		
 		
 	/**
@@ -144,7 +153,7 @@ public class Consultas {
 			switch (Auxiliar.digita("")) {
 			
 			case "navegar":
-				navega(Auxiliar.digita("Nome do arquivo"));
+				Prints.objetoNaoImplementado();				
 				selecionaComando();
 				break;
 

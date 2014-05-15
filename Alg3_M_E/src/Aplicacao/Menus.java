@@ -2,6 +2,10 @@ package Aplicacao;
 
 import model.Utilitarios.Auxiliar;
 
+/**
+ * Classe de implemetação de menus do todo o sistema
+ * @author Neimar, Aurélio
+ */
 public class Menus extends Prints {
 	
 		public static void menuSelecinaAtividade() {		
@@ -24,28 +28,6 @@ public class Menus extends Prints {
 		}
 		
 		
-		/** 
-		 * @throws Exception
-		 */
-		public static void menuConsultas()throws Exception {	
-			msgb(
-				"	CONSULTAS EM: \n\n"	
-				+ "=> ARQUIVO 'Acessa um arquivo especificado para consulta'\n"
-				+ "=> SAIR\n"
-			);		
-		}
-		
-		/** 
-		 * @throws Exception
-		 */
-		public static void menuImprimir()throws Exception {	
-			Prints.msgb(
-				"	MENU OPÇÕES DE IMPRESSÃO:\n\n"	
-				+ "=> ARQUIVO 'Atalho para impressão do conteúdo do arquivo'\n"
-				+ "=> SAIR\n"
-			);		
-		}
-		
 		/**	
 		 * @throws Exception
 		 */
@@ -56,6 +38,7 @@ public class Menus extends Prints {
 				+"=> SAIR\n"
 			);		
 		}
+		
 		
 		/** 
 		 * @throws Exception
@@ -69,6 +52,7 @@ public class Menus extends Prints {
 				+ "=> SAIR\n"
 			);		
 		}
+		
 		
 		/** 
 		 * @throws Exception
@@ -84,6 +68,7 @@ public class Menus extends Prints {
 			);		
 		}
 		
+		
 		/**
 		 * @throws Exception
 		 */
@@ -98,8 +83,9 @@ public class Menus extends Prints {
 			);		
 		}
 
+		
 		/**
-		* Método responsável pela execução das formas de ordenação
+		 * Método responsável pela execução das formas de ordenação
 		 * @throws Exception
 		 */
 		public static void menuOrdenadores()throws Exception {	
@@ -112,6 +98,7 @@ public class Menus extends Prints {
 			);		
 		}
 
+		
 		/**
 		 * Menu de definição de modo de ordenação
 		 * @throws Exception

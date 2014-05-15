@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 #Mateus,24587885
 #agatha,124578
 #beltrão,13235466
@@ -32,15 +27,10 @@ joel,12455689
 jovencio,121214455 
 lara,123568956 
 maltam,1235664
-null,null
-null,null
-null,null
-null,null
-null,null
 orti,348454
 pharquer,22154855
 proteu,123345645
-ravier,123564
+#ravier,123564
 salazar,1221545
 sanpaio,124552556 
 siprião,102142546

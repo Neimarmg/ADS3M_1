@@ -60,7 +60,7 @@ public class Registrador {
 	
 	
 	/**
-	 * Método de inserção de dados no arquivo
+	 * Método que le dados do teclado
 	 * @throws Exception
 	 */
 	public static void leTeclado() throws Exception {
@@ -75,9 +75,9 @@ public class Registrador {
 	 * @throws Exception
 	 */
 	public static void insereNovoRegistro(String nomeArquivo) throws Exception {
-		leTeclado();
-		Include.setAppend(true);
-		Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); //Insere na última linha do arquivo
+		//leTeclado();
+		//Include.setAppend(true);
+		//Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); //Insere na última linha do arquivo
 		
 		if (Auxiliar.getOpcao().equals("LISTA")) { // Definição de atividade			
 			leArquivo(nomeArquivo); // Lê arquivo após a insersão e padroniza a edição
