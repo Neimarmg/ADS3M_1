@@ -77,12 +77,12 @@ public class Inimigo {
 		
 		if ((linha >= MapaMod.getLinha() || coluna >= MapaMod.getColuna()) &&
 			(linha < MapaMod.getLinha() || coluna < MapaMod.getColuna())){
-				Prints.msgb("As cordenadas não sao válidas!");
+				Prints.msgb("As coordenadas não sao válidas!");
 		} else {
 			chances--;	
 			encontraAlvo(linha, coluna, dado);	
-			//mapaView.setLetra('A');//Imprime colunas referencia do mapa
-			//mapaView.imprime(false," ");//Imprime mapa para conferencia de posicinamento
+			// mapaView.setLetra('A'); // Imprime colunas referência do mapa
+			// mapaView.imprime(false," "); // Imprime mapa para conferência de posicionamento
 		}	
 	}
 	

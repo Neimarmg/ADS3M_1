@@ -39,7 +39,7 @@ public class Batalha {
 	
 	
 	/**
-	 * Método de execução a partir da 2ª fase do jogo e avança para próximo nivel
+	 * Método de execução a partir da 2ª fase do jogo, avança para próximo nível
 	 * @throws Exception
 	 */
 	protected void pulaFase() throws Exception {			
@@ -153,7 +153,7 @@ public class Batalha {
 		if (Inimigo.getAcertos() == NiveisMod.getPonton5()) {
 			Prints.msge(
 				"\n\nPARABÉNS, VOCÊ VENCEU A FASE 5\n"
-				+"SUPEROU TODOS OS DESAFIOS PROPÓSTOS NO JOGO.\n");
+				+ "SUPEROU TODOS OS DESAFIOS PROPOSTOS NO JOGO.\n");
 		}	
 	}
 	
@@ -178,7 +178,7 @@ public class Batalha {
 
 	
 	/**
-	 * Método responsavel pela captação da cordenada
+	 * Método responsável pela captação da coordenada
 	 * @throws Exception
 	 */
 	public void atira() throws Exception {

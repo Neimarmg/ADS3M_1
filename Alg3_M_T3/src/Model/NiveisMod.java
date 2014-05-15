@@ -15,7 +15,7 @@ public class NiveisMod {
 	
 	private static final int NIVEL3 = 3;
 	private static final int MAPANIVEL3 = 20; // Tamanho do mapaMod 20x20
-	private static final int PONTON3 = 21; //Pontos para cada nível no mapaMod
+	private static final int PONTON3 = 21; // Pontos para cada nível no mapaMod
 	
 	private static final int NIVEL4 = 4;
 	private static final int MAPANIVEL4 = 25; // Tamanho do mapaMod 25x25

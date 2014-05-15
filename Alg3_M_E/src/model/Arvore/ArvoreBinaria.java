@@ -4,7 +4,7 @@ import Aplicacao.Prints;
 public class ArvoreBinaria{
 	
 	/**
-	 *  Método protegido responsavel pela inserir elementos da arvore
+	 *  Método protegido responsável por inserir elementos na árvore
 	 * @param aux
 	 * @param nome
 	 * @return
@@ -25,7 +25,7 @@ public class ArvoreBinaria{
 	}
 	
 	/**
-	 * Método responsavel pela impressão de elementos da arvore
+	 * Método responsável pela impressão de elementos da árvore
 	 * @param aux
 	 */
 	public static void imprime(Arvore aux , boolean print ) {
@@ -39,7 +39,7 @@ public class ArvoreBinaria{
 	}
 	
 	/**
-	 * Metodo responsável pela execução da arvore
+	 * Metodo responsável pela execução da árvore
 	 * @param nome
 	 */
 	public static void executa(Arvore arvore, String nome, boolean print) {
@@ -49,4 +49,4 @@ public class ArvoreBinaria{
 
 		//http://manfred.com.br/index.php/bsi/estrutura-de-dados-i/141-aula-10-arvore-binaria-em-java
 	
-} 
+}

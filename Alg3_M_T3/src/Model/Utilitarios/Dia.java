@@ -40,8 +40,6 @@ public class Dia {
 		if (hora == 1) {
 			return "É ";
 		} return "São ";
-		
-	
 	}
 		
 	/**
