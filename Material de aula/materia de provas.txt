@@ -1,0 +1,49 @@
+ROtação a esquerda
+
+b= l 
+n.esq = b
+n asume lugar p
+
+
+
+b= l 
+n.esq = b
+n asume lugar p
+
+
+ratação a direita
+
+
+b= l 
+n.dir = b
+n asume lugar p
+
+
+
+arvores avl
+
+n = nodo 
+h = altura
+
+
+h (n) = 
+
+
+
+Fator de balanciamento
+
+fb (n) = h(n.esq) - h (n.dir)
+
+restriução
+if fb(n) > 1
+
+
+
+ou 
+
+se (fb(n)< 0) 	
+	rot - esq (n)
+
+se (fb(n) > 0 )
+	rot - dir (n)
+
