@@ -125,9 +125,14 @@ public class Consultas {
 		}
 		Auxiliar.setIndex(0); // Limpa vetor para próxima consulta
 	}
+
+//====================<< Busca na arvore na arvore >> ========================================		
+
 	
 	
-//====================<< Menu busca >> =======================================		
+	
+	
+//====================<< Menu busca >> ========================================================		
 		
 	/**
 	 * Seleciona comando de consulta

@@ -1,6 +1,10 @@
 package model.Arvore;
 import Aplicacao.Prints;
 
+/**
+ * Classe responsavel pela execução da estrutura da arvores binária
+ * @author neimar, Aurelio
+ */
 public class ArvoreBinaria{
 	
 	/**
@@ -21,8 +25,18 @@ public class ArvoreBinaria{
 	    } else {
 	       	aux.setDir(insere(Arvore.getDir(), nome));
 	    }
-	        return aux;
+        return aux;
 	}
+	
+	
+	public static void remove(Arvore aux , boolean print ) {
+		
+	}
+	
+	public static void consulta(Arvore aux , boolean print ) {
+		
+	}
+	
 	
 	/**
 	 * Método responsável pela impressão de elementos da árvore

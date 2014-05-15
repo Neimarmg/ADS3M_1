@@ -40,7 +40,13 @@ public class Registrador {
 			String linha = buff.readLine();			
 			while(linha != null ){
 				linha = buff.readLine();				
-				lista.insert(new Nodo<String>(linha), lista.getHead());			
+				
+				if (Auxiliar.getOpcao().equals("LISTA")){
+					lista.insert(new Nodo<String>(linha), lista.getHead());
+				
+				}else if (Auxiliar.getOpcao().equals("ARVORE")){
+					ArvoreBinaria.executa(null, linha, true);
+				}				
 			}			
 			buff.close();
 			
@@ -78,11 +84,7 @@ public class Registrador {
 			lista.editaArquivo(nomeArquivo);	
 			
 		} else if (Auxiliar.getOpcao().equals("ARVORE")) { // Definição de atividade           
-			Auxiliar.carregaArquivo(nomeArquivo);
-			
-			for (int i = 0; i < Auxiliar.vetor.length; i++) {				
-				ArvoreBinaria.executa(null,Auxiliar.vetor[i], true);
-			}			
+			leArquivo(nomeArquivo);
 		}
 	}
 

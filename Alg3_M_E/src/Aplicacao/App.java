@@ -54,7 +54,7 @@ public class App {
 				break;
 				
 			case "t5":
-				Auxiliar.setOpcao("ÁRVORE");
+				Auxiliar.setOpcao("ARVORE"); // Arvore deve ficar sem acentuação pois, se trata de atribução
 				// Menus.mostarMenuApp();
 				// interacao.iniciaTarefas();
 				Registrador.executaComando("l.txt");
