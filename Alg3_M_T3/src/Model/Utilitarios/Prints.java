@@ -115,11 +115,11 @@ public class Prints {
 	public static String statusAcao(int status, int sucesso) {
 		String r, s;	
 		
-		if (sucesso == 7) { // Avaliação de sucesso da atividade
+		if (sucesso == 7) {//Avaliação de sucesso da atividade
 			s = "com sucesso!";
-		} else if(sucesso == -1) {
+		}else if(sucesso == -1){
 			s = "sem sucesso"; 
-		} else {
+		}else{
 			s = "...";
 		}
 		

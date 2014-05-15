@@ -1,7 +1,7 @@
 package Model.Utilitarios;
 
 /**
- * Classe de impressao de pressagios 
+ * Classe de umpressao de pressagios 
  * @author Neimar, Aurélio
  *
  */

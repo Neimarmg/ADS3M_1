@@ -12,7 +12,7 @@ public class SoldadoCont extends SoldadoMod {
 		try {
 			setPontuacaoInicial(Prints.digitaNumero("Chances de jogo"));
 			if (getPontuacaoInicial() <= 15) {
-				Prints.msge("\nO Nro. de chances deve ser maior que 15!\n");
+				Prints.msge("\nO Nro de chances deve ser maior que 15!\n");
 				editaChances();
 			} 
 		 } catch (InputMismatchException e) {
@@ -34,5 +34,4 @@ public class SoldadoCont extends SoldadoMod {
 		nomeia();
 		editaChances();
 	}
-	
 }

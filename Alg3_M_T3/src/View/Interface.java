@@ -15,7 +15,7 @@ import Model.Utilitarios.*;
  */
 public class Interface extends Prints {
 	
-	// String comando;
+	//String comando;
 	InterfaceCont interfaceCont =  new InterfaceCont();
 	Estrategia estrategia = new Estrategia();
 	Batalha batalha = new Batalha();
@@ -37,7 +37,7 @@ public class Interface extends Prints {
 			filtra();
 			break;
 		
-		case "níveis":
+		case "niveis":
 			interfaceCont.consultaNiveis(true);
 			filtra();
 			break;
@@ -46,6 +46,7 @@ public class Interface extends Prints {
 			imprime();
 			break;
 		case "sair":
+			
 			sair();
 			break;
 			

@@ -11,7 +11,7 @@ public class NiveisView {
 	String acum =" ";
 	
 	/**
-	 * Método que encontra um nível específico ou lista todos, 
+	 * Método que encontra um nivel específico ou lista todos 
 	 * dependendo do parêmetro filtrar
 	 * @param filtrar
 	 * @param parametro
@@ -39,13 +39,13 @@ public class NiveisView {
 		if (parametro == NiveisMod.getNivel4() && filtrar == true || filtrar == false) {
 			acum += "\nNIVEL " 
 				 + NiveisMod.getNivel4()
-				 + " MAPA DE " + NiveisMod.getMapanivel4() + "x" + NiveisMod.getMapanivel4() + "\n";
+				 + " MAPA DE " +NiveisMod.getMapanivel4() + "x" + NiveisMod.getMapanivel4() + "\n";
 		} 
 		
 		if (parametro == NiveisMod.getNivel5() && filtrar == true || filtrar == false) {
 			acum += "\nNIVEL " 
 				 + NiveisMod.getNivel5()
-				 + " MAPA DE " + NiveisMod.getMapanivel5() + "x" + NiveisMod.getMapanivel5() + "\n";
+				 + " MAPA DE " +NiveisMod.getMapanivel5() + "x" + NiveisMod.getMapanivel5() + "\n";
 		}		
 	}
 	
@@ -63,7 +63,7 @@ public class NiveisView {
 		} else {
 			pesquisa(filtrar, parametro);			
 		}
-		acum =""; // Limpa variável de impressão 
+		acum =""; //Limpa variavel de impressão 
 	}
 	
 	/**
@@ -75,7 +75,7 @@ public class NiveisView {
 		if (mostraCabecalho == true) {
 			if (filtrar == true) {
 				Prints.msgc("	CONSULTA DE NÍVEL\n");
-			} else {
+			}else{
 				Prints.msgc("	LISTA DE NÍVEIS DO JOGO\n");
 			}
 		}
