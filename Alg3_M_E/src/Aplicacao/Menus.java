@@ -70,17 +70,33 @@ public class Menus extends Prints {
 		
 		
 		/**
+		 * Menu global para consultas
 		 * @throws Exception
 		 */
-		public static void menuConsultaArquivo()throws Exception {	
-			msgb(
-				"	OPÇÕES PARA CONSULTAR ARQUIVO:\n\n"	
-				+ "=> NAVEGAR  'Navega pelo arquivo com comando de teclado'\n"
-				+ "=> NOME     'Encontra um nome específico do arquivo'\n"
-				+ "=> ID       'Encontra um id através de uma busca binária'\n"
-				+ "=> ARQUIVO  'Imprime arquivo inteiro'\n"
-				+ "=> SAIR\n"
-			);		
+		public static void menuConsultas()throws Exception {	
+			String menu ="";
+			
+			switch (Auxiliar.getOpcao()) {
+			case "ARVORE":			
+				menu += "	OPÇÕES PARA CONSULTA(S) EM " +Auxiliar.getOpcao() +"(S)" +"\n\n" 
+					 +"=> NOME  'Encontra um nome dentro da árvore'\n";
+				break;
+				
+			case "BINARIA":	
+				menu += "	OPÇÕES PARA CONSULTA(S) " +Auxiliar.getOpcao() +"(S)" +"\n\n" 
+					 +"=> ID 'Encontra um id através de uma busca binária'\n";
+				break;
+				
+			case "LISTA":
+				menu += "	OPÇÕES PARA CONSULTA(S) EM " +Auxiliar.getOpcao() +"\n\n"
+						+"=> NOME	 'Encontra um nome dentro da lista'\n"
+						+"=> NAVEGAR 'Navega pelo arquivo com comando de teclado'\n"
+						+"=> ARQUIVO 'Imprime arquivo inteiro'\n";
+				break;
+			}
+			
+			menu += "=> SAIR\n";
+			msgb(menu);		
 		}
 
 		

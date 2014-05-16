@@ -1,9 +1,7 @@
 package Aplicacao;
 
 import java.util.InputMismatchException;
-
 import model.Ordenadores;
-import Controller.Registrador;
 import Controller.interacao;
 import Controller.Navegacao.Consultas;
 import model.Utilitarios.Auxiliar;
@@ -14,9 +12,9 @@ import model.Utilitarios.Dia;
  * @author Neimar, Aurélio
  */
 public class App {
-	
 	Consultas consulta = new Consultas();
 	Ordenadores ordenador = new Ordenadores();
+	
 	
 	/**
 	 * Descrição do cabeçalho principal
@@ -24,6 +22,17 @@ public class App {
 	private void escreveCabecalho() {
 		Prints.msgb("\n" +"	EXERCÍCIO DE ESTRUTURAS JAVA\n");
 	}
+	
+	
+	/**
+	 * Carrega opções de interação com o programa
+	 * @throws Exception
+	 */
+	private void interacao() throws Exception {
+		Menus.mostarMenuApp();				
+		interacao.iniciaTarefas();
+	}
+	
 	
 	/**
 	 *	Método com definição das atividades solicitadas
@@ -37,16 +46,12 @@ public class App {
 			
 			case "t1":	
 				Auxiliar.setOpcao("LISTA");
-				Menus.mostarMenuApp();				
-				interacao.iniciaTarefas();	
+				interacao();
 				break;
 				
-			case "t2":			
-				Prints.msgc("	CONSULTA BINÁRIA\n");
-				consulta.carregaBuscaBinaria(
-					Auxiliar.digita("Nome do arquivo"), 
-					Auxiliar.digitaNumero("Nome a ser localizado")
-				);
+			case "t2":				
+				Auxiliar.setOpcao("BINARIA");
+				interacao();
 				break;
 				
 			case "t4":	
@@ -55,10 +60,8 @@ public class App {
 				
 			case "t5":
 				Auxiliar.setOpcao("ARVORE"); // Arvore deve ficar sem acentuação pois, se trata de atribução
-				// Menus.mostarMenuApp();
-				// interacao.iniciaTarefas();
-				Registrador.executaComando("l.txt");
-				// selecionaAtividade();
+				interacao();	
+				//Registrador.executaComando("l.txt");
 				break;
 			
 			case "sair":

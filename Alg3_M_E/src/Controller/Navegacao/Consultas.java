@@ -148,7 +148,7 @@ public class Consultas {
 	 */
 	public void selecionaComando() {
 		try {
-			Menus.menuConsultaArquivo();
+			Menus.menuConsultas();
 					
 			switch (Auxiliar.digita("")) {
 			
@@ -162,7 +162,7 @@ public class Consultas {
 				selecionaComando();
 				break;
 			
-			case "id":
+			case "id":				
 				carregaBuscaBinaria(Auxiliar.digita("Nome do arquivo"),	Auxiliar.digitaNumero("Nome a ser localizado"));
 				selecionaComando();
 				break;		
