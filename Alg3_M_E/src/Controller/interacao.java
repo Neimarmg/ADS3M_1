@@ -8,6 +8,12 @@ import Controller.Arquivos.Ficheiro;
 import Controller.Arquivos.Memoria;
 import Controller.Navegacao.Consultas;
 
+/**
+ * Classe responsável pela interação do sistema com usuário
+ * @author 181100053
+ *
+ * @param <T>
+ */
 public class interacao<T> {
 	
 	static Ficheiro ficheiro = new Ficheiro();

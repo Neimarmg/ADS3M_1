@@ -11,6 +11,11 @@ import Controller.Registrador;
 import Controller.Arquivos.Ficheiro;
 import model.Utilitarios.Auxiliar;
 
+
+/**
+ * Classe reponsável pelas consultas em todas as estruras.
+ * @author Neimar, Aurelio
+ */
 public class Consultas {
 	public int contador = 0;
 	Ficheiro ficheiro = new Ficheiro();
