@@ -250,7 +250,6 @@ public class Ordenadores {
 		limpaVetor(limpaVetor);
 	}
 
-
 	
 	/**
 	 * Método responsável pela seleção dos comandos para execuçao dos ordenadores

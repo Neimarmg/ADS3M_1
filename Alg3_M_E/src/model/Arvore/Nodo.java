@@ -18,9 +18,9 @@ public class Nodo<T extends Comparable<T>>{
 	 * @param valor
 	 */
 	public Nodo(T valor){
-		pai=null;
-		esq=null;
-		dir=null;
+		pai = null;
+		esq = null;
+		dir = null;
 		this.valor = valor;
 	}
 	

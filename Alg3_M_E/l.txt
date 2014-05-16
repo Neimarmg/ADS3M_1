@@ -5,6 +5,7 @@
 #beltrão,13235466
 #demetrio,121245 
 #normandino,213564
+#ravier,123564
 #teves,235425443
 abaco,1323644
 abgail,124578 
@@ -22,7 +23,9 @@ castro,12478989
 corvam,135466
 epaminondas,45578855 
 fabrizio,12455689 
+gaudencio,12356546
 genir,12356489 
+jari,12354
 joel,12455689 
 jovencio,121214455 
 lara,123568956 
@@ -30,7 +33,6 @@ maltam,1235664
 orti,348454
 pharquer,22154855
 proteu,123345645
-#ravier,123564
 salazar,1221545
 sanpaio,124552556 
 siprião,102142546
@@ -39,3 +41,4 @@ volmam,126684
 wiliam,1254698
 ygor,1244786364
 zelao,777854787 
+gusmao,212546

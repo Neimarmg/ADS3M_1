@@ -11,7 +11,9 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 		}
 	}
 	
-	public void imprime(){
-		raiz.imprime();
+	public void imprime(boolean impr){
+		if (impr == true) {
+			raiz.imprime();
+		}		
 	}
 }

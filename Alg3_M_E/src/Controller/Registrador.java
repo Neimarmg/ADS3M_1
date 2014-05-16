@@ -7,7 +7,6 @@ import java.io.IOException;
 
 import Aplicacao.Menus;
 import Aplicacao.Prints;
-import Controller.Arquivos.Ficheiro;
 import Controller.Navegacao.Consultas;
 import model.Contatos;
 import model.Arvore.ArvoreBinaria;
@@ -21,18 +20,30 @@ import model.Utilitarios.Include;
  * @author Neimar, Aurélio
  */
 public class Registrador {
-
-	Ficheiro ficheiro =  new Ficheiro();
+	
+	public static String acum =""; //Acumulador de dados para edição de arquivo 
 	static Consultas consulta = new Consultas();
 	static ListaOrdenada<String> lista = new ListaOrdenada<String>();
-		
+	static ArvoreBinaria<String> arvoreBinaria = new ArvoreBinaria<String>();
+	
+	
+	public static void setAcum(String acum) {
+		Registrador.acum = acum;
+	}
+	
+	
+	public static String getAcum() {
+		return acum;
+	}
+	
+	
 	/**
 	 * Método responsável pela leitura dos dados em arquivo e finalização das alterações
 	 * @param nomeArquivo
 	 * @throws IOException
 	 */
 	public static void leArquivo(String nomeArquivo) throws IOException {		
-		ArvoreBinaria<String> bt = new ArvoreBinaria<String>();
+		
 		try {
 			FileReader file = new FileReader(nomeArquivo);
 			BufferedReader buff = new BufferedReader(file);
@@ -44,13 +55,7 @@ public class Registrador {
 					lista.insert(new Nodo<String>(linha), lista.getHead());
 				
 				}else if (Auxiliar.getOpcao().equals("ARVORE")){
-					//ArvoreBinaria.executa(null, linha, true);
-					
-					
-					bt.insere(new model.Arvore.Nodo<String>(linha));
-
-
-					
+					arvoreBinaria.insere(new model.Arvore.Nodo<String>(linha));
 				}				
 			}			
 			buff.close();
@@ -60,8 +65,8 @@ public class Registrador {
 		} catch (FileNotFoundException e1) {
 			Prints.msgb("Arquivo inexistente.");
 		}		
-		lista.imprime(false);
-		bt.imprime();	
+		lista.imprime(true);
+		arvoreBinaria.imprime(true);	
 	}
 	
 	
@@ -81,15 +86,17 @@ public class Registrador {
 	 * @throws Exception
 	 */
 	public static void insereNovoRegistro(String nomeArquivo) throws Exception {
-		//leTeclado();
-		//Include.setAppend(true);
-		//Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); //Insere na última linha do arquivo
+		leTeclado();
+		Include.setAppend(true);
+		Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); //Insere na última linha do arquivo
 		
 		if (Auxiliar.getOpcao().equals("LISTA")) { // Definição de atividade			
 			leArquivo(nomeArquivo); // Lê arquivo após a insersão e padroniza a edição
 			lista.editaArquivo(nomeArquivo);	
 			
-		} else if (Auxiliar.getOpcao().equals("ARVORE")) { // Definição de atividade           
+		}
+		
+		if (Auxiliar.getOpcao().equals("ARVORE")) { // Definição de atividade           
 			leArquivo(nomeArquivo);
 		}
 	}

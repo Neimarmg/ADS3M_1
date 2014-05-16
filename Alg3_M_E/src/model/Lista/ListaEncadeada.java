@@ -1,24 +1,17 @@
 package model.Lista;
 
 import Aplicacao.Prints;
+import Controller.Registrador;
 
 public class ListaEncadeada<T extends Comparable<T>> {
 	
-	static String acum ="";
+	
 	private Nodo<T> head; // will be ficheiro Nodo
 	private Nodo<T> tail; // will be ficheiro Nodo
 	
 	
 	public Nodo<T> getHead() {
 		return head;
-	}
-	
-	public static void setAcum(String acum) {
-		ListaEncadeada.acum = acum;
-	}
-	
-	public static String getAcum() {
-		return acum;
 	}
 	
 	/**
@@ -29,7 +22,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 			Nodo<?> nodo = head;
 			do {
 				if (impressaoPrevia){Prints.msg("\n" + nodo.getData());} // Imprime a lista para consulta prévia em tempo de execução
-				acum += "\n" +nodo.getData(); // Acumalador de ordenação
+				Registrador.setAcum(Registrador.getAcum() +"\n" +nodo.getData()); // Acumalador de ordenação
 				nodo = nodo.getNext();				
 			} while (nodo != null);			
 			
