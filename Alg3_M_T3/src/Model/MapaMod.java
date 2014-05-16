@@ -9,7 +9,7 @@ import Model.Utilitarios.Prints;
  */
 public class MapaMod {
 	
-	private static int i = 0 ,j = 0 ;
+	private static int i = 0 ,j = 0;
 
 	private static int linha = getLinha(); 
 	private static int coluna = getLinha();

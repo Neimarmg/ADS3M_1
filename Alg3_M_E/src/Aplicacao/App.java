@@ -1,5 +1,6 @@
 package Aplicacao;
 
+import java.util.InputMismatchException;
 import model.Ordenadores;
 import Controller.interacao;
 import Controller.Navegacao.Consultas;
@@ -10,10 +11,10 @@ import model.Utilitarios.Dia;
  * Classe principal de execução do programa
  * @author Neimar, Aurélio
  */
-public class App{
-	
+public class App {
 	Consultas consulta = new Consultas();
 	Ordenadores ordenador = new Ordenadores();
+	
 	
 	/**
 	 * Descrição do cabeçalho principal
@@ -21,6 +22,17 @@ public class App{
 	private void escreveCabecalho() {
 		Prints.msgb("\n" +"	EXERCÍCIO DE ESTRUTURAS JAVA\n");
 	}
+	
+	
+	/**
+	 * Carrega opções de interação com o programa
+	 * @throws Exception
+	 */
+	private void iniciaInteracao() throws Exception {
+		Menus.mostarMenuApp();				
+		interacao.iniciaTarefas();
+	}
+	
 	
 	/**
 	 *	Método com definição das atividades solicitadas
@@ -34,13 +46,12 @@ public class App{
 			
 			case "t1":	
 				Auxiliar.setOpcao("LISTA");
-				Menus.mostarMenuApp();				
-				interacao.iniciaTarefas();	
+				iniciaInteracao();
 				break;
 				
-			case "t2":			
-				Prints.msgc("	CONSULTA BINÁRIA\n");
-				consulta.carregaBuscaBinaria(Auxiliar.digita("Nome do arquivo"), Auxiliar.digitaNumero("Nome a ser localizado"));
+			case "t2":				
+				Auxiliar.setOpcao("BINARIA");
+				iniciaInteracao();
 				break;
 				
 			case "t4":	
@@ -48,11 +59,9 @@ public class App{
 				break;
 				
 			case "t5":
-				Auxiliar.setOpcao("ARVORE");
-				Menus.mostarMenuApp();
-				interacao.iniciaTarefas();
+				Auxiliar.setOpcao("ARVORE"); // Arvore deve ficar sem acentuação pois, se trata de atribução
+				iniciaInteracao();	
 				//Registrador.executaComando("l.txt");
-				selecionaAtividade();
 				break;
 			
 			case "sair":
@@ -66,7 +75,9 @@ public class App{
 			}
 			
 		} catch (ClassNotFoundException e) {
-			Prints.msge("Comando não suportada em JavaSE igual ou inferior 6.1 ");
+			Prints.msge("Comando não suportado em JavaSE igual ou inferior 6.1 ");
+		} catch (InputMismatchException e) {
+			Prints.msge("\nValor(es) digitado(s) inválido(s)!");
 		}
 	}
 	
@@ -78,10 +89,11 @@ public class App{
 		escreveCabecalho();
 		Dia.defineSaudacao();		
 		selecionaAtividade();
+		
 	}
 	
 
-	public static void main(String[] args)throws Exception {
+	public static void main(String[] args)throws Exception {		
 		new App().run(); 
 	}
 }

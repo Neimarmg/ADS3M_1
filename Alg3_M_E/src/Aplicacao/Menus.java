@@ -2,49 +2,31 @@ package Aplicacao;
 
 import model.Utilitarios.Auxiliar;
 
+/**
+ * Classe de implemetação de menus do todo o sistema
+ * @author Neimar, Aurélio
+ */
 public class Menus extends Prints {
 	
 		public static void menuSelecinaAtividade() {		
 			msgb("	QUAL ATIVIDADE?\n\n"
-			+"=> T1 'Listas encadeadas'       " +Auxiliar.statusAcao(7) + "\n"
-			+"=> T2 'Pesquisa Binária'        " +Auxiliar.statusAcao(7) + "\n"
-			+"=> T4 'Algoritmos de ordenação' " +Auxiliar.statusAcao(7) + "\n"
-			+"=> T5 'Arvores'                 " +Auxiliar.statusAcao(2) + "\n"
-			+"=> SAIR\n");
+			+ "=> T1 'Listas Encadeadas'       " + Auxiliar.statusAcao(7,7) + "\n"
+			+ "=> T2 'Pesquisa Binária'        " + Auxiliar.statusAcao(7,0) + "\n"
+			+ "=> T4 'Algoritmos de Ordenação' " + Auxiliar.statusAcao(7,7) + "\n"
+			+ "=> T5 'Arvores'                 " + Auxiliar.statusAcao(2,0) + "\n"
+			+ "=> SAIR\n");
 		}
 		
 		
 		public static void mostarMenuApp() {		
 			msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
-			+"=> EXECUTAR  'Executa ações em arquivo existente'\n"
-			+"=> CONSULTAR 'Conteúdo do arquivo'\n"
-			+"=> IMPRIMIR  'Imprime arquivo selecionado'\n"
-			+"=> ARQUIVO   'Propriedades de arquivo'\n"
-			+"=> SAIR\n");
+			+ "=> EXECUTAR  'Executa ações nas estruturas existente'\n"
+			+ "=> CONSULTAR 'Conteúdo do salvo em arquivo(s)'\n"
+			+ "=> IMPRIMIR  'Imprime arquivo selecionado'\n"
+			+ "=> ARQUIVO   'Propriedades de arquivo'\n"
+			+ "=> SAIR\n");
 		}
 		
-		
-		/** 
-		 * @throws Exception
-		 */
-		public static void menuConsultas()throws Exception {	
-			msgb(
-				"	CONSULTAS EM: \n\n"	
-				+"=> ARQUIVO 'Acessa um arquivo especificado para consulta'\n"
-				+"=> SAIR\n"
-			);		
-		}
-		
-		/** 
-		 * @throws Exception
-		 */
-		public static void menuImprimir()throws Exception {	
-			Prints.msgb(
-				"	MENU OPÇÕES DE IMPRESSÃO:\n\n"	
-				+"=> ARQUIVO 'Atalho para impressão do conteúdo do arquivo'\n"
-				+"=> SAIR\n"
-			);		
-		}
 		
 		/**	
 		 * @throws Exception
@@ -57,49 +39,69 @@ public class Menus extends Prints {
 			);		
 		}
 		
+		
 		/** 
 		 * @throws Exception
 		 */
 		public static void menuArquivo()throws Exception {	
 			msgb(
 				"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
-				+"=> NOVO    'Cria um novo arquivo em branco'\n"
-				+"=> BUSCAR  'Busca lista de arquivos existentes'\n"
-				+"=> REMOVER 'Remove arquivo existente'\n"
-				+"=> SAIR\n"
+				+ "=> NOVO    'Cria um novo arquivo em branco'\n"
+				+ "=> BUSCAR  'Busca lista de arquivos existentes'\n"
+				+ "=> REMOVER 'Remove arquivo existente'\n"
+				+ "=> SAIR\n"
 			);		
 		}
+		
 		
 		/** 
 		 * @throws Exception
 		 */
 		public static void menuEditarArquivo()throws Exception {	
 			msgb(
-				"	EDIÇÃO DE ARQUIVO COM ESTRUTURA DE " +Auxiliar.getOpcao() +":\n\n"	
-				+"=> NOVO     'Habilita para gravar novo registro'\n"			
-				+"=> EDITAR   'Edita dados do arquivo'\n"
-				+"=> REMOVER  'Remove logicamente o registro'\n"
-				+"=> IMPRIMIR 'Imprime dados ordenados em arquivo'\n"
-				+"=> SAIR\n"
+				"	EDIÇÃO DE ARQUIVO COM ESTRUTURA DE " + Auxiliar.getOpcao() + ":\n\n"	
+				+ "=> NOVO     'Habilita para gravar novo registro'\n"			
+				+ "=> EDITAR   'Edita dados do arquivo'\n"
+				+ "=> REMOVER  'Remove logicamente o registro'\n"
+				+ "=> IMPRIMIR 'Imprime dados ordenados em arquivo'\n"
+				+ "=> SAIR\n"
 			);		
 		}
 		
+		
 		/**
+		 * Menu global para consultas
 		 * @throws Exception
 		 */
-		public static void menuConsultaArquivo()throws Exception {	
-			msgb(
-				"	OPÇÕES PARA CONSULTAR ARQUIVO:\n\n"	
-				+"=> NAVEGAR  'Navega pelo arquivo com comando de teclado'\n"
-				+"=> NOME     'Encontra um nome específico do arquivo'\n"
-				+"=> ID       'Encontra um id atraves de uma busca binária'\n"
-				+"=> ARQUIVO  'Imprime arquivo inteiro'\n"
-				+"=> SAIR\n"
-			);		
+		public static void menuConsultas()throws Exception {	
+			String menu ="";
+			
+			switch (Auxiliar.getOpcao()) {
+			case "ARVORE":			
+				menu += "	OPÇÕES PARA CONSULTA(S) EM " +Auxiliar.getOpcao() +"(S)" +"\n\n" 
+					 +"=> NOME  'Encontra um nome dentro da árvore'\n";
+				break;
+				
+			case "BINARIA":	
+				menu += "	OPÇÕES PARA CONSULTA(S) " +Auxiliar.getOpcao() +"(S)" +"\n\n" 
+					 +"=> ID 'Encontra um id através de uma busca binária'\n";
+				break;
+				
+			case "LISTA":
+				menu += "	OPÇÕES PARA CONSULTA(S) EM " +Auxiliar.getOpcao() +"\n\n"
+						+"=> NOME	 'Encontra um nome dentro da lista'\n"
+						+"=> NAVEGAR 'Navega pelo arquivo com comando de teclado'\n"
+						+"=> ARQUIVO 'Imprime arquivo inteiro'\n";
+				break;
+			}
+			
+			menu += "=> SAIR\n";
+			msgb(menu);		
 		}
 
+		
 		/**
-		* Metodo responsável pela execução das formas de ordenação
+		 * Método responsável pela execução das formas de ordenação
 		 * @throws Exception
 		 */
 		public static void menuOrdenadores()throws Exception {	
@@ -112,17 +114,19 @@ public class Menus extends Prints {
 			);		
 		}
 
+		
 		/**
 		 * Menu de definição de modo de ordenação
 		 * @throws Exception
 		 */
 		public static void menuModoOrdenacao(boolean ativaMenu)throws Exception {	
-			if(ativaMenu == true){
+			if (ativaMenu == true) {
 				msgb(
-					"	DESEJA ORDENAR PARA?\n\n"	
-					+"=> C 'Exibe arquivo na ordem crescente'\n"
-					+"=> D 'Exibe arquivo na ordem decrescente'\n"
+					"	DESEJA ORDENAR PARA:\n\n"	
+					+ "=> C 'Exibe arquivo na ordem crescente'\n"
+					+ "=> D 'Exibe arquivo na ordem decrescente'\n"
 				);
 			}
 		}
+		
 }

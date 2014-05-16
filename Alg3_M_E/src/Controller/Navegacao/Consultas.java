@@ -7,9 +7,15 @@ import java.io.IOException;
 
 import Aplicacao.Menus;
 import Aplicacao.Prints;
+import Controller.Registrador;
 import Controller.Arquivos.Ficheiro;
 import model.Utilitarios.Auxiliar;
 
+
+/**
+ * Classe reponsável pelas consultas em todas as estruras.
+ * @author Neimar, Aurelio
+ */
 public class Consultas {
 	public int contador = 0;
 	Ficheiro ficheiro = new Ficheiro();
@@ -55,26 +61,41 @@ public class Consultas {
 	
 //====================<< Busca binária de registros >> =======================================	
 	
-	int db[] = new int [Auxiliar.getTamanho()];
-	int i, inicio = 0, meio, fim = Auxiliar.getTamanho();
+	int vet[] = new int [Auxiliar.getVetor().length];
+	int i, inicio = 0, meio, fim = Auxiliar.getVetor().length;
     boolean localizador = false;
     
+    
+    /**
+	 * Imprime resultado da busca binária
+	 * @param campo
+	 */
+	private void imprimeBuscaBinaria(int campo) {		
+		if (localizador == true) {
+			Prints.msgb("	RESULTADO DE BUSCA BINÁRIA\n"
+				+ "\nRegistro encontrado"
+				+ "\n\nPosição [" + meio + "] " + Auxiliar.vetor[meio]);
+		} else {
+		   	Prints.msge("\nNúmero não encontrado");
+		}
+	}
+		
     
 	/**
 	 * Realiza busca binária dentro do vetor carregado do arquivo
 	 * @param campo
 	 */
-	private void executaBuscaBinaria(int campo){
+	private void executaBuscaBinaria(int campo) {
 	    i = 0;
 	    meio = (inicio + fim) / 2;
 
 	    while (inicio <= fim && localizador == false) {
-	    	if (db[meio] == campo) {
+	    	if (vet[meio] == campo) {
 	    		localizador = true;
 
-	    	}else {
+	    	} else {
 	    		
-	        	if (campo < db[meio]) {
+	        	if (campo < vet[meio]) {
 	        		fim = meio - 1;	        	
 	            }else {
 	            	inicio = meio + 1;
@@ -85,20 +106,6 @@ public class Consultas {
 	}
 	
 
-	/**
-	 * Imprime resultado da busca binária
-	 * @param campo
-	 */
-	private void imprimeBuscaBinaria(int campo){		
-		if (localizador == true) {
-			Prints.msgb("	RESULTADO DE BUSCA BINÁRIA\n"
-				+ "\nRegistro encontrado"
-				+ "\n\nPosição [" + meio + "] " +Auxiliar.vetor[meio-1]);
-		} else {
-		   	Prints.msge("\nNúmero não encontrado");
-		}
-	}
-	
 	
 	/**
 	 * Método responsável pelo carregamento do arquivo.
@@ -109,36 +116,55 @@ public class Consultas {
 	public void carregaBuscaBinaria(String nomeArquivo,int campo) throws Exception {
 		Auxiliar.carregaArquivo(nomeArquivo);			
 		
-		if (campo <= Auxiliar.getTamanho()){
+		if (campo <= Auxiliar.getVetor().length){
 		
-			for (i = 0; i < Auxiliar.getTamanho(); i++) {		    	
-				db[i] = i;
+			for (i = 0; i < Auxiliar.getVetor().length; i++) {		    	
+				vet[i] = i;
 				Prints.msg("\nId: " +i +" " +Auxiliar.vetor[i]);
 			}
 			
 			executaBuscaBinaria(campo);
 			imprimeBuscaBinaria(campo);
-			
-		}else{
+
+		} else {
 			Prints.msge("\nId inexistente!");
 		}
-		Auxiliar.setIndex(0); //Limpa vertor para próxima consulta
+		Auxiliar.setIndex(0); // Limpa vetor para próxima consulta
+	}
+
+
+//====================<< Busca em estruturas java >> ========================================		
+	
+	/**
+	 * 
+	 * @throws IOException
+	 */
+	public void consultaEstruturas() throws IOException{
+		
+		switch (Auxiliar.getOpcao()) {
+		
+		case "LISTA":
+			Registrador.leArquivo(Auxiliar.digita("Nome do arquivo"));
+			break;
+
+		case "ARVORE":
+			
+			break;
+		}
 	}
 	
-	
-//====================<< Menu busca >> =======================================		
+//====================<< Menu busca >> ========================================================		
 		
 	/**
 	 * Seleciona comando de consulta
 	 */
 	public void selecionaComando() {
 		try {
-			Menus.menuConsultaArquivo();
-					
+			Menus.menuConsultas();					
 			switch (Auxiliar.digita("")) {
 			
 			case "navegar":
-				navega(Auxiliar.digita("Nome do arquivo"));
+				Prints.objetoNaoImplementado();				
 				selecionaComando();
 				break;
 
@@ -147,7 +173,7 @@ public class Consultas {
 				selecionaComando();
 				break;
 			
-			case "id":
+			case "id":				
 				carregaBuscaBinaria(Auxiliar.digita("Nome do arquivo"),	Auxiliar.digitaNumero("Nome a ser localizado"));
 				selecionaComando();
 				break;		
@@ -160,6 +186,7 @@ public class Consultas {
 			case "sair":
 				Prints.sair();
 				break;
+				
 			default:
 				Prints.opcaoInvalida();
 				selecionaComando();
@@ -171,4 +198,3 @@ public class Consultas {
 		}
 	}
 }
-	

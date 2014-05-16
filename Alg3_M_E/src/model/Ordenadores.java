@@ -1,14 +1,12 @@
 package model;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import model.Utilitarios.Auxiliar;
 import Aplicacao.Menus;
 import Aplicacao.Prints;
 
 /**
  * Classe responsável pela ondenação de dados carregados de um arquivo 
- * @author Neimar e Aurélio
+ * @author Neimar, Aurélio
  */
 public class Ordenadores {
 	
@@ -18,15 +16,13 @@ public class Ordenadores {
 	String aux;
 	String pivo;
 	String nomeOrdenador;
-	String linha;
-	FileReader file;
-	BufferedReader buff;
+
 
 	
 //========================= << Ordenação BubleSort >> ==============================
 	
 	/**
-	 * Método responsável pela manipulação do vetor, durante a ordenação do bubleSort
+	 * Método responsável pela manipulação do vetor durante ordenação bubleSort
 	 * @param i
 	 * @param j
 	 */
@@ -38,7 +34,7 @@ public class Ordenadores {
 		
 	
 	/**
-	 * Metodo responsável pela ordenação do BubleSort
+	 * Metodo responsável pela ordenação BubleSort
 	 * @param ordem
 	 * @param mostraEstatisca
 	 * @throws Exception
@@ -46,7 +42,7 @@ public class Ordenadores {
 	private  void ordenaBubleSort(boolean ordem) throws Exception {		
 		try {
 			for (int i = 1; i < Auxiliar.vetor.length; i++) {
-	         	for (int j = i+1; j < Auxiliar.vetor.length; j++) {	         		
+	         	for (int j = i+1; j < Auxiliar.getVetor().length; j++) {	         		
 	         		if (ordem == true) {	         			
 		                if (Auxiliar.vetor[i].compareTo(Auxiliar.vetor[j]) > 0) { // Ordem crescente  
 		                   	trocasItensBubleSort(i, j);
@@ -99,7 +95,7 @@ public class Ordenadores {
 
 	
 	/**
-	 * Método que partiona o vetor e ordena as partes idividualmente
+	 * Método que partiona o vetor e ordena as partes individualmente
 	 * @param vet
 	 * @param ini
 	 * @param fim
@@ -154,14 +150,14 @@ public class Ordenadores {
 	 * @throws Exception
 	 */
 	private void carregaQuickSort(boolean imprimir) throws Exception {
-		limpaVetor(true); // Garante que o vetor limpo antes do carregamento do ordenador
+		limpaVetor(true); // Garante vetor limpo antes do carregamento do ordenador
 		Auxiliar.carregaArquivo(Auxiliar.digita("Nome do arquivo"));
 		
 		if (Auxiliar.getValidaArquivo() == true) { 
 			boolean ordem = Auxiliar.defineOrdem(true);
 			ordenaQuickSort(Auxiliar.vetor, 1, (Auxiliar.vetor.length-2),ordem );
 			
-			if (imprimir == true){ //Abilita impressão do vetor quando solicitado
+			if (imprimir == true){ // Habilita impressão do vetor quando solicitado
 				imprime(ordem, true, true, true);
 			}
 		}	    
@@ -194,7 +190,7 @@ public class Ordenadores {
 	 * @param ordem
 	 * @param exibirCabecalho
 	 */
-	private  void informaCabecalhoOrdem(boolean ordem,boolean exibirCabecalho){	
+	private  void informaCabecalhoOrdem(boolean ordem,boolean exibirCabecalho) {	
 		 if (exibirCabecalho == true) {
 			if (ordem == true) {
 	        	Prints.msgc("	ORDEM CRESCENTE " + nomeOrdenador.toUpperCase() + "\n\n");
@@ -216,7 +212,7 @@ public class Ordenadores {
 				Auxiliar.vetor[i]= "";				
 			}
 		}
-		Auxiliar.setIndex(0); // Limpa index do vetor executado anteriormente
+		Auxiliar.setIndex(0); // Limpa "index" do vetor executado anteriormente
 	}
 
 	
@@ -228,7 +224,7 @@ public class Ordenadores {
 		if (mostraEstatisca == true) { 
 			Prints.msg(
 				"\nDADOS ESTATÍSTICOS DA ORDENAÇÃO " + nomeOrdenador.toUpperCase()
-				+ "\nTamanho do vetor: " + Auxiliar.getTamanho()
+				+ "\nTamanho do vetor: " + Auxiliar.getVetor().length
 				+ "\nTotal de comparacoes: " + comparacoes
 				+ "\nTempo total: " + tempoExecucao + "mls\n");
 		}
@@ -253,7 +249,6 @@ public class Ordenadores {
 		informaStatistica(mostraEstatisca);
 		limpaVetor(limpaVetor);
 	}
-
 
 	
 	/**

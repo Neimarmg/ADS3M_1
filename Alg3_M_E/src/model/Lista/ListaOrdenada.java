@@ -1,6 +1,8 @@
 package model.Lista;
 
 import java.io.IOException;
+
+import Controller.Registrador;
 import model.Utilitarios.Include;
 
 public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
@@ -58,8 +60,8 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 	 */
 	public void editaArquivo(String nomeArquivo) throws IOException {
 		Include.setAppend(false);
-		Include.addNovo(nomeArquivo, getAcum());
-		ListaEncadeada.setAcum(""); // Parâmetro de limpeza de "cache" 
+		Include.addNovo(nomeArquivo, Registrador.getAcum());
+		Registrador.setAcum(""); // Parâmetro de limpeza de "cache do acumulador" 
 	}
 	
 }

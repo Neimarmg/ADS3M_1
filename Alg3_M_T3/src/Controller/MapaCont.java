@@ -17,9 +17,9 @@ public class MapaCont extends MapaMod {
 	
 	public static void setaColuna() throws Exception {
 		try {	
-			MapaMod.setColuna(Prints.digitaNumero("\nDigite nro. de coluna "));
+			MapaMod.setColuna(Prints.digitaNumero("\nDigite nro. de coluna. "));
 			if (getColuna()<= 30){
-				Prints.msge("\nO Nro. de chances deve ser mair que 30\n");
+				Prints.msge("\nO Nro. de chances deve ser mair que 30.\n");
 				setaColuna();
 			}
 		} catch (InputMismatchException e) {
@@ -30,9 +30,9 @@ public class MapaCont extends MapaMod {
 
 	public static void setaLinha() throws Exception {
 		try {
-			MapaMod.setLinha(Prints.digitaNumero("Digite nro. de linha "));	
+			MapaMod.setLinha(Prints.digitaNumero("Digite nro. de linha. "));	
 			if (getLinha() <= 30) {
-				Prints.msge("\nO Nro. de chances deve ser mair que 30\n");
+				Prints.msge("\nO Nro. de chances deve ser mair que 30.\n");
 				setaLinha();
 			}	
 		} catch (InputMismatchException e) {

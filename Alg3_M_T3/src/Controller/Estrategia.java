@@ -114,7 +114,7 @@ public class Estrategia {
 		if(MapaMod.getColuna()*MapaMod.getLinha() == contUnidades) {
 			posiciona();
 			soldadoView.imprime();
-		}else{
+		} else {
 			Prints.msgb("Mapa inesistente!");
 			tatica();
 		}

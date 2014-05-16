@@ -4,7 +4,7 @@ import Model.MapaMod;
 import Model.Utilitarios.Prints;
 
 /**
- * Classe de impressão dos dados do mapaMod.
+ * Classe de impressão dos dados do mapaMod
  * @author Naimar, Aurélio
  */
 public class MapaView {
@@ -33,7 +33,7 @@ public class MapaView {
 	 */
 	private void abilitaMsg(boolean mostraMsgCabecalho,Object texto) {
 		if (mostraMsgCabecalho == true) {
-			//p.msgl();
+			// p.msgl();
 			Prints.msg(texto + "\n");		
 		}
 	}
@@ -63,29 +63,27 @@ public class MapaView {
 	}
 	
 	/**
-	 * Imprime ragras o jogo
+	 * Imprime regras do jogo
 	 */
 	public void imprimeRegras() {
-		Prints.msgb("	REGRAS DO JOGO?\n\n"
+		Prints.msgb("	REGRAS DO JOGO:\n\n"
 				+ "=> Digitar o comando 'iniciar' onde será impresso o\n"
-				+ "   mapa inicial do jogo \n\n"		
+				+ "   mapa inicial do jogo.\n\n"		
 				+ "=> Digitar o comando 'jogar' para confirmar que o \n"
-				+ "   jogador vai iniciar o jogo assim até serem \n\n"
-				+ "=> Digitar o comando atirar para poder informar as \n"
-				+ "   coordenada e do tiro, seguindo esgotadas as chances \n"
-				+ "   ou até que jogador perca ou vença o jogo\n\n"   
-				+ "=> O jogado inicia o jogo com 15 chances,\n\n"
-				+ "=> Com 0 pontos os jogador inicia o nível 1\n\n"
-				+ "=> Com 6 pontos os jogador passa para o nível 2\n\n"
-				+ "=> Com 12 pontos os jogador passa para o nível 3\n\n"
-				+ "=> Com 21 pontos os jogador passa para o nível 4\n\n"
-				+ "=> Com 30 pontos os jogador passa para o nível 5,\n"
-				+ "   nível máximo\n\n"
-				+ "=> Para atingir a pontuação máxima de 42 pontos o \n"
-				+ "   jogador não poderá errar nenhuma tiro\n\n"
+				+ "   jogador vai iniciar o jogo.\n\n"
+				+ "=> Digitar o comando 'atirar' para informar as \n"
+				+ "   coordenadas de tiro.\n\n"   
+				+ "=> O jogador inicia o jogo com 15 chances.\n\n"
+				+ "=> Com 0 ponto o jogador inicia o nível 1.\n\n"
+				+ "=> Com 6 pontos o jogador passa para o nível 2.\n\n"
+				+ "=> Com 12 pontos o jogador passa para o nível 3.\n\n"
+				+ "=> Com 21 pontos o jogador passa para o nível 4.\n\n"
+				+ "=> Com 30 pontos o jogador passa para o nível 5,\n"
+				+ "   nível máximo.\n\n"
+				+ "=> Para atingir a pontuação máxima de 42 pontos,\n"
+				+ "   o jogador não poderá errar nenhum tiro\n\n"
 				+ "=> O jogador ainda pode jogar em um nível personalizado\n"
-				+ "   onde o jogador\n\n"
-				+ "=> Com definições prórpias de mapa e numero de chances\n");
+				+ "   com definições próprias de mapa e número de chances.\n");
 
 	}
 }

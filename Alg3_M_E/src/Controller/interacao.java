@@ -8,6 +8,12 @@ import Controller.Arquivos.Ficheiro;
 import Controller.Arquivos.Memoria;
 import Controller.Navegacao.Consultas;
 
+/**
+ * Classe responsável pela interação do sistema com usuário
+ * @author 181100053
+ *
+ * @param <T>
+ */
 public class interacao<T> {
 	
 	static Ficheiro ficheiro = new Ficheiro();
@@ -15,59 +21,7 @@ public class interacao<T> {
 	static Consultas consultas = new Consultas();
 	static Memoria memoria =  new Memoria();
 
-	/** 
-	 * @throws Exception
-	 */
-	public static void consulta() throws Exception {	
-		Menus.menuConsultas();
-		
-			switch (Auxiliar.digita("")) {
-			
-			case "lista":
-				Prints.objetoNaoImplementado();
-				consulta();
-				break;
-				
-			case "arquivo":
-				consultas.selecionaComando();
-				break;
-				
-			case "sair":
-				Prints.sair();
-				break;
-				
-			default:
-				Prints.opcaoInvalida();
-				consulta();
-				break;
-			}
-		
-	}
 
-	/** 
-	 * @throws Exception
-	 */
-	public static void imprime() throws Exception {	
-		Menus.menuImprimir();
-		
-		switch (Auxiliar.digita("")) {		
-		
-		case "arquivo":
-			consultas.consultaArquivo(Auxiliar.digita("Nome do arquivo"),"",false);
-			imprime();
-			break;
-
-		case "sair":
-			Prints.sair();
-			break;
-			
-		default:
-			Prints.opcaoInvalida();
-			imprime();
-			break;
-		}		
-	}
-	
 	/** 
 	 * @throws Exception
 	 */
@@ -109,13 +63,12 @@ public class interacao<T> {
 	 */
 	public static void verificaInserir() throws Exception {
 		Prints.msg("\nVerificando disco...\n");
-		if (memoria.calcula() < 6000){ // Verifica memória ao inserir dados
-			Prints.msg("\nVerificação concluída, há memória disponível!\n");
+		if (memoria.calcula() > 6000){ // Verifica memória ao inserir dados
+			Prints.msgr("\nVerificação concluída, há memória disponível!\n");
 			Registrador.executaComando(Auxiliar.digita("Nome do arquivo"));	
 			
 		} else {
-			Prints.espacoInsuficiente();
-			imprime();
+			Prints.espacoInsuficiente();			
 		}
 	}
 	
@@ -129,7 +82,7 @@ public class interacao<T> {
 		switch (Auxiliar.digita("")) {
 		
 		case "consultar":	
-			consulta();				
+			consultas.selecionaComando();			
 			break;
 			
 		case "executar":
@@ -137,7 +90,7 @@ public class interacao<T> {
 			break;
 			
 		case "imprimir":
-			imprime();
+			consultas.consultaArquivo(Auxiliar.digita("Nome do arquivo"),"",false);
 			break;
 			
 		case "arquivo":

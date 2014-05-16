@@ -3,8 +3,8 @@ import Model.NaviosMod;
 import Model.Utilitarios.Prints;
 
 /**
- *Classe de impressao e consulta à navios! 
- * @author Neimar
+ *Classe de impressão e consulta a navios
+ * @author Neimar, Aurélio
  */
 public class NaviosView {
 	String acum =" ";
@@ -50,7 +50,7 @@ public class NaviosView {
 	
 	
 	/**
-	 * Método de avalição de retorno de parâmetro
+	 * Método de avaliação de retorno de parâmetro
 	 * @param filtrar
 	 * @param parametro
 	 */
@@ -63,7 +63,7 @@ public class NaviosView {
 		} else {
 			pesquisa(filtrar, parametro);			
 		}
-		acum =""; //Limpa variavel de impressão 
+		acum =""; // Limpa variável de impressão 
 	}
 	
 	/**
@@ -85,7 +85,7 @@ public class NaviosView {
 	 * Método de impressão de navios inimigos
 	 * @param filtrar
 	 */
-	public void imprime(boolean filtrar,Boolean mostraCabecalho){
+	public void imprime(boolean filtrar,Boolean mostraCabecalho) {
 		if (filtrar == true) {
 			executa(filtrar,Prints.digita("Nome do navio "));
 		} else {

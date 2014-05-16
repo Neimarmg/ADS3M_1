@@ -11,16 +11,16 @@ public class NaviosMod {
 	private static int UnidPortaAvioes = 5;
 
 	private static int destroyers = 2;
-	private static int UnidDestroyers = 4 ;
+	private static int UnidDestroyers = 4;
 	
 	private static int fragatas  = 2;
-	private static int UnidFragatas  = 3 ;
+	private static int UnidFragatas  = 3;
 	
 	private static int torpedeiros = 3;
-	private static int UnidTorpedeiros = 2 ;
+	private static int UnidTorpedeiros = 2;
 	
 	private static int submarinos = 5;
-	private static int UnidSubmarinos  = 1 ;
+	private static int UnidSubmarinos  = 1;
 	
 	
 	//=================<<portaAvioes>>=================
