@@ -22,7 +22,6 @@ import model.Utilitarios.Include;
  */
 public class Registrador {
 
-	ArvoreBinaria arvore =  new ArvoreBinaria(); 
 	Ficheiro ficheiro =  new Ficheiro();
 	static Consultas consulta = new Consultas();
 	static ListaOrdenada<String> lista = new ListaOrdenada<String>();
@@ -33,7 +32,7 @@ public class Registrador {
 	 * @throws IOException
 	 */
 	public static void leArquivo(String nomeArquivo) throws IOException {		
-		
+		ArvoreBinaria<String> bt = new ArvoreBinaria<String>();
 		try {
 			FileReader file = new FileReader(nomeArquivo);
 			BufferedReader buff = new BufferedReader(file);
@@ -45,7 +44,13 @@ public class Registrador {
 					lista.insert(new Nodo<String>(linha), lista.getHead());
 				
 				}else if (Auxiliar.getOpcao().equals("ARVORE")){
-					ArvoreBinaria.executa(null, linha, true);
+					//ArvoreBinaria.executa(null, linha, true);
+					
+					
+					bt.insere(new model.Arvore.Nodo<String>(linha));
+
+
+					
 				}				
 			}			
 			buff.close();
@@ -55,7 +60,8 @@ public class Registrador {
 		} catch (FileNotFoundException e1) {
 			Prints.msgb("Arquivo inexistente.");
 		}		
-		lista.imprime(false);	
+		lista.imprime(false);
+		bt.imprime();	
 	}
 	
 	

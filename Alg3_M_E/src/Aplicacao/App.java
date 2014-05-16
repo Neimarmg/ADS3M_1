@@ -28,7 +28,7 @@ public class App {
 	 * Carrega opções de interação com o programa
 	 * @throws Exception
 	 */
-	private void interacao() throws Exception {
+	private void iniciaInteracao() throws Exception {
 		Menus.mostarMenuApp();				
 		interacao.iniciaTarefas();
 	}
@@ -46,12 +46,12 @@ public class App {
 			
 			case "t1":	
 				Auxiliar.setOpcao("LISTA");
-				interacao();
+				iniciaInteracao();
 				break;
 				
 			case "t2":				
 				Auxiliar.setOpcao("BINARIA");
-				interacao();
+				iniciaInteracao();
 				break;
 				
 			case "t4":	
@@ -60,7 +60,7 @@ public class App {
 				
 			case "t5":
 				Auxiliar.setOpcao("ARVORE"); // Arvore deve ficar sem acentuação pois, se trata de atribução
-				interacao();	
+				iniciaInteracao();	
 				//Registrador.executaComando("l.txt");
 				break;
 			

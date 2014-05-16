@@ -128,19 +128,26 @@ public class Consultas {
 	}
 
 
-//====================<< Busca na arvore na arvore >> ========================================		
-
+//====================<< Busca em estruturas java >> ========================================		
+	
+	/**
+	 * 
+	 * @throws IOException
+	 */
 	public void consultaEstruturas() throws IOException{
 		
+		switch (Auxiliar.getOpcao()) {
 		
-		if (Auxiliar.getOpcao().equals("LISTA")){
+		case "LISTA":
 			Registrador.leArquivo(Auxiliar.digita("Nome do arquivo"));
+			break;
+
+		case "ARVORE":
 			
-		} else if (Auxiliar.getOpcao().equals("ARVORE")){
-			
-			
-		}	
+			break;
+		}
 	}
+	
 //====================<< Menu busca >> ========================================================		
 		
 	/**
@@ -148,8 +155,7 @@ public class Consultas {
 	 */
 	public void selecionaComando() {
 		try {
-			Menus.menuConsultas();
-					
+			Menus.menuConsultas();					
 			switch (Auxiliar.digita("")) {
 			
 			case "navegar":
