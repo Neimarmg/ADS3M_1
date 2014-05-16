@@ -30,8 +30,7 @@ public class Registrador {
 	public static void setAcum(String acum) {
 		Registrador.acum = acum;
 	}
-	
-	
+		
 	public static String getAcum() {
 		return acum;
 	}
@@ -51,12 +50,19 @@ public class Registrador {
 			while(linha != null ){
 				linha = buff.readLine();				
 				
-				if (Auxiliar.getOpcao().equals("LISTA")){
+				switch (Auxiliar.getOpcao()) {
+				case "LISTA":
 					lista.insert(new Nodo<String>(linha), lista.getHead());
+					break;
 				
-				}else if (Auxiliar.getOpcao().equals("ARVORE")){
+				case "ARVORE":
 					arvoreBinaria.insere(new model.Arvore.Nodo<String>(linha));
-				}				
+					break;
+					
+				default:
+					Prints.opcaoInvalida();
+					break;
+				}
 			}			
 			buff.close();
 			

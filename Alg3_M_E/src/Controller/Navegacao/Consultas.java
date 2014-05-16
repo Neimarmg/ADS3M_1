@@ -148,7 +148,11 @@ public class Consultas {
 			break;
 
 		case "ARVORE":
+			Prints.objetoNaoImplementado();
+			break;
 			
+		default:
+			Prints.opcaoInvalida();
 			break;
 		}
 	}
