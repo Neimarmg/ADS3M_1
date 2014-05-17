@@ -3,6 +3,7 @@ package model;
 import model.Utilitarios.Auxiliar;
 import Aplicacao.Menus;
 import Aplicacao.Prints;
+import Controller.Arquivos.Ficheiro;
 
 /**
  * Classe responsável pela ondenação de dados carregados de um arquivo 
@@ -27,9 +28,9 @@ public class Ordenadores {
 	 * @param j
 	 */
 	private void trocasItensBubleSort(int i, int j) {
-		aux = Auxiliar.vetor[i];                	
-		Auxiliar.vetor[i] = Auxiliar.vetor[j];
-		Auxiliar. vetor[j] = aux;	
+		aux = Ficheiro.vetor[i];                	
+		Ficheiro.vetor[i] = Ficheiro.vetor[j];
+		Ficheiro. vetor[j] = aux;	
 	}
 		
 	
@@ -41,15 +42,15 @@ public class Ordenadores {
 	 */
 	private  void ordenaBubleSort(boolean ordem) throws Exception {		
 		try {
-			for (int i = 1; i < Auxiliar.vetor.length; i++) {
-	         	for (int j = i+1; j < Auxiliar.getVetor().length; j++) {	         		
+			for (int i = 1; i < Ficheiro.vetor.length; i++) {
+	         	for (int j = i+1; j < Ficheiro.getVetor().length; j++) {	         		
 	         		if (ordem == true) {	         			
-		                if (Auxiliar.vetor[i].compareTo(Auxiliar.vetor[j]) > 0) { // Ordem crescente  
+		                if (Ficheiro.vetor[i].compareTo(Ficheiro.vetor[j]) > 0) { // Ordem crescente  
 		                   	trocasItensBubleSort(i, j);
 			                comparacoes++;
 		                }
 	         		} else {
-		                if (Auxiliar.vetor[i].compareTo(Auxiliar.vetor[j]) < 0) { // Ordem decrescente  
+		                if (Ficheiro.vetor[i].compareTo(Ficheiro.vetor[j]) < 0) { // Ordem decrescente  
 		                	trocasItensBubleSort(i, j);
 		                	comparacoes++;
 		                }
@@ -69,9 +70,9 @@ public class Ordenadores {
 	 * @throws Exception
 	 */
 	private void executaBubleSort() throws Exception {
-		Auxiliar.carregaArquivo(Auxiliar.digita("Nome do arquivo"));
+		Ficheiro.carregaArquivo(Auxiliar.digita("Nome do arquivo"),true);
 		
-		if (Auxiliar.getValidaArquivo() == true) {
+		if (Ficheiro.getValidaArquivo() == true) {
 			ordenaBubleSort(Auxiliar.defineOrdem(true));
 		}		 
 	}
@@ -151,11 +152,11 @@ public class Ordenadores {
 	 */
 	private void carregaQuickSort(boolean imprimir) throws Exception {
 		limpaVetor(true); // Garante vetor limpo antes do carregamento do ordenador
-		Auxiliar.carregaArquivo(Auxiliar.digita("Nome do arquivo"));
+		Ficheiro.carregaArquivo(Auxiliar.digita("Nome do arquivo"),true);
 		
-		if (Auxiliar.getValidaArquivo() == true) { 
+		if (Ficheiro.getValidaArquivo() == true) { 
 			boolean ordem = Auxiliar.defineOrdem(true);
-			ordenaQuickSort(Auxiliar.vetor, 1, (Auxiliar.vetor.length-2),ordem );
+			ordenaQuickSort(Ficheiro.vetor, 1, (Ficheiro.vetor.length-2),ordem );
 			
 			if (imprimir == true){ // Habilita impressão do vetor quando solicitado
 				imprime(ordem, true, true, true);
@@ -208,11 +209,11 @@ public class Ordenadores {
 	 */
 	private  void limpaVetor(boolean limparVetor) {
 		if (limparVetor == true) {
-			for (int i = 0; i < Auxiliar.vetor.length; i++) {
-				Auxiliar.vetor[i]= "";				
+			for (int i = 0; i < Ficheiro.vetor.length; i++) {
+				Ficheiro.vetor[i]= "";				
 			}
 		}
-		Auxiliar.setIndex(0); // Limpa "index" do vetor executado anteriormente
+		Ficheiro.setIndex(0); // Limpa "index" do vetor executado anteriormente
 	}
 
 	
@@ -224,7 +225,7 @@ public class Ordenadores {
 		if (mostraEstatisca == true) { 
 			Prints.msg(
 				"\nDADOS ESTATÍSTICOS DA ORDENAÇÃO " + nomeOrdenador.toUpperCase()
-				+ "\nTamanho do vetor: " + Auxiliar.getVetor().length
+				+ "\nTamanho do vetor: " + Ficheiro.getVetor().length
 				+ "\nTotal de comparacoes: " + comparacoes
 				+ "\nTempo total: " + tempoExecucao + "mls\n");
 		}
@@ -240,7 +241,7 @@ public class Ordenadores {
 	 */
 	private  void imprime(boolean ordem, boolean mostraEstatisca, boolean limpaVetor, boolean exibecabecalho) {	
 		informaCabecalhoOrdem(ordem,exibecabecalho);
-		for (String dados : Auxiliar.vetor) { 
+		for (String dados : Ficheiro.vetor) { 
         	if (dados != null && dados != "") {
             	Prints.msg(dados + " \n");  
         	}        	

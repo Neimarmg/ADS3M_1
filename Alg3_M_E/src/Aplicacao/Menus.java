@@ -26,46 +26,32 @@ public class Menus extends Prints {
 			+ "=> ARQUIVO   'Propriedades de arquivo'\n"
 			+ "=> SAIR\n");
 		}
-		
-		
-		/**	
-		 * @throws Exception
-		 */
-		public static void  nomeArquivo()throws Exception {	
-			msgb(
-				"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
-				+"=> Nome.Extensão\n"
-				+"=> SAIR\n"
-			);		
-		}
-		
+
 		
 		/** 
+		 * Métodos responsável pele exibição dos menus de include
 		 * @throws Exception
 		 */
-		public static void menuArquivo()throws Exception {	
-			msgb(
-				"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
-				+ "=> NOVO    'Cria um novo arquivo em branco'\n"
-				+ "=> BUSCAR  'Busca lista de arquivos existentes'\n"
-				+ "=> REMOVER 'Remove arquivo existente'\n"
-				+ "=> SAIR\n"
-			);		
-		}
-		
-		
-		/** 
-		 * @throws Exception
-		 */
-		public static void menuEditarArquivo()throws Exception {	
-			msgb(
-				"	EDIÇÃO DE ARQUIVO COM ESTRUTURA DE " + Auxiliar.getOpcao() + ":\n\n"	
-				+ "=> NOVO     'Habilita para gravar novo registro'\n"			
-				+ "=> EDITAR   'Edita dados do arquivo'\n"
-				+ "=> REMOVER  'Remove logicamente o registro'\n"
-				+ "=> IMPRIMIR 'Imprime dados ordenados em arquivo'\n"
-				+ "=> SAIR\n"
-			);		
+		public static void menuInclude(String include)throws Exception {	
+			String menu =
+					"	OPÇÕES DE INCLUDE\n\n"+
+					"=> NOVO     'Habilita para gravar novo registro'\n"+	
+					"=> REMOVER  'Remove arquivo existente'\n"+
+					"=> IMPRIMIR 'Imprime dados'\n";
+			
+			switch (include) {
+			
+			case "ARQUIVO":			
+				menu += "=> BUSCAR   'Busca lista de arquivos existentes'\n";
+				break;
+				
+			case "DADOS":	
+				menu += "=> EDITAR   'Edita dados do arquivo'\n";
+				break;				
+			}
+			
+			menu += "=> SAIR\n";
+			msgb(menu);		
 		}
 		
 		

@@ -51,7 +51,7 @@ public class Registrador {
 				linha = buff.readLine();				
 				
 				switch (Auxiliar.getOpcao()) {
-				
+			
 				case "LISTA":
 					lista.insert(new Nodo<String>(linha), lista.getHead());
 					break;
@@ -68,7 +68,7 @@ public class Registrador {
 			buff.close();
 			
 		} catch (NullPointerException e) {
-			Prints.msgb("Arquivo em branco.");
+			e.getMessage();
 		} catch (FileNotFoundException e1) {
 			Prints.msgb("Arquivo inexistente.");
 		}			
@@ -105,13 +105,16 @@ public class Registrador {
 	public void insereNovoRegistro(String nomeArquivo) throws Exception {
 		leTeclado();
 		Include.setAppend(true);
-		Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); //Insere na última linha do arquivo
+		Include.addNovo(
+			nomeArquivo, 
+			Contatos.getNome()+"," +
+			Contatos.getFone() +"\n"); //Insere dado na última linha do arquivo
 	
 		switch (Auxiliar.getOpcao()) {
 		
 		case "LISTA":
 			leArquivo(nomeArquivo); // Lê arquivo após a insersão e padroniza a edição
-			lista.imprime(true);
+			lista.guardaEdicao();;
 			editaArquivo(nomeArquivo);	
 			break;
 
@@ -133,7 +136,7 @@ public class Registrador {
 	 * @throws Exception
 	 */
 	public void executaComando(String nomeArquivo) throws Exception {
-		Menus.menuEditarArquivo();
+		Menus.menuInclude("DADOS");
 		
 		switch (Auxiliar.digita("")) {
 		

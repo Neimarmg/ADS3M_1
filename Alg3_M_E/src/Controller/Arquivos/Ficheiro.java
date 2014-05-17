@@ -1,16 +1,26 @@
 package  Controller.Arquivos;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.nio.file.Path;
-import model.Utilitarios.Include;
 import Aplicacao.Prints;
 
 public class Ficheiro {
-	Include in =  new Include();
+	
 	Memoria memoria =  new Memoria();
-
+	static boolean validaArquivo; 
+	static int index = 0;
+	static int tamanho = 60;
+ 	public static String vetor[] = new String[tamanho];
+	static String linha;
+	static FileReader file;
+	static BufferedReader buff;	
+	
 	
 	/**
 	 * Verificador de memória
@@ -56,4 +66,62 @@ public class Ficheiro {
 		Prints.msg("Arquivo encontrado: " + p.toFile());
 	}
 	
+	
+	//=====================<< Leitor global de arquivos >>========================
+
+	public static void carregaArquivo(String nomeArquivo, boolean criaVetor) throws Exception {
+			
+		try {
+			validaArquivo = true; // Habilita execução de ordenador
+			file = new FileReader(nomeArquivo);		
+			buff = new BufferedReader(file);
+			linha = buff.readLine();
+			
+			while(linha != null ) {
+				linha = buff.readLine();
+				index++;
+				criaVetor(index, criaVetor);
+			}
+			buff.close();
+			criaVetor(index, criaVetor);
+				
+			} catch (FileNotFoundException e) {
+				Prints.msge("\nArquivo inexistente\n");
+				validaArquivo = false; // Desabilita a execução de ordenador
+			
+			} catch (IOException e) {
+				Prints.msge("\nO arquivo não pode ser fechado.\n");
+			
+			} catch (ArrayIndexOutOfBoundsException e) {
+				Prints.msge("\nEspaço insufiente no array de armazenamento.\n");
+			}		
+		}
+		
+	
+		public static void criaVetor(int index, boolean criaVetor) {
+			if (criaVetor == true && linha != null) {
+				vetor[index]= linha;
+			}else{
+				for (int i = index; i < vetor.length; i++) { // Complementa o vetor após carregamento dos dados do arquivo
+					vetor[i]= "";
+				}
+			}
+		}
+	
+	
+		public static void setIndex(int index) {
+			Ficheiro.index = index;
+		}
+		
+		public static int getIndex() {
+			return index;
+		}
+		
+		public static boolean getValidaArquivo() {
+			return validaArquivo;
+		}
+
+		public static String[] getVetor() {
+			return vetor;
+		}
 }

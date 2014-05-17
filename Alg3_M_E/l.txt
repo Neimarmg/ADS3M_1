@@ -1,5 +1,4 @@
 
-
 #Mateus,24587885
 #agatha,124578
 #beltrão,13235466
@@ -20,23 +19,21 @@ arton,2315658
 astolfo,99668823
 carlos,2457878 
 casemiro,12354155 
+carminha,124566
 castro,12478989 
 corvam,135466
 epaminondas,45578855
-fabrizio,12455689 
-florencio,1235466
-gartua,12333
-gaudencio,12356546
-genir,12356489 
-geremias,232325454
+gema,1233545
 jari,12354
 joel,12455689 
 jovencio,121214455 
 lara,123568956 
 marabas,123456
 maria,123544
+orlando,1222546
 orti,348454
 pharquer,22154855
+pietro,123645
 proteu,123345645
 salazar,1221545
 sanpaio,124552556 
