@@ -55,7 +55,7 @@ public class App {
 				break;
 				
 			case "t4":	
-				ordenador.selecionaOrdenador();			
+				interacao.selecionaOrdenador();		
 				break;
 				
 			case "t5":

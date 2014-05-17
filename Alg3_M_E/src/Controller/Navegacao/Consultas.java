@@ -4,9 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+
 import Aplicacao.Menus;
 import Aplicacao.Prints;
 import Controller.Arquivos.Ficheiro;
+import model.Dados;
 import model.Lista.ListaEncadeada;
 import model.Utilitarios.Auxiliar;
 
@@ -76,7 +78,7 @@ public class Consultas {
 		if (localizador == true) {
 			Prints.msgb("	RESULTADO DE BUSCA BINÁRIA\n"
 				+ "\nRegistro encontrado"
-				+ "\n\nPosição [" + meio + "] " + Ficheiro.vetor[meio]);
+				+ "\n\nPosição [" + meio + "] " + Dados.vetor[meio]);
 		} else {
 		   	Prints.msge("\nNúmero não encontrado");
 		}
@@ -118,11 +120,11 @@ public class Consultas {
 	public void carregaBuscaBinaria(String nomeArquivo,int campo) throws Exception {
 		Ficheiro.carregaArquivo(nomeArquivo,true);			
 		
-		if (campo <= Ficheiro.getVetor().length){
+		if (campo <= Dados.getVetor().length){
 		
-			for (i = 0; i < Ficheiro.getVetor().length; i++) {		    	
+			for (i = 0; i < Dados.getVetor().length; i++) {		    	
 				vet[i] = i;
-				Prints.msg("\nId: " +i +" " +Ficheiro.vetor[i]);
+				Prints.msg("\nId: " +i +" " +Dados.vetor[i]);
 			}
 			
 			executaBuscaBinaria(campo);
@@ -132,7 +134,7 @@ public class Consultas {
 			Prints.msge("\nId inexistente!");
 		}
 		
-		Ficheiro.setIndex(0); // Limpa vetor para próxima consulta
+		Dados.setIndex(0); // Limpa vetor para próxima consulta
 	}
 
 

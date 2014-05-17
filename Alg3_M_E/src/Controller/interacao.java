@@ -1,5 +1,6 @@
 package Controller;
 
+import model.Ordenadores;
 import model.Lista.ListaEncadeada;
 import model.Utilitarios.Auxiliar;
 import Aplicacao.Menus;
@@ -13,14 +14,52 @@ import Controller.Navegacao.Consultas;
  * @author 181100053
  *
  * @param <T>
+ * @param <string>
  */
-public class interacao<T> {
+public class interacao<T, string> {
 	
 	static Ficheiro ficheiro = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
 	static Consultas consultas = new Consultas();
 	static Memoria memoria =  new Memoria();
 	static Registrador registrador = new Registrador();
+	
+	/**
+	 * Método responsável pela seleção dos comandos para execuçao dos ordenadores
+	 * @throws Exception
+	 */
+	public static void selecionaOrdenador() throws Exception {			
+		
+		Menus.menuOrdenadores();
+		Ordenadores.setNomeOrdenador(Auxiliar.digita(""));
+		switch (Ordenadores.getNomeOrdenador()) {			
+			
+		case "buble":
+			Ordenadores.carregaBubleSort(true);
+			selecionaOrdenador();			
+			break;
+		
+		case "quick":		
+			Ordenadores.carregaQuickSort(true);			
+			selecionaOrdenador();
+			break;
+	
+		case "comparar":
+			Ordenadores.comparaOrdenadores();
+			selecionaOrdenador();
+			break;
+			
+		case "sair":
+			Prints.sair();
+			break;
+				
+		default:
+			Prints.opcaoInvalida();
+			selecionaOrdenador();
+			break;
+		}
+	}
+	
 
 	/** 
 	 * @throws Exception

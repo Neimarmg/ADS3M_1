@@ -1,7 +1,6 @@
 package model;
 
 import model.Utilitarios.Auxiliar;
-import Aplicacao.Menus;
 import Aplicacao.Prints;
 import Controller.Arquivos.Ficheiro;
 
@@ -11,13 +10,21 @@ import Controller.Arquivos.Ficheiro;
  */
 public class Ordenadores {
 	
-	int topo;
-	int comparacoes;
-	long tempoExecucao;
-	String aux;
-	String pivo;
-	String nomeOrdenador;
-
+	static int topo;
+	static int comparacoes;
+	static long tempoExecucao;
+	static String aux;
+	static String pivo;
+	static String nomeOrdenador;
+	
+	
+	public static void setNomeOrdenador(String nomeOrdenador) {
+		Ordenadores.nomeOrdenador = nomeOrdenador;
+	}
+	
+	public static String getNomeOrdenador() {
+		return nomeOrdenador;
+	}
 
 	
 //========================= << Ordenação BubleSort >> ==============================
@@ -27,10 +34,10 @@ public class Ordenadores {
 	 * @param i
 	 * @param j
 	 */
-	private void trocasItensBubleSort(int i, int j) {
-		aux = Ficheiro.vetor[i];                	
-		Ficheiro.vetor[i] = Ficheiro.vetor[j];
-		Ficheiro. vetor[j] = aux;	
+	private static void trocasItensBubleSort(int i, int j) {
+		aux = Dados.vetor[i];                	
+		Dados.vetor[i] = Dados.vetor[j];
+		Dados.vetor[j] = aux;	
 	}
 		
 	
@@ -40,17 +47,17 @@ public class Ordenadores {
 	 * @param mostraEstatisca
 	 * @throws Exception
 	 */
-	private  void ordenaBubleSort(boolean ordem) throws Exception {		
+	private static void ordenaBubleSort(boolean ordem) throws Exception {		
 		try {
-			for (int i = 1; i < Ficheiro.vetor.length; i++) {
-	         	for (int j = i+1; j < Ficheiro.getVetor().length; j++) {	         		
+			for (int i = 1; i < Dados.vetor.length; i++) {
+	         	for (int j = i+1; j < Dados.getVetor().length; j++) {	         		
 	         		if (ordem == true) {	         			
-		                if (Ficheiro.vetor[i].compareTo(Ficheiro.vetor[j]) > 0) { // Ordem crescente  
+		                if (Dados.vetor[i].compareTo(Dados.vetor[j]) > 0) { // Ordem crescente  
 		                   	trocasItensBubleSort(i, j);
 			                comparacoes++;
 		                }
 	         		} else {
-		                if (Ficheiro.vetor[i].compareTo(Ficheiro.vetor[j]) < 0) { // Ordem decrescente  
+		                if (Dados.vetor[i].compareTo(Dados.vetor[j]) < 0) { // Ordem decrescente  
 		                	trocasItensBubleSort(i, j);
 		                	comparacoes++;
 		                }
@@ -69,10 +76,10 @@ public class Ordenadores {
 	 * Método responsável pelo execução do ordenador bubleSort
 	 * @throws Exception
 	 */
-	private void executaBubleSort() throws Exception {
+	private static void executaBubleSort() throws Exception {
 		Ficheiro.carregaArquivo(Auxiliar.digita("Nome do arquivo"),true);
 		
-		if (Ficheiro.getValidaArquivo() == true) {
+		if (Dados.getValidaArquivo() == true) {
 			ordenaBubleSort(Auxiliar.defineOrdem(true));
 		}		 
 	}
@@ -82,7 +89,7 @@ public class Ordenadores {
 	 * Método respensável pelo carregamento do ordenador bubleSort
 	 * @throws Exception
 	 */
-	private void carregaBubleSort(boolean imprimir) throws Exception {
+	public static void carregaBubleSort(boolean imprimir) throws Exception {
 		limpaVetor(true); // Garante o vetor limpo antes do carregamento do ordenador
 		executaBubleSort();
 		
@@ -102,7 +109,7 @@ public class Ordenadores {
 	 * @param fim
 	 * @return topo
 	 */
-	private int particionaVetorQuickSort(String vet[], int ini, int fim, boolean ordem) {
+	private static int particionaVetorQuickSort(String vet[], int ini, int fim, boolean ordem) {
 		int i;
 	    pivo = vet[ini];
 	    topo = ini;
@@ -136,7 +143,7 @@ public class Ordenadores {
 	 * @param ini
 	 * @param fim
 	 */
-	private void ordenaQuickSort(String vet[], int ini, int fim, boolean ordem) {
+	private static void ordenaQuickSort(String vet[], int ini, int fim, boolean ordem) {
 		int meio;		
 		if (ini < fim) {
 			meio = particionaVetorQuickSort(vet, ini, fim, ordem);
@@ -150,13 +157,13 @@ public class Ordenadores {
 	 * Método de carregamento e validação do ordenador 
 	 * @throws Exception
 	 */
-	private void carregaQuickSort(boolean imprimir) throws Exception {
+	public static void carregaQuickSort(boolean imprimir) throws Exception {
 		limpaVetor(true); // Garante vetor limpo antes do carregamento do ordenador
 		Ficheiro.carregaArquivo(Auxiliar.digita("Nome do arquivo"),true);
 		
-		if (Ficheiro.getValidaArquivo() == true) { 
+		if (Dados.getValidaArquivo() == true) { 
 			boolean ordem = Auxiliar.defineOrdem(true);
-			ordenaQuickSort(Ficheiro.vetor, 1, (Ficheiro.vetor.length-2),ordem );
+			ordenaQuickSort(Dados.vetor, 1, (Dados.vetor.length-2),ordem );
 			
 			if (imprimir == true){ // Habilita impressão do vetor quando solicitado
 				imprime(ordem, true, true, true);
@@ -171,7 +178,7 @@ public class Ordenadores {
 	 * Método estatístico que compara performance dos ordenadores
 	 * @throws Exception
 	 */
-	public  void comparaOrdenadores() throws Exception {
+	public static void comparaOrdenadores() throws Exception {
 		limpaVetor(true);
 		nomeOrdenador = "BUBLE SORT COMPARARADA";
 		carregaBubleSort(false);
@@ -180,7 +187,7 @@ public class Ordenadores {
 		nomeOrdenador = "QUICK SORT COMPARARDA";
 		carregaBubleSort(false);
 		informaStatistica(true);
-		selecionaOrdenador();
+		//selecionaOrdenador();
 	}
 	
 	
@@ -191,7 +198,7 @@ public class Ordenadores {
 	 * @param ordem
 	 * @param exibirCabecalho
 	 */
-	private  void informaCabecalhoOrdem(boolean ordem,boolean exibirCabecalho) {	
+	private static  void informaCabecalhoOrdem(boolean ordem,boolean exibirCabecalho) {	
 		 if (exibirCabecalho == true) {
 			if (ordem == true) {
 	        	Prints.msgc("	ORDEM CRESCENTE " + nomeOrdenador.toUpperCase() + "\n\n");
@@ -207,13 +214,13 @@ public class Ordenadores {
 	 * de modo que possa ter suas posições livres,
 	 * quando uma próxima ordenação for solicitada em tempo de execução
 	 */
-	private  void limpaVetor(boolean limparVetor) {
+	private static  void limpaVetor(boolean limparVetor) {
 		if (limparVetor == true) {
-			for (int i = 0; i < Ficheiro.vetor.length; i++) {
-				Ficheiro.vetor[i]= "";				
+			for (int i = 0; i < Dados.vetor.length; i++) {
+				Dados.vetor[i]= "";				
 			}
 		}
-		Ficheiro.setIndex(0); // Limpa "index" do vetor executado anteriormente
+		Dados.setIndex(0); // Limpa "index" do vetor executado anteriormente
 	}
 
 	
@@ -221,11 +228,11 @@ public class Ordenadores {
 	 * Informa dados estatísticos específicos da ordenação
 	 * @param mostraEstatica
 	 */
-	private void informaStatistica(boolean mostraEstatisca) {	
+	private static void informaStatistica(boolean mostraEstatisca) {	
 		if (mostraEstatisca == true) { 
 			Prints.msg(
 				"\nDADOS ESTATÍSTICOS DA ORDENAÇÃO " + nomeOrdenador.toUpperCase()
-				+ "\nTamanho do vetor: " + Ficheiro.getVetor().length
+				+ "\nTamanho do vetor: " + Dados.getVetor().length
 				+ "\nTotal de comparacoes: " + comparacoes
 				+ "\nTempo total: " + tempoExecucao + "mls\n");
 		}
@@ -239,9 +246,9 @@ public class Ordenadores {
 	 * @param limpaVetor
 	 * @param exibecabecalho
 	 */
-	private  void imprime(boolean ordem, boolean mostraEstatisca, boolean limpaVetor, boolean exibecabecalho) {	
+	private static  void imprime(boolean ordem, boolean mostraEstatisca, boolean limpaVetor, boolean exibecabecalho) {	
 		informaCabecalhoOrdem(ordem,exibecabecalho);
-		for (String dados : Ficheiro.vetor) { 
+		for (String dados : Dados.vetor) { 
         	if (dados != null && dados != "") {
             	Prints.msg(dados + " \n");  
         	}        	
@@ -252,39 +259,5 @@ public class Ordenadores {
 	}
 
 	
-	/**
-	 * Método responsável pela seleção dos comandos para execuçao dos ordenadores
-	 * @throws Exception
-	 */
-	public void selecionaOrdenador() throws Exception {			
-		
-		Menus.menuOrdenadores();
-		nomeOrdenador = Auxiliar.digita("");
-		switch (nomeOrdenador) {			
-			
-		case "buble":
-			carregaBubleSort(true);
-			selecionaOrdenador();			
-			break;
-		
-		case "quick":		
-			carregaQuickSort(true);			
-			selecionaOrdenador();
-			break;
-	
-		case "comparar":
-			comparaOrdenadores();
-			selecionaOrdenador();
-			break;
-			
-		case "sair":
-			Prints.sair();
-			break;
-				
-		default:
-			Prints.opcaoInvalida();
-			selecionaOrdenador();
-			break;
-		}
-	}
+
 }

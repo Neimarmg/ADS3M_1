@@ -8,15 +8,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.nio.file.Path;
+import model.Dados;
 import Aplicacao.Prints;
 
-public class Ficheiro {
+/**
+ * Classe responsavel pela manupulação do arquivo
+ * @author Neimar,Aurelio
+ */
+public class Ficheiro extends Dados {
 	
-	Memoria memoria =  new Memoria();
-	static boolean validaArquivo; 
-	static int index = 0;
-	static int tamanho = 60;
- 	public static String vetor[] = new String[tamanho];
+	Memoria memoria =  new Memoria();	
 	static String linha;
 	static FileReader file;
 	static BufferedReader buff;	
@@ -72,7 +73,7 @@ public class Ficheiro {
 	public static void carregaArquivo(String nomeArquivo, boolean criaVetor) throws Exception {
 			
 		try {
-			validaArquivo = true; // Habilita execução de ordenador
+			setValidaArquivo(true); // Habilita execução de ordenador
 			file = new FileReader(nomeArquivo);		
 			buff = new BufferedReader(file);
 			linha = buff.readLine();
@@ -85,43 +86,33 @@ public class Ficheiro {
 			buff.close();
 			criaVetor(index, criaVetor);
 				
-			} catch (FileNotFoundException e) {
-				Prints.msge("\nArquivo inexistente\n");
-				validaArquivo = false; // Desabilita a execução de ordenador
+		} catch (FileNotFoundException e) {
+			Prints.msge("\nArquivo inexistente\n");
+			setValidaArquivo(false); // Desabilita a execução de ordenador
 			
-			} catch (IOException e) {
-				Prints.msge("\nO arquivo não pode ser fechado.\n");
-			
-			} catch (ArrayIndexOutOfBoundsException e) {
-				Prints.msge("\nEspaço insufiente no array de armazenamento.\n");
-			}		
-		}
+		} catch (IOException e) {
+			Prints.msge("\nO arquivo não pode ser fechado.\n");
+		
+		} catch (ArrayIndexOutOfBoundsException e) {
+			Prints.msge("\nEspaço insufiente no array de armazenamento.\n");
+		}		
+	}
 		
 	
-		public static void criaVetor(int index, boolean criaVetor) {
-			if (criaVetor == true && linha != null) {
-				vetor[index]= linha;
-			}else{
-				for (int i = index; i < vetor.length; i++) { // Complementa o vetor após carregamento dos dados do arquivo
-					vetor[i]= "";
-				}
+	/**
+	 * Método de carregamento dos dados do arquivo para o vetor e strins
+	 * @param index
+	 * @param criaVetor
+	 */
+	public static void criaVetor(int index, boolean criaVetor) {
+		if (criaVetor == true && linha != null) {
+			vetor[index]= linha;
+		}else{
+			for (int i = index; i < vetor.length; i++) { // Complementa o vetor após carregamento dos dados do arquivo
+				vetor[i]= "";
 			}
 		}
+	}	
 	
-	
-		public static void setIndex(int index) {
-			Ficheiro.index = index;
-		}
 		
-		public static int getIndex() {
-			return index;
-		}
-		
-		public static boolean getValidaArquivo() {
-			return validaArquivo;
-		}
-
-		public static String[] getVetor() {
-			return vetor;
-		}
 }
