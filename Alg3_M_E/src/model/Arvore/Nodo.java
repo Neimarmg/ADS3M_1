@@ -1,6 +1,7 @@
 package model.Arvore;
 
 import Aplicacao.Prints;
+import Controller.Registrador;
 
 /**
  * Classo de gravacao do nodo
@@ -67,12 +68,13 @@ public class Nodo<T extends Comparable<T>>{
 	
 	public void imprime(){
 		Prints.msg("\n" + valor);
-		if(esq != null){
-			esq.imprime();
+		Registrador.setAcum(Registrador.getAcum() +"\n" +valor); // Acumalador de ordenaçãO
+		if(esq != null){			
+			esq.imprime();	
 		}
-
+		
 		if(dir != null){
-			dir.imprime();
-		}
+			dir.imprime();				
+		}		
 	}
 }
