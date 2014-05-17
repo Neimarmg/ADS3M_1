@@ -28,4 +28,12 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 			raiz.imprime();
 		}		
 	}
+	
+	
+	/**
+	 * Metodo responsável por armazenar em terporariamente as alteração dos dados do arquivo
+	 */
+	public void guardaEdicao(){
+		raiz.guardaEdicao();
+	}
 }

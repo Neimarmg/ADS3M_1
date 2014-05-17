@@ -20,7 +20,7 @@ public class interacao<T> {
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
 	static Consultas consultas = new Consultas();
 	static Memoria memoria =  new Memoria();
-
+	static Registrador registrador = new Registrador();
 
 	/** 
 	 * @throws Exception
@@ -65,7 +65,7 @@ public class interacao<T> {
 		Prints.msg("\nVerificando disco...\n");
 		if (memoria.calcula() < 6000){ // Verifica memória ao inserir dados
 			Prints.msgr("\nVerificação concluída, há memória disponível!\n");
-			Registrador.executaComando(Auxiliar.digita("Nome do arquivo"));	
+			registrador.executaComando(Auxiliar.digita("Nome do arquivo"));	
 			
 		} else {
 			Prints.espacoInsuficiente();			

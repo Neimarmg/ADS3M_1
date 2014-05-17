@@ -18,13 +18,17 @@ public class Include {
 	static String acun = "";
 	private static Boolean append = false;
 	
+	
 	public static void setAppend(Boolean append) {
 		Include.append = append;
 	}
 	
+	
 	public static Boolean getAppend() {
 		return append;
 	}
+
+	
 	/**
 	 * Insere novo registro em arquivo .txt
 	 * @param arquivo
@@ -49,7 +53,8 @@ public class Include {
 			buff.close();
 		}
 	}
-		
+	
+	
 	/**
 	 * Realiza ficheiro remoção lógica do registro 
 	 * @param arquivo
@@ -83,6 +88,7 @@ public class Include {
 	  
 	}    
         	
+	
 	/** 
 	 * Realiza ficheiro salva edição do registro
 	* 
@@ -91,6 +97,7 @@ public class Include {
 		Prints.objetoNaoImplementado();
 	} 
 		
+	
 	/** 
 	 * Realiza alteração do registro
 	* 
@@ -99,33 +106,3 @@ public class Include {
 		Prints.objetoNaoImplementado();
 	} 
 }
-
-/**
-  FileReader fileReader = null;    
-	    FileWriter fileWriter = null;     
-	    BufferedReader leitor = null;    
-	    String line = "";    
-	              
-	       
-	    fileWriter = new FileWriter(new File(nomeArquivo));   
-	    leitor = new BufferedReader(fileReader);  
-	    line = "";    
-	    try { 
-	        	
-	    	while ((line = leitor.readLine()) != null) {    
-	        	if (desc.equals(leitor)){
-	        		if(!line.trim().equals(desc.trim())) {   
-	        			fileWriter.write(line + "\r\n");
-	        			Prints.msg("ddddddddddddddddd ");
-	        		}
-	            }    
-	        }	                
-	        
-	        } catch (IOException e) {    
-	        	Prints.msg("sssssssssssssss "); 
-	        	
-	        }catch (NullPointerException e1) {    
-	        	Prints.msg("sssssssssssssss ");
-	        }
-	    System.exit(0);
-*/

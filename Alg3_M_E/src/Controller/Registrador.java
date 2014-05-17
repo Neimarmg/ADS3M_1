@@ -17,14 +17,15 @@ import model.Utilitarios.Include;
 /**
  * Classe responsável pela manipulação de dados em arquivo: edição, exclusão e inserção
  * @author Neimar, Aurélio
+ * @param <T>
  */
 public class Registrador {
 	
 	public static String acum =""; //Acumulador de dados para edição de arquivo 
-	static Consultas consulta = new Consultas();
+	Consultas consulta = new Consultas();
 	static ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	static ArvoreBinaria<String> arvoreBinaria = new ArvoreBinaria<String>();
-	
+
 	
 	public static void setAcum(String acum) {
 		Registrador.acum = acum;
@@ -40,7 +41,7 @@ public class Registrador {
 	 * @param nomeArquivo
 	 * @throws IOException
 	 */
-	public static void leArquivo(String nomeArquivo) throws IOException{		
+	public void leArquivo(String nomeArquivo) throws IOException{		
 		
 		try {
 			FileReader file = new FileReader(nomeArquivo);
@@ -78,7 +79,7 @@ public class Registrador {
 	 * Método que le dados do teclado
 	 * @throws Exception
 	 */
-	public static void leTeclado() throws Exception {
+	public void leTeclado() throws Exception {
 		Contatos.setNome(Auxiliar.digita("Contato")); 
 		Contatos.setFone(Auxiliar.digita("Telefone"));
 	}
@@ -89,9 +90,9 @@ public class Registrador {
 	 * @param nomeArquivo
 	 * @throws IOException
 	 */
-	public static void editaArquivo(String nomeArquivo) throws IOException {
+	public void editaArquivo(String nomeArquivo) throws IOException {
 		Include.setAppend(false);
-		Include.addNovo(nomeArquivo, Registrador.getAcum());
+		Include.addNovo(nomeArquivo, getAcum());
 		setAcum(""); // Parâmetro de limpeza de "cache do acumulador" 
 	}
 	
@@ -101,11 +102,11 @@ public class Registrador {
 	 * @param nomeArquivo
 	 * @throws Exception
 	 */
-	public static void insereNovoRegistro(String nomeArquivo) throws Exception {
+	public void insereNovoRegistro(String nomeArquivo) throws Exception {
 		leTeclado();
 		Include.setAppend(true);
 		Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); //Insere na última linha do arquivo
-		
+	
 		switch (Auxiliar.getOpcao()) {
 		
 		case "LISTA":
@@ -116,7 +117,7 @@ public class Registrador {
 
 		case "ARVORE":
 			leArquivo(nomeArquivo);
-			arvoreBinaria.imprime(true);
+			arvoreBinaria.guardaEdicao();
 			editaArquivo(nomeArquivo);			
 			break;
 			
@@ -131,7 +132,7 @@ public class Registrador {
 	 * Método de manipulação de dados de arquivos
 	 * @throws Exception
 	 */
-	public static void executaComando(String nomeArquivo) throws Exception {
+	public void executaComando(String nomeArquivo) throws Exception {
 		Menus.menuEditarArquivo();
 		
 		switch (Auxiliar.digita("")) {

@@ -14,6 +14,7 @@ public class Nodo<T extends Comparable<T>>{
 	private Nodo<T> dir;
 	private T valor;
 	
+
 	/**
 	 * Contrutor da classe nodo
 	 * @param valor
@@ -68,13 +69,28 @@ public class Nodo<T extends Comparable<T>>{
 	
 	public void imprime(){
 		Prints.msg("\n" + valor);
-		Registrador.setAcum(Registrador.getAcum() +"\n" +valor); // Acumalador de ordenaçãO
 		if(esq != null){			
 			esq.imprime();	
 		}
 		
 		if(dir != null){
 			dir.imprime();				
+		}		
+	}
+	
+	
+	/**
+	 * Metodo responsável por armazenar em terporariamente as alteração dos dados do arquivo
+	 */
+	public void guardaEdicao(){
+		Registrador.setAcum(Registrador.getAcum() +"\n" +valor); // Acumalador de ordenaçãO
+		
+		if(esq != null){			
+			esq.guardaEdicao();	
+		}
+		
+		if(dir != null){
+			dir.guardaEdicao();				
 		}		
 	}
 }

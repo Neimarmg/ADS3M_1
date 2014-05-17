@@ -1,8 +1,10 @@
 
+
 #Mateus,24587885
 #agatha,124578
 #beltrão,13235466
 #demetrio,121245 
+#maltam,1235664
 #normandino,213564
 #ravier,123564
 #teves,235425443
@@ -20,17 +22,17 @@ carlos,2457878
 casemiro,12354155 
 castro,12478989 
 corvam,135466
-e,6
-e,5
 epaminondas,45578855
 fabrizio,12455689 
+florencio,1235466
+gartua,12333
 gaudencio,12356546
 genir,12356489 
+geremias,232325454
 jari,12354
 joel,12455689 
 jovencio,121214455 
 lara,123568956 
-maltam,1235664
 marabas,123456
 maria,123544
 orti,348454

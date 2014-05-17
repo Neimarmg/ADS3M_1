@@ -9,6 +9,7 @@ import Aplicacao.Menus;
 import Aplicacao.Prints;
 import Controller.Registrador;
 import Controller.Arquivos.Ficheiro;
+import model.Lista.ListaEncadeada;
 import model.Utilitarios.Auxiliar;
 
 
@@ -18,8 +19,12 @@ import model.Utilitarios.Auxiliar;
  */
 public class Consultas {
 	public int contador = 0;
+	Registrador registrador = new Registrador();
+	ListaEncadeada<String> lista = new ListaEncadeada<String>();
+			
 	Ficheiro ficheiro = new Ficheiro();
 	private BufferedReader br;
+	
 	
 	/**
 	 * Método que realiza ficheiro navegação entre os registros 
@@ -144,7 +149,8 @@ public class Consultas {
 		switch (Auxiliar.getOpcao()) {
 		
 		case "LISTA":
-			Registrador.leArquivo(Auxiliar.digita("Nome do arquivo"));
+			registrador.leArquivo(Auxiliar.digita("Nome do arquivo"));
+	
 			break;
 
 		case "ARVORE":
