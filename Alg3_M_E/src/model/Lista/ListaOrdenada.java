@@ -1,10 +1,10 @@
 package model.Lista;
 
-import java.io.IOException;
-
-import Controller.Registrador;
-import model.Utilitarios.Include;
-
+/**
+ * Classe responsavel pela ordenação do dodos ontes da insersão no arquivo
+ * @author Neimar, Aurélio *
+ * @param <T>
+ */
 public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 
 	/**
@@ -51,17 +51,6 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 	@Override
 	public void append(Nodo<T> novo) {
 		insert(novo);
-	}
-	
-	/**
-	 * Método responsável por salvar alterações 
-	 * @param nomeArquivo
-	 * @throws IOException
-	 */
-	public void editaArquivo(String nomeArquivo) throws IOException {
-		Include.setAppend(false);
-		Include.addNovo(nomeArquivo, Registrador.getAcum());
-		Registrador.setAcum(""); // Parâmetro de limpeza de "cache do acumulador" 
 	}
 	
 }

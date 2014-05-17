@@ -1,5 +1,4 @@
 package Controller;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -30,8 +29,7 @@ public class Registrador {
 	public static void setAcum(String acum) {
 		Registrador.acum = acum;
 	}
-	
-	
+		
 	public static String getAcum() {
 		return acum;
 	}
@@ -42,7 +40,7 @@ public class Registrador {
 	 * @param nomeArquivo
 	 * @throws IOException
 	 */
-	public static void leArquivo(String nomeArquivo) throws IOException {		
+	public static void leArquivo(String nomeArquivo) throws IOException{		
 		
 		try {
 			FileReader file = new FileReader(nomeArquivo);
@@ -51,22 +49,28 @@ public class Registrador {
 			while(linha != null ){
 				linha = buff.readLine();				
 				
-				if (Auxiliar.getOpcao().equals("LISTA")){
-					lista.insert(new Nodo<String>(linha), lista.getHead());
+				switch (Auxiliar.getOpcao()) {
 				
-				}else if (Auxiliar.getOpcao().equals("ARVORE")){
+				case "LISTA":
+					lista.insert(new Nodo<String>(linha), lista.getHead());
+					break;
+				
+				case "ARVORE":
 					arvoreBinaria.insere(new model.Arvore.Nodo<String>(linha));
-				}				
+					break;
+					
+				default:
+					Prints.opcaoInvalida();
+					break;
+				}
 			}			
 			buff.close();
 			
 		} catch (NullPointerException e) {
-			Prints.msgb("Arquivo em branco.");;
+			Prints.msgb("Arquivo em branco.");
 		} catch (FileNotFoundException e1) {
 			Prints.msgb("Arquivo inexistente.");
-		}		
-		lista.imprime(true);
-		arvoreBinaria.imprime(true);	
+		}			
 	}
 	
 	
@@ -81,6 +85,18 @@ public class Registrador {
 	
 	
 	/**
+	 * Método responsável por salvar alterações 
+	 * @param nomeArquivo
+	 * @throws IOException
+	 */
+	public static void editaArquivo(String nomeArquivo) throws IOException {
+		Include.setAppend(false);
+		Include.addNovo(nomeArquivo, Registrador.getAcum());
+		setAcum(""); // Parâmetro de limpeza de "cache do acumulador" 
+	}
+	
+	
+	/**
 	 * Método responsável pela insersão de novos registros 
 	 * @param nomeArquivo
 	 * @throws Exception
@@ -90,14 +106,23 @@ public class Registrador {
 		Include.setAppend(true);
 		Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); //Insere na última linha do arquivo
 		
-		if (Auxiliar.getOpcao().equals("LISTA")) { // Definição de atividade			
-			leArquivo(nomeArquivo); // Lê arquivo após a insersão e padroniza a edição
-			lista.editaArquivo(nomeArquivo);	
-			
-		}
+		switch (Auxiliar.getOpcao()) {
 		
-		if (Auxiliar.getOpcao().equals("ARVORE")) { // Definição de atividade           
+		case "LISTA":
+			leArquivo(nomeArquivo); // Lê arquivo após a insersão e padroniza a edição
+			lista.imprime(true);
+			editaArquivo(nomeArquivo);	
+			break;
+
+		case "ARVORE":
 			leArquivo(nomeArquivo);
+			arvoreBinaria.imprime(true);
+			editaArquivo(nomeArquivo);			
+			break;
+			
+		default:
+			Prints.opcaoInvalida();
+			break;
 		}
 	}
 
