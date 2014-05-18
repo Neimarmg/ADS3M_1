@@ -10,7 +10,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import model.Dados;
+import model.Utilitarios.Auxiliar;
 import Aplicacao.Prints;
+import Controller.Registrador;
 
 /**
  * Classe responsavel pela manupulação do arquivo
@@ -22,8 +24,6 @@ public class Ficheiro extends Dados {
 	static String linha;
 	static FileReader file;
 	static BufferedReader buff;	
-	
-	
 	
 	/**
 	 * Verificador de memória
@@ -72,8 +72,8 @@ public class Ficheiro extends Dados {
 	
 	//=====================<< Leitor global de arquivos >>========================
 
-	public static void carregaArquivo(String nomeArquivo, boolean criaVetor) throws Exception {
-			
+	public static void leArquivo(String nomeArquivo, boolean criaVetor) throws Exception {
+		
 		try {
 			setValidaArquivo(true); // Habilita execução de ordenador
 			file = new FileReader(nomeArquivo);		
@@ -86,14 +86,19 @@ public class Ficheiro extends Dados {
 				
 				if (criaVetor == true){
 					insertVetor(index, criaVetor);
+				}else{
+					Registrador.arquivo(linha);
 				}
 			}
-			buff.close();			
-				
+			buff.close();	
+			
+		} catch (NullPointerException e) {
+			Prints.msge("\nArquivo carregado em " +Auxiliar.getOpcao().toLowerCase() +" com sucesso!\n");
+					
 		} catch (FileNotFoundException e) {
 			Prints.msge("\nArquivo inexistente\n");
 			setValidaArquivo(false); // Desabilita a execução de ordenador
-			
+				
 		} catch (IOException e) {
 			Prints.msge("\nO arquivo não pode ser fechado.\n");
 		

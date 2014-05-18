@@ -38,6 +38,7 @@ public class Include {
 	public static void addNovo(String arquivo,String  desc) throws IOException {
 		FileWriter f;
 		BufferedWriter buff = null;
+		
 		try {
 			f = new FileWriter(new File(arquivo),getAppend());
 			buff = new BufferedWriter(f);			
@@ -47,6 +48,7 @@ public class Include {
 			}			
 			buff.write(desc);			
 			buff.close();	
+		
 		} catch (IOException e) {
 			Prints.msg("Não foi possivél inserir registro.");
 		} finally {
@@ -66,26 +68,28 @@ public class Include {
 		FileReader r = new FileReader(nomeArquivo);
 		br = new BufferedReader(r);
 		String linha = br.readLine();		
+		
 		try {				
 			while(linha != null ) {	
 				
 				if (linha.equals(desc)) {	
 					acun += "#"+linha +"\n";
 					setAppend(true);
-					} else {
+					Prints.msge("\nRegistro excluido com sucesso!\n");
+				} else {
 					acun += linha +"\n";
-					setAppend(false);					
+					setAppend(false);
 				}
 				linha = br.readLine();
 			}			
 			br.close();
 			addNovo(nomeArquivo, acun);
+		
 		} catch (NullPointerException e) {
 			e.getMessage();
 		} catch (FileNotFoundException e1) {
 			Prints.msgb("Arquivo inexistente.");
-		}
-	  
+		}	  
 	}    
         	
 	

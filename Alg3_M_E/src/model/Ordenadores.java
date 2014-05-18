@@ -77,7 +77,7 @@ public class Ordenadores {
 	 * @throws Exception
 	 */
 	private static void executaBubleSort() throws Exception {
-		Ficheiro.carregaArquivo(Auxiliar.digita("Nome do arquivo"),true);
+		Ficheiro.leArquivo(Auxiliar.digita("Nome do arquivo"),true);
 		
 		if (Dados.getValidaArquivo() == true) {
 			ordenaBubleSort(Auxiliar.defineOrdem(true));
@@ -159,7 +159,7 @@ public class Ordenadores {
 	 */
 	public static void carregaQuickSort(boolean imprimir) throws Exception {
 		limpaVetor(true); // Garante vetor limpo antes do carregamento do ordenador
-		Ficheiro.carregaArquivo(Auxiliar.digita("Nome do arquivo"),true);
+		Ficheiro.leArquivo(Auxiliar.digita("Nome do arquivo"),true);
 		
 		if (Dados.getValidaArquivo() == true) { 
 			boolean ordem = Auxiliar.defineOrdem(true);

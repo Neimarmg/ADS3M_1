@@ -118,7 +118,7 @@ public class Consultas {
 	 * @throws Exception
 	 */
 	public void carregaBuscaBinaria(String nomeArquivo,int campo) throws Exception {
-		Ficheiro.carregaArquivo(nomeArquivo,true);			
+		Ficheiro.leArquivo(nomeArquivo,true);			
 		
 		if (campo <= Dados.getVetor().length){
 		
