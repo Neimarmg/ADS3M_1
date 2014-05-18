@@ -26,7 +26,7 @@ public class Consultas {
 	
 	
 	/**
-	 * Método que realiza ficheiro navegação entre os registros 
+	 * Método que realiza ficheiro navegação entre os registrador 
 	 * @param nomeArquivo
 	 */
 	public void	navega(String nomeArquivo) {
@@ -45,7 +45,7 @@ public class Consultas {
 			FileReader r = new FileReader(nomeArquivo);
 			br = new BufferedReader(r);
 			String linha = br.readLine();
-			Prints.msgc("Registros encontrados:\n");
+			Prints.msgc("Registrador encontrados:\n");
 			while(linha != null ) {
 				linha = br.readLine();
 				if (filtrar == true) { // Imprime dados coincidentes com o parâmetro	
@@ -63,7 +63,7 @@ public class Consultas {
 		}
 	}
 	
-//====================<< Busca binária de registros >> =======================================	
+//====================<< Busca binária de registrador >> =======================================	
 	
 	int vet[] = new int [Ficheiro.getVetor().length];
 	int i, inicio = 0, meio, fim = Ficheiro.getVetor().length;

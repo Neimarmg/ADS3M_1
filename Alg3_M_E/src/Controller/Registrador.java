@@ -1,4 +1,5 @@
 package Controller;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -96,9 +97,9 @@ public class Registrador {
 		setAcum(""); // Parâmetro de limpeza de "cache do acumulador" 
 	}
 	
-	
+				
 	/**
-	 * Método responsável pela insersão de novos registros 
+	 * Método responsável pela insersão de novos registrador 
 	 * @param nomeArquivo
 	 * @throws Exception
 	 */

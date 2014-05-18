@@ -6,8 +6,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import model.Dados;
 import Aplicacao.Prints;
 
@@ -17,10 +18,11 @@ import Aplicacao.Prints;
  */
 public class Ficheiro extends Dados {
 	
-	Memoria memoria =  new Memoria();	
+	Memoria memoria =  new Memoria();
 	static String linha;
 	static FileReader file;
 	static BufferedReader buff;	
+	
 	
 	
 	/**
@@ -81,10 +83,12 @@ public class Ficheiro extends Dados {
 			while(linha != null ) {
 				linha = buff.readLine();
 				index++;
-				criaVetor(index, criaVetor);
+				
+				if (criaVetor == true){
+					insertVetor(index, criaVetor);
+				}
 			}
-			buff.close();
-			criaVetor(index, criaVetor);
+			buff.close();			
 				
 		} catch (FileNotFoundException e) {
 			Prints.msge("\nArquivo inexistente\n");
@@ -104,14 +108,17 @@ public class Ficheiro extends Dados {
 	 * @param index
 	 * @param criaVetor
 	 */
-	public static void criaVetor(int index, boolean criaVetor) {
+	public static void insertVetor(int index, boolean criaVetor) {
 		if (criaVetor == true && linha != null) {
-			vetor[index]= linha;
-		}else{
+			vetor[index]= linha;			
+		}
+		
+		if (criaVetor == true && linha == null){
 			for (int i = index; i < vetor.length; i++) { // Complementa o vetor após carregamento dos dados do arquivo
 				vetor[i]= "";
 			}
 		}
+		
 	}	
 	
 		

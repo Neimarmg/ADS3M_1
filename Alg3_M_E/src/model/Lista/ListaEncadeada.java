@@ -61,7 +61,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	}
 	
 	/**
-	 * Imprime quando habilitado na tela e edita registros após a ordenação
+	 * Imprime quando habilitado na tela e edita registrador após a ordenação
 	*/
 	public void imprime(boolean impressaoPrevia) {
 		try {

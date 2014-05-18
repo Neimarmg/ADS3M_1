@@ -10,7 +10,7 @@ public class Dados {
 	
 	static boolean validaArquivo; 
 	protected static int index = 0;
-	static int tamanho = 60;
+	static int tamanho = 70;
  	public static String vetor[] = new String[tamanho];
  	
 
