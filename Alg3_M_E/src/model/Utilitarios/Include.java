@@ -74,11 +74,11 @@ public class Include {
 				
 				if (linha.equals(desc)) {	
 					acun += "#"+linha +"\n";
-					setAppend(true);
 					Prints.msge("\nRegistro excluido com sucesso!\n");
+					setAppend(false);					
 				} else {
 					acun += linha +"\n";
-					setAppend(false);
+					setAppend(true);
 				}
 				linha = br.readLine();
 			}			
