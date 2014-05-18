@@ -116,7 +116,7 @@ public class interacao<T, string> {
 	
 	
 	/**
-	 *	Método com definição das atividades
+	 *	Método com definição das atividades 
 	 * @throws Exception
 	 */
 	public static void iniciaTarefas() throws Exception {
@@ -138,7 +138,11 @@ public class interacao<T, string> {
 		case "arquivo":
 			manipulaAquivo();
 			break;
-		
+			
+		case "ordenar":
+			selecionaOrdenador();
+			break;
+			
 		case "sair":
 			Prints.sair();
 			break;

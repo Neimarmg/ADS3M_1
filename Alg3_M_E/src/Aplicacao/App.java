@@ -55,7 +55,8 @@ public class App {
 				break;
 				
 			case "t4":	
-				interacao.selecionaOrdenador();		
+				Auxiliar.setOpcao("ORDENADORES");
+				iniciaInteracao();	
 				break;
 				
 			case "t5":

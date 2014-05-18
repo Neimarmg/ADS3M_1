@@ -17,14 +17,26 @@ public class Menus extends Prints {
 			+ "=> SAIR\n");
 		}
 		
-		
+		/**
+		 * Método responsável pela impressão dos comando de execução de taréfas
+		 */
 		public static void mostarMenuApp() {		
-			msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
-			+ "=> EXECUTAR  'Executa ações nas estruturas existente'\n"
-			+ "=> CONSULTAR 'Conteúdo do salvo em arquivo(s)'\n"
-			+ "=> IMPRIMIR  'Imprime arquivo selecionado'\n"
-			+ "=> ARQUIVO   'Propriedades de arquivo'\n"
-			+ "=> SAIR\n");
+			String menu = "	O QUE VOCÊ DESEJA FAZER?\n\n";
+				 
+			if (Auxiliar.getOpcao().equals("LISTA") || Auxiliar.getOpcao().equals("ARVORE")) {
+				menu += "=> EXECUTAR  'Executa ações nas estruturas existente'\n" +
+						"=> ARQUIVO   'Propriedades de arquivo'\n";
+			}
+					
+			if (Auxiliar.getOpcao().equals("ORDENADORES")) {
+				menu += "=> ORDENAR  'Executa ordenação de registro em arquivo(s)'\n";
+			}else{
+				menu += "=> CONSULTAR 'Conteúdo do salvo em arquivo(s)'\n";
+			}
+							
+			menu += "=> IMPRIMIR  'Imprime arquivo selecionado'\n" +					
+					"=> SAIR\n";
+			msgb(menu);		
 		}
 
 		

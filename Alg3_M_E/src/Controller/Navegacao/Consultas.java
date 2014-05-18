@@ -45,7 +45,7 @@ public class Consultas {
 			FileReader r = new FileReader(nomeArquivo);
 			br = new BufferedReader(r);
 			String linha = br.readLine();
-			Prints.msgc("Registrador encontrados:\n");
+			Prints.msgc("Registrador encontrados:\n\n");
 			while(linha != null ) {
 				linha = br.readLine();
 				if (filtrar == true) { // Imprime dados coincidentes com o parâmetro	
