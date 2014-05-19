@@ -1,5 +1,6 @@
 package model.Arvore;
 
+
 /**
  * 
  * @author Neimar, aurelio
@@ -27,5 +28,22 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 		if (impr == true) {
 			raiz.imprime();
 		}		
+	}
+	
+	
+	/**
+	 * Metodo responsável por armazenar em terporariamente as alteração dos dados do arquivo
+	 */
+	public void guardaEdicao(){
+		raiz.guardaEdicao();
+	}
+	
+	
+	public void travessiaPosFixa(){
+		raiz.travessiaPosFixa(raiz);
+	}
+	
+	public void travessiaPreFixa(){
+		raiz.travessiaPreFixa(raiz);
 	}
 }
