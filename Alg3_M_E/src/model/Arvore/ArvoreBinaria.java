@@ -1,5 +1,6 @@
 package model.Arvore;
 
+
 /**
  * 
  * @author Neimar, aurelio
@@ -35,5 +36,14 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 	 */
 	public void guardaEdicao(){
 		raiz.guardaEdicao();
+	}
+	
+	
+	public void travessiaPosFixa(){
+		raiz.travessiaPosFixa(raiz);
+	}
+	
+	public void travessiaPreFixa(){
+		raiz.travessiaPreFixa(raiz);
 	}
 }

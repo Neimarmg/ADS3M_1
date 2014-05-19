@@ -1,6 +1,7 @@
 package Aplicacao;
 
 import java.util.InputMismatchException;
+
 import model.Ordenadores;
 import Controller.interacao;
 import Controller.Navegacao.Consultas;
@@ -42,7 +43,7 @@ public class App {
 	
 		try {		
 			Menus.menuSelecinaAtividade();	
-			switch (Auxiliar.digita("Atividade")) {
+			switch ("t5"/*Auxiliar.digita("Atividade")*/) {
 			
 			case "t1":	
 				Auxiliar.setOpcao("LISTA");
@@ -61,8 +62,7 @@ public class App {
 				
 			case "t5":
 				Auxiliar.setOpcao("ARVORE"); // Arvore deve ficar sem acentuação pois, se trata de atribução
-				iniciaInteracao();	
-				//Registrador.executaComando("l.txt");
+				iniciaInteracao();				
 				break;
 			
 			case "sair":

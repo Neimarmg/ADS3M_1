@@ -1,7 +1,4 @@
 
-#agatha,124578
-#arno,1346
-#beltrão,13235466
 #domaco,122454
 #maltam,1235664
 #tabaca,12146465
@@ -9,24 +6,12 @@ abaco,1323644
 abgail,124578 
 acirio,1245896 
 adroaldo,2135465
-agrapio,1235684 
-astrogildo,1236466
-cancio,16446
 carlos,2457878 
 carminha,124566
 casemiro,12354155 
 castor,1233285555
 castro,12478989 
 corvam,135466
-ddd,dsds
-demetrio,121245 
-epaminondas,45578855
-gema,1233545
-jari,12354
-joel,12455689 
-jonhata,465123
-jovencio,121214455 
-lara,123568956 
 luisao,123456
 luisao,123545
 marabas,123456
@@ -34,12 +19,6 @@ maria,123544
 morgam,1224566
 normandino,213564
 orlando,1222546
-orti,348454
-pharquer,22154855
-pietro,123645
-proteu,123345645
-ravier,123564
-remiao,1334654
 salazar,1221545
 saldanha,132456
 sanpaio,124552556 

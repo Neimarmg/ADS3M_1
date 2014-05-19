@@ -17,7 +17,7 @@ import model.Utilitarios.Include;
  * @author Neimar, Aurélio
  * @param <T>
  */
-public class Registrador {
+public class Registrador{
 	
 	static String acum =""; //Acumulador de dados para edição de arquivo 
 	Consultas consulta = new Consultas();
@@ -98,10 +98,16 @@ public class Registrador {
 			break;
 
 		case "ARVORE":
-			gravaDados(nomeArquivo);
+			//gravaDados(nomeArquivo);
+			
 			Ficheiro.leArquivo(nomeArquivo,false);
-			arvoreBinaria.guardaEdicao();
-			editaArquivo(nomeArquivo);			
+			consulta.consultaArquivo(nomeArquivo, "", false);
+			arvoreBinaria.travessiaPosFixa();
+			
+			
+			
+			//arvoreBinaria.guardaEdicao();
+			//editaArquivo(nomeArquivo);			
 			break;
 			
 		default:
@@ -116,13 +122,13 @@ public class Registrador {
 	 * @throws Exception
 	 */
 	public void executaComando(String nomeArquivo) throws Exception {
-		Menus.menuInclude("DADOS");
+		//Menus.menuInclude("DADOS");
 		
-		switch (Auxiliar.digita("")) {
+		switch ("novo" /*Auxiliar.digita("")*/) {
 		
 		case "novo":
 			insereNovoRegistro(nomeArquivo);
-			executaComando(nomeArquivo); // Loop para novas ações do menu
+			//executaComando(nomeArquivo); // Loop para novas ações do menu
 			break;
 		
 		case "editar":

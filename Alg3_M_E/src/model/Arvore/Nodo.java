@@ -9,12 +9,12 @@ import Controller.Registrador;
  * @param <T>
  */
 public class Nodo<T extends Comparable<T>>{
-	private Nodo<T> pai;
+	protected Nodo<T> pai;
 	private Nodo<T> esq;
 	private Nodo<T> dir;
 	private T valor;
 	
-
+	
 	/**
 	 * Contrutor da classe nodo
 	 * @param valor
@@ -67,6 +67,12 @@ public class Nodo<T extends Comparable<T>>{
 	}
 	
 	
+	
+	public void remove(){	
+		
+	}
+	
+	
 	public void imprime(){
 		Prints.msg("\n" + valor);
 		if(esq != null){			
@@ -79,12 +85,12 @@ public class Nodo<T extends Comparable<T>>{
 	}
 	
 	
+	
 	/**
 	 * Metodo responsável por armazenar em terporariamente as alteração dos dados do arquivo
 	 */
 	public void guardaEdicao(){
-		Registrador.setAcum(Registrador.getAcum() +"\n" +valor); // Acumalador de ordenaçãO
-		
+		Registrador.setAcum(Registrador.getAcum() +"\n" +valor);
 		if(esq != null){			
 			esq.guardaEdicao();	
 		}
@@ -93,4 +99,41 @@ public class Nodo<T extends Comparable<T>>{
 			dir.guardaEdicao();				
 		}		
 	}
+	
+	
+	
+	public void travessiaPosFixa(Nodo<T> no){
+		if( no == null )  
+			return;  
+		if( no.dir != null ) {
+			Prints.msg("\nPF esp:" +no.valor);	
+			travessiaPosFixa(no.dir);
+			travessiaPosFixa(no.esq);					
+		}   
+	}
+	
+	
+	
+	public void travessiaPreFixa(Nodo<T> no){
+		if( no == null )  
+			return;  
+		if( no.dir != null ) {			
+			travessiaPosFixa(no.dir);
+			travessiaPosFixa(no.esq);
+			Prints.msg("\nPF esp:" +no.valor);	
+		} 
+	}
+	
+	
+	
+	public void buscaEmLargura(){
+	
+	}
+	
+	
+	
+	public void buscEmAltura(){
+	
+	}
+	
 }
