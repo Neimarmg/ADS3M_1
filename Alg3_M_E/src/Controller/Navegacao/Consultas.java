@@ -83,7 +83,7 @@ public class Consultas {
 	 * @throws Exception
 	 */
 	public void carregaBuscaBinaria(String nomeArquivo,int campo) throws Exception {
-		Ficheiro.leArquivo(nomeArquivo,true, "", false);			
+		Ficheiro.leArquivo(nomeArquivo,true, "", false, false);			
 		
 		if (campo <= Dados.getVetor().length){
 		
@@ -118,7 +118,7 @@ public class Consultas {
 			break;
 
 		case "ARVORE":
-			Ficheiro.leArquivo(nomeArquivo,false, "", false);
+			Ficheiro.leArquivo(nomeArquivo,false, null, false, true);
 			//registrador.insereNovoRegistro(nomeArquivo);
 			break;
 			
@@ -163,7 +163,7 @@ public class Consultas {
 				break;		
 			
 			case "arquivo":
-				Ficheiro.leArquivo(Auxiliar.digita("Nome do arquivo"), false, "", false);
+				Ficheiro.leArquivo(Auxiliar.digita("Nome do arquivo"), false, "", false, true);
 				selecionaComando();
 				break;
 				

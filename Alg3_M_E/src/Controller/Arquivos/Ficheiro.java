@@ -8,9 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 import model.Dados;
-import model.Utilitarios.Auxiliar;
 import Aplicacao.Prints;
 import Controller.Registrador;
 
@@ -72,31 +70,30 @@ public class Ficheiro extends Dados {
 	
 	//=====================<< Leitor global de arquivos >>========================
 
-	public static void leArquivo(String nomeArquivo, boolean criaVetor,String campo, boolean filtrar) throws Exception {
+	public static void leArquivo(String nomeArquivo, boolean criaVetor, String campo, boolean filtrar, boolean imprimir) throws Exception {
 		
 		try {
 			setValidaArquivo(true); // Habilita execução de ordenador
 			file = new FileReader(nomeArquivo);		
 			buff = new BufferedReader(file);
 			linha = buff.readLine();
+			if(imprimir== true){Prints.msgc(" Impressão do arquivo: " +nomeArquivo +"\n\n");}
 			
 			while(linha != null ) {
 				linha = buff.readLine();
 				index++;
 				
 				if (criaVetor == true){
-					insertVetor(index, criaVetor);
+					insertVetor(index, criaVetor); //Metodo transferência de dados para do arquivo para vetor
 				}else{
-					Registrador.arquivo(linha);
-				}
-				
-				imprimeDaDos(linha,campo, false);
-			
+					Registrador.copiaArquivo(linha); //Médoto de insersão nas estruturas de dados
+				}				
+				imprimeDaDos(linha,campo, filtrar, imprimir); //Método de impressão dados. Imprime quando abilitado 			
 			}
 			buff.close();	
 			
 		} catch (NullPointerException e) {
-			Prints.msg("\nArquivo carregado em " +Auxiliar.getOpcao().toLowerCase() +" com sucesso!\n");
+			Prints.msgr("\nArquivo carregado com sucesso!");
 					
 		} catch (FileNotFoundException e) {
 			Prints.msge("\nArquivo inexistente\n");
@@ -116,7 +113,7 @@ public class Ficheiro extends Dados {
 	 * @param index
 	 * @param criaVetor
 	 */
-	public static void insertVetor(int index, boolean criaVetor) {
+	protected static void insertVetor(int index, boolean criaVetor) {
 		if (criaVetor == true && linha != null) {
 			vetor[index]= linha;			
 		}
@@ -135,15 +132,16 @@ public class Ficheiro extends Dados {
 	 * @param campo
 	 * @param filtrar
 	 */
-	public static void imprimeDaDos(String linha, String campo, boolean filtrar) {
-		
-		if (filtrar == true) { // Imprime dados coincidentes com o parâmetro	
-			if (linha.equals(campo)) {				
-				Prints.msg("> " +linha  + "\n");
-			}				
-		} else {
-			Prints.msg("> " + linha + "\n");
-		}			
+	protected static void imprimeDaDos(String linha, String campo, boolean filtrar, boolean imprimir) {
+		if (imprimir == true) {//Abilita impressão ou não.
+			if (filtrar == true) { // Imprime dados coincidentes com o parâmetro	
+				if (linha.equals(campo)) {				
+					Prints.msg("\n> " +linha  + "\n");
+				}				
+			} else {
+				Prints.msg("> " + linha + "\n");
+			}
+		}
 	}
 		
 }

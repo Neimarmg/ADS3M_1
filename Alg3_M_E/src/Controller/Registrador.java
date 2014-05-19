@@ -38,7 +38,7 @@ public class Registrador{
 	 * @param linha
 	 * @throws Exception
 	 */
-	public static void arquivo(String linha) throws Exception {
+	public static void copiaArquivo(String linha) throws Exception {
 
 		switch (Auxiliar.getOpcao()) {
 	
@@ -51,8 +51,7 @@ public class Registrador{
 			break;
 			
 		default:
-			Prints.opcaoInvalida();
-			break;
+			break; // Condição de saída quando atividade for inválida
 		}
 	}
 	
@@ -92,14 +91,14 @@ public class Registrador{
 		
 		case "LISTA":
 			gravaDados(nomeArquivo);
-			Ficheiro.leArquivo(nomeArquivo, false, "", false); // Lê arquivo após a insersão e padroniza a edição
+			Ficheiro.leArquivo(nomeArquivo, false, "", false, false); // Lê arquivo após a insersão e padroniza a edição
 			lista.guardaEdicao();;
 			editaArquivo(nomeArquivo);	
 			break;
 
 		case "ARVORE":
 			gravaDados(nomeArquivo);
-			Ficheiro.leArquivo(nomeArquivo,false, "", false);
+			Ficheiro.leArquivo(nomeArquivo,false, "", false, false);
 			arvoreBinaria.guardaEdicao();
 			editaArquivo(nomeArquivo);
 			break;
@@ -122,7 +121,7 @@ public class Registrador{
 		
 		case "novo":
 			insereNovoRegistro(nomeArquivo);
-			//executaComando(nomeArquivo); // Loop para novas ações do menu
+			executaComando(nomeArquivo); // Loop para novas ações do menu
 			break;
 		
 		case "editar":
@@ -131,7 +130,7 @@ public class Registrador{
 			break;
 			
 		case "imprimir":
-			//consulta.consultaArquivo(nomeArquivo, "", false);
+			Ficheiro.leArquivo(nomeArquivo, false, null, false, true);
 			executaComando(nomeArquivo); // Loop para novas ações do menu
 			break;
 		
