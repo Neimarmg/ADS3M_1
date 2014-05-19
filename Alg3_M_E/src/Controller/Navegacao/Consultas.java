@@ -9,6 +9,8 @@ import Aplicacao.Menus;
 import Aplicacao.Prints;
 import Controller.Registrador;
 import Controller.Arquivos.Ficheiro;
+import model.Dados;
+import model.Lista.ListaEncadeada;
 import model.Utilitarios.Auxiliar;
 
 
@@ -17,18 +19,22 @@ import model.Utilitarios.Auxiliar;
  * @author Neimar, Aurelio
  */
 public class Consultas {
+	
 	public int contador = 0;
-	Ficheiro ficheiro = new Ficheiro();
+	ListaEncadeada<String> lista = new ListaEncadeada<String>();
+	
 	private BufferedReader br;
 	
+	
 	/**
-	 * Método que realiza ficheiro navegação entre os registros 
+	 * Método que realiza ficheiro navegação entre os registrador 
 	 * @param nomeArquivo
 	 */
 	public void	navega(String nomeArquivo) {
 		Prints.objetoNaoImplementado();
 	}	
 
+	
 	/**
 	 * Método global de impressão de dados de arquivo 
 	 * @param nomeArquivo
@@ -41,7 +47,7 @@ public class Consultas {
 			FileReader r = new FileReader(nomeArquivo);
 			br = new BufferedReader(r);
 			String linha = br.readLine();
-			Prints.msgc("Registros encontrados:\n");
+			Prints.msgc("Registrador encontrados:\n\n");
 			while(linha != null ) {
 				linha = br.readLine();
 				if (filtrar == true) { // Imprime dados coincidentes com o parâmetro	
@@ -59,10 +65,10 @@ public class Consultas {
 		}
 	}
 	
-//====================<< Busca binária de registros >> =======================================	
+//====================<< Busca binária de registrador >> =======================================	
 	
-	int vet[] = new int [Auxiliar.getVetor().length];
-	int i, inicio = 0, meio, fim = Auxiliar.getVetor().length;
+	int vet[] = new int [Ficheiro.getVetor().length];
+	int i, inicio = 0, meio, fim = Ficheiro.getVetor().length;
     boolean localizador = false;
     
     
@@ -74,7 +80,7 @@ public class Consultas {
 		if (localizador == true) {
 			Prints.msgb("	RESULTADO DE BUSCA BINÁRIA\n"
 				+ "\nRegistro encontrado"
-				+ "\n\nPosição [" + meio + "] " + Auxiliar.vetor[meio]);
+				+ "\n\nPosição [" + meio + "] " + Dados.vetor[meio]);
 		} else {
 		   	Prints.msge("\nNúmero não encontrado");
 		}
@@ -114,13 +120,13 @@ public class Consultas {
 	 * @throws Exception
 	 */
 	public void carregaBuscaBinaria(String nomeArquivo,int campo) throws Exception {
-		Auxiliar.carregaArquivo(nomeArquivo);			
+		Ficheiro.leArquivo(nomeArquivo,true);			
 		
-		if (campo <= Auxiliar.getVetor().length){
+		if (campo <= Dados.getVetor().length){
 		
-			for (i = 0; i < Auxiliar.getVetor().length; i++) {		    	
+			for (i = 0; i < Dados.getVetor().length; i++) {		    	
 				vet[i] = i;
-				Prints.msg("\nId: " +i +" " +Auxiliar.vetor[i]);
+				Prints.msg("\nId: " +i +" " +Dados.vetor[i]);
 			}
 			
 			executaBuscaBinaria(campo);
@@ -129,7 +135,8 @@ public class Consultas {
 		} else {
 			Prints.msge("\nId inexistente!");
 		}
-		Auxiliar.setIndex(0); // Limpa vetor para próxima consulta
+		
+		Dados.setIndex(0); // Limpa vetor para próxima consulta
 	}
 
 
@@ -137,18 +144,19 @@ public class Consultas {
 	
 	/**
 	 * 
-	 * @throws IOException
+	 * @throws Exception 
 	 */
-	public void consultaEstruturas() throws IOException{
+	public void consultaEstruturas(String nomeArquivo) throws Exception{
 		
 		switch (Auxiliar.getOpcao()) {
 		
-		case "LISTA":
-			Registrador.leArquivo(Auxiliar.digita("Nome do arquivo"));
+		case "LISTA":			
+			//consultaArquivo(nomeArquivo, Auxiliar.digita("Contato"),true);
 			break;
 
 		case "ARVORE":
-			Prints.objetoNaoImplementado();
+			Ficheiro.leArquivo(nomeArquivo,false);
+			//registrador.insereNovoRegistro(nomeArquivo);
 			break;
 			
 		default:
@@ -156,6 +164,15 @@ public class Consultas {
 			break;
 		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 //====================<< Menu busca >> ========================================================		
 		
@@ -173,7 +190,7 @@ public class Consultas {
 				break;
 
 			case "nome":				
-				consultaArquivo(Auxiliar.digita("Nome do arquivo"),Auxiliar.digita("Contato"),true);
+				consultaEstruturas(Auxiliar.digita("Nome do arquivo"));
 				selecionaComando();
 				break;
 			

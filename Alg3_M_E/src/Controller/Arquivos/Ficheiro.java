@@ -1,17 +1,30 @@
 package  Controller.Arquivos;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
-import java.nio.file.Paths;
+import java.io.IOException;
 import java.nio.file.Path;
-import model.Utilitarios.Include;
+import java.nio.file.Paths;
+
+import model.Dados;
+import model.Utilitarios.Auxiliar;
 import Aplicacao.Prints;
+import Controller.Registrador;
 
-public class Ficheiro {
-	Include in =  new Include();
-	Memoria memoria =  new Memoria();
-
+/**
+ * Classe responsavel pela manupulação do arquivo
+ * @author Neimar,Aurelio
+ */
+public class Ficheiro extends Dados {
 	
+	Memoria memoria =  new Memoria();
+	static String linha;
+	static FileReader file;
+	static BufferedReader buff;	
+
 	/**
 	 * Verificador de memória
 	 * @param nomeAquivo
@@ -56,4 +69,79 @@ public class Ficheiro {
 		Prints.msg("Arquivo encontrado: " + p.toFile());
 	}
 	
+	
+	//=====================<< Leitor global de arquivos >>========================
+
+	public static void leArquivo(String nomeArquivo, boolean criaVetor) throws Exception {
+		
+		try {
+			setValidaArquivo(true); // Habilita execução de ordenador
+			file = new FileReader(nomeArquivo);		
+			buff = new BufferedReader(file);
+			linha = buff.readLine();
+			
+			while(linha != null ) {
+				linha = buff.readLine();
+				index++;
+				
+				if (criaVetor == true){
+					insertVetor(index, criaVetor);
+				}else{
+					Registrador.arquivo(linha);
+				}
+				
+				imprimeDaDos(linha,"", false);
+			
+			}
+			buff.close();	
+			
+		} catch (NullPointerException e) {
+			Prints.msge("\nArquivo carregado em " +Auxiliar.getOpcao().toLowerCase() +" com sucesso!\n");
+					
+		} catch (FileNotFoundException e) {
+			Prints.msge("\nArquivo inexistente\n");
+			setValidaArquivo(false); // Desabilita a execução de ordenador
+				
+		} catch (IOException e) {
+			Prints.msge("\nO arquivo não pode ser fechado.\n");
+		
+		} catch (ArrayIndexOutOfBoundsException e) {
+			Prints.msge("\nEspaço insufiente no array de armazenamento.\n");
+		}		
+	}
+		
+	
+	/**
+	 * Método de carregamento dos dados do arquivo para o vetor e strins
+	 * @param index
+	 * @param criaVetor
+	 */
+	public static void insertVetor(int index, boolean criaVetor) {
+		if (criaVetor == true && linha != null) {
+			vetor[index]= linha;			
+		}
+		
+		if (criaVetor == true && linha == null){
+			for (int i = index; i < vetor.length; i++) { // Complementa o vetor após carregamento dos dados do arquivo
+				vetor[i]= "";
+			}
+		}
+		
+	}	
+	
+	
+	public static void imprimeDaDos(String linha, String campo, boolean filtrar) {
+		
+		if (filtrar == true) { // Imprime dados coincidentes com o parâmetro	
+			if (linha.equals(campo)) {				
+				Prints.msg("> " +linha  + "\n");
+			}else{
+				Prints.msg("\nNão foram encontrado dados coincidentes! " +campo  +"\n");
+			}
+				
+		} else {
+			Prints.msg("> " + linha + "\n");
+		}			
+	}
+		
 }
