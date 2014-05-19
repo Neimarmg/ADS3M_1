@@ -92,14 +92,14 @@ public class Registrador{
 		
 		case "LISTA":
 			gravaDados(nomeArquivo);
-			Ficheiro.leArquivo(nomeArquivo,false); // Lê arquivo após a insersão e padroniza a edição
+			Ficheiro.leArquivo(nomeArquivo, false, "", false); // Lê arquivo após a insersão e padroniza a edição
 			lista.guardaEdicao();;
 			editaArquivo(nomeArquivo);	
 			break;
 
 		case "ARVORE":
 			gravaDados(nomeArquivo);
-			Ficheiro.leArquivo(nomeArquivo,false);
+			Ficheiro.leArquivo(nomeArquivo,false, "", false);
 			arvoreBinaria.guardaEdicao();
 			editaArquivo(nomeArquivo);
 			break;

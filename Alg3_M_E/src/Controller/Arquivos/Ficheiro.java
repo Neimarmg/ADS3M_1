@@ -72,7 +72,7 @@ public class Ficheiro extends Dados {
 	
 	//=====================<< Leitor global de arquivos >>========================
 
-	public static void leArquivo(String nomeArquivo, boolean criaVetor) throws Exception {
+	public static void leArquivo(String nomeArquivo, boolean criaVetor,String campo, boolean filtrar) throws Exception {
 		
 		try {
 			setValidaArquivo(true); // Habilita execução de ordenador
@@ -90,13 +90,13 @@ public class Ficheiro extends Dados {
 					Registrador.arquivo(linha);
 				}
 				
-				imprimeDaDos(linha,"", false);
+				imprimeDaDos(linha,campo, false);
 			
 			}
 			buff.close();	
 			
 		} catch (NullPointerException e) {
-			Prints.msge("\nArquivo carregado em " +Auxiliar.getOpcao().toLowerCase() +" com sucesso!\n");
+			Prints.msg("\nArquivo carregado em " +Auxiliar.getOpcao().toLowerCase() +" com sucesso!\n");
 					
 		} catch (FileNotFoundException e) {
 			Prints.msge("\nArquivo inexistente\n");
@@ -129,16 +129,18 @@ public class Ficheiro extends Dados {
 		
 	}	
 	
-	
+	/**
+	 * Método global de impressão dados 
+	 * @param linha
+	 * @param campo
+	 * @param filtrar
+	 */
 	public static void imprimeDaDos(String linha, String campo, boolean filtrar) {
 		
 		if (filtrar == true) { // Imprime dados coincidentes com o parâmetro	
 			if (linha.equals(campo)) {				
 				Prints.msg("> " +linha  + "\n");
-			}else{
-				Prints.msg("\nNão foram encontrado dados coincidentes! " +campo  +"\n");
-			}
-				
+			}				
 		} else {
 			Prints.msg("> " + linha + "\n");
 		}			

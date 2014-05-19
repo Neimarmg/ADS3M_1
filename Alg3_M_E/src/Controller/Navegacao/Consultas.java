@@ -1,13 +1,7 @@
 package Controller.Navegacao;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-
 import Aplicacao.Menus;
 import Aplicacao.Prints;
-import Controller.Registrador;
 import Controller.Arquivos.Ficheiro;
 import model.Dados;
 import model.Lista.ListaEncadeada;
@@ -23,7 +17,6 @@ public class Consultas {
 	public int contador = 0;
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
 	
-	private BufferedReader br;
 	
 	
 	/**
@@ -34,37 +27,7 @@ public class Consultas {
 		Prints.objetoNaoImplementado();
 	}	
 
-	
-	/**
-	 * Método global de impressão de dados de arquivo 
-	 * @param nomeArquivo
-	 * @param campo
-	 * @param filtrar
-	 * @throws IOException
-	 */
-	public void consultaArquivo(String nomeArquivo,String campo, boolean filtrar) throws IOException {
-		try {
-			FileReader r = new FileReader(nomeArquivo);
-			br = new BufferedReader(r);
-			String linha = br.readLine();
-			Prints.msgc("Registrador encontrados:\n\n");
-			while(linha != null ) {
-				linha = br.readLine();
-				if (filtrar == true) { // Imprime dados coincidentes com o parâmetro	
-					if (linha.equals(campo)) {
-						Prints.msg("> " + linha + "\n");
-					}
-				} else {
-					Prints.msg("> " + linha + "\n");
-				}				
-			}			
-		} catch (NullPointerException e) {
-			e.getMessage();
-		} catch (FileNotFoundException e1) {
-			Prints.msgb("Arquivo inexistente.");
-		}
-	}
-	
+		
 //====================<< Busca binária de registrador >> =======================================	
 	
 	int vet[] = new int [Ficheiro.getVetor().length];
@@ -120,7 +83,7 @@ public class Consultas {
 	 * @throws Exception
 	 */
 	public void carregaBuscaBinaria(String nomeArquivo,int campo) throws Exception {
-		Ficheiro.leArquivo(nomeArquivo,true);			
+		Ficheiro.leArquivo(nomeArquivo,true, "", false);			
 		
 		if (campo <= Dados.getVetor().length){
 		
@@ -155,7 +118,7 @@ public class Consultas {
 			break;
 
 		case "ARVORE":
-			Ficheiro.leArquivo(nomeArquivo,false);
+			Ficheiro.leArquivo(nomeArquivo,false, "", false);
 			//registrador.insereNovoRegistro(nomeArquivo);
 			break;
 			
@@ -200,7 +163,7 @@ public class Consultas {
 				break;		
 			
 			case "arquivo":
-				consultaArquivo(Auxiliar.digita("Nome do arquivo"),"",false);
+				Ficheiro.leArquivo(Auxiliar.digita("Nome do arquivo"), false, "", false);
 				selecionaComando();
 				break;
 				

@@ -132,7 +132,7 @@ public class interacao<T, string> {
 			break;
 			
 		case "imprimir":
-			consultas.consultaArquivo(Auxiliar.digita("Nome do arquivo"),"",false);
+			Ficheiro.leArquivo(Auxiliar.digita("Nome do arquivo\n"), false, "", false);
 			break;
 			
 		case "arquivo":
