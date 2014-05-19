@@ -1,6 +1,5 @@
 package Controller;
 
-import model.Ordenadores;
 import model.Lista.ListaEncadeada;
 import model.Utilitarios.Auxiliar;
 import Aplicacao.Menus;
@@ -14,58 +13,20 @@ import Controller.Navegacao.Consultas;
  * @author 181100053
  *
  * @param <T>
- * @param <string>
  */
-public class interacao<T, string> {
+public class interacao<T> {
 	
 	static Ficheiro ficheiro = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
 	static Consultas consultas = new Consultas();
 	static Memoria memoria =  new Memoria();
-	static Registrador registrador = new Registrador();
-	
-	/**
-	 * Método responsável pela seleção dos comandos para execuçao dos ordenadores
-	 * @throws Exception
-	 */
-	public static void selecionaOrdenador() throws Exception {			
-		
-		Menus.menuOrdenadores();
-		Ordenadores.setNomeOrdenador(Auxiliar.digita(""));
-		switch (Ordenadores.getNomeOrdenador()) {			
-			
-		case "buble":
-			Ordenadores.carregaBubleSort(true);
-			selecionaOrdenador();			
-			break;
-		
-		case "quick":		
-			Ordenadores.carregaQuickSort(true);			
-			selecionaOrdenador();
-			break;
-	
-		case "comparar":
-			Ordenadores.comparaOrdenadores();
-			selecionaOrdenador();
-			break;
-			
-		case "sair":
-			Prints.sair();
-			break;
-				
-		default:
-			Prints.opcaoInvalida();
-			selecionaOrdenador();
-			break;
-		}
-	}
-	
+
 
 	/** 
 	 * @throws Exception
 	 */
 	public static void manipulaAquivo() throws Exception {	
-		Menus.menuInclude("ARQUIVO");
+		Menus.menuArquivo();
 		
 		switch (Auxiliar.digita("")) {
 			
@@ -102,12 +63,9 @@ public class interacao<T, string> {
 	 */
 	public static void verificaInserir() throws Exception {
 		Prints.msg("\nVerificando disco...\n");
-		
-		//Obs. deve ser alerado dependendo da configuração da maquina para < ou > 
-		
-		if (memoria.calcula() > 6000){ // Verifica memória ao inserir dados
+		if (memoria.calcula() < 6000){ // Verifica memória ao inserir dados
 			Prints.msgr("\nVerificação concluída, há memória disponível!\n");
-			registrador.executaComando("l.txt" /*Auxiliar.digita("Nome do arquivo")*/);	
+			Registrador.executaComando(Auxiliar.digita("Nome do arquivo"));	
 			
 		} else {
 			Prints.espacoInsuficiente();			
@@ -116,7 +74,7 @@ public class interacao<T, string> {
 	
 	
 	/**
-	 *	Método com definição das atividades 
+	 *	Método com definição das atividades
 	 * @throws Exception
 	 */
 	public static void iniciaTarefas() throws Exception {
@@ -138,11 +96,7 @@ public class interacao<T, string> {
 		case "arquivo":
 			manipulaAquivo();
 			break;
-			
-		case "ordenar":
-			selecionaOrdenador();
-			break;
-			
+		
 		case "sair":
 			Prints.sair();
 			break;

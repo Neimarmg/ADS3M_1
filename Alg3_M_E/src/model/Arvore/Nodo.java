@@ -9,11 +9,10 @@ import Controller.Registrador;
  * @param <T>
  */
 public class Nodo<T extends Comparable<T>>{
-	protected Nodo<T> pai;
+	private Nodo<T> pai;
 	private Nodo<T> esq;
 	private Nodo<T> dir;
 	private T valor;
-	
 	
 	/**
 	 * Contrutor da classe nodo
@@ -67,14 +66,9 @@ public class Nodo<T extends Comparable<T>>{
 	}
 	
 	
-	
-	public void remove(){	
-		
-	}
-	
-	
 	public void imprime(){
 		Prints.msg("\n" + valor);
+		Registrador.setAcum(Registrador.getAcum() +"\n" +valor); // Acumalador de ordenaçãO
 		if(esq != null){			
 			esq.imprime();	
 		}
@@ -83,55 +77,4 @@ public class Nodo<T extends Comparable<T>>{
 			dir.imprime();				
 		}		
 	}
-	
-	
-	
-	/**
-	 * Metodo responsável por armazenar em terporariamente as alteração dos dados do arquivo
-	 */
-	public void guardaEdicao(){
-		Registrador.setAcum(Registrador.getAcum() +"\n" +valor);
-		if(esq != null){			
-			esq.guardaEdicao();	
-		}
-		
-		if(dir != null){
-			dir.guardaEdicao();				
-		}		
-	}
-	
-	
-	
-	public void travessiaPosFixa(Nodo<T> no){
-		if( no == null )  
-			return;  
-		Prints.msg("\nTravessia pós-fixa :" +no.valor);	
-		travessiaPosFixa(no.dir);
-		travessiaPosFixa(no.esq);					
-		
-	}
-	
-	
-	
-	public void travessiaPreFixa(Nodo<T> no){
-		if( no == null )  
-			return;  
-		travessiaPosFixa(no.dir);
-		travessiaPosFixa(no.esq);
-		Prints.msg("\nTravessia pré-fixa :" +no.valor);	
-		 
-	}
-	
-	
-	
-	public void buscaEmLargura(){
-	
-	}
-	
-	
-	
-	public void buscEmAltura(){
-	
-	}
-	
 }

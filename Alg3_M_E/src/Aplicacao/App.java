@@ -1,7 +1,6 @@
 package Aplicacao;
 
 import java.util.InputMismatchException;
-
 import model.Ordenadores;
 import Controller.interacao;
 import Controller.Navegacao.Consultas;
@@ -56,13 +55,13 @@ public class App {
 				break;
 				
 			case "t4":	
-				Auxiliar.setOpcao("ORDENADORES");
-				iniciaInteracao();	
+				ordenador.selecionaOrdenador();			
 				break;
 				
 			case "t5":
 				Auxiliar.setOpcao("ARVORE"); // Arvore deve ficar sem acentuação pois, se trata de atribução
-				iniciaInteracao();				
+				iniciaInteracao();	
+				//Registrador.executaComando("l.txt");
 				break;
 			
 			case "sair":

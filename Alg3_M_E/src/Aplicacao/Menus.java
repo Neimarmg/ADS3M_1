@@ -11,59 +11,61 @@ public class Menus extends Prints {
 		public static void menuSelecinaAtividade() {		
 			msgb("	QUAL ATIVIDADE?\n\n"
 			+ "=> T1 'Listas Encadeadas'       " + Auxiliar.statusAcao(7,7) + "\n"
-			+ "=> T2 'Pesquisa Binária'        " + Auxiliar.statusAcao(7,7) + "\n"
+			+ "=> T2 'Pesquisa Binária'        " + Auxiliar.statusAcao(7,0) + "\n"
 			+ "=> T4 'Algoritmos de Ordenação' " + Auxiliar.statusAcao(7,7) + "\n"
 			+ "=> T5 'Arvores'                 " + Auxiliar.statusAcao(2,0) + "\n"
 			+ "=> SAIR\n");
 		}
 		
-		/**
-		 * Método responsável pela impressão dos comando de execução de taréfas
-		 */
-		public static void mostarMenuApp() {		
-			String menu = "	O QUE VOCÊ DESEJA FAZER?\n\n";
-				 
-			if (Auxiliar.getOpcao().equals("LISTA") || Auxiliar.getOpcao().equals("ARVORE")) {
-				menu += "=> EXECUTAR  'Executa ações nas estruturas existente'\n" +
-						"=> ARQUIVO   'Propriedades de arquivo'\n";
-			}
-					
-			if (Auxiliar.getOpcao().equals("ORDENADORES")) {
-				menu += "=> ORDENAR  'Executa ordenação de registro em arquivo(s)'\n";
-			}else{
-				menu += "=> CONSULTAR 'Conteúdo do salvo em arquivo(s)'\n";
-			}
-							
-			menu += "=> IMPRIMIR  'Imprime arquivo selecionado'\n" +					
-					"=> SAIR\n";
-			msgb(menu);		
-		}
-
 		
-		/** 
-		 * Métodos responsável pele exibição dos menus de include
+		public static void mostarMenuApp() {		
+			msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
+			+ "=> EXECUTAR  'Executa ações nas estruturas existente'\n"
+			+ "=> CONSULTAR 'Conteúdo do salvo em arquivo(s)'\n"
+			+ "=> IMPRIMIR  'Imprime arquivo selecionado'\n"
+			+ "=> ARQUIVO   'Propriedades de arquivo'\n"
+			+ "=> SAIR\n");
+		}
+		
+		
+		/**	
 		 * @throws Exception
 		 */
-		public static void menuInclude(String include)throws Exception {	
-			String menu =
-					"	OPÇÕES DE INCLUDE\n\n"+
-					"=> NOVO     'Habilita para gravar novo registro'\n"+	
-					"=> REMOVER  'Remove arquivo existente'\n"+
-					"=> IMPRIMIR 'Imprime dados'\n";
-			
-			switch (include) {
-			
-			case "ARQUIVO":			
-				menu += "=> BUSCAR   'Busca lista de arquivos existentes'\n";
-				break;
-				
-			case "DADOS":	
-				menu += "=> EDITAR   'Edita dados do arquivo'\n";
-				break;				
-			}
-			
-			menu += "=> SAIR\n";
-			msgb(menu);		
+		public static void  nomeArquivo()throws Exception {	
+			msgb(
+				"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
+				+"=> Nome.Extensão\n"
+				+"=> SAIR\n"
+			);		
+		}
+		
+		
+		/** 
+		 * @throws Exception
+		 */
+		public static void menuArquivo()throws Exception {	
+			msgb(
+				"	PESQUISAR SE O ARQUIVO EXISTE:\n\n"	
+				+ "=> NOVO    'Cria um novo arquivo em branco'\n"
+				+ "=> BUSCAR  'Busca lista de arquivos existentes'\n"
+				+ "=> REMOVER 'Remove arquivo existente'\n"
+				+ "=> SAIR\n"
+			);		
+		}
+		
+		
+		/** 
+		 * @throws Exception
+		 */
+		public static void menuEditarArquivo()throws Exception {	
+			msgb(
+				"	EDIÇÃO DE ARQUIVO COM ESTRUTURA DE " + Auxiliar.getOpcao() + ":\n\n"	
+				+ "=> NOVO     'Habilita para gravar novo registro'\n"			
+				+ "=> EDITAR   'Edita dados do arquivo'\n"
+				+ "=> REMOVER  'Remove logicamente o registro'\n"
+				+ "=> IMPRIMIR 'Imprime dados ordenados em arquivo'\n"
+				+ "=> SAIR\n"
+			);		
 		}
 		
 		

@@ -1,9 +1,11 @@
 package Controller;
-
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+
 import Aplicacao.Menus;
 import Aplicacao.Prints;
-import Controller.Arquivos.Ficheiro;
 import Controller.Navegacao.Consultas;
 import model.Contatos;
 import model.Arvore.ArvoreBinaria;
@@ -15,15 +17,14 @@ import model.Utilitarios.Include;
 /**
  * Classe responsável pela manipulação de dados em arquivo: edição, exclusão e inserção
  * @author Neimar, Aurélio
- * @param <T>
  */
-public class Registrador{
+public class Registrador {
 	
-	static String acum =""; //Acumulador de dados para edição de arquivo 
-	Consultas consulta = new Consultas();
+	public static String acum =""; //Acumulador de dados para edição de arquivo 
+	static Consultas consulta = new Consultas();
 	static ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	static ArvoreBinaria<String> arvoreBinaria = new ArvoreBinaria<String>();
-
+	
 	
 	public static void setAcum(String acum) {
 		Registrador.acum = acum;
@@ -33,27 +34,43 @@ public class Registrador{
 		return acum;
 	}
 	
-	/**
-	 * Metodo responsavel por receber os dados da leitura do arquivo e insirir nas etruturas		
-	 * @param linha
-	 * @throws Exception
-	 */
-	public static void arquivo(String linha) throws Exception {
-
-		switch (Auxiliar.getOpcao()) {
 	
-		case "LISTA":
-			lista.insert(new Nodo<String>(linha), lista.getHead());
-			break;
+	/**
+	 * Método responsável pela leitura dos dados em arquivo e finalização das alterações
+	 * @param nomeArquivo
+	 * @throws IOException
+	 */
+	public static void leArquivo(String nomeArquivo) throws IOException{		
 		
-		case "ARVORE":
-			arvoreBinaria.insere(new model.Arvore.Nodo<String>(linha));
-			break;
+		try {
+			FileReader file = new FileReader(nomeArquivo);
+			BufferedReader buff = new BufferedReader(file);
+			String linha = buff.readLine();			
+			while(linha != null ){
+				linha = buff.readLine();				
+				
+				switch (Auxiliar.getOpcao()) {
+				
+				case "LISTA":
+					lista.insert(new Nodo<String>(linha), lista.getHead());
+					break;
+				
+				case "ARVORE":
+					arvoreBinaria.insere(new model.Arvore.Nodo<String>(linha));
+					break;
+					
+				default:
+					Prints.opcaoInvalida();
+					break;
+				}
+			}			
+			buff.close();
 			
-		default:
-			Prints.opcaoInvalida();
-			break;
-		}
+		} catch (NullPointerException e) {
+			Prints.msgb("Arquivo em branco.");
+		} catch (FileNotFoundException e1) {
+			Prints.msgb("Arquivo inexistente.");
+		}			
 	}
 	
 	
@@ -61,11 +78,9 @@ public class Registrador{
 	 * Método que le dados do teclado
 	 * @throws Exception
 	 */
-	private void gravaDados(String nomeArquivo) throws Exception {
+	public static void leTeclado() throws Exception {
 		Contatos.setNome(Auxiliar.digita("Contato")); 
 		Contatos.setFone(Auxiliar.digita("Telefone"));
-		Include.setAppend(true);
-		Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); //Insere dado na última linha do arquivo
 	}
 	
 	
@@ -74,38 +89,39 @@ public class Registrador{
 	 * @param nomeArquivo
 	 * @throws IOException
 	 */
-	private void editaArquivo(String nomeArquivo) throws IOException {
+	public static void editaArquivo(String nomeArquivo) throws IOException {
 		Include.setAppend(false);
-		Include.addNovo(nomeArquivo, getAcum());
+		Include.addNovo(nomeArquivo, Registrador.getAcum());
 		setAcum(""); // Parâmetro de limpeza de "cache do acumulador" 
 	}
 	
-					
+	
 	/**
-	 * Método responsável pela insersão de novos registrador 
+	 * Método responsável pela insersão de novos registros 
 	 * @param nomeArquivo
 	 * @throws Exception
 	 */
-	public void insereNovoRegistro(String nomeArquivo) throws Exception {
+	public static void insereNovoRegistro(String nomeArquivo) throws Exception {
+		leTeclado();
+		Include.setAppend(true);
+		Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); //Insere na última linha do arquivo
 		
 		switch (Auxiliar.getOpcao()) {
 		
 		case "LISTA":
-			gravaDados(nomeArquivo);
-			Ficheiro.leArquivo(nomeArquivo,false); // Lê arquivo após a insersão e padroniza a edição
-			lista.guardaEdicao();;
+			leArquivo(nomeArquivo); // Lê arquivo após a insersão e padroniza a edição
+			lista.imprime(true);
 			editaArquivo(nomeArquivo);	
 			break;
 
 		case "ARVORE":
-			gravaDados(nomeArquivo);
-			Ficheiro.leArquivo(nomeArquivo,false);
-			arvoreBinaria.guardaEdicao();
-			editaArquivo(nomeArquivo);
+			leArquivo(nomeArquivo);
+			arvoreBinaria.imprime(true);
+			editaArquivo(nomeArquivo);			
 			break;
 			
 		default:
-			Prints.msge("\nAtividade invalida para!\n");
+			Prints.opcaoInvalida();
 			break;
 		}
 	}
@@ -115,14 +131,14 @@ public class Registrador{
 	 * Método de manipulação de dados de arquivos
 	 * @throws Exception
 	 */
-	public void executaComando(String nomeArquivo) throws Exception {
-		Menus.menuInclude("DADOS");
+	public static void executaComando(String nomeArquivo) throws Exception {
+		Menus.menuEditarArquivo();
 		
 		switch (Auxiliar.digita("")) {
 		
 		case "novo":
 			insereNovoRegistro(nomeArquivo);
-			//executaComando(nomeArquivo); // Loop para novas ações do menu
+			executaComando(nomeArquivo); // Loop para novas ações do menu
 			break;
 		
 		case "editar":

@@ -1,29 +1,16 @@
 package  Controller.Arquivos;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-
-import model.Dados;
-import model.Utilitarios.Auxiliar;
+import java.nio.file.Path;
+import model.Utilitarios.Include;
 import Aplicacao.Prints;
-import Controller.Registrador;
 
-/**
- * Classe responsavel pela manupulação do arquivo
- * @author Neimar,Aurelio
- */
-public class Ficheiro extends Dados {
-	
+public class Ficheiro {
+	Include in =  new Include();
 	Memoria memoria =  new Memoria();
-	static String linha;
-	static FileReader file;
-	static BufferedReader buff;	
+
 	
 	/**
 	 * Verificador de memória
@@ -69,62 +56,4 @@ public class Ficheiro extends Dados {
 		Prints.msg("Arquivo encontrado: " + p.toFile());
 	}
 	
-	
-	//=====================<< Leitor global de arquivos >>========================
-
-	public static void leArquivo(String nomeArquivo, boolean criaVetor) throws Exception {
-		
-		try {
-			setValidaArquivo(true); // Habilita execução de ordenador
-			file = new FileReader(nomeArquivo);		
-			buff = new BufferedReader(file);
-			linha = buff.readLine();
-			
-			while(linha != null ) {
-				linha = buff.readLine();
-				index++;
-				
-				if (criaVetor == true){
-					insertVetor(index, criaVetor);
-				}else{
-					Registrador.arquivo(linha);
-				}
-			}
-			buff.close();	
-			
-		} catch (NullPointerException e) {
-			Prints.msge("\nArquivo carregado em " +Auxiliar.getOpcao().toLowerCase() +" com sucesso!\n");
-					
-		} catch (FileNotFoundException e) {
-			Prints.msge("\nArquivo inexistente\n");
-			setValidaArquivo(false); // Desabilita a execução de ordenador
-				
-		} catch (IOException e) {
-			Prints.msge("\nO arquivo não pode ser fechado.\n");
-		
-		} catch (ArrayIndexOutOfBoundsException e) {
-			Prints.msge("\nEspaço insufiente no array de armazenamento.\n");
-		}		
-	}
-		
-	
-	/**
-	 * Método de carregamento dos dados do arquivo para o vetor e strins
-	 * @param index
-	 * @param criaVetor
-	 */
-	public static void insertVetor(int index, boolean criaVetor) {
-		if (criaVetor == true && linha != null) {
-			vetor[index]= linha;			
-		}
-		
-		if (criaVetor == true && linha == null){
-			for (int i = index; i < vetor.length; i++) { // Complementa o vetor após carregamento dos dados do arquivo
-				vetor[i]= "";
-			}
-		}
-		
-	}	
-	
-		
 }
