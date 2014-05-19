@@ -105,11 +105,10 @@ public class Nodo<T extends Comparable<T>>{
 	public void travessiaPosFixa(Nodo<T> no){
 		if( no == null )  
 			return;  
-		if( no.dir != null ) {
-			Prints.msg("\nPF esp:" +no.valor);	
-			travessiaPosFixa(no.dir);
-			travessiaPosFixa(no.esq);					
-		}   
+		Prints.msg("\nTravessia pós-fixa :" +no.valor);	
+		travessiaPosFixa(no.dir);
+		travessiaPosFixa(no.esq);					
+		
 	}
 	
 	
@@ -117,11 +116,10 @@ public class Nodo<T extends Comparable<T>>{
 	public void travessiaPreFixa(Nodo<T> no){
 		if( no == null )  
 			return;  
-		if( no.dir != null ) {			
-			travessiaPosFixa(no.dir);
-			travessiaPosFixa(no.esq);
-			Prints.msg("\nPF esp:" +no.valor);	
-		} 
+		travessiaPosFixa(no.dir);
+		travessiaPosFixa(no.esq);
+		Prints.msg("\nTravessia pré-fixa :" +no.valor);	
+		 
 	}
 	
 	

@@ -7,6 +7,8 @@ abgail,124578
 acirio,1245896 
 adroaldo,2135465
 carlos,2457878 
+cancio,12335454
+cancio,133545
 carminha,124566
 casemiro,12354155 
 castor,1233285555
@@ -24,3 +26,4 @@ saldanha,132456
 sanpaio,124552556 
 santos,1345646
 teves,235425443
+sartori,4564456

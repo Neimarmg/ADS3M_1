@@ -105,7 +105,7 @@ public class interacao<T, string> {
 		
 		//Obs. deve ser alerado dependendo da configuração da maquina para < ou > 
 		
-		if (memoria.calcula() < 6000){ // Verifica memória ao inserir dados
+		if (memoria.calcula() > 6000){ // Verifica memória ao inserir dados
 			Prints.msgr("\nVerificação concluída, há memória disponível!\n");
 			registrador.executaComando("l.txt" /*Auxiliar.digita("Nome do arquivo")*/);	
 			
@@ -121,7 +121,7 @@ public class interacao<T, string> {
 	 */
 	public static void iniciaTarefas() throws Exception {
 		
-		switch ("executar" /*Auxiliar.digita("")*/) {
+		switch (Auxiliar.digita("")) {
 		
 		case "consultar":	
 			consultas.selecionaComando();			

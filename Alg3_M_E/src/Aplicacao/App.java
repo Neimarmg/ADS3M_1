@@ -43,7 +43,7 @@ public class App {
 	
 		try {		
 			Menus.menuSelecinaAtividade();	
-			switch ("t5"/*Auxiliar.digita("Atividade")*/) {
+			switch (Auxiliar.digita("Atividade")) {
 			
 			case "t1":	
 				Auxiliar.setOpcao("LISTA");

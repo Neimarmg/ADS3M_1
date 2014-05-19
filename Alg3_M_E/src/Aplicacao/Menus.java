@@ -11,7 +11,7 @@ public class Menus extends Prints {
 		public static void menuSelecinaAtividade() {		
 			msgb("	QUAL ATIVIDADE?\n\n"
 			+ "=> T1 'Listas Encadeadas'       " + Auxiliar.statusAcao(7,7) + "\n"
-			+ "=> T2 'Pesquisa Binária'        " + Auxiliar.statusAcao(7,0) + "\n"
+			+ "=> T2 'Pesquisa Binária'        " + Auxiliar.statusAcao(7,7) + "\n"
 			+ "=> T4 'Algoritmos de Ordenação' " + Auxiliar.statusAcao(7,7) + "\n"
 			+ "=> T5 'Arvores'                 " + Auxiliar.statusAcao(2,0) + "\n"
 			+ "=> SAIR\n");

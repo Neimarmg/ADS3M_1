@@ -98,16 +98,10 @@ public class Registrador{
 			break;
 
 		case "ARVORE":
-			//gravaDados(nomeArquivo);
-			
+			gravaDados(nomeArquivo);
 			Ficheiro.leArquivo(nomeArquivo,false);
-			consulta.consultaArquivo(nomeArquivo, "", false);
-			arvoreBinaria.travessiaPosFixa();
-			
-			
-			
-			//arvoreBinaria.guardaEdicao();
-			//editaArquivo(nomeArquivo);			
+			arvoreBinaria.guardaEdicao();
+			editaArquivo(nomeArquivo);
 			break;
 			
 		default:
@@ -122,9 +116,9 @@ public class Registrador{
 	 * @throws Exception
 	 */
 	public void executaComando(String nomeArquivo) throws Exception {
-		//Menus.menuInclude("DADOS");
+		Menus.menuInclude("DADOS");
 		
-		switch ("novo" /*Auxiliar.digita("")*/) {
+		switch (Auxiliar.digita("")) {
 		
 		case "novo":
 			insereNovoRegistro(nomeArquivo);
