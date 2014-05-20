@@ -2,8 +2,10 @@ package Controller.Navegacao;
 
 import Aplicacao.Menus;
 import Aplicacao.Prints;
+import Controller.Registrador;
 import Controller.Arquivos.Ficheiro;
 import model.Dados;
+import model.Arvore.ArvoreBinaria;
 import model.Lista.ListaEncadeada;
 import model.Utilitarios.Auxiliar;
 
@@ -11,11 +13,14 @@ import model.Utilitarios.Auxiliar;
 /**
  * Classe reponsável pelas consultas em todas as estruras.
  * @author Neimar, Aurelio
+ * @param <T>
  */
-public class Consultas {
+public class Consultas<T> {
 	
 	public int contador = 0;
+	Registrador registrador = new Registrador();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
+	ArvoreBinaria<?> arvoreBinaria = new ArvoreBinaria<>();
 	
 	
 	
@@ -118,8 +123,9 @@ public class Consultas {
 			break;
 
 		case "ARVORE":
-			Ficheiro.leArquivo(nomeArquivo,false, null, false, true);
-			//registrador.insereNovoRegistro(nomeArquivo);
+			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
+			arvoreBinaria.imprime();
+			
 			break;
 			
 		default:

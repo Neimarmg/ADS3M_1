@@ -4,7 +4,6 @@ import java.io.IOException;
 import Aplicacao.Menus;
 import Aplicacao.Prints;
 import Controller.Arquivos.Ficheiro;
-import Controller.Navegacao.Consultas;
 import model.Contatos;
 import model.Arvore.ArvoreBinaria;
 import model.Lista.ListaOrdenada;
@@ -20,7 +19,6 @@ import model.Utilitarios.Include;
 public class Registrador{
 	
 	static String acum =""; //Acumulador de dados para edição de arquivo 
-	Consultas consulta = new Consultas();
 	static ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	static ArvoreBinaria<String> arvoreBinaria = new ArvoreBinaria<String>();
 
@@ -32,6 +30,7 @@ public class Registrador{
 	public static String getAcum() {
 		return acum;
 	}
+	
 	
 	/**
 	 * Metodo responsavel por receber os dados da leitura do arquivo e insirir nas etruturas		
@@ -101,6 +100,9 @@ public class Registrador{
 			Ficheiro.leArquivo(nomeArquivo,false, "", false, false);
 			arvoreBinaria.guardaEdicao();
 			editaArquivo(nomeArquivo);
+			Prints.msgl();			
+			arvoreBinaria.contaNodos();
+			
 			break;
 			
 		default:

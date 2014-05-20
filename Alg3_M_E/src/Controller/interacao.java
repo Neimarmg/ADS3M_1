@@ -20,7 +20,7 @@ public class interacao<T, string> {
 	
 	static Ficheiro ficheiro = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
-	static Consultas consultas = new Consultas();
+	static Consultas<?> consultas = new Consultas<>();
 	static Memoria memoria =  new Memoria();
 	static Registrador registrador = new Registrador();
 	
