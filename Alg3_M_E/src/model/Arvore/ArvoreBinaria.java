@@ -84,4 +84,12 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 		raiz.buscaDado(null, campo);
 		nodo.setContador(0);
 	}
+	
+	/**
+	 * Médo complementar de remoção
+	 * @param campo
+	 */
+	public void remove(T campo){
+		raiz.remove(raiz, campo);
+	}
 }

@@ -41,20 +41,20 @@ public class Menus extends Prints {
 
 		
 		/** 
-		 * Métodos responsável pele exibição dos menus de include
+		 * Métodos responsável pele exibição dos menus de include 
 		 * @throws Exception
 		 */
 		public static void menuInclude(String include)throws Exception {	
 			String menu =
 					"	OPÇÕES DE INCLUDE\n\n"+
 					"=> NOVO     'Habilita para gravar novo registro'\n"+	
-					"=> REMOVER  'Remove arquivo existente'\n"+
-					"=> IMPRIMIR 'Imprime dados'\n";
+					"=> REMOVER  'Remove arquivo existente'\n";					
 			
 			switch (include) {
 			
 			case "ARQUIVO":			
-				menu += "=> BUSCAR   'Busca lista de arquivos existentes'\n";
+				menu += "=> BUSCAR   'Busca lista de arquivos existentes'\n"+
+						"=> IMPRIMIR 'Imprime dados'\n";
 				break;
 				
 			case "DADOS":	

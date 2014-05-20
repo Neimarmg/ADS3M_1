@@ -1,10 +1,8 @@
 package Aplicacao;
 
 import java.util.InputMismatchException;
-
 import model.Ordenadores;
 import Controller.interacao;
-import Controller.Navegacao.Consultas;
 import model.Utilitarios.Auxiliar;
 import model.Utilitarios.Dia;
 
@@ -13,7 +11,6 @@ import model.Utilitarios.Dia;
  * @author Neimar, Aurélio
  */
 public class App {
-	Consultas consulta = new Consultas();
 	Ordenadores ordenador = new Ordenadores();
 	
 	

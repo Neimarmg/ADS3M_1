@@ -45,6 +45,7 @@ public class Nodo<T extends Comparable<T>>{
 		this.valor = valor;
 	}
 
+	
 	/**
 	 * Metodo responsavel pela insecao dos objetos na arvore
 	 * @param novo
@@ -68,15 +69,12 @@ public class Nodo<T extends Comparable<T>>{
 			}
 		}
 		return;
-	}
+	}	
 	
 	
-	
-	public void remove(){	
-		
-	}
-	
-	
+	/**
+	 * Método de impressão de toda a árvore	
+	 */
 	public void imprime(){
 		Prints.msg("\n" + valor);
 		if(esq != null){			
@@ -102,8 +100,12 @@ public class Nodo<T extends Comparable<T>>{
 			dir.guardaEdicao();				
 		}		
 	}
-		
 	
+	
+	/**
+	 * Percorre a árvore pós ordem
+	 * @param no
+	 */
 	public void travessiaPosFixa(Nodo<T> no){
 		if( no == null )  
 			return;
@@ -112,8 +114,12 @@ public class Nodo<T extends Comparable<T>>{
 			travessiaPosFixa(no.esq);
 			Prints.msg("\nTravessia pós-fixa :" +no.valor);
 	}
-		
 	
+	
+	/**
+	 * Percorre a árvore pré ordem
+	 * @param no
+	 */
 	public void travessiaPreFixa(Nodo<T> no){
 		if( no == null )  
 			return;  
@@ -124,6 +130,10 @@ public class Nodo<T extends Comparable<T>>{
 	}
 	
 	
+	/**
+	 * Percorre a árvore forma infixa
+	 * @param no
+	 */
 	public void travessiaInfixa(Nodo<T> no){
 		if( no == null )  
 			return;
@@ -134,6 +144,11 @@ public class Nodo<T extends Comparable<T>>{
 	}
 	
 	
+	/**
+	 * Conta novos existentes na árvore
+	 * @param no
+	 * @return
+	 */
 	public int contaNodos(Nodo<T> no){
 	     if(no == null)
 	         return 0;
@@ -142,6 +157,11 @@ public class Nodo<T extends Comparable<T>>{
 	}
 	
 	
+	/**
+	 * Percore arvore a contando o niveis de profundidade
+	 * @param no
+	 * @param nome
+	 */
 	public void buscEmAltura(Nodo<T> no , String nome) {
 		if ( no == null ) {  
 			Prints.msg( " Nivel -1 " );  
@@ -153,19 +173,19 @@ public class Nodo<T extends Comparable<T>>{
 	    	if ( no != null ) {  
 	    		contador ++;  
 	            buscEmAltura(no.dir , nome );  
-	        }  
+	        }
 	    
 	    }else if ( no.valor.compareTo(no.valor) < nome.compareTo(nome)){  
 	    	if( no != null){  
 	    		contador ++;  
 	            buscEmAltura(no.dir , nome );  
-	        }           
-	    }  
+	        } 
+	    }
 	}
 	
 	
 	/**
-	 * 
+	 * Percorre a árvore em busca do elemento solicitado.
 	 * @param no
 	 * @param campo
 	 * @param comparacoes
@@ -173,15 +193,14 @@ public class Nodo<T extends Comparable<T>>{
 	public void buscaDado(Nodo<T> no, T campo){		
 		if (no == null){
 			Prints.msg("\nDado não encontrado na árvore!" +
-					"\nNumero de comparacoes: " + contador);
-			
+					"\nComparacoes: " + contador);			
 		}else {		
 			
 			int comper = campo.compareTo(no.getValor());
 			
 			if ( comper == 0){
 				contador++;
-				Prints.msg(no + "\nNumero de comparacoes: " +contador);				
+				Prints.msg(no + "\nComparacoes: " +contador);				
 			
 			}else if (comper < 0){
 				contador++;
@@ -192,5 +211,15 @@ public class Nodo<T extends Comparable<T>>{
 				buscaDado(no.dir,campo);
 			}
 		}	
-	}	
+	}
+	
+	
+	/**
+	 * Método de remoção " não consegui implementar"
+	 * @param no
+	 * @param campo
+	 */
+	public void remove(Nodo<T> no, T campo){
+		Prints.objetoNaoImplementado();
+	}
 }
