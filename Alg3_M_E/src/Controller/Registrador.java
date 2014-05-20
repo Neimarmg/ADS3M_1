@@ -100,9 +100,6 @@ public class Registrador{
 			Ficheiro.leArquivo(nomeArquivo,false, "", false, false);
 			arvoreBinaria.guardaEdicao();
 			editaArquivo(nomeArquivo);
-			Prints.msgl();			
-			arvoreBinaria.contaNodos();
-			
 			break;
 			
 		default:

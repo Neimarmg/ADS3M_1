@@ -15,6 +15,10 @@ public class Nodo<T extends Comparable<T>>{
 	private T valor;
 	int contador = 0; 
 	
+	public void setContador(int contador) {
+		this.contador = contador;
+	}
+	
 	/**
 	 * Contrutor da classe nodo
 	 * @param valor
@@ -124,9 +128,9 @@ public class Nodo<T extends Comparable<T>>{
 		if( no == null )  
 			return;
 		
-		 	travessiaInfixa(no.dir);
+		 	travessiaInfixa(no.esq);
 			Prints.msg("\nTravessia infixa :" +no.valor);	
-			 travessiaInfixa(no.esq);		 
+			travessiaInfixa(no.dir);		 
 	}
 	
 	
@@ -138,7 +142,7 @@ public class Nodo<T extends Comparable<T>>{
 	}
 	
 	
-	public void buscaEmLargura(Nodo<T> no , String nome) {
+	public void buscEmAltura(Nodo<T> no , String nome) {
 		if ( no == null ) {  
 			Prints.msg( " Nivel -1 " );  
 	    
@@ -148,21 +152,45 @@ public class Nodo<T extends Comparable<T>>{
 	    }else if ( no.valor.compareTo(no.valor) > nome.compareTo(nome)){  
 	    	if ( no != null ) {  
 	    		contador ++;  
-	            buscaEmLargura(no.dir , nome );  
+	            buscEmAltura(no.dir , nome );  
 	        }  
 	    
 	    }else if ( no.valor.compareTo(no.valor) < nome.compareTo(nome)){  
 	    	if( no != null){  
 	    		contador ++;  
-	            buscaEmLargura(no.dir , nome );  
+	            buscEmAltura(no.dir , nome );  
 	        }           
 	    }  
 	}
 	
 	
-	
-	public void buscEmAltura(){
-	
-	}
-	
+	/**
+	 * 
+	 * @param no
+	 * @param campo
+	 * @param comparacoes
+	 */
+	public void buscaDado(Nodo<T> no, T campo){		
+		if (no == null){
+			Prints.msg("\nDado não encontrado na árvore!" +
+					"\nNumero de comparacoes: " + contador);
+			
+		}else {		
+			
+			int comper = campo.compareTo(no.getValor());
+			
+			if ( comper == 0){
+				contador++;
+				Prints.msg(no + "\nNumero de comparacoes: " +contador);				
+			
+			}else if (comper < 0){
+				contador++;
+				buscaDado(no.esq, campo);
+			
+			}else {
+				contador++;
+				buscaDado(no.dir,campo);
+			}
+		}	
+	}	
 }
