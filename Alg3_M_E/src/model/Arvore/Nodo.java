@@ -2,7 +2,7 @@ package model.Arvore;
 
 import Aplicacao.Prints;
 import Controller.Registrador;
-
+	
 /**
  * Classo de gravacao do nodo
  * @author Neimar, Aurelio *
@@ -13,7 +13,7 @@ public class Nodo<T extends Comparable<T>>{
 	private Nodo<T> esq;
 	private Nodo<T> dir;
 	private T valor;
-	
+	int contador = 0; 
 	
 	/**
 	 * Contrutor da classe nodo
@@ -83,8 +83,7 @@ public class Nodo<T extends Comparable<T>>{
 			dir.imprime();				
 		}		
 	}
-	
-	
+		
 	
 	/**
 	 * Metodo responsável por armazenar em terporariamente as alteração dos dados do arquivo
@@ -99,33 +98,65 @@ public class Nodo<T extends Comparable<T>>{
 			dir.guardaEdicao();				
 		}		
 	}
-	
-	
+		
 	
 	public void travessiaPosFixa(Nodo<T> no){
 		if( no == null )  
-			return;  
-		Prints.msg("\nTravessia pós-fixa :" +no.valor);	
-		travessiaPosFixa(no.dir);
-		travessiaPosFixa(no.esq);					
+			return;
 		
+			travessiaPosFixa(no.dir);
+			travessiaPosFixa(no.esq);
+			Prints.msg("\nTravessia pós-fixa :" +no.valor);
 	}
-	
-	
+		
 	
 	public void travessiaPreFixa(Nodo<T> no){
 		if( no == null )  
 			return;  
-		travessiaPosFixa(no.dir);
-		travessiaPosFixa(no.esq);
-		Prints.msg("\nTravessia pré-fixa :" +no.valor);	
-		 
+			
+			Prints.msg("\nTravessia pré-fixa :" +no.valor);	
+			travessiaPreFixa(no.dir);
+			travessiaPreFixa(no.esq);		 
 	}
 	
 	
+	public void travessiaInfixa(Nodo<T> no){
+		if( no == null )  
+			return;
+		
+		 	travessiaInfixa(no.dir);
+			Prints.msg("\nTravessia infixa :" +no.valor);	
+			 travessiaInfixa(no.esq);		 
+	}
 	
-	public void buscaEmLargura(){
 	
+	public int contaNodos(Nodo<T> no){
+	     if(no == null)
+	         return 0;
+	     else 
+	         return 1+contaNodos(no.esq)+contaNodos(no.dir);
+	}
+	
+	
+	public void buscaEmLargura(Nodo<T> no , String nome) {
+		if ( no == null ) {  
+			Prints.msg( " Nivel -1 " );  
+	    
+		}else if ( no.valor.compareTo(no.valor) == nome.compareTo(nome)){  
+	    	Prints.msg(" Nivel " + contador );
+	    
+	    }else if ( no.valor.compareTo(no.valor) > nome.compareTo(nome)){  
+	    	if ( no != null ) {  
+	    		contador ++;  
+	            buscaEmLargura(no.dir , nome );  
+	        }  
+	    
+	    }else if ( no.valor.compareTo(no.valor) < nome.compareTo(nome)){  
+	    	if( no != null){  
+	    		contador ++;  
+	            buscaEmLargura(no.dir , nome );  
+	        }           
+	    }  
 	}
 	
 	

@@ -24,10 +24,8 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 	/**
 	 * @param impressão da árvore
 	 */
-	public void imprime(boolean impr){
-		if (impr == true) {
-			raiz.imprime();
-		}		
+	public void imprime(){
+		raiz.imprime();		
 	}
 	
 	
@@ -46,4 +44,17 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 	public void travessiaPreFixa(){
 		raiz.travessiaPreFixa(raiz);
 	}
+	
+	public void travessiaInfixa(){
+		raiz.travessiaInfixa(raiz);
+	}
+	
+	public int contaNodos(){
+		return raiz.contaNodos(raiz);
+	}
+	
+	public void buscaEmLargura(String nome){
+		raiz.buscaEmLargura(raiz, nome);
+	}
+	
 }

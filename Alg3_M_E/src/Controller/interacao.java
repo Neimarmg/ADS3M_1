@@ -20,7 +20,7 @@ public class interacao<T, string> {
 	
 	static Ficheiro ficheiro = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
-	static Consultas consultas = new Consultas();
+	static Consultas<?> consultas = new Consultas<>();
 	static Memoria memoria =  new Memoria();
 	static Registrador registrador = new Registrador();
 	
@@ -105,7 +105,7 @@ public class interacao<T, string> {
 		
 		//Obs. deve ser alerado dependendo da configuração da maquina para < ou > 
 		
-		if (memoria.calcula() < 6000){ // Verifica memória ao inserir dados
+		if (memoria.calcula() > 6000){ // Verifica memória ao inserir dados
 			Prints.msgr("\nVerificação concluída, há memória disponível!\n");
 			registrador.executaComando("l.txt" /*Auxiliar.digita("Nome do arquivo")*/);	
 			
@@ -132,7 +132,7 @@ public class interacao<T, string> {
 			break;
 			
 		case "imprimir":
-			consultas.consultaArquivo(Auxiliar.digita("Nome do arquivo"),"",false);
+			Ficheiro.leArquivo(Auxiliar.digita("Nome do arquivo"), false, null, false, true);			
 			break;
 			
 		case "arquivo":
