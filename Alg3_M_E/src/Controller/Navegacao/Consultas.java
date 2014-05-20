@@ -47,8 +47,10 @@ public class Consultas<T> {
 	private void imprimeBuscaBinaria(int campo) {		
 		if (localizador == true) {
 			Prints.msgb("	RESULTADO DE BUSCA BINÁRIA\n"
-				+ "\nRegistro encontrado"
-				+ "\n\nPosição [" + meio + "] " + Dados.vetor[meio]);
+				+ "\nRegistro encontrado\n"
+				+ "\n\nPosição [" + meio + "] " + Dados.vetor[meio]
+				+"\n\nTotal de comparações:" +Auxiliar.getContador()+"\n");
+				Auxiliar.setContador(0); //Limpa variável contadora
 		} else {
 		   	Prints.msge("\nNúmero não encontrado");
 		}
@@ -66,13 +68,15 @@ public class Consultas<T> {
 	    while (inicio <= fim && localizador == false) {
 	    	if (vet[meio] == campo) {
 	    		localizador = true;
-
+	    		Auxiliar.setContador(Auxiliar.getContador()+1);
 	    	} else {
-	    		
+	    		Auxiliar.setContador(Auxiliar.getContador()+1);
 	        	if (campo < vet[meio]) {
-	        		fim = meio - 1;	        	
+	        		fim = meio - 1;	  
+	        		Auxiliar.setContador(Auxiliar.getContador()+1);
 	            }else {
 	            	inicio = meio + 1;
+	            	Auxiliar.setContador(Auxiliar.getContador()+1);
 	            }
 	        	meio = (inicio + fim) / 2;
 	       }

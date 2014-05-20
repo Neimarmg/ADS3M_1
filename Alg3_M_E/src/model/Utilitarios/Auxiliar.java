@@ -11,7 +11,7 @@ import Aplicacao.Prints;
 public class Auxiliar {
 	static Scanner var = new Scanner(System.in);
 	static String opcao; // Variável global de apoio para parâmetro "strings"
-	
+	static int contador = 0; // Variável global contadora de açãoes 
 	
 	public static void setOpcao(String opcao) {
 		Auxiliar.opcao = opcao;
@@ -21,6 +21,13 @@ public class Auxiliar {
 		return opcao;
 	}
 	
+	public static void setContador(int contador) {
+		Auxiliar.contador = contador;
+	}
+	
+	public static int getContador() {
+		return contador;
+	}
 	
 	/**
 	 * Método de definção de status das atividades do programa
