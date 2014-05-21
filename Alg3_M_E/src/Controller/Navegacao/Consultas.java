@@ -23,7 +23,6 @@ public class Consultas<T> {
 	ArvoreBinaria<?> arvoreBinaria = new ArvoreBinaria<>();
 	
 	
-	
 	/**
 	 * Método que realiza ficheiro navegação entre os registrador 
 	 * @param nomeArquivo
@@ -51,6 +50,7 @@ public class Consultas<T> {
 				+ "\n\nPosição [" + meio + "] " + Dados.vetor[meio]
 				+"\n\nTotal de comparações:" +Auxiliar.getContador()+"\n");
 				Auxiliar.setContador(0); //Limpa variável contadora
+				
 		} else {
 		   	Prints.msge("\nNúmero não encontrado");
 		}
@@ -84,7 +84,6 @@ public class Consultas<T> {
 	}
 	
 
-	
 	/**
 	 * Método responsável pelo carregamento do arquivo.
 	 * @param nomeArquivo
