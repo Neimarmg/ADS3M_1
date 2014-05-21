@@ -90,19 +90,16 @@ public class Registrador{
 		
 		case "LISTA":
 			gravaDados(nomeArquivo);
-			Ficheiro.leArquivo(nomeArquivo, false, "", false, false); // Lê arquivo após a insersão e padroniza a edição
+			Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Lê arquivo após a insersão e padroniza a edição
 			lista.guardaEdicao();;
 			editaArquivo(nomeArquivo);	
 			break;
 
 		case "ARVORE":
 			gravaDados(nomeArquivo);
-			Ficheiro.leArquivo(nomeArquivo,false, "", false, false);
+			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
 			arvoreBinaria.guardaEdicao();
 			editaArquivo(nomeArquivo);
-			Prints.msgl();			
-			arvoreBinaria.contaNodos();
-			
 			break;
 			
 		default:
@@ -131,11 +128,6 @@ public class Registrador{
 			executaComando(nomeArquivo);
 			break;
 			
-		case "imprimir":
-			Ficheiro.leArquivo(nomeArquivo, false, null, false, true);
-			executaComando(nomeArquivo); // Loop para novas ações do menu
-			break;
-		
 		case  "remover" :			
 			Include.setAppend(false); // Desabilita "append" para sobscrever dados no arquivo
 			Include.remove(nomeArquivo,Auxiliar.digita("\nDigite um contato para excluir"));

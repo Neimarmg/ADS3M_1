@@ -1,5 +1,6 @@
 package model.Arvore;
 
+import model.Utilitarios.Auxiliar;
 import Aplicacao.Prints;
 import Controller.Registrador;
 	
@@ -13,7 +14,7 @@ public class Nodo<T extends Comparable<T>>{
 	private Nodo<T> esq;
 	private Nodo<T> dir;
 	private T valor;
-	int contador = 0; 
+	
 	
 	/**
 	 * Contrutor da classe nodo
@@ -41,6 +42,7 @@ public class Nodo<T extends Comparable<T>>{
 		this.valor = valor;
 	}
 
+	
 	/**
 	 * Metodo responsavel pela insecao dos objetos na arvore
 	 * @param novo
@@ -64,15 +66,12 @@ public class Nodo<T extends Comparable<T>>{
 			}
 		}
 		return;
-	}
+	}	
 	
 	
-	
-	public void remove(){	
-		
-	}
-	
-	
+	/**
+	 * Método de impressão de toda a árvore	
+	 */
 	public void imprime(){
 		Prints.msg("\n" + valor);
 		if(esq != null){			
@@ -98,8 +97,12 @@ public class Nodo<T extends Comparable<T>>{
 			dir.guardaEdicao();				
 		}		
 	}
-		
 	
+	
+	/**
+	 * Percorre a árvore pós ordem
+	 * @param no
+	 */
 	public void travessiaPosFixa(Nodo<T> no){
 		if( no == null )  
 			return;
@@ -108,8 +111,12 @@ public class Nodo<T extends Comparable<T>>{
 			travessiaPosFixa(no.esq);
 			Prints.msg("\nTravessia pós-fixa :" +no.valor);
 	}
-		
 	
+	
+	/**
+	 * Percorre a árvore pré ordem
+	 * @param no
+	 */
 	public void travessiaPreFixa(Nodo<T> no){
 		if( no == null )  
 			return;  
@@ -120,16 +127,25 @@ public class Nodo<T extends Comparable<T>>{
 	}
 	
 	
+	/**
+	 * Percorre a árvore forma infixa
+	 * @param no
+	 */
 	public void travessiaInfixa(Nodo<T> no){
 		if( no == null )  
 			return;
 		
-		 	travessiaInfixa(no.dir);
+		 	travessiaInfixa(no.esq);
 			Prints.msg("\nTravessia infixa :" +no.valor);	
-			 travessiaInfixa(no.esq);		 
+			travessiaInfixa(no.dir);		 
 	}
 	
 	
+	/**
+	 * Conta novos existentes na árvore
+	 * @param no
+	 * @return
+	 */
 	public int contaNodos(Nodo<T> no){
 	     if(no == null)
 	         return 0;
@@ -138,31 +154,69 @@ public class Nodo<T extends Comparable<T>>{
 	}
 	
 	
-	public void buscaEmLargura(Nodo<T> no , String nome) {
+	/**
+	 * Percore arvore a contando o niveis de profundidade
+	 * @param no
+	 * @param nome
+	 */
+	public void buscEmAltura(Nodo<T> no , String nome) {
 		if ( no == null ) {  
 			Prints.msg( " Nivel -1 " );  
 	    
 		}else if ( no.valor.compareTo(no.valor) == nome.compareTo(nome)){  
-	    	Prints.msg(" Nivel " + contador );
+	    	Prints.msg(" Nivel " +Auxiliar.getContador());
 	    
 	    }else if ( no.valor.compareTo(no.valor) > nome.compareTo(nome)){  
 	    	if ( no != null ) {  
-	    		contador ++;  
-	            buscaEmLargura(no.dir , nome );  
-	        }  
+	    		Auxiliar.setContador(Auxiliar.getContador()+1); //Contador  
+	            buscEmAltura(no.dir , nome );  
+	        }
 	    
 	    }else if ( no.valor.compareTo(no.valor) < nome.compareTo(nome)){  
 	    	if( no != null){  
-	    		contador ++;  
-	            buscaEmLargura(no.dir , nome );  
-	        }           
-	    }  
+	    		Auxiliar.setContador(Auxiliar.getContador()+1); //Contador    
+	            buscEmAltura(no.dir , nome );  
+	        } 
+	    }
 	}
 	
 	
-	
-	public void buscEmAltura(){
-	
+	/**
+	 * Percorre a árvore em busca do elemento solicitado.
+	 * @param no
+	 * @param campo
+	 * @param comparacoes
+	 */
+	public void buscaDado(Nodo<T> no, T campo){		
+		if (no == null){
+			Prints.msg("\nDado não encontrado na árvore!" +
+					"\nComparacoes: " +Auxiliar.getContador());			
+		}else {		
+			
+			int comper = campo.compareTo(no.getValor());
+			
+			if ( comper == 0){
+				Auxiliar.setContador(Auxiliar.getContador()+1); //Contador  
+				Prints.msg(no + "\nComparacoes: " +Auxiliar.getContador());				
+			
+			}else if (comper < 0){
+				Auxiliar.setContador(Auxiliar.getContador()+1); //Contador  
+				buscaDado(no.esq, campo);
+			
+			}else {
+				Auxiliar.setContador(Auxiliar.getContador()+1); //Contador  
+				buscaDado(no.dir,campo);
+			}
+		}	
 	}
 	
+	
+	/**
+	 * Método de remoção " não consegui implementar"
+	 * @param no
+	 * @param campo
+	 */
+	public void remove(Nodo<T> no, T campo){
+		Prints.objetoNaoImplementado();
+	}
 }

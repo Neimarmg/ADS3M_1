@@ -15,7 +15,7 @@ public class Appt3 {
 	/**
 	 * @throws Exception
 	 */
-	private void run() throws Exception {
+	public void run() throws Exception {
 		escreveCabecalho();
 		dia.defineSaudacao();
 		Menus.menuMain();

@@ -6,7 +6,9 @@ acirio,1245896
 adroaldo,2135465
 corvam,135466
 austór,1321456
+altero,12313468
 castor,1231321234
+cassio,54695656
 dandara,1345445
 luisao,123456
 jeronio,1234646
@@ -29,3 +31,4 @@ zandia,132456456
 zerbalo,132145646
 ábaco,1323644
 ábgail,124578 
+ábago,132456

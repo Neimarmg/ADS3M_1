@@ -11,7 +11,6 @@ import Controller.Arquivos.Ficheiro;
 public class Ordenadores {
 	
 	static int topo;
-	static int comparacoes;
 	static long tempoExecucao;
 	static String aux;
 	static String pivo;
@@ -54,12 +53,12 @@ public class Ordenadores {
 	         		if (ordem == true) {	         			
 		                if (Dados.vetor[i].compareTo(Dados.vetor[j]) > 0) { // Ordem crescente  
 		                   	trocasItensBubleSort(i, j);
-			                comparacoes++;
+		                   	Auxiliar.setContador(Auxiliar.getContador()+1);
 		                }
 	         		} else {
 		                if (Dados.vetor[i].compareTo(Dados.vetor[j]) < 0) { // Ordem decrescente  
 		                	trocasItensBubleSort(i, j);
-		                	comparacoes++;
+		                	Auxiliar.setContador(Auxiliar.getContador()+1);
 		                }
 	         		} 
 	         	}	         	
@@ -120,14 +119,14 @@ public class Ordenadores {
 		    		vet[topo] = vet[i];
 			    	vet[i] = vet[topo + 1];		            
 			    	 topo++;
-			    	comparacoes++;
+			    	 Auxiliar.setContador(Auxiliar.getContador()+1);
 		    	}
 		    } else {
 		    	if (vet[i].compareTo(pivo) > 0) {
 		    		vet[topo] = vet[i];
 			    	vet[i] = vet[topo + 1];		            
 			    	topo++;
-			    	comparacoes++;
+			    	Auxiliar.setContador(Auxiliar.getContador()+1);
 		    	}	
 		    }
 	    	tempoExecucao  = System.currentTimeMillis();
@@ -233,9 +232,10 @@ public class Ordenadores {
 			Prints.msg(
 				"\nDADOS ESTATÍSTICOS DA ORDENAÇÃO " + nomeOrdenador.toUpperCase()
 				+ "\nTamanho do vetor: " + Dados.getVetor().length
-				+ "\nTotal de comparacoes: " + comparacoes
+				+ "\nTotal de comparacoes: " + Auxiliar.getContador()
 				+ "\nTempo total: " + tempoExecucao + "mls\n");
 		}
+		Auxiliar.setContador(0);
 	}
 	
 	

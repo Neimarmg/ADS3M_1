@@ -83,6 +83,11 @@ public class interacao<T, string> {
 			ficheiro.remove(Auxiliar.digita("Nome do arquivo"));
 			manipulaAquivo();
 			break;
+			
+		case "imprimir":
+			Ficheiro.leArquivo(Auxiliar.digita("Nome do arquivo"), false, null, false, true);
+			manipulaAquivo();
+			break;
 		
 		case "sair":
 			Prints.sair();
@@ -107,7 +112,7 @@ public class interacao<T, string> {
 		
 		if (memoria.calcula() > 6000){ // Verifica memória ao inserir dados
 			Prints.msgr("\nVerificação concluída, há memória disponível!\n");
-			registrador.executaComando("l.txt" /*Auxiliar.digita("Nome do arquivo")*/);	
+			registrador.executaComando(Auxiliar.digita("Nome do arquivo"));	
 			
 		} else {
 			Prints.espacoInsuficiente();			
