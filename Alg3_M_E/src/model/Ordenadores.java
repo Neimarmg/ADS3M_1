@@ -186,7 +186,6 @@ public class Ordenadores {
 		nomeOrdenador = "QUICK SORT COMPARADA";
 		carregaBubleSort(false);
 		informaStatistica(true);
-		//selecionaOrdenador();
 	}
 	
 	
