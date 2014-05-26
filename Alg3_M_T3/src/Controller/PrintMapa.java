@@ -1,13 +1,13 @@
-package View;
+package Controller;
 
 import Model.MapaMod;
-import Model.Utilitarios.Prints;
+import View.Prints;
 
 /**
  * Classe de impressão dos dados do mapaMod
  * @author Naimar, Aurélio
  */
-public class MapaView {
+public class PrintMapa {
 	int j,i;
 	char letra = 'A';
 	MapaMod mapaMod = new MapaMod();
@@ -60,6 +60,7 @@ public class MapaView {
 			Prints.msgb("Não foi possível imprimir o mapaMod!");
 			Prints.msg("" +MapaMod.getLinha() + "x" + MapaMod.getColuna() + "\n\n");
 		}
+		setLetra('A');
 	}
 	
 	/**
