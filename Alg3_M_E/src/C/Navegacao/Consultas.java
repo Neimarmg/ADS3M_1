@@ -125,9 +125,10 @@ public class Consultas<T> {
 			//consultaArquivo(nomeArquivo, Auxiliar.digita("Contato"),true);
 			break;
 
-		case "ARVORE":
+		case "ARVORE":			
 			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
-			arvoreBinaria.imprime();
+			arvoreBinaria.travessiaInfixa();
+			
 	
 			break;
 			

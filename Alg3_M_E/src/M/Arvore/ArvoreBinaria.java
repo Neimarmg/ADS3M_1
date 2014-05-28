@@ -1,17 +1,19 @@
 package M.Arvore;
 
+import App.View;
 import M.Utilitarios.Auxiliar;
 
 
 /**
- * 
- * @author Neimar, aurelio
+ * Classe de execução da arvore binária
+ * @author Neimar, Aurélio
  * @param <T>
  */
 public class ArvoreBinaria<T extends Comparable<T>>{
 	private Nodo<T> raiz;
 
 	Nodo<T> nodo =  new Nodo<T>(null);
+	
 	
 	/**
 	 * Método de inserção na arvore
@@ -22,14 +24,20 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 			raiz = novo;
 		}else{
 			raiz.insere(novo);
-		}
+		}		
 	}
+	
 	
 	/**
 	 * @param impressão da árvore
+	 * @throws Exception 
 	 */
-	public void imprime(){
-		raiz.imprime();		
+	public void imprime() throws Exception{
+		if (raiz != null) {
+			raiz.imprime();			
+		} else {
+			View.msg("\nnull");
+		}
 	}
 	
 	

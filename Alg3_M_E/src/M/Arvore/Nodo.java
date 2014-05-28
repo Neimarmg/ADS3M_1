@@ -72,8 +72,10 @@ public class Nodo<T extends Comparable<T>>{
 	/**
 	 * Método de impressão de toda a árvore	
 	 */
-	public void imprime(){
+	public void imprime() {
+		
 		View.msg("\n" + valor);
+		
 		if(esq != null){			
 			esq.imprime();	
 		}
@@ -82,7 +84,7 @@ public class Nodo<T extends Comparable<T>>{
 			dir.imprime();				
 		}		
 	}
-		
+	
 	
 	/**
 	 * Metodo responsável por armazenar em terporariamente as alteração dos dados do arquivo
