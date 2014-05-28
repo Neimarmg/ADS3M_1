@@ -16,7 +16,6 @@ import M.Utilitarios.Auxiliar;
  */
 public class Consultas<T> {
 	
-	public int contador = 0;
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
 	
 	
@@ -46,7 +45,7 @@ public class Consultas<T> {
 				+ "\nRegistro encontrado\n"
 				+ "\n\nPosição [" + meio + "] " + Dados.vetor[meio]
 				+"\n\nTotal de comparações:" +Auxiliar.getContador()+"\n");
-				Auxiliar.setContador(0); //Limpa variável contadora
+				Auxiliar.setContador(false); //Limpa variável contadora
 				
 		} else {
 		   	View.msge("\nNúmero não encontrado");
@@ -65,15 +64,15 @@ public class Consultas<T> {
 	    while (inicio <= fim && localizador == false) {
 	    	if (vet[meio] == campo) {
 	    		localizador = true;
-	    		Auxiliar.setContador(Auxiliar.getContador()+1);
+	    		Auxiliar.setContador(true);
 	    	} else {
-	    		Auxiliar.setContador(Auxiliar.getContador()+1);
+	    		Auxiliar.setContador(true);
 	        	if (campo < vet[meio]) {
 	        		fim = meio - 1;	  
-	        		Auxiliar.setContador(Auxiliar.getContador()+1);
+	        		Auxiliar.setContador(true);
 	            }else {
 	            	inicio = meio + 1;
-	            	Auxiliar.setContador(Auxiliar.getContador()+1);
+	            	Auxiliar.setContador(true);
 	            }
 	        	meio = (inicio + fim) / 2;
 	       }

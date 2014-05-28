@@ -17,14 +17,16 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 		Nodo<T> anterior = null;
 		
 		while (atual != null) {
-			int comp = atual.compareTo(novo);
-			if (comp < 0) {
+			
+			if (atual.compareTo(novo) < 0) {
 				anterior = atual;
 				atual = atual.getNext();
 			}
-			if (comp == 0)
+			
+			if (atual.compareTo(novo) == 0)
 				return atual;
-			if (comp > 0)
+			
+			if (atual.compareTo(novo) > 0)
 				return anterior;
 		}
 		return anterior;

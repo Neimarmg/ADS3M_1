@@ -55,7 +55,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	public void guardaEdicao() {
 		Nodo<?> nodo = head;
 		do {	
-			Registrador.setAcum(Registrador.getAcum() +"\n" +nodo.getData()); // Acumalador de ordenação
+			Registrador.setAcum("\n" +nodo.getData()); // Acumalador de ordenação
 			nodo = nodo.getNext();
 		} while (nodo != null);	
 	}

@@ -77,7 +77,7 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 	 */
 	public void buscEmAltura(String nome){
 		raiz.buscEmAltura(raiz, nome);
-		Auxiliar.setContador(0); //Limpa contador
+		Auxiliar.setContador(false); //Limpa contador
 	}	
 	
 	/**
@@ -86,7 +86,7 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 	 */
 	public void buscaDado(T campo){
 		raiz.buscaDado(null, campo);
-		Auxiliar.setContador(0); //Limpa contador
+		Auxiliar.setContador(false); //Limpa contador
 	}
 	
 	/**

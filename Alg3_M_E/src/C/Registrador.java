@@ -28,7 +28,7 @@ public class Registrador{
 	}
 	
 	public static void setAcum(String acum) {
-		Registrador.acum = acum;
+		Registrador.acum += acum;
 	}
 		
 	public static String getAcum() {
@@ -104,7 +104,6 @@ public class Registrador{
 			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
 			arvoreBinaria.guardaEdicao();
 			editaArquivo(nomeArquivo);			
-			arvoreBinaria.imprime();
 			break;
 			
 		default:

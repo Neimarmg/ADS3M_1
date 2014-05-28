@@ -23,11 +23,14 @@ public class Auxiliar {
 		return opcao;
 	}
 	
-	
+	/**
+	 * 
+	 * @param contar
+	 */
 	public static void setContador(boolean contar) {
-		if (contar == true)
-			Auxiliar.contador++; // Conta ações em tempo de execução
-		}else {
+		if (contar == true){
+			Auxiliar.contador++; // Conta a��es em tempo de execução
+		}else{
 			Auxiliar.contador = 0; //Limpa váriavel contadorea
 		}
 	}

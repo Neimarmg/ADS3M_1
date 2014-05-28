@@ -90,7 +90,7 @@ public class Nodo<T extends Comparable<T>>{
 	 * Metodo responsável por armazenar em terporariamente as alteração dos dados do arquivo
 	 */
 	public void guardaEdicao(){
-		Registrador.setAcum(Registrador.getAcum() +"\n" +valor);
+		Registrador.setAcum("\n" +valor);
 		if(esq != null){			
 			esq.guardaEdicao();	
 		}
@@ -170,13 +170,13 @@ public class Nodo<T extends Comparable<T>>{
 	    
 	    }else if ( no.valor.compareTo(no.valor) > nome.compareTo(nome)){  
 	    	if ( no != null ) {  
-	    		Auxiliar.setContador(Auxiliar.getContador()+1); //Contador  
+	    		Auxiliar.setContador(true); //Contador  
 	            buscEmAltura(no.dir , nome );  
 	        }
 	    
 	    }else if ( no.valor.compareTo(no.valor) < nome.compareTo(nome)){  
 	    	if( no != null){  
-	    		Auxiliar.setContador(Auxiliar.getContador()+1); //Contador    
+	    		Auxiliar.setContador(true); //Contador    
 	            buscEmAltura(no.dir , nome );  
 	        } 
 	    }
@@ -198,15 +198,15 @@ public class Nodo<T extends Comparable<T>>{
 			int comper = campo.compareTo(no.getValor());
 			
 			if ( comper == 0){
-				Auxiliar.setContador(Auxiliar.getContador()+1); //Contador  
+				Auxiliar.setContador(true); //Contador  
 				View.msg(no + "\nComparacoes: " +Auxiliar.getContador());				
 			
 			}else if (comper < 0){
-				Auxiliar.setContador(Auxiliar.getContador()+1); //Contador  
+				Auxiliar.setContador(true); //Contador  
 				buscaDado(no.esq, campo);
 			
 			}else {
-				Auxiliar.setContador(Auxiliar.getContador()+1); //Contador  
+				Auxiliar.setContador(true); //Contador  
 				buscaDado(no.dir,campo);
 			}
 		}	

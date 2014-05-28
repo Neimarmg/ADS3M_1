@@ -53,12 +53,12 @@ public class Ordenadores {
 	         		if (ordem == true) {	         			
 		                if (Dados.vetor[i].compareTo(Dados.vetor[j]) > 0) { // Ordem crescente  
 		                   	trocasItensBubleSort(i, j);
-		                   	Auxiliar.setContador(Auxiliar.getContador()+1);
+		                   	Auxiliar.setContador(true);
 		                }
 	         		} else {
 		                if (Dados.vetor[i].compareTo(Dados.vetor[j]) < 0) { // Ordem decrescente  
 		                	trocasItensBubleSort(i, j);
-		                	Auxiliar.setContador(Auxiliar.getContador()+1);
+		                	Auxiliar.setContador(true);
 		                }
 	         		} 
 	         	}	         	
@@ -119,14 +119,14 @@ public class Ordenadores {
 		    		vet[topo] = vet[i];
 			    	vet[i] = vet[topo + 1];		            
 			    	 topo++;
-			    	 Auxiliar.setContador(Auxiliar.getContador()+1);
+			    	 Auxiliar.setContador(true);
 		    	}
 		    } else {
 		    	if (vet[i].compareTo(pivo) > 0) {
 		    		vet[topo] = vet[i];
 			    	vet[i] = vet[topo + 1];		            
 			    	topo++;
-			    	Auxiliar.setContador(Auxiliar.getContador()+1);
+			    	Auxiliar.setContador(true);
 		    	}	
 		    }
 	    	tempoExecucao  = System.currentTimeMillis();
@@ -234,7 +234,7 @@ public class Ordenadores {
 				+ "\nTotal de comparacoes: " + Auxiliar.getContador()
 				+ "\nTempo total: " + tempoExecucao + "mls\n");
 		}
-		Auxiliar.setContador(0);
+		Auxiliar.setContador(false);
 	}
 	
 	
