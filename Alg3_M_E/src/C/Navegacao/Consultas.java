@@ -128,7 +128,7 @@ public class Consultas<T> {
 		case "ARVORE":			
 			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
 			arvoreBinaria.travessiaInfixa();
-			
+			arvoreBinaria.imprime();
 	
 			break;
 			
