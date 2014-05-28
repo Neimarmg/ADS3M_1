@@ -1,6 +1,5 @@
 package M.Arvore;
 
-import App.View;
 import M.Utilitarios.Auxiliar;
 
 
@@ -33,13 +32,8 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 	 * @throws Exception 
 	 */
 	public void imprime() throws Exception{
-		if (raiz != null) {
-			raiz.imprime();			
-		} else {
-			View.msg("\nnull");
-		}
-	}
-	
+		raiz.imprime();			
+	}	
 	
 	/**
 	 * Metodo responsável por armazenar em terporariamente as alteração dos dados do arquivo

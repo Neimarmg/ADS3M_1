@@ -23,6 +23,9 @@ public class Registrador{
 	static ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	static ArvoreBinaria<String> arvoreBinaria = new ArvoreBinaria<String>();
 
+	public static ArvoreBinaria<String> getArvoreBinaria() {
+		return arvoreBinaria;
+	}
 	
 	public static void setAcum(String acum) {
 		Registrador.acum = acum;

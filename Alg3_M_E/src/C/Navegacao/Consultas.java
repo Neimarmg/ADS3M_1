@@ -5,7 +5,6 @@ import App.View;
 import C.Registrador;
 import C.Arquivos.Ficheiro;
 import M.Dados;
-import M.Arvore.ArvoreBinaria;
 import M.Lista.ListaEncadeada;
 import M.Utilitarios.Auxiliar;
 
@@ -18,9 +17,7 @@ import M.Utilitarios.Auxiliar;
 public class Consultas<T> {
 	
 	public int contador = 0;
-	Registrador registrador = new Registrador();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
-	ArvoreBinaria<?> arvoreBinaria = new ArvoreBinaria<>();
 	
 	
 	/**
@@ -117,7 +114,7 @@ public class Consultas<T> {
 	 * 
 	 * @throws Exception 
 	 */
-	public void consultaEstruturas(String nomeArquivo) throws Exception{
+	public static void consultaEstruturas(String nomeArquivo) throws Exception{
 		
 		switch (Auxiliar.getOpcao()) {
 		
@@ -127,8 +124,7 @@ public class Consultas<T> {
 
 		case "ARVORE":			
 			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
-			arvoreBinaria.travessiaInfixa();
-			arvoreBinaria.imprime();
+			Registrador.getArvoreBinaria().imprime();
 	
 			break;
 			
