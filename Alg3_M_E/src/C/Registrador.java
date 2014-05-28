@@ -100,7 +100,7 @@ public class Registrador{
 			gravaDados(nomeArquivo);
 			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
 			arvoreBinaria.guardaEdicao();
-			editaArquivo(nomeArquivo);
+			editaArquivo(nomeArquivo);			
 			break;
 			
 		default:

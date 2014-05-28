@@ -110,7 +110,7 @@ public class interacao<T, string> {
 		
 		//Obs. deve ser alerado dependendo da configuração da maquina para < ou > 
 		
-		if (memoria.calcula() > 6000){ // Verifica memória ao inserir dados
+		if (memoria.calcula() < 6000){ // Verifica memória ao inserir dados
 			View.msgr("\nVerificação concluída, há memória disponível!\n");
 			registrador.executaComando(Auxiliar.digita("Nome do arquivo"));	
 			

@@ -128,7 +128,7 @@ public class Consultas<T> {
 		case "ARVORE":
 			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
 			arvoreBinaria.imprime();
-			
+	
 			break;
 			
 		default:
