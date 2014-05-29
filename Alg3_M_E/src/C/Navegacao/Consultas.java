@@ -2,6 +2,7 @@ package C.Navegacao;
 
 import App.Menus;
 import App.View;
+import C.Registrador;
 import C.Arquivos.Ficheiro;
 import M.Dados;
 import M.Lista.ListaEncadeada;
@@ -11,7 +12,6 @@ import M.Utilitarios.Auxiliar;
 /**
  * Classe reponsável pelas consultas em todas as estruras.
  * @author Neimar, Aurelio
- * @param <T>
  */
 public class Consultas {
 	
@@ -127,30 +127,70 @@ public class Consultas {
 			Menus.menuConsultas();					
 			switch (Auxiliar.digita("")) {
 			
-			case "navegar":
-				View.objetoNaoImplementado();				
+			case "novo":				
+				View.objetoNaoImplementado();
 				selecionaComando(nomeArquivo);
 				break;
-
-			case "nome":				
 			
+			case "remover":				
+				View.objetoNaoImplementado();
+				selecionaComando(nomeArquivo);
+				break;
+				
+			case "posfixa":				
+				Registrador.getArvoreBinaria().travessiaPosFixa();
+				selecionaComando(nomeArquivo);
+				break;
+			
+			case "prefixa":				
+				Registrador.getArvoreBinaria().travessiaPreFixa();
+				selecionaComando(nomeArquivo);
+				break;
+			
+			case "infixa":				
+				Registrador.getArvoreBinaria().travessiaInfixa();
+				selecionaComando(nomeArquivo);
+				break;
+			
+			case "contar":				
+				Registrador.getArvoreBinaria().contaNodos();
+				selecionaComando(nomeArquivo);
+				break;
+			
+			case "altura":				
+				Registrador.getArvoreBinaria().buscEmAltura(nomeArquivo);
+				selecionaComando(nomeArquivo);
+				break;
+			
+			case "profundidade":				
+				View.objetoNaoImplementado();
 				selecionaComando(nomeArquivo);
 				break;
 			
 			case "id":				
-				carregaBuscaBinaria(Auxiliar.digita("Nome do arquivo"),	Auxiliar.digitaNumero("Nome a ser localizado"));
-				selecionaComando(nomeArquivo);
-				break;		
-			
-			case "arquivo":
-				Ficheiro.leArquivo(Auxiliar.digita("Nome do arquivo"), false, "", false, true);
+				carregaBuscaBinaria(nomeArquivo, Auxiliar.digitaNumero("Id a ser localizado"));
 				selecionaComando(nomeArquivo);
 				break;
 				
+			case "navegar":
+				View.objetoNaoImplementado();				
+				selecionaComando(nomeArquivo);
+				break;
+			
+			case "arquivo":
+				Ficheiro.leArquivo(nomeArquivo, false, "", false, true);
+				selecionaComando(nomeArquivo);
+				break;
+				
+			case "nome":				
+				View.objetoNaoImplementado();
+				selecionaComando(nomeArquivo);
+				break;
+			
 			case "sair":
 				View.sair();
 				break;
-				
+			
 			default:
 				View.opcaoInvalida();
 				selecionaComando(nomeArquivo);
@@ -169,7 +209,7 @@ public class Consultas {
 	 * @throws Exception 
 	 */
 	public void selecinaExtrutura() throws Exception{
-		String nomeArquivo = "L.TXT"; //Auxiliar.digita("Nome do arquivo");
+		String nomeArquivo = Auxiliar.digita("Nome do arquivo");
 		
 		switch (Auxiliar.getOpcao()) {
 		
@@ -182,7 +222,11 @@ public class Consultas {
 			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
 			selecionaComando(nomeArquivo);			
 			break;
-			
+		
+		case "BINARIA":			
+			selecionaComando(nomeArquivo);
+			break;
+		
 		default:
 			View.opcaoInvalida();
 			break;

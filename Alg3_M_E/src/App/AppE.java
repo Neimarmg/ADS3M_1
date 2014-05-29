@@ -2,7 +2,7 @@ package App;
 
 import java.util.InputMismatchException;
 
-import C.interacao;
+import C.Interacao;
 import M.Ordenadores;
 import M.Utilitarios.Auxiliar;
 import M.Utilitarios.Dia;
@@ -29,7 +29,7 @@ public class AppE {
 	 */
 	private void iniciaInteracao() throws Exception {
 		Menus.mostarMenuApp();				
-		interacao.iniciaTarefas();
+		Interacao.iniciaTarefas();
 	}
 	
 	
@@ -72,7 +72,7 @@ public class AppE {
 				selecionaAtividade();
 				break;
 			}
-			Menus.menuConsultas();
+			
 		} catch (ClassNotFoundException e) {
 			View.msge("Comando não suportado em JavaSE igual ou inferior 6.1 ");
 		} catch (InputMismatchException e) {

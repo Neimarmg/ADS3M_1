@@ -87,36 +87,38 @@ public class Menus extends View {
 			
 			menu ="	OPÇÕES PARA CONSULTA(S) EM " +Auxiliar.getOpcao() +"(S)" +"\n\n"
 				+" --------------------------------------------------------------------\n"
-				+"|  Comando        |Descrição\n";
+				+"|  Comando       |Descrição\n";
 			
 			edicao = "|--------------------------------------------- < Edição > \n"
-				+"|=> NOVO          |'Insere um novo elemento'\n"
-				+"|=> REMOVER       |'Remove um elemento'\n";
-;					
+				+"|=> NOVO         |'Insere um novo elemento'\n"
+				+"|=> REMOVER      |'Remove um elemento'\n";
+					
 			switch (Auxiliar.getOpcao()) {
 			
 			case "ARVORE":			
 				menu +="|--------------------------------------------- < Travessias >\n"
-					+"|=> POSFIXA       |'Imprime ordem pos-fixa'\n"
-					+"|=> PREFIXA       |'Imprime ordem pré-fixa'\n"
-					+"|=> INFIXA        |'Imprime ordem infixa'\n"
+					+"|=> POSFIXA      |'Imprime ordem pos-fixa'\n"
+					+"|=> PREFIXA      |'Imprime ordem pré-fixa'\n"
+					+"|=> INFIXA       |'Imprime ordem infixa'\n"
 					+"|--------------------------------------------- < Statísticas >\n"
-					+"|=> CONTAR        |'Conta nodos da lista'\n"
+					+"|=> CONTAR       |'Conta nodos da lista'\n"
 					+"|--------------------------------------------- < Buscas > \n"
-					+"|=> ALTURA        |'? '\n"
-					+"|=> PROFUNDIDADE  |'Calcula profundidade da arvore'\n"
-					+"|=> NOME          |'Encontra um nome ou elemento'\n"
+					+"|=> ALTURA       |'? '\n"
+					+"|=> PROFUNDIDADE |'Calcula profundidade da arvore'\n"
+					+"|=> NOME         |'Encontra um nome ou elemento'\n"
 					+edicao;
 				break;
 				
 			case "BINARIA":
-				menu += "|=> ID           |'Encontra um id através de uma busca binária'\n";
+				menu +=
+					 "|----------------|---------------------------------------------------\n"
+					+"|=> ID           |'Encontra um id através de uma busca binária'\n";
 				break;
 				
 			case "LISTA":
-				menu +="|=> NAVEGAR       |'Navega pelo arquivo com comando de teclado'\n"
-					+"|=> ARQUIVO       |'Imprime arquivo inteiro'\n"
-					+"|=> NOME          |'Encontra um nome ou elemento'\n"
+				menu +="|=> NAVEGAR      |'Navega pelo arquivo com comando de teclado'\n"
+					+"|=> ARQUIVO      |'Imprime arquivo inteiro'\n"
+					+"|=> NOME         |'Encontra um nome ou elemento'\n"
 					+edicao;
 				break;							
 			}

@@ -16,7 +16,7 @@ import M.Utilitarios.Auxiliar;
  * @param <T>
  * @param <string>
  */
-public class interacao {
+public class Interacao {
 	
 	static Consultas consulta =  new Consultas();
 	static Ficheiro ficheiro = new Ficheiro();
