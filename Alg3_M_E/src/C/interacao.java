@@ -129,7 +129,7 @@ public class interacao<T, string> {
 		switch (Auxiliar.digita("")) {
 		
 		case "consultar":	
-			consultas.selecionaComando();			
+			consultas.selecinaExtrutura();			
 			break;
 			
 		case "executar":

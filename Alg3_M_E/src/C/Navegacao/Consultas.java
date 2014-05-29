@@ -109,16 +109,73 @@ public class Consultas<T> {
 
 //====================<< Busca em estruturas java >> ========================================		
 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+//====================<< Menu busca >> ========================================================		
+		
+	/**
+	 * Seleciona comando de consulta
+	 */
+	private void selecionaComando(String nomeArquivo) {
+		try {
+			Menus.menuConsultas();					
+			switch (Auxiliar.digita("")) {
+			
+			case "navegar":
+				View.objetoNaoImplementado();				
+				selecionaComando(nomeArquivo);
+				break;
+
+			case "nome":				
+				
+				selecionaComando(nomeArquivo);
+				break;
+			
+			case "id":				
+				carregaBuscaBinaria(Auxiliar.digita("Nome do arquivo"),	Auxiliar.digitaNumero("Nome a ser localizado"));
+				selecionaComando(nomeArquivo);
+				break;		
+			
+			case "arquivo":
+				Ficheiro.leArquivo(Auxiliar.digita("Nome do arquivo"), false, "", false, true);
+				selecionaComando(nomeArquivo);
+				break;
+				
+			case "sair":
+				View.sair();
+				break;
+				
+			default:
+				View.opcaoInvalida();
+				selecionaComando(nomeArquivo);
+				break;
+			}			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
 	/**
 	 * 
 	 * @throws Exception 
 	 */
-	public static void consultaEstruturas(String nomeArquivo) throws Exception{
+	public static void selecinaExtrutura() throws Exception{
+		String nomeArquivo = Auxiliar.digita("Nome do arquivo");
 		
 		switch (Auxiliar.getOpcao()) {
 		
 		case "LISTA":			
-			//consultaArquivo(nomeArquivo, Auxiliar.digita("Contato"),true);
+			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
 			break;
 
 		case "ARVORE":			
@@ -134,56 +191,4 @@ public class Consultas<T> {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-//====================<< Menu busca >> ========================================================		
-		
-	/**
-	 * Seleciona comando de consulta
-	 */
-	public void selecionaComando() {
-		try {
-			Menus.menuConsultas();					
-			switch (Auxiliar.digita("")) {
-			
-			case "navegar":
-				View.objetoNaoImplementado();				
-				selecionaComando();
-				break;
-
-			case "nome":				
-				consultaEstruturas(Auxiliar.digita("Nome do arquivo"));
-				selecionaComando();
-				break;
-			
-			case "id":				
-				carregaBuscaBinaria(Auxiliar.digita("Nome do arquivo"),	Auxiliar.digitaNumero("Nome a ser localizado"));
-				selecionaComando();
-				break;		
-			
-			case "arquivo":
-				Ficheiro.leArquivo(Auxiliar.digita("Nome do arquivo"), false, "", false, true);
-				selecionaComando();
-				break;
-				
-			case "sair":
-				View.sair();
-				break;
-				
-			default:
-				View.opcaoInvalida();
-				selecionaComando();
-				break;
-			}			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 }
