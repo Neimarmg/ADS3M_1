@@ -16,12 +16,13 @@ import M.Utilitarios.Auxiliar;
  * @param <T>
  * @param <string>
  */
-public class interacao<T, string> {
+public class interacao {
 	
+	static Consultas consulta =  new Consultas();
 	static Ficheiro ficheiro = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
-	static Consultas<?> consultas = new Consultas<>();
 	static Memoria memoria =  new Memoria();
+	
 	static Registrador registrador = new Registrador();
 	
 	/**
@@ -128,8 +129,8 @@ public class interacao<T, string> {
 		
 		switch (Auxiliar.digita("")) {
 		
-		case "consultar":	
-			consultas.selecinaExtrutura();			
+		case "consultar":
+			consulta.selecinaExtrutura();
 			break;
 			
 		case "executar":

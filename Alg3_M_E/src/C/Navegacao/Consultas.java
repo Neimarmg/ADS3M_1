@@ -2,7 +2,6 @@ package C.Navegacao;
 
 import App.Menus;
 import App.View;
-import C.Registrador;
 import C.Arquivos.Ficheiro;
 import M.Dados;
 import M.Lista.ListaEncadeada;
@@ -14,7 +13,7 @@ import M.Utilitarios.Auxiliar;
  * @author Neimar, Aurelio
  * @param <T>
  */
-public class Consultas<T> {
+public class Consultas {
 	
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
 	
@@ -134,7 +133,7 @@ public class Consultas<T> {
 				break;
 
 			case "nome":				
-				
+			
 				selecionaComando(nomeArquivo);
 				break;
 			
@@ -169,19 +168,19 @@ public class Consultas<T> {
 	 * 
 	 * @throws Exception 
 	 */
-	public static void selecinaExtrutura() throws Exception{
-		String nomeArquivo = Auxiliar.digita("Nome do arquivo");
+	public void selecinaExtrutura() throws Exception{
+		String nomeArquivo = "L.TXT"; //Auxiliar.digita("Nome do arquivo");
 		
 		switch (Auxiliar.getOpcao()) {
 		
 		case "LISTA":			
 			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
+			selecionaComando(nomeArquivo);
 			break;
 
 		case "ARVORE":			
 			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
-			Registrador.getArvoreBinaria().imprime();
-	
+			selecionaComando(nomeArquivo);			
 			break;
 			
 		default:
