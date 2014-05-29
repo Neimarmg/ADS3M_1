@@ -24,7 +24,7 @@ public class Auxiliar {
 	}
 	
 	/**
-	 * 
+	 * Método global de contagem sequecial
 	 * @param contar
 	 */
 	public static void setContador(boolean contar) {

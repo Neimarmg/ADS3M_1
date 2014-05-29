@@ -72,7 +72,7 @@ public class AppE {
 				selecionaAtividade();
 				break;
 			}
-			
+			Menus.menuConsultas();
 		} catch (ClassNotFoundException e) {
 			View.msge("Comando não suportado em JavaSE igual ou inferior 6.1 ");
 		} catch (InputMismatchException e) {
@@ -87,8 +87,7 @@ public class AppE {
 	private void run() throws Exception {
 		escreveCabecalho();
 		Dia.defineSaudacao();		
-		selecionaAtividade();
-		
+		selecionaAtividade();		
 	}
 	
 

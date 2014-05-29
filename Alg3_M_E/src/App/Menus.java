@@ -77,7 +77,10 @@ public class Menus extends View {
 			switch (Auxiliar.getOpcao()) {
 			case "ARVORE":			
 				menu += "	OPÇÕES PARA CONSULTA(S) EM " +Auxiliar.getOpcao() +"(S)" +"\n\n" 
-					 +"=> NOME  'Encontra um nome dentro da árvore'\n";
+						 +"=> POSFIXA  ''\n"
+						 +"=> PREFIXA  ''\n"
+						 +"=> INFIXA  ''\n"
+						 +"=> ?  ''\n";
 				break;
 				
 			case "BINARIA":	
@@ -87,13 +90,14 @@ public class Menus extends View {
 				
 			case "LISTA":
 				menu += "	OPÇÕES PARA CONSULTA(S) EM " +Auxiliar.getOpcao() +"\n\n"
-						+"=> NOME	 'Encontra um nome dentro da lista'\n"
+						+"=> 	 'Encontra um nome dentro da lista'\n"
 						+"=> NAVEGAR 'Navega pelo arquivo com comando de teclado'\n"
 						+"=> ARQUIVO 'Imprime arquivo inteiro'\n";
 				break;
 			}
 			
-			menu += "=> SAIR\n";
+			menu += "=> NOME  'Encontra um nome dentro da árvore'\n"
+					+"=> SAIR\n";
 			msgb(menu);		
 		}
 
