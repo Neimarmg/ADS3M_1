@@ -11,14 +11,14 @@ public class Menus extends View {
 		
 	
 		public static void menuSelecinaAtividade() {		
-			msgb("	QUAL ATIVIDADE?\n\n"
-			 +" --------------------------------------------------------------------\n"
+			msgb("|	QUAL ATIVIDADE?\n"
+			 +"|--------------------------------------------------------------------\n"
 			 +"|  Comando |Descrição                |Status atividade\n"
 			 +"|----------|-------------------------|-------------------------------\n"
-			+ "|=> T1     |'Listas Encadeadas'      |" + Auxiliar.statusAcao(7,7) + "\n"
-			+ "|=> T2     |'Pesquisa Binária'       |" + Auxiliar.statusAcao(7,7) + "\n"
-			+ "|=> T4     |'Algoritmos de Ordenação'|" + Auxiliar.statusAcao(7,7) + "\n"
-			+ "|=> T5     |'Arvores'                |" + Auxiliar.statusAcao(2,0) + "\n"
+			+ "|=> T1     |'Listas Encadeadas'      |" + Auxiliar.statusAcao(7,7) +"\n"
+			+ "|=> T2     |'Pesquisa Binária'       |" + Auxiliar.statusAcao(7,7) +"\n"
+			+ "|=> T4     |'Algoritmos de Ordenação'|" + Auxiliar.statusAcao(7,7) +"\n"
+			+ "|=> T5     |'Arvores'                |" + Auxiliar.statusAcao(2,0) +"\n"
 			+ "|" +sair);
 		}
 		
@@ -26,8 +26,8 @@ public class Menus extends View {
 		 * Método responsável pela impressão dos comando de execução de taréfas
 		 */
 		public static void mostarMenuApp() {		
-			String menu = "	O QUE VOCÊ DESEJA FAZER?\n\n"
-					+" --------------------------------------------------------------------\n"
+			String menu = "|	O QUE VOCÊ DESEJA FAZER?\n"
+					+"|--------------------------------------------------------------------\n"
 					+"|  Comando    |Descrição\n"
 					+"|-------------|------------------------------------------------------\n";
 			 
@@ -54,8 +54,8 @@ public class Menus extends View {
 		 */
 		public static void menuInclude(String include)throws Exception {	
 			String menu =
-					"	OPÇÕES DE INCLUDE\n\n"
-					+" --------------------------------------------------------------------\n"
+					"|	OPÇÕES DE INCLUDE\n"
+					+"|--------------------------------------------------------------------\n"
 					+"|  Comando   |Descrição\n"
 					+"|------------|-------------------------------------------------------\n"
 					+"|=> NOVO     |'Habilita para gravar novo registro'\n"	
@@ -85,8 +85,8 @@ public class Menus extends View {
 		public static void menuConsultas()throws Exception {	
 			String edicao , menu;
 			
-			menu ="	OPÇÕES PARA CONSULTA(S) EM " +Auxiliar.getOpcao() +"(S)" +"\n\n"
-				+" --------------------------------------------------------------------\n"
+			menu ="|	OPÇÕES PARA CONSULTA(S) EM " +Auxiliar.getOpcao() +"(S)" +"\n"
+				+"|--------------------------------------------------------------------\n"
 				+"|  Comando       |Descrição\n";
 			
 			edicao = "|--------------------------------------------- < Edição > \n"
@@ -134,8 +134,8 @@ public class Menus extends View {
 		 */
 		public static void menuOrdenadores()throws Exception {	
 			msgb(
-				"	COMO ORDENAR DADOS?\n\n"
-				+" --------------------------------------------------------------------\n"
+				"|	COMO ORDENAR DADOS?\n"
+				+"|--------------------------------------------------------------------\n"
 				+"|  Comando    |Descrição\n"
 				+"|-------------|------------------------------------------------------\n"
 				+"|=> BUBLE     |'Ordena dados do arquivo com BubleSort'\n"
@@ -153,8 +153,8 @@ public class Menus extends View {
 		public static void menuModoOrdenacao(boolean ativaMenu)throws Exception {	
 			if (ativaMenu == true) {
 				msgb(
-					"	DESEJA ORDENAR PARA:\n\n"
-					 +" --------------------------------------------------------------------\n"
+					"|	DESEJA ORDENAR PARA:\n"
+					 +"|--------------------------------------------------------------------\n"
 					 +"|  Comando |Descrição\n"
 					 +"|----------|---------------------------------------------------------\n"
 					+ "|=> C      |'Exibe arquivo na ordem crescente'\n"

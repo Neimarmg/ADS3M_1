@@ -81,7 +81,7 @@ public class Auxiliar {
 			r = "inv�lido "; break;
 		}
 		
-		return "Status: " +r;
+		return r;
 	}
 	
 	
