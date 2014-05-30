@@ -7,26 +7,27 @@ import M.Utilitarios.Auxiliar;
  * @author Neimar, Aurélio
  */
 public class Menus extends View {
-	static String sair = "=> SAIR\n";
-		
+	private static String sair = "=> SAIR\n";
+	private static String menu ="";	
 	
-	public static void menuSelecinaAtividade() {		
+	public static void menuSelecinaAtividade() {	
 		msgb("|	QUAL ATIVIDADE?\n"
 		 +"|--------------------------------------------------------------------\n"
 		 +"|  Comando |Descrição                |Status atividade\n"
 		 +"|----------|-------------------------|-------------------------------\n"
-		+ "|=> T1     |'Listas Encadeadas'      |" + Auxiliar.statusAcao(7,7) +"\n"
-		+ "|=> T2     |'Pesquisa Binária'       |" + Auxiliar.statusAcao(7,7) +"\n"
-		+ "|=> T4     |'Algoritmos de Ordenação'|" + Auxiliar.statusAcao(7,7) +"\n"
-		+ "|=> T5     |'Arvores'                |" + Auxiliar.statusAcao(2,0) +"\n"
-		+ "|" +sair);
+		+ "|=> T1     |Listas Encadeadas        |" + Auxiliar.statusAcao(7,7) +"\n"
+		+ "|=> T2     |Pesquisa Binária         |" + Auxiliar.statusAcao(7,7) +"\n"
+		+ "|=> T4     |Algoritmos de Ordenação  |" + Auxiliar.statusAcao(7,7) +"\n"
+		+ "|=> T5     |Arvores binária          |" + Auxiliar.statusAcao(2,0) +"\n"
+		+ "|=> T6     |Arvores AVL E RED BLACK  |" + Auxiliar.statusAcao(2,0) +"\n"
+		+ "|" +sair);		
 	}
 	
 	/**
 	 * Método responsável pela impressão dos comando de execução de taréfas
 	 */
 	public static void mostarMenuApp() {		
-		String menu = "|	O QUE VOCÊ DESEJA FAZER?\n"
+		menu = "|	O QUE VOCÊ DESEJA FAZER?\n"
 				+"|--------------------------------------------------------------------\n"
 				+"|  Comando    |Descrição\n"
 				+"|-------------|------------------------------------------------------\n";
@@ -44,7 +45,9 @@ public class Menus extends View {
 							
 		menu += "|=> IMPRIMIR  |'Imprime arquivo selecionado'\n"					
 				+"|" +sair;
-		msgb(menu);		
+		msgb(menu);
+		
+		menu = "";  //Limpa variável para a exibição deo próximo menu
 	}
 
 		
@@ -53,7 +56,7 @@ public class Menus extends View {
 	 * @throws Exception
 	 */
 	public static void menuInclude(String include)throws Exception {	
-		String menu =
+		menu =
 				"|	OPÇÕES DE INCLUDE\n"
 				+"|--------------------------------------------------------------------\n"
 				+"|  Comando   |Descrição\n"
@@ -74,7 +77,9 @@ public class Menus extends View {
 		}
 			
 		menu +="|" +sair;
-		msgb(menu);		
+		msgb(menu);
+		
+		menu = "";  //Limpa variável para a exibição deo próximo menu
 	}
 		
 		
@@ -83,7 +88,7 @@ public class Menus extends View {
 	 * @throws Exception
 	 */
 	public static void menuConsultas()throws Exception {	
-		String edicao , menu;
+		String edicao;
 		
 		menu ="|	OPÇÕES PARA CONSULTA(S) EM " +Auxiliar.getOpcao() +"(S)" +"\n"
 			+"|--------------------------------------------------------------------\n"
@@ -124,7 +129,9 @@ public class Menus extends View {
 		}
 			
 		menu +="|" +sair;
-		msgb(menu);		
+		msgb(menu);	
+		
+		menu = "";  //Limpa variável para a exibição deo próximo menu
 	}
 
 		
