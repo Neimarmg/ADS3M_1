@@ -11,8 +11,10 @@ import App.View;
  */
 public class Auxiliar {
 	static Scanner var = new Scanner(System.in);
-	static String opcao; // Variï¿½vel global de apoio para parï¿½metro "strings"
-	static int contador = 0; // Variï¿½vel global contadora de aï¿½ï¿½oes 
+	static String opcao; // Variï¿½vel global de apoio para parâmetro "strings"
+	static int contador = 0; // Variïável global contadora de aïções 
+	static String detalhes; // Variável global de apoio para detalhar ações do programa "strings"
+	
 	
 	public static void setOpcao(String opcao) {
 		Auxiliar.opcao = opcao;
@@ -21,6 +23,15 @@ public class Auxiliar {
 	 
 	public static String getOpcao() {
 		return opcao;
+	}
+	
+	
+	public static void setDetalhes(String detalhes) {
+		Auxiliar.detalhes = detalhes;
+	}
+	
+	public static String getDetalhes() {
+		return detalhes;
 	}
 	
 	/**

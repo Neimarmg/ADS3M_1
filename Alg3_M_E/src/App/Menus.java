@@ -25,6 +25,7 @@ public class Menus extends View {
 		+ "|=> T4     |Algoritmos de Ordenação  |" + Auxiliar.statusAcao(7,7) +"\n"
 		+ "|=> T5     |Arvores binária          |" + Auxiliar.statusAcao(2,0) +"\n"
 		+ "|=> T6     |Arvores AVL E RED BLACK  |" + Auxiliar.statusAcao(2,0) +"\n"
+		+ "|Glossário |Imprime glossário        |" + Auxiliar.statusAcao(2,0) +"\n"
 		+ "|" +sair);		
 	}
 	
@@ -174,5 +175,19 @@ public class Menus extends View {
 			);
 		}
 	}
-		
+	
+	
+	public static void glossario()throws Exception {	
+		msgb(
+			"|	GLOSSÁRIO DO PROGRAMA:\n"
+			 +"|--------------------------------------------------------------------\n"
+			 +"| Vocábulo |Significado\n"
+			 +"|----------|---------------------------------------------------------\n"
+			+ "|C         |Controller\n"
+			+ "|M         |Model\n"
+			+ "|V         |View\n"
+			+ "|App       |Aplicação\n"
+			+ "|Ficheiro  |Classe de manipulação de arquivo\n"
+		);
+	}
 }

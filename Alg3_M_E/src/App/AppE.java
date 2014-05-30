@@ -67,11 +67,15 @@ public class AppE {
 				iniciaInteracao();				
 				break;
 			
+			case "glossario":
+				Menus.glossario();				
+				break;
+				
 			case "t6":
 				Auxiliar.setOpcao("ARVORE"); // Arvore deve ficar sem acentuação pois, se trata de atribução			
 				Menus.setOpcMenu(Auxiliar.getOpcao());
 				iniciaInteracao();				
-				break;	
+				break;
 			
 			case "sair":
 				View.sair();
