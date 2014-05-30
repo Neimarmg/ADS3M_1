@@ -9,6 +9,11 @@ import M.Utilitarios.Auxiliar;
 public class Menus extends View {
 	private static String sair = "=> SAIR\n";
 	private static String menu ="";	
+	private static String opcMenu;
+	
+	public static void setOpcMenu(String opcMenu) {
+		Menus.opcMenu = opcMenu;
+	}
 	
 	public static void menuSelecinaAtividade() {	
 		msgb("|	QUAL ATIVIDADE?\n"
@@ -32,12 +37,12 @@ public class Menus extends View {
 				+"|  Comando    |Descrição\n"
 				+"|-------------|------------------------------------------------------\n";
 		 
-		if (Auxiliar.getOpcao().equals("LISTA") || Auxiliar.getOpcao().equals("ARVORE")) {
+		if (opcMenu.equals("LISTA") || Auxiliar.getOpcao().equals("ARVORE")) {
 			menu += "|=> EXECUTAR  |'Executa ações nas estruturas existente'\n" +
 					"|=> ARQUIVO   |'Propriedades de arquivo'\n";
 		}
 					
-		if (Auxiliar.getOpcao().equals("ORDENADORES")) {
+		if (opcMenu.equals("ORDENADORES")) {
 			menu += "|=> ORDENAR   |'Executa ordenação de registro em arquivo(s)'\n";
 		}else{
 			menu += "|=> CONSULTAR |'Conteúdo do salvo em arquivo(s)'\n";
@@ -98,7 +103,7 @@ public class Menus extends View {
 			+"|=> NOVO         |'Insere um novo elemento'\n"
 			+"|=> REMOVER      |'Remove um elemento'\n";
 					
-		switch (Auxiliar.getOpcao()) {
+		switch (opcMenu) {
 		
 		case "ARVORE":			
 			menu +="|--------------------------------------------- < Travessias >\n"

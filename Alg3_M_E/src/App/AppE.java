@@ -43,28 +43,33 @@ public class AppE {
 			Menus.menuSelecinaAtividade();	
 			switch (Auxiliar.digita("Atividade")) {
 			
-			case "t1":	
+			case "t1":
 				Auxiliar.setOpcao("LISTA");
+				Menus.setOpcMenu(Auxiliar.getOpcao());
 				iniciaInteracao();
 				break;
 				
 			case "t2":				
 				Auxiliar.setOpcao("BINARIA");
+				Menus.setOpcMenu(Auxiliar.getOpcao());
 				iniciaInteracao();
 				break;
 				
-			case "t4":	
+			case "t4":
 				Auxiliar.setOpcao("ORDENADORES");
+				Menus.setOpcMenu(Auxiliar.getOpcao());
 				iniciaInteracao();	
 				break;
 				
 			case "t5":
 				Auxiliar.setOpcao("ARVORE"); // Arvore deve ficar sem acentuação pois, se trata de atribução
+				Menus.setOpcMenu(Auxiliar.getOpcao());
 				iniciaInteracao();				
 				break;
 			
 			case "t6":
 				Auxiliar.setOpcao("ARVORE"); // Arvore deve ficar sem acentuação pois, se trata de atribução			
+				Menus.setOpcMenu(Auxiliar.getOpcao());
 				iniciaInteracao();				
 				break;	
 			
