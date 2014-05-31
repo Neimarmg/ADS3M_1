@@ -42,13 +42,16 @@ public class Registrador{
 		return avl;
 	}
 	
+	
 	public static void setAcum(String acum) {
 		Registrador.acum += acum;
 	}
-		
+	
+	
 	public static String getAcum() {
 		return acum;
 	}
+	
 	
 	/**
 	 * Informa quando a estrura de operação não é valida
@@ -59,6 +62,7 @@ public class Registrador{
 		View.msge("\nArvore inválida\n");
 		Menus.menuArvores(true, ativaTipo, true);
 	}
+	
 	
 	/**
 	 * Metodo responsavel por receber os dados da leitura do arquivo e insirir nas etruturas		
@@ -141,14 +145,14 @@ public class Registrador{
 
 		case "ARVORE":			
 			if(Auxiliar.getDetalhes().equals("binaria") ) {
-				//gravaDados(nomeArquivo);
+				gravaDados(nomeArquivo);
 				Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
-				//arvoreBinaria.guardaEdicao();
-				//editaArquivo(nomeArquivo);	
+				arvoreBinaria.guardaEdicao();
+				editaArquivo(nomeArquivo);	
 			
 			} else if (Auxiliar.getDetalhes().equals("avl") ) {
-
-	
+				
+				
 			
 			} else if(Auxiliar.getDetalhes().equals("redBlack") ) {
 				
