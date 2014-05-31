@@ -50,7 +50,17 @@ public class Registrador{
 			break;
 		
 		case "ARVORE":
-			arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
+			if(Auxiliar.getDetalhes().equals("binaria") ) {
+				arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
+			}
+			
+			if(Auxiliar.getDetalhes().equals("avl") ) {
+				View.objetoNaoImplementado();
+			}
+			
+			if(Auxiliar.getDetalhes().equals("redBlack") ) {
+				View.objetoNaoImplementado();
+			}
 			break;
 			
 		default:

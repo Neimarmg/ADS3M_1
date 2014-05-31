@@ -177,6 +177,46 @@ public class Menus extends View {
 	}
 	
 	
+	/**
+	 * Método impressão de menus para selecionar as árvores
+	 * @param tipoArvore
+	 * @param ativaTodosTipo
+	 * @param print
+	 * @throws Exception
+	 */
+	public static void menuArvores(boolean tipoArvore, boolean ativaTodosTipo, boolean print)throws Exception {	
+		
+		if (ativaTodosTipo == true) {
+			menu = "|=> Binaria   |Árvore binária\n";
+		} else {
+			menu = "";
+		}
+		
+		if (print == true) {
+			msgb(
+				"|	SELECIONE QUAL TIPO DE ARVORE:\n"
+				 +"|--------------------------------------------------------------------\n"
+				 +"|  Comando    |Descrição\n"
+				 +"|-----------  |------------------------------------------------------\n"
+				+ menu 
+				+ "|=> Avl       |Árvore avl\n"
+				+ "|=> RedBlack  |Árvore rubro negra\n"
+			);
+		}
+		
+		if (tipoArvore == true){
+			Auxiliar.setDetalhes(Auxiliar.digita("Árvore do tipo"));
+		}
+		
+		menu = "";  //Limpa variável para a exibição deo próximo menu
+	}
+	
+	
+	
+	/**
+	 * Exibe o glossário de programa
+	 * @throws Exception
+	 */
 	public static void glossario()throws Exception {	
 		msgb(
 			"|	GLOSSÁRIO DO PROGRAMA:\n"

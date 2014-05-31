@@ -64,12 +64,14 @@ public class AppE {
 			case "t5":
 				Auxiliar.setOpcao("ARVORE"); // Arvore deve ficar sem acentuação pois, se trata de atribução
 				Menus.setOpcMenu(Auxiliar.getOpcao());
+				Auxiliar.setDetalhes("binaria");
 				iniciaInteracao();				
 				break;
 			
 			case "t6":
 				Auxiliar.setOpcao("ARVORE"); // Arvore deve ficar sem acentuação pois, se trata de atribução			
 				Menus.setOpcMenu(Auxiliar.getOpcao());
+				Menus.menuArvores(true, false, true);
 				iniciaInteracao();				
 				break;
 
