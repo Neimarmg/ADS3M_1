@@ -214,12 +214,12 @@ public class Consultas {
 		switch (Auxiliar.getOpcao()) {
 		
 		case "LISTA":			
-			Ficheiro.leArquivo(nomeArquivo, false, null, false, false);
+			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
 			selecionaComando(nomeArquivo);
 			break;
 
 		case "ARVORE":			
-			Ficheiro.leArquivo(nomeArquivo, false, null, false, false);
+			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
 			selecionaComando(nomeArquivo);			
 			break;
 		
