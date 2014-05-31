@@ -1,6 +1,7 @@
 package C.Arvores.Avl;
 
 import App.View;
+import M.Dados;
 
 public class ArvoreAVL extends DadosAvl {
 	
@@ -47,6 +48,12 @@ public class ArvoreAVL extends DadosAvl {
 		return aux;
 	}
 
+	
+	/**
+	 * Método de balancemento da árvore
+	 * @param aux
+	 * @return
+	 */
 	public ArvoreAVL balancia(ArvoreAVL aux) {
 		int dado, df;
 		
@@ -79,6 +86,12 @@ public class ArvoreAVL extends DadosAvl {
 		return aux;
 	}
 
+	
+	/**
+	 * Método de rotação a esquerda
+	 * @param aux
+	 * @return
+	 */
 	public ArvoreAVL rotacionaEsquerda(ArvoreAVL aux) {
 		ArvoreAVL aux1, aux2;
 		aux1 = aux.dir;
@@ -106,6 +119,11 @@ public class ArvoreAVL extends DadosAvl {
 		return aux1;
 	}
 
+	/**
+	 * Método de rotação a direita 
+	 * @param aux
+	 * @return
+	 */
 	public ArvoreAVL rotacionaDireita(ArvoreAVL aux) {
 		ArvoreAVL aux1, aux2;
 		aux1 = aux.esq;
@@ -136,7 +154,7 @@ public class ArvoreAVL extends DadosAvl {
 	
 	public void imprimeOrdemInfixa(ArvoreAVL aux) {
 		if (aux != null) {
-			View.msg(aux.getNum() + "\n");
+			View.msg(aux.getNum() +Dados.vetor[aux.getNum()]+ "\n");
 			
 			imprimeOrdemInfixa(aux.esq);
 			imprimeOrdemInfixa(aux.dir);
@@ -148,7 +166,7 @@ public class ArvoreAVL extends DadosAvl {
 		if (aux != null) {			
 			
 			imprmeOrdenPreFixa(aux.esq);			
-			View.msg(aux.getNum() + "\n");			
+			View.msg(aux.getNum() +Dados.vetor[aux.getNum()] +"\n");			
 			imprmeOrdenPreFixa(aux.dir);
 		}
 	}

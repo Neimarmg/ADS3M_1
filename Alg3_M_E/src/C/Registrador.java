@@ -21,10 +21,12 @@ import M.Utilitarios.Include;
  */
 public class Registrador{
 	
-	static String acum =""; //Acumulador de dados para edição de arquivo 
-	static ListaOrdenada<String> lista = new ListaOrdenada<String>();
-	static ArvoreBinaria<String> arvoreBinaria = new ArvoreBinaria<String>();
-	static ArvoreAVL avl = new ArvoreAVL();
+	private static String acum =""; //Acumulador de dados para edição de arquivo 
+	private static ListaOrdenada<String> lista = new ListaOrdenada<String>();
+	private static ArvoreBinaria<String> arvoreBinaria = new ArvoreBinaria<String>();
+	private static ArvoreAVL avl = new ArvoreAVL();
+	
+	
 	/**
 	 * Método de reperação de estado do objeto
 	 * @return
@@ -82,9 +84,9 @@ public class Registrador{
 			if(Auxiliar.getDetalhes().equals("binaria") ) {				
 				arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
 			
-			} else if (Auxiliar.getDetalhes().equals("avl") ) {
-				avl = null;
+			} else if (Auxiliar.getDetalhes().equals("avl") ) {				
 				avl.inserir(avl,Dados.getIndex());
+				
 
 			} else if(Auxiliar.getDetalhes().equals("redBlack") ) {
 				View.objetoNaoImplementado();
@@ -151,7 +153,10 @@ public class Registrador{
 				editaArquivo(nomeArquivo);	
 			
 			} else if (Auxiliar.getDetalhes().equals("avl") ) {
+				Ficheiro.leArquivo(nomeArquivo, false, null, false, false);
+				avl.imprmeOrdenPreFixa(avl);
 				
+				Ficheiro.setIndex(0);
 				
 			
 			} else if(Auxiliar.getDetalhes().equals("redBlack") ) {

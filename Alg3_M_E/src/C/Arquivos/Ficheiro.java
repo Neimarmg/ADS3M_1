@@ -11,6 +11,7 @@ import java.nio.file.Paths;
 
 import App.View;
 import C.Registrador;
+import M.Buffers;
 import M.Dados;
 
 /**
@@ -20,9 +21,7 @@ import M.Dados;
 public class Ficheiro extends Dados {
 	
 	Memoria memoria =  new Memoria();
-	static String linha;
-	static FileReader file;
-	static BufferedReader buff;	
+
 
 	/**
 	 * Verificador de memória
@@ -75,23 +74,23 @@ public class Ficheiro extends Dados {
 		
 		try {
 			setValidaArquivo(true); // Habilita execução de ordenador
-			file = new FileReader(nomeArquivo);		
-			buff = new BufferedReader(file);
-			linha = buff.readLine();
+			Buffers.setFile(new FileReader(nomeArquivo));		
+			Buffers.setBuff(new BufferedReader(Buffers.getFile()));
+			Buffers.setLinha(Buffers.getBuff().readLine());
 			if(imprimir== true){View.msgc(" Impressão do arquivo: " +nomeArquivo +"\n\n");}
 			
-			while(linha != null ) {
-				linha = buff.readLine();
+			while(Buffers.getLinha() != null ) {
+				Buffers.setLinha(Buffers.getBuff().readLine());
 				index++;
 				
 				if (criaVetor == true){
 					insertVetor(index, criaVetor); //Metodo transferência de dados para do arquivo para vetor
 				}else{
-					Registrador.copiaArquivo(linha); //Médoto de insersão nas estruturas de dados
+					Registrador.copiaArquivo(Buffers.getLinha()); //Médoto de insersão nas estruturas de dados
 				}				
-				imprimeDaDos(linha,campo, filtrar, imprimir); //Método de impressão dados. Imprime quando abilitado 			
+				imprimeDaDos(Buffers.getLinha(), campo, filtrar, imprimir); //Método de impressão dados. Imprime quando abilitado 			
 			}
-			buff.close();	
+			Buffers.getBuff().close();	
 			
 		} catch (NullPointerException e) {
 			View.msgr("\nArquivo carregado com sucesso!");
@@ -115,11 +114,11 @@ public class Ficheiro extends Dados {
 	 * @param criaVetor
 	 */
 	protected static void insertVetor(int index, boolean criaVetor) {
-		if (criaVetor == true && linha != null) {
-			vetor[index]= linha;			
+		if (criaVetor == true && Buffers.getLinha() != null) {
+			vetor[index]= Buffers.getLinha();			
 		}
 		
-		if (criaVetor == true && linha == null){
+		if (criaVetor == true && Buffers.getLinha() == null){
 			for (int i = index; i < vetor.length; i++) { // Complementa o vetor após carregamento dos dados do arquivo
 				vetor[i]= "";
 			}

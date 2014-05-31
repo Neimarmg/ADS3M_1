@@ -15,7 +15,7 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 	
 	
 	/**
-	 * Método de inserção na arvore
+	 * Método de inserção na árvore
 	 * @param novo
 	 */
 	public void insere(Nodo<T> novo){

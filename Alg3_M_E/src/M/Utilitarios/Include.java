@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import App.View;
+import M.Buffers;
 
 /**
  * Classe para edição e arquivos
@@ -39,7 +40,7 @@ public class Include {
 		FileWriter f;
 		BufferedWriter buff = null;
 		
-		try {
+		try { 
 			f = new FileWriter(new File(arquivo),getAppend());
 			buff = new BufferedWriter(f);			
 			
@@ -64,25 +65,24 @@ public class Include {
 	 * @throws IOException 
 	 */
 	public static void remove(String nomeArquivo, String  desc) throws IOException {                 
-		BufferedReader br;
-		FileReader r = new FileReader(nomeArquivo);
-		br = new BufferedReader(r);
-		String linha = br.readLine();		
+		Buffers.setFile(new FileReader(nomeArquivo));
+		Buffers.setBuff(new BufferedReader(Buffers.getFile()));
+		Buffers.setLinha(Buffers.getBuff().readLine());		
 		
 		try {				
-			while(linha != null ) {	
+			while(Buffers.getLinha()!= null ) {	
 				
-				if (linha.equals(desc)) {	
-					acun += "#"+linha +"\n";
+				if (Buffers.getLinha().equals(desc)) {	
+					acun += "#"+Buffers.getLinha() +"\n";
 					View.msge("\nRegistro excluido com sucesso!\n");
 					setAppend(false);					
 				} else {
-					acun += linha +"\n";
+					acun += Buffers.getLinha() +"\n";
 					setAppend(true);
 				}
-				linha = br.readLine();
+				Buffers.setLinha(Buffers.getBuff().readLine());
 			}			
-			br.close();
+			 Buffers.getBuff().close();
 			addNovo(nomeArquivo, acun);
 		
 		} catch (NullPointerException e) {
