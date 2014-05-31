@@ -45,11 +45,9 @@ public class View {
 		System .err.println("\nComando inválido!");
 	}
 	
-	
 	public static void objetoNaoImplementado() {
 		System .err.print("\nNão implementado.\n");
 	}
-	
 	
 	public static void sair() {
 		System.err.print("\nVocê optou por sair do programa. Obrigado.");

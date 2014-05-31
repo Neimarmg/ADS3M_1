@@ -62,14 +62,14 @@ public class AppE {
 				break;
 				
 			case "t5":
-				Auxiliar.setOpcao("ARVORE"); // Arvore deve ficar sem acentuação pois, se trata de atribução
+				Auxiliar.setOpcao("ARVORE"); // Árvore deve ficar sem acentuação, pois se trata de atribuição
 				Menus.setOpcMenu(Auxiliar.getOpcao());
 				Auxiliar.setDetalhes("binaria");
 				iniciaInteracao();				
 				break;
 			
 			case "t6":
-				Auxiliar.setOpcao("ARVORE"); // Arvore deve ficar sem acentuação pois, se trata de atribução			
+				Auxiliar.setOpcao("ARVORE"); // Árvore deve ficar sem acentuação, pois se trata de atribuição			
 				Menus.setOpcMenu(Auxiliar.getOpcao());
 				Menus.menuArvores(true, false, true);
 				iniciaInteracao();				
@@ -90,7 +90,7 @@ public class AppE {
 			}
 			
 		} catch (ClassNotFoundException e) {
-			View.msge("Comando não suportado em JavaSE igual ou inferior 6.1 ");
+			View.msge("Comando não suportado em JavaSE igual ou inferior a 6.1 ");
 		} catch (InputMismatchException e) {
 			View.msge("\nValor(es) digitado(s) inválido(s)!");
 		}
