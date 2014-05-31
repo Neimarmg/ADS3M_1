@@ -22,7 +22,7 @@ public class Ficheiro extends Dados {
 	
 	Memoria memoria =  new Memoria();
 
-
+	
 	/**
 	 * Verificador de memória
 	 * @param nomeAquivo
