@@ -9,21 +9,21 @@ import C.Registrador;
  * * @param <T>
  */
 public class ListaEncadeada<T extends Comparable<T>> {
-	
-	
-	private Nodo<T> head; // will be ficheiro NodoM
-	private Nodo<T> tail; // will be ficheiro NodoM
-	
+
+
+	private Nodo<T> head; // will be ficheiro Nodo
+	private Nodo<T> tail; // will be ficheiro Nodo
+
 
 	public Nodo<T> getHead() {
 		return head;
 	}
-	
-		
+
+
 	public void insert(Nodo<T> novo) {
 		novo.setNext(head);
 		head = novo;
-		
+
 		if (tail == null)
 			tail = head;
 	}
@@ -43,7 +43,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 		}
 	}
 
-	
+
 	public void append(Nodo<T> novo) {
 		tail.setNext(novo);
 		tail = novo;
@@ -55,11 +55,11 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	public void guardaEdicao() {
 		Nodo<?> nodo = head;
 		do {	
-			Registrador.setAcum("\n" +nodo.getData()); // Acumalador de ordenação
+			Registrador.setAcum(Registrador.getAcum() +"\n" +nodo.getData()); // Acumalador de ordenação
 			nodo = nodo.getNext();
 		} while (nodo != null);	
 	}
-	
+
 	/**
 	 * Imprime quando habilitado na tela e edita registrador após a ordenação
 	*/
@@ -70,7 +70,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 				if (impressaoPrevia){View.msg("\n" + nodo.getData());} // Imprime a lista para consulta prévia em tempo de execução
 				nodo = nodo.getNext();				
 			} while (nodo != null);			
-			
+
 		} catch (NullPointerException e) {
 			View.msg("\nNão existem dados no arquivo para serem impressos.\n");
 		}

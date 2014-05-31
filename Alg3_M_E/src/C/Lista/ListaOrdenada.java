@@ -16,24 +16,22 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 	private Nodo<T> findBefore(Nodo<T> novo) {
 		Nodo<T> atual = getHead();
 		Nodo<T> anterior = null;
-		
+
 		while (atual != null) {
-			
-			if (atual.compareTo(novo) < 0) {
+			int comp = atual.compareTo(novo);
+			if (comp < 0) {
 				anterior = atual;
 				atual = atual.getNext();
 			}
-			
-			if (atual.compareTo(novo) == 0)
+			if (comp == 0)
 				return atual;
-			
-			if (atual.compareTo(novo) > 0)
+			if (comp > 0)
 				return anterior;
 		}
 		return anterior;
 	}
-	
-	
+
+
 	@Override
 	public void insert(Nodo<T> novo) {
 		Nodo<T> anterior = findBefore(novo);
@@ -49,11 +47,11 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 	public void insert(Nodo<T> novo, Nodo<T> anterior) {
 		insert(novo);
 	}
-	
-	
+
+
 	@Override
 	public void append(Nodo<T> novo) {
 		insert(novo);
 	}
-	
+
 }
