@@ -16,9 +16,9 @@ public class Menus extends View {
 	}
 	
 	public static void menuSelecinaAtividade() {	
-		msgb("|	QUAL ATIVIDADE?\n"
+		msgb("|QUAL ATIVIDADE?\n"
 		 + "|----------------------------------------------------------------------\n"
-		 + "|  Comando    |Descrição               |Status atividade\n"
+		 + "|Comando      |Descrição               |Status atividade\n"
 		 + "|-------------|------------------------|-------------------------------\n"
 		 + "|=> T1        |Lista Encadeada         |" + Auxiliar.statusAcao(7,7) + "\n"
 		 + "|=> T2        |Pesquisa Binária        |" + Auxiliar.statusAcao(7,7) + "\n"
@@ -33,9 +33,9 @@ public class Menus extends View {
 	 * Método responsável pela impressão dos comando de execução de tarefas
 	 */
 	public static void mostarMenuApp() {		
-		menu = "|  O QUE VOCÊ DESEJA FAZER?\n"
+		menu = "|O QUE VOCÊ DESEJA FAZER?\n"
 		     + "|--------------------------------------------------------------------\n"
-			 + "|  Comando    |Descrição\n"
+			 + "|Comando      |Descrição\n"
 			 + "|-------------|------------------------------------------------------\n";
 		 
 		if (opcMenu.equals("LISTA") || Auxiliar.getOpcao().equals("ARVORE")) {
@@ -63,9 +63,9 @@ public class Menus extends View {
 	 */
 	public static void menuInclude(String include)throws Exception {	
 		menu =
-			  "|	OPÇÕES DE INCLUDE\n"
+			  "|OPÇÕES DE INCLUDE\n"
 			+ "|--------------------------------------------------------------------\n"
-			+ "|  Comando   |Descrição\n"
+			+ "|Comando     |Descrição\n"
 			+ "|------------|-------------------------------------------------------\n"
 			+ "|=> NOVO     |'Habilita para gravar novo registro'\n"	
 			+ "|=> REMOVER  |'Remove arquivo existente'\n";					
@@ -96,9 +96,9 @@ public class Menus extends View {
 	public static void menuConsultas()throws Exception {	
 		String edicao;
 		
-		menu = "|  OPÇÕES PARA CONSULTA(S) EM " + Auxiliar.getOpcao() + "(S)" + "\n"
+		menu = "|OPÇÕES PARA CONSULTA(S) EM " + Auxiliar.getOpcao() + "(S)" + "\n"
 			 + "|--------------------------------------------------------------------\n"
-			 + "|  Comando       |Descrição\n";
+			 + "|Comando         |Descrição\n";
 		
 		edicao = "|--------------------------------------------- < Edição >\n"
 			   + "|=> NOVO         |'Insere um novo elemento'\n"
@@ -147,15 +147,15 @@ public class Menus extends View {
 	 */
 	public static void menuOrdenadores()throws Exception {	
 		msgb(
-		    "|	COMO ORDENAR DADOS?\n"
+		    "|COMO ORDENAR DADOS?\n"
 		  + "|--------------------------------------------------------------------\n"
-		  + "|  Comando    |Descrição\n"
+		  + "|Comando      |Descrição\n"
 		  + "|-------------|------------------------------------------------------\n"
 		  + "|=> BUBLE     |'Ordena dados do arquivo com BubleSort'\n"
 		  + "|=> QUICK     |'Ordena dados do arquivo com QuickSort'\n"
 		  + "|=> COMPARAR  |'Imprime dados estatísticos dos dois ordenadores\n"
-		  + "|" +sair
-		);	
+		  + "|" + sair
+		);
 	}
 
 		
@@ -166,9 +166,9 @@ public class Menus extends View {
 	public static void menuModoOrdenacao(boolean ativaMenu)throws Exception {	
 		if (ativaMenu == true) {
 			msgb(
-				 "|	DESEJA ORDENAR PARA:\n"
+				 "|DESEJA ORDENAR PARA:\n"
 			   + "|--------------------------------------------------------------------\n"
-			   + "|  Comando |Descrição\n"
+			   + "|Comando   | Descrição\n"
 			   + "|----------|---------------------------------------------------------\n"
 			   + "|=> C      |'Exibe arquivo em ordem crescente'\n"
 			   + "|=> D      |'Exibe arquivo em ordem decrescente'\n"
@@ -194,10 +194,10 @@ public class Menus extends View {
 		
 		if (print == true) {
 			msgb(
-				"|	SELECIONE QUAL TIPO DE ARVORE:\n"
+				"|SELECIONE QUAL TIPO DE ÁRVORE:\n"
 			  + "|--------------------------------------------------------------------\n"
-			  + "|  Comando    |Descrição\n"
-			  + "|-----------  |------------------------------------------------------\n"
+			  + "|Comando      |Descrição\n"
+			  + "|-------------|------------------------------------------------------\n"
 			  + menu 
 			  + "|=> Avl       |Árvore avl\n"
 		      + "|=> RedBlack  |Árvore rubro negra\n"
@@ -219,9 +219,9 @@ public class Menus extends View {
 	 */
 	public static void glossario()throws Exception {	
 		msgb(
-		    "|	GLOSSÁRIO DO PROGRAMA:\n"
+		    "|GLOSSÁRIO DO PROGRAMA:\n"
 		  + "|--------------------------------------------------------------------\n"
-		  + "| Vocábulo |Significado\n"
+		  + "|Vocábulo  |Significado\n"
 		  + "|----------|---------------------------------------------------------\n"
 		  + "|C         |Controller\n"
 		  + "|M         |Model\n"
