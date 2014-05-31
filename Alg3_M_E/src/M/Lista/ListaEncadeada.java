@@ -11,8 +11,8 @@ import C.Registrador;
 public class ListaEncadeada<T extends Comparable<T>> {
 	
 	
-	private Nodo<T> head; // will be ficheiro Nodo
-	private Nodo<T> tail; // will be ficheiro Nodo
+	private Nodo<T> head; // will be ficheiro NodoM
+	private Nodo<T> tail; // will be ficheiro NodoM
 	
 
 	public Nodo<T> getHead() {

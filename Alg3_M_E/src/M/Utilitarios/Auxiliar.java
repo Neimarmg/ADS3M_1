@@ -1,7 +1,5 @@
 package M.Utilitarios;
-
 import java.util.Scanner;
-
 import App.Menus;
 import App.View;
 
@@ -11,7 +9,7 @@ import App.View;
  */
 public class Auxiliar {
 	static Scanner var = new Scanner(System.in);
-	static String opcao; // Variï¿½vel global de apoio para parâmetro "strings"
+	static String opcao; // Variïável global de apoio para parâmetro "strings"
 	static int contador = 0; // Variïável global contadora de aïções 
 	static String detalhes; // Variável global de apoio para detalhar ações do programa "strings"
 	
@@ -40,9 +38,9 @@ public class Auxiliar {
 	 */
 	public static void setContador(boolean contar) {
 		if (contar == true){
-			Auxiliar.contador++; // Conta ações em tempo de execuÃ§Ã£o
+			Auxiliar.contador++; // Conta ações em tempo de execução
 		}else{
-			Auxiliar.contador = 0; //Limpa vÃ¡riavel contadorea
+			Auxiliar.contador = 0; //Limpa variavel contadorea
 		}
 	}
 	
@@ -122,7 +120,7 @@ public class Auxiliar {
 	}
 	
 	/**
-	 * Mï¿½todo de retorno que recebe ficheiro "label" com parï¿½metro,
+	 * Método de retorno que recebe ficheiro "label" com parï¿½metro,
 	 * e retorna uma "string" para filtros
 	 * @param label
 	 * @return

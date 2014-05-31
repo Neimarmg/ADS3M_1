@@ -1,7 +1,7 @@
-package M.Arvore;
-
+package C.Arvores.Binaria;
 import App.View;
 import C.Registrador;
+import M.NodoM;
 import M.Utilitarios.Auxiliar;
 	
 /**
@@ -9,7 +9,7 @@ import M.Utilitarios.Auxiliar;
  * @author Neimar, Aurelio *
  * @param <T>
  */
-public class Nodo<T extends Comparable<T>>{
+public class Nodo<T extends Comparable<T>> extends NodoM<T>{
 	protected Nodo<T> pai;
 	private Nodo<T> esq;
 	private Nodo<T> dir;

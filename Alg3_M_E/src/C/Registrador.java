@@ -5,8 +5,8 @@ import java.io.IOException;
 import App.Menus;
 import App.View;
 import C.Arquivos.Ficheiro;
+import C.Arvores.Binaria.ArvoreBinaria;
 import M.Contatos;
-import M.Arvore.ArvoreBinaria;
 import M.Lista.ListaOrdenada;
 import M.Lista.Nodo;
 import M.Utilitarios.Auxiliar;
@@ -50,7 +50,7 @@ public class Registrador{
 			break;
 		
 		case "ARVORE":
-			arvoreBinaria.insere(new M.Arvore.Nodo<String>(linha));
+			arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
 			break;
 			
 		default:

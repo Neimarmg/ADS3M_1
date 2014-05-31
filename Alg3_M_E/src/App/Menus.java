@@ -25,7 +25,7 @@ public class Menus extends View {
 		+ "|=> T4     |Algoritmos de Ordenação  |" + Auxiliar.statusAcao(7,7) +"\n"
 		+ "|=> T5     |Arvores binária          |" + Auxiliar.statusAcao(2,0) +"\n"
 		+ "|=> T6     |Arvores AVL E RED BLACK  |" + Auxiliar.statusAcao(2,0) +"\n"
-		+ "|Glossário |Imprime glossário        |" + Auxiliar.statusAcao(2,0) +"\n"
+		+ "|Glossario |Imprime glossário        |" + Auxiliar.statusAcao(2,0) +"\n"
 		+ "|" +sair);		
 	}
 	

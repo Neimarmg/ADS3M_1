@@ -39,7 +39,6 @@ public class Ordenadores {
 		Dados.vetor[j] = aux;	
 	}
 		
-	
 	/**
 	 * Metodo responsável pela ordenação BubleSort
 	 * @param ordem
@@ -256,7 +255,4 @@ public class Ordenadores {
 		informaStatistica(mostraEstatisca);
 		limpaVetor(limpaVetor);
 	}
-
-	
-
 }

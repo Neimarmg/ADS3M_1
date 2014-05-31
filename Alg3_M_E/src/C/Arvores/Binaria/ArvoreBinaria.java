@@ -1,4 +1,4 @@
-package M.Arvore;
+package C.Arvores.Binaria;
 
 import M.Utilitarios.Auxiliar;
 
