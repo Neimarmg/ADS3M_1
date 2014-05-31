@@ -5,6 +5,7 @@ import java.io.IOException;
 import App.Menus;
 import App.View;
 import C.Arquivos.Ficheiro;
+import C.Arvores.Avl.ArvoreAVL;
 import C.Arvores.Binaria.ArvoreBinaria;
 import C.Lista.ListaOrdenada;
 import C.Lista.Nodo;
@@ -22,9 +23,23 @@ public class Registrador{
 	static String acum =""; //Acumulador de dados para edição de arquivo 
 	static ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	static ArvoreBinaria<String> arvoreBinaria = new ArvoreBinaria<String>();
-
+	static ArvoreAVL avl = new ArvoreAVL();
+	
+	/**
+	 * Método de reperação de estado do objeto
+	 * @return
+	 */
 	public static ArvoreBinaria<String> getArvoreBinaria() {
 		return arvoreBinaria;
+	}
+	
+	
+	/**
+	 * Método de reperação de estado do objeto
+	 * @return
+	 */
+	public static ArvoreAVL getAvl() {
+		return avl;
 	}
 	
 	public static void setAcum(String acum) {
@@ -46,20 +61,36 @@ public class Registrador{
 		switch (Auxiliar.getOpcao()) {
 	
 		case "LISTA":
+			
 			lista.insert(new Nodo<String>(linha), lista.getHead());
 			break;
 		
 		case "ARVORE":
+			
 			if(Auxiliar.getDetalhes().equals("binaria") ) {
 				arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
-			}
 			
-			if(Auxiliar.getDetalhes().equals("avl") ) {
-				View.objetoNaoImplementado();
-			}
+			} else if (Auxiliar.getDetalhes().equals("avl") ) {
+				
+				avl.inserir(avl, 10);
+				avl.inserir(avl, 4);
+				avl.inserir(avl, 7);
+				avl.inserir(avl, 8);
+				avl.inserir(avl, 2);
+				avl.inserir(avl, 3);
+				avl.inserir(avl, 9);
+
+				System.out.print("EM : ");
+				avl.imprmeOrdenPreFixa(avl);
+	
 			
-			if(Auxiliar.getDetalhes().equals("redBlack") ) {
+			} else if(Auxiliar.getDetalhes().equals("redBlack") ) {
 				View.objetoNaoImplementado();
+			
+			} else{			
+				View.msge("\nArvore inválida\n");
+				Menus.menuArvores(true, false, true);
+				copiaArquivo(linha);
 			}
 			break;
 			
@@ -110,10 +141,10 @@ public class Registrador{
 			break;
 
 		case "ARVORE":
-			gravaDados(nomeArquivo);
+			//gravaDados(nomeArquivo);
 			Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
-			arvoreBinaria.guardaEdicao();
-			editaArquivo(nomeArquivo);			
+			//arvoreBinaria.guardaEdicao();
+			//editaArquivo(nomeArquivo);			
 			break;
 			
 		default:
