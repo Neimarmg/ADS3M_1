@@ -18,14 +18,14 @@ public class Menus extends View {
 	public static void menuSelecinaAtividade() {	
 		msgb("|	QUAL ATIVIDADE?\n"
 		 +"|--------------------------------------------------------------------\n"
-		 +"|  Comando |Descrição                |Status atividade\n"
-		 +"|----------|-------------------------|-------------------------------\n"
-		+ "|=> T1     |Listas Encadeadas        |" + Auxiliar.statusAcao(7,7) +"\n"
-		+ "|=> T2     |Pesquisa Binária         |" + Auxiliar.statusAcao(7,7) +"\n"
-		+ "|=> T4     |Algoritmos de Ordenação  |" + Auxiliar.statusAcao(7,7) +"\n"
-		+ "|=> T5     |Arvores binária          |" + Auxiliar.statusAcao(2,0) +"\n"
-		+ "|=> T6     |Arvores AVL E RED BLACK  |" + Auxiliar.statusAcao(2,0) +"\n"
-		+ "|Glossario |Imprime glossário        |" + Auxiliar.statusAcao(2,0) +"\n"
+		 +"|  Comando   |Descrição              |Status atividade\n"
+		 +"|------------|-----------------------|-------------------------------\n"
+		+ "|=> T1       |Listas Encadeadas      |" + Auxiliar.statusAcao(7,7) +"\n"
+		+ "|=> T2       |Pesquisa Binária       |" + Auxiliar.statusAcao(7,7) +"\n"
+		+ "|=> T4       |Algoritmos de Ordenação|" + Auxiliar.statusAcao(7,7) +"\n"
+		+ "|=> T5       |Arvores binária        |" + Auxiliar.statusAcao(2,0) +"\n"
+		+ "|=> T6       |Arvores AVL E RED BLACK|" + Auxiliar.statusAcao(2,0) +"\n"
+		+ "|=> Glossario|Imprime glossário      |" + Auxiliar.statusAcao(2,7) +"\n"
 		+ "|" +sair);		
 	}
 	
@@ -63,12 +63,12 @@ public class Menus extends View {
 	 */
 	public static void menuInclude(String include)throws Exception {	
 		menu =
-				"|	OPÇÕES DE INCLUDE\n"
-				+"|--------------------------------------------------------------------\n"
-				+"|  Comando   |Descrição\n"
-				+"|------------|-------------------------------------------------------\n"
-				+"|=> NOVO     |'Habilita para gravar novo registro'\n"	
-				+"|=> REMOVER  |'Remove arquivo existente'\n";					
+			"|	OPÇÕES DE INCLUDE\n"
+			+"|--------------------------------------------------------------------\n"
+			+"|  Comando   |Descrição\n"
+			+"|------------|-------------------------------------------------------\n"
+			+"|=> NOVO     |'Habilita para gravar novo registro'\n"	
+			+"|=> REMOVER  |'Remove arquivo existente'\n";					
 		
 		switch (include) {
 			
