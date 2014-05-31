@@ -1,4 +1,4 @@
-package M.Lista;
+package C.Lista;
 
 /**
  * Classe de definição deo nodo da lista

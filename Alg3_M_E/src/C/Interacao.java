@@ -4,9 +4,9 @@ import App.Menus;
 import App.View;
 import C.Arquivos.Ficheiro;
 import C.Arquivos.Memoria;
+import C.Lista.ListaEncadeada;
 import C.Navegacao.Consultas;
 import M.Ordenadores;
-import M.Lista.ListaEncadeada;
 import M.Utilitarios.Auxiliar;
 
 /**

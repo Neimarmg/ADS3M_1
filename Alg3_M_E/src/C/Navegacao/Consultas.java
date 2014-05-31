@@ -4,8 +4,8 @@ import App.Menus;
 import App.View;
 import C.Registrador;
 import C.Arquivos.Ficheiro;
+import C.Lista.ListaEncadeada;
 import M.Dados;
-import M.Lista.ListaEncadeada;
 import M.Utilitarios.Auxiliar;
 
 

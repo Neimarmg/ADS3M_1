@@ -1,5 +1,5 @@
 /**
  * @author Neimar
  */
-package M.Lista;
+package C.Lista;
 //Pacote de armazemanento da estrutura lista

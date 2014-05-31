@@ -6,9 +6,9 @@ import App.Menus;
 import App.View;
 import C.Arquivos.Ficheiro;
 import C.Arvores.Binaria.ArvoreBinaria;
+import C.Lista.ListaOrdenada;
+import C.Lista.Nodo;
 import M.Contatos;
-import M.Lista.ListaOrdenada;
-import M.Lista.Nodo;
 import M.Utilitarios.Auxiliar;
 import M.Utilitarios.Include;
 

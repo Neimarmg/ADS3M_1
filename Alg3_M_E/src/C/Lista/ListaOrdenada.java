@@ -1,4 +1,5 @@
-package M.Lista;
+package C.Lista;
+
 
 /**
  * Classe responsavel pela ordenação do dodos ontes da insersão no arquivo

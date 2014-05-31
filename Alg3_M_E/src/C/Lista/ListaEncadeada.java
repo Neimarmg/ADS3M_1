@@ -1,4 +1,4 @@
-package M.Lista;
+package C.Lista;
 
 import App.View;
 import C.Registrador;
