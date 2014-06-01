@@ -23,7 +23,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 		if (raiz == null) {
 			raiz = novo;
 		} else {
-			raiz.insere(novo);
+			raiz.insert(novo);
 		}		
 	}
 	

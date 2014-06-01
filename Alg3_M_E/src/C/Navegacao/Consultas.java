@@ -117,7 +117,7 @@ public class Consultas {
 				Registrador.getArvoreBinaria().travessiaPosFixa(true);
 				
 			} else if (Auxiliar.getDetalhes().equals("avl")) {				
-				View.objetoNaoImplementado();
+				Registrador.getAvl().imprimeOrdenPosFixa(Registrador.getAvl());
 
 			} else if(Auxiliar.getDetalhes().equals("redBlack")) {
 				View.objetoNaoImplementado();				
@@ -143,7 +143,7 @@ public class Consultas {
 				Registrador.getArvoreBinaria().travessiaPreFixa(true);
 				
 			} else if (Auxiliar.getDetalhes().equals("avl")) {				
-				View.objetoNaoImplementado();
+				Registrador.getAvl().imprmeOrdenPreFixa(Registrador.getAvl());
 
 			} else if (Auxiliar.getDetalhes().equals("redBlack") ) {
 				View.objetoNaoImplementado();				
@@ -169,7 +169,7 @@ public class Consultas {
 				Registrador.getArvoreBinaria().travessiaInfixa(true);
 				
 			} else if (Auxiliar.getDetalhes().equals("avl")) {				
-				View.objetoNaoImplementado();
+				Registrador.getAvl().imprimeOrdemInfixa(Registrador.getAvl());
 
 			} else if (Auxiliar.getDetalhes().equals("redBlack")) {
 				View.objetoNaoImplementado();				

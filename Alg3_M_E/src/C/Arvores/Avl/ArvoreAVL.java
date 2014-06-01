@@ -2,12 +2,13 @@ package C.Arvores.Avl;
 
 import App.View;
 import M.Dados;
+import M.Utilitarios.Auxiliar;
 
 public class ArvoreAVL extends DadosAvl {
 	
 	private ArvoreAVL dir, esq;
 
-	public ArvoreAVL inserir(ArvoreAVL aux, int num) {
+	public ArvoreAVL insert(ArvoreAVL aux, int num) {
 
 		ArvoreAVL novo;
 		
@@ -22,7 +23,7 @@ public class ArvoreAVL extends DadosAvl {
 		
 		} else if (num < aux.getNum()) {
 			
-			aux.esq = inserir(aux.esq, num);
+			aux.esq = insert(aux.esq, num);
 			
 			
 			if (aux.esq.getAltDir() > aux.esq.getAltEsq()) {
@@ -34,7 +35,7 @@ public class ArvoreAVL extends DadosAvl {
 			aux = balancia(aux);
 			
 		} else {
-			aux.dir = inserir(aux.dir, num);
+			aux.dir = insert(aux.dir, num);
 			
 			
 			if (aux.dir.getAltDir() > aux.dir.getAltEsq()) {
@@ -155,7 +156,6 @@ public class ArvoreAVL extends DadosAvl {
 	public void imprimeOrdemInfixa(ArvoreAVL aux) {
 		if (aux != null) {
 			View.msg(aux.getNum() + Dados.vetor[aux.getNum()] + "\n");
-			
 			imprimeOrdemInfixa(aux.esq);
 			imprimeOrdemInfixa(aux.dir);
 		}
@@ -166,7 +166,8 @@ public class ArvoreAVL extends DadosAvl {
 		if (aux != null) {			
 			
 			imprmeOrdenPreFixa(aux.esq);			
-			View.msg(aux.getNum() + Dados.vetor[aux.getNum()] + "\n");			
+			View.msg(aux.getNum() + Dados.vetor[aux.getNum()] + "\n");
+			Auxiliar.setContador(true);
 			imprmeOrdenPreFixa(aux.dir);
 		}
 	}

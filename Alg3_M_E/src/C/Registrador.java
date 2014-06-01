@@ -34,6 +34,7 @@ public class Registrador {
 	public static ListaOrdenada<String> getLista() {
 		return lista;
 	}
+
 	
 	/**
 	 * Método de recuperação do estado do objeto
@@ -43,6 +44,9 @@ public class Registrador {
 		return arvoreBinaria;
 	}
 	
+	public static void setAvl(ArvoreAVL avl) {
+		Registrador.avl = avl;
+	}
 	
 	/**
 	 * Método de recuperação do estado do objeto
@@ -92,9 +96,10 @@ public class Registrador {
 				arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
 			
 			} else if (Auxiliar.getDetalhes().equals("avl")) {				
-				avl.inserir(avl,Dados.getIndex());
+				setAvl(new ArvoreAVL());
+				avl.insert(avl, Dados.getIndex());
 				
-
+				
 			} else if(Auxiliar.getDetalhes().equals("redBlack")) {
 				View.objetoNaoImplementado();
 				
@@ -161,13 +166,11 @@ public class Registrador {
 			
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
 				Ficheiro.leArquivo(nomeArquivo, false, null, false, false);
-				avl.imprmeOrdenPreFixa(avl);
+				getAvl().imprmeOrdenPreFixa(getAvl());	
 				
-				Ficheiro.setIndex(0);
-				
-			
+							
 			} else if(Auxiliar.getDetalhes().equals("redBlack")) {
-				
+				View.objetoNaoImplementado();
 			
 			} else {
 				informaEstrutura(false);
