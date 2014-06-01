@@ -110,7 +110,7 @@ public class Nodo<T extends Comparable<T>> {
 		
 			travessiaPosFixa(no.dir);
 			travessiaPosFixa(no.esq);
-			View.msg("\nTravessia pós-fixa :" + no.valor);
+			View.msg("\n:" + no.valor);
 	}
 	
 	
@@ -122,7 +122,7 @@ public class Nodo<T extends Comparable<T>> {
 		if(no == null)
 			return;
 			
-			View.msg("\nTravessia pré-fixa :" + no.valor);	
+			View.msg("\n:" + no.valor);	
 			travessiaPreFixa(no.dir);
 			travessiaPreFixa(no.esq);		 
 	}
@@ -137,7 +137,7 @@ public class Nodo<T extends Comparable<T>> {
 			return;
 		
 		 	travessiaInfixa(no.esq);
-			View.msg("\nTravessia infixa :" + no.valor);	
+			View.msg("\n:" + no.valor);	
 			travessiaInfixa(no.dir);		 
 	}
 	

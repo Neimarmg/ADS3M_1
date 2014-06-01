@@ -48,7 +48,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 */
 	public void travessiaPosFixa(boolean cabecalho){
 		if (cabecalho == true ) {
-			View.msgc("\nTRAVESSIA PÓS-FIXA " 
+			View.msgc("\nTRAVESSIA PÓS-FIXA - " 
 				+ Auxiliar.getOpcao().toUpperCase() +" " +Auxiliar.getDetalhes().toUpperCase() +"\n\n");
 		}
 		raiz.travessiaPosFixa(raiz);
@@ -59,7 +59,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 */
 	public void travessiaPreFixa(boolean cabecalho) {
 		if (cabecalho == true ) {
-			View.msgc("\nTRAVESSIA PÓS-FIXA " 
+			View.msgc("\nTRAVESSIA PRÉ-FIXA - " 
 				+ Auxiliar.getOpcao().toUpperCase() +" " +Auxiliar.getDetalhes().toUpperCase() +"\n\n");
 		}
 		raiz.travessiaPreFixa(raiz);
@@ -70,7 +70,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 */
 	public void travessiaInfixa(boolean cabecalho) {
 		if (cabecalho == true ) {
-			View.msgc("\nTRAVESSIA INFIXA " 
+			View.msgc("\nTRAVESSIA INFIXA - " 
 				+ Auxiliar.getOpcao().toUpperCase() +" " +Auxiliar.getDetalhes().toUpperCase() +"\n\n");
 		}
 		raiz.travessiaInfixa(raiz);
