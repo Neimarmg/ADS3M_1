@@ -23,9 +23,9 @@ public class Menus extends View {
 		 + "|=> T1        |Lista Encadeada         |" + Auxiliar.statusAcao(7,7) + "\n"
 		 + "|=> T2        |Pesquisa Binária        |" + Auxiliar.statusAcao(7,7) + "\n"
 		 + "|=> T4        |Algoritmos de Ordenação |" + Auxiliar.statusAcao(7,7) + "\n"
-		 + "|=> T5        |Árvore Binária          |" + Auxiliar.statusAcao(2,0) + "\n"
-		 + "|=> T6        |Árvores AVL E RED BLACK |" + Auxiliar.statusAcao(2,0) + "\n"
-		 + "|=> Glossario |Imprime glossário       |" + Auxiliar.statusAcao(2,7) +"\n"
+		 + "|=> T5        |Árvore Binária          |" + Auxiliar.statusAcao(5,0) + "\n"
+		 + "|=> T6        |Árvores AVL E RED BLACK |" + Auxiliar.statusAcao(5,0) + "\n"
+		 + "|=> Glossario |Imprime glossário       |" + Auxiliar.statusAcao(7,7) +"\n"
 		 + "|" + sair);		
 	}
 	

@@ -70,7 +70,7 @@ public class Auxiliar {
 		
 		case -1:r = "Pendente " + s; 
 			break;
-		case 0:	r = "Nï¿½o definido " + s; 
+		case 0:	r = "Não definido " + s; 
 			break;
 		case 1:	r = "Em planejamento " + s; 
 			break;
@@ -78,16 +78,16 @@ public class Auxiliar {
 			break;
 		case 3:	r = "Em teste " + s; 
 			break;
-		case 4:	r = "Em revisï¿½o " + s; 
+		case 4:	r = "Em revisão " + s; 
 			break;
-		case 5:	r = "Concluï¿½do(a) parcialmente " + s; 
+		case 5:	r = "Concluído parcialmente " + s; 
 			break;
-		case 6:	r = "Concluï¿½do(a) " + s; 
+		case 6:	r = "Concluído " + s; 
 			break;
-		case 7:	r = "Finalizado(a) " + s; 
+		case 7:	r = "Finalizado " + s; 
 			break;		
 		default:
-			r = "invï¿½lido "; break;
+			r = "inválido "; break;
 		}
 		
 		return r;
