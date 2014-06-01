@@ -54,9 +54,8 @@ public class Registrador {
 		return acum;
 	}
 	
-	
 	/**
-	 * Informa quando a estrura de operação não é válida
+	 * Informa quando a estrura de operação é inválida
 	 * @param ativaTipo
 	 * @throws Exception
 	 */

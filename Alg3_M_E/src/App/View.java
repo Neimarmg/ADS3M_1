@@ -52,5 +52,4 @@ public class View {
 	public static void sair() {
 		System.err.print("\nVocê optou por sair do programa. Obrigado.");
 	}
-
 }

@@ -2,7 +2,6 @@ package C.Navegacao;
 
 import App.Menus;
 import App.View;
-import C.Registrador;
 import C.Arquivos.Ficheiro;
 import C.Lista.ListaEncadeada;
 import M.Dados;
@@ -108,13 +107,93 @@ public class Consultas {
 
 //====================<< Busca em estruturas java >> ========================================		
 	
+	private void tPosFixa() throws Exception{		
+		switch (Auxiliar.getOpcao()) {
+		
+		case "LISTA":			
+			View.objetoNaoImplementado();
+			break;
+		
+		case "ARVORE":
+			
+			if(Auxiliar.getDetalhes().equals("binaria") ) {				
+				View.objetoNaoImplementado();
+				
+			} else if (Auxiliar.getDetalhes().equals("avl") ) {				
+				View.objetoNaoImplementado();
 
+			} else if(Auxiliar.getDetalhes().equals("redBlack") ) {
+				View.objetoNaoImplementado();				
+			}			
+			break;
+			
+		default:
+			View.opcaoInvalida();
+			Menus.menuArvores(true, true, true);
+			tPosFixa();			
+			break; // Condição de saída quando atividade for inválida
+		}
+	}
+	
+	
+	private void tPrefixa() throws Exception{		
+
+		switch (Auxiliar.getOpcao()) {
+		
+		case "LISTA":			
+			View.objetoNaoImplementado();
+			break;
+		
+		case "ARVORE":
+			
+			if(Auxiliar.getDetalhes().equals("binaria") ) {				
+				View.objetoNaoImplementado();
+				
+			} else if (Auxiliar.getDetalhes().equals("avl") ) {				
+				View.objetoNaoImplementado();
+
+			} else if(Auxiliar.getDetalhes().equals("redBlack") ) {
+				View.objetoNaoImplementado();				
+			}			
+			break;
+			
+		default:
+			View.opcaoInvalida();
+			Menus.menuArvores(true, true, true);
+			tPosFixa();			
+			break; // Condição de saída quando atividade for inválida
+		}
+	}	
 	
 	
 	
-	
-	
-	
+	private void tInfixa() throws Exception{		
+		switch (Auxiliar.getOpcao()) {
+		
+		case "LISTA":			
+			View.objetoNaoImplementado();
+			break;
+		
+		case "ARVORE":
+			
+			if(Auxiliar.getDetalhes().equals("binaria") ) {				
+				View.objetoNaoImplementado();
+				
+			} else if (Auxiliar.getDetalhes().equals("avl") ) {				
+				View.objetoNaoImplementado();
+
+			} else if(Auxiliar.getDetalhes().equals("redBlack") ) {
+				View.objetoNaoImplementado();				
+			}			
+			break;
+			
+		default:
+			View.opcaoInvalida();
+			Menus.menuArvores(true, true, true);
+			tPosFixa();			
+			break; // Condição de saída quando atividade for inválida
+		}
+	}	
 	
 	
 //====================<< Menu busca >> ========================================================		
@@ -138,27 +217,27 @@ public class Consultas {
 				break;
 				
 			case "posfixa":				
-				Registrador.getArvoreBinaria().travessiaPosFixa();
+				tPosFixa();
 				selecionaComando(nomeArquivo);
 				break;
 			
 			case "prefixa":				
-				Registrador.getArvoreBinaria().travessiaPreFixa();
+				tPrefixa();
 				selecionaComando(nomeArquivo);
 				break;
 			
 			case "infixa":				
-				Registrador.getArvoreBinaria().travessiaInfixa();
+				tInfixa();
 				selecionaComando(nomeArquivo);
 				break;
 			
 			case "contar":				
-				Registrador.getArvoreBinaria().contaNodos();
+				View.objetoNaoImplementado();
 				selecionaComando(nomeArquivo);
 				break;
 			
 			case "altura":				
-				Registrador.getArvoreBinaria().buscEmAltura(nomeArquivo);
+				View.objetoNaoImplementado();
 				selecionaComando(nomeArquivo);
 				break;
 			
