@@ -7,6 +7,7 @@ import App.View;
 import C.Arquivos.Ficheiro;
 import C.Arvores.Avl.ArvoreAVL;
 import C.Arvores.Binaria.ArvoreBinaria;
+import C.Arvores.RedBlack.ArvoreRBlack;
 import C.Lista.ListaOrdenada;
 import C.Lista.Nodo;
 import M.Buffers;
@@ -26,6 +27,16 @@ public class Registrador {
 	private static ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	private static ArvoreBinaria<String> arvoreBinaria = new ArvoreBinaria<String>();
 	private static ArvoreAVL avl = new ArvoreAVL();
+	private static ArvoreRBlack<String> arvoreRedBlack = new  ArvoreRBlack<String>();
+	
+	
+	/**
+	 * Método de recuperação do estado do objeto
+	 * @return
+	 */
+	public static ArvoreRBlack<String> getArvoreRedBlack() {
+		return arvoreRedBlack;
+	}
 	
 	
 	/**
@@ -49,6 +60,7 @@ public class Registrador {
 		Registrador.avl = avl;
 	}
 	
+	
 	/**
 	 * Método de recuperação do estado do objeto
 	 * @return
@@ -66,6 +78,7 @@ public class Registrador {
 	public static String getAcum() {
 		return acum;
 	}
+	
 	
 	/**
 	 * Informa quando a estrura de operação é inválida
@@ -93,16 +106,16 @@ public class Registrador {
 		
 		case "ARVORE":
 			
-			if(Auxiliar.getDetalhes().equals("binaria")) {				
+			if(Auxiliar.getDetalhes().equals("ab")) {				
 				arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
 			
 			} else if (Auxiliar.getDetalhes().equals("avl")) {				
 				setAvl(new ArvoreAVL());
-				avl.insert(avl, Dados.getIndex());
+				avl.insere(avl, Dados.getIndex());
 				
 				
 			} else if(Auxiliar.getDetalhes().equals("rb")) {
-				//View.objetoNaoImplementado();
+				getArvoreRedBlack().insere(linha);
 				
 			} else {
 				informaEstrutura(false);
@@ -146,7 +159,7 @@ public class Registrador {
 	 * @param nomeArquivo
 	 * @throws Exception
 	 */
-	public void insereNovoRegistro(String nomeArquivo) throws Exception {
+	public void insereRegistro(String nomeArquivo) throws Exception {
 						
 		switch (Auxiliar.getOpcao()) {
 		
@@ -159,7 +172,7 @@ public class Registrador {
 			break;
 
 		case "ARVORE":			
-			if(Auxiliar.getDetalhes().equals("binaria")) {
+			if(Auxiliar.getDetalhes().equals("ab")) {
 				gravaDados(nomeArquivo);
 				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
 				arvoreBinaria.guardaEdicao();
@@ -172,11 +185,12 @@ public class Registrador {
 				
 							
 			} else if(Auxiliar.getDetalhes().equals("rb")) {
-				View.objetoNaoImplementado();
-			
+				gravaDados(nomeArquivo);
+				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
+								
 			} else {
 				informaEstrutura(false);
-				insereNovoRegistro(nomeArquivo);
+				insereRegistro(nomeArquivo);
 			}			
 			break;
 			
@@ -197,7 +211,7 @@ public class Registrador {
 		switch (Auxiliar.digita("")) {
 		
 		case "novo":
-			insereNovoRegistro(nomeArquivo);
+			insereRegistro(nomeArquivo);
 			executaComando(nomeArquivo); // Loop para novas ações do menu
 			break;
 		

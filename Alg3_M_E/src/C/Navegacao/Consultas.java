@@ -118,7 +118,7 @@ public class Consultas {
 			
 		case "ARVORE":
 			
-			if(Auxiliar.getDetalhes().equals("binaria")) {				
+			if(Auxiliar.getDetalhes().equals("ab")) {				
 				Registrador.getArvoreBinaria().travessiaPosFixa(true);
 				break;
 				
@@ -151,7 +151,7 @@ public class Consultas {
 		
 		case "ARVORE":
 			
-			if (Auxiliar.getDetalhes().equals("binaria")) {				
+			if (Auxiliar.getDetalhes().equals("ab")) {				
 				Registrador.getArvoreBinaria().travessiaPreFixa(true);
 				break;
 				
@@ -183,7 +183,7 @@ public class Consultas {
 		
 		case "ARVORE":
 			
-			if (Auxiliar.getDetalhes().equals("binaria")) {				
+			if (Auxiliar.getDetalhes().equals("ab")) {				
 				Registrador.getArvoreBinaria().travessiaInfixa(true);
 				break;
 				
@@ -214,7 +214,7 @@ public class Consultas {
 		
 		case "ARVORE":
 			
-			if (Auxiliar.getDetalhes().equals("binaria")) {				
+			if (Auxiliar.getDetalhes().equals("ab")) {				
 				Registrador.getArvoreBinaria().buscEmAltura(Auxiliar.digita("Elemento"), true);
 				break;
 				
@@ -243,28 +243,42 @@ public class Consultas {
 	 * 
 	 * @throws Exception
 	 */
-	private void insertElemento() throws Exception {		
+	private void manipulaEstrutura(boolean inserirElemento) throws Exception {		
 		switch (Auxiliar.getOpcao()) {
 		
 		case "LISTA":
-			Registrador.getLista().insert(
-					new Nodo<String>(Auxiliar.digita("Elementos")), lista.getHead());
-			Registrador.getArvoreBinaria().imprime();
+			if (inserirElemento == true){
+				Registrador.getLista().insert(
+						new Nodo<String>(Auxiliar.digita("Elementos")), lista.getHead());
+				Registrador.getArvoreBinaria().imprime(true);
+			}else{
+				Registrador.getArvoreBinaria().imprime(true);	
+			}
+			
 			break;
 			
 		case "ARVORE":
 			
-			if (Auxiliar.getDetalhes().equals("binaria")) {				
-				Registrador.getArvoreBinaria().insere(
-						new C.Arvores.Binaria.Nodo<String>(Auxiliar.digita("Elemento")));
-				Registrador.getArvoreBinaria().imprime();
+			if (Auxiliar.getDetalhes().equals("ab")) {				
+				
+				if (inserirElemento == true){
+					Registrador.getArvoreBinaria().insere(
+							new C.Arvores.Binaria.Nodo<String>(Auxiliar.digita("Elemento")));
+					Registrador.getArvoreBinaria().imprime(true);
+				}else{
+					Registrador.getArvoreBinaria().imprime(true);	
+				}
 				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("avl")) {				
-				Registrador.setAvl(new ArvoreAVL());
-				Registrador.getAvl().insert(Registrador.getAvl(), 
-						Auxiliar.digitaNumero("Elemento numérico"));
-				Registrador.getAvl().imprimeAvl(Registrador.getAvl());
+				if (inserirElemento == true){
+					Registrador.setAvl(new ArvoreAVL());
+					Registrador.getAvl().insere(Registrador.getAvl(), 
+							Auxiliar.digitaNumero("Elemento numérico"));
+					Registrador.getAvl().imprimeAvl(Registrador.getAvl());
+				}else{
+					Registrador.getAvl().imprimeAvl(Registrador.getAvl());
+				}
 				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("rb")) {
@@ -327,6 +341,7 @@ public class Consultas {
 		}
 	}
 	
+	
 //====================<< Menu ex >> ========================================================		
 		
 	/**
@@ -338,7 +353,7 @@ public class Consultas {
 			switch (Auxiliar.digita("")) {
 			
 			case "novo":				
-				insertElemento();
+				manipulaEstrutura(true);
 				selecionaComando(nomeArquivo);
 				break;
 			
@@ -395,7 +410,13 @@ public class Consultas {
 				View.objetoNaoImplementado();
 				selecionaComando(nomeArquivo);
 				break;
+		
+			case "imprimir":				
+				manipulaEstrutura(false);
+				selecionaComando(nomeArquivo);
+				break;
 			
+				
 			case "sair":
 				View.sair();
 				break;
@@ -425,7 +446,6 @@ public class Consultas {
 		
 		case "LISTA":			
 			Ficheiro.leArquivo(nomeArquivo, false, null, false, false);
-			Registrador.getLista().imprime(true);
 			selecionaComando(nomeArquivo);
 			break;
 

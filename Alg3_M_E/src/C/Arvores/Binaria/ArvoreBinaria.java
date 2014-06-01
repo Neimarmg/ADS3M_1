@@ -23,7 +23,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 		if (raiz == null) {
 			raiz = novo;
 		} else {
-			raiz.insert(novo);
+			raiz.insere(novo);
 		}		
 	}
 	
@@ -32,7 +32,10 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * @param impressão da árvore
 	 * @throws Exception 
 	 */
-	public void imprime() throws Exception {
+	public void imprime(boolean cabecalho) throws Exception {
+		View.msgc("\nIMPESSÃO DA - "
+				+ Auxiliar.getOpcao().toUpperCase() + " " 
+				+ Auxiliar.getDetalhes().toUpperCase() + "\n\n");
 		raiz.imprime();			
 	}	
 	

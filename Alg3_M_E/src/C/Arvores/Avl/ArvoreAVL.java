@@ -8,7 +8,7 @@ public class ArvoreAVL extends DadosAvl {
 	
 	private ArvoreAVL dir, esq;
 
-	public ArvoreAVL insert(ArvoreAVL aux, int num) {
+	public ArvoreAVL insere(ArvoreAVL aux, int num) {
 
 		ArvoreAVL novo;
 		
@@ -23,8 +23,8 @@ public class ArvoreAVL extends DadosAvl {
 		
 		} else if (num < aux.getNum()) {
 			
-			aux.esq = insert(aux.esq, num);
-			
+			aux.esq = insere(aux.esq, num);
+		
 			
 			if (aux.esq.getAltDir() > aux.esq.getAltEsq()) {
 				aux.setAltEsq(aux.esq.getAltDir() + 1);
@@ -35,7 +35,7 @@ public class ArvoreAVL extends DadosAvl {
 			aux = balancia(aux);
 			
 		} else {
-			aux.dir = insert(aux.dir, num);
+			aux.dir = insere(aux.dir, num);
 			
 			
 			if (aux.dir.getAltDir() > aux.dir.getAltEsq()) {

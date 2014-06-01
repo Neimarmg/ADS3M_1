@@ -9,43 +9,43 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 	}
 
 	/**
-	 * 
-	 * @param n
+	 * Método de rotação a esquerda
+	 * @param no
 	 */
-	private void rotarEsquerda(Nodorb<T> n) {
-		Nodorb<T> direita = n.getDir();
-		substituirNodo(n, direita);
-		n.setDir(direita.getEsq());
+	private void rotacionaEsquerda(Nodorb<T> no) {
+		Nodorb<T> direita = no.getDir();
+		substituiNodo(no, direita);
+		no.setDir(direita.getEsq());
 
 		if (direita.getEsq() != null) {
-			direita.getEsq().setPar(n);
+			direita.getEsq().setPar(no);
 		}
-		direita.setEsq(n);
-		n.setPar(direita);
+		direita.setEsq(no);
+		no.setPar(direita);
 	}
 
 	/**
-	 * 
-	 * @param n
+	 * Método de rotação a direita
+	 * @param no
 	 */
-	private void rotarDireita(Nodorb<T> n) {
-		Nodorb<T> esquerda = n.getEsq();
-		substituirNodo(n, esquerda);
-		n.setEsq(esquerda.getDir());
+	private void rotacionaDireita(Nodorb<T> no) {
+		Nodorb<T> esquerda = no.getEsq();
+		substituiNodo(no, esquerda);
+		no.setEsq(esquerda.getDir());
 
 		if (esquerda.getDir() != null) {
-			esquerda.getDir().setPar(n);
+			esquerda.getDir().setPar(no);
 		}
-		esquerda.setDir(n);
-		n.setPar(esquerda);
+		esquerda.setDir(no);
+		no.setPar(esquerda);
 	}
 
 	/**
-	 * 
+	 * Método reponsavel pela subtituição de nodos
 	 * @param x
 	 * @param no
 	 */
-	private void substituirNodo(Nodorb<T> x, Nodorb<T> no) {
+	private void substituiNodo(Nodorb<T> x, Nodorb<T> no) {
 		if (x.getParente() == null) {
 			raiz = no;
 		} else {
@@ -61,10 +61,10 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 	}
 
 	/**
-	 * 
+	 * Metodo resposável pela inserção de elementos na árvore
 	 * @param valor
 	 */
-	public void inserir(T valor) {
+	public void insere(T valor) {
 		
 		Nodorb<T> node = new Nodorb<T>(null, null, valor, false);
 		
@@ -98,89 +98,91 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 			}
 			node.setPar(n);
 		}
-		case1(node);
+		caso1(node);
 	}
 
+	
 	/**
-	 * 
+	 *  Caso de inserção nro 1
 	 * @param no
 	 */
-	private void case1(Nodorb<T> no) {
+	private void caso1(Nodorb<T> no) {
 		if (no.getParente() == null) {
-			no.setCor(true);
+			no.setCorNodo(true);
 		} else {
 			caso2(no);
 		}
 	}
 
 	/**
-	 * 
+	 *  Caso de inserção nro 2
 	 * @param no
 	 */
 	private void caso2(Nodorb<T> no) {
 		
-		if (no.getParente().isCor() == true) {
+		if (no.getParente().isCorNodo() == true) {
 			return;
 		} else {
-			case3(no);
+			caso3(no);
 		}
 	}
 
 	
 	/**
-	 * 
+	 * Caso de inserção nro 3
 	 * @param no
 	 */
-	private void case3(Nodorb<T> no) {
+	private void caso3(Nodorb<T> no) {
 		
-		if (no.tio().isCor() == false) {
-			no.getParente().setCor(true);
-			no.tio().setCor(true);
-			no.avo().setCor(false);
-			case1(no.avo());
+		if (no.tio().isCorNodo() == false) {
+			no.getParente().setCorNodo(true);
+			no.tio().setCorNodo(true);
+			no.avo().setCorNodo(false);
+			caso1(no.avo());
 		} else {
 			caso4(no);
 		}
 	}
 
 	/**
-	 * 
+	 *  Caso de inserção nro 4
 	 * @param no
 	 */
 	private void caso4(Nodorb<T> no) {
 		
 		if (no == no.getParente().getDir()
 				&& no.getParente() == no.avo().getEsq()) {
-			rotarEsquerda(no.getParente());
+			rotacionaEsquerda(no.getParente());
 			no = no.getEsq();
 		} else if (no == no.getParente().getEsq()
 				&& no.getParente() == no.avo().getDir()) {
-			rotarDireita(no.getParente());
+			rotacionaDireita(no.getParente());
 			no = no.getDir();
 		}
 		caso5(no);
 	}
 
 	/**
-	 * 
+	 *  Caso de inserção nro 5
 	 * @param no
 	 */
 	private void caso5(Nodorb<T> no) {
-		no.getParente().setCor(true);
-		no.avo().setCor(false);
+		no.getParente().setCorNodo(true);
+		no.avo().setCorNodo(false);
 		
 		if (no == no.getParente().getEsq()
 				&& no.getParente() == no.avo().getEsq()) {
-			rotarDireita(no.avo());
+			rotacionaDireita(no.avo());
 		} else {
-			rotarEsquerda(no.avo());
+			rotacionaEsquerda(no.avo());
 		}
 	}
 
+	
 	/**
 	 * Imprime nodos da raiz
 	 */
 	public void imprimirNodos() {
-		raiz.imprimir();
+		raiz.imprime();
 	}
 }

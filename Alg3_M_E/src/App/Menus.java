@@ -29,7 +29,7 @@ public class Menus extends View {
 		 + "|=> T4        |Algoritmos de Ordenação |" + Auxiliar.statusAcao(7,7) + "\n"
 		 + "|=> T5        |Árvore Binária          |" + Auxiliar.statusAcao(5,0) + "\n"
 		 + "|=> T6        |Árvores AVL E RED BLACK |" + Auxiliar.statusAcao(5,0) + "\n"
-		 + "|=> Glossario |Imprime glossário       |" + Auxiliar.statusAcao(7,7) +"\n"
+		 + "|=> G         |Imprime glossário       |" + Auxiliar.statusAcao(7,7) +"\n"
 		 + "|" + sair);		
 	}
 	
@@ -106,8 +106,8 @@ public class Menus extends View {
 		
 		edicao = "|--------------------------------------------- < Edição >\n"
 			   + "|=> NOVO         |Insere um novo elemento\n"
-			   + "|=> REMOVER      |Remove um elemento\n";
-					
+			   + "|=> REMOVER      |Remove um elemento\n"
+			   + "|=> IMPRIMIR     |Imprime estruturas elemento\n";	
 		switch (opcMenu) {
 		
 		case "ARVORE":			
@@ -232,7 +232,10 @@ public class Menus extends View {
 	      + "|V         |View\n"
 		  + "|App       |Aplicação\n"
 		  + "|Ficheiro  |Classe de manipulação de arquivo\n"
-		  + "|l.txt     |lista telefonica\n"
+		  + "|l.txt     |Lista telefonica\n"
+		  + "|avl       |Árvore avl\n"
+		  + "|rb        |Árvore red black\n"
+		  + "|ab        |Árvore binária\n"
 		  + "|#         |Marcador de exclusão de registro"
 		);
 	}

@@ -46,13 +46,13 @@ public class Nodo<T extends Comparable<T>> {
 	 * Método responsável pela insercão dos objetos na árvore
 	 * @param novo
 	 */
-	public void insert(Nodo<T> novo) {
+	public void insere(Nodo<T> novo) {
 		if (novo.getValor().compareTo(valor) < 0 ) {
 			if (esq ==null) {
 				esq = novo;
 				novo.setPai(this);
 			} else {
-				esq.insert(novo);
+				esq.insere(novo);
 			}
 		}
 		
@@ -61,7 +61,7 @@ public class Nodo<T extends Comparable<T>> {
 				dir = novo;
 				novo.setPai(novo);
 			} else {
-				dir.insert(novo);
+				dir.insere(novo);
 			}
 		}
 		return;
