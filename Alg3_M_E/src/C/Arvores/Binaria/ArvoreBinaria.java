@@ -46,15 +46,11 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	/**
 	 * Imprmime travessia pós-fixa da árvore
 	 */
-<<<<<<< HEAD
 	public void travessiaPosFixa(boolean cabecalho){
 		if (cabecalho == true ) {
-			//View.
+			View.msgc("\nImpressao odem pos-fixa " 
+				+ Auxiliar.getOpcao().toLowerCase() +" " +Auxiliar.getDetalhes() +"\n\n");
 		}
-		
-=======
-	public void travessiaPosFixa() {
->>>>>>> 2fd6dafdd27a897635b094f2e2f3fab9b12b41e6
 		raiz.travessiaPosFixa(raiz);
 	}
 	
