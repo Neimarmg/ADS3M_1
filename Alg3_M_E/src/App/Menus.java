@@ -17,6 +17,10 @@ public class Menus extends View {
 	
 	public static void menuSelecinaAtividade() {	
 		msgb("|QUAL ATIVIDADE?\n"
+		  +"|\n"
+		  +"|Obs.Todas as atividade são executadas independentemente apartir destes\n"
+		  +"|comandos que compartilham métodos genéricos reaproveitáveis\n"
+		  +"|\n"
 		 + "|----------------------------------------------------------------------\n"
 		 + "|Comando      |Descrição               |Status atividade\n"
 		 + "|-------------|------------------------|-------------------------------\n"

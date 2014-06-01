@@ -3,6 +3,10 @@ package M;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+/**
+ * Classe responsável pela definição das estruturas para a execução de arquivos
+ * @author moises
+ */
 public class Buffers {
 	static String linha;
 	static FileReader file;

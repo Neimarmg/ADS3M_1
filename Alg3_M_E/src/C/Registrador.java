@@ -9,6 +9,7 @@ import C.Arvores.Avl.ArvoreAVL;
 import C.Arvores.Binaria.ArvoreBinaria;
 import C.Lista.ListaOrdenada;
 import C.Lista.Nodo;
+import M.Buffers;
 import M.Contatos;
 import M.Dados;
 import M.Utilitarios.Auxiliar;
@@ -151,7 +152,7 @@ public class Registrador {
 		
 		case "LISTA":
 			gravaDados(nomeArquivo);
-			Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Lê arquivo após a insersão e padroniza a edição
+			Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
 			lista.guardaEdicao();
 			editaArquivo(nomeArquivo);
 				
@@ -160,12 +161,13 @@ public class Registrador {
 		case "ARVORE":			
 			if(Auxiliar.getDetalhes().equals("binaria")) {
 				gravaDados(nomeArquivo);
-				Ficheiro.leArquivo(nomeArquivo, false, null, false, false);
+				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
 				arvoreBinaria.guardaEdicao();
 				editaArquivo(nomeArquivo);	
 			
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
-				Ficheiro.leArquivo(nomeArquivo, false, null, false, false);
+				gravaDados(nomeArquivo);
+				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
 				getAvl().imprmeOrdenPreFixa(getAvl());	
 				
 							
@@ -204,9 +206,12 @@ public class Registrador {
 			executaComando(nomeArquivo);
 			break;
 			
-		case "remover" :			
+		case "remover" :
+			Buffers.setBuff(null); // Limpeza de buffer
+			Buffers.setFile(null); // Limpeza de arquivo
+			setAcum(""); // Limpeza de acumulador
 			Include.setAppend(false); // Desabilita "append" para sobscrever dados no arquivo
-			Include.remove(nomeArquivo,Auxiliar.digita("\nDigite um contato para excluir"));
+			Include.remove(nomeArquivo, Auxiliar.digita("\nDigite um contato para excluir"));
 		case "sair":
 			View.sair();
 			break;

@@ -15,8 +15,9 @@ clarisse,4456798
 corvam,135466
 dandara,1345445
 joelma,789794
-luisao,123456
+#karina,2
 l.txt,dsds
+luisao,123456
 marabas,123456
 marcos,7868678678
 maria,123544

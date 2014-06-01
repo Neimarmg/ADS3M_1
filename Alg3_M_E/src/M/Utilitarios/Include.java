@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import App.View;
+import C.Registrador;
 import M.Buffers;
 
 /**
@@ -41,12 +42,13 @@ public class Include {
 		BufferedWriter buff = null;
 		
 		try { 
-			f = new FileWriter(new File(arquivo),getAppend());
+			f = new FileWriter(new File(arquivo), getAppend());
 			buff = new BufferedWriter(f);			
 			
 			if (getAppend() == true) {	
 				buff.newLine();				
-			}			
+			}
+			
 			buff.write(desc);			
 			buff.close();	
 		
@@ -70,20 +72,20 @@ public class Include {
 		Buffers.setLinha(Buffers.getBuff().readLine());		
 		
 		try {				
-			while(Buffers.getLinha()!= null ) {	
-				
-				if (Buffers.getLinha().equals(desc)) {	
-					acun += "#"+Buffers.getLinha() +"\n";
+			while(Buffers.getLinha()!= null ) {				
+				if (Buffers.getLinha().equals(desc)) {
+					Registrador.setAcum("#"+Buffers.getLinha() +"\n");
 					View.msge("\nRegistro excluido com sucesso!\n");
 					setAppend(false);					
 				} else {
-					acun += Buffers.getLinha() +"\n";
+					Registrador.setAcum(Buffers.getLinha() +"\n");
 					setAppend(true);
 				}
 				Buffers.setLinha(Buffers.getBuff().readLine());
 			}			
 			 Buffers.getBuff().close();
-			addNovo(nomeArquivo, acun);
+			 setAppend(false); 
+			 addNovo(nomeArquivo, Registrador.getAcum());
 		
 		} catch (NullPointerException e) {
 			e.getMessage();
