@@ -109,7 +109,10 @@ public class Consultas {
 
 
 //====================<< Busca em estruturas java >> ========================================		
-	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	private void tPosFixa() throws Exception {		
 		switch (Auxiliar.getOpcao()) {
 			
@@ -123,7 +126,7 @@ public class Consultas {
 				Registrador.getAvl().imprimeOrdenPosFixa(Registrador.getAvl());
 				break;
 				
-			} else if (Auxiliar.getDetalhes().equals("redblack")) {
+			} else if (Auxiliar.getDetalhes().equals("rb")) {
 				View.objetoNaoImplementado();				
 				break;
 				
@@ -138,7 +141,10 @@ public class Consultas {
 		}
 	}
 	
-	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	private void tPrefixa() throws Exception {		
 
 		switch (Auxiliar.getOpcao()) {
@@ -153,7 +159,7 @@ public class Consultas {
 				Registrador.getAvl().imprmeOrdenPreFixa(Registrador.getAvl());
 				break;
 				
-			} else if (Auxiliar.getDetalhes().equals("redblack") ) {
+			} else if (Auxiliar.getDetalhes().equals("rb") ) {
 				View.objetoNaoImplementado();				
 				break;
 			}			
@@ -168,7 +174,10 @@ public class Consultas {
 	}	
 	
 	
-	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	private void tInfixa() throws Exception {		
 		switch (Auxiliar.getOpcao()) {
 		
@@ -182,7 +191,7 @@ public class Consultas {
 				Registrador.getAvl().imprimeOrdemInfixa(Registrador.getAvl());
 				break;
 				
-			} else if (Auxiliar.getDetalhes().equals("redblack")) {
+			} else if (Auxiliar.getDetalhes().equals("rb")) {
 				View.objetoNaoImplementado();				
 				break;
 			}			
@@ -196,7 +205,10 @@ public class Consultas {
 		}
 	}	
 	
-	
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	private void buscaEmAltura() throws Exception {		
 		switch (Auxiliar.getOpcao()) {
 		
@@ -210,7 +222,7 @@ public class Consultas {
 				View.objetoNaoImplementado();
 				break;
 				
-			} else if (Auxiliar.getDetalhes().equals("redblack")) {
+			} else if (Auxiliar.getDetalhes().equals("rb")) {
 				View.objetoNaoImplementado();				
 				break;
 			}			
@@ -227,6 +239,10 @@ public class Consultas {
 
 //====================<< Include em struturas de dados >> =====================================	
 
+	/**
+	 * 
+	 * @throws Exception
+	 */
 	private void insertElemento() throws Exception {		
 		switch (Auxiliar.getOpcao()) {
 		
@@ -241,14 +257,17 @@ public class Consultas {
 			if (Auxiliar.getDetalhes().equals("binaria")) {				
 				Registrador.getArvoreBinaria().insere(
 						new C.Arvores.Binaria.Nodo<String>(Auxiliar.digita("Elemento")));
+				Registrador.getArvoreBinaria().imprime();
 				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("avl")) {				
 				Registrador.setAvl(new ArvoreAVL());
-				Registrador.getAvl().insert(Registrador.getAvl(), Auxiliar.digitaNumero("Elemento numérico"));
+				Registrador.getAvl().insert(Registrador.getAvl(), 
+						Auxiliar.digitaNumero("Elemento numérico"));
+				Registrador.getAvl().imprimeAvl(Registrador.getAvl());
 				break;
 				
-			} else if (Auxiliar.getDetalhes().equals("redblack")) {
+			} else if (Auxiliar.getDetalhes().equals("rb")) {
 				View.objetoNaoImplementado();	
 				break;
 			}			
@@ -295,7 +314,7 @@ public class Consultas {
 						 +"\nPasso 4: Se encontrado excluir\n"
 						 +"\nPasso 5: Atualizar a realocar elementos fazer o rebalaciamento\n");
 				break;
-			} else if (Auxiliar.getDetalhes().equals("redblack")) {
+			} else if (Auxiliar.getDetalhes().equals("rb")) {
 					View.msge("\nSem planejamento ainda:\n");
 				break;			
 			}			
@@ -325,7 +344,6 @@ public class Consultas {
 			
 			case "remover":				
 				removeElemento();				
-				
 				break;
 				
 			case "posfixa":				

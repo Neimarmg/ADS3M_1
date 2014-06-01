@@ -153,6 +153,20 @@ public class ArvoreAVL extends DadosAvl {
 	}
 
 	
+	public void imprimeAvl(ArvoreAVL aux) {
+		
+		if (aux != null) {
+			View.msg(aux.getNum() + Dados.vetor[aux.getNum()] + "\n");
+			imprimeAvl(aux.esq);
+		}
+		
+		if (aux != null) {
+			View.msg(aux.getNum() + Dados.vetor[aux.getNum()] + "\n");
+			imprimeAvl(aux.dir);
+		}
+	}
+	
+	
 	public void imprimeOrdemInfixa(ArvoreAVL aux) {
 		if (aux != null) {
 			View.msg(aux.getNum() + Dados.vetor[aux.getNum()] + "\n");

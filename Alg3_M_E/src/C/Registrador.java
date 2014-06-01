@@ -101,8 +101,8 @@ public class Registrador {
 				avl.insert(avl, Dados.getIndex());
 				
 				
-			} else if(Auxiliar.getDetalhes().equals("redBlack")) {
-				View.objetoNaoImplementado();
+			} else if(Auxiliar.getDetalhes().equals("rb")) {
+				//View.objetoNaoImplementado();
 				
 			} else {
 				informaEstrutura(false);
@@ -171,7 +171,7 @@ public class Registrador {
 				getAvl().imprmeOrdenPreFixa(getAvl());	
 				
 							
-			} else if(Auxiliar.getDetalhes().equals("redBlack")) {
+			} else if(Auxiliar.getDetalhes().equals("rb")) {
 				View.objetoNaoImplementado();
 			
 			} else {

@@ -43,17 +43,17 @@ public class Menus extends View {
 			 + "|-------------|------------------------------------------------------\n";
 		 
 		if (opcMenu.equals("LISTA") || Auxiliar.getOpcao().equals("ARVORE")) {
-			menu += "|=> EXECUTAR  |'Executa ações nas estruturas existente'\n" +
-					"|=> ARQUIVO   |'Propriedades de arquivo'\n";
+			menu += "|=> EXECUTAR  |Executa ações nas estruturas existente\n" +
+					"|=> ARQUIVO   |Propriedades de arquivo\n";
 		}
 					
 		if (opcMenu.equals("ORDENADORES")) {
-			menu += "|=> ORDENAR   |'Executa ordenação de registro em arquivo(s)'\n";
+			menu += "|=> ORDENAR   |Executa ordenação de registro em arquivo(s)\n";
 		}else{
-			menu += "|=> CONSULTAR |'Executa consulta em conteúdo salvo em arquivo(s)'\n";
+			menu += "|=> CONSULTAR |Executa consulta em conteúdo salvo em arquivo(s)\n";
 		}
 							
-		menu += "|=> IMPRIMIR  |'Imprime arquivo selecionado'\n"					
+		menu += "|=> IMPRIMIR  |Imprime arquivo selecionado\n"					
 			 +  "|" + sair;
 		msgb(menu);
 		
@@ -71,18 +71,18 @@ public class Menus extends View {
 			+ "|--------------------------------------------------------------------\n"
 			+ "|Comando     |Descrição\n"
 			+ "|------------|-------------------------------------------------------\n"
-			+ "|=> NOVO     |'Habilita para gravar novo registro'\n"	
-			+ "|=> REMOVER  |'Remove arquivo existente'\n";					
+			+ "|=> NOVO     |Habilita para gravar novo registro\n"	
+			+ "|=> REMOVER  |Remove arquivo existente\n";					
 		
 		switch (include) {
 			
 		case "ARQUIVO":			
-			menu += "|=> BUSCAR   |'Busca lista de arquivos existentes'\n"+
-					"|=> IMPRIMIR |'Imprime dados'\n";
+			menu += "|=> BUSCAR   |Busca lista de arquivos existentes\n"+
+					"|=> IMPRIMIR |Imprime dados\n";
 			break;
 				
 		case "DADOS":	
-			menu += "|=> EDITAR   |'Edita dados do arquivo'\n";
+			menu += "|=> EDITAR   |Edita dados do arquivo\n";
 			break;				
 		}
 			
@@ -105,35 +105,35 @@ public class Menus extends View {
 			 + "|Comando         |Descrição\n";
 		
 		edicao = "|--------------------------------------------- < Edição >\n"
-			   + "|=> NOVO         |'Insere um novo elemento'\n"
-			   + "|=> REMOVER      |'Remove um elemento'\n";
+			   + "|=> NOVO         |Insere um novo elemento\n"
+			   + "|=> REMOVER      |Remove um elemento\n";
 					
 		switch (opcMenu) {
 		
 		case "ARVORE":			
 			menu += "|--------------------------------------------- < Travessias >\n"
-				 +  "|=> POSFIXA      |'Imprime ordem pós-fixa'\n"
-				 +  "|=> PREFIXA      |'Imprime ordem pré-fixa'\n"
-				 +  "|=> INFIXA       |'Imprime ordem infixa'\n"
+				 +  "|=> POSFIXA      |Imprime ordem pós-fixa\n"
+				 +  "|=> PREFIXA      |Imprime ordem pré-fixa\n"
+				 +  "|=> INFIXA       |Imprime ordem infixa\n"
 				 +  "|--------------------------------------------- < Statísticas >\n"
-				 +  "|=> CONTAR       |'Conta nodos da lista'\n"
+				 +  "|=> CONTAR       |Conta nodos da lista\n"
 				 +  "|--------------------------------------------- < Buscas >\n"
-				 +  "|=> ALTURA       |'? '\n"
-				 +  "|=> PROFUNDIDADE |'Calcula profundidade da árvore'\n"
-				 +  "|=> NOME         |'Encontra um nome ou elemento'\n"
+				 +  "|=> ALTURA       |Busca elementos em nivel\n"
+				 +  "|=> PROFUNDIDADE |Calcula profundidade da árvore\n"
+				 +  "|=> NOME         |Encontra um nome ou elemento\n"
 				 +  edicao;
 			break;
 				
 		case "BINARIA":
 			menu +=
 				 "|----------------|---------------------------------------------------\n"
-				+"|=> ID           |'Encontra um id através de uma busca binária'\n";
+				+"|=> ID           |Encontra um id através de uma busca binária\n";
 			break;
 				
 		case "LISTA":
-			menu += "|=> NAVEGAR      |'Navega pelo arquivo com comando de teclado'\n"
-				 +  "|=> ARQUIVO      |'Imprime arquivo inteiro'\n"
-				 +  "|=> NOME         |'Encontra um nome ou elemento'\n"
+			menu += "|=> NAVEGAR      |Navega pelo arquivo com comando de teclado\n"
+				 +  "|=> ARQUIVO      |Imprime arquivo inteiro\n"
+				 +  "|=> NOME         |Encontra um nome ou elemento\n"
 				 +  edicao;
 			break;							
 		}
@@ -155,9 +155,9 @@ public class Menus extends View {
 		  + "|--------------------------------------------------------------------\n"
 		  + "|Comando      |Descrição\n"
 		  + "|-------------|------------------------------------------------------\n"
-		  + "|=> BUBLE     |'Ordena dados do arquivo com BubleSort'\n"
-		  + "|=> QUICK     |'Ordena dados do arquivo com QuickSort'\n"
-		  + "|=> COMPARAR  |'Imprime dados estatísticos dos dois ordenadores\n"
+		  + "|=> BUBLE     |Ordena dados do arquivo com BubleSort\n"
+		  + "|=> QUICK     |Ordena dados do arquivo com QuickSort\n"
+		  + "|=> COMPARAR  |Imprime dados estatísticos dos dois ordenadores\n"
 		  + "|" + sair
 		);
 	}
@@ -174,8 +174,8 @@ public class Menus extends View {
 			   + "|--------------------------------------------------------------------\n"
 			   + "|Comando   | Descrição\n"
 			   + "|----------|---------------------------------------------------------\n"
-			   + "|=> C      |'Exibe arquivo em ordem crescente'\n"
-			   + "|=> D      |'Exibe arquivo em ordem decrescente'\n"
+			   + "|=> C      |Exibe arquivo em ordem crescente\n"
+			   + "|=> D      |Exibe arquivo em ordem decrescente\n"
 			);
 		}
 	}
@@ -204,7 +204,7 @@ public class Menus extends View {
 			  + "|-------------|------------------------------------------------------\n"
 			  + menu 
 			  + "|=> avl       |Árvore avl\n"
-		      + "|=> redblack  |Árvore rubro negra\n"
+		      + "|=> rb        |Árvore red black\n"
 			);
 		}
 		
