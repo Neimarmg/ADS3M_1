@@ -40,7 +40,7 @@ public class Ordenadores {
 	}
 		
 	/**
-	 * Metodo responsável pela ordenação BubleSort
+	 * Método responsável pela ordenação BubleSort
 	 * @param ordem
 	 * @param mostraEstatisca
 	 * @throws Exception
@@ -91,8 +91,8 @@ public class Ordenadores {
 		limpaVetor(true); // Garante o vetor limpo antes do carregamento do ordenador
 		executaBubleSort();
 		
-		if (imprimir == true) { // Abilita impressão do vetor quando solicitado
-			imprime(true,true, true, true);
+		if (imprimir == true) { // Habilita impressão do vetor quando solicitado
+			imprime(true, true, true, true);
 		}
 	}
 	
@@ -113,7 +113,7 @@ public class Ordenadores {
 	    topo = ini;
 	 
 	    for (i = ini + 1; i <= fim; i++) {
-	    	if(ordem == true){
+	    	if (ordem == true) {
 		    	if (vet[i].compareTo(pivo) < 0) {
 		    		vet[topo] = vet[i];
 			    	vet[i] = vet[topo + 1];		            
@@ -157,13 +157,13 @@ public class Ordenadores {
 	 */
 	public static void carregaQuickSort(boolean imprimir) throws Exception {
 		limpaVetor(true); // Garante vetor limpo antes do carregamento do ordenador
-		Ficheiro.leArquivo(Auxiliar.digita("Nome do arquivo"),true, null, false, false);
+		Ficheiro.leArquivo(Auxiliar.digita("Nome do arquivo"), true, null, false, false);
 		
 		if (Dados.getValidaArquivo() == true) { 
 			boolean ordem = Auxiliar.defineOrdem(true);
-			ordenaQuickSort(Dados.vetor, 1, (Dados.vetor.length-2),ordem );
+			ordenaQuickSort(Dados.vetor, 1, (Dados.vetor.length - 2), ordem );
 			
-			if (imprimir == true){ // Habilita impressão do vetor quando solicitado
+			if (imprimir == true) { // Habilita impressão do vetor quando solicitado
 				imprime(ordem, true, true, true);
 			}
 		}	    
@@ -207,7 +207,7 @@ public class Ordenadores {
 	
 	
 	/**
-	 * Médodo responsável pela limpeza do vetor após ordenação,
+	 * Método responsável pela limpeza do vetor após ordenação,
 	 * de modo que possa ter suas posições livres,
 	 * quando uma próxima ordenação for solicitada em tempo de execução
 	 */
