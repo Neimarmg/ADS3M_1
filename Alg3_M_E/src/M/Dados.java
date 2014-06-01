@@ -3,8 +3,8 @@ package M;
 import C.Arquivos.Ficheiro;
 
 /**
- * Classe responsavel armazenamento do vetor de dados coletado do arquivo
- * @author Neimar , Aurelio
+ * Classe responsável pelo armazenamento do vetor de dados coletado do arquivo
+ * @author Neimar , Aurélio
  */
 public class Dados {
 	
