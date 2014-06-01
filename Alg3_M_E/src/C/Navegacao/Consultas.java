@@ -4,7 +4,9 @@ import App.Menus;
 import App.View;
 import C.Registrador;
 import C.Arquivos.Ficheiro;
+import C.Arvores.Avl.ArvoreAVL;
 import C.Lista.ListaEncadeada;
+import C.Lista.Nodo;
 import M.Dados;
 import M.Utilitarios.Auxiliar;
 
@@ -115,18 +117,22 @@ public class Consultas {
 			
 			if(Auxiliar.getDetalhes().equals("binaria")) {				
 				Registrador.getArvoreBinaria().travessiaPosFixa(true);
+				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("avl")) {				
 				Registrador.getAvl().imprimeOrdenPosFixa(Registrador.getAvl());
-
-			} else if (Auxiliar.getDetalhes().equals("redBlack")) {
+				break;
+				
+			} else if (Auxiliar.getDetalhes().equals("redblack")) {
 				View.objetoNaoImplementado();				
+				break;
+				
 			}			
 			break;
 			
 		default:
 			View.opcaoInvalida();
-			Menus.menuArvores(true, true, true);
+			Menus.menuArvores(true, false, true);
 			tPosFixa();
 			break; // Condição de saída quando atividade for inválida
 		}
@@ -141,18 +147,21 @@ public class Consultas {
 			
 			if (Auxiliar.getDetalhes().equals("binaria")) {				
 				Registrador.getArvoreBinaria().travessiaPreFixa(true);
+				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("avl")) {				
 				Registrador.getAvl().imprmeOrdenPreFixa(Registrador.getAvl());
-
-			} else if (Auxiliar.getDetalhes().equals("redBlack") ) {
+				break;
+				
+			} else if (Auxiliar.getDetalhes().equals("redblack") ) {
 				View.objetoNaoImplementado();				
+				break;
 			}			
 			break;
 			
 		default:
 			View.opcaoInvalida();
-			Menus.menuArvores(true, true, true);
+			Menus.menuArvores(true, false, true);
 			tPosFixa();			
 			break; // Condição de saída quando atividade for inválida
 		}
@@ -167,18 +176,21 @@ public class Consultas {
 			
 			if (Auxiliar.getDetalhes().equals("binaria")) {				
 				Registrador.getArvoreBinaria().travessiaInfixa(true);
+				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("avl")) {				
 				Registrador.getAvl().imprimeOrdemInfixa(Registrador.getAvl());
-
-			} else if (Auxiliar.getDetalhes().equals("redBlack")) {
+				break;
+				
+			} else if (Auxiliar.getDetalhes().equals("redblack")) {
 				View.objetoNaoImplementado();				
+				break;
 			}			
 			break;
 			
 		default:
 			View.opcaoInvalida();
-			Menus.menuArvores(true, true, true);
+			Menus.menuArvores(true, false, true);
 			tPosFixa();			
 			break; // Condição de saída quando atividade for inválida
 		}
@@ -192,26 +204,114 @@ public class Consultas {
 			
 			if (Auxiliar.getDetalhes().equals("binaria")) {				
 				Registrador.getArvoreBinaria().buscEmAltura(Auxiliar.digita("Elemento"), true);
+				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("avl")) {				
 				View.objetoNaoImplementado();
-
-			} else if (Auxiliar.getDetalhes().equals("redBlack")) {
+				break;
+				
+			} else if (Auxiliar.getDetalhes().equals("redblack")) {
 				View.objetoNaoImplementado();				
+				break;
 			}			
 			break;
 			
 		default:
 			View.opcaoInvalida();
-			Menus.menuArvores(true, true, true);
+			Menus.menuArvores(true, false, true);
 			tPosFixa();			
 			break; // Condição de saída quando atividade for inválida
 		}
 	}
-//====================<< Menu busca >> ========================================================		
+	
+
+//====================<< Include em struturas de dados >> =====================================	
+
+	private void insertElemento() throws Exception {		
+		switch (Auxiliar.getOpcao()) {
+		
+		case "LISTA":
+			Registrador.getLista().insert(
+					new Nodo<String>(Auxiliar.digita("Elementos")), lista.getHead());
+			Registrador.getArvoreBinaria().imprime();
+			break;
+			
+		case "ARVORE":
+			
+			if (Auxiliar.getDetalhes().equals("binaria")) {				
+				Registrador.getArvoreBinaria().insere(
+						new C.Arvores.Binaria.Nodo<String>(Auxiliar.digita("Elemento")));
+				break;
+				
+			} else if (Auxiliar.getDetalhes().equals("avl")) {				
+				Registrador.setAvl(new ArvoreAVL());
+				Registrador.getAvl().insert(Registrador.getAvl(), Auxiliar.digitaNumero("Elemento numérico"));
+				break;
+				
+			} else if (Auxiliar.getDetalhes().equals("redblack")) {
+				View.objetoNaoImplementado();	
+				break;
+			}			
+			break;
+			
+		default:
+			View.opcaoInvalida();
+			Menus.menuArvores(true, true, true);					
+			break; // Condição de saída quando atividade for inválida
+		}
+	}
+ 
+	/**
+	 * Método extruturado para implementação de exclusão de elementos de todas as estruturas
+	 * @throws Exception
+	 */
+	private void removeElemento() throws Exception {		
+		View.objetoNaoImplementado();
+		View.msge("\nPasso a passo do plano de implementação:\n");
+		switch (Auxiliar.getOpcao()) {
+				
+		case "LISTA":
+			View.msge("\nPasso 1: Carregar o arquivo na liste \n"
+					 +"\nPasso 2: Digitar o um elemento a ser ecluido\n"
+					 +"\nPasso 3: Percorrer a lista\n"
+					 +"\nPasso 4: Se encontrado excluir\n"
+					 +"\nPasso 5: Atualizar a lista\n");
+			break;
+			
+		case "ARVORE":
+			
+			if (Auxiliar.getDetalhes().equals("binaria")) {				
+				View.msge("\nPasso 1: Carregar o arquivo na árvore \n"
+						 +"\nPasso 2: Digitar o um elemento a ser ecluido\n"
+						 +"\nPasso 3: Percorrer a árvore\n"
+						 +"\nPasso 4: Se encontrado excluir\n"
+						 +"\nPasso 5: Atualizar a realocar elementos\n");
+				break;
+				
+			} else if (Auxiliar.getDetalhes().equals("avl")) {				
+				View.msge("\nPasso 1: Carregar o arquivo na árvore \n"
+						 +"\nPasso 2: Digitar o um elemento a ser ecluido\n"
+						 +"\nPasso 3: Percorrer a árvore\n"
+						 +"\nPasso 4: Se encontrado excluir\n"
+						 +"\nPasso 5: Atualizar a realocar elementos fazer o rebalaciamento\n");
+				break;
+			} else if (Auxiliar.getDetalhes().equals("redblack")) {
+					View.msge("\nSem planejamento ainda:\n");
+				break;			
+			}			
+			break;
+			
+		default:
+			View.opcaoInvalida();
+			Menus.menuArvores(true, true, true);					
+			break; // Condição de saída quando atividade for inválida
+		}
+	}
+	
+//====================<< Menu ex >> ========================================================		
 		
 	/**
-	 * Seleciona comando de consulta
+	 * Seleciona definições de estrutura a ser utilizada
 	 */
 	private void selecionaComando(String nomeArquivo) {
 		try {
@@ -219,13 +319,13 @@ public class Consultas {
 			switch (Auxiliar.digita("")) {
 			
 			case "novo":				
-				View.objetoNaoImplementado();
+				insertElemento();
 				selecionaComando(nomeArquivo);
 				break;
 			
 			case "remover":				
-				View.objetoNaoImplementado();
-				selecionaComando(nomeArquivo);
+				removeElemento();				
+				
 				break;
 				
 			case "posfixa":				
@@ -269,7 +369,7 @@ public class Consultas {
 				break;
 			
 			case "arquivo":
-				Ficheiro.leArquivo(nomeArquivo, false, "", false, true);
+				Ficheiro.leArquivo(nomeArquivo, false, null, false, true);
 				selecionaComando(nomeArquivo);
 				break;
 				
@@ -294,9 +394,10 @@ public class Consultas {
 	}
 	
 	
+	//====================<< Menu definidor e atividade >> ====================			
 	
 	/**
-	 * 
+	 * Médoto de execução de atividade
 	 * @throws Exception 
 	 */
 	public void selecinaExtrutura() throws Exception {

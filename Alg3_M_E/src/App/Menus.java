@@ -203,8 +203,8 @@ public class Menus extends View {
 			  + "|Comando      |Descrição\n"
 			  + "|-------------|------------------------------------------------------\n"
 			  + menu 
-			  + "|=> Avl       |Árvore avl\n"
-		      + "|=> RedBlack  |Árvore rubro negra\n"
+			  + "|=> avl       |Árvore avl\n"
+		      + "|=> redblack  |Árvore rubro negra\n"
 			);
 		}
 		
