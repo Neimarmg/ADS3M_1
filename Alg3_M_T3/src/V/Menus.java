@@ -4,15 +4,15 @@ package V;
 public class Menus extends View {
 	public static void menuJogar() {		
 		msgb("	COMANDOS DE JOGO:\n\n"
-		+ "=> JOGAR        'Abilita o jogador à jogar'\n"
-		+ "=> PERSONALIZAR 'Personaliza nivel inicial de jogo'\n"
+		+ "=> JOGAR        'Habilita o jogador à jogar'\n"
+		+ "=> PERSONALIZAR 'Personaliza nível inicial de jogo'\n"
 		+ "=> SAIR         'Sai do programa'\n");
 	}
 
 	
 	public static void menuMain() {		
 		msgb("	O QUE VOCÊ DESEJA FAZER?\n\n"
-		+ "=> INICIAR  'Iniciar mapa de jogo'            " + View.statusAcao(7,7) + "\n"
+		+ "=> INICIAR  'Inicia mapa de jogo'             " + View.statusAcao(7,7) + "\n"
 		+ "=> IMPRIMIR 'Imprimi opções de jogo'          " + View.statusAcao(7,7) + "\n"
 		+ "=> REGRAS   'Imprimi todas as regras do jogo' " + View.statusAcao(7,7) + "\n"
 		+ "=> SAIR\n");
@@ -21,7 +21,7 @@ public class Menus extends View {
 	
 	public static void menuBatalha() {		
 		msgb("	COMANDOS DE JOGO:\n\n"
-		+ "=> ATIRAR   'Abilita o jogador à inserir coordenadas'\n"
+		+ "=> ATIRAR   'Habilita o jogador à inserir coordenadas'\n"
 		+ "=> SAIR\n");
 	}
 
