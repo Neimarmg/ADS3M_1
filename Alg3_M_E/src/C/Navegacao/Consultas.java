@@ -10,7 +10,7 @@ import M.Utilitarios.Auxiliar;
 
 
 /**
- * Classe reponsável pelas consultas em todas as estruras.
+ * Classe reponsável pelas consultas em todas as estruras
  * @author Neimar, Aurelio
  */
 public class Consultas {
@@ -19,7 +19,7 @@ public class Consultas {
 	
 	
 	/**
-	 * Método que realiza ficheiro navegação entre os registrador 
+	 * Método que realiza ficheiro navegação entre os registradores 
 	 * @param nomeArquivo
 	 */
 	public void	navega(String nomeArquivo) {
@@ -43,8 +43,8 @@ public class Consultas {
 			View.msgb("	RESULTADO DE BUSCA BINÁRIA\n"
 				+ "\nRegistro encontrado\n"
 				+ "\n\nPosição [" + meio + "] " + Dados.vetor[meio]
-				+"\n\nTotal de comparações:" +Auxiliar.getContador()+"\n");
-				Auxiliar.setContador(false); //Limpa variável contadora
+				+ "\n\nTotal de comparações:" + Auxiliar.getContador() + "\n");
+				Auxiliar.setContador(false); // Limpa variável contadora
 				
 		} else {
 		   	View.msge("\nNúmero não encontrado");
@@ -69,7 +69,7 @@ public class Consultas {
 	        	if (campo < vet[meio]) {
 	        		fim = meio - 1;	  
 	        		Auxiliar.setContador(true);
-	            }else {
+	            } else {
 	            	inicio = meio + 1;
 	            	Auxiliar.setContador(true);
 	            }
@@ -88,18 +88,18 @@ public class Consultas {
 	public void carregaBuscaBinaria(String nomeArquivo,int campo) throws Exception {
 		Ficheiro.leArquivo(nomeArquivo,true, "", false, false);			
 		
-		if (campo <= Dados.getVetor().length){
+		if (campo <= Dados.getVetor().length) {
 		
 			for (i = 0; i < Dados.getVetor().length; i++) {		    	
 				vet[i] = i;
-				View.msg("\nId: " +i +" " +Dados.vetor[i]);
+				View.msg("\nId: " +i +" " + Dados.vetor[i]);
 			}
 			
 			executaBuscaBinaria(campo);
 			imprimeBuscaBinaria(campo);
 
 		} else {
-			View.msge("\nId inexistente!");
+			View.msge("\nId inexistente.");
 		}
 		
 		Dados.setIndex(0); // Limpa vetor para próxima consulta
@@ -108,18 +108,18 @@ public class Consultas {
 
 //====================<< Busca em estruturas java >> ========================================		
 	
-	private void tPosFixa() throws Exception{		
+	private void tPosFixa() throws Exception {		
 		switch (Auxiliar.getOpcao()) {
 			
 		case "ARVORE":
 			
-			if(Auxiliar.getDetalhes().equals("binaria") ) {				
+			if (Auxiliar.getDetalhes().equals("binaria")) {				
 				Registrador.getArvoreBinaria().travessiaPosFixa();
 				
-			} else if (Auxiliar.getDetalhes().equals("avl") ) {				
+			} else if (Auxiliar.getDetalhes().equals("avl")) {				
 				View.objetoNaoImplementado();
 
-			} else if(Auxiliar.getDetalhes().equals("redBlack") ) {
+			} else if(Auxiliar.getDetalhes().equals("redBlack")) {
 				View.objetoNaoImplementado();				
 			}			
 			break;
@@ -127,25 +127,25 @@ public class Consultas {
 		default:
 			View.opcaoInvalida();
 			Menus.menuArvores(true, true, true);
-			tPosFixa();			
+			tPosFixa();
 			break; // Condição de saída quando atividade for inválida
 		}
 	}
 	
 	
-	private void tPrefixa() throws Exception{		
+	private void tPrefixa() throws Exception {		
 
 		switch (Auxiliar.getOpcao()) {
 		
 		case "ARVORE":
 			
-			if(Auxiliar.getDetalhes().equals("binaria") ) {				
+			if (Auxiliar.getDetalhes().equals("binaria")) {				
 				Registrador.getArvoreBinaria().travessiaPreFixa();
 				
-			} else if (Auxiliar.getDetalhes().equals("avl") ) {				
+			} else if (Auxiliar.getDetalhes().equals("avl")) {				
 				View.objetoNaoImplementado();
 
-			} else if(Auxiliar.getDetalhes().equals("redBlack") ) {
+			} else if (Auxiliar.getDetalhes().equals("redBlack") ) {
 				View.objetoNaoImplementado();				
 			}			
 			break;
@@ -160,18 +160,18 @@ public class Consultas {
 	
 	
 	
-	private void tInfixa() throws Exception{		
+	private void tInfixa() throws Exception {		
 		switch (Auxiliar.getOpcao()) {
 		
 		case "ARVORE":
 			
-			if(Auxiliar.getDetalhes().equals("binaria") ) {				
+			if (Auxiliar.getDetalhes().equals("binaria")) {				
 				Registrador.getArvoreBinaria().travessiaInfixa();
 				
-			} else if (Auxiliar.getDetalhes().equals("avl") ) {				
+			} else if (Auxiliar.getDetalhes().equals("avl")) {				
 				View.objetoNaoImplementado();
 
-			} else if(Auxiliar.getDetalhes().equals("redBlack") ) {
+			} else if (Auxiliar.getDetalhes().equals("redBlack")) {
 				View.objetoNaoImplementado();				
 			}			
 			break;
@@ -276,7 +276,7 @@ public class Consultas {
 	 * 
 	 * @throws Exception 
 	 */
-	public void selecinaExtrutura() throws Exception{
+	public void selecinaExtrutura() throws Exception {
 		String nomeArquivo = Auxiliar.digita("Nome do arquivo");
 		
 		switch (Auxiliar.getOpcao()) {
