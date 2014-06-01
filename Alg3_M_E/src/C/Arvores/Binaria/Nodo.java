@@ -4,8 +4,8 @@ import C.Registrador;
 import M.Utilitarios.Auxiliar;
 	
 /**
- * Classo de gravacao do nodo
- * @author Neimar, Aurelio *
+ * Classe de gravacão do nodo
+ * @author Neimar, Aurélio *
  * @param <T>
  */
 public class Nodo<T extends Comparable<T>> {
@@ -16,10 +16,10 @@ public class Nodo<T extends Comparable<T>> {
 	
 	
 	/**
-	 * Contrutor da classe nodo
+	 * Construtor da classe nodo
 	 * @param valor
 	 */
-	public Nodo(T valor){
+	public Nodo(T valor) {
 		pai = null;
 		esq = null;
 		dir = null;
@@ -32,35 +32,35 @@ public class Nodo<T extends Comparable<T>> {
 	}
 	
 	
-	public T getValor(){
+	public T getValor() {
 		return this.valor;
 	}
 	
 	
-	public void setValor(T valor){
+	public void setValor(T valor) {
 		this.valor = valor;
 	}
 
 	
 	/**
-	 * Metodo responsavel pela insecao dos objetos na arvore
+	 * Método responsável pela insercão dos objetos na árvore
 	 * @param novo
 	 */
-	public void insere(Nodo<T> novo){
-		if(novo.getValor().compareTo(valor) < 0 ){
-			if(esq ==null){
+	public void insere(Nodo<T> novo) {
+		if (novo.getValor().compareTo(valor) < 0 ) {
+			if (esq ==null) {
 				esq = novo;
 				novo.setPai(this);
-			}else{
+			} else {
 				esq.insere(novo);
 			}
 		}
 		
-		if(novo.getValor().compareTo(valor) > 0){
-			if(dir ==null){
+		if (novo.getValor().compareTo(valor) > 0) {
+			if (dir ==null) {
 				dir = novo;
 				novo.setPai(novo);
-			}else {
+			} else {
 				dir.insere(novo);
 			}
 		}
@@ -75,54 +75,54 @@ public class Nodo<T extends Comparable<T>> {
 		
 		View.msg("\n" + valor);
 		
-		if(esq != null){			
+		if (esq != null) {			
 			esq.imprime();	
 		}
 		
-		if(dir != null){
+		if (dir != null) {
 			dir.imprime();				
 		}		
 	}
 	
 	
 	/**
-	 * Metodo responsável por armazenar em terporariamente as alteração dos dados do arquivo
+	 * Método responsável por armazenar temporariamente as alterações dos dados do arquivo
 	 */
-	public void guardaEdicao(){
+	public void guardaEdicao() {
 		Registrador.setAcum("\n" +valor);
-		if(esq != null){			
+		if (esq != null) {			
 			esq.guardaEdicao();	
 		}
 		
-		if(dir != null){
+		if (dir != null) {
 			dir.guardaEdicao();				
 		}		
 	}
 	
 	
 	/**
-	 * Percorre a árvore pós ordem
+	 * Percorre a árvore pós-ordem
 	 * @param no
 	 */
-	public void travessiaPosFixa(Nodo<T> no){
-		if( no == null )  
+	public void travessiaPosFixa(Nodo<T> no) {
+		if (no == null)
 			return;
 		
 			travessiaPosFixa(no.dir);
 			travessiaPosFixa(no.esq);
-			View.msg("\nTravessia pós-fixa :" +no.valor);
+			View.msg("\nTravessia pós-fixa :" + no.valor);
 	}
 	
 	
 	/**
-	 * Percorre a árvore pré ordem
+	 * Percorre a árvore pré-ordem
 	 * @param no
 	 */
-	public void travessiaPreFixa(Nodo<T> no){
-		if( no == null )  
-			return;  
+	public void travessiaPreFixa(Nodo<T> no) {
+		if(no == null)
+			return;
 			
-			View.msg("\nTravessia pré-fixa :" +no.valor);	
+			View.msg("\nTravessia pré-fixa :" + no.valor);	
 			travessiaPreFixa(no.dir);
 			travessiaPreFixa(no.esq);		 
 	}
@@ -132,12 +132,12 @@ public class Nodo<T extends Comparable<T>> {
 	 * Percorre a árvore forma infixa
 	 * @param no
 	 */
-	public void travessiaInfixa(Nodo<T> no){
-		if( no == null )  
+	public void travessiaInfixa(Nodo<T> no) {
+		if (no == null)
 			return;
 		
 		 	travessiaInfixa(no.esq);
-			View.msg("\nTravessia infixa :" +no.valor);	
+			View.msg("\nTravessia infixa :" + no.valor);	
 			travessiaInfixa(no.dir);		 
 	}
 	
@@ -147,36 +147,36 @@ public class Nodo<T extends Comparable<T>> {
 	 * @param no
 	 * @return
 	 */
-	public int contaNodos(Nodo<T> no){
-	     if(no == null)
+	public int contaNodos(Nodo<T> no) {
+	     if (no == null)
 	         return 0;
 	     else 
-	         return 1+contaNodos(no.esq)+contaNodos(no.dir);
+	         return 1 + contaNodos(no.esq) + contaNodos(no.dir);
 	}
 	
 	
 	/**
-	 * Percore arvore a contando o niveis de profundidade
+	 * Percore árvore contando os níveis de profundidade
 	 * @param no
 	 * @param nome
 	 */
 	public void buscEmAltura(Nodo<T> no , String nome) {
-		if ( no == null ) {  
-			View.msg( " Nivel -1 " );  
+		if (no == null) {
+			View.msg( " Nivel -1 ");  
 	    
-		}else if ( no.valor.compareTo(no.valor) == nome.compareTo(nome)){  
-	    	View.msg(" Nivel " +Auxiliar.getContador());
+		} else if (no.valor.compareTo(no.valor) == nome.compareTo(nome)) {  
+	    	View.msg(" Nivel " + Auxiliar.getContador());
 	    
-	    }else if ( no.valor.compareTo(no.valor) > nome.compareTo(nome)){  
-	    	if ( no != null ) {  
-	    		Auxiliar.setContador(true); //Contador  
-	            buscEmAltura(no.dir , nome );  
+	    } else if (no.valor.compareTo(no.valor) > nome.compareTo(nome)) {  
+	    	if (no != null ) {
+	    		Auxiliar.setContador(true); // Contador  
+	            buscEmAltura(no.dir, nome);  
 	        }
 	    
-	    }else if ( no.valor.compareTo(no.valor) < nome.compareTo(nome)){  
-	    	if( no != null){  
-	    		Auxiliar.setContador(true); //Contador    
-	            buscEmAltura(no.dir , nome );  
+	    } else if (no.valor.compareTo(no.valor) < nome.compareTo(nome)) {  
+	    	if (no != null) {
+	    		Auxiliar.setContador(true); // Contador    
+	            buscEmAltura(no.dir, nome);  
 	        } 
 	    }
 	}
@@ -188,24 +188,24 @@ public class Nodo<T extends Comparable<T>> {
 	 * @param campo
 	 * @param comparacoes
 	 */
-	public void buscaDado(Nodo<T> no, T campo){		
-		if (no == null){
+	public void buscaDado(Nodo<T> no, T campo) {		
+		if (no == null) {
 			View.msg("\nDado não encontrado na árvore!" +
-					"\nComparacoes: " +Auxiliar.getContador());			
-		}else {		
+					"\nComparacoes: " + Auxiliar.getContador());			
+		} else {
 			
 			int comper = campo.compareTo(no.getValor());
 			
-			if ( comper == 0){
-				Auxiliar.setContador(true); //Contador  
-				View.msg(no + "\nComparacoes: " +Auxiliar.getContador());				
+			if (comper == 0) {
+				Auxiliar.setContador(true); // Contador  
+				View.msg(no + "\nComparacoes: " + Auxiliar.getContador());				
 			
-			}else if (comper < 0){
-				Auxiliar.setContador(true); //Contador  
+			} else if (comper < 0) {
+				Auxiliar.setContador(true); // Contador  
 				buscaDado(no.esq, campo);
 			
-			}else {
-				Auxiliar.setContador(true); //Contador  
+			} else {
+				Auxiliar.setContador(true); // Contador  
 				buscaDado(no.dir,campo);
 			}
 		}	
@@ -213,11 +213,11 @@ public class Nodo<T extends Comparable<T>> {
 	
 	
 	/**
-	 * Método de remoção " não consegui implementar"
+	 * Método de remoção " não implementado
 	 * @param no
 	 * @param campo
 	 */
-	public void remove(Nodo<T> no, T campo){
+	public void remove(Nodo<T> no, T campo) {
 		View.objetoNaoImplementado();
 	}
 }

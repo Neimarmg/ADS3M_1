@@ -5,11 +5,11 @@ import M.Utilitarios.Auxiliar;
 
 
 /**
- * Classe de execução da arvore binária
+ * Classe de execução da árvore binária
  * @author Neimar, Aurélio
  * @param <T>
  */
-public class ArvoreBinaria<T extends Comparable<T>>{
+public class ArvoreBinaria<T extends Comparable<T>> {
 	private Nodo<T> raiz;
 
 	Nodo<T> nodo =  new Nodo<T>(null);
@@ -19,10 +19,10 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 	 * Método de inserção na árvore
 	 * @param novo
 	 */
-	public void insere(Nodo<T> novo){
-		if(raiz == null){
+	public void insere(Nodo<T> novo) {
+		if (raiz == null) {
 			raiz = novo;
-		}else{
+		} else {
 			raiz.insere(novo);
 		}		
 	}
@@ -32,73 +32,77 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 	 * @param impressão da árvore
 	 * @throws Exception 
 	 */
-	public void imprime() throws Exception{
+	public void imprime() throws Exception {
 		raiz.imprime();			
 	}	
 	
 	/**
-	 * Metodo responsável por armazenar em terporariamente as alteração dos dados do arquivo
+	 * Método responsável por armazenar temporariamente as alterações dos dados do arquivo
 	 */
-	public void guardaEdicao(){
+	public void guardaEdicao() {
 		raiz.guardaEdicao();
 	}
 	
 	/**
-	 * Imprmir travessia pós fixa da árvore
+	 * Imprmime travessia pós-fixa da árvore
 	 */
+<<<<<<< HEAD
 	public void travessiaPosFixa(boolean cabecalho){
 		if (cabecalho == true ) {
 			//View.
 		}
 		
+=======
+	public void travessiaPosFixa() {
+>>>>>>> 2fd6dafdd27a897635b094f2e2f3fab9b12b41e6
 		raiz.travessiaPosFixa(raiz);
 	}
 	
 	/**
-	 * Imprimr Travassia pré fixa da árvore
+	 * Imprime Travassia pré-fixa da árvore
 	 */
-	public void travessiaPreFixa(){
+	public void travessiaPreFixa() {
 		raiz.travessiaPreFixa(raiz);
 	}
 	
 	/**
-	 * Imprimr Travassia infixa da árvore
+	 * Imprime Travassia infixa da árvore
 	 */
-	public void travessiaInfixa(){
+	public void travessiaInfixa() {
 		raiz.travessiaInfixa(raiz);
 	}
 	
 	/**
-	 * Conta toda de nodos da arvore
+	 * Conta nodos da árvore
 	 * @return
 	 */
-	public int contaNodos(){
+	public int contaNodos() {
 		return raiz.contaNodos(raiz);
 	}
 	
 	/**
-	 * Busca elemento percorrendo a arvore em largura
+	 * Busca elemento percorrendo a árvore em largura
 	 * @param nome
 	 */
-	public void buscEmAltura(String nome){
+	public void buscEmAltura(String nome) {
 		raiz.buscEmAltura(raiz, nome);
-		Auxiliar.setContador(false); //Limpa contador
+		Auxiliar.setContador(false); // Limpa contador
 	}	
 	
 	/**
-	 * Método e impressao de busca de dados
+	 * Método de impressão de busca de dados
 	 * @param campo
 	 */
-	public void buscaDado(T campo){
+	public void buscaDado(T campo) {
 		raiz.buscaDado(null, campo);
-		Auxiliar.setContador(false); //Limpa contador
+		Auxiliar.setContador(false); // Limpa contador
 	}
 	
 	/**
-	 * Médo complementar de remoção
+	 * Método complementar de remoção
 	 * @param campo
 	 */
-	public void remove(T campo){
+	public void remove(T campo) {
 		raiz.remove(raiz, campo);
 	}
 }
