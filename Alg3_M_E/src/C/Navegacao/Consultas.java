@@ -114,7 +114,7 @@ public class Consultas {
 		case "ARVORE":
 			
 			if(Auxiliar.getDetalhes().equals("binaria") ) {				
-				Registrador.getArvoreBinaria().travessiaPosFixa();
+				Registrador.getArvoreBinaria().travessiaPosFixa(true);
 				
 			} else if (Auxiliar.getDetalhes().equals("avl") ) {				
 				View.objetoNaoImplementado();
