@@ -88,7 +88,7 @@ public class ArvoreAVL extends DadosAvl {
 
 	
 	/**
-	 * Método de rotação a esquerda
+	 * Método de rotação à esquerda
 	 * @param aux
 	 * @return
 	 */
@@ -154,7 +154,7 @@ public class ArvoreAVL extends DadosAvl {
 	
 	public void imprimeOrdemInfixa(ArvoreAVL aux) {
 		if (aux != null) {
-			View.msg(aux.getNum() +Dados.vetor[aux.getNum()]+ "\n");
+			View.msg(aux.getNum() + Dados.vetor[aux.getNum()] + "\n");
 			
 			imprimeOrdemInfixa(aux.esq);
 			imprimeOrdemInfixa(aux.dir);
@@ -166,7 +166,7 @@ public class ArvoreAVL extends DadosAvl {
 		if (aux != null) {			
 			
 			imprmeOrdenPreFixa(aux.esq);			
-			View.msg(aux.getNum() +Dados.vetor[aux.getNum()] +"\n");			
+			View.msg(aux.getNum() + Dados.vetor[aux.getNum()] + "\n");			
 			imprmeOrdenPreFixa(aux.dir);
 		}
 	}
