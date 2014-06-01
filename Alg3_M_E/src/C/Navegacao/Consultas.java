@@ -11,7 +11,7 @@ import M.Utilitarios.Auxiliar;
 
 /**
  * Classe reponsável pelas consultas em todas as estruras
- * @author Neimar, Aurelio
+ * @author Neimar, Aurélio
  */
 public class Consultas {
 	
@@ -113,13 +113,13 @@ public class Consultas {
 			
 		case "ARVORE":
 			
-			if(Auxiliar.getDetalhes().equals("binaria") ) {				
+			if(Auxiliar.getDetalhes().equals("binaria")) {				
 				Registrador.getArvoreBinaria().travessiaPosFixa(true);
 				
 			} else if (Auxiliar.getDetalhes().equals("avl")) {				
 				Registrador.getAvl().imprimeOrdenPosFixa(Registrador.getAvl());
 
-			} else if(Auxiliar.getDetalhes().equals("redBlack")) {
+			} else if (Auxiliar.getDetalhes().equals("redBlack")) {
 				View.objetoNaoImplementado();				
 			}			
 			break;
@@ -324,6 +324,5 @@ public class Consultas {
 			break;
 		}
 	}
-	
 	
 }

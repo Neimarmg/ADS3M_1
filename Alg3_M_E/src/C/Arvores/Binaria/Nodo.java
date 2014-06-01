@@ -89,9 +89,9 @@ public class Nodo<T extends Comparable<T>> {
 	 * Método responsável por armazenar temporariamente as alterações dos dados do arquivo
 	 */
 	public void guardaEdicao() {
-		Registrador.setAcum("\n" +valor);
-		if (esq != null) {			
-			esq.guardaEdicao();	
+		Registrador.setAcum("\n" + valor);
+		if (esq != null) {
+			esq.guardaEdicao();
 		}
 		
 		if (dir != null) {
@@ -143,7 +143,7 @@ public class Nodo<T extends Comparable<T>> {
 	
 	
 	/**
-	 * Conta novos existentes na árvore
+	 * Conta nodos existentes na árvore
 	 * @param no
 	 * @return
 	 */
@@ -162,7 +162,7 @@ public class Nodo<T extends Comparable<T>> {
 	 */
 	public void buscEmAltura(Nodo<T> no , String nome) {
 		if (no == null) {
-			View.msg( " Nivel -1 ");  
+			View.msg( " Nivel -1 ");
 	    
 		} else if (no.valor.compareTo(no.valor) == nome.compareTo(nome)) {  
 	    	View.msg("Nivel " + Auxiliar.getContador());
