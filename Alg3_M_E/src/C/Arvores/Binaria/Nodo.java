@@ -165,7 +165,7 @@ public class Nodo<T extends Comparable<T>> {
 			View.msg( " Nivel -1 ");  
 	    
 		} else if (no.valor.compareTo(no.valor) == nome.compareTo(nome)) {  
-	    	View.msg(" Nivel " + Auxiliar.getContador());
+	    	View.msg("Nivel " + Auxiliar.getContador());
 	    
 	    } else if (no.valor.compareTo(no.valor) > nome.compareTo(nome)) {  
 	    	if (no != null ) {

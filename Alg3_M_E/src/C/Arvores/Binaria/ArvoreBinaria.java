@@ -49,7 +49,8 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	public void travessiaPosFixa(boolean cabecalho){
 		if (cabecalho == true ) {
 			View.msgc("\nTRAVESSIA PÓS-FIXA - " 
-				+ Auxiliar.getOpcao().toUpperCase() +" " +Auxiliar.getDetalhes().toUpperCase() +"\n\n");
+				+ Auxiliar.getOpcao().toUpperCase() +" " 
+				+Auxiliar.getDetalhes().toUpperCase() +"\n\n");
 		}
 		raiz.travessiaPosFixa(raiz);
 	}
@@ -60,7 +61,8 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	public void travessiaPreFixa(boolean cabecalho) {
 		if (cabecalho == true ) {
 			View.msgc("\nTRAVESSIA PRÉ-FIXA - " 
-				+ Auxiliar.getOpcao().toUpperCase() +" " +Auxiliar.getDetalhes().toUpperCase() +"\n\n");
+				+ Auxiliar.getOpcao().toUpperCase() +" " 
+				+Auxiliar.getDetalhes().toUpperCase() +"\n\n");
 		}
 		raiz.travessiaPreFixa(raiz);
 	}
@@ -71,7 +73,8 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	public void travessiaInfixa(boolean cabecalho) {
 		if (cabecalho == true ) {
 			View.msgc("\nTRAVESSIA INFIXA - " 
-				+ Auxiliar.getOpcao().toUpperCase() +" " +Auxiliar.getDetalhes().toUpperCase() +"\n\n");
+				+ Auxiliar.getOpcao().toUpperCase() +" " 
+				+Auxiliar.getDetalhes().toUpperCase() +"\n\n");
 		}
 		raiz.travessiaInfixa(raiz);
 	}
@@ -81,6 +84,11 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * @return
 	 */
 	public int contaNodos(boolean cabecalho) {
+		if (cabecalho == true ) {
+			View.msgc("\nCONTAGEM DE NODOS - " 
+				+ Auxiliar.getOpcao().toUpperCase() +" " 
+				+Auxiliar.getDetalhes().toUpperCase() +"\n\n");
+		}		
 		return raiz.contaNodos(raiz);
 	}
 	
@@ -88,7 +96,12 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * Busca elemento percorrendo a árvore em largura
 	 * @param nome
 	 */
-	public void buscEmAltura(String nome,boolean cabecalho) {
+	public void buscEmAltura(String nome, boolean cabecalho) {
+		if (cabecalho == true ) {
+			View.msgc("\nBUSCA EM ALTURA - " 
+				+ Auxiliar.getOpcao().toUpperCase() +" " 
+				+Auxiliar.getDetalhes().toUpperCase() +"\n\n");
+		}
 		raiz.buscEmAltura(raiz, nome);
 		Auxiliar.setContador(false); // Limpa contador
 	}	

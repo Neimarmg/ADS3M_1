@@ -185,6 +185,29 @@ public class Consultas {
 	}	
 	
 	
+	private void buscaEmAltura() throws Exception {		
+		switch (Auxiliar.getOpcao()) {
+		
+		case "ARVORE":
+			
+			if (Auxiliar.getDetalhes().equals("binaria")) {				
+				Registrador.getArvoreBinaria().buscEmAltura(Auxiliar.digita("Elemento"), true);
+				
+			} else if (Auxiliar.getDetalhes().equals("avl")) {				
+				View.objetoNaoImplementado();
+
+			} else if (Auxiliar.getDetalhes().equals("redBlack")) {
+				View.objetoNaoImplementado();				
+			}			
+			break;
+			
+		default:
+			View.opcaoInvalida();
+			Menus.menuArvores(true, true, true);
+			tPosFixa();			
+			break; // Condição de saída quando atividade for inválida
+		}
+	}
 //====================<< Menu busca >> ========================================================		
 		
 	/**
@@ -226,7 +249,7 @@ public class Consultas {
 				break;
 			
 			case "altura":				
-				View.objetoNaoImplementado();
+				buscaEmAltura();
 				selecionaComando(nomeArquivo);
 				break;
 			
