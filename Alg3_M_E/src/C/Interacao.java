@@ -11,7 +11,7 @@ import M.Utilitarios.Auxiliar;
 
 /**
  * Classe responsável pela interação do sistema com usuário
- * @author 181100053
+ * @author Neimar, Aurélio
  *
  * @param <T>
  * @param <string>
@@ -26,7 +26,7 @@ public class Interacao {
 	static Registrador registrador = new Registrador();
 	
 	/**
-	 * Método responsável pela seleção dos comandos para execuçao dos ordenadores
+	 * Método responsável pela seleção dos comandos para execução dos ordenadores
 	 * @throws Exception
 	 */
 	public static void selecionaOrdenador() throws Exception {			
@@ -109,7 +109,7 @@ public class Interacao {
 	public static void verificaInserir() throws Exception {
 		View.msg("\nVerificando disco...\n");
 		
-		//Obs. deve ser alerado dependendo da configuração da maquina para < ou > 
+		// Obs.: Deve ser alterado dependendo da configuração da máquina para < ou > 
 		
 		if (memoria.calcula() < 6000){ // Verifica memória ao inserir dados
 			View.msgr("\nVerificação concluída, há memória disponível!\n");

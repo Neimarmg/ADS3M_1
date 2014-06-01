@@ -19,16 +19,16 @@ import M.Utilitarios.Include;
  * @author Neimar, Aurélio
  * @param <T>
  */
-public class Registrador{
+public class Registrador {
 	
-	private static String acum =""; //Acumulador de dados para edição de arquivo 
+	private static String acum =""; // Acumulador de dados para edição de arquivo 
 	private static ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	private static ArvoreBinaria<String> arvoreBinaria = new ArvoreBinaria<String>();
 	private static ArvoreAVL avl = new ArvoreAVL();
 	
 	
 	/**
-	 * Método de reperação de estado do objeto
+	 * Método de recuperação do estado do objeto
 	 * @return
 	 */
 	public static ArvoreBinaria<String> getArvoreBinaria() {
@@ -37,7 +37,7 @@ public class Registrador{
 	
 	
 	/**
-	 * Método de reperação de estado do objeto
+	 * Método de recuperação do estado do objeto
 	 * @return
 	 */
 	public static ArvoreAVL getAvl() {
@@ -56,7 +56,7 @@ public class Registrador{
 	
 	
 	/**
-	 * Informa quando a estrura de operação não é valida
+	 * Informa quando a estrura de operação não é válida
 	 * @param ativaTipo
 	 * @throws Exception
 	 */
@@ -67,7 +67,7 @@ public class Registrador{
 	
 	
 	/**
-	 * Metodo responsavel por receber os dados da leitura do arquivo e insirir nas etruturas		
+	 * Método responsável por receber os dados da leitura do arquivo, bem como insirir nas etruturas		
 	 * @param linha
 	 * @throws Exception
 	 */
@@ -81,17 +81,17 @@ public class Registrador{
 		
 		case "ARVORE":
 			
-			if(Auxiliar.getDetalhes().equals("binaria") ) {				
+			if(Auxiliar.getDetalhes().equals("binaria")) {				
 				arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
 			
-			} else if (Auxiliar.getDetalhes().equals("avl") ) {				
+			} else if (Auxiliar.getDetalhes().equals("avl")) {				
 				avl.inserir(avl,Dados.getIndex());
 				
 
-			} else if(Auxiliar.getDetalhes().equals("redBlack") ) {
+			} else if(Auxiliar.getDetalhes().equals("redBlack")) {
 				View.objetoNaoImplementado();
 				
-			} else{
+			} else {
 				informaEstrutura(false);
 				copiaArquivo(linha);
 			}
@@ -105,14 +105,14 @@ public class Registrador{
 	
 	
 	/**
-	 * Método que le dados do teclado
+	 * Método que lê dados do teclado
 	 * @throws Exception
 	 */
 	private void gravaDados(String nomeArquivo) throws Exception {
 		Contatos.setNome(Auxiliar.digita("Contato")); 
 		Contatos.setFone(Auxiliar.digita("Telefone"));
 		Include.setAppend(true);
-		Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); //Insere dado na última linha do arquivo
+		Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); // Insere dado na última linha do arquivo
 	}
 	
 	
@@ -124,12 +124,12 @@ public class Registrador{
 	private void editaArquivo(String nomeArquivo) throws IOException {
 		Include.setAppend(false);
 		Include.addNovo(nomeArquivo, getAcum());
-		setAcum(""); // Parâmetro de limpeza de "cache do acumulador" 
+		setAcum(""); // Parâmetro de limpeza de "cache" do acumulador 
 	}
 	
 					
 	/**
-	 * Método responsável pela insersão de novos registrador 
+	 * Método responsável pela insersão de novo registro
 	 * @param nomeArquivo
 	 * @throws Exception
 	 */
@@ -146,30 +146,30 @@ public class Registrador{
 			break;
 
 		case "ARVORE":			
-			if(Auxiliar.getDetalhes().equals("binaria") ) {
+			if(Auxiliar.getDetalhes().equals("binaria")) {
 				gravaDados(nomeArquivo);
-				Ficheiro.leArquivo(nomeArquivo,false, null, false, false);
+				Ficheiro.leArquivo(nomeArquivo, false, null, false, false);
 				arvoreBinaria.guardaEdicao();
 				editaArquivo(nomeArquivo);	
 			
-			} else if (Auxiliar.getDetalhes().equals("avl") ) {
+			} else if (Auxiliar.getDetalhes().equals("avl")) {
 				Ficheiro.leArquivo(nomeArquivo, false, null, false, false);
 				avl.imprmeOrdenPreFixa(avl);
 				
 				Ficheiro.setIndex(0);
 				
 			
-			} else if(Auxiliar.getDetalhes().equals("redBlack") ) {
+			} else if(Auxiliar.getDetalhes().equals("redBlack")) {
 				
 			
-			} else{			
+			} else {
 				informaEstrutura(false);
 				insereNovoRegistro(nomeArquivo);
 			}			
 			break;
 			
 		default:
-			View.msge("\nAtividade invalida para!\n");
+			View.msge("\nAtividade inválida!\n");
 			break;
 		}
 	}
@@ -194,7 +194,7 @@ public class Registrador{
 			executaComando(nomeArquivo);
 			break;
 			
-		case  "remover" :			
+		case "remover" :			
 			Include.setAppend(false); // Desabilita "append" para sobscrever dados no arquivo
 			Include.remove(nomeArquivo,Auxiliar.digita("\nDigite um contato para excluir"));
 		case "sair":
