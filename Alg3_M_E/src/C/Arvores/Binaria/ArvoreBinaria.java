@@ -48,8 +48,8 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 */
 	public void travessiaPosFixa(boolean cabecalho){
 		if (cabecalho == true ) {
-			View.msgc("\nImpressao odem pos-fixa " 
-				+ Auxiliar.getOpcao().toLowerCase() +" " +Auxiliar.getDetalhes() +"\n\n");
+			View.msgc("\nTRAVESSIA PÓS-FIXA " 
+				+ Auxiliar.getOpcao().toUpperCase() +" " +Auxiliar.getDetalhes().toUpperCase() +"\n\n");
 		}
 		raiz.travessiaPosFixa(raiz);
 	}
@@ -57,14 +57,22 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	/**
 	 * Imprime Travassia pré-fixa da árvore
 	 */
-	public void travessiaPreFixa() {
+	public void travessiaPreFixa(boolean cabecalho) {
+		if (cabecalho == true ) {
+			View.msgc("\nTRAVESSIA PÓS-FIXA " 
+				+ Auxiliar.getOpcao().toUpperCase() +" " +Auxiliar.getDetalhes().toUpperCase() +"\n\n");
+		}
 		raiz.travessiaPreFixa(raiz);
 	}
 	
 	/**
 	 * Imprime Travassia infixa da árvore
 	 */
-	public void travessiaInfixa() {
+	public void travessiaInfixa(boolean cabecalho) {
+		if (cabecalho == true ) {
+			View.msgc("\nTRAVESSIA INFIXA " 
+				+ Auxiliar.getOpcao().toUpperCase() +" " +Auxiliar.getDetalhes().toUpperCase() +"\n\n");
+		}
 		raiz.travessiaInfixa(raiz);
 	}
 	
@@ -72,7 +80,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * Conta nodos da árvore
 	 * @return
 	 */
-	public int contaNodos() {
+	public int contaNodos(boolean cabecalho) {
 		return raiz.contaNodos(raiz);
 	}
 	
@@ -80,7 +88,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * Busca elemento percorrendo a árvore em largura
 	 * @param nome
 	 */
-	public void buscEmAltura(String nome) {
+	public void buscEmAltura(String nome,boolean cabecalho) {
 		raiz.buscEmAltura(raiz, nome);
 		Auxiliar.setContador(false); // Limpa contador
 	}	
@@ -89,7 +97,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * Método de impressão de busca de dados
 	 * @param campo
 	 */
-	public void buscaDado(T campo) {
+	public void buscaDado(T campo,boolean cabecalho) {
 		raiz.buscaDado(null, campo);
 		Auxiliar.setContador(false); // Limpa contador
 	}
@@ -98,7 +106,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * Método complementar de remoção
 	 * @param campo
 	 */
-	public void remove(T campo) {
+	public void remove(T campo, boolean cabecalho) {
 		raiz.remove(raiz, campo);
 	}
 }
