@@ -47,7 +47,7 @@ public class Memoria {
 	
 	
 	/**
-	 * Método de impressão do status da memória
+	 * Método de impressão do "status" da memória
 	 * @throws Exception
 	 */
 	public void imprime()throws Exception {

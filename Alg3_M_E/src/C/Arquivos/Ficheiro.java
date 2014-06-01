@@ -15,8 +15,8 @@ import M.Buffers;
 import M.Dados;
 
 /**
- * Classe responsavel pela manupulação do arquivo
- * @author Neimar,Aurelio
+ * Classe responsável pela manipulação do arquivo
+ * @author Neimar, Aurélio
  */
 public class Ficheiro extends Dados {
 	
@@ -31,7 +31,7 @@ public class Ficheiro extends Dados {
 		try {
 			View.msg("\nVerificando disco...\n");
 			if (memoria.verifica() >= 6000) { // Verifica memória ao inserir dados
-				FileWriter fw = new FileWriter(new File(nomeAquivo),true);
+				FileWriter fw = new FileWriter(new File(nomeAquivo), true);
 				View.msgb("Novo arquivo criado: " + fw);
 				fw.close();
 			} else {
@@ -45,7 +45,7 @@ public class Ficheiro extends Dados {
 	
 
 	/** 
-	 * Método de remoção de arquivo com verificação da existência do arquivo
+	 * Método de remoção de arquivo com verificação da existência do mesmo
 	 * @param nomeArquivo
 	 */
 	public void remove(String nomeArquivo) { 
@@ -77,18 +77,18 @@ public class Ficheiro extends Dados {
 			Buffers.setFile(new FileReader(nomeArquivo));		
 			Buffers.setBuff(new BufferedReader(Buffers.getFile()));
 			Buffers.setLinha(Buffers.getBuff().readLine());
-			if(imprimir== true){View.msgc(" Impressão do arquivo: " +nomeArquivo +"\n\n");}
+			if(imprimir == true) { View.msgc(" Impressão do arquivo: " + nomeArquivo + "\n\n");}
 			
 			while(Buffers.getLinha() != null ) {
 				Buffers.setLinha(Buffers.getBuff().readLine());
 				index++;
 				
-				if (criaVetor == true){
-					insertVetor(index, criaVetor); //Metodo transferência de dados para do arquivo para vetor
-				}else{
-					Registrador.copiaArquivo(Buffers.getLinha()); //Médoto de insersão nas estruturas de dados
+				if (criaVetor == true) {
+					insertVetor(index, criaVetor); // Método de transferência de dados de arquivo para vetor
+				} else {
+					Registrador.copiaArquivo(Buffers.getLinha()); // Método de insersão nas estruturas de dados
 				}				
-				imprimeDaDos(Buffers.getLinha(), campo, filtrar, imprimir); //Método de impressão dados. Imprime quando abilitado 			
+				imprimeDaDos(Buffers.getLinha(), campo, filtrar, imprimir); // Método de impressão de dados. Imprime quando habilitado 			
 			}
 			Buffers.getBuff().close();	
 			
@@ -109,7 +109,7 @@ public class Ficheiro extends Dados {
 		
 	
 	/**
-	 * Método de carregamento dos dados do arquivo para o vetor e strins
+	 * Método de carregamento dos dados do arquivo para o vetor
 	 * @param index
 	 * @param criaVetor
 	 */
@@ -118,7 +118,7 @@ public class Ficheiro extends Dados {
 			vetor[index]= Buffers.getLinha();			
 		}
 		
-		if (criaVetor == true && Buffers.getLinha() == null){
+		if (criaVetor == true && Buffers.getLinha() == null) {
 			for (int i = index; i < vetor.length; i++) { // Complementa o vetor após carregamento dos dados do arquivo
 				vetor[i]= "";
 			}
@@ -127,13 +127,13 @@ public class Ficheiro extends Dados {
 	}	
 	
 	/**
-	 * Método global de impressão dados 
+	 * Método global de impressão de dados 
 	 * @param linha
 	 * @param campo
 	 * @param filtrar
 	 */
 	protected static void imprimeDaDos(String linha, String campo, boolean filtrar, boolean imprimir) {
-		if (imprimir == true) {//Abilita impressão ou não.
+		if (imprimir == true) { // Habilita impressão ou não.
 			if (filtrar == true) { // Imprime dados coincidentes com o parâmetro	
 				if (linha.equals(campo)) {				
 					View.msg("\n> " +linha  + "\n");
