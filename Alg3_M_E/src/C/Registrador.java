@@ -31,6 +31,14 @@ public class Registrador {
 	 * Método de recuperação do estado do objeto
 	 * @return
 	 */
+	public static ListaOrdenada<String> getLista() {
+		return lista;
+	}
+	
+	/**
+	 * Método de recuperação do estado do objeto
+	 * @return
+	 */
 	public static ArvoreBinaria<String> getArvoreBinaria() {
 		return arvoreBinaria;
 	}

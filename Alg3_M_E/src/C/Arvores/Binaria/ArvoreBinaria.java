@@ -1,5 +1,6 @@
 package C.Arvores.Binaria;
 
+import App.View;
 import M.Utilitarios.Auxiliar;
 
 
@@ -45,7 +46,11 @@ public class ArvoreBinaria<T extends Comparable<T>>{
 	/**
 	 * Imprmir travessia pós fixa da árvore
 	 */
-	public void travessiaPosFixa(){
+	public void travessiaPosFixa(boolean cabecalho){
+		if (cabecalho == true ) {
+			//View.
+		}
+		
 		raiz.travessiaPosFixa(raiz);
 	}
 	

@@ -2,6 +2,7 @@ package C.Navegacao;
 
 import App.Menus;
 import App.View;
+import C.Registrador;
 import C.Arquivos.Ficheiro;
 import C.Lista.ListaEncadeada;
 import M.Dados;
@@ -109,15 +110,11 @@ public class Consultas {
 	
 	private void tPosFixa() throws Exception{		
 		switch (Auxiliar.getOpcao()) {
-		
-		case "LISTA":			
-			View.objetoNaoImplementado();
-			break;
-		
+			
 		case "ARVORE":
 			
 			if(Auxiliar.getDetalhes().equals("binaria") ) {				
-				View.objetoNaoImplementado();
+				Registrador.getArvoreBinaria().travessiaPosFixa();
 				
 			} else if (Auxiliar.getDetalhes().equals("avl") ) {				
 				View.objetoNaoImplementado();
@@ -140,14 +137,10 @@ public class Consultas {
 
 		switch (Auxiliar.getOpcao()) {
 		
-		case "LISTA":			
-			View.objetoNaoImplementado();
-			break;
-		
 		case "ARVORE":
 			
 			if(Auxiliar.getDetalhes().equals("binaria") ) {				
-				View.objetoNaoImplementado();
+				Registrador.getArvoreBinaria().travessiaPreFixa();
 				
 			} else if (Auxiliar.getDetalhes().equals("avl") ) {				
 				View.objetoNaoImplementado();
@@ -170,14 +163,10 @@ public class Consultas {
 	private void tInfixa() throws Exception{		
 		switch (Auxiliar.getOpcao()) {
 		
-		case "LISTA":			
-			View.objetoNaoImplementado();
-			break;
-		
 		case "ARVORE":
 			
 			if(Auxiliar.getDetalhes().equals("binaria") ) {				
-				View.objetoNaoImplementado();
+				Registrador.getArvoreBinaria().travessiaInfixa();
 				
 			} else if (Auxiliar.getDetalhes().equals("avl") ) {				
 				View.objetoNaoImplementado();
@@ -294,6 +283,7 @@ public class Consultas {
 		
 		case "LISTA":			
 			Ficheiro.leArquivo(nomeArquivo, false, null, false, false);
+			Registrador.getLista().imprime(true);
 			selecionaComando(nomeArquivo);
 			break;
 
