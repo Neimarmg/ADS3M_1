@@ -232,6 +232,7 @@ public class Menus extends View {
 	      + "|V         |View\n"
 		  + "|App       |Aplicação\n"
 		  + "|Ficheiro  |Classe de manipulação de arquivo\n"
+		  + "|l.txt     |lista telefonica"
 		);
 	}
 }

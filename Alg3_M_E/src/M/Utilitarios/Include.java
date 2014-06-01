@@ -17,7 +17,7 @@ import M.Buffers;
  * @author moises
  */
 public class Include {
-	static String acun = "";
+
 	private static Boolean append = false;
 	
 	
