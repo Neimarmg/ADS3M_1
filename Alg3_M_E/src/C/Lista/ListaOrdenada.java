@@ -2,8 +2,8 @@ package C.Lista;
 
 
 /**
- * Classe responsavel pela ordenação do dodos ontes da insersão no arquivo
- * @author Neimar, Aurélio *
+ * Classe responsável pela ordenação do dados antes da insersão no arquivo
+ * @author Neimar, Aurélio
  * @param <T>
  */
 public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {

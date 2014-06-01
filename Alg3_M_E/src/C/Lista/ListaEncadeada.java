@@ -4,8 +4,8 @@ import App.View;
 import C.Registrador;
 
 /**
- * Classe responsável pela manipulação a lista
- * @author neimar , Aurelio
+ * Classe responsável pela manipulação da lista
+ * @author Neimar, Aurelio
  * * @param <T>
  */
 public class ListaEncadeada<T extends Comparable<T>> {
@@ -29,7 +29,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	}
 
 	/**
-	 * Método de insereção de nodos na lista
+	 * Método de inserção de nodos na lista
 	 * @param novo
 	 * @param anterior
 	 */
