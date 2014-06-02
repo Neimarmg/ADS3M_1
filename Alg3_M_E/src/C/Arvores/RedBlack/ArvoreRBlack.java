@@ -12,7 +12,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 
 	
 	/**
-	 * Método de rotação a esquerda
+	 * Método de rotação à esquerda
 	 * @param no
 	 */
 	private void rotacionaEsquerda(Nodorb<T> no) {
@@ -29,7 +29,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 
 	
 	/**
-	 * Método de rotação a direita
+	 * Método de rotação à direita
 	 * @param no
 	 */
 	private void rotacionaDireita(Nodorb<T> no) {
@@ -46,7 +46,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 
 	
 	/**
-	 * Método reponsavel pela subtituição de nodos
+	 * Método reponsável pela substituição de nodos
 	 * @param x
 	 * @param no
 	 */
@@ -67,7 +67,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 
 	
 	/**
-	 * Metodo resposável pela inserção de elementos na árvore
+	 * Método resposável pela inserção de elementos na árvore
 	 * @param valor
 	 */
 	public void insere(T valor) {

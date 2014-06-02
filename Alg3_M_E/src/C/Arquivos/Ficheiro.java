@@ -86,7 +86,7 @@ public class Ficheiro extends Dados {
 				if (criaVetor == true) {
 					insertVetor(index, criaVetor); // Método de transferência de dados de arquivo para vetor
 				} else {
-					Registrador.copiaArquivo(Buffers.getLinha()); // Método de insersão nas estruturas de dados
+					Registrador.copiaArquivo(Buffers.getLinha()); // Método de inserção nas estruturas de dados
 				}				
 				imprimeDaDos(Buffers.getLinha(), campo, filtrar, imprimir); // Método de impressão de dados. Imprime quando habilitado 			
 			}
@@ -115,7 +115,7 @@ public class Ficheiro extends Dados {
 	 */
 	protected static void insertVetor(int index, boolean criaVetor) {
 		if (criaVetor == true && Buffers.getLinha() != null) {
-			vetor[index]= Buffers.getLinha();			
+			vetor[index]= Buffers.getLinha();
 		}
 		
 		if (criaVetor == true && Buffers.getLinha() == null) {
@@ -124,7 +124,7 @@ public class Ficheiro extends Dados {
 			}
 		}
 		
-	}	
+	}
 	
 	/**
 	 * Método global de impressão de dados 
@@ -135,9 +135,9 @@ public class Ficheiro extends Dados {
 	protected static void imprimeDaDos(String linha, String campo, boolean filtrar, boolean imprimir) {
 		if (imprimir == true) { // Habilita impressão ou não.
 			if (filtrar == true) { // Imprime dados coincidentes com o parâmetro	
-				if (linha.equals(campo)) {				
-					View.msg("\n> " +linha  + "\n");
-				}				
+				if (linha.equals(campo)) {		
+					View.msg("\n> " + linha  + "\n");
+				}
 			} else {
 				View.msg("> " + linha + "\n");
 			}

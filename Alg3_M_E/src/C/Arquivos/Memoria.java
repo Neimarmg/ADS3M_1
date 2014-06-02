@@ -27,7 +27,7 @@ public class Memoria {
 	 * @return
 	 * @throws Exception
 	 */
-	public int calcula()throws Exception {			
+	public int calcula()throws Exception {
 		for (FileStore store : fSistem.getFileStores()) {
 			return (int) store.getTotalSpace();
 		} return 0;
@@ -54,5 +54,5 @@ public class Memoria {
 		View.msg("\nLista Unidades: " + listaInidades() + "\n");
 		View.msg("Espaço total: " + calcula() + "\n");
 		View.msg("Total disponível: " + verifica() + "\n");
-	}	
+	}
 }

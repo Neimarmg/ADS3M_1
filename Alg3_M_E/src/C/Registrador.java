@@ -97,7 +97,7 @@ public class Registrador {
 	
 	
 	/**
-	 * Método responsável por receber os dados da leitura do arquivo, bem como insirir nas etruturas		
+	 * Método responsável por receber os dados da leitura do arquivo, bem como inserir nas estruturas		
 	 * @param linha
 	 * @throws Exception
 	 */
@@ -114,12 +114,12 @@ public class Registrador {
 			if(Auxiliar.getDetalhes().equals("ab")) {				
 				arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
 			
-			} else if (Auxiliar.getDetalhes().equals("avl")) {				
+			} else if (Auxiliar.getDetalhes().equals("avl")) {
 				setAvl(new ArvoreAVL());
 				avl.insere(avl, Dados.getIndex());
 				
 				
-			} else if(Auxiliar.getDetalhes().equals("rb")) {
+			} else if (Auxiliar.getDetalhes().equals("rb")) {
 				getArvoreRedBlack().insere(linha);
 				
 			} else {
@@ -143,7 +143,7 @@ public class Registrador {
 		Contatos.setNome(Auxiliar.digita("Contato")); 
 		Contatos.setFone(Auxiliar.digita("Telefone"));
 		Include.setAppend(true);
-		Include.addNovo(nomeArquivo, Contatos.getNome()+"," +Contatos.getFone() +"\n"); // Insere dado na última linha do arquivo
+		Include.addNovo(nomeArquivo, Contatos.getNome() + "," + Contatos.getFone() + "\n"); // Insere dado na última linha do arquivo
 	}
 	
 	
@@ -160,7 +160,7 @@ public class Registrador {
 	
 					
 	/**
-	 * Método responsável pela insersão de novo registro
+	 * Método responsável pela inserção de novo registro
 	 * @param nomeArquivo
 	 * @throws Exception
 	 */
@@ -225,7 +225,7 @@ public class Registrador {
 			executaComando(nomeArquivo);
 			break;
 			
-		case "remover" :
+		case "remover":
 			Buffers.setBuff(null); // Limpeza de buffer
 			Buffers.setFile(null); // Limpeza de arquivo
 			setAcum(""); // Limpeza de acumulador

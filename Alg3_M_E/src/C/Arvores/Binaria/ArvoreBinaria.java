@@ -53,7 +53,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	}
 	
 	/**
-	 * Imprime Travassia pré-fixa da árvore
+	 * Imprime travessia pré-fixa da árvore
 	 */
 	public void travessiaPreFixa(boolean cabecalho) {
 		View.imprimeArvores(true, "\nTRAVESSIA PRÉ-FIXA - ");
@@ -61,7 +61,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	}
 	
 	/**
-	 * Imprime Travassia infixa da árvore
+	 * Imprime travessia infixa da árvore
 	 */
 	public void travessiaInfixa(boolean cabecalho) {
 		View.imprimeArvores(true, "\nTRAVESSIA INFIXA - ");
@@ -102,7 +102,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * @param campo
 	 */
 	public void remove(T campo, boolean cabecalho) {
-		View.imprimeArvores(true, "\nREMOVOCÃO DE NODO - ");
+		View.imprimeArvores(true, "\nREMOCÃO DE NODO - ");
 		raiz.remove(raiz, campo);
 	}
 }

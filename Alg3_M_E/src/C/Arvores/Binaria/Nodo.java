@@ -48,7 +48,7 @@ public class Nodo<T extends Comparable<T>> {
 	 */
 	public void insere(Nodo<T> novo) {
 		if (novo.getValor().compareTo(valor) < 0 ) {
-			if (esq ==null) {
+			if (esq == null) {
 				esq = novo;
 				novo.setPai(this);
 			} else {
@@ -57,7 +57,7 @@ public class Nodo<T extends Comparable<T>> {
 		}
 		
 		if (novo.getValor().compareTo(valor) > 0) {
-			if (dir ==null) {
+			if (dir == null) {
 				dir = novo;
 				novo.setPai(novo);
 			} else {
@@ -81,7 +81,7 @@ public class Nodo<T extends Comparable<T>> {
 		
 		if (dir != null) {
 			dir.imprime();				
-		}		
+		}
 	}
 	
 	
@@ -96,7 +96,7 @@ public class Nodo<T extends Comparable<T>> {
 		
 		if (dir != null) {
 			dir.guardaEdicao();				
-		}		
+		}
 	}
 	
 	
@@ -160,7 +160,7 @@ public class Nodo<T extends Comparable<T>> {
 	 * @param no
 	 * @param nome
 	 */
-	public void buscEmAltura(Nodo<T> no , String nome) {
+	public void buscEmAltura(Nodo<T> no, String nome) {
 		if (no == null) {
 			View.msg( " Nivel -1 ");
 	    
@@ -188,10 +188,10 @@ public class Nodo<T extends Comparable<T>> {
 	 * @param campo
 	 * @param comparacoes
 	 */
-	public void buscaDado(Nodo<T> no, T campo) {		
+	public void buscaDado(Nodo<T> no, T campo) {
 		if (no == null) {
 			View.msg("\nDado não encontrado na árvore!" +
-					"\nComparacoes: " + Auxiliar.getContador());			
+					 "\nComparacoes: " + Auxiliar.getContador());			
 		} else {
 			
 			int comper = campo.compareTo(no.getValor());

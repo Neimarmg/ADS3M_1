@@ -3,4 +3,4 @@
  *
  */
 package C.Arvores.Avl;
-// Pacote de armazenamento da estrutura da arvore AVL
+// Pacote de armazenamento da estrutura da árvore AVL

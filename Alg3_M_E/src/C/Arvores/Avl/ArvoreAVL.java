@@ -121,7 +121,7 @@ public class ArvoreAVL extends DadosAvl {
 	}
 
 	/**
-	 * Método de rotação a direita 
+	 * Método de rotação à direita 
 	 * @param aux
 	 * @return
 	 */
