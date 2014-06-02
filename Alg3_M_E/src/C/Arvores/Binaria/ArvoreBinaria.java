@@ -33,9 +33,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * @throws Exception 
 	 */
 	public void imprime(boolean cabecalho) throws Exception {
-		View.msgc("\nIMPESSÃO DA - "
-				+ Auxiliar.getOpcao().toUpperCase() + " " 
-				+ Auxiliar.getDetalhes().toUpperCase() + "\n\n");
+		View.imprimeArvores(true, "\nIMPESSÃO DA - ");
 		raiz.imprime();			
 	}	
 	
@@ -50,11 +48,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * Imprmime travessia pós-fixa da árvore
 	 */
 	public void travessiaPosFixa(boolean cabecalho) {
-		if (cabecalho == true ) {
-			View.msgc("\nTRAVESSIA PÓS-FIXA - "
-				+ Auxiliar.getOpcao().toUpperCase() + " " 
-				+ Auxiliar.getDetalhes().toUpperCase() + "\n\n");
-		}
+		View.imprimeArvores(true, "\nTRAVESSIA PÓS-FIXA - ");
 		raiz.travessiaPosFixa(raiz);
 	}
 	
@@ -62,11 +56,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * Imprime Travassia pré-fixa da árvore
 	 */
 	public void travessiaPreFixa(boolean cabecalho) {
-		if (cabecalho == true) {
-			View.msgc("\nTRAVESSIA PRÉ-FIXA - " 
-				+ Auxiliar.getOpcao().toUpperCase() + " " 
-				+ Auxiliar.getDetalhes().toUpperCase() + "\n\n");
-		}
+		View.imprimeArvores(true, "\nTRAVESSIA PRÉ-FIXA - ");
 		raiz.travessiaPreFixa(raiz);
 	}
 	
@@ -74,11 +64,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * Imprime Travassia infixa da árvore
 	 */
 	public void travessiaInfixa(boolean cabecalho) {
-		if (cabecalho == true) {
-			View.msgc("\nTRAVESSIA INFIXA - " 
-				+ Auxiliar.getOpcao().toUpperCase() + " " 
-				+ Auxiliar.getDetalhes().toUpperCase() + "\n\n");
-		}
+		View.imprimeArvores(true, "\nTRAVESSIA INFIXA - ");
 		raiz.travessiaInfixa(raiz);
 	}
 	
@@ -87,11 +73,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * @return
 	 */
 	public int contaNodos(boolean cabecalho) {
-		if (cabecalho == true) {
-			View.msgc("\nCONTAGEM DE NODOS - " 
-				+ Auxiliar.getOpcao().toUpperCase() + " " 
-				+ Auxiliar.getDetalhes().toUpperCase() + "\n\n");
-		}		
+		View.imprimeArvores(true, "\nCONTAGEM DE NODOS - ");
 		return raiz.contaNodos(raiz);
 	}
 	
@@ -100,11 +82,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * @param nome
 	 */
 	public void buscEmAltura(String nome, boolean cabecalho) {
-		if (cabecalho == true) {
-			View.msgc("\nBUSCA EM ALTURA - " 
-				+ Auxiliar.getOpcao().toUpperCase() + " " 
-				+Auxiliar.getDetalhes().toUpperCase() + "\n\n");
-		}
+		View.imprimeArvores(true, "\nBUSCA EM ALTURA - ");
 		raiz.buscEmAltura(raiz, nome);
 		Auxiliar.setContador(false); // Limpa contador
 	}
@@ -114,6 +92,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * @param campo
 	 */
 	public void buscaDado(T campo,boolean cabecalho) {
+		View.imprimeArvores(true, "\nBUSCA DADOS - ");
 		raiz.buscaDado(null, campo);
 		Auxiliar.setContador(false); // Limpa contador
 	}
@@ -123,6 +102,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	 * @param campo
 	 */
 	public void remove(T campo, boolean cabecalho) {
+		View.imprimeArvores(true, "\nREMOVOCÃO DE NODO - ");
 		raiz.remove(raiz, campo);
 	}
 }

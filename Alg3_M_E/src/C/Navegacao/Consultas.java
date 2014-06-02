@@ -276,7 +276,7 @@ public class Consultas {
 					Registrador.setArvoreRedBlack(Registrador.getArvoreRedBlack());
 					Registrador.getArvoreRedBlack().insere(Auxiliar.digita("Elemento"));
 				}
-				Registrador.getArvoreRedBlack().imprimirNodos();
+				Registrador.getArvoreRedBlack().imprimirNodos(true);
 				break;
 			}			
 			break;

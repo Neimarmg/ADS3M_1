@@ -1,5 +1,8 @@
 package C.Arvores.RedBlack;
 
+import App.View;
+import M.Utilitarios.Auxiliar;
+
 public class ArvoreRBlack<T extends Comparable<T>> {
 
 	private Nodorb<T> raiz;
@@ -8,6 +11,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		raiz = null;
 	}
 
+	
 	/**
 	 * Método de rotação a esquerda
 	 * @param no
@@ -24,6 +28,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		no.setPar(direita);
 	}
 
+	
 	/**
 	 * Método de rotação a direita
 	 * @param no
@@ -40,6 +45,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		no.setPar(esquerda);
 	}
 
+	
 	/**
 	 * Método reponsavel pela subtituição de nodos
 	 * @param x
@@ -60,6 +66,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		}
 	}
 
+	
 	/**
 	 * Metodo resposável pela inserção de elementos na árvore
 	 * @param valor
@@ -101,7 +108,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		caso1(node);
 	}
 
-	
+		
 	/**
 	 *  Caso de inserção nro 1
 	 * @param no
@@ -114,6 +121,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		}
 	}
 
+	
 	/**
 	 *  Caso de inserção nro 2
 	 * @param no
@@ -144,6 +152,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		}
 	}
 
+	
 	/**
 	 *  Caso de inserção nro 4
 	 * @param no
@@ -162,6 +171,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		caso5(no);
 	}
 
+	
 	/**
 	 *  Caso de inserção nro 5
 	 * @param no
@@ -182,7 +192,8 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 	/**
 	 * Imprime nodos da raiz
 	 */
-	public void imprimirNodos() {
+	public void imprimirNodos(boolean cabecalho) {
+		View.imprimeArvores(true, "\nIMPRESSÃO - ");
 		raiz.imprime();
 	}
 }

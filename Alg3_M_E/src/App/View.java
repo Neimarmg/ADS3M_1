@@ -1,5 +1,7 @@
 package App;
 
+import M.Utilitarios.Auxiliar;
+
 public class View {	
 	
 	public static void msg(Object desc) {   
@@ -52,5 +54,13 @@ public class View {
 	public static void sair() {
 		System.err.print("\nVocê optou por sair do programa. Obrigado.");
 		System.exit(0);
+	}
+	
+	public static void imprimeArvores(Boolean cabecalho, String txt) {	
+		if (cabecalho == true){
+			View.msgc(txt
+					+ Auxiliar.getOpcao().toUpperCase() + " " 
+					+ Auxiliar.getDetalhes().toUpperCase() + "\n\n");
+		}
 	}
 }
