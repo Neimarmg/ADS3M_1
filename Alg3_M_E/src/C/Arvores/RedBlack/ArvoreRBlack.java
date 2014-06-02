@@ -1,7 +1,6 @@
 package C.Arvores.RedBlack;
 
 import App.View;
-import M.Utilitarios.Auxiliar;
 
 public class ArvoreRBlack<T extends Comparable<T>> {
 
