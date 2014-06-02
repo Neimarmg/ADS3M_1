@@ -1,7 +1,7 @@
 package C.Lista;
 
 /**
- * Classe de definição deo nodo da lista
+ * Classe de definição do nodo da lista
  * @author Neimar, Aurélio
  * @param <T>
  */

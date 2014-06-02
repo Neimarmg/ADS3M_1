@@ -6,7 +6,7 @@ import M.Utilitarios.Auxiliar;
 
 /**
  * Classe responsável pela manipulação da lista
- * @author Neimar, Aurelio
+ * @author Neimar, Aurélio
  * * @param <T>
  */
 public class ListaEncadeada<T extends Comparable<T>> {
@@ -56,17 +56,17 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	public void guardaEdicao() {
 		Nodo<?> nodo = head;
 		do {	
-			Registrador.setAcum("\n" +nodo.getData()); // Acumalador de ordenação
+			Registrador.setAcum("\n" + nodo.getData()); // Acumalador de ordenação
 			nodo = nodo.getNext();
 		} while (nodo != null);	
 	}
 
 	/**
-	 * Imprime quando habilitado na tela e edita registrador após a ordenação
+	 * Imprime na tela quando habilitado e edita registrador após a ordenação
 	*/
 	public void imprime(boolean cabecalho) {
 		if (cabecalho == true) {
-			View.msgc("\nIMPESSÃO DA - " +Auxiliar.getOpcao().toUpperCase() +"\n\n");
+			View.msgc("\nIMPESSÃO DA - " + Auxiliar.getOpcao().toUpperCase() + "\n\n");
 		}
 		try {
 			Nodo<?> nodo = head;

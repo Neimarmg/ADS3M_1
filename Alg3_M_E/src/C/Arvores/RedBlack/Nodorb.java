@@ -86,14 +86,14 @@ public class Nodorb<T extends Comparable<T>> {
 	public void imprime() {
 		String cor = "";
 
-		if(isCorNodo() == true){
+		if (isCorNodo() == true) {
 			cor = "red  ";
 		
-		}else{
+		} else {
 			cor = "black";
 		}
 
-		View.msg("Cor " +cor +" = "+ valor +"\n");
+		View.msg("Cor " + cor +" = "+ valor + "\n");
 
 		if (esq != null) {
 			esq.imprime();
@@ -105,7 +105,7 @@ public class Nodorb<T extends Comparable<T>> {
 		if (dir != null) {
 			dir.imprime();
 		
-		}else {
+		} else {
 			View.msg("");
 		}
 	}
