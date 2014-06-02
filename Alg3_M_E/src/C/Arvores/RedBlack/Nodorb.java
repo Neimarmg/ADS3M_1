@@ -93,7 +93,7 @@ public class Nodorb<T extends Comparable<T>> {
 			cor = "black";
 		}
 
-		View.msg("Cor " +cor +" = "+ valor +"\n");
+		View.msgc("Cor " +cor +" = "+ valor +"\n");
 
 		if (esq != null) {
 			esq.imprime();
