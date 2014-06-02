@@ -2,6 +2,7 @@ package C.Lista;
 
 import App.View;
 import C.Registrador;
+import M.Utilitarios.Auxiliar;
 
 /**
  * Classe responsável pela manipulação da lista
@@ -20,7 +21,7 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	}
 
 
-	public void insert(Nodo<T> novo) {
+	public void insere(Nodo<T> novo) {
 		novo.setNext(head);
 		head = novo;
 
@@ -63,11 +64,14 @@ public class ListaEncadeada<T extends Comparable<T>> {
 	/**
 	 * Imprime quando habilitado na tela e edita registrador após a ordenação
 	*/
-	public void imprime(boolean impressaoPrevia) {
+	public void imprime(boolean cabecalho) {
+		if (cabecalho == true) {
+			View.msgc("\nIMPESSÃO DA - " +Auxiliar.getOpcao().toUpperCase() +"\n\n");
+		}
 		try {
 			Nodo<?> nodo = head;
 			do {
-				if (impressaoPrevia){View.msg("\n" + nodo.getData());} // Imprime a lista para consulta prévia em tempo de execução
+				View.msg("\n" + nodo.getData()); // Imprime a lista para consulta prévia em tempo de execução
 				nodo = nodo.getNext();				
 			} while (nodo != null);			
 

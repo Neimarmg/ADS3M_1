@@ -33,10 +33,10 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 
 
 	@Override
-	public void insert(Nodo<T> novo) {
+	public void insere(Nodo<T> novo) {
 		Nodo<T> anterior = findBefore(novo);
 		if (anterior == null) {
-			super.insert(novo);
+			super.insere(novo);
 		} else {
 			super.insert(novo, anterior);
 		}
@@ -45,13 +45,13 @@ public class ListaOrdenada<T extends Comparable<T>> extends ListaEncadeada<T> {
 
 	@Override
 	public void insert(Nodo<T> novo, Nodo<T> anterior) {
-		insert(novo);
+		insere(novo);
 	}
 
 
 	@Override
 	public void append(Nodo<T> novo) {
-		insert(novo);
+		insere(novo);
 	}
 
 }

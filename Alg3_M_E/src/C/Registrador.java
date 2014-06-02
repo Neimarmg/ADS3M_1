@@ -30,6 +30,11 @@ public class Registrador {
 	private static ArvoreRBlack<String> arvoreRedBlack = new  ArvoreRBlack<String>();
 	
 	
+	
+	public static void setArvoreRedBlack(ArvoreRBlack<String> arvoreRedBlack) {
+		Registrador.arvoreRedBlack = arvoreRedBlack;
+	}
+	
 	/**
 	 * Método de recuperação do estado do objeto
 	 * @return
@@ -38,7 +43,7 @@ public class Registrador {
 		return arvoreRedBlack;
 	}
 	
-	
+
 	/**
 	 * Método de recuperação do estado do objeto
 	 * @return

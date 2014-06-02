@@ -249,40 +249,34 @@ public class Consultas {
 		case "LISTA":
 			if (inserirElemento == true){
 				Registrador.getLista().insert(
-						new Nodo<String>(Auxiliar.digita("Elementos")), lista.getHead());
-				Registrador.getArvoreBinaria().imprime(true);
-			}else{
-				Registrador.getArvoreBinaria().imprime(true);	
-			}
-			
+						new Nodo<String>(Auxiliar.digita("Elemento")), lista.getHead());
+			}			
+			Registrador.getLista().imprime(true);
 			break;
 			
 		case "ARVORE":
 			
 			if (Auxiliar.getDetalhes().equals("ab")) {				
-				
 				if (inserirElemento == true){
-					Registrador.getArvoreBinaria().insere(
-							new C.Arvores.Binaria.Nodo<String>(Auxiliar.digita("Elemento")));
-					Registrador.getArvoreBinaria().imprime(true);
-				}else{
-					Registrador.getArvoreBinaria().imprime(true);	
+					Registrador.getLista().insert(new Nodo<String>(Auxiliar.digita("Elemento")), lista.getHead());			
 				}
+				Registrador.getArvoreBinaria().imprime(true);
 				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("avl")) {				
 				if (inserirElemento == true){
 					Registrador.setAvl(new ArvoreAVL());
-					Registrador.getAvl().insere(Registrador.getAvl(), 
-							Auxiliar.digitaNumero("Elemento numérico"));
-					Registrador.getAvl().imprimeAvl(Registrador.getAvl());
-				}else{
-					Registrador.getAvl().imprimeAvl(Registrador.getAvl());
+					Registrador.getAvl().insere(Registrador.getAvl(),Auxiliar.digitaNumero("Elemento numérico"));
 				}
+				Registrador.getAvl().imprimeAvl(Registrador.getAvl());
 				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("rb")) {
-				View.objetoNaoImplementado();	
+				if (inserirElemento == true){
+					Registrador.setArvoreRedBlack(Registrador.getArvoreRedBlack());
+					Registrador.getArvoreRedBlack().insere(Auxiliar.digita("Elemento"));
+				}
+				Registrador.getArvoreRedBlack().imprimirNodos();
 				break;
 			}			
 			break;
