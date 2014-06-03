@@ -42,7 +42,7 @@ public class Consultas {
 	 */
 	private void imprimeBuscaBinaria(int campo) {
 		if (localizador == true) {
-			View.msgb("	RESULTADO DE BUSCA BINÁRIA\n"
+			View.msgb("RESULTADO DE BUSCA BINÁRIA\n"
 				+ "\nRegistro encontrado\n"
 				+ "\n\nPosição [" + meio + "] " + Dados.vetor[meio]
 				+ "\n\nTotal de comparações:" + Auxiliar.getContador() + "\n");

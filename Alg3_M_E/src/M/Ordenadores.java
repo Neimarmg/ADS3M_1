@@ -198,9 +198,9 @@ public class Ordenadores {
 	private static  void informaCabecalhoOrdem(boolean ordem,boolean exibirCabecalho) {	
 		 if (exibirCabecalho == true) {
 			if (ordem == true) {
-	        	View.msgc("	ORDEM CRESCENTE " + nomeOrdenador.toUpperCase() + "\n\n");
+	        	View.msgc("ORDEM CRESCENTE " + nomeOrdenador.toUpperCase() + "\n\n");
 			} else {
-				View.msgc("	ORDEM DECRESCENTE " + nomeOrdenador.toUpperCase() +"\n\n");
+				View.msgc("ORDEM DECRESCENTE " + nomeOrdenador.toUpperCase() +"\n\n");
 			}
 		 }
 	}
