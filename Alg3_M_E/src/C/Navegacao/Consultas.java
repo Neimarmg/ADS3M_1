@@ -265,9 +265,9 @@ public class Consultas {
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
 				if (inserirElemento == true) {
 					Registrador.getAvl();
-					Registrador.getAvl().insere(Registrador.getAvl(),Auxiliar.digitaNumero("Elemento numérico"));
+					Registrador.getAvl().insere(Registrador.getAvl(),Auxiliar.digitaNumero("Elemento"));
 				}
-				//Registrador.getAvl().imprimeAvl(Registrador.getAvl());
+				Registrador.getAvl().imprimeAvore();
 				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("rb")) {

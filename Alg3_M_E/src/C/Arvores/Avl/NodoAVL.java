@@ -4,11 +4,11 @@ import App.View;
 
 public class NodoAVL {
 	
-	    public int valor;
-		public int altDir;
-		public int altEsq;
-	    public NodoAVL dir;
-		public NodoAVL esq;
+	    private int valor;
+		private int altDir;
+		private int altEsq;
+	    private NodoAVL dir;
+		private NodoAVL esq;
 	    
 	 
 	    /**
@@ -31,6 +31,7 @@ public class NodoAVL {
 	        
 	        } else if (val < aux.valor) {
 	            aux.esq = insere(aux.esq, val);
+	            
 	            if (aux.esq.altDir > aux.esq.altEsq) {
 	                aux.altEsq = aux.esq.altDir + 1;
 	            } else {
@@ -140,7 +141,7 @@ public class NodoAVL {
 	     * @param aux
 	     */
 	    public void imprimeArvore() {
-	    	View.msg("\n" +valor);
+	    	View.msg(valor +"\n");
 	    	
 	    	if (dir != null) {	    		
 	        	dir.imprimeArvore();

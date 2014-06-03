@@ -6,6 +6,7 @@ import App.Menus;
 import App.View;
 import C.Arquivos.Ficheiro;
 import C.Arvores.Avl.ArvoreAVL;
+import C.Arvores.Avl.NodoAVL;
 import C.Arvores.Binaria.ArvoreBinaria;
 import C.Arvores.RedBlack.ArvoreRBlack;
 import C.Lista.ListaOrdenada;
@@ -29,8 +30,7 @@ public class Registrador {
 	private static ArvoreAVL avl = new ArvoreAVL();
 	private static ArvoreRBlack<String> arvoreRedBlack = new  ArvoreRBlack<String>();
 	
-	
-	
+		
 	public static void setArvoreRedBlack(ArvoreRBlack<String> arvoreRedBlack) {
 		Registrador.arvoreRedBlack = arvoreRedBlack;
 	}
@@ -95,6 +95,8 @@ public class Registrador {
 		Menus.menuArvores(true, ativaTipo, true);
 	}
 	
+	NodoAVL nodoAvl  = new NodoAVL();
+	
 	
 	/**
 	 * Método responsável por receber os dados da leitura do arquivo, bem como inserir nas estruturas		
@@ -115,9 +117,8 @@ public class Registrador {
 				arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
 			
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
-				getAvl().insere(getAvl(), Dados.getIndex());
-				
-				
+				getAvl().insere(avl, Dados.getIndex());
+							
 			} else if (Auxiliar.getDetalhes().equals("rb")) {
 				getArvoreRedBlack().insere(linha);
 				
@@ -185,8 +186,7 @@ public class Registrador {
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
 				//gravaDados(nomeArquivo);
 				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
-				
-				getAvl().imprimeAvore();	
+				getAvl().imprimeAvore();
 				
 							
 			} else if(Auxiliar.getDetalhes().equals("rb")) {
