@@ -4,7 +4,6 @@ import App.Menus;
 import App.View;
 import C.Registrador;
 import C.Arquivos.Ficheiro;
-import C.Arvores.Avl.ArvoreAVL;
 import C.Lista.ListaEncadeada;
 import C.Lista.Nodo;
 import M.Dados;
@@ -123,7 +122,7 @@ public class Consultas {
 				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
-				Registrador.getAvl().imprimeOrdenPosFixa(Registrador.getAvl());
+				Registrador.getAvl().imprimeOrdemPosFixa(Registrador.getAvl());
 				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("rb")) {
@@ -156,7 +155,7 @@ public class Consultas {
 				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
-				Registrador.getAvl().imprmeOrdenPreFixa(Registrador.getAvl());
+				Registrador.getAvl().imprimeOrdemPreFixa(Registrador.getAvl());
 				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("rb")) {
@@ -265,10 +264,10 @@ public class Consultas {
 				
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
 				if (inserirElemento == true) {
-					Registrador.setAvl(new ArvoreAVL());
+					Registrador.getAvl();
 					Registrador.getAvl().insere(Registrador.getAvl(),Auxiliar.digitaNumero("Elemento numérico"));
 				}
-				Registrador.getAvl().imprimeAvl(Registrador.getAvl());
+				//Registrador.getAvl().imprimeAvl(Registrador.getAvl());
 				break;
 				
 			} else if (Auxiliar.getDetalhes().equals("rb")) {

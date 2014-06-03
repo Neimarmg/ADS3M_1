@@ -1,9 +1,12 @@
 
 #domaco,122454
+
 #maltam,1235664
 #karina,2
 #tabaca,12146465
 acirio,1245896 
+22,12255
+1,0
 adroaldo,2135465
 altero,12313468
 aurelio,9999343535
@@ -35,3 +38,22 @@ têves,235425443
 zandia,132456456
 zerbalo,132145646
 ábaco,1323644
+f,f
+
+joaquim,dfdf
+
+calors,1212
+
+meisas,4565465
+
+tibursio,654654645
+
+genizio,89098789
+
+anizio,456456
+
+anastacio,546456456
+
+clavinclo,567567
+
+anizio,567567

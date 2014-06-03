@@ -115,8 +115,7 @@ public class Registrador {
 				arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
 			
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
-				setAvl(new ArvoreAVL());
-				avl.insere(avl, Dados.getIndex());
+				getAvl().insere(getAvl(), Dados.getIndex());
 				
 				
 			} else if (Auxiliar.getDetalhes().equals("rb")) {
@@ -133,7 +132,7 @@ public class Registrador {
 			break; // Condição de saída quando atividade for inválida
 		}
 	}
-	
+
 	
 	/**
 	 * Método que lê dados do teclado
@@ -184,9 +183,10 @@ public class Registrador {
 				editaArquivo(nomeArquivo);	
 			
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
-				gravaDados(nomeArquivo);
+				//gravaDados(nomeArquivo);
 				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
-				getAvl().imprmeOrdenPreFixa(getAvl());	
+				
+				getAvl().imprimeAvore();	
 				
 							
 			} else if(Auxiliar.getDetalhes().equals("rb")) {

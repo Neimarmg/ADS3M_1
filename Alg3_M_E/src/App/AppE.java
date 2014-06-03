@@ -19,7 +19,7 @@ public class AppE {
 	 * Descrição do cabeçalho principal
 	 */
 	private void escreveCabecalho() {
-		View.msgb("\n" +"	EXERCÍCIO DE ESTRUTURAS JAVA\n");
+		View.msgb("\n" +"		     EXERCÍCIO DE ESTRUTURAS JAVA\n");
 	}
 	
 	
