@@ -13,8 +13,8 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 	private Nodo<T> raiz;
 
 	Nodo<T> nodo =  new Nodo<T>(null);
-	
-	
+
+
 	/**
 	 * Método de inserção na árvore
 	 * @param novo
@@ -26,8 +26,8 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 			raiz.insere(novo);
 		}		
 	}
-	
-	
+
+
 	/**
 	 * @param impressão da árvore
 	 * @throws Exception 
@@ -36,22 +36,22 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 		View.imprimeArvores(true, "\nIMPESSÃO DA - ");
 		raiz.imprime();			
 	}	
-	
+
 	/**
 	 * Método responsável por armazenar temporariamente as alterações dos dados do arquivo
 	 */
 	public void guardaEdicao() {
 		raiz.guardaEdicao();
 	}
-	
+
 	/**
-	 * Imprmime travessia pós-fixa da árvore
+	 * Imprime travessia pós-fixa da árvore
 	 */
 	public void travessiaPosFixa(boolean cabecalho) {
 		View.imprimeArvores(true, "\nTRAVESSIA PÓS-FIXA - ");
 		raiz.travessiaPosFixa(raiz);
 	}
-	
+
 	/**
 	 * Imprime travessia pré-fixa da árvore
 	 */
@@ -59,7 +59,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 		View.imprimeArvores(true, "\nTRAVESSIA PRÉ-FIXA - ");
 		raiz.travessiaPreFixa(raiz);
 	}
-	
+
 	/**
 	 * Imprime travessia infixa da árvore
 	 */
@@ -67,7 +67,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 		View.imprimeArvores(true, "\nTRAVESSIA INFIXA - ");
 		raiz.travessiaInfixa(raiz);
 	}
-	
+
 	/**
 	 * Conta nodos da árvore
 	 * @return
@@ -76,7 +76,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 		View.imprimeArvores(true, "\nCONTAGEM DE NODOS - ");
 		return raiz.contaNodos(raiz);
 	}
-	
+
 	/**
 	 * Busca elemento percorrendo a árvore em largura
 	 * @param nome
@@ -86,7 +86,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 		raiz.buscEmAltura(raiz, nome);
 		Auxiliar.setContador(false); // Limpa contador
 	}
-	
+
 	/**
 	 * Método de impressão de busca de dados
 	 * @param campo
@@ -96,7 +96,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
 		raiz.buscaDado(null, campo);
 		Auxiliar.setContador(false); // Limpa contador
 	}
-	
+
 	/**
 	 * Método complementar de remoção
 	 * @param campo

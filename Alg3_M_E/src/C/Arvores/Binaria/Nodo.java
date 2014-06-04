@@ -2,7 +2,7 @@ package C.Arvores.Binaria;
 import App.View;
 import C.Registrador;
 import M.Utilitarios.Auxiliar;
-	
+
 /**
  * Classe de gravacão do nodo
  * @author Neimar, Aurélio *
@@ -13,8 +13,8 @@ public class Nodo<T extends Comparable<T>> {
 	private Nodo<T> esq;
 	private Nodo<T> dir;
 	private T valor;
-	
-	
+
+
 	/**
 	 * Construtor da classe nodo
 	 * @param valor
@@ -25,23 +25,23 @@ public class Nodo<T extends Comparable<T>> {
 		dir = null;
 		this.valor = valor;
 	}
-	
-	
+
+
 	private void setPai(Nodo<T> nodo) {
 		this.pai = nodo;	
 	}
-	
-	
+
+
 	public T getValor() {
 		return this.valor;
 	}
-	
-	
+
+
 	public void setValor(T valor) {
 		this.valor = valor;
 	}
 
-	
+
 	/**
 	 * Método responsável pela insercão dos objetos na árvore
 	 * @param novo
@@ -55,7 +55,7 @@ public class Nodo<T extends Comparable<T>> {
 				esq.insere(novo);
 			}
 		}
-		
+
 		if (novo.getValor().compareTo(valor) > 0) {
 			if (dir == null) {
 				dir = novo;
@@ -66,24 +66,24 @@ public class Nodo<T extends Comparable<T>> {
 		}
 		return;
 	}	
-	
-	
+
+
 	/**
 	 * Método de impressão de toda a árvore	
 	 */
 	public void imprime() {
-		
+
 		View.msg("\n" + valor);
-		
+
 		if (esq != null) {			
 			esq.imprime();	
 		}
-		
+
 		if (dir != null) {
 			dir.imprime();				
 		}
 	}
-	
+
 	
 	/**
 	 * Método responsável por armazenar temporariamente as alterações dos dados do arquivo
@@ -98,36 +98,36 @@ public class Nodo<T extends Comparable<T>> {
 			dir.guardaEdicao();				
 		}
 	}
-	
-	
+
+
 	/**
-	 * Percorre a árvore pós-ordem
+	 * Percorre a árvore forma pós-ordem
 	 * @param no
 	 */
 	public void travessiaPosFixa(Nodo<T> no) {
 		if (no == null)
 			return;
-		
+
 			travessiaPosFixa(no.dir);
 			travessiaPosFixa(no.esq);
 			View.msg("\n:" + no.valor);
 	}
-	
-	
+
+
 	/**
-	 * Percorre a árvore pré-ordem
+	 * Percorre a árvore forma pré-ordem
 	 * @param no
 	 */
 	public void travessiaPreFixa(Nodo<T> no) {
 		if(no == null)
 			return;
-			
+
 			View.msg("\n:" + no.valor);	
 			travessiaPreFixa(no.dir);
 			travessiaPreFixa(no.esq);		 
 	}
-	
-	
+
+
 	/**
 	 * Percorre a árvore forma infixa
 	 * @param no
@@ -135,13 +135,13 @@ public class Nodo<T extends Comparable<T>> {
 	public void travessiaInfixa(Nodo<T> no) {
 		if (no == null)
 			return;
-		
+
 		 	travessiaInfixa(no.esq);
 			View.msg("\n:" + no.valor);	
 			travessiaInfixa(no.dir);		 
 	}
-	
-	
+
+
 	/**
 	 * Conta nodos existentes na árvore
 	 * @param no
@@ -153,8 +153,8 @@ public class Nodo<T extends Comparable<T>> {
 	     else 
 	         return 1 + contaNodos(no.esq) + contaNodos(no.dir);
 	}
-	
-	
+
+
 	/**
 	 * Percore árvore contando os níveis de profundidade
 	 * @param no
@@ -163,16 +163,16 @@ public class Nodo<T extends Comparable<T>> {
 	public void buscEmAltura(Nodo<T> no, String nome) {
 		if (no == null) {
 			View.msg( " Nivel -1 ");
-	    
+
 		} else if (no.valor.compareTo(no.valor) == nome.compareTo(nome)) {  
 	    	View.msg("Nivel " + Auxiliar.getContador());
-	    
+
 	    } else if (no.valor.compareTo(no.valor) > nome.compareTo(nome)) {  
 	    	if (no != null ) {
 	    		Auxiliar.setContador(true); // Contador  
 	            buscEmAltura(no.dir, nome);  
 	        }
-	    
+
 	    } else if (no.valor.compareTo(no.valor) < nome.compareTo(nome)) {  
 	    	if (no != null) {
 	    		Auxiliar.setContador(true); // Contador    
@@ -180,10 +180,10 @@ public class Nodo<T extends Comparable<T>> {
 	        } 
 	    }
 	}
-	
-	
+
+
 	/**
-	 * Percorre a árvore em busca do elemento solicitado.
+	 * Percorre a árvore em busca do elemento solicitado
 	 * @param no
 	 * @param campo
 	 * @param comparacoes
@@ -193,27 +193,27 @@ public class Nodo<T extends Comparable<T>> {
 			View.msg("\nDado não encontrado na árvore!" +
 					 "\nComparacoes: " + Auxiliar.getContador());			
 		} else {
-			
+
 			int comper = campo.compareTo(no.getValor());
 			
 			if (comper == 0) {
 				Auxiliar.setContador(true); // Contador  
 				View.msg(no + "\nComparacoes: " + Auxiliar.getContador());				
-			
+
 			} else if (comper < 0) {
 				Auxiliar.setContador(true); // Contador  
 				buscaDado(no.esq, campo);
-			
+
 			} else {
 				Auxiliar.setContador(true); // Contador  
 				buscaDado(no.dir,campo);
 			}
 		}	
 	}
-	
-	
+
+
 	/**
-	 * Método de remoção " não implementado
+	 * Método de remoção - não implementado
 	 * @param no
 	 * @param campo
 	 */
