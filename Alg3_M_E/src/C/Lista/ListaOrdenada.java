@@ -1,6 +1,5 @@
 package C.Lista;
 
-
 /**
  * Classe responsável pela ordenação do dados antes da insersão no arquivo
  * @author Neimar, Aurélio
