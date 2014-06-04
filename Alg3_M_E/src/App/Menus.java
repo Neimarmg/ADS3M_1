@@ -10,17 +10,17 @@ public class Menus extends View {
 	private static String sair = "=> SAIR\n";
 	private static String menu ="";	
 	private static String opcMenu;
-	
+
 	public static void setOpcMenu(String opcMenu) {
 		Menus.opcMenu = opcMenu;
 	}
-	
+
 	public static void menuSelecinaAtividade() {	
 		msgb("|QUAL ATIVIDADE?\n"
-		  +"|\n"
-		  +"|Obs.Todas as atividade são executadas independentemente apartir destes\n"
-		  +"|comandos que compartilham métodos genéricos reaproveitáveis.\n"
-		  +"|\n"
+		 + "|\n"
+		 + "|Obs.: Todas as atividade são independenstes, funcionam em separado.\n"
+		 + "|Comandos, estes sim, compartilham métodos genéricos reaproveitáveis.\n"
+		 + "|\n"
 		 + "|----------------------------------------------------------------------\n"
 		 + "|Comando      |Descrição               |Status atividade\n"
 		 + "|-------------|------------------------|-------------------------------\n"
@@ -28,39 +28,39 @@ public class Menus extends View {
 		 + "|=> T2        |Pesquisa Binária        |" + Auxiliar.statusAcao(7,7) + "\n"
 		 + "|=> T4        |Algoritmos de Ordenação |" + Auxiliar.statusAcao(7,7) + "\n"
 		 + "|=> T5        |Árvore Binária          |" + Auxiliar.statusAcao(5,0) + "\n"
-		 + "|=> T6        |Árvores AVL E RED BLACK |" + Auxiliar.statusAcao(5,0) + "\n"
-		 + "|=> G         |Imprime glossário       |" + Auxiliar.statusAcao(7,7) +"\n"
+		 + "|=> T6        |Árvores AVL e RED BLACK |" + Auxiliar.statusAcao(5,0) + "\n"
+		 + "|=> G         |Imprime glossário       |" + Auxiliar.statusAcao(7,7) + "\n"
 		 + "|" + sair);		
 	}
-	
+
 	/**
-	 * Método responsável pela impressão dos comando de execução de tarefas
+	 * Método responsável pela impressão dos comandos de execução das tarefas
 	 */
 	public static void mostarMenuApp() {		
 		menu = "|O QUE VOCÊ DESEJA FAZER?\n"
 		     + "|--------------------------------------------------------------------\n"
 			 + "|Comando      |Descrição\n"
 			 + "|-------------|------------------------------------------------------\n";
-		 
+
 		if (opcMenu.equals("LISTA") || Auxiliar.getOpcao().equals("ARVORE")) {
 			menu += "|=> EXECUTAR  |Executa ações nas estruturas existente\n" +
 					"|=> ARQUIVO   |Propriedades de arquivo\n";
 		}
-					
+
 		if (opcMenu.equals("ORDENADORES")) {
 			menu += "|=> ORDENAR   |Executa ordenação de registro em arquivo(s)\n";
-		}else{
+		} else {
 			menu += "|=> CONSULTAR |Executa consulta em conteúdo salvo em arquivo(s)\n";
 		}
-							
+
 		menu += "|=> IMPRIMIR  |Imprime arquivo selecionado\n"					
 			 +  "|" + sair;
 		msgb(menu);
-		
+
 		menu = ""; // Limpa variável para exibição de próximo menu
 	}
 
-		
+
 	/** 
 	 * Método responsável pele exibição dos menus de include 
 	 * @throws Exception
@@ -75,41 +75,41 @@ public class Menus extends View {
 			+ "|=> REMOVER  |Remove arquivo existente\n";					
 		
 		switch (include) {
-			
+
 		case "ARQUIVO":			
-			menu += "|=> BUSCAR   |Busca lista de arquivos existentes\n"+
+			menu += "|=> BUSCAR   |Busca lista de arquivos existentes\n" +
 					"|=> IMPRIMIR |Imprime dados\n";
 			break;
-				
+
 		case "DADOS":	
 			menu += "|=> EDITAR   |Edita dados do arquivo\n";
 			break;				
 		}
-			
+
 		menu += "|" + sair;
 		msgb(menu);
-		
+
 		menu = "";  // Limpa variável para exibição do próximo menu
 	}
-		
-		
+
+
 	/**
 	 * Menu global para consultas
 	 * @throws Exception
 	 */
 	public static void menuConsultas()throws Exception {	
 		String edicao;
-		
+
 		menu = "|OPÇÕES PARA CONSULTA(S) EM " + Auxiliar.getOpcao() + "(S)" + "\n"
 			 + "|--------------------------------------------------------------------\n"
 			 + "|Comando         |Descrição\n";
-		
+
 		edicao = "|--------------------------------------------- < Edição >\n"
 			   + "|=> NOVO         |Insere um novo elemento\n"
 			   + "|=> REMOVER      |Remove um elemento\n"
 			   + "|=> IMPRIMIR     |Imprime estruturas elemento\n";	
 		switch (opcMenu) {
-		
+
 		case "ARVORE":			
 			menu += "|--------------------------------------------- < Travessias >\n"
 				 +  "|=> POSFIXA      |Imprime ordem pós-fixa\n"
@@ -118,18 +118,18 @@ public class Menus extends View {
 				 +  "|--------------------------------------------- < Statísticas >\n"
 				 +  "|=> CONTAR       |Conta nodos da lista\n"
 				 +  "|--------------------------------------------- < Buscas >\n"
-				 +  "|=> ALTURA       |Busca elementos em nivel\n"
+				 +  "|=> ALTURA       |Busca elementos em nível\n"
 				 +  "|=> PROFUNDIDADE |Calcula profundidade da árvore\n"
 				 +  "|=> NOME         |Encontra um nome ou elemento\n"
 				 +  edicao;
 			break;
-				
+
 		case "BINARIA":
 			menu +=
 				 "|----------------|---------------------------------------------------\n"
 				+"|=> ID           |Encontra um id através de uma busca binária\n";
 			break;
-				
+
 		case "LISTA":
 			menu += "|=> NAVEGAR      |Navega pelo arquivo com comando de teclado\n"
 				 +  "|=> ARQUIVO      |Imprime arquivo inteiro\n"
@@ -137,14 +137,14 @@ public class Menus extends View {
 				 +  edicao;
 			break;							
 		}
-			
+
 		menu += "|" + sair;
 		msgb(menu);	
-		
+
 		menu = ""; // Limpa variável para exibição do próximo menu
 	}
 
-		
+
 	/**
 	 * Método responsável pela execução das formas de ordenação
 	 * @throws Exception
@@ -162,7 +162,7 @@ public class Menus extends View {
 		);
 	}
 
-		
+
 	/**
 	 * Menu de definição de modo de ordenação
 	 * @throws Exception
@@ -170,7 +170,7 @@ public class Menus extends View {
 	public static void menuModoOrdenacao(boolean ativaMenu)throws Exception {	
 		if (ativaMenu == true) {
 			msgb(
-				 "|DESEJA ORDENAR PARA:\n"
+				 "|COMO DESEJA ORDENAR?\n"
 			   + "|--------------------------------------------------------------------\n"
 			   + "|Comando   | Descrição\n"
 			   + "|----------|---------------------------------------------------------\n"
@@ -179,8 +179,8 @@ public class Menus extends View {
 			);
 		}
 	}
-	
-	
+
+
 	/**
 	 * Método impressão de menus para selecionar as árvores
 	 * @param tipoArvore
@@ -189,16 +189,16 @@ public class Menus extends View {
 	 * @throws Exception
 	 */
 	public static void menuArvores(boolean tipoArvore, boolean ativaTodosTipo, boolean print)throws Exception {	
-		
+
 		if (ativaTodosTipo == true) {
 			menu = "|=> Binaria   |Árvore binária\n";
 		} else {
 			menu = "";
 		}
-		
+
 		if (print == true) {
 			msgb(
-				"|SELECIONE QUAL TIPO DE ÁRVORE:\n"
+				"|QUAL TIPO DE ÁRVORE À SELECIONAR?\n"
 			  + "|--------------------------------------------------------------------\n"
 			  + "|Comando      |Descrição\n"
 			  + "|-------------|------------------------------------------------------\n"
@@ -207,18 +207,18 @@ public class Menus extends View {
 		      + "|=> rb        |Árvore red black\n"
 			);
 		}
-		
+
 		if (tipoArvore == true) {
 			Auxiliar.setDetalhes(Auxiliar.digita("Árvore do tipo"));
 		}
-		
+
 		menu = ""; // Limpa variável para exibição do próximo menu
 	}
-	
-	
-	
+
+
+
 	/**
-	 * Exibe o glossário do programa
+	 * Exibe glossário do programa
 	 * @throws Exception
 	 */
 	public static void glossario()throws Exception {	

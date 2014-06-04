@@ -13,16 +13,16 @@ import M.Utilitarios.Dia;
  */
 public class AppE {
 	Ordenadores ordenador = new Ordenadores();
-	
-	
+
+
 	/**
 	 * Descrição do cabeçalho principal
 	 */
 	private void escreveCabecalho() {
-		View.msgb("\n" +"		     EXERCÍCIO DE ESTRUTURAS JAVA\n");
+		View.msgb("\n" + "		     EXERCÍCIO DE ESTRUTURAS JAVA\n");
 	}
-	
-	
+
+
 	/**
 	 * Carrega opções de interação com o programa
 	 * @throws Exception
@@ -31,43 +31,43 @@ public class AppE {
 		Menus.mostarMenuApp();				
 		Interacao.iniciaTarefas();
 	}
-	
-	
+
+
 	/**
 	 *	Método com definição das atividades solicitadas
 	 * @throws Exception
 	 */
 	private void selecionaAtividade() throws Exception {
-	
+
 		try {		
 			Menus.menuSelecinaAtividade();	
 			switch (Auxiliar.digita("Atividade")) {
-			
+
 			case "t1":
 				Auxiliar.setOpcao("LISTA");
 				Menus.setOpcMenu(Auxiliar.getOpcao());
 				iniciaInteracao();
 				break;
-				
+
 			case "t2":				
 				Auxiliar.setOpcao("BINARIA");
 				Menus.setOpcMenu(Auxiliar.getOpcao());
 				iniciaInteracao();
 				break;
-				
+
 			case "t4":
 				Auxiliar.setOpcao("ORDENADORES");
 				Menus.setOpcMenu(Auxiliar.getOpcao());
 				iniciaInteracao();	
 				break;
-				
+
 			case "t5":
 				Auxiliar.setOpcao("ARVORE"); // Árvore deve ficar sem acentuação, pois se trata de atribuição
 				Menus.setOpcMenu(Auxiliar.getOpcao());
 				Auxiliar.setDetalhes("ab");
 				iniciaInteracao();				
 				break;
-			
+
 			case "t6":
 				Auxiliar.setOpcao("ARVORE"); // Árvore deve ficar sem acentuação, pois se trata de atribuição			
 				Menus.setOpcMenu(Auxiliar.getOpcao());
@@ -78,24 +78,24 @@ public class AppE {
 			case "g":
 				Menus.glossario();				
 				break;
-				
+
 			case "sair":
 				View.sair();
 				break;
-				
+
 			default: 
 				View.opcaoInvalida();
 				selecionaAtividade();
 				break;
 			}
-			
+
 		} catch (ClassNotFoundException e) {
 			View.msge("Comando não suportado em JavaSE igual ou inferior a 6.1 ");
 		} catch (InputMismatchException e) {
 			View.msge("\nValor(es) digitado(s) inválido(s)!");
 		}
 	}
-	
+
 
 	/**
 	 * @throws Exception
@@ -105,9 +105,9 @@ public class AppE {
 		Dia.defineSaudacao();		
 		selecionaAtividade();		
 	}
-	
 
-	public static void main(String[] args)throws Exception {		
-		new AppE().run(); 
+
+	public static void main(String[] args)throws Exception {
+		new AppE().run();
 	}
 }
