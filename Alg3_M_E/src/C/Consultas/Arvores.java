@@ -12,7 +12,7 @@ import M.Utilitarios.Auxiliar;
  * Classe reponsável pelas consultas em todas as estruturas
  * @author Neimar, Aurélio
  */
-public class BuscadorArvores {
+public class Arvores {
 	
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
 	
