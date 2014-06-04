@@ -2,7 +2,7 @@ package  C.Consultas;
 
 import App.View;
 
-public class NavedagorListas {
+public class Navedagor {
 	// Implementar métodos
 
 	public void focaPrimeiro() {

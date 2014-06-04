@@ -3,22 +3,22 @@ package C;
 import App.Menus;
 import App.View;
 import C.Arquivos.Ficheiro;
-import C.Consultas.Arvores;
-import C.Consultas.Binario;
+import C.Consultas.ArvoresLista;
+import C.Consultas.Binarias;
 import M.Utilitarios.Auxiliar;
 
 public class Buscadores {
 		
 	
-		static Binario buscadorBinario = new Binario();
-		static Arvores onsultorArvores = new Arvores();
+		static Binarias buscadorBinario = new Binarias();
+		static ArvoresLista onsultorArvores = new ArvoresLista();
 		
 		
-		public static Binario getBuscadorBinario() {
+		public static Binarias getBuscadorBinario() {
 			return buscadorBinario;
 		}
 		
-		public static Arvores getOnsultorArvores() {
+		public static ArvoresLista getOnsultorArvores() {
 			return onsultorArvores;
 		}
 		

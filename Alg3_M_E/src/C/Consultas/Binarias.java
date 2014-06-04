@@ -11,7 +11,7 @@ import M.Utilitarios.Auxiliar;
  * @author moises
  *
  */
-public class Binario {
+public class Binarias {
 	
 		int vet[] = new int [Ficheiro.getVetor().length];
 		int i, inicio = 0, meio, fim = Ficheiro.getVetor().length;
