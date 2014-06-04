@@ -10,6 +10,7 @@ public class Menus extends View {
 	private static String sair = "=> SAIR\n";
 	private static String menu ="";	
 	private static String opcMenu;
+	private static String filtro;
 
 	public static void setOpcMenu(String opcMenu) {
 		Menus.opcMenu = opcMenu;
@@ -94,34 +95,66 @@ public class Menus extends View {
 
 
 	/**
+	 * Método responsável pelo filtro do menu de consultas
+	 * @throws Exception
+	 */
+	public static void menuAgrupaCosultas()throws Exception {		
+		msgb(
+		    "|SELEÇÃO DE COMANDOS DE CONSULTAS?\n"
+		  + "|--------------------------------------------------------------------\n"
+		  + "|Comando        |Descrição\n"
+		  + "|---------------|----------------------------------------------------\n"
+		  + "|=> EDICAO      |Listas itens de edição de estrutura\n"
+		  + "|=> TRAVESSIAS  |Seleciona trevessias em árvores\n"
+		  + "|=> ESTATISTICAS|Seleciona comendos de estatiscas\n"
+		  + "|=> TODOS       |Imprmir a lista completa de comandos\n" 
+		 );
+	}
+
+	
+	/**
 	 * Menu global para consultas
 	 * @throws Exception
 	 */
 	public static void menuConsultas()throws Exception {	
-		String edicao;
-
+		String edicao = "";
+		
+		menuAgrupaCosultas();
+		filtro = Auxiliar.digita("Opções de comandos");		
+		
 		menu = "|OPÇÕES PARA CONSULTA(S) EM " + Auxiliar.getOpcao() + "(S)" + "\n"
 			 + "|--------------------------------------------------------------------\n"
 			 + "|Comando         |Descrição\n";
-
-		edicao = "|--------------------------------------------- < Edição >\n"
-			   + "|=> NOVO         |Insere um novo elemento\n"
-			   + "|=> REMOVER      |Remove um elemento\n"
-			   + "|=> IMPRIMIR     |Imprime estruturas elemento\n";	
+		
+		if (filtro.endsWith("todos") || filtro.endsWith("edicao")  ) {
+			edicao = "|--------------------------------------------- < Edição >\n"
+				   + "|=> NOVO         |Insere um novo elemento\n"
+				   + "|=> REMOVER      |Remove um elemento\n"
+				   + "|=> IMPRIMIR     |Imprime estruturas elemento\n";	
+		}
+		
 		switch (opcMenu) {
 
 		case "ARVORE":			
-			menu += "|--------------------------------------------- < Travessias >\n"
-				 +  "|=> POSFIXA      |Imprime ordem pós-fixa\n"
-				 +  "|=> PREFIXA      |Imprime ordem pré-fixa\n"
-				 +  "|=> INFIXA       |Imprime ordem infixa\n"
-				 +  "|--------------------------------------------- < Statísticas >\n"
-				 +  "|=> CONTAR       |Conta nodos da lista\n"
-				 +  "|--------------------------------------------- < Buscas >\n"
-				 +  "|=> ALTURA       |Busca elementos em nível\n"
-				 +  "|=> PROFUNDIDADE |Calcula profundidade da árvore\n"
-				 +  "|=> NOME         |Encontra um nome ou elemento\n"
-				 +  edicao;
+			if (filtro.endsWith("todos") || filtro.endsWith("travessias")  ) {		
+				menu += "|--------------------------------------------- < Travessias >\n"
+					 +  "|=> POSFIXA      |Imprime ordem pós-fixa\n"
+					 +  "|=> PREFIXA      |Imprime ordem pré-fixa\n"
+					 +  "|=> INFIXA       |Imprime ordem infixa\n";
+			}		
+			
+			if (filtro.endsWith("todos") || filtro.endsWith("estatisticas")  ) {	 
+				menu += "|--------------------------------------------- < Statísticas >\n"
+					 +  "|=> CONTAR       |Conta nodos da lista\n";
+			}		 
+			 
+			if (filtro.endsWith("todos") || filtro.endsWith("buscas")  ) {
+				menu += "|--------------------------------------------- < Buscas >\n"
+					 +  "|=> ALTURA       |Busca elementos em nível\n"
+					 +  "|=> PROFUNDIDADE |Calcula profundidade da árvore\n"
+					 +  "|=> NOME         |Encontra um nome ou elemento\n";
+			}		 
+				menu += edicao;
 			break;
 
 		case "BINARIA":
@@ -140,7 +173,8 @@ public class Menus extends View {
 
 		menu += "|" + sair;
 		msgb(menu);	
-
+		
+		filtro = "";// Limpa variável para exibição do próximo filtro
 		menu = ""; // Limpa variável para exibição do próximo menu
 	}
 

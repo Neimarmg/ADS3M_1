@@ -9,7 +9,6 @@ import M.Utilitarios.Auxiliar;
 /**
  * Classe de busca binaria
  * @author moises
- *
  */
 public class Binarias {
 	

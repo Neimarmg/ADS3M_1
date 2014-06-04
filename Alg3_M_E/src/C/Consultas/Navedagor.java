@@ -2,6 +2,10 @@ package  C.Consultas;
 
 import App.View;
 
+/**
+ * Classe Excução dos navegadores de registros
+ * @author moises Aurélio
+ */
 public class Navedagor {
 	// Implementar métodos
 
