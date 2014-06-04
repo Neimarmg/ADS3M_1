@@ -9,8 +9,8 @@ public class NodoAVL {
 		private int altEsq;
 	    private NodoAVL dir;
 		private NodoAVL esq;
-	    
-	 
+
+
 	    /**
 	     * O objeto novo é um objeto auxiliar da árvore 
 	     * @param aux
@@ -18,7 +18,7 @@ public class NodoAVL {
 	     * @return
 	     */
 	    public NodoAVL insere(NodoAVL aux, int val) {
-	    
+
 	        NodoAVL novo;
 	        if (aux == null) {
 	            novo = new NodoAVL();
@@ -28,23 +28,23 @@ public class NodoAVL {
 	            novo.esq = null;
 	            novo.dir = null;
 	            aux = novo;
-	        
+
 	        } else if (val < aux.valor) {
 	            aux.esq = insere(aux.esq, val);
-	            
+
 	            if (aux.esq.altDir > aux.esq.altEsq) {
 	                aux.altEsq = aux.esq.altDir + 1;
 	            } else {
 	                aux.altEsq = aux.esq.altEsq + 1;
 	            }
 	            aux = balancia(aux);
-	        
+
 	        } else {
 	            aux.dir = insere(aux.dir, val);
-	        
+
 	            if (aux.dir.altDir > aux.dir.altEsq) {
 	                aux.altDir = aux.dir.altDir + 1;
-	            
+
 	            } else {
 	                aux.altDir = aux.dir.altEsq + 1;
 	            }
@@ -52,7 +52,7 @@ public class NodoAVL {
 	        }
 	        return aux;
 	    }
-	 
+
 	    /**
 	     * Método gereciador de balanciamento
 	     * @param aux
@@ -80,9 +80,9 @@ public class NodoAVL {
 	        }
 	        return aux;
 	    }
-	 
+
 	    /**
-	     * Método de rotação a esquerda
+	     * Método de rotação à esquerda
 	     * @param aux
 	     * @return
 	     */
@@ -99,7 +99,7 @@ public class NodoAVL {
 	        } else {
 	            aux.altDir = aux.dir.altDir + 1;
 	        }
-	 
+
 	        if (aux1.esq.altEsq > aux1.esq.altDir) {
 	            aux1.altEsq = aux1.esq.altEsq + 1;
 	        } else {
@@ -107,10 +107,10 @@ public class NodoAVL {
 	        }
 	        return aux1;
 	    }
-	 
-	    
+
+
 	    /**
-	     * Método de rotação a direita
+	     * Método de rotação à direita
 	     * @param aux
 	     * @return
 	     */
@@ -127,7 +127,7 @@ public class NodoAVL {
 	        } else {
 	            aux.altEsq = aux.esq.altDir + 1;
 	        }
-	 
+
 	        if (aux1.dir.altEsq > aux1.dir.altDir) {
 	            aux1.altDir = aux1.dir.altEsq + 1;
 	        } else {
@@ -135,27 +135,27 @@ public class NodoAVL {
 	        }
 	        return aux1;
 	    }
-	 
+
 	    /**
-	     * Imprssaão de todos os intens da árvore
+	     * Impressão de todos os ítens da árvore
 	     * @param aux
 	     */
 	    public void imprimeArvore() {
-	    	View.msg(valor +"\n");
-	    	
-	    	if (dir != null) {	    		
+	    	View.msg(valor + "\n");
+
+	    	if (dir != null) {
 	        	dir.imprimeArvore();
-	        	
+
 	    	}
-	    		    	
+
 	    	if (esq != null) {
 	    		esq.imprimeArvore();
 	        }
 	    }
-	    
-	    
+
+
 	    /**
-	     * Impessão ordenada
+	     * Impressão ordenada
 	     * @param aux
 	     */
 	    public void ordemInfixa(NodoAVL aux) {
@@ -165,9 +165,9 @@ public class NodoAVL {
 	            ordemInfixa(aux.dir);
 	        }
 	    }
-	 
+
 	    /**
-	     * Imprmissão pre ordenada
+	     * Impressão pré-ordenada
 	     * @param aux
 	     */
 	    public void odermPrefixa(NodoAVL aux) {
@@ -177,9 +177,9 @@ public class NodoAVL {
 	            odermPrefixa(aux.dir);
 	        }
 	    }
-	 
+
 	    /**
-	     * Impressão pos ordenada
+	     * Impressão pós-ordenada
 	     * @param aux
 	     */
 	    public void ordemPosFixa(NodoAVL aux) {
