@@ -23,18 +23,18 @@ import M.Utilitarios.Include;
  * @param <T>
  */
 public class Registrador {
-	
+
 	private static String acum =""; // Acumulador de dados para edição de arquivo 
 	private static ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	private static ArvoreBinaria<String> arvoreBinaria = new ArvoreBinaria<String>();
 	private static ArvoreAVL avl = new ArvoreAVL();
 	private static ArvoreRBlack<String> arvoreRedBlack = new  ArvoreRBlack<String>();
-	
-		
+
+
 	public static void setArvoreRedBlack(ArvoreRBlack<String> arvoreRedBlack) {
 		Registrador.arvoreRedBlack = arvoreRedBlack;
 	}
-	
+
 	/**
 	 * Método de recuperação do estado do objeto
 	 * @return
@@ -42,7 +42,7 @@ public class Registrador {
 	public static ArvoreRBlack<String> getArvoreRedBlack() {
 		return arvoreRedBlack;
 	}
-	
+
 
 	/**
 	 * Método de recuperação do estado do objeto
@@ -52,7 +52,7 @@ public class Registrador {
 		return lista;
 	}
 
-	
+
 	/**
 	 * Método de recuperação do estado do objeto
 	 * @return
@@ -60,12 +60,12 @@ public class Registrador {
 	public static ArvoreBinaria<String> getArvoreBinaria() {
 		return arvoreBinaria;
 	}
-	
+
 	public static void setAvl(ArvoreAVL avl) {
 		Registrador.avl = avl;
 	}
-	
-	
+
+
 	/**
 	 * Método de recuperação do estado do objeto
 	 * @return
@@ -73,18 +73,18 @@ public class Registrador {
 	public static ArvoreAVL getAvl() {
 		return avl;
 	}
-	
-	
+
+
 	public static void setAcum(String acum) {
 		Registrador.acum += acum;
 	}
-	
-	
+
+
 	public static String getAcum() {
 		return acum;
 	}
-	
-	
+
+
 	/**
 	 * Informa quando a estrura de operação é inválida
 	 * @param ativaTipo
@@ -94,10 +94,10 @@ public class Registrador {
 		View.msge("\nArvore inválida\n");
 		Menus.menuArvores(true, ativaTipo, true);
 	}
-	
+
 	NodoAVL nodoAvl  = new NodoAVL();
-	
-	
+
+
 	/**
 	 * Método responsável por receber os dados da leitura do arquivo, bem como inserir nas estruturas		
 	 * @param linha
@@ -106,35 +106,35 @@ public class Registrador {
 	public static void copiaArquivo(String linha) throws Exception {
 
 		switch (Auxiliar.getOpcao()) {
-	
+
 		case "LISTA":			
 			lista.insert(new Nodo<String>(linha), lista.getHead());
 			break;
-		
+
 		case "ARVORE":
-			
-			if(Auxiliar.getDetalhes().equals("ab")) {				
+
+			if (Auxiliar.getDetalhes().equals("ab")) {				
 				arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
-			
+
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
 				getAvl().insere(avl, Dados.getIndex());
-							
+
 			} else if (Auxiliar.getDetalhes().equals("rb")) {
 				getArvoreRedBlack().insere(linha);
-				
+
 			} else {
 				informaEstrutura(false);
 				copiaArquivo(linha);
 			}
-			
+
 			break;
-			
+
 		default:
 			break; // Condição de saída quando atividade for inválida
 		}
 	}
 
-	
+
 	/**
 	 * Método que lê dados do teclado
 	 * @throws Exception
@@ -145,8 +145,8 @@ public class Registrador {
 		Include.setAppend(true);
 		Include.addNovo(nomeArquivo, Contatos.getNome() + "," + Contatos.getFone() + "\n"); // Insere dado na última linha do arquivo
 	}
-	
-	
+
+
 	/**
 	 * Método responsável por salvar alterações 
 	 * @param nomeArquivo
@@ -157,48 +157,48 @@ public class Registrador {
 		Include.addNovo(nomeArquivo, getAcum());
 		setAcum(""); // Parâmetro de limpeza de "cache" do acumulador 
 	}
-	
-					
+
+
 	/**
 	 * Método responsável pela inserção de novo registro
 	 * @param nomeArquivo
 	 * @throws Exception
 	 */
 	public void insereRegistro(String nomeArquivo) throws Exception {
-						
+
 		switch (Auxiliar.getOpcao()) {
-		
+
 		case "LISTA":
 			gravaDados(nomeArquivo);
 			Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
 			lista.guardaEdicao();
 			editaArquivo(nomeArquivo);
-				
+
 			break;
 
 		case "ARVORE":			
-			if(Auxiliar.getDetalhes().equals("ab")) {
+			if (Auxiliar.getDetalhes().equals("ab")) {
 				gravaDados(nomeArquivo);
 				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
 				arvoreBinaria.guardaEdicao();
 				editaArquivo(nomeArquivo);	
-			
+
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
 				//gravaDados(nomeArquivo);
 				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
 				getAvl().imprimeAvore();
-				
-							
-			} else if(Auxiliar.getDetalhes().equals("rb")) {
+
+
+			} else if (Auxiliar.getDetalhes().equals("rb")) {
 				gravaDados(nomeArquivo);
 				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
-								
+
 			} else {
 				informaEstrutura(false);
 				insereRegistro(nomeArquivo);
 			}			
 			break;
-			
+
 		default:
 			View.msge("\nAtividade inválida!\n");
 			break;
@@ -212,21 +212,21 @@ public class Registrador {
 	 */
 	public void executaComando(String nomeArquivo) throws Exception {
 		Menus.menuInclude("DADOS");
-		
+
 		switch (Auxiliar.digita("")) {
-		
+
 		case "novo":
 			insereRegistro(nomeArquivo);
 			executaComando(nomeArquivo); // Loop para novas ações do menu
 			break;
-		
+
 		case "editar":
 			View.objetoNaoImplementado();
 			executaComando(nomeArquivo);
 			break;
-			
+
 		case "remover":
-			Buffers.setBuff(null); // Limpeza de buffer
+			Buffers.setBuff(null); // Limpeza de "buffer"
 			Buffers.setFile(null); // Limpeza de arquivo
 			setAcum(""); // Limpeza de acumulador
 			Include.setAppend(false); // Desabilita "append" para sobscrever dados no arquivo
@@ -234,10 +234,10 @@ public class Registrador {
 		case "sair":
 			View.sair();
 			break;
-		
+
 		default:
 			View.opcaoInvalida();
-			executaComando(nomeArquivo); // Loop para novas ações do menu
+			executaComando(nomeArquivo); // "Loop" para novas ações do menu
 			break;
 		}	
 	}
