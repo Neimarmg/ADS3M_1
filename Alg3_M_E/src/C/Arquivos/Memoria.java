@@ -44,8 +44,8 @@ public class Memoria {
 			return (int) store.getUsableSpace();		
 		} return 0; 
 	}
-	
-	
+
+
 	/**
 	 * Método de impressão do "status" da memória
 	 * @throws Exception

@@ -19,7 +19,7 @@ import M.Dados;
  * @author Neimar, Aurélio
  */
 public class Ficheiro extends Dados {
-	
+
 	Memoria memoria =  new Memoria();
 
 	
@@ -57,8 +57,8 @@ public class Ficheiro extends Dados {
 			View.msgb("Arquivo não encontrado!\nNão é possível remover.");
 		}
 	} 
-	
-	
+
+
 	/**
 	 * @param nomeAquivo
 	 */
@@ -93,8 +93,8 @@ public class Ficheiro extends Dados {
 			Buffers.getBuff().close();	
 			
 		} catch (NullPointerException e) {
-			View.msgr("\nArquivo carregado com sucesso!");
-					
+			View.msgr("\nArquivo carregado com sucesso.");
+
 		} catch (FileNotFoundException e) {
 			View.msge("\nArquivo inexistente\n");
 			setValidaArquivo(false); // Desabilita a execução de ordenador
@@ -117,7 +117,7 @@ public class Ficheiro extends Dados {
 		if (criaVetor == true && Buffers.getLinha() != null) {
 			vetor[index]= Buffers.getLinha();
 		}
-		
+
 		if (criaVetor == true && Buffers.getLinha() == null) {
 			for (int i = index; i < vetor.length; i++) { // Complementa o vetor após carregamento dos dados do arquivo
 				vetor[i]= "";
