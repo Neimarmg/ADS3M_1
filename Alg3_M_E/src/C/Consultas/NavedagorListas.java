@@ -1,6 +1,8 @@
-package  C.Navegacao;
+package  C.Consultas;
 
-public class Direcao {
+import App.View;
+
+public class NavedagorListas {
 	// Implementar métodos
 
 	public void focaPrimeiro() {
@@ -33,4 +35,15 @@ public class Direcao {
 		 */ 
 	}
 
+	
+	
+	/**
+	 * Método que realiza ficheiro navegação entre os registradores
+	 * @param nomeArquivo
+	 */
+	public void	navega(String nomeArquivo) {
+		View.objetoNaoImplementado();
+	}
+
+		
 }

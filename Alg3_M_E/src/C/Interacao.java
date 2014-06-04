@@ -4,8 +4,8 @@ import App.Menus;
 import App.View;
 import C.Arquivos.Ficheiro;
 import C.Arquivos.Memoria;
+import C.Consultas.GerenciaBuscadores;
 import C.Lista.ListaEncadeada;
-import C.Navegacao.Consultas;
 import M.Ordenadores;
 import M.Utilitarios.Auxiliar;
 
@@ -18,7 +18,6 @@ import M.Utilitarios.Auxiliar;
  */
 public class Interacao {
 
-	static Consultas consulta =  new Consultas();
 	static Ficheiro ficheiro = new Ficheiro();
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
 	static Memoria memoria =  new Memoria();
@@ -130,7 +129,7 @@ public class Interacao {
 		switch (Auxiliar.digita("")) {
 
 		case "consultar":
-			consulta.selecinaExtrutura();
+			GerenciaBuscadores.selecinaExtrutura();
 			break;
 
 		case "executar":

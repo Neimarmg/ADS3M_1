@@ -1,5 +1,5 @@
 /**
  * @author Aurélio
  */
-package  C.Navegacao;
+package  C.Consultas;
 // Navegacao: "Onde serão executadas as pesquisas à lista"
