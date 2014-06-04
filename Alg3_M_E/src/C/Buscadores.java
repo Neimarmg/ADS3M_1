@@ -1,11 +1,13 @@
-package C.Consultas;
+package C;
 
 import App.Menus;
 import App.View;
 import C.Arquivos.Ficheiro;
+import C.Consultas.BuscadorArvores;
+import C.Consultas.BuscadorBinario;
 import M.Utilitarios.Auxiliar;
 
-public class GerenciaBuscadores {
+public class Buscadores {
 		
 	
 		static BuscadorBinario buscadorBinario = new BuscadorBinario();

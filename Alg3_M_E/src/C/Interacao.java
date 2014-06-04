@@ -4,7 +4,6 @@ import App.Menus;
 import App.View;
 import C.Arquivos.Ficheiro;
 import C.Arquivos.Memoria;
-import C.Consultas.GerenciaBuscadores;
 import C.Lista.ListaEncadeada;
 import M.Ordenadores;
 import M.Utilitarios.Auxiliar;
@@ -129,7 +128,7 @@ public class Interacao {
 		switch (Auxiliar.digita("")) {
 
 		case "consultar":
-			GerenciaBuscadores.selecinaExtrutura();
+			Buscadores.selecinaExtrutura();
 			break;
 
 		case "executar":
