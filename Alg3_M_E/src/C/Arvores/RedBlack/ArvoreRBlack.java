@@ -10,7 +10,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		raiz = null;
 	}
 
-	
+
 	/**
 	 * Método de rotação à esquerda
 	 * @param no
@@ -27,7 +27,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		no.setPar(direita);
 	}
 
-	
+
 	/**
 	 * Método de rotação à direita
 	 * @param no
@@ -44,7 +44,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		no.setPar(esquerda);
 	}
 
-	
+
 	/**
 	 * Método reponsável pela substituição de nodos
 	 * @param x
@@ -65,26 +65,26 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		}
 	}
 
-	
+
 	/**
 	 * Método resposável pela inserção de elementos na árvore
 	 * @param valor
 	 */
 	public void insere(T valor) {
-		
+
 		Nodorb<T> node = new Nodorb<T>(null, null, valor, false);
-		
+
 		if (raiz == null) {
 			raiz = node;
 		} else {
 			Nodorb<T> n = raiz;
 
 			while (true) {
-				
+
 				if (valor.compareTo(n.getValor()) == 0) {
 					n.setValor(valor);
 					return;
-					
+
 				} else if (valor.compareTo(n.getValor()) < 0) {
 					if (n.getEsq() == null) {
 						n.setEsq(node);
@@ -92,7 +92,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 					} else {
 						n = n.getEsq();
 					}
-					
+
 				} else {
 					if (n.getDir() == null) {
 						n.setDir(node);
@@ -107,7 +107,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		caso1(node);
 	}
 
-		
+
 	/**
 	 *  Caso de inserção nro 1
 	 * @param no
@@ -120,13 +120,13 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		}
 	}
 
-	
+
 	/**
 	 *  Caso de inserção nro 2
 	 * @param no
 	 */
 	private void caso2(Nodorb<T> no) {
-		
+
 		if (no.getParente().isCorNodo() == true) {
 			return;
 		} else {
@@ -134,13 +134,13 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		}
 	}
 
-	
+
 	/**
 	 * Caso de inserção nro 3
 	 * @param no
 	 */
 	private void caso3(Nodorb<T> no) {
-		
+
 		if (no.tio().isCorNodo() == false) {
 			no.getParente().setCorNodo(true);
 			no.tio().setCorNodo(true);
@@ -151,13 +151,13 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		}
 	}
 
-	
+
 	/**
 	 *  Caso de inserção nro 4
 	 * @param no
 	 */
 	private void caso4(Nodorb<T> no) {
-		
+
 		if (no == no.getParente().getDir()
 				&& no.getParente() == no.avo().getEsq()) {
 			rotacionaEsquerda(no.getParente());
@@ -170,7 +170,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		caso5(no);
 	}
 
-	
+
 	/**
 	 *  Caso de inserção nro 5
 	 * @param no
@@ -178,7 +178,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 	private void caso5(Nodorb<T> no) {
 		no.getParente().setCorNodo(true);
 		no.avo().setCorNodo(false);
-		
+
 		if (no == no.getParente().getEsq()
 				&& no.getParente() == no.avo().getEsq()) {
 			rotacionaDireita(no.avo());
@@ -187,7 +187,7 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 		}
 	}
 
-	
+
 	/**
 	 * Imprime nodos da raiz
 	 */

@@ -9,7 +9,7 @@ public class Nodorb<T extends Comparable<T>> {
 	private boolean corNodo;
 	private T valor;
 
-	
+
 	public void setPar(Nodorb<T> parente) {
 		this.par = parente;
 	}
@@ -45,7 +45,7 @@ public class Nodorb<T extends Comparable<T>> {
 	public void setValor(T valor) {
 		this.valor = valor;
 	}
-	
+
 	public Nodorb<T> avo() {
 		return par.par;
 	}
@@ -62,12 +62,12 @@ public class Nodorb<T extends Comparable<T>> {
 		return par.irmao();
 	}
 
-	
+
 	public Nodorb<T> getParente() {
 		return par;
 	}
-	
-	
+
+
 	public Nodorb(Nodorb<T> dir, Nodorb<T> esq, T valor, boolean cor) {
 		this.dir = dir;
 		this.esq = esq;
@@ -88,7 +88,7 @@ public class Nodorb<T extends Comparable<T>> {
 
 		if (isCorNodo() == true) {
 			cor = "red  ";
-		
+
 		} else {
 			cor = "black";
 		}
@@ -104,7 +104,7 @@ public class Nodorb<T extends Comparable<T>> {
 
 		if (dir != null) {
 			dir.imprime();
-		
+
 		} else {
 			View.msg("");
 		}
