@@ -52,6 +52,8 @@ public class AppE {
 			case "t2":				
 				Auxiliar.setOpcao("BINARIA");
 				Menus.setOpcMenu(Auxiliar.getOpcao());
+				Auxiliar.setAbilita(true); //Desbilita edição manual de mennus
+				Menus.setFiltro("todos"); //Paramento de filtro pré-definido
 				iniciaInteracao();
 				break;
 

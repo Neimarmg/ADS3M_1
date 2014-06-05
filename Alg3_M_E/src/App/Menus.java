@@ -16,6 +16,9 @@ public class Menus extends View {
 		Menus.menu = menu;
 	}
 	
+	public static void setFiltro(String filtro) {
+		Menus.filtro = filtro;
+	}
 	
 	public static void setOpcMenu(String opcMenu) {
 		Menus.opcMenu = opcMenu;

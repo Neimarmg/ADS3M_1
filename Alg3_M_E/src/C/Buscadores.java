@@ -22,19 +22,29 @@ public class Buscadores {
 			return onsultorArvores;
 		}
 		
+		
+		/**
+		 * Método de validação de comando de menu
+		 * @param nomeArquivo
+		 * @throws Exception
+		 */
+		private static void validaMenu(String nomeArquivo) throws Exception {
+			if(Auxiliar.getAbilita() == true ){ 
+				Auxiliar.setAbilita(true); //Garante a execução do menu armazenado no no filtro anterior 
+				Menus.menuConsultas();
+			}else {
+				Auxiliar.setAbilita(false);  //Garante a destruição filtro anterior para receber um novo
+				Menus.menuConsultas();
+			}
+		}
 			
+		
 		/**
 		 * Seleciona definições de estrutura à ser utilizada
 		 */
 		private static void selecionaComando(String nomeArquivo) {
-			try {
-				if(Auxiliar.getAbilita() == true ){ 
-					Auxiliar.setAbilita(true);
-					Menus.menuConsultas();
-				}else {
-					Auxiliar.setAbilita(false);
-					Menus.menuConsultas();
-				}
+			try {				
+				validaMenu(nomeArquivo);
 				
 				switch (Auxiliar.digita("")) {
 				
@@ -100,8 +110,7 @@ public class Buscadores {
 				case "imprimir":
 					getOnsultorArvores().manipulaEstrutura(false);
 					selecionaComando(nomeArquivo);
-					break;
-				
+					break;				
 					
 				case "sair":
 					View.sair();
