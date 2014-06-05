@@ -69,7 +69,7 @@ public class Auxiliar {
 	 * @param status
 	 * @return
 	 */
-	public static String statusAcao(int status, int sucesso) {
+	public static String statusAcao(int status, int sucesso, int percentual) {
 		String r, s;
 
 		if (sucesso == 7) { // Avaliação de sucesso da atividade
@@ -99,6 +99,8 @@ public class Auxiliar {
 		case 6:	r = "Concluído " + s;
 			break;
 		case 7:	r = "Finalizado " + s;
+			break;		
+		case 8:	r = percentual +"% concluído " + s;
 			break;
 		default:
 			r = "inválido "; break;

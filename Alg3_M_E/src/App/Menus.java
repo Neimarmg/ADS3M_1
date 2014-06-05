@@ -33,12 +33,12 @@ public class Menus extends View {
 		 + "|----------------------------------------------------------------------\n"
 		 + "|Comando      |Descrição               |Status atividade\n"
 		 + "|-------------|------------------------|-------------------------------\n"
-		 + "|=> T1        |Lista Encadeada         |" + Auxiliar.statusAcao(7,7) + "\n"
-		 + "|=> T2        |Pesquisa Binária        |" + Auxiliar.statusAcao(7,7) + "\n"
-		 + "|=> T4        |Algoritmos de Ordenação |" + Auxiliar.statusAcao(7,7) + "\n"
-		 + "|=> T5        |Árvore Binária          |" + Auxiliar.statusAcao(5,0) + "\n"
-		 + "|=> T6        |Árvores AVL e RED BLACK |" + Auxiliar.statusAcao(5,0) + "\n"
-		 + "|=> G         |Imprime glossário       |" + Auxiliar.statusAcao(7,7) + "\n"
+		 + "|=> T1        |Lista Encadeada         |" + Auxiliar.statusAcao(7,7,0) + "\n"
+		 + "|=> T2        |Pesquisa Binária        |" + Auxiliar.statusAcao(7,7,0) + "\n"
+		 + "|=> T4        |Algoritmos de Ordenação |" + Auxiliar.statusAcao(7,7,0) + "\n"
+		 + "|=> T5        |Árvore Binária          |" + Auxiliar.statusAcao(8,7,70) + "\n"
+		 + "|=> T6        |Árvores AVL e RED BLACK |" + Auxiliar.statusAcao(8,7,70) + "\n"
+		 + "|=> G         |Imprime glossário       |" + Auxiliar.statusAcao(7,7,0) + "\n"
 		 + "|" + sair);		
 	}
 
