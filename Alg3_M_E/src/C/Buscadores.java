@@ -28,7 +28,14 @@ public class Buscadores {
 		 */
 		private static void selecionaComando(String nomeArquivo) {
 			try {
-				Menus.menuConsultas();
+				if(Auxiliar.getAbilita() == true ){ 
+					Auxiliar.setAbilita(true);
+					Menus.menuConsultas();
+				}else {
+					Auxiliar.setAbilita(false);
+					Menus.menuConsultas();
+				}
+				
 				switch (Auxiliar.digita("")) {
 				
 				case "novo":

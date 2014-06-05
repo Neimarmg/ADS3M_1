@@ -12,6 +12,11 @@ public class Menus extends View {
 	private static String opcMenu;
 	private static String filtro;
 
+	public static void setMenu(String menu) {
+		Menus.menu = menu;
+	}
+	
+	
 	public static void setOpcMenu(String opcMenu) {
 		Menus.opcMenu = opcMenu;
 	}
@@ -99,16 +104,19 @@ public class Menus extends View {
 	 * @throws Exception
 	 */
 	public static void menuAgrupaCosultas()throws Exception {		
-		msgb(
-		    "|SELEÇÃO DE COMANDOS DE CONSULTAS?\n"
-		  + "|--------------------------------------------------------------------\n"
-		  + "|Comando        |Descrição\n"
-		  + "|---------------|----------------------------------------------------\n"
-		  + "|=> EDICAO      |Listas itens de edição de estrutura\n"
-		  + "|=> TRAVESSIAS  |Seleciona trevessias em árvores\n"
-		  + "|=> ESTATISTICAS|Seleciona comendos de estatiscas\n"
-		  + "|=> TODOS       |Imprmir a lista completa de comandos\n" 
-		 );
+		if (Auxiliar.getAbilita() == false){	
+			msgb(
+			    "|SELEÇÃO DE COMANDOS DE CONSULTAS?\n"
+			  + "|--------------------------------------------------------------------\n"
+			  + "|Comando        |Descrição\n"
+			  + "|---------------|----------------------------------------------------\n"
+			  + "|=> EDICAO      |Listas itens de edição de estrutura\n"
+			  + "|=> TRAVESSIAS  |Seleciona trevessias em árvores\n"
+			  + "|=> ESTATISTICAS|Seleciona comendos de estatiscas\n"
+			  + "|=> TODOS       |Imprmir a lista completa de comandos\n" 
+			 );
+			filtro = Auxiliar.digita("Opções de comandos");
+		}			
 	}
 
 	
@@ -119,15 +127,15 @@ public class Menus extends View {
 	public static void menuConsultas()throws Exception {	
 		String edicao = "";
 		
-		menuAgrupaCosultas();
-		filtro = Auxiliar.digita("Opções de comandos");		
-		
+		menuAgrupaCosultas();				
+
 		menu = "|OPÇÕES PARA CONSULTA(S) EM " + Auxiliar.getOpcao() + "(S)" + "\n"
 			 + "|--------------------------------------------------------------------\n"
 			 + "|Comando         |Descrição\n";
 		
-		if (filtro.endsWith("todos") || filtro.endsWith("edicao")  ) {
-			edicao = "|--------------------------------------------- < Edição >\n"
+		if (filtro.equals("todos") || filtro.equals("edicao")  ) {
+			Auxiliar.setAbilita(true);
+			edicao += "|--------------------------------------------- < Edição >\n"
 				   + "|=> NOVO         |Insere um novo elemento\n"
 				   + "|=> REMOVER      |Remove um elemento\n"
 				   + "|=> IMPRIMIR     |Imprime estruturas elemento\n";	
@@ -136,19 +144,22 @@ public class Menus extends View {
 		switch (opcMenu) {
 
 		case "ARVORE":			
-			if (filtro.endsWith("todos") || filtro.endsWith("travessias")  ) {		
+			if (filtro.equals("todos") || filtro.equals("travessias")  ) {		
+				Auxiliar.setAbilita(true);
 				menu += "|--------------------------------------------- < Travessias >\n"
 					 +  "|=> POSFIXA      |Imprime ordem pós-fixa\n"
 					 +  "|=> PREFIXA      |Imprime ordem pré-fixa\n"
 					 +  "|=> INFIXA       |Imprime ordem infixa\n";
 			}		
 			
-			if (filtro.endsWith("todos") || filtro.endsWith("estatisticas")  ) {	 
+			if (filtro.equals("todos") || filtro.equals("estatisticas")  ) {	 
+				Auxiliar.setAbilita(true);
 				menu += "|--------------------------------------------- < Statísticas >\n"
 					 +  "|=> CONTAR       |Conta nodos da lista\n";
 			}		 
 			 
-			if (filtro.endsWith("todos") || filtro.endsWith("buscas")  ) {
+			if (filtro.equals("todos") || filtro.equals("buscas")  ) {
+				Auxiliar.setAbilita(true);	
 				menu += "|--------------------------------------------- < Buscas >\n"
 					 +  "|=> ALTURA       |Busca elementos em nível\n"
 					 +  "|=> PROFUNDIDADE |Calcula profundidade da árvore\n"
@@ -170,12 +181,18 @@ public class Menus extends View {
 				 +  edicao;
 			break;							
 		}
-
-		menu += "|" + sair;
-		msgb(menu);	
 		
-		filtro = "";// Limpa variável para exibição do próximo filtro
-		menu = ""; // Limpa variável para exibição do próximo menu
+		
+		if (Auxiliar.getAbilita() == true){
+			menu += "|" + sair;
+			msgb(menu);	
+			//filtro = "";// Limpa variável para exibição do próximo filtro
+			//menu = ""; // Limpa variável para exibição do próximo menu
+		}else{
+			menuConsultas();
+			filtro = "";// Limpa variável para exibição do próximo filtro
+			menu = ""; // Limpa variável para exibição do próximo menu
+		}
 	}
 
 

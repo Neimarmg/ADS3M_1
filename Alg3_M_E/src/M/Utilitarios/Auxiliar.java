@@ -12,8 +12,9 @@ public class Auxiliar {
 	static String opcao; // Variável global de apoio para parâmetro "strings"
 	static int contador = 0; // Variável global contadora de ações
 	static String detalhes; // Variável global de apoio para detalhar ações do programa "strings"
+	static boolean abilita = false; // Variável global 
 
-
+	
 	public static void setOpcao(String opcao) {
 		Auxiliar.opcao = opcao;
 	}
@@ -28,10 +29,23 @@ public class Auxiliar {
 		Auxiliar.detalhes = detalhes;
 	}
 
+	
 	public static String getDetalhes() {
 		return detalhes;
 	}
-
+	
+	
+	public static void setAbilita(boolean abilita) {
+		Auxiliar.abilita = abilita;
+	}
+	
+	
+	public static boolean getAbilita() {
+		return abilita;
+	}
+	
+	
+	
 	/**
 	 * Método global de contagem sequecial
 	 * @param contar
