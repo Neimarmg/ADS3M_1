@@ -3,8 +3,8 @@ package App;
 import M.Utilitarios.Auxiliar;
 
 /**
- * Classe de implementação de menus de todo o sistema
- * @author Neimar, Aurélio
+ * Classe de implementaï¿½ï¿½o de menus de todo o sistema
+ * @author Neimar, Aurï¿½lio
  */
 public class Menus extends View {
 	private static String sair = "=> SAIR\n";
@@ -27,58 +27,58 @@ public class Menus extends View {
 	public static void menuSelecinaAtividade() {	
 		msgb("|QUAL ATIVIDADE?\n"
 		 + "|\n"
-		 + "|Obs.: Todas as atividade são independenstes, funcionam em separado.\n"
-		 + "|Comandos, estes sim, compartilham métodos genéricos reaproveitáveis.\n"
+		 + "|Obs.: Todas as atividade sï¿½o independenstes, funcionam em separado.\n"
+		 + "|Comandos, estes sim, compartilham mï¿½todos genï¿½ricos reaproveitï¿½veis.\n"
 		 + "|\n"
 		 + "|----------------------------------------------------------------------\n"
-		 + "|Comando      |Descrição               |Status atividade\n"
+		 + "|Comando      |Descriï¿½ï¿½o               |Status atividade\n"
 		 + "|-------------|------------------------|-------------------------------\n"
 		 + "|=> T1        |Lista Encadeada         |" + Auxiliar.statusAcao(7,7,0) + "\n"
-		 + "|=> T2        |Pesquisa Binária        |" + Auxiliar.statusAcao(7,7,0) + "\n"
-		 + "|=> T4        |Algoritmos de Ordenação |" + Auxiliar.statusAcao(7,7,0) + "\n"
-		 + "|=> T5        |Árvore Binária          |" + Auxiliar.statusAcao(8,7,70) + "\n"
-		 + "|=> T6        |Árvores AVL e RED BLACK |" + Auxiliar.statusAcao(8,7,70) + "\n"
-		 + "|=> G         |Imprime glossário       |" + Auxiliar.statusAcao(7,7,0) + "\n"
+		 + "|=> T2        |Pesquisa Binï¿½ria        |" + Auxiliar.statusAcao(7,7,0) + "\n"
+		 + "|=> T4        |Algoritmos de Ordenaï¿½ï¿½o |" + Auxiliar.statusAcao(7,7,0) + "\n"
+		 + "|=> T5        |ï¿½rvore Binï¿½ria          |" + Auxiliar.statusAcao(8,7,80) + "\n"
+		 + "|=> T6        |ï¿½rvores AVL e RED BLACK |" + Auxiliar.statusAcao(8,7,60) + "\n"
+		 + "|=> G         |Imprime glossï¿½rio       |" + Auxiliar.statusAcao(7,7,0) + "\n"
 		 + "|" + sair);		
 	}
 
 	/**
-	 * Método responsável pela impressão dos comandos de execução das tarefas
+	 * Mï¿½todo responsï¿½vel pela impressï¿½o dos comandos de execuï¿½ï¿½o das tarefas
 	 */
 	public static void mostarMenuApp() {		
-		menu = "|O QUE VOCÊ DESEJA FAZER?\n"
+		menu = "|O QUE VOCï¿½ DESEJA FAZER?\n"
 		     + "|--------------------------------------------------------------------\n"
-			 + "|Comando      |Descrição\n"
+			 + "|Comando      |Descriï¿½ï¿½o\n"
 			 + "|-------------|------------------------------------------------------\n";
 
 		if (opcMenu.equals("LISTA") || Auxiliar.getOpcao().equals("ARVORE")) {
-			menu += "|=> EXECUTAR  |Executa ações nas estruturas existente\n" +
+			menu += "|=> EXECUTAR  |Executa aï¿½ï¿½es nas estruturas existente\n" +
 					"|=> ARQUIVO   |Propriedades de arquivo\n";
 		}
 
 		if (opcMenu.equals("ORDENADORES")) {
-			menu += "|=> ORDENAR   |Executa ordenação de registro em arquivo(s)\n";
+			menu += "|=> ORDENAR   |Executa ordenaï¿½ï¿½o de registro em arquivo(s)\n";
 		} else {
-			menu += "|=> CONSULTAR |Executa consulta em conteúdo salvo em arquivo(s)\n";
+			menu += "|=> CONSULTAR |Executa consulta em conteï¿½do salvo em arquivo(s)\n";
 		}
 
 		menu += "|=> IMPRIMIR  |Imprime arquivo selecionado\n"					
 			 +  "|" + sair;
 		msgb(menu);
 
-		menu = ""; // Limpa variável para exibição de próximo menu
+		menu = ""; // Limpa variï¿½vel para exibiï¿½ï¿½o de prï¿½ximo menu
 	}
 
 
 	/** 
-	 * Método responsável pele exibição dos menus de include 
+	 * Mï¿½todo responsï¿½vel pele exibiï¿½ï¿½o dos menus de include 
 	 * @throws Exception
 	 */
 	public static void menuInclude(String include)throws Exception {	
 		menu =
-			  "|OPÇÕES DE INCLUDE\n"
+			  "|OPï¿½ï¿½ES DE INCLUDE\n"
 			+ "|--------------------------------------------------------------------\n"
-			+ "|Comando     |Descrição\n"
+			+ "|Comando     |Descriï¿½ï¿½o\n"
 			+ "|------------|-------------------------------------------------------\n"
 			+ "|=> NOVO     |Habilita para gravar novo registro\n"	
 			+ "|=> REMOVER  |Remove arquivo existente\n";					
@@ -98,27 +98,27 @@ public class Menus extends View {
 		menu += "|" + sair;
 		msgb(menu);
 
-		menu = "";  // Limpa variável para exibição do próximo menu
+		menu = "";  // Limpa variï¿½vel para exibiï¿½ï¿½o do prï¿½ximo menu
 	}
 
 
 	/**
-	 * Método responsável pelo filtro do menu de consultas
+	 * Mï¿½todo responsï¿½vel pelo filtro do menu de consultas
 	 * @throws Exception
 	 */
 	public static void menuAgrupaCosultas()throws Exception {		
 		if (Auxiliar.getAbilita() == false){	
 			msgb(
-			    "|SELEÇÃO DE COMANDOS DE CONSULTAS?\n"
+			    "|SELEï¿½ï¿½O DE COMANDOS DE CONSULTAS?\n"
 			  + "|--------------------------------------------------------------------\n"
-			  + "|Comando        |Descrição\n"
+			  + "|Comando        |Descriï¿½ï¿½o\n"
 			  + "|---------------|----------------------------------------------------\n"
-			  + "|=> EDICAO      |Listas itens de edição de estrutura\n"
-			  + "|=> TRAVESSIAS  |Seleciona trevessias em árvores\n"
+			  + "|=> EDICAO      |Listas itens de ediï¿½ï¿½o de estrutura\n"
+			  + "|=> TRAVESSIAS  |Seleciona trevessias em ï¿½rvores\n"
 			  + "|=> ESTATISTICAS|Seleciona comendos de estatiscas\n"
 			  + "|=> TODOS       |Imprmir a lista completa de comandos\n" 
 			 );
-			filtro = Auxiliar.digita("Opções de comandos");
+			filtro = Auxiliar.digita("Opï¿½ï¿½es de comandos");
 		}			
 	}
 
@@ -132,13 +132,13 @@ public class Menus extends View {
 		
 		menuAgrupaCosultas();				
 
-		menu = "|OPÇÕES PARA CONSULTA(S) EM " + Auxiliar.getOpcao() + "(S)" + "\n"
+		menu = "|OPï¿½ï¿½ES PARA CONSULTA(S) EM " + Auxiliar.getOpcao() + "(S)" + "\n"
 			 + "|--------------------------------------------------------------------\n"
-			 + "|Comando         |Descrição\n";
+			 + "|Comando         |Descriï¿½ï¿½o\n";
 		
 		if (filtro.equals("todos") || filtro.equals("edicao")  ) {
 			Auxiliar.setAbilita(true);
-			edicao += "|--------------------------------------------- < Edição >\n"
+			edicao += "|--------------------------------------------- < Ediï¿½ï¿½o >\n"
 				   + "|=> NOVO         |Insere um novo elemento\n"
 				   + "|=> REMOVER      |Remove um elemento\n"
 				   + "|=> IMPRIMIR     |Imprime estruturas elemento\n";	
@@ -150,22 +150,22 @@ public class Menus extends View {
 			if (filtro.equals("todos") || filtro.equals("travessias")  ) {		
 				Auxiliar.setAbilita(true);
 				menu += "|--------------------------------------------- < Travessias >\n"
-					 +  "|=> POSFIXA      |Imprime ordem pós-fixa\n"
-					 +  "|=> PREFIXA      |Imprime ordem pré-fixa\n"
+					 +  "|=> POSFIXA      |Imprime ordem pï¿½s-fixa\n"
+					 +  "|=> PREFIXA      |Imprime ordem prï¿½-fixa\n"
 					 +  "|=> INFIXA       |Imprime ordem infixa\n";
 			}		
 			
 			if (filtro.equals("todos") || filtro.equals("estatisticas")  ) {	 
 				Auxiliar.setAbilita(true);
-				menu += "|--------------------------------------------- < Statísticas >\n"
+				menu += "|--------------------------------------------- < Statï¿½sticas >\n"
 					 +  "|=> CONTAR       |Conta nodos da lista\n";
 			}		 
 			 
 			if (filtro.equals("todos") || filtro.equals("buscas")  ) {
 				Auxiliar.setAbilita(true);	
 				menu += "|--------------------------------------------- < Buscas >\n"
-					 +  "|=> ALTURA       |Busca elementos em nível\n"
-					 +  "|=> PROFUNDIDADE |Calcula profundidade da árvore\n"
+					 +  "|=> ALTURA       |Busca elementos em nï¿½vel\n"
+					 +  "|=> PROFUNDIDADE |Calcula profundidade da ï¿½rvore\n"
 					 +  "|=> NOME         |Encontra um nome ou elemento\n";
 			}		 
 				menu += edicao;
@@ -174,7 +174,7 @@ public class Menus extends View {
 		case "BINARIA":
 			menu +=
 				 "|----------------|---------------------------------------------------\n"
-				+"|=> ID           |Encontra um id através de uma busca binária\n";
+				+"|=> ID           |Encontra um id atravï¿½s de uma busca binï¿½ria\n";
 			break;
 
 		case "LISTA":
@@ -189,35 +189,35 @@ public class Menus extends View {
 		if (Auxiliar.getAbilita() == true){
 			menu += "|" + sair;
 			msgb(menu);	
-			menu = ""; // Limpa variável para exibição do próximo menu
+			menu = ""; // Limpa variï¿½vel para exibiï¿½ï¿½o do prï¿½ximo menu
 		}else{
 			menuConsultas();
-			filtro = "";// Limpa variável para exibição do próximo filtro
-			menu = ""; // Limpa variável para exibição do próximo menu
+			filtro = "";// Limpa variï¿½vel para exibiï¿½ï¿½o do prï¿½ximo filtro
+			menu = ""; // Limpa variï¿½vel para exibiï¿½ï¿½o do prï¿½ximo menu
 		}
 	}
 
 
 	/**
-	 * Método responsável pela execução das formas de ordenação
+	 * Mï¿½todo responsï¿½vel pela execuï¿½ï¿½o das formas de ordenaï¿½ï¿½o
 	 * @throws Exception
 	 */
 	public static void menuOrdenadores()throws Exception {	
 		msgb(
 		    "|COMO ORDENAR DADOS?\n"
 		  + "|--------------------------------------------------------------------\n"
-		  + "|Comando      |Descrição\n"
+		  + "|Comando      |Descriï¿½ï¿½o\n"
 		  + "|-------------|------------------------------------------------------\n"
 		  + "|=> BUBLE     |Ordena dados do arquivo com BubleSort\n"
 		  + "|=> QUICK     |Ordena dados do arquivo com QuickSort\n"
-		  + "|=> COMPARAR  |Imprime dados estatísticos dos dois ordenadores\n"
+		  + "|=> COMPARAR  |Imprime dados estatï¿½sticos dos dois ordenadores\n"
 		  + "|" + sair
 		);
 	}
 
 
 	/**
-	 * Menu de definição de modo de ordenação
+	 * Menu de definiï¿½ï¿½o de modo de ordenaï¿½ï¿½o
 	 * @throws Exception
 	 */
 	public static void menuModoOrdenacao(boolean ativaMenu)throws Exception {	
@@ -225,7 +225,7 @@ public class Menus extends View {
 			msgb(
 				 "|COMO DESEJA ORDENAR?\n"
 			   + "|--------------------------------------------------------------------\n"
-			   + "|Comando   | Descrição\n"
+			   + "|Comando   | Descriï¿½ï¿½o\n"
 			   + "|----------|---------------------------------------------------------\n"
 			   + "|=> C      |Exibe arquivo em ordem crescente\n"
 			   + "|=> D      |Exibe arquivo em ordem decrescente\n"
@@ -235,7 +235,7 @@ public class Menus extends View {
 
 
 	/**
-	 * Método impressão de menus para selecionar as árvores
+	 * Mï¿½todo impressï¿½o de menus para selecionar as ï¿½rvores
 	 * @param tipoArvore
 	 * @param ativaTodosTipo
 	 * @param print
@@ -244,52 +244,52 @@ public class Menus extends View {
 	public static void menuArvores(boolean tipoArvore, boolean ativaTodosTipo, boolean print)throws Exception {	
 
 		if (ativaTodosTipo == true) {
-			menu = "|=> Binaria   |Árvore binária\n";
+			menu = "|=> Binaria   |ï¿½rvore binï¿½ria\n";
 		} else {
 			menu = "";
 		}
 
 		if (print == true) {
 			msgb(
-				"|QUAL TIPO DE ÁRVORE À SELECIONAR?\n"
+				"|QUAL TIPO DE ï¿½RVORE ï¿½ SELECIONAR?\n"
 			  + "|--------------------------------------------------------------------\n"
-			  + "|Comando      |Descrição\n"
+			  + "|Comando      |Descriï¿½ï¿½o\n"
 			  + "|-------------|------------------------------------------------------\n"
 			  + menu 
-			  + "|=> avl       |Árvore avl\n"
-		      + "|=> rb        |Árvore red black\n"
+			  + "|=> avl       |ï¿½rvore avl\n"
+		      + "|=> rb        |ï¿½rvore red black\n"
 			);
 		}
 
 		if (tipoArvore == true) {
-			Auxiliar.setDetalhes(Auxiliar.digita("Árvore do tipo"));
+			Auxiliar.setDetalhes(Auxiliar.digita("ï¿½rvore do tipo"));
 		}
 
-		menu = ""; // Limpa variável para exibição do próximo menu
+		menu = ""; // Limpa variï¿½vel para exibiï¿½ï¿½o do prï¿½ximo menu
 	}
 
 
 
 	/**
-	 * Exibe glossário do programa
+	 * Exibe glossï¿½rio do programa
 	 * @throws Exception
 	 */
 	public static void glossario()throws Exception {	
 		msgb(
-		    "|GLOSSÁRIO DO PROGRAMA:\n"
+		    "|GLOSSï¿½RIO DO PROGRAMA:\n"
 		  + "|--------------------------------------------------------------------\n"
-		  + "|Vocábulo  |Significado\n"
+		  + "|Vocï¿½bulo  |Significado\n"
 		  + "|----------|---------------------------------------------------------\n"
 		  + "|C         |Controller\n"
 		  + "|M         |Model\n"
 	      + "|V         |View\n"
-		  + "|App       |Aplicação\n"
-		  + "|Ficheiro  |Classe de manipulação de arquivo\n"
+		  + "|App       |Aplicaï¿½ï¿½o\n"
+		  + "|Ficheiro  |Classe de manipulaï¿½ï¿½o de arquivo\n"
 		  + "|l.txt     |Lista telefonica\n"
-		  + "|avl       |Árvore avl\n"
-		  + "|rb        |Árvore red black\n"
-		  + "|ab        |Árvore binária\n"
-		  + "|#         |Marcador de exclusão de registro"
+		  + "|avl       |ï¿½rvore avl\n"
+		  + "|rb        |ï¿½rvore red black\n"
+		  + "|ab        |ï¿½rvore binï¿½ria\n"
+		  + "|#         |Marcador de exclusï¿½o de registro"
 		);
 	}
 }
