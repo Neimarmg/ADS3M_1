@@ -186,8 +186,7 @@ public class Menus extends View {
 		if (Auxiliar.getAbilita() == true){
 			menu += "|" + sair;
 			msgb(menu);	
-			//filtro = "";// Limpa variável para exibição do próximo filtro
-			//menu = ""; // Limpa variável para exibição do próximo menu
+			menu = ""; // Limpa variável para exibição do próximo menu
 		}else{
 			menuConsultas();
 			filtro = "";// Limpa variável para exibição do próximo filtro

@@ -115,7 +115,7 @@ public class Buscadores {
 				
 			} catch (Exception e) {
 				e.printStackTrace();
-			}
+			}			
 		}
 		
 		
@@ -126,6 +126,7 @@ public class Buscadores {
 		 * @throws Exception 
 		 */
 		public static void selecinaExtrutura() throws Exception {
+	
 			String nomeArquivo = Auxiliar.digita("Nome do arquivo");
 			
 			switch (Auxiliar.getOpcao()) {
