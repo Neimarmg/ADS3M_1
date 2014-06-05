@@ -36,8 +36,8 @@ public class Menus extends View {
 		 + "|=> T1        |Lista Encadeada         |" + Auxiliar.statusAcao(7,7,0) + "\n"
 		 + "|=> T2        |Pesquisa Bin�ria        |" + Auxiliar.statusAcao(7,7,0) + "\n"
 		 + "|=> T4        |Algoritmos de Ordena��o |" + Auxiliar.statusAcao(7,7,0) + "\n"
-		 + "|=> T5        |�rvore Bin�ria          |" + Auxiliar.statusAcao(8,7,70) + "\n"
-		 + "|=> T6        |�rvores AVL e RED BLACK |" + Auxiliar.statusAcao(8,7,70) + "\n"
+		 + "|=> T5        |�rvore Bin�ria          |" + Auxiliar.statusAcao(8,7,80) + "\n"
+		 + "|=> T6        |�rvores AVL e RED BLACK |" + Auxiliar.statusAcao(8,7,60) + "\n"
 		 + "|=> G         |Imprime gloss�rio       |" + Auxiliar.statusAcao(7,7,0) + "\n"
 		 + "|" + sair);		
 	}
