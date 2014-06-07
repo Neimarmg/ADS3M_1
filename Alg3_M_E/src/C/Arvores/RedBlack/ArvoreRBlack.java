@@ -1,6 +1,7 @@
 package C.Arvores.RedBlack;
 
 import App.View;
+import M.Utilitarios.Auxiliar;
 
 public class ArvoreRBlack<T extends Comparable<T>> {
 
@@ -189,12 +190,39 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 
 
 	/**
-	 * Imprime nodos da raiz
+	 * Imprime nodos infixa
 	 */
-	public void imprimirNodos(boolean cabecalho) {
-		View.imprimeArvores(true, "\nIMPRESSÃO - ");
-		raiz.imprime();
+	public void imprimeInfixa(boolean cabecalho) {
+		View.imprimeArvores(true, "\nIMPRESSÃO EM ORDEM INFIXA DA - ");
+		raiz.ordemInfixa();
 	}	
 	
 	
+	/**
+	 * Imprime nodos em ordem pre fixa
+	 */
+	public void imprimeOrdemPreFixa(boolean cabecalho) {
+		View.imprimeArvores(true, "\nIMPRESSÃO EM PRÉ FIXA DA - ");
+		raiz.ordenPreFixa();
+	}
+	
+	
+	/**
+	 * Imprime nodo em ordem pos fixa
+	 */
+	public void imprimePosFixa(boolean cabecalho) {
+		View.imprimeArvores(true, "\nIMPRESSÃO EM PÓS FIXA DA- ");
+		raiz.ordenPosFixa();
+	}
+	
+	/**
+	 * Imprime contagem do nodos na arvore
+	 */
+	public void imprimeContagemNodos(boolean cabecalho) {
+		View.imprimeArvores(true, "\nTOTAL DE NODOS NA LISTA NA - ");
+		raiz.contaNodos();
+		View.msg("Qt nodos: " + Auxiliar.getContador() + "\n");		
+		Auxiliar.setContador(false); //Limpa contador
+		
+	}
 }

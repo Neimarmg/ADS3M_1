@@ -171,9 +171,9 @@ public class NodoAVL {
 	     * @param aux
 	     */
 	    public void odermPrefixa(NodoAVL aux) {
-	        if (aux != null) {
-	        	View.msg(aux.valor + "\n");
+	        if (aux != null) {	        	
 	            odermPrefixa(aux.esq);
+	            
 	            odermPrefixa(aux.dir);
 	        }
 	    }

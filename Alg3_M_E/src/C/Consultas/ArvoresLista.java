@@ -35,7 +35,7 @@ public class ArvoresLista {
 				break;
 
 			case "rb":
-				View.objetoNaoImplementado();
+				Registrador.getArvoreRedBlack().imprimePosFixa(true);
 				break;
 			}
 			break;
@@ -68,7 +68,7 @@ public class ArvoresLista {
 				break;
 
 			case "rb":
-				View.objetoNaoImplementado();
+				Registrador.getArvoreRedBlack().imprimeOrdemPreFixa(true);
 				break;
 			}
 			break;
@@ -102,7 +102,7 @@ public class ArvoresLista {
 				break;
 
 			case "rb":
-				View.objetoNaoImplementado();
+				Registrador.getArvoreRedBlack().imprimeInfixa(true);
 				break;
 			}
 			break;
@@ -115,6 +115,40 @@ public class ArvoresLista {
 		}
 	}
 
+	
+	/**
+	 * Método de contagem de nodos existantes na extruturas
+	 * @throws Exception
+	 */
+	public void contaDeElementos() throws Exception {
+
+		switch (Auxiliar.getOpcao()) {
+		case "ARVORE":
+
+			// "Case" auxlilar para seleção de estruturas da mesma família
+			switch (Auxiliar.getDetalhes()) {
+			case "ab":
+				Registrador.getArvoreBinaria().contaNodos(true);
+				break;
+
+			case "avl":
+				View.objetoNaoImplementado();
+				break;
+
+			case "rb":
+				Registrador.getArvoreRedBlack().imprimeContagemNodos(true);
+				break;
+			}
+			break;
+
+		default:
+			View.opcaoInvalida();
+			Menus.menuArvores(true, false, true);
+			contaDeElementos();
+			break; // Condição de saída quando atividade for inválida
+		}
+	}
+	
 
 	/**
 	 * Método de busca em altura nas árvres
@@ -193,7 +227,7 @@ public class ArvoresLista {
 					Registrador.setArvoreRedBlack(Registrador.getArvoreRedBlack());
 					Registrador.getArvoreRedBlack().insere(Auxiliar.digita("Elemento"));
 				}
-				Registrador.getArvoreRedBlack().imprimirNodos(true);
+				Registrador.getArvoreRedBlack().imprimeInfixa(true);
 				break;
 			}
 			break;

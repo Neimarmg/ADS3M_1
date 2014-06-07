@@ -4,6 +4,7 @@ import App.View;
 
 public class ArvoreAVL extends NodoAVL {
 	
+	
 	public void inisert(NodoAVL aux, int valor) {
 		insere(aux, valor);
 	}

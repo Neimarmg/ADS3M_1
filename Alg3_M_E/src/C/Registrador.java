@@ -114,13 +114,13 @@ public class Registrador {
 		case "ARVORE":
 
 			if (Auxiliar.getDetalhes().equals("ab")) {
-				arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
+				arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));// Insere o conteúdo da linha
 
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
-				getAvl().insere(avl, Dados.getIndex());
+				getAvl().insere(avl, Dados.getIndex()); // Insere na árvore o index da linha do arquivo
 
 			} else if (Auxiliar.getDetalhes().equals("rb")) {
-				getArvoreRedBlack().insere(linha);
+				getArvoreRedBlack().insere(linha); // Insere o conteúdo da linha
 
 			} else {
 				informaEstrutura(false);
@@ -173,32 +173,36 @@ public class Registrador {
 			Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
 			lista.guardaEdicao();
 			editaArquivo(nomeArquivo);
-
 			break;
 
 		case "ARVORE":
-			if (Auxiliar.getDetalhes().equals("ab")) {
+			
+			switch (Auxiliar.getDetalhes()) {
+				
+			case "ab":
 				gravaDados(nomeArquivo);
 				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
 				arvoreBinaria.guardaEdicao();
 				editaArquivo(nomeArquivo);
-
-			} else if (Auxiliar.getDetalhes().equals("avl")) {
-				// gravaDados(nomeArquivo);
-				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
-				getAvl().imprimeAvore();
-
-
-			} else if (Auxiliar.getDetalhes().equals("rb")) {
+				break;
+				
+			case "avl":
 				gravaDados(nomeArquivo);
 				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
-
-			} else {
+				break;
+				
+			case "rb":
+				gravaDados(nomeArquivo);
+				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
+				break;	
+				
+			default:
 				informaEstrutura(false);
 				insereRegistro(nomeArquivo);
+				break;
 			}
 			break;
-
+			
 		default:
 			View.msge("\nAtividade inválida!\n");
 			break;

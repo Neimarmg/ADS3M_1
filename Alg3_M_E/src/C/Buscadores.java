@@ -72,7 +72,7 @@ public class Buscadores {
 					break;
 
 				case "contar":
-					View.objetoNaoImplementado();
+					getOnsultorArvores().contaDeElementos();
 					selecionaComando(nomeArquivo);
 					break;
 

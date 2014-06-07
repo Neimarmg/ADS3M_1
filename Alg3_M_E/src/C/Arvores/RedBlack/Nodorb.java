@@ -1,6 +1,7 @@
 package C.Arvores.RedBlack;
 
 import App.View;
+import M.Utilitarios.Auxiliar;
 
 public class Nodorb<T extends Comparable<T>> {
 	private Nodorb<T> par;
@@ -82,8 +83,11 @@ public class Nodorb<T extends Comparable<T>> {
 		this.par = null;
 	}
 
-
-	public void imprime() {
+	
+	/**
+	 * Imprme ordem arvore
+	 */
+	public void ordemInfixa() {
 		String cor = "";
 
 		if (isCorNodo() == true) {
@@ -96,17 +100,103 @@ public class Nodorb<T extends Comparable<T>> {
 		View.msg("Cor " + cor +" = "+ valor + "\n");
 
 		if (esq != null) {
-			esq.imprime();
+			esq.ordemInfixa();
 
 		} else {
 			View.msg("");
 		}
 
 		if (dir != null) {
-			dir.imprime();
+			dir.ordemInfixa();
 
 		} else {
 			View.msg("");
 		}
+	}
+	
+	
+	/**
+	 * Imprme ordem pos fixa
+	 */
+	public void ordenPosFixa() {
+		String cor = "";
+
+		if (isCorNodo() == true) {
+			cor = "red  ";
+
+		} else {
+			cor = "black";
+		}
+		
+
+		if (esq != null) {
+			esq.ordenPosFixa();
+
+		} else {
+			View.msg("");
+		}
+
+		View.msg("Cor " + cor +" = "+ valor + "\n");
+		
+		if (dir != null) {
+			dir.ordenPosFixa();
+
+		} else {
+			View.msg("");
+		}
+	}
+	
+	
+	/**
+	 * Imprme ordem prefixa
+	 */
+	public void ordenPreFixa() {
+		String cor = "";
+
+		if (isCorNodo() == true) {
+			cor = "red  ";
+
+		} else {
+			cor = "black";
+		}
+		
+
+		if (esq != null) {
+			esq.ordenPreFixa();
+
+		} else {
+			View.msg("");
+		}
+
+				
+		if (dir != null) {
+			dir.ordenPreFixa();
+
+		} else {
+			View.msg("");
+		}
+		
+		View.msg("Cor " + cor +" = "+ valor + "\n");
+	}
+	
+	/**
+	 * Imprme ordem prefixa
+	 */
+	public void contaNodos() {
+
+		if (esq != null) {
+			Auxiliar.setContador(true);
+			esq.contaNodos();			
+		} else {
+			View.msg("");
+		}
+
+		
+		if (dir != null) {
+			Auxiliar.setContador(true);
+			dir.contaNodos();
+		} else {
+			View.msg("");
+		}	
 	}
 }
