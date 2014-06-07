@@ -5,18 +5,17 @@ import C.Arquivos.Ficheiro;
 import M.Dados;
 import M.Utilitarios.Auxiliar;
 
-
 /**
  * Classe de busca binaria
  * @author moises
  */
 public class Binarias {
-	
+
 		int vet[] = new int [Ficheiro.getVetor().length];
 		int i, inicio = 0, meio, fim = Ficheiro.getVetor().length;
 	    boolean localizador = false;
-	    
-	    
+
+
 	    /**
 		 * Imprime resultado da busca binária
 		 * @param campo
@@ -28,13 +27,13 @@ public class Binarias {
 					+ "\n\nPosição [" + meio + "] " + Dados.vetor[meio]
 					+ "\n\nTotal de comparações:" + Auxiliar.getContador() + "\n");
 					Auxiliar.setContador(false); // Limpa variável contadora
-					
+
 			} else {
 			   	View.msge("\nNúmero não encontrado");
 			}
 		}
-			
-	    
+
+
 		/**
 		 * Realiza busca binária dentro do vetor carregado do arquivo
 		 * @param campo
@@ -60,7 +59,7 @@ public class Binarias {
 		       }
 		   }
 		}
-		
+
 
 		/**
 		 * Método responsável pelo carregamento do arquivo
@@ -70,21 +69,21 @@ public class Binarias {
 		 */
 		public void carregaBuscaBinaria(String nomeArquivo, int campo) throws Exception {
 			Ficheiro.leArquivo(nomeArquivo, true, "", false, false);
-			
+
 			if (campo <= Dados.getVetor().length) {
-			
+
 				for (i = 0; i < Dados.getVetor().length; i++) {
 					vet[i] = i;
 					View.msg("\nId: " + i +" " + Dados.vetor[i]);
 				}
-				
+
 				executaBuscaBinaria(campo);
 				imprimeBuscaBinaria(campo);
 
 			} else {
 				View.msge("\nId inexistente.");
 			}
-			
+
 			Dados.setIndex(0); // Limpa vetor para próxima consulta
 		}
 

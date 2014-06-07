@@ -7,40 +7,39 @@ import C.Lista.ListaEncadeada;
 import C.Lista.Nodo;
 import M.Utilitarios.Auxiliar;
 
-
 /**
- * Classe reponsável pelas consultas em todas as estruturas ávores e listas
+ * Classe reponsável pelas consultas em todas as estruturas de árvores e listas
  * @author Neimar, Aurélio
  */
 public class ArvoresLista {
-	
+
 	ListaEncadeada<String> lista = new ListaEncadeada<String>();
 
 	/**
-	 * Método de impressão de arvores travessia pos- fixa
+	 * Método de impressão de árvores travessia pós-fixa
 	 * @throws Exception
 	 */
 	public void tPosFixa() throws Exception {
-		
+
 		switch (Auxiliar.getOpcao()) {
 		case "ARVORE":
-		
-			//Case auxlilar para seleção de estruturas da mesma familia
+
+			// "Case" auxlilar para seleção de estruturas da mesma família
 			switch (Auxiliar.getDetalhes()) {
 			case "ab":
 				Registrador.getArvoreBinaria().travessiaPosFixa(true);
-				break;				
-				
+				break;
+
 			case "avl":
 				Registrador.getAvl().imprimeOrdemPosFixa(Registrador.getAvl());
-				break;				
-				
-			case "rb":				
+				break;
+
+			case "rb":
 				View.objetoNaoImplementado();
 				break;
 			}
 			break;
-			
+
 		default:
 			View.opcaoInvalida();
 			Menus.menuArvores(true, false, true);
@@ -48,32 +47,32 @@ public class ArvoresLista {
 			break; // Condição de saída quando atividade for inválida
 		}
 	}
-	
+
 	/**
-	 * Método de impressão de arvores travessia pré-fixa 
+	 * Método de impressão de árvores travessia pré-fixa
 	 * @throws Exception
 	 */
 	public void tPrefixa() throws Exception {
 
 		switch (Auxiliar.getOpcao()) {
 		case "ARVORE":
-		
-			//Case auxlilar para seleção de estruturas da mesma familia
+
+			// "Case" auxlilar para seleção de estruturas da mesma família
 			switch (Auxiliar.getDetalhes()) {
 			case "ab":
 				Registrador.getArvoreBinaria().travessiaPreFixa(true);
-				break;				
-				
+				break;
+
 			case "avl":
 				Registrador.getAvl().imprimeOrdemPreFixa(Registrador.getAvl());
-				break;				
-				
+				break;
+
 			case "rb":
 				View.objetoNaoImplementado();
 				break;
 			}
 			break;
-			
+
 		default:
 			View.opcaoInvalida();
 			Menus.menuArvores(true, false, true);
@@ -81,67 +80,67 @@ public class ArvoresLista {
 			break; // Condição de saída quando atividade for inválida
 		}
 	}
-	
-	
+
+
 	/**
-	 * Método de impressão de arvores travessia infixa 
+	 * Método de impressão de árvores travessia infixa
 	 * @throws Exception
 	 */
 	public void tInfixa() throws Exception {
-		
+
 		switch (Auxiliar.getOpcao()) {
 		case "ARVORE":
-		
-			//Case auxlilar para seleção de estruturas da mesma familia
+
+			// "Case" auxlilar para seleção de estruturas da mesma família
 			switch (Auxiliar.getDetalhes()) {
 			case "ab":
 				Registrador.getArvoreBinaria().travessiaInfixa(true);
-				break;				
-				
+				break;
+
 			case "avl":
 				Registrador.getAvl().imprimeOrdemInfixa(Registrador.getAvl());
-				break;				
-				
+				break;
+
 			case "rb":
 				View.objetoNaoImplementado();
 				break;
-			}			
+			}
 			break;
-			
+
 		default:
 			View.opcaoInvalida();
 			Menus.menuArvores(true, false, true);
 			tPosFixa();
 			break; // Condição de saída quando atividade for inválida
 		}
-	}	
-	
-	
+	}
+
+
 	/**
-	 * Método de bucas nas árvres em altura
+	 * Método de busca em altura nas árvres
 	 * @throws Exception
 	 */
 	public void buscaEmAltura() throws Exception {
-		
+
 		switch (Auxiliar.getOpcao()) {
 		case "ARVORE":
-		
-			//Case auxlilar para seleção de estruturas da mesma familia
+
+			// "Case" auxlilar para seleção de estruturas da mesma família
 			switch (Auxiliar.getDetalhes()) {
 			case "ab":
 				Registrador.getArvoreBinaria().buscEmAltura(Auxiliar.digita("Elemento"), true);
 				break;
-						
+
 			case "avl":
 				View.objetoNaoImplementado();
 				break;
-						
+
 			case "rb":
 				View.objetoNaoImplementado();
 				break;
 			}
 			break;
-			
+
 		default:
 			View.opcaoInvalida();
 			Menus.menuArvores(true, false, true);
@@ -149,16 +148,16 @@ public class ArvoresLista {
 			break; // Condição de saída quando atividade for inválida
 		}
 	}
-	
+
 
 //====================<< Include em Estruturas de dados >> =====================================	
 
 	/**
-	 * Método de manupulação de estruturas lista e arvores para inserção em memoria de elementos
+	 * Método de manipulação de estruturas lista e árvore para inserção de elementos em memória
 	 * @throws Exception
 	 */
 	public void manipulaEstrutura(boolean inserirElemento) throws Exception {
-		
+
 		switch (Auxiliar.getOpcao()) {
 		case "LISTA":
 			if (inserirElemento == true) {
@@ -167,10 +166,10 @@ public class ArvoresLista {
 			}
 			Registrador.getLista().imprime(true);
 			break;
-			
+
 		case "ARVORE":
-			
-			//Case auxlilar para seleção de estruturas da mesma familia
+
+			// "Case" auxlilar para seleção de estruturas da mesma família
 			switch (Auxiliar.getDetalhes()) {
 			case "ab":
 				if (inserirElemento == true) {
@@ -178,17 +177,17 @@ public class ArvoresLista {
 				}
 				Registrador.getArvoreBinaria().imprime(true);
 				break;
-				
-				
+
+
 			case "avl":
 				if (inserirElemento == true) {
 					Registrador.getAvl();
-					Registrador.getAvl().insere(Registrador.getAvl(),Auxiliar.digitaNumero("Elemento"));
+					Registrador.getAvl().insere(Registrador.getAvl(), Auxiliar.digitaNumero("Elemento"));
 				}
 				Registrador.getAvl().imprimeAvore();
 				break;
-				
-				
+
+
 			case "rb":
 				if (inserirElemento == true) {
 					Registrador.setArvoreRedBlack(Registrador.getArvoreRedBlack());
@@ -198,16 +197,16 @@ public class ArvoresLista {
 				break;
 			}
 			break;
-			
+
 		default:
 			View.opcaoInvalida();
-			Menus.menuArvores(true, true, true);					
+			Menus.menuArvores(true, true, true);
 			break; // Condição de saída quando atividade for inválida
 		}
 	}
- 
-	
-	
+
+
+
 	/**
 	 * Método estruturado para implementação de exclusão de elementos de todas as estruturas
 	 * @throws Exception
@@ -215,43 +214,43 @@ public class ArvoresLista {
 	public void removeElemento() throws Exception {
 		View.objetoNaoImplementado();
 		View.msge("\nPasso a passo do plano de implementação:\n");
-		
+
 		switch (Auxiliar.getOpcao()) {
 		case "LISTA":
 			View.msge("\nPasso 1: Carregar o arquivo na lista \n"
-					 +"\nPasso 2: Digitar o elemento à ser excluído\n"
-					 +"\nPasso 3: Percorrer a lista\n"
-					 +"\nPasso 4: Se encontrado excluir\n"
-					 +"\nPasso 5: Atualizar a lista\n");
+					+ "\nPasso 2: Digitar o elemento à ser excluído\n"
+					+ "\nPasso 3: Percorrer a lista\n"
+					+ "\nPasso 4: Se encontrado, excluir\n"
+					+ "\nPasso 5: Atualizar a lista\n");
 			break;
-			
+
 		case "ARVORE":
-			
-			//Case auxlilar para seleção de estruturas da mesma familia
-			switch (Auxiliar.getDetalhes()) {			
+
+			// "Case" auxlilar para seleção de estruturas da mesma família
+			switch (Auxiliar.getDetalhes()) {
 			case "ab":
 				View.msge("\nPasso 1: Carregar o arquivo na árvore \n"
-						 + "\nPasso 2: Digitar o elemento à ser excluído\n"
-						 + "\nPasso 3: Percorrer a árvore\n"
-						 + "\nPasso 4: Se encontrado excluir\n"
-						 + "\nPasso 5: Atualizar e realocar elementos\n");
+						+ "\nPasso 2: Digitar o elemento à ser excluído\n"
+						+ "\nPasso 3: Percorrer a árvore\n"
+						+ "\nPasso 4: Se encontrado, excluir\n"
+						+ "\nPasso 5: Atualizar e realocar elementos\n");
 				break;
-				
+
 			case "avl":
 				View.msge("\nPasso 1: Carregar o arquivo na árvore \n"
-						 + "\nPasso 2: Digitar o elemento à ser excluído\n"
-						 + "\nPasso 3: Percorrer a árvore\n"
-						 + "\nPasso 4: Se encontrado excluir\n"
-						 + "\nPasso 5: Atualizar e realocar elementos para fazer o rebalanciamento\n");
+						+ "\nPasso 2: Digitar o elemento à ser excluído\n"
+						+ "\nPasso 3: Percorrer a árvore\n"
+						+ "\nPasso 4: Se encontrado, excluir\n"
+						+ "\nPasso 5: Atualizar e realocar elementos para fazer o rebalanciamento\n");
 				break;
-				
+
 			case "rb":
 				View.msge("\nSem planejamento ainda:\n");
 				break;
 
 			}
 			break;
-			
+
 		default:
 			View.opcaoInvalida();
 			Menus.menuArvores(true, true, true);
