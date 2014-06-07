@@ -24,11 +24,11 @@ import M.Utilitarios.Include;
  */
 public class Registrador {
 
-	private static String acum =""; // Acumulador de dados para edição de arquivo 
+	private static String acum =""; // Acumulador de dados para edição de arquivo
 	private static ListaOrdenada<String> lista = new ListaOrdenada<String>();
 	private static ArvoreBinaria<String> arvoreBinaria = new ArvoreBinaria<String>();
 	private static ArvoreAVL avl = new ArvoreAVL();
-	private static ArvoreRBlack<String> arvoreRedBlack = new  ArvoreRBlack<String>();
+	private static ArvoreRBlack<String> arvoreRedBlack = new ArvoreRBlack<String>();
 
 
 	public static void setArvoreRedBlack(ArvoreRBlack<String> arvoreRedBlack) {
@@ -91,7 +91,7 @@ public class Registrador {
 	 * @throws Exception
 	 */
 	public static void informaEstrutura(boolean ativaTipo) throws Exception {
-		View.msge("\nArvore inválida\n");
+		View.msge("\nÁrvore inválida\n");
 		Menus.menuArvores(true, ativaTipo, true);
 	}
 
@@ -99,7 +99,7 @@ public class Registrador {
 
 
 	/**
-	 * Método responsável por receber os dados da leitura do arquivo, bem como inserir nas estruturas		
+	 * Método responsável por receber os dados da leitura do arquivo, bem como inserir nas estruturas
 	 * @param linha
 	 * @throws Exception
 	 */
@@ -107,13 +107,13 @@ public class Registrador {
 
 		switch (Auxiliar.getOpcao()) {
 
-		case "LISTA":			
+		case "LISTA":
 			lista.insert(new Nodo<String>(linha), lista.getHead());
 			break;
 
 		case "ARVORE":
 
-			if (Auxiliar.getDetalhes().equals("ab")) {				
+			if (Auxiliar.getDetalhes().equals("ab")) {
 				arvoreBinaria.insere(new C.Arvores.Binaria.Nodo<String>(linha));
 
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
@@ -140,7 +140,7 @@ public class Registrador {
 	 * @throws Exception
 	 */
 	private void gravaDados(String nomeArquivo) throws Exception {
-		Contatos.setNome(Auxiliar.digita("Contato")); 
+		Contatos.setNome(Auxiliar.digita("Contato"));
 		Contatos.setFone(Auxiliar.digita("Telefone"));
 		Include.setAppend(true);
 		Include.addNovo(nomeArquivo, Contatos.getNome() + "," + Contatos.getFone() + "\n"); // Insere dado na última linha do arquivo
@@ -148,14 +148,14 @@ public class Registrador {
 
 
 	/**
-	 * Método responsável por salvar alterações 
+	 * Método responsável por salvar alterações
 	 * @param nomeArquivo
 	 * @throws IOException
 	 */
 	private void editaArquivo(String nomeArquivo) throws IOException {
 		Include.setAppend(false);
 		Include.addNovo(nomeArquivo, getAcum());
-		setAcum(""); // Parâmetro de limpeza de "cache" do acumulador 
+		setAcum(""); // Parâmetro de limpeza de "cache" do acumulador
 	}
 
 
@@ -176,15 +176,15 @@ public class Registrador {
 
 			break;
 
-		case "ARVORE":			
+		case "ARVORE":
 			if (Auxiliar.getDetalhes().equals("ab")) {
 				gravaDados(nomeArquivo);
 				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
 				arvoreBinaria.guardaEdicao();
-				editaArquivo(nomeArquivo);	
+				editaArquivo(nomeArquivo);
 
 			} else if (Auxiliar.getDetalhes().equals("avl")) {
-				//gravaDados(nomeArquivo);
+				// gravaDados(nomeArquivo);
 				Ficheiro.leArquivo(nomeArquivo, false, null, false, false); // Carregador de arquivo para estrururas
 				getAvl().imprimeAvore();
 
@@ -196,7 +196,7 @@ public class Registrador {
 			} else {
 				informaEstrutura(false);
 				insereRegistro(nomeArquivo);
-			}			
+			}
 			break;
 
 		default:
@@ -239,6 +239,6 @@ public class Registrador {
 			View.opcaoInvalida();
 			executaComando(nomeArquivo); // "Loop" para novas ações do menu
 			break;
-		}	
+		}
 	}
 }
