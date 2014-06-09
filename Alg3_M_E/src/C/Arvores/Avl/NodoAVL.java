@@ -3,7 +3,7 @@ package C.Arvores.Avl;
 import App.View;
 
 public class NodoAVL {
-	
+
 	    private int valor;
 		private int altDir;
 		private int altEsq;
@@ -54,7 +54,7 @@ public class NodoAVL {
 	    }
 
 	    /**
-	     * Método gereciador de balanciamento
+	     * Método gerenciador de balanciamento
 	     * @param aux
 	     * @return
 	     */
@@ -171,9 +171,9 @@ public class NodoAVL {
 	     * @param aux
 	     */
 	    public void odermPrefixa(NodoAVL aux) {
-	        if (aux != null) {	        	
+	        if (aux != null) {
 	            odermPrefixa(aux.esq);
-	            
+
 	            odermPrefixa(aux.dir);
 	        }
 	    }
