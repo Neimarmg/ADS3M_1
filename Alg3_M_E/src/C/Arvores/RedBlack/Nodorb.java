@@ -83,9 +83,9 @@ public class Nodorb<T extends Comparable<T>> {
 		this.par = null;
 	}
 
-	
+
 	/**
-	 * Imprme ordem arvore
+	 * Imprime ordem da árvore
 	 */
 	public void ordemInfixa() {
 		String cor = "";
@@ -97,7 +97,7 @@ public class Nodorb<T extends Comparable<T>> {
 			cor = "black";
 		}
 
-		View.msg("Cor " + cor +" = "+ valor + "\n");
+		View.msg("Cor " + cor + " = " + valor + "\n");
 
 		if (esq != null) {
 			esq.ordemInfixa();
@@ -113,10 +113,10 @@ public class Nodorb<T extends Comparable<T>> {
 			View.msg("");
 		}
 	}
-	
-	
+
+
 	/**
-	 * Imprme ordem pos fixa
+	 * Imprime ordem pós-fixa
 	 */
 	public void ordenPosFixa() {
 		String cor = "";
@@ -127,7 +127,7 @@ public class Nodorb<T extends Comparable<T>> {
 		} else {
 			cor = "black";
 		}
-		
+
 
 		if (esq != null) {
 			esq.ordenPosFixa();
@@ -136,8 +136,8 @@ public class Nodorb<T extends Comparable<T>> {
 			View.msg("");
 		}
 
-		View.msg("Cor " + cor +" = "+ valor + "\n");
-		
+		View.msg("Cor " + cor +" = " + valor + "\n");
+
 		if (dir != null) {
 			dir.ordenPosFixa();
 
@@ -145,10 +145,10 @@ public class Nodorb<T extends Comparable<T>> {
 			View.msg("");
 		}
 	}
-	
-	
+
+
 	/**
-	 * Imprme ordem prefixa
+	 * Imprime ordem pré-fixa
 	 */
 	public void ordenPreFixa() {
 		String cor = "";
@@ -159,7 +159,7 @@ public class Nodorb<T extends Comparable<T>> {
 		} else {
 			cor = "black";
 		}
-		
+
 
 		if (esq != null) {
 			esq.ordenPreFixa();
@@ -168,35 +168,35 @@ public class Nodorb<T extends Comparable<T>> {
 			View.msg("");
 		}
 
-				
+
 		if (dir != null) {
 			dir.ordenPreFixa();
 
 		} else {
 			View.msg("");
 		}
-		
-		View.msg("Cor " + cor +" = "+ valor + "\n");
+
+		View.msg("Cor " + cor +" = " + valor + "\n");
 	}
-	
+
 	/**
-	 * Imprme ordem prefixa
+	 * Imprime ordem pré-fixa
 	 */
 	public void contaNodos() {
 
 		if (esq != null) {
 			Auxiliar.setContador(true);
-			esq.contaNodos();			
+			esq.contaNodos();
 		} else {
 			View.msg("");
 		}
 
-		
+
 		if (dir != null) {
 			Auxiliar.setContador(true);
 			dir.contaNodos();
 		} else {
 			View.msg("");
-		}	
+		}
 	}
 }

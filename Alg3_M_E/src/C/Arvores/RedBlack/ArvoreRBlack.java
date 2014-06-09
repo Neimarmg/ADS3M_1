@@ -195,34 +195,34 @@ public class ArvoreRBlack<T extends Comparable<T>> {
 	public void imprimeInfixa(boolean cabecalho) {
 		View.imprimeArvores(true, "\nIMPRESSÃO EM ORDEM INFIXA DA - ");
 		raiz.ordemInfixa();
-	}	
-	
-	
+	}
+
+
 	/**
-	 * Imprime nodos em ordem pre fixa
+	 * Imprime nodos em ordem pré-fixa
 	 */
 	public void imprimeOrdemPreFixa(boolean cabecalho) {
-		View.imprimeArvores(true, "\nIMPRESSÃO EM PRÉ FIXA DA - ");
+		View.imprimeArvores(true, "\nIMPRESSÃO EM PRÉ-FIXA DA - ");
 		raiz.ordenPreFixa();
 	}
-	
-	
+
+
 	/**
-	 * Imprime nodo em ordem pos fixa
+	 * Imprime nodo em ordem pós-fixa
 	 */
 	public void imprimePosFixa(boolean cabecalho) {
-		View.imprimeArvores(true, "\nIMPRESSÃO EM PÓS FIXA DA- ");
+		View.imprimeArvores(true, "\nIMPRESSÃO EM PÓS-FIXA DA- ");
 		raiz.ordenPosFixa();
 	}
-	
+
 	/**
-	 * Imprime contagem do nodos na arvore
+	 * Imprime contagem do nodos na árvore
 	 */
 	public void imprimeContagemNodos(boolean cabecalho) {
 		View.imprimeArvores(true, "\nTOTAL DE NODOS NA LISTA NA - ");
 		raiz.contaNodos();
-		View.msg("Qt nodos: " + Auxiliar.getContador() + "\n");		
-		Auxiliar.setContador(false); //Limpa contador
-		
+		View.msg("Qt nodos: " + Auxiliar.getContador() + "\n");
+		Auxiliar.setContador(false); // Limpa contador
+
 	}
 }
