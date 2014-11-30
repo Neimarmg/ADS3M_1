@@ -1,0 +1,302 @@
+lab2_5m
+=======
+//package ProgsAlgo2;
+public class TravessiaDeserto {
+
+	public static final int MAP_SIZE = 10; /** Variável pública, estática e constante */
+	public static final int MAX_FUEL = 6;
+
+	public static final /** Declaração da classe “Scanner” do pacote “java.util” */
+	java.util.Scanner sc = new java.util.Scanner(System.in);
+
+	/** Variaveis  globais */
+	public static final int AVANCAR = 0;
+	public static final int VOLTAR = 1;
+	public static final int CARREGAR = 2;
+	public static final int DESCARREGAR = 3;
+	public static final int AJUDA = 4;
+	public static final int ERROR = -1;
+
+	private int[] map;
+	private int fuel;
+	private int pos;
+
+	public static void main(String[] args) {
+		(new TravessiaDeserto()).run(); // Método run() define criando o main para execução do programa.
+	}
+
+	/**
+	* Medodo initGame()
+	* Medodo printStatus()
+	* @param resultado de initGame()
+	* @param resultado de printStatus()
+	*/
+	public void run() { // Definição de método main
+		initGame(); // Chamada de método que recebe os valores atuais de fuel
+		do {
+			printStatus(); // Chamada de método par mostrear situação atual do caminhão.
+			int cmd = translateCommand( sc.next() ); // Método acessa o scanner par para receber o proximo comando do teclado.
+			processCommand( cmd ); // Chamada de comando vindo da variável cmd que acesso aos métodos contadores.
+		} while (!isGameOver());
+
+		System.out.println(getEndMessage());
+	}
+
+	/**
+	* Metodo getEndMessage()
+	* @param isWinner
+	* Método que verifica a condição final de jogo, caso combustível
+	* maior ou igual zero, jogador vence, em contrário perde o jogo
+	*/
+	public String getEndMessage() {
+		if (isWinner())
+			return "Voce GANHOU!";
+		else
+			return "Voce PERDEU.";
+	}
+
+	/**
+	* Método isGameOver()
+	* @param fuel
+	* @param Mapa[]
+	* Método de validação de combustível e percurso
+	*/
+	public boolean isGameOver() {
+		if (isWinner())
+			return true; //Fim do jogo
+		if (fuel == 0 && map[pos] == 0)
+			return true; // Ao início do jogo
+		return false; //Durante o jogo
+	}
+
+	/**
+	* Método isWinner()
+	* @param MAP_SIZE
+	* Método que verifica se caminhão chegou a posição final
+	*/
+	public boolean isWinner() {
+		return pos == MAP_SIZE;
+	}
+
+	/**
+	* Método initGame()
+	* @param pos
+	* @param MAX_FUEL
+	* @param MAP_SIZE
+	* Método de atribuição de valores às variáveis de posição
+	* combustível e percurso a ser percorrido
+	* “MAP_SIZE” Atribui novamente o valor do mapa a variável map
+	*/
+	public void initGame() {
+		pos = 0;
+		fuel = MAX_FUEL;
+		map = new int[MAP_SIZE]; // Cria objeto MAP
+	}
+
+	/**
+	* Método printStatus()
+	* @param translateCommand()
+	* Método que imprime situação a atual do caminhão, também avalia
+	* se o último comando de ação é valido ou não
+	*/
+	public void printStatus() {
+		System.out.println(String.format("Você esta na posição %d.", pos));
+		System.out.println(String.format("Você possui %d unidades de combustível.",fuel));
+		if (pos > 0)
+			System.out.println(String.format("Existem %d unidades de combustível nessa posição.", map[pos]));
+	}
+
+	/**
+	* Método translateCommand()
+	* @param command
+	* Método que avalia e converte o comando de ação vindo do scanner,
+	* criando uma “string” no formato válido (String command)
+	*/
+	public int translateCommand(String command) {
+		String cmd = command.toLowerCase(); // Conversão de parâmetro para valor padrão de avaliação.
+		if (cmd.equals("avancar"))
+			return AVANCAR;
+		if (cmd.equals("voltar"))
+			return VOLTAR;
+		if (cmd.equals("carregar"))
+			return CARREGAR;
+		if (cmd.equals("descarregar"))
+			return DESCARREGAR;
+		if (cmd.equals("ajuda"))
+			return AJUDA;
+		return ERROR;
+	}
+
+	/**
+	* Médodo processCommand()
+	* @param command
+	* Método controlador de comandos de execução do jogo. Variáveis de movimento do tipo int com valor final estático.
+	*/
+	public void processCommand(int command) {
+		switch (command) {
+			case AVANCAR:
+				avancar();
+				break;
+			case VOLTAR:
+				voltar();
+				break;
+			case CARREGAR:
+				carregar();
+				break;
+			case DESCARREGAR:
+				descarregar();
+				break;
+			case AJUDA:
+				ajuda();
+				break;
+			default:
+				System.err.println("Comando invalido."); // Mensagem de auxilio para comandos inválidos
+		}
+	}
+
+	/**
+	* Metodo ajuda()
+	* Método auxilio para comando do programa
+	*/
+	public void ajuda() {
+		System.out.println("Comandos: avancar voltar carregar descarregar ajuda");
+	}
+
+	/**
+	* Método
+	* Neste caso é esperado fuel seja >= 1
+	* Teste implementado garantem que todos os valores sejam >= 1
+	*/
+
+	public void descarregar() {
+		if (fuel > 0)
+			fuel--;
+			map[pos]++;
+	}
+
+	/**
+	* Método carregar()
+	* Método de abastece combustível que avança uma posição no mapa
+	*/
+	public void carregar() {
+		if (map[pos] > 0) { // Testa posicao do mapa
+			map[pos]--;    // Diminui posição
+			fuel++;	    // Aumenta o combustível
+		}
+	}
+
+	/**
+	* Método voltar()
+	* Método de movimentação que retrocede uma posição no mapa
+	*/
+	public void voltar() {
+		if (fuel > 0 && pos > 0) {
+			fuel--;
+			pos--;
+		}
+		if (pos == 0)
+			fuel = MAX_FUEL;
+	}
+
+	/**
+	* Método avancar()
+	* Método de movimentação que avança uma posição no mapa
+	*/
+	public void avancar() {
+		if (fuel > 0) {
+			fuel--;
+			pos++;
+		}
+	}
+
+
+//============================================================================
+
+//Métodos utilizados para testes dos metodos do jogo
+	public int[] getMap() {
+		return map;
+	}
+
+	public int getFuel() {
+		return fuel;
+	}
+
+	public int getPos() {
+		return pos;
+	}
+
+	public static int getMaxFuel() {
+		return MAX_FUEL;
+	}
+
+	public static int getMapSize() {
+		return MAP_SIZE;
+	}
+
+
+	public static java.util.Scanner getSc() {
+		return sc;
+	}
+
+	//metodo de jogo para teste do isWinner roda o jogo
+	public void jogaJogo(){
+		initGame();
+		avancar();
+		avancar();
+		descarregar();
+		descarregar();
+		voltar();
+		voltar();
+		avancar();
+		avancar();
+		descarregar();
+		descarregar();
+		voltar();
+		voltar();
+		avancar();
+		avancar();
+		descarregar();
+		descarregar();
+		voltar();
+		voltar();
+		avancar();
+		avancar();
+		descarregar();
+		descarregar();
+		voltar();
+		voltar();
+		avancar();
+		avancar();
+		descarregar();
+		descarregar();
+		voltar();
+		voltar();
+		avancar();
+		avancar();
+		carregar();
+		carregar();
+		avancar();
+		avancar();
+		descarregar();
+		descarregar();
+		voltar();
+		voltar();
+		carregar();
+		carregar();
+		carregar();
+		carregar();
+		carregar();
+		carregar();
+		avancar();
+		avancar();
+		carregar();
+		carregar();
+		avancar();
+		avancar();
+		avancar();
+		avancar();
+		avancar();
+		avancar();
+	}
+
+}
