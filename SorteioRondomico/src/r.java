@@ -11,6 +11,7 @@ public class r {
 	static float custo = 0;
 	static Random radom  = new Random();
 	
+	
 	public static void setAcum(String acum) {
 		r.acum += acum;
 	}
