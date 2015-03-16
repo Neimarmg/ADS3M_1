@@ -35,6 +35,7 @@ public class cadastroVeiculos extends scaner {
 	
 	/*Casdstro de todos os intens*/
 	public static void cadastraNovo(boolean imprimircadastro){
+		
 		InsereNome();
 		InserePotencia();
 		InsereCapacidadeTanque();
