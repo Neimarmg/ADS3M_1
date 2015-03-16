@@ -48,7 +48,7 @@ public class cadastroVeiculos extends scaner {
 	
 	public static void imprime(){
 		View.msg("\nVeículo: "+veiculos.getNome()
-				+"\nPotencia: "+veiculos.getPotencia()
+				+"\nPotencia: "+veiculos.getPotencia()+"CV"
 				+"\nCapacidade tanque: "+veiculos.getCapacidadeTanque()+"L");
 	}
 }
