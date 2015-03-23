@@ -6,8 +6,14 @@ import V.View;
 public class cadastroVeiculos extends scaner {
 
 		
-	public static void InsereNome(){
-		veiculos.setNome(digita("Nome veículo"));
+	public static void InsereNome(){		
+		try {
+			veiculos.setNome(digita("Nome do veículo"));
+		
+		} catch (NumberFormatException e) {
+			View.dadoInvalido();
+			InsereNome();
+		}	
 	}
 	
 	
