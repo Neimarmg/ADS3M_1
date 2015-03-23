@@ -7,13 +7,7 @@ public class cadastroVeiculos extends scaner {
 
 		
 	public static void InsereNome(){		
-		try {
-			veiculos.setNome(digita("Nome do veículo"));
-		
-		} catch (NumberFormatException e) {
-			View.dadoInvalido();
-			InsereNome();
-		}	
+		veiculos.setNome(digita("Nome do veículo"));
 	}
 	
 	
@@ -39,6 +33,13 @@ public class cadastroVeiculos extends scaner {
 	}
 	
 	
+	public static void imprime(){
+		View.msg("\nVeículo: "+veiculos.getNome()
+				+"\nPotencia: "+veiculos.getPotencia()+"CV"
+				+"\nCapacidade tanque: "+veiculos.getCapacidadeTanque()+"L");
+	}
+
+
 	/*Casdstro de todos os intens*/
 	public static void cadastraNovo(boolean imprimircadastro){
 		
@@ -49,12 +50,5 @@ public class cadastroVeiculos extends scaner {
 		if (imprimircadastro == true){
 			imprime();
 		}
-	}
-
-	
-	public static void imprime(){
-		View.msg("\nVeículo: "+veiculos.getNome()
-				+"\nPotencia: "+veiculos.getPotencia()+"CV"
-				+"\nCapacidade tanque: "+veiculos.getCapacidadeTanque()+"L");
 	}
 }
