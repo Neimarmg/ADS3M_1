@@ -17,7 +17,7 @@ public class Campo {
 	
 	private static void gerenciaExecucao(boolean gerar, boolean imprimir){
 		if(gerar == true){
-			mapa[i][j]= " "+j;
+			mapa[i][j]= ".";
 			imprime(imprimir);
 		}else{
 			imprime(imprimir);
