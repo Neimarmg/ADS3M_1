@@ -5,6 +5,8 @@ public class Campo {
 	private static int i = 0 ,j = 0;
 	public static String [][]mapa;
 	
+	
+
 	public Campo(int linha,int coluna) {
 		mapa = new String[linha][coluna];
 	}
@@ -15,7 +17,7 @@ public class Campo {
 		}
 	}
 	
-	private static void gerenciaExecucao(boolean gerar, boolean imprimir){
+	private static void gerenciaExecucao(boolean gerar,boolean imprimir){
 		if(gerar == true){
 			mapa[i][j]= ".";
 			imprime(imprimir);
@@ -30,7 +32,9 @@ public class Campo {
 				for (j = 0; j < mapa.length; j++) {
 					gerenciaExecucao(gerar, imprimir);
 				}
-				View.msg("\n");
+				if(imprimir == true){
+					View.msg("\n");
+				}
 			}
 						
 		} catch (ArrayIndexOutOfBoundsException e) {
