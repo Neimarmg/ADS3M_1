@@ -1,13 +1,14 @@
 package app;
 
-import M.Campo;
-import M.Desenha;
+import C.Escreve;
+import M.pagina;
+import M.tamanho;
 
 public class start {
 	public static void main(String[] args)throws Exception {
-		new Campo(20, 20);
-		Campo.executaMapa(true, false); 
-		
-		Desenha.marcaPontos(true, true);
+		new pagina(20, 20);
+		tamanho.setAlturaLagura(5, 3);
+		pagina.executaFolha(true, false); 		
+		Escreve.marcaPontos(true, true);
 	}
 }
