@@ -11,11 +11,13 @@ public class carater {
 		}	
 	}
 	
+	
 	public static void z1() {
 		if (lc.getColuna() < tamanho.getLagura()) {
 			pagina.folha[lc.getLinha()][lc.getColuna()] = "z";
 		}	
 	}
+	
 	
 	public static void criaLetraA() {
 		if (lc.getColuna()== tamanho.getAltura()) {
