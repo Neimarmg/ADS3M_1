@@ -39,8 +39,7 @@ public class pagina {
 				if(imprimir == true){
 					View.msg("\n");
 				}
-			}
-						
+			}						
 		} catch (ArrayIndexOutOfBoundsException e) {
 			View.msgb("Não foi possível criar o folha!");
 		}
