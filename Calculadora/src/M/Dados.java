@@ -1,30 +1,43 @@
 package M;
 
 public class Dados {
- 	static float numerador, denominador, valorCalculado;
+ 	static float numerador;
+	static float denominador;
+	static float valorResultado;
  	
+	public Dados(float numerador, float denominador) {
+		Dados.numerador = numerador;
+		Dados.denominador =denominador;
+	}
+	
+	
 	public static float getNumerador() {
-		return numerador;
+		return Dados.numerador;
 	}
 
+	
 	public static void setNumerador(float numerador) {
 		Dados.numerador = numerador;
 	}
 
+	
 	public static float getDenominador() {
 		return denominador;
 	}
 
+	
 	public static void setDenominador(float denominador) {
 		Dados.denominador = denominador;
 	}
 
-	public static float getValorCalculado() {
-		return valorCalculado;
+	
+	public static float getValorResultado() {
+		return valorResultado;
 	}
 
-	public static void setValorCalculado(float valorCalculado) {
-		Dados.valorCalculado = valorCalculado;		
+	
+	public static void setValorResultado(float valorDeCalculo) {
+		Dados.valorResultado = valorDeCalculo;		
 	}
 
 

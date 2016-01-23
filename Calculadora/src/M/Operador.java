@@ -1,23 +1,25 @@
 package M;
 
-public class Operadores {
+public class Operador {
 	static String Operacao;
- 	static int acum = 0;
+ 	static int acumulador = 0;
 
 	public static String getOperacao() {
 		return Operacao;
 	}
 
+	
 	public static void setOperacao(String operacao) {
 		Operacao = operacao;
 	}
+
 	
-	public static int getAcum(boolean contar) {
+	public static int getAcumulador(boolean contar) {
 		if (contar == true) {
-			acum++;
+			acumulador++;
 		}else{
-			acum = 0;
+			acumulador = 0;
 		} 	
-		return acum ;
+		return acumulador ;
 	}
 }
