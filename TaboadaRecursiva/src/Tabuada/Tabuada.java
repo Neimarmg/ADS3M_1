@@ -1,7 +1,7 @@
 package Tabuada;
 
 public class Tabuada {
-	static float numerador = 0, denominador = 0;	
+	static int numerador = 0, denominador = 0;	
 	static String valorResultado = "";
 	
 	
@@ -37,10 +37,8 @@ public class Tabuada {
 				setResult("" +(denominador + numerador), false);			
 				break;	
 		default:
-				setResult("Operação inválida!",false);
-			
-		}
-		
+				setResult("Operação inválida!",false);	
+		}		
 	}
 		
 	
@@ -54,7 +52,7 @@ public class Tabuada {
 		if (denominador < 10) {	
 			setResult(denominador +" " +Operacao +" " +numerador +" = ", false);	
 			executaCalculo(Operacao);
-			System.out.println(valorResultado);
+			View.msg("\n"+valorResultado);
 			setResult("", true);
 			imprimeResultados(Operacao);
 		}else{
@@ -74,7 +72,7 @@ public class Tabuada {
 	
 	
 	public static void main(String[] args) {
-		View.msgcr("\nT a b u a d a\n");
+		View.msgcr("\nT a b ú a d a\n");
 		Tabuada.carregaParametros(
 				View.digitaNumero("\nCalcular tabuada até")
 				,View.digitaString("\nOperação"));
