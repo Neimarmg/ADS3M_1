@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class View {	
 
-	
+	//33
 	static Scanner var = new Scanner(System.in);
 	
 	public static void msg(Object desc) {   
