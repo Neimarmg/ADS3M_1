@@ -32,7 +32,7 @@ public class parametrizador {
 	
 	
 	public static void print() {
-		View.msgc("Resuldado:"+Resultado.getResuldo());
+		View.msgc("Resultado:"+Resultado.getResuldo());
 		
 	}
 }
